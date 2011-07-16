@@ -10,7 +10,7 @@
     
     <title>How to contribute to scikits.image &mdash; scikits.image v0.3dev docs</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
@@ -28,26 +28,64 @@
     <link rel="top" title="scikits.image v0.3dev docs" href="index.html" /> 
   </head>
   <body>
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="np-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-    <li><a href=index.html>scikits.image home</a> &raquo;</li>
-    
-        <li><a href="contents.html">scikits.image v0.3dev docs</a> &raquo;</li>
- 
-      </ul>
-    </div>  
+    <div class="header-wrapper">
+      <div class="header">
+       
+       </div>
+    </div>
 
-    <div class="document">
+    <div class="content-wrapper">
+      <div class="content">
+             
+            
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"> 
+  <h3><a href="contents.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">How to contribute to <tt class="docutils literal"><span class="pre">scikits.image</span></tt></a><ul>
+<li><a class="reference internal" href="#tasks">Tasks</a></li>
+<li><a class="reference internal" href="#infrastructure">Infrastructure</a><ul>
+<li><a class="reference internal" href="#adapt-existing-code-for-use">Adapt existing code for use</a></li>
+<li><a class="reference internal" href="#merge-code-provided-by-cellprofiler-team">Merge code provided by CellProfiler team</a></li>
+<li><a class="reference internal" href="#rework-linear-filters">Rework linear filters</a></li>
+<li><a class="reference internal" href="#io">io</a></li>
+<li><a class="reference internal" href="#docs">docs</a></li>
+<li><a class="reference internal" href="#implement-algorithms">Implement Algorithms</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#development-process">Development process</a><ul>
+<li><a class="reference internal" href="#guidelines">Guidelines</a></li>
+<li><a class="reference internal" href="#test-coverage">Test coverage</a></li>
+<li><a class="reference internal" href="#bugs">Bugs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/contribute.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+        
+        <div class="document">
+            
       <div class="documentwrapper">
         <div class="bodywrapper">
           <div class="body">
@@ -270,74 +308,18 @@ scikits/image/filter/__init__                        1      1   100%
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="contents.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">How to contribute to <tt class="docutils literal"><span class="pre">scikits.image</span></tt></a><ul>
-<li><a class="reference internal" href="#tasks">Tasks</a></li>
-<li><a class="reference internal" href="#infrastructure">Infrastructure</a><ul>
-<li><a class="reference internal" href="#adapt-existing-code-for-use">Adapt existing code for use</a></li>
-<li><a class="reference internal" href="#merge-code-provided-by-cellprofiler-team">Merge code provided by CellProfiler team</a></li>
-<li><a class="reference internal" href="#rework-linear-filters">Rework linear filters</a></li>
-<li><a class="reference internal" href="#io">io</a></li>
-<li><a class="reference internal" href="#docs">docs</a></li>
-<li><a class="reference internal" href="#implement-algorithms">Implement Algorithms</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#development-process">Development process</a><ul>
-<li><a class="reference internal" href="#guidelines">Guidelines</a></li>
-<li><a class="reference internal" href="#test-coverage">Test coverage</a></li>
-<li><a class="reference internal" href="#bugs">Bugs</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/contribute.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" size="18" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
-      </div>
-      <div class="clearer"></div>
+        <div class="clearer"></div>
     </div>
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="np-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-    <li><a href=index.html>scikits.image home</a> &raquo;</li>
-    
-        <li><a href="contents.html">scikits.image v0.3dev docs</a> &raquo;</li>
- 
-      </ul>
     </div>
+
+    <div class="footer-wrapper">
+      
     <div class="footer">
         &copy; Copyright 2009, SciPy Developers.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1pre.
     </div>
+    </div>
+
   </body>
 </html>
