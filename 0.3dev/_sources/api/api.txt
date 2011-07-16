@@ -11,4 +11,5 @@ API Reference
    scikits.image.graph
    scikits.image.io
    scikits.image.morphology
+   scikits.image.opencv
    scikits.image.transform

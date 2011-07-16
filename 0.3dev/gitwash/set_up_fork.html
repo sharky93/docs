@@ -3,13 +3,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
     <title>Set up your fork &mdash; scikits.image v0.3dev docs</title>
+    
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -31,6 +34,12 @@
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
     <li><a href=../index.html>scikits.image home</a> &raquo;</li>
     
         <li><a href="../contents.html">scikits.image v0.3dev docs</a> &raquo;</li>
@@ -48,7 +57,7 @@
 <p>First you follow the instructions for <a class="reference internal" href="forking_hell.html#forking"><em>Making your own copy (fork) of scikits.image</em></a>.</p>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><pre>git clone git@github.com/your-user-name/scikits.image.git
+<div class="highlight-python"><pre>git clone git@github.com:your-user-name/scikits.image.git
 cd scikits.image
 git remote add upstream git://github.com/scikits.image/scikits.image.git</pre>
 </div>
@@ -70,8 +79,8 @@ remotes/origin/master</pre>
 <p>This tells you that you are currently on the <tt class="docutils literal"><span class="pre">master</span></tt> branch, and
 that you also have a <tt class="docutils literal"><span class="pre">remote</span></tt> connection to <tt class="docutils literal"><span class="pre">origin/master</span></tt>.
 What remote repository is <tt class="docutils literal"><span class="pre">remote/origin</span></tt>? Try <tt class="docutils literal"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">-v</span></tt> to
-see the URLs for the remote.  They will point to your <a class="reference external" href="http://github.com">github</a> fork.</p>
-<p>Now you want to connect to the upstream <a class="reference external" href="http://github.com/stefanv/scikits.image">scikits.image github</a> repository, so
+see the URLs for the remote.  They will point to your github fork.</p>
+<p>Now you want to connect to the upstream <a class="reference external" href="http://github.com/scikits.image/scikits.image">scikits.image github</a> repository, so
 you can merge in changes from trunk.</p>
 </li>
 </ol>
@@ -82,7 +91,7 @@ you can merge in changes from trunk.</p>
 git remote add upstream git://github.com/scikits.image/scikits.image.git</pre>
 </div>
 <p><tt class="docutils literal"><span class="pre">upstream</span></tt> here is just the arbitrary name we&#8217;re using to refer to the
-main <a class="reference external" href="http://stefanv.github.com/scikits.image">scikits.image</a> repository at <a class="reference external" href="http://github.com/stefanv/scikits.image">scikits.image github</a>.</p>
+main <a class="reference external" href="http://scikits-image.org">scikits.image</a> repository at <a class="reference external" href="http://github.com/scikits.image/scikits.image">scikits.image github</a>.</p>
 <p>Note that we&#8217;ve used <tt class="docutils literal"><span class="pre">git://</span></tt> for the URL rather than <tt class="docutils literal"><span class="pre">git&#64;</span></tt>.  The
 <tt class="docutils literal"><span class="pre">git://</span></tt> URL is read only.  This means we that we can&#8217;t accidentally
 (or deliberately) write to the upstream repo, and we are only going to
@@ -145,6 +154,12 @@ origin       git@github.com:your-user-name/scikits.image.git (push)</pre>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
     <li><a href=../index.html>scikits.image home</a> &raquo;</li>
     
         <li><a href="../contents.html">scikits.image v0.3dev docs</a> &raquo;</li>
@@ -153,7 +168,7 @@ origin       git@github.com:your-user-name/scikits.image.git (push)</pre>
     </div>
     <div class="footer">
         &copy; Copyright 2009, SciPy Developers.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.1.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1pre.
     </div>
   </body>
 </html>

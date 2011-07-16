@@ -3,13 +3,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
     <title>Git for development &mdash; scikits.image v0.3dev docs</title>
+    
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -31,6 +34,12 @@
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
     <li><a href=../index.html>scikits.image home</a> &raquo;</li>
     
         <li><a href="../contents.html">scikits.image v0.3dev docs</a> &raquo;</li>
@@ -61,20 +70,20 @@
 <li class="toctree-l1"><a class="reference internal" href="configure_git.html">Configure git</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="configure_git.html#overview">Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="configure_git.html#in-detail">In detail</a></li>
-<li class="toctree-l2"><a class="reference internal" href="configure_git.html#advanced-git-configuration">Advanced git configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="configure_git.html#other-configuration-recommended-by-yarik">Other configuration recommended by Yarik</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="development_workflow.html">Development workflow</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="development_workflow.html#workflow-summary">Workflow summary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="development_workflow.html#making-a-new-feature-branch">Making a new feature branch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development_workflow.html#consider-deleting-your-master-branch">Consider deleting your master branch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development_workflow.html#update-the-mirror-of-trunk">Update the mirror of trunk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development_workflow.html#make-a-new-feature-branch">Make a new feature branch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="development_workflow.html#the-editing-workflow">The editing workflow</a></li>
-<li class="toctree-l2"><a class="reference internal" href="development_workflow.html#asking-for-code-review">Asking for code review</a></li>
-<li class="toctree-l2"><a class="reference internal" href="development_workflow.html#asking-for-your-changes-to-be-merged-with-the-main-repo">Asking for your changes to be merged with the main repo</a></li>
-<li class="toctree-l2"><a class="reference internal" href="development_workflow.html#merging-from-trunk">Merging from trunk</a></li>
-<li class="toctree-l2"><a class="reference internal" href="development_workflow.html#deleting-a-branch-on-github">Deleting a branch on github</a></li>
-<li class="toctree-l2"><a class="reference internal" href="development_workflow.html#several-people-sharing-a-single-repository">Several people sharing a single repository</a></li>
-<li class="toctree-l2"><a class="reference internal" href="development_workflow.html#exploring-your-repository">Exploring your repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development_workflow.html#ask-for-your-changes-to-be-reviewed-or-merged">Ask for your changes to be reviewed or merged</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development_workflow.html#some-other-things-you-might-want-to-do">Some other things you might want to do</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="maintainer_workflow.html">Maintainer workflow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="maintainer_workflow.html#integrating-changes">Integrating changes</a></li>
 </ul>
 </li>
 </ul>
@@ -115,6 +124,12 @@
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
     <li><a href=../index.html>scikits.image home</a> &raquo;</li>
     
         <li><a href="../contents.html">scikits.image v0.3dev docs</a> &raquo;</li>
@@ -123,7 +138,7 @@
     </div>
     <div class="footer">
         &copy; Copyright 2009, SciPy Developers.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.1.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1pre.
     </div>
   </body>
 </html>

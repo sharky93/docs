@@ -3,13 +3,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
     <title>How to contribute to scikits.image &mdash; scikits.image v0.3dev docs</title>
+    
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
@@ -31,6 +34,12 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
     <li><a href=index.html>scikits.image home</a> &raquo;</li>
     
         <li><a href="contents.html">scikits.image v0.3dev docs</a> &raquo;</li>
@@ -50,24 +59,25 @@ list</a> and tell us which of the
 following challenges you&#8217;d like to solve.</p>
 <ul class="simple">
 <li>Mentoring is available for those new to scientific programming in Python.</li>
-<li>The technical detail of the <a class="reference external" href="#development-process">development process</a> is given below.</li>
+<li>The technical detail of the <a class="reference internal" href="#development-process">development process</a> is given below.</li>
+<li><a class="reference internal" href="gitwash/index.html"><em>How to use GitHub</em></a> when developing scikits.image</li>
 </ul>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference external" href="#tasks" id="id1">Tasks</a></li>
-<li><a class="reference external" href="#infrastructure" id="id2">Infrastructure</a><ul>
-<li><a class="reference external" href="#adapt-existing-code-for-use" id="id3">Adapt existing code for use</a></li>
-<li><a class="reference external" href="#merge-code-provided-by-cellprofiler-team" id="id4">Merge code provided by CellProfiler team</a></li>
-<li><a class="reference external" href="#rework-linear-filters" id="id5">Rework linear filters</a></li>
-<li><a class="reference external" href="#io" id="id6">io</a></li>
-<li><a class="reference external" href="#docs" id="id7">docs</a></li>
-<li><a class="reference external" href="#implement-algorithms" id="id8">Implement Algorithms</a></li>
+<li><a class="reference internal" href="#tasks" id="id1">Tasks</a></li>
+<li><a class="reference internal" href="#infrastructure" id="id2">Infrastructure</a><ul>
+<li><a class="reference internal" href="#adapt-existing-code-for-use" id="id3">Adapt existing code for use</a></li>
+<li><a class="reference internal" href="#merge-code-provided-by-cellprofiler-team" id="id4">Merge code provided by CellProfiler team</a></li>
+<li><a class="reference internal" href="#rework-linear-filters" id="id5">Rework linear filters</a></li>
+<li><a class="reference internal" href="#io" id="id6">io</a></li>
+<li><a class="reference internal" href="#docs" id="id7">docs</a></li>
+<li><a class="reference internal" href="#implement-algorithms" id="id8">Implement Algorithms</a></li>
 </ul>
 </li>
-<li><a class="reference external" href="#development-process" id="id9">Development process</a><ul>
-<li><a class="reference external" href="#guidelines" id="id10">Guidelines</a></li>
-<li><a class="reference external" href="#test-coverage" id="id11">Test coverage</a></li>
-<li><a class="reference external" href="#bugs" id="id12">Bugs</a></li>
+<li><a class="reference internal" href="#development-process" id="id9">Development process</a><ul>
+<li><a class="reference internal" href="#guidelines" id="id10">Guidelines</a></li>
+<li><a class="reference internal" href="#test-coverage" id="id11">Test coverage</a></li>
+<li><a class="reference internal" href="#bugs" id="id12">Bugs</a></li>
 </ul>
 </li>
 </ul>
@@ -88,7 +98,7 @@ PyOpenCL-based algorithms</li>
 modified to work as part of the scikit, others may be lacking in documentation
 or tests.</p>
 <blockquote>
-<ul class="simple">
+<div><ul class="simple">
 <li>Connected components</li>
 <li><a class="reference external" href="http://mentat.za.net/hg">Grey-level co-occurrence matrices</a></li>
 <li>Marching squares</li>
@@ -96,7 +106,7 @@ or tests.</p>
 <li>2D iso-contour finding (sub-pixel precision) [ask Zach Pincus]</li>
 <li>2D image warping via thin-plate splines [ask Zach Pincus]</li>
 </ul>
-</blockquote>
+</div></blockquote>
 </div>
 <div class="section" id="merge-code-provided-by-cellprofiler-team">
 <h3>Merge code provided by <a class="reference external" href="http://www.cellprofiler.org">CellProfiler</a> team<a class="headerlink" href="#merge-code-provided-by-cellprofiler-team" title="Permalink to this headline">¶</a></h3>
@@ -192,7 +202,7 @@ who contributed.</p>
 <p><a class="reference internal" href="gitwash/index.html"><em>Read this overview</em></a> of how to use Git with
 <tt class="docutils literal"><span class="pre">scikits.image</span></tt>.  Here&#8217;s the long and short of it:</p>
 <blockquote>
-<ul class="simple">
+<div><ul class="simple">
 <li>Go to <a class="reference external" href="http://github.com/stefanv/scikits.image">http://github.com/stefanv/scikits.image</a>  and follow the instructions on
 making your own fork.</li>
 <li>Create a new branch for the feature you want to work on.  Since the branch
@@ -203,7 +213,7 @@ name will appear in the merge message, use a sensible name such as
 <li>Ping Stefan to request a merge into the main development branch (or simply
 click on &#8220;Request Pull&#8221; in GitHub).</li>
 </ul>
-</blockquote>
+</div></blockquote>
 <p>You may also read this summary by Fernando Perez of the IPython project on how
 they manage to keep review overhead to a minimum:</p>
 <p><a class="reference external" href="http://mail.scipy.org/pipermail/ipython-dev/2010-October/006746.html">http://mail.scipy.org/pipermail/ipython-dev/2010-October/006746.html</a></p>
@@ -220,7 +230,7 @@ message or, if closing a bug, add &#8220;Closes gh-XXXX&#8221;.</li>
 <div class="section" id="guidelines">
 <h3><a class="toc-backref" href="#id10">Guidelines</a><a class="headerlink" href="#guidelines" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<ul class="simple">
+<div><ul class="simple">
 <li>All code should have tests (see &#8220;Test coverage&#8221; below for more details).</li>
 <li>All code should be documented, to the same
 <a class="reference external" href="http://projects.scipy.org/numpy/wiki/CodingStyleGuidelines">standard</a>
@@ -231,12 +241,13 @@ where possible.</li>
 <a class="reference external" href="http://groups.google.com/group/scikits-image">mailing list</a> if you get
 no response to your pull request.</li>
 </ul>
-</blockquote>
+</div></blockquote>
 </div>
 <div class="section" id="test-coverage">
 <h3><a class="toc-backref" href="#id11">Test coverage</a><a class="headerlink" href="#test-coverage" title="Permalink to this headline">¶</a></h3>
 <p>Tests for a module should ideally cover all code in that module, i.e. statement
-coverage should be at 100%. To measure the test coverage, install <a class="reference external" href="coverage.pyhttp://nedbatchelder.com/code/coverage/">coverage.pyhttp://nedbatchelder.com/code/coverage/</a> and then run:</p>
+coverage should be at 100%. To measure the test coverage, install <a class="reference external" href="http://nedbatchelder.com/code/coverage/">coverage.py</a> (using <tt class="docutils literal"><span class="pre">easy_install</span> <span class="pre">coverage</span></tt>)
+and then run:</p>
 <div class="highlight-python"><pre>$ make coverage</pre>
 </div>
 <p>This will print a report with one line for each file in <cite>scikits.image</cite>,
@@ -312,6 +323,12 @@ scikits/image/filter/__init__                        1      1   100%
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
     <li><a href=index.html>scikits.image home</a> &raquo;</li>
     
         <li><a href="contents.html">scikits.image v0.3dev docs</a> &raquo;</li>
@@ -320,7 +337,7 @@ scikits/image/filter/__init__                        1      1   100%
     </div>
     <div class="footer">
         &copy; Copyright 2009, SciPy Developers.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.1.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1pre.
     </div>
   </body>
 </html>

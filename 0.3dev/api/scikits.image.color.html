@@ -3,13 +3,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
     <title>Module: color &mdash; scikits.image v0.3dev docs</title>
+    
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -22,7 +25,10 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="scikits.image v0.3dev docs" href="../index.html" /> 
+    <link rel="top" title="scikits.image v0.3dev docs" href="../index.html" />
+    <link rel="up" title="API Reference" href="api.html" />
+    <link rel="next" title="Module: filter" href="scikits.image.filter.html" />
+    <link rel="prev" title="Module: scikits.image" href="scikits.image.html" /> 
   </head>
   <body>
     <div class="related">
@@ -34,10 +40,20 @@
         <li class="right" >
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
+        <li class="right" >
+          <a href="../np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="scikits.image.filter.html" title="Module: filter"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="scikits.image.html" title="Module: scikits.image"
+             accesskey="P">previous</a> |</li>
     <li><a href=../index.html>scikits.image home</a> &raquo;</li>
     
         <li><a href="../contents.html">scikits.image v0.3dev docs</a> &raquo;</li>
- 
+
+          <li><a href="api.html" accesskey="U">API Reference</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -54,31 +70,31 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr><td><a class="reference internal" href="#scikits.image.color.convert_colorspace" title="scikits.image.color.convert_colorspace"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.color.convert_colorspace</span></tt></a>(arr,&nbsp;...)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#scikits.image.color.convert_colorspace" title="scikits.image.color.convert_colorspace"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.color.convert_colorspace</span></tt></a>(arr,&nbsp;...)</td>
 <td>Convert an image array to a new color space.</td>
 </tr>
-<tr><td><a class="reference internal" href="#scikits.image.color.hsv2rgb" title="scikits.image.color.hsv2rgb"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.color.hsv2rgb</span></tt></a>(hsv)</td>
+<tr class="row-even"><td><a class="reference internal" href="#scikits.image.color.hsv2rgb" title="scikits.image.color.hsv2rgb"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.color.hsv2rgb</span></tt></a>(hsv)</td>
 <td>HSV to RGB color space conversion.</td>
 </tr>
-<tr><td><a class="reference internal" href="#scikits.image.color.rgb2gray" title="scikits.image.color.rgb2gray"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.color.rgb2gray</span></tt></a>(rgb)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#scikits.image.color.rgb2gray" title="scikits.image.color.rgb2gray"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.color.rgb2gray</span></tt></a>(rgb)</td>
 <td>Compute luminance of an RGB image.</td>
 </tr>
-<tr><td><a class="reference internal" href="#scikits.image.color.rgb2grey" title="scikits.image.color.rgb2grey"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.color.rgb2grey</span></tt></a>(rgb)</td>
+<tr class="row-even"><td><a class="reference internal" href="#scikits.image.color.rgb2grey" title="scikits.image.color.rgb2grey"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.color.rgb2grey</span></tt></a>(rgb)</td>
 <td>Compute luminance of an RGB image.</td>
 </tr>
-<tr><td><a class="reference internal" href="#scikits.image.color.rgb2hsv" title="scikits.image.color.rgb2hsv"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.color.rgb2hsv</span></tt></a>(rgb)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#scikits.image.color.rgb2hsv" title="scikits.image.color.rgb2hsv"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.color.rgb2hsv</span></tt></a>(rgb)</td>
 <td>RGB to HSV color space conversion.</td>
 </tr>
-<tr><td><a class="reference internal" href="#scikits.image.color.rgb2rgbcie" title="scikits.image.color.rgb2rgbcie"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.color.rgb2rgbcie</span></tt></a>(rgb)</td>
+<tr class="row-even"><td><a class="reference internal" href="#scikits.image.color.rgb2rgbcie" title="scikits.image.color.rgb2rgbcie"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.color.rgb2rgbcie</span></tt></a>(rgb)</td>
 <td>RGB to RGB CIE color space conversion.</td>
 </tr>
-<tr><td><a class="reference internal" href="#scikits.image.color.rgb2xyz" title="scikits.image.color.rgb2xyz"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.color.rgb2xyz</span></tt></a>(rgb)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#scikits.image.color.rgb2xyz" title="scikits.image.color.rgb2xyz"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.color.rgb2xyz</span></tt></a>(rgb)</td>
 <td>RGB to XYZ color space conversion.</td>
 </tr>
-<tr><td><a class="reference internal" href="#scikits.image.color.rgbcie2rgb" title="scikits.image.color.rgbcie2rgb"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.color.rgbcie2rgb</span></tt></a>(rgbcie)</td>
+<tr class="row-even"><td><a class="reference internal" href="#scikits.image.color.rgbcie2rgb" title="scikits.image.color.rgbcie2rgb"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.color.rgbcie2rgb</span></tt></a>(rgbcie)</td>
 <td>RGB CIE to RGB color space conversion.</td>
 </tr>
-<tr><td><a class="reference internal" href="#scikits.image.color.xyz2rgb" title="scikits.image.color.xyz2rgb"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.color.xyz2rgb</span></tt></a>(xyz)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#scikits.image.color.xyz2rgb" title="scikits.image.color.xyz2rgb"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.color.xyz2rgb</span></tt></a>(xyz)</td>
 <td>XYZ to RGB color space conversion.</td>
 </tr>
 </tbody>
@@ -93,28 +109,28 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>arr</strong> : array_like</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>arr</strong> : array_like</p>
 <blockquote>
-<p>The image to convert.</p>
-</blockquote>
+<div><p>The image to convert.</p>
+</div></blockquote>
 <p><strong>fromspace</strong> : str</p>
 <blockquote>
-<p>The color space to convert from. Valid color space strings are
+<div><p>The color space to convert from. Valid color space strings are
 [&#8216;RGB&#8217;, &#8216;HSV&#8217;, &#8216;RGB CIE&#8217;, &#8216;XYZ&#8217;]. Value may also be specified as lower
 case.</p>
-</blockquote>
+</div></blockquote>
 <p><strong>tospace</strong> : str</p>
 <blockquote>
-<p>The color space to convert to. Valid color space strings are
+<div><p>The color space to convert to. Valid color space strings are
 [&#8216;RGB&#8217;, &#8216;HSV&#8217;, &#8216;RGB CIE&#8217;, &#8216;XYZ&#8217;]. Value may also be specified as lower
 case.</p>
-</blockquote>
+</div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>newarr</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>newarr</strong> : ndarray</p>
 <blockquote class="last">
-<p>The converted image.</p>
-</blockquote>
+<div><p>The converted image.</p>
+</div></blockquote>
 </td>
 </tr>
 </tbody>
@@ -145,22 +161,22 @@ from XYZ to HSV is implemented as XYZ -&gt; RGB -&gt; HSV instead of directly.</
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>hsv</strong> : array_like</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>hsv</strong> : array_like</p>
 <blockquote>
-<p>The image in HSV format, in a 3-D array of shape (.., .., 3).</p>
-</blockquote>
+<div><p>The image in HSV format, in a 3-D array of shape (.., .., 3).</p>
+</div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
 <blockquote>
-<p>The image in RGB format, in a 3-D array of shape (.., .., 3).</p>
-</blockquote>
+<div><p>The image in RGB format, in a 3-D array of shape (.., .., 3).</p>
+</div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
-<p>If <cite>hsv</cite> is not a 3-D array of shape (.., .., 3).</p>
-</blockquote>
+<div><p>If <cite>hsv</cite> is not a 3-D array of shape (.., .., 3).</p>
+</div></blockquote>
 </td>
 </tr>
 </tbody>
@@ -200,22 +216,22 @@ precision, due to integer arithmetic and rounding <a class="reference internal" 
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgb</strong> : array_like</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgb</strong> : array_like</p>
 <blockquote>
-<p>The image in RGB format, in a 3-D array of shape (.., .., 3).</p>
-</blockquote>
+<div><p>The image in RGB format, in a 3-D array of shape (.., .., 3).</p>
+</div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
 <blockquote>
-<p>The luminance image, a 2-D array.</p>
-</blockquote>
+<div><p>The luminance image, a 2-D array.</p>
+</div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
-<p>If <cite>rgb2grey</cite> is not a 3-D array of shape (.., .., 3).</p>
-</blockquote>
+<div><p>If <cite>rgb2grey</cite> is not a 3-D array of shape (.., .., 3).</p>
+</div></blockquote>
 </td>
 </tr>
 </tbody>
@@ -256,22 +272,22 @@ CRT phosphors:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgb</strong> : array_like</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgb</strong> : array_like</p>
 <blockquote>
-<p>The image in RGB format, in a 3-D array of shape (.., .., 3).</p>
-</blockquote>
+<div><p>The image in RGB format, in a 3-D array of shape (.., .., 3).</p>
+</div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
 <blockquote>
-<p>The luminance image, a 2-D array.</p>
-</blockquote>
+<div><p>The luminance image, a 2-D array.</p>
+</div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
-<p>If <cite>rgb2grey</cite> is not a 3-D array of shape (.., .., 3).</p>
-</blockquote>
+<div><p>If <cite>rgb2grey</cite> is not a 3-D array of shape (.., .., 3).</p>
+</div></blockquote>
 </td>
 </tr>
 </tbody>
@@ -312,22 +328,22 @@ CRT phosphors:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgb</strong> : array_like</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgb</strong> : array_like</p>
 <blockquote>
-<p>The image in RGB format, in a 3-D array of shape (.., .., 3).</p>
-</blockquote>
+<div><p>The image in RGB format, in a 3-D array of shape (.., .., 3).</p>
+</div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
 <blockquote>
-<p>The image in HSV format, in a 3-D array of shape (.., .., 3).</p>
-</blockquote>
+<div><p>The image in HSV format, in a 3-D array of shape (.., .., 3).</p>
+</div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
-<p>If <cite>rgb</cite> is not a 3-D array of shape (.., .., 3).</p>
-</blockquote>
+<div><p>If <cite>rgb</cite> is not a 3-D array of shape (.., .., 3).</p>
+</div></blockquote>
 </td>
 </tr>
 </tbody>
@@ -366,22 +382,22 @@ precision, due to integer arithmetic and rounding <a class="reference internal" 
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgb</strong> : array_like</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgb</strong> : array_like</p>
 <blockquote>
-<p>The image in RGB format, in a 3-D array of shape (.., .., 3).</p>
-</blockquote>
+<div><p>The image in RGB format, in a 3-D array of shape (.., .., 3).</p>
+</div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
 <blockquote>
-<p>The image in RGB CIE format, in a 3-D array of shape (.., .., 3).</p>
-</blockquote>
+<div><p>The image in RGB CIE format, in a 3-D array of shape (.., .., 3).</p>
+</div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
-<p>If <cite>rgb</cite> is not a 3-D array of shape (.., .., 3).</p>
-</blockquote>
+<div><p>If <cite>rgb</cite> is not a 3-D array of shape (.., .., 3).</p>
+</div></blockquote>
 </td>
 </tr>
 </tbody>
@@ -417,22 +433,22 @@ precision, due to integer arithmetic and rounding <a class="reference internal" 
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgb</strong> : array_like</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgb</strong> : array_like</p>
 <blockquote>
-<p>The image in RGB format, in a 3-D array of shape (.., .., 3).</p>
-</blockquote>
+<div><p>The image in RGB format, in a 3-D array of shape (.., .., 3).</p>
+</div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
 <blockquote>
-<p>The image in XYZ format, in a 3-D array of shape (.., .., 3).</p>
-</blockquote>
+<div><p>The image in XYZ format, in a 3-D array of shape (.., .., 3).</p>
+</div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
-<p>If <cite>rgb</cite> is not a 3-D array of shape (.., .., 3).</p>
-</blockquote>
+<div><p>If <cite>rgb</cite> is not a 3-D array of shape (.., .., 3).</p>
+</div></blockquote>
 </td>
 </tr>
 </tbody>
@@ -470,22 +486,22 @@ however that this function converts from sRGB.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgbcie</strong> : array_like</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgbcie</strong> : array_like</p>
 <blockquote>
-<p>The image in RGB CIE format, in a 3-D array of shape (.., .., 3).</p>
-</blockquote>
+<div><p>The image in RGB CIE format, in a 3-D array of shape (.., .., 3).</p>
+</div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
 <blockquote>
-<p>The image in RGB format, in a 3-D array of shape (.., .., 3).</p>
-</blockquote>
+<div><p>The image in RGB format, in a 3-D array of shape (.., .., 3).</p>
+</div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
-<p>If <cite>rgbcie</cite> is not a 3-D array of shape (.., .., 3).</p>
-</blockquote>
+<div><p>If <cite>rgbcie</cite> is not a 3-D array of shape (.., .., 3).</p>
+</div></blockquote>
 </td>
 </tr>
 </tbody>
@@ -522,22 +538,22 @@ however that this function converts from sRGB.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>xyz</strong> : array_like</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>xyz</strong> : array_like</p>
 <blockquote>
-<p>The image in XYZ format, in a 3-D array of shape (.., .., 3).</p>
-</blockquote>
+<div><p>The image in XYZ format, in a 3-D array of shape (.., .., 3).</p>
+</div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
 <blockquote>
-<p>The image in RGB format, in a 3-D array of shape (.., .., 3).</p>
-</blockquote>
+<div><p>The image in RGB format, in a 3-D array of shape (.., .., 3).</p>
+</div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
-<p>If <cite>xyz</cite> is not a 3-D array of shape (.., .., 3).</p>
-</blockquote>
+<div><p>If <cite>xyz</cite> is not a 3-D array of shape (.., .., 3).</p>
+</div></blockquote>
 </td>
 </tr>
 </tbody>
@@ -591,6 +607,12 @@ however that this function converts to sRGB.</p>
 </li>
 </ul>
 
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="scikits.image.html"
+                        title="previous chapter">Module: <tt class="docutils literal docutils literal docutils literal"><span class="pre">scikits.image</span></tt></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="scikits.image.filter.html"
+                        title="next chapter">Module: <tt class="docutils literal"><span class="pre">filter</span></tt></a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../_sources/api/scikits.image.color.txt"
@@ -622,15 +644,25 @@ however that this function converts to sRGB.</p>
         <li class="right" >
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
+        <li class="right" >
+          <a href="../np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="scikits.image.filter.html" title="Module: filter"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="scikits.image.html" title="Module: scikits.image"
+             >previous</a> |</li>
     <li><a href=../index.html>scikits.image home</a> &raquo;</li>
     
         <li><a href="../contents.html">scikits.image v0.3dev docs</a> &raquo;</li>
- 
+
+          <li><a href="api.html" >API Reference</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2009, SciPy Developers.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.1.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1pre.
     </div>
   </body>
 </html>
