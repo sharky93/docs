@@ -25,15 +25,12 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="scikits.image v0.3dev docs" href="../index.html" />
-    <link rel="up" title="API Reference" href="api.html" />
-    <link rel="next" title="Module: filter" href="scikits.image.filter.html" />
-    <link rel="prev" title="Module: scikits.image" href="scikits.image.html" /> 
+    <link rel="top" title="scikits.image v0.3dev docs" href="../index.html" /> 
   </head>
   <body>
     <div class="header-wrapper">
       <div class="header">
-          <div class="logo"><a href="../contents.html">
+          <div class="logo"><a href="../index.html">
             <img class="logo" src="../_static/scikits_image_logo_small.png" alt="Logo"/>
           </a></div>
        
@@ -46,7 +43,7 @@
             
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"> 
-  <h3><a href="../contents.html">Table Of Contents</a></h3>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Module: <tt class="docutils literal"><span class="pre">color</span></tt></a><ul>
 <li><a class="reference internal" href="#convert-colorspace">convert_colorspace</a></li>
@@ -62,12 +59,6 @@
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="scikits.image.html"
-                        title="previous chapter">Module: <tt class="docutils literal docutils literal docutils literal"><span class="pre">scikits.image</span></tt></a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="scikits.image.filter.html"
-                        title="next chapter">Module: <tt class="docutils literal"><span class="pre">filter</span></tt></a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../_sources/api/scikits.image.color.txt"
@@ -76,7 +67,7 @@
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" size="18" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
@@ -97,7 +88,7 @@
             
   <div class="section" id="module-scikits.image.color">
 <span id="module-color"></span><h1>Module: <tt class="xref py py-mod docutils literal"><span class="pre">color</span></tt><a class="headerlink" href="#module-scikits.image.color" title="Permalink to this headline">¶</a></h1>
-<table border="1" class="docutils">
+<table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
 <col width="90%" />
@@ -215,7 +206,8 @@ from XYZ to HSV is implemented as XYZ -&gt; RGB -&gt; HSV instead of directly.</
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>The conversion assumes an input data range of [0, 1] for all color components.</p>
+<p>The conversion assumes an input data range of [0, 1] for all
+color components.</p>
 <p>Conversion between RGB and HSV color spaces results in some loss of
 precision, due to integer arithmetic and rounding <a class="reference internal" href="#r11">[R11]</a>.</p>
 <p class="rubric">References</p>
@@ -382,7 +374,8 @@ CRT phosphors:</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>The conversion assumes an input data range of [0, 1] for all color components.</p>
+<p>The conversion assumes an input data range of [0, 1] for all
+color components.</p>
 <p>Conversion between RGB and HSV color spaces results in some loss of
 precision, due to integer arithmetic and rounding <a class="reference internal" href="#r14">[R14]</a>.</p>
 <p class="rubric">References</p>
@@ -630,7 +623,7 @@ however that this function converts to sRGB.</p>
     <div class="footer-wrapper">
       
     <div class="footer">
-        &copy; Copyright 2009, SciPy Developers.
+        &copy; Copyright 2011, scikits-image team.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1pre.
     </div>
     </div>

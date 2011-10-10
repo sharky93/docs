@@ -25,13 +25,12 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="scikits.image v0.3dev docs" href="../index.html" />
-    <link rel="up" title="API Reference" href="api.html" /> 
+    <link rel="top" title="scikits.image v0.3dev docs" href="../index.html" /> 
   </head>
   <body>
     <div class="header-wrapper">
       <div class="header">
-          <div class="logo"><a href="../contents.html">
+          <div class="logo"><a href="../index.html">
             <img class="logo" src="../_static/scikits_image_logo_small.png" alt="Logo"/>
           </a></div>
        
@@ -44,13 +43,16 @@
             
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"> 
-  <h3><a href="../contents.html">Table Of Contents</a></h3>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Module: <tt class="docutils literal"><span class="pre">io</span></tt></a><ul>
 <li><a class="reference internal" href="#imagecollection"><tt class="docutils literal"><span class="pre">ImageCollection</span></tt></a><ul>
 </ul>
 </li>
 <li><a class="reference internal" href="#multiimage"><tt class="docutils literal"><span class="pre">MultiImage</span></tt></a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#video"><tt class="docutils literal"><span class="pre">Video</span></tt></a><ul>
 </ul>
 </li>
 <li><a class="reference internal" href="#imread">imread</a></li>
@@ -77,7 +79,7 @@
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" size="18" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
@@ -205,7 +207,7 @@ frame from a video file:</p>
 </pre></div>
 </div>
 <p class="rubric">Attributes</p>
-<table border="1" class="docutils">
+<table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
 <col width="90%" />
@@ -217,7 +219,7 @@ frame from a video file:</p>
 </tbody>
 </table>
 <p class="rubric">Methods</p>
-<table border="1" class="docutils">
+<table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
 <col width="90%" />
@@ -345,7 +347,7 @@ from file.</p>
 <img alt="../_images/show_collection.png" src="../_images/show_collection.png" />
 </div>
 <p class="rubric">Attributes</p>
-<table border="1" class="docutils">
+<table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
 <col width="90%" />
@@ -390,7 +392,216 @@ from file.</p>
 
 </dd></dl>
 
-<table border="1" class="docutils">
+</div>
+<div class="section" id="video">
+<h2><a class="reference internal" href="#scikits.image.io.Video" title="scikits.image.io.Video"><tt class="xref py py-class docutils literal"><span class="pre">Video</span></tt></a><a class="headerlink" href="#video" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="scikits.image.io.Video">
+<em class="property">class </em><tt class="descclassname">scikits.image.io.</tt><tt class="descname">Video</tt><big>(</big><em>source=None</em>, <em>size=None</em>, <em>sync=False</em>, <em>backend=None</em><big>)</big><a class="headerlink" href="#scikits.image.io.Video" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Video loader. Supports Opencv and Gstreamer backends.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>source</strong> : str</p>
+<blockquote>
+<div><p>Media location URI. Video file path or http address of IP camera.</p>
+</div></blockquote>
+<p><strong>size: tuple, optional</strong> :</p>
+<blockquote>
+<div><p>Size of returned array.</p>
+</div></blockquote>
+<p><strong>sync: bool, optional (default False)</strong> :</p>
+<blockquote>
+<div><p>Frames are extracted per frame or per time basis. Gstreamer only.
+If enabled the video time step continues onward according to the play rate.
+Useful for IP cameras and other real time video feeds.</p>
+</div></blockquote>
+<p><strong>backend: str, &#8216;gstreamer&#8217; or &#8216;opencv&#8217;</strong> :</p>
+<blockquote class="last">
+<div><p>Backend to use.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#scikits.image.io.Video.duration" title="scikits.image.io.Video.duration"><tt class="xref py py-obj docutils literal"><span class="pre">duration</span></tt></a>()</td>
+<td>Returns time length of video in milliseconds.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#scikits.image.io.Video.frame_count" title="scikits.image.io.Video.frame_count"><tt class="xref py py-obj docutils literal"><span class="pre">frame_count</span></tt></a>()</td>
+<td>Returns frame count of video.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#scikits.image.io.Video.get" title="scikits.image.io.Video.get"><tt class="xref py py-obj docutils literal"><span class="pre">get</span></tt></a>()</td>
+<td>Retrieve the next video frame as a numpy array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#scikits.image.io.Video.get_collection" title="scikits.image.io.Video.get_collection"><tt class="xref py py-obj docutils literal"><span class="pre">get_collection</span></tt></a>([time_range])</td>
+<td>Returns an ImageCollection object.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#scikits.image.io.Video.get_index_frame" title="scikits.image.io.Video.get_index_frame"><tt class="xref py py-obj docutils literal"><span class="pre">get_index_frame</span></tt></a>(frame_number)</td>
+<td>Retrieve a specified video frame as a numpy array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#scikits.image.io.Video.seek_frame" title="scikits.image.io.Video.seek_frame"><tt class="xref py py-obj docutils literal"><span class="pre">seek_frame</span></tt></a>(frame_number)</td>
+<td>Seek to specified frame in video.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#scikits.image.io.Video.seek_time" title="scikits.image.io.Video.seek_time"><tt class="xref py py-obj docutils literal"><span class="pre">seek_time</span></tt></a>(milliseconds)</td>
+<td>Seek to specified time in video.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="scikits.image.io.Video.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>source=None</em>, <em>size=None</em>, <em>sync=False</em>, <em>backend=None</em><big>)</big><a class="headerlink" href="#scikits.image.io.Video.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="scikits.image.io.Video.duration">
+<tt class="descname">duration</tt><big>(</big><big>)</big><a class="headerlink" href="#scikits.image.io.Video.duration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns time length of video in milliseconds.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : int</p>
+<blockquote class="last">
+<div><p>Time length [ms].</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="scikits.image.io.Video.frame_count">
+<tt class="descname">frame_count</tt><big>(</big><big>)</big><a class="headerlink" href="#scikits.image.io.Video.frame_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns frame count of video.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : int</p>
+<blockquote class="last">
+<div><p>Frame count.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="scikits.image.io.Video.get">
+<tt class="descname">get</tt><big>(</big><big>)</big><a class="headerlink" href="#scikits.image.io.Video.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve the next video frame as a numpy array.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : array (image)</p>
+<blockquote class="last">
+<div><p>Retrieved image.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="scikits.image.io.Video.get_collection">
+<tt class="descname">get_collection</tt><big>(</big><em>time_range=None</em><big>)</big><a class="headerlink" href="#scikits.image.io.Video.get_collection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an ImageCollection object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>time_range: range (int), optional</strong> :</p>
+<blockquote>
+<div><p>Time steps to extract, defaults to the entire length of video.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output: ImageCollection</strong> :</p>
+<blockquote class="last">
+<div><p>Collection of images iterator.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="scikits.image.io.Video.get_index_frame">
+<tt class="descname">get_index_frame</tt><big>(</big><em>frame_number</em><big>)</big><a class="headerlink" href="#scikits.image.io.Video.get_index_frame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a specified video frame as a numpy array.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>frame_number</strong> : int</p>
+<blockquote>
+<div><p>Frame position</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : array (image)</p>
+<blockquote class="last">
+<div><p>Retrieved image.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="scikits.image.io.Video.seek_frame">
+<tt class="descname">seek_frame</tt><big>(</big><em>frame_number</em><big>)</big><a class="headerlink" href="#scikits.image.io.Video.seek_frame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Seek to specified frame in video.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>frame_number</strong> : int</p>
+<blockquote class="last">
+<div><p>Frame position</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="scikits.image.io.Video.seek_time">
+<tt class="descname">seek_time</tt><big>(</big><em>milliseconds</em><big>)</big><a class="headerlink" href="#scikits.image.io.Video.seek_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Seek to specified time in video.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>milliseconds</strong> : int</p>
+<blockquote class="last">
+<div><p>Time position</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
 <col width="90%" />
@@ -853,7 +1064,7 @@ the plugin is set for all functions.</p>
     <div class="footer-wrapper">
       
     <div class="footer">
-        &copy; Copyright 2009, SciPy Developers.
+        &copy; Copyright 2011, scikits-image team.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1pre.
     </div>
     </div>

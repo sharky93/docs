@@ -25,14 +25,12 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="scikits.image v0.3dev docs" href="../index.html" />
-    <link rel="up" title="API Reference" href="api.html" />
-    <link rel="next" title="Module: opencv" href="scikits.image.opencv.html" /> 
+    <link rel="top" title="scikits.image v0.3dev docs" href="../index.html" /> 
   </head>
   <body>
     <div class="header-wrapper">
       <div class="header">
-          <div class="logo"><a href="../contents.html">
+          <div class="logo"><a href="../index.html">
             <img class="logo" src="../_static/scikits_image_logo_small.png" alt="Logo"/>
           </a></div>
        
@@ -45,7 +43,7 @@
             
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"> 
-  <h3><a href="../contents.html">Table Of Contents</a></h3>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Module: <tt class="docutils literal"><span class="pre">morphology</span></tt></a><ul>
 <li><a class="reference internal" href="#diamond">diamond</a></li>
@@ -56,16 +54,15 @@
 <li><a class="reference internal" href="#greyscale-erode">greyscale_erode</a></li>
 <li><a class="reference internal" href="#greyscale-open">greyscale_open</a></li>
 <li><a class="reference internal" href="#greyscale-white-top-hat">greyscale_white_top_hat</a></li>
+<li><a class="reference internal" href="#is-local-maximum">is_local_maximum</a></li>
 <li><a class="reference internal" href="#label">label</a></li>
 <li><a class="reference internal" href="#rectangle">rectangle</a></li>
 <li><a class="reference internal" href="#square">square</a></li>
+<li><a class="reference internal" href="#watershed">watershed</a></li>
 </ul>
 </li>
 </ul>
 
-  <h4>Next topic</h4>
-  <p class="topless"><a href="scikits.image.opencv.html"
-                        title="next chapter">Module: <tt class="docutils literal"><span class="pre">opencv</span></tt></a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../_sources/api/scikits.image.morphology.txt"
@@ -74,7 +71,7 @@
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" size="18" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
@@ -95,7 +92,7 @@
             
   <div class="section" id="module-scikits.image.morphology">
 <span id="module-morphology"></span><h1>Module: <tt class="xref py py-mod docutils literal"><span class="pre">morphology</span></tt><a class="headerlink" href="#module-scikits.image.morphology" title="Permalink to this headline">¶</a></h1>
-<table border="1" class="docutils">
+<table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
 <col width="90%" />
@@ -125,14 +122,20 @@
 <tr class="row-even"><td><a class="reference internal" href="#scikits.image.morphology.greyscale_white_top_hat" title="scikits.image.morphology.greyscale_white_top_hat"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.morphology.greyscale_white_top_hat</span></tt></a>(...)</td>
 <td>Applies a white top hat on an image given a flat structuring element.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#scikits.image.morphology.label" title="scikits.image.morphology.label"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.morphology.label</span></tt></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#scikits.image.morphology.is_local_maximum" title="scikits.image.morphology.is_local_maximum"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.morphology.is_local_maximum</span></tt></a>(image)</td>
+<td>Return a boolean array of points that are local maxima</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#scikits.image.morphology.label" title="scikits.image.morphology.label"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.morphology.label</span></tt></a></td>
 <td>Label connected regions of an integer array.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#scikits.image.morphology.rectangle" title="scikits.image.morphology.rectangle"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.morphology.rectangle</span></tt></a>(width,&nbsp;height)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#scikits.image.morphology.rectangle" title="scikits.image.morphology.rectangle"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.morphology.rectangle</span></tt></a>(width,&nbsp;height)</td>
 <td>Generates a flat, rectangular-shaped structuring element of a given width and height.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#scikits.image.morphology.square" title="scikits.image.morphology.square"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.morphology.square</span></tt></a>(width[,&nbsp;dtype])</td>
+<tr class="row-even"><td><a class="reference internal" href="#scikits.image.morphology.square" title="scikits.image.morphology.square"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.morphology.square</span></tt></a>(width[,&nbsp;dtype])</td>
 <td>Generates a flat, square-shaped structuring element.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#scikits.image.morphology.watershed" title="scikits.image.morphology.watershed"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.morphology.watershed</span></tt></a>(image,&nbsp;...)</td>
+<td>Return a matrix labeled using the watershed segmentation algorithm</td>
 </tr>
 </tbody>
 </table>
@@ -427,6 +430,77 @@ is passed, a new array will be allocated.</p>
 </dd></dl>
 
 </div>
+<div class="section" id="is-local-maximum">
+<h2>is_local_maximum<a class="headerlink" href="#is-local-maximum" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="scikits.image.morphology.is_local_maximum">
+<tt class="descclassname">scikits.image.morphology.</tt><tt class="descname">is_local_maximum</tt><big>(</big><em>image</em>, <em>labels=None</em>, <em>footprint=None</em><big>)</big><a class="headerlink" href="#scikits.image.morphology.is_local_maximum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a boolean array of points that are local maxima</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image: ndarray (2-D, 3-D, ...)</strong> :</p>
+<blockquote>
+<div><p>intensity image</p>
+</div></blockquote>
+<p><strong>labels: ndarray, optional</strong> :</p>
+<blockquote>
+<div><p>find maxima only within labels. Zero is reserved for background.</p>
+</div></blockquote>
+<p><strong>footprint: ndarray of bools, optional</strong> :</p>
+<blockquote>
+<div><p>binary mask indicating the neighborhood to be examined
+<cite>footprint</cite> must be a matrix with odd dimensions, the center is taken 
+to be the point in question.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>result: ndarray of bools</strong> :</p>
+<blockquote class="last">
+<div><p>mask that is True for pixels that are local maxima of <cite>image</cite></p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">image</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">image</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">image</span>
+<span class="go">array([[ 0.,  0.,  0.,  0.],</span>
+<span class="go">    [ 0.,  0.,  2.,  0.],</span>
+<span class="go">    [ 0.,  0.,  0.,  0.],</span>
+<span class="go">    [ 0.,  0.,  0.,  1.]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_local_maximum</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+<span class="go">array([[ True, False, False, False],</span>
+<span class="go">    [ True, False,  True, False],</span>
+<span class="go">    [ True, False, False, False],</span>
+<span class="go">    [ True,  True, False,  True]], dtype=bool)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">labels</span>
+<span class="go">array([[1, 1, 2, 2],</span>
+<span class="go">    [1, 1, 2, 2],</span>
+<span class="go">    [3, 3, 4, 4],</span>
+<span class="go">    [3, 3, 4, 4]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">image</span>
+<span class="go">array([[ 0,  1,  2,  3],</span>
+<span class="go">    [ 4,  5,  6,  7],</span>
+<span class="go">    [ 8,  9, 10, 11],</span>
+<span class="go">    [12, 13, 14, 15]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_local_maximum</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">)</span>
+<span class="go">array([[False, False, False, False],</span>
+<span class="go">    [False,  True, False,  True],</span>
+<span class="go">    [False, False, False, False],</span>
+<span class="go">    [False,  True, False,  True]], dtype=bool)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
 <div class="section" id="label">
 <h2>label<a class="headerlink" href="#label" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
@@ -521,6 +595,107 @@ pixel belongs to the neighborhood.</p>
 </dd></dl>
 
 </div>
+<div class="section" id="watershed">
+<h2>watershed<a class="headerlink" href="#watershed" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="scikits.image.morphology.watershed">
+<tt class="descclassname">scikits.image.morphology.</tt><tt class="descname">watershed</tt><big>(</big><em>image</em>, <em>markers</em>, <em>connectivity=None</em>, <em>offset=None</em>, <em>mask=None</em><big>)</big><a class="headerlink" href="#scikits.image.morphology.watershed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a matrix labeled using the watershed segmentation algorithm</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image: ndarray (2-D, 3-D, ...) of integers</strong> :</p>
+<blockquote>
+<div><p>Data array where the lowest value points are labeled first.</p>
+</div></blockquote>
+<p><strong>markers: ndarray of the same shape as `image`</strong> :</p>
+<blockquote>
+<div><p>An array marking the basins with the values to be assigned in the 
+label matrix. Zero means not a marker. This array should be of an 
+integer type.</p>
+</div></blockquote>
+<p><strong>connectivity: ndarray, optional</strong> :</p>
+<blockquote>
+<div><p>An array with the same number of dimensions as <cite>image</cite> whose
+non-zero elements indicate neighbors for connection.
+Following the scipy convention, default is a one-connected array of 
+the dimension of the image.</p>
+</div></blockquote>
+<p><strong>offset: array_like of shape image.ndim, optional</strong> :</p>
+<blockquote>
+<div><p>offset of the connectivity (one offset per dimension)</p>
+</div></blockquote>
+<p><strong>mask: ndarray of bools or 0s and 1s, optional</strong> :</p>
+<blockquote>
+<div><p>Array of same shape as <cite>image</cite>. Only points at which mask == True 
+will be labeled.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out: ndarray</strong> :</p>
+<blockquote class="last">
+<div><p>A labeled matrix of the same type and shape as markers</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>This function implements a watershed algorithm [R23]_that apportions pixels
+into marked basins. The algorithm uses a priority queue to hold the pixels
+with the metric for the priority queue being pixel value, then the time of
+entry into the queue - this settles ties in favor of the closest marker.</p>
+<p>Some ideas taken from
+Soille, &#8220;Automated Basin Delineation from Digital Elevation Models Using
+Mathematical Morphology&#8221;, Signal Processing 20 (1990) 171-182</p>
+<p>The most important insight in the paper is that entry time onto the queue
+solves two problems: a pixel should be assigned to the neighbor with the
+largest gradient or, if there is no gradient, pixels on a plateau should
+be split between markers on opposite sides.</p>
+<p>This implementation converts all arguments to specific, lowest common
+denominator types, then passes these to a C algorithm.</p>
+<p>Markers can be determined manually, or automatically using for example 
+the local minima of the gradient of the image, or the local maxima of the
+distance function to the background for separating overlapping objects
+(see example).</p>
+<p class="rubric">References</p>
+<table class="docutils citation" frame="void" id="r23" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[R23]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Watershed_%28image_processing%29">http://en.wikipedia.org/wiki/Watershed_%28image_processing%29</a></td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="r24" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[R24]</a></td><td><a class="reference external" href="http://cmm.ensmp.fr/~beucher/wtshed.html">http://cmm.ensmp.fr/~beucher/wtshed.html</a></td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<p>The watershed algorithm is very useful to separate overlapping objects</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Generate an initial image with two overlapping circles</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">indices</span><span class="p">((</span><span class="mi">80</span><span class="p">,</span> <span class="mi">80</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">52</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r1</span><span class="p">,</span> <span class="n">r2</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">20</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mask_circle1</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">x1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="n">r1</span><span class="o">**</span><span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mask_circle2</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">x2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">y2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="n">r2</span><span class="o">**</span><span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_or</span><span class="p">(</span><span class="n">mask_circle1</span><span class="p">,</span> <span class="n">mask_circle2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># Now we want to separate the two objects in image</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># Generate the markers as local maxima of the distance</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># to the background</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">ndimage</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">distance</span> <span class="o">=</span> <span class="n">ndimage</span><span class="o">.</span><span class="n">distance_transform_edt</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">local_maxi</span> <span class="o">=</span> <span class="n">is_local_maximum</span><span class="p">(</span><span class="n">distance</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">markers</span> <span class="o">=</span> <span class="n">ndimage</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="n">local_maxi</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">labels</span> <span class="o">=</span> <span class="n">watershed</span><span class="p">(</span><span class="o">-</span><span class="n">distance</span><span class="p">,</span> <span class="n">markers</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">image</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The algorithm works also for 3-D images, and can be used for example to
+separate overlapping spheres.</p>
+</dd></dl>
+
+</div>
 </div>
 
 
@@ -535,7 +710,7 @@ pixel belongs to the neighborhood.</p>
     <div class="footer-wrapper">
       
     <div class="footer">
-        &copy; Copyright 2009, SciPy Developers.
+        &copy; Copyright 2011, scikits-image team.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1pre.
     </div>
     </div>

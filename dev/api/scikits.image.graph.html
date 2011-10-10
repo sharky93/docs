@@ -25,14 +25,12 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="scikits.image v0.3dev docs" href="../index.html" />
-    <link rel="up" title="API Reference" href="api.html" />
-    <link rel="prev" title="Module: filter" href="scikits.image.filter.html" /> 
+    <link rel="top" title="scikits.image v0.3dev docs" href="../index.html" /> 
   </head>
   <body>
     <div class="header-wrapper">
       <div class="header">
-          <div class="logo"><a href="../contents.html">
+          <div class="logo"><a href="../index.html">
             <img class="logo" src="../_static/scikits_image_logo_small.png" alt="Logo"/>
           </a></div>
        
@@ -45,7 +43,7 @@
             
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"> 
-  <h3><a href="../contents.html">Table Of Contents</a></h3>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Module: <tt class="docutils literal"><span class="pre">graph</span></tt></a><ul>
 <li><a class="reference internal" href="#mcp"><tt class="docutils literal"><span class="pre">MCP</span></tt></a><ul>
@@ -60,9 +58,6 @@
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="scikits.image.filter.html"
-                        title="previous chapter">Module: <tt class="docutils literal docutils literal docutils literal"><span class="pre">filter</span></tt></a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../_sources/api/scikits.image.graph.txt"
@@ -71,7 +66,7 @@
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" size="18" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
@@ -138,7 +133,7 @@ permitted.</p>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table border="1" class="docutils">
+<table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
 <col width="90%" />
@@ -150,7 +145,7 @@ permitted.</p>
 </tbody>
 </table>
 <p class="rubric">Methods</p>
-<table border="1" class="docutils">
+<table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
 <col width="90%" />
@@ -170,9 +165,9 @@ permitted.</p>
 <dd><p>See class documentation.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="scikits.image.graph.MCP.find_costs">
-<tt class="descname">find_costs</tt><a class="headerlink" href="#scikits.image.graph.MCP.find_costs" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">find_costs</tt><big>(</big><big>)</big><a class="headerlink" href="#scikits.image.graph.MCP.find_costs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find the minimum-cost path from the given starting points.</p>
 <p>This method finds the minimum-cost path to the specified ending
 indices from any one of the specified starting indices. If no end
@@ -232,7 +227,7 @@ offset_index is -1, then the given index was not considered.</p>
 <tt class="descname">offsets</tt><a class="headerlink" href="#scikits.image.graph.MCP.offsets" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="scikits.image.graph.MCP.traceback">
 <tt class="descname">traceback</tt><big>(</big><em>end</em><big>)</big><a class="headerlink" href="#scikits.image.graph.MCP.traceback" title="Permalink to this definition">¶</a></dt>
 <dd><p>Trace a minimum cost path through the pre-calculated traceback array.</p>
@@ -292,7 +287,7 @@ other half in (2, 2), so the cost of this move is calculated as
 <p>These calculations don&#8217;t make a lot of sense with offsets of magnitude
 greater than 1.</p>
 <p class="rubric">Methods</p>
-<table border="1" class="docutils">
+<table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
 <col width="90%" />
@@ -312,9 +307,9 @@ greater than 1.</p>
 <dd><p>See class documentation.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="scikits.image.graph.MCP_Geometric.find_costs">
-<tt class="descname">find_costs</tt><a class="headerlink" href="#scikits.image.graph.MCP_Geometric.find_costs" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">find_costs</tt><big>(</big><big>)</big><a class="headerlink" href="#scikits.image.graph.MCP_Geometric.find_costs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find the minimum-cost path from the given starting points.</p>
 <p>This method finds the minimum-cost path to the specified ending
 indices from any one of the specified starting indices. If no end
@@ -374,7 +369,7 @@ offset_index is -1, then the given index was not considered.</p>
 <tt class="descname">offsets</tt><a class="headerlink" href="#scikits.image.graph.MCP_Geometric.offsets" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="scikits.image.graph.MCP_Geometric.traceback">
 <tt class="descname">traceback</tt><big>(</big><em>end</em><big>)</big><a class="headerlink" href="#scikits.image.graph.MCP_Geometric.traceback" title="Permalink to this definition">¶</a></dt>
 <dd><p>Trace a minimum cost path through the pre-calculated traceback array.</p>
@@ -410,7 +405,7 @@ returned by find_costs().)</p>
 
 </dd></dl>
 
-<table border="1" class="docutils">
+<table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
 <col width="90%" />
@@ -542,7 +537,7 @@ differences along the path.</p>
     <div class="footer-wrapper">
       
     <div class="footer">
-        &copy; Copyright 2009, SciPy Developers.
+        &copy; Copyright 2011, scikits-image team.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1pre.
     </div>
     </div>

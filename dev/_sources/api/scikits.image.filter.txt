@@ -30,6 +30,7 @@ Inheritance diagram for ``scikits.image.filter``:
    scikits.image.filter.inverse
    scikits.image.filter.median_filter
    scikits.image.filter.prewitt
+   scikits.image.filter.rank_order
    scikits.image.filter.sobel
    scikits.image.filter.tv_denoise
    scikits.image.filter.vprewitt
@@ -65,6 +66,11 @@ prewitt
 -------
 
 .. autofunction:: scikits.image.filter.prewitt
+
+rank_order
+----------
+
+.. autofunction:: scikits.image.filter.rank_order
 
 sobel
 -----
