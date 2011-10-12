@@ -3,16 +3,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
     <title>Set up your fork &mdash; scikits.image v0.4dev docs</title>
-    
     <link rel="stylesheet" href="../_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -64,7 +61,7 @@
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" size="18" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
@@ -90,7 +87,7 @@
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python"><pre>git clone git@github.com:your-user-name/scikits.image.git
 cd scikits.image
-git remote add upstream git://github.com/scikits.image/scikits.image.git</pre>
+git remote add upstream git://github.com/scikits-image/scikits.image.git</pre>
 </div>
 </div>
 <div class="section" id="in-detail">
@@ -111,7 +108,7 @@ remotes/origin/master</pre>
 that you also have a <tt class="docutils literal"><span class="pre">remote</span></tt> connection to <tt class="docutils literal"><span class="pre">origin/master</span></tt>.
 What remote repository is <tt class="docutils literal"><span class="pre">remote/origin</span></tt>? Try <tt class="docutils literal"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">-v</span></tt> to
 see the URLs for the remote.  They will point to your github fork.</p>
-<p>Now you want to connect to the upstream <a class="reference external" href="http://github.com/scikits.image/scikits.image">scikits.image github</a> repository, so
+<p>Now you want to connect to the upstream <a class="reference external" href="http://github.com/scikits-image/scikits.image">scikits.image github</a> repository, so
 you can merge in changes from trunk.</p>
 </li>
 </ol>
@@ -119,18 +116,18 @@ you can merge in changes from trunk.</p>
 <div class="section" id="linking-your-repository-to-the-upstream-repo">
 <span id="linking-to-upstream"></span><h3>Linking your repository to the upstream repo<a class="headerlink" href="#linking-your-repository-to-the-upstream-repo" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python"><pre>cd scikits.image
-git remote add upstream git://github.com/scikits.image/scikits.image.git</pre>
+git remote add upstream git://github.com/scikits-image/scikits.image.git</pre>
 </div>
 <p><tt class="docutils literal"><span class="pre">upstream</span></tt> here is just the arbitrary name we&#8217;re using to refer to the
-main <a class="reference external" href="http://scikits-image.org">scikits.image</a> repository at <a class="reference external" href="http://github.com/scikits.image/scikits.image">scikits.image github</a>.</p>
+main <a class="reference external" href="http://scikits-image.org">scikits.image</a> repository at <a class="reference external" href="http://github.com/scikits-image/scikits.image">scikits.image github</a>.</p>
 <p>Note that we&#8217;ve used <tt class="docutils literal"><span class="pre">git://</span></tt> for the URL rather than <tt class="docutils literal"><span class="pre">git&#64;</span></tt>.  The
 <tt class="docutils literal"><span class="pre">git://</span></tt> URL is read only.  This means we that we can&#8217;t accidentally
 (or deliberately) write to the upstream repo, and we are only going to
 use it to merge into our own code.</p>
 <p>Just for your own satisfaction, show yourself that you now have a new
 &#8216;remote&#8217;, with <tt class="docutils literal"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">-v</span> <span class="pre">show</span></tt>, giving you something like:</p>
-<div class="highlight-python"><pre>upstream     git://github.com/scikits.image/scikits.image.git (fetch)
-upstream     git://github.com/scikits.image/scikits.image.git (push)
+<div class="highlight-python"><pre>upstream     git://github.com/scikits-image/scikits.image.git (fetch)
+upstream     git://github.com/scikits-image/scikits.image.git (push)
 origin       git@github.com:your-user-name/scikits.image.git (fetch)
 origin       git@github.com:your-user-name/scikits.image.git (push)</pre>
 </div>
@@ -151,7 +148,7 @@ origin       git@github.com:your-user-name/scikits.image.git (push)</pre>
       
     <div class="footer">
         &copy; Copyright 2011, scikits-image team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1pre.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
     </div>
 

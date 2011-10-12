@@ -3,16 +3,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
     <title>Module: io &mdash; scikits.image v0.4dev docs</title>
-    
     <link rel="stylesheet" href="../_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -79,7 +76,7 @@
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" size="18" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
@@ -109,29 +106,32 @@
 <col width="86%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>Plugin</td>
+<tr><td>Plugin</td>
 <td>Description</td>
 </tr>
-<tr class="row-even"><td>pil</td>
+<tr><td>pil</td>
 <td>Image reading via the Python Imaging Library</td>
 </tr>
-<tr class="row-odd"><td>qt</td>
+<tr><td>qt</td>
 <td>Fast image display using the Qt library</td>
 </tr>
-<tr class="row-even"><td>freeimage</td>
+<tr><td>freeimage</td>
 <td>Load images using the FreeImage library</td>
 </tr>
-<tr class="row-odd"><td>gtk</td>
+<tr><td>gtk</td>
 <td>Fast image display using the GTK library</td>
 </tr>
-<tr class="row-even"><td>matplotlib</td>
+<tr><td>matplotlib</td>
 <td>Display or save images using Matplotlib</td>
 </tr>
-<tr class="row-odd"><td>fits</td>
+<tr><td>fits</td>
 <td>FITS image reading via PyFITS</td>
 </tr>
-<tr class="row-even"><td>null</td>
+<tr><td>null</td>
 <td>Default plugin that does nothing</td>
+</tr>
+<tr><td>gdal</td>
+<td>Image reading via the GDAL Library (www.gdal.org)</td>
 </tr>
 </tbody>
 </table>
@@ -147,7 +147,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>load_pattern</strong> : str or list</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>load_pattern</strong> : str or list</p>
 <blockquote>
 <div><p>Pattern glob or filenames to load. The path can be absolute or
 relative.  Multiple patterns should be separated by a colon,
@@ -207,26 +207,26 @@ frame from a video file:</p>
 </pre></div>
 </div>
 <p class="rubric">Attributes</p>
-<table border="1" class="longtable docutils">
+<table border="1" class="docutils">
 <colgroup>
 <col width="10%" />
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#scikits.image.io.ImageCollection.files" title="scikits.image.io.ImageCollection.files"><tt class="xref py py-obj docutils literal"><span class="pre">files</span></tt></a></td>
+<tr><td><a class="reference internal" href="#scikits.image.io.ImageCollection.files" title="scikits.image.io.ImageCollection.files"><tt class="xref py py-obj docutils literal"><span class="pre">files</span></tt></a></td>
 <td></td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
+<table border="1" class="docutils">
 <colgroup>
 <col width="10%" />
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#scikits.image.io.ImageCollection.reload" title="scikits.image.io.ImageCollection.reload"><tt class="xref py py-obj docutils literal"><span class="pre">reload</span></tt></a>([n])</td>
-<td>Clear the image cache.</td>
+<tr><td><a class="reference internal" href="#scikits.image.io.ImageCollection.reload" title="scikits.image.io.ImageCollection.reload"><tt class="xref py py-obj docutils literal"><span class="pre">reload</span></tt></a></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -254,7 +254,7 @@ frame from a video file:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>n</strong> : None or int</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>n</strong> : None or int</p>
 <blockquote class="last">
 <div><p>Clear the cache for this image only. By default, the
 entire cache is erased.</p>
@@ -279,7 +279,7 @@ entire cache is erased.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
 <blockquote>
 <div><p>The complete path to the image file.</p>
 </div></blockquote>
@@ -347,16 +347,16 @@ from file.</p>
 <img alt="../_images/show_collection.png" src="../_images/show_collection.png" />
 </div>
 <p class="rubric">Attributes</p>
-<table border="1" class="longtable docutils">
+<table border="1" class="docutils">
 <colgroup>
 <col width="10%" />
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#scikits.image.io.MultiImage.filename" title="scikits.image.io.MultiImage.filename"><tt class="xref py py-obj docutils literal"><span class="pre">filename</span></tt></a></td>
+<tr><td><a class="reference internal" href="#scikits.image.io.MultiImage.filename" title="scikits.image.io.MultiImage.filename"><tt class="xref py py-obj docutils literal"><span class="pre">filename</span></tt></a></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#scikits.image.io.MultiImage.conserve_memory" title="scikits.image.io.MultiImage.conserve_memory"><tt class="xref py py-obj docutils literal"><span class="pre">conserve_memory</span></tt></a></td>
+<tr><td><a class="reference internal" href="#scikits.image.io.MultiImage.conserve_memory" title="scikits.image.io.MultiImage.conserve_memory"><tt class="xref py py-obj docutils literal"><span class="pre">conserve_memory</span></tt></a></td>
 <td></td>
 </tr>
 </tbody>
@@ -368,7 +368,7 @@ from file.</p>
 <col width="74%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>numframes</td>
+<tr><td>numframes</td>
 <td>int</td>
 <td>The number of frames in the image.</td>
 </tr>
@@ -404,7 +404,7 @@ from file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>source</strong> : str</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>source</strong> : str</p>
 <blockquote>
 <div><p>Media location URI. Video file path or http address of IP camera.</p>
 </div></blockquote>
@@ -427,32 +427,32 @@ Useful for IP cameras and other real time video feeds.</p>
 </tbody>
 </table>
 <p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
+<table border="1" class="docutils">
 <colgroup>
 <col width="10%" />
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#scikits.image.io.Video.duration" title="scikits.image.io.Video.duration"><tt class="xref py py-obj docutils literal"><span class="pre">duration</span></tt></a>()</td>
-<td>Returns time length of video in milliseconds.</td>
+<tr><td><a class="reference internal" href="#scikits.image.io.Video.duration" title="scikits.image.io.Video.duration"><tt class="xref py py-obj docutils literal"><span class="pre">duration</span></tt></a></td>
+<td></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#scikits.image.io.Video.frame_count" title="scikits.image.io.Video.frame_count"><tt class="xref py py-obj docutils literal"><span class="pre">frame_count</span></tt></a>()</td>
-<td>Returns frame count of video.</td>
+<tr><td><a class="reference internal" href="#scikits.image.io.Video.frame_count" title="scikits.image.io.Video.frame_count"><tt class="xref py py-obj docutils literal"><span class="pre">frame_count</span></tt></a></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#scikits.image.io.Video.get" title="scikits.image.io.Video.get"><tt class="xref py py-obj docutils literal"><span class="pre">get</span></tt></a>()</td>
-<td>Retrieve the next video frame as a numpy array.</td>
+<tr><td><a class="reference internal" href="#scikits.image.io.Video.get" title="scikits.image.io.Video.get"><tt class="xref py py-obj docutils literal"><span class="pre">get</span></tt></a></td>
+<td></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#scikits.image.io.Video.get_collection" title="scikits.image.io.Video.get_collection"><tt class="xref py py-obj docutils literal"><span class="pre">get_collection</span></tt></a>([time_range])</td>
-<td>Returns an ImageCollection object.</td>
+<tr><td><a class="reference internal" href="#scikits.image.io.Video.get_collection" title="scikits.image.io.Video.get_collection"><tt class="xref py py-obj docutils literal"><span class="pre">get_collection</span></tt></a></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#scikits.image.io.Video.get_index_frame" title="scikits.image.io.Video.get_index_frame"><tt class="xref py py-obj docutils literal"><span class="pre">get_index_frame</span></tt></a>(frame_number)</td>
-<td>Retrieve a specified video frame as a numpy array.</td>
+<tr><td><a class="reference internal" href="#scikits.image.io.Video.get_index_frame" title="scikits.image.io.Video.get_index_frame"><tt class="xref py py-obj docutils literal"><span class="pre">get_index_frame</span></tt></a></td>
+<td></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#scikits.image.io.Video.seek_frame" title="scikits.image.io.Video.seek_frame"><tt class="xref py py-obj docutils literal"><span class="pre">seek_frame</span></tt></a>(frame_number)</td>
-<td>Seek to specified frame in video.</td>
+<tr><td><a class="reference internal" href="#scikits.image.io.Video.seek_frame" title="scikits.image.io.Video.seek_frame"><tt class="xref py py-obj docutils literal"><span class="pre">seek_frame</span></tt></a></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#scikits.image.io.Video.seek_time" title="scikits.image.io.Video.seek_time"><tt class="xref py py-obj docutils literal"><span class="pre">seek_time</span></tt></a>(milliseconds)</td>
-<td>Seek to specified time in video.</td>
+<tr><td><a class="reference internal" href="#scikits.image.io.Video.seek_time" title="scikits.image.io.Video.seek_time"><tt class="xref py py-obj docutils literal"><span class="pre">seek_time</span></tt></a></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -469,7 +469,7 @@ Useful for IP cameras and other real time video feeds.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : int</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : int</p>
 <blockquote class="last">
 <div><p>Time length [ms].</p>
 </div></blockquote>
@@ -487,7 +487,7 @@ Useful for IP cameras and other real time video feeds.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : int</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : int</p>
 <blockquote class="last">
 <div><p>Frame count.</p>
 </div></blockquote>
@@ -505,7 +505,7 @@ Useful for IP cameras and other real time video feeds.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : array (image)</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : array (image)</p>
 <blockquote class="last">
 <div><p>Retrieved image.</p>
 </div></blockquote>
@@ -523,13 +523,13 @@ Useful for IP cameras and other real time video feeds.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>time_range: range (int), optional</strong> :</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>time_range: range (int), optional</strong> :</p>
 <blockquote>
 <div><p>Time steps to extract, defaults to the entire length of video.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output: ImageCollection</strong> :</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output: ImageCollection</strong> :</p>
 <blockquote class="last">
 <div><p>Collection of images iterator.</p>
 </div></blockquote>
@@ -547,13 +547,13 @@ Useful for IP cameras and other real time video feeds.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>frame_number</strong> : int</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>frame_number</strong> : int</p>
 <blockquote>
 <div><p>Frame position</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : array (image)</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : array (image)</p>
 <blockquote class="last">
 <div><p>Retrieved image.</p>
 </div></blockquote>
@@ -571,7 +571,7 @@ Useful for IP cameras and other real time video feeds.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>frame_number</strong> : int</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>frame_number</strong> : int</p>
 <blockquote class="last">
 <div><p>Frame position</p>
 </div></blockquote>
@@ -589,7 +589,7 @@ Useful for IP cameras and other real time video feeds.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>milliseconds</strong> : int</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>milliseconds</strong> : int</p>
 <blockquote class="last">
 <div><p>Time position</p>
 </div></blockquote>
@@ -601,46 +601,46 @@ Useful for IP cameras and other real time video feeds.</p>
 
 </dd></dl>
 
-<table border="1" class="longtable docutils">
+<table border="1" class="docutils">
 <colgroup>
 <col width="10%" />
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#scikits.image.io.imread" title="scikits.image.io.imread"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.io.imread</span></tt></a>(fname[,&nbsp;as_grey,&nbsp;...])</td>
+<tr><td><a class="reference internal" href="#scikits.image.io.imread" title="scikits.image.io.imread"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.io.imread</span></tt></a>(fname,&nbsp;**plugin_args)</td>
 <td>Load an image from file.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#scikits.image.io.imread_collection" title="scikits.image.io.imread_collection"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.io.imread_collection</span></tt></a>(load_pattern)</td>
+<tr><td><a class="reference internal" href="#scikits.image.io.imread_collection" title="scikits.image.io.imread_collection"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.io.imread_collection</span></tt></a>(...[,&nbsp;...])</td>
 <td>Load a collection of images.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#scikits.image.io.imsave" title="scikits.image.io.imsave"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.io.imsave</span></tt></a>(fname,&nbsp;arr[,&nbsp;plugin])</td>
+<tr><td><a class="reference internal" href="#scikits.image.io.imsave" title="scikits.image.io.imsave"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.io.imsave</span></tt></a>(fname,&nbsp;arr,&nbsp;...[,&nbsp;...])</td>
 <td>Save an image to file.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#scikits.image.io.imshow" title="scikits.image.io.imshow"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.io.imshow</span></tt></a>(arr[,&nbsp;plugin])</td>
+<tr><td><a class="reference internal" href="#scikits.image.io.imshow" title="scikits.image.io.imshow"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.io.imshow</span></tt></a>(arr,&nbsp;**plugin_args)</td>
 <td>Display an image.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#scikits.image.io.load_sift" title="scikits.image.io.load_sift"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.io.load_sift</span></tt></a>(f)</td>
+<tr><td><a class="reference internal" href="#scikits.image.io.load_sift" title="scikits.image.io.load_sift"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.io.load_sift</span></tt></a>(f)</td>
 <td>Read SIFT or SURF features from a file.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#scikits.image.io.load_surf" title="scikits.image.io.load_surf"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.io.load_surf</span></tt></a>(f)</td>
+<tr><td><a class="reference internal" href="#scikits.image.io.load_surf" title="scikits.image.io.load_surf"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.io.load_surf</span></tt></a>(f)</td>
 <td>Read SIFT or SURF features from a file.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#scikits.image.io.plugin_info" title="scikits.image.io.plugin_info"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.io.plugin_info</span></tt></a>(plugin)</td>
+<tr><td><a class="reference internal" href="#scikits.image.io.plugin_info" title="scikits.image.io.plugin_info"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.io.plugin_info</span></tt></a>(plugin)</td>
 <td>Return plugin meta-data.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#scikits.image.io.plugins" title="scikits.image.io.plugins"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.io.plugins</span></tt></a>([loaded])</td>
+<tr><td><a class="reference internal" href="#scikits.image.io.plugins" title="scikits.image.io.plugins"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.io.plugins</span></tt></a>([loaded])</td>
 <td>List available plugins.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#scikits.image.io.pop" title="scikits.image.io.pop"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.io.pop</span></tt></a>()</td>
+<tr><td><a class="reference internal" href="#scikits.image.io.pop" title="scikits.image.io.pop"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.io.pop</span></tt></a>()</td>
 <td>Pop an image from the shared image stack.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#scikits.image.io.push" title="scikits.image.io.push"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.io.push</span></tt></a>(img)</td>
+<tr><td><a class="reference internal" href="#scikits.image.io.push" title="scikits.image.io.push"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.io.push</span></tt></a>(img)</td>
 <td>Push an image onto the shared image stack.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#scikits.image.io.show" title="scikits.image.io.show"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.io.show</span></tt></a>()</td>
+<tr><td><a class="reference internal" href="#scikits.image.io.show" title="scikits.image.io.show"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.io.show</span></tt></a>()</td>
 <td>Display pending images.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#scikits.image.io.use_plugin" title="scikits.image.io.use_plugin"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.io.use_plugin</span></tt></a>(name[,&nbsp;kind])</td>
+<tr><td><a class="reference internal" href="#scikits.image.io.use_plugin" title="scikits.image.io.use_plugin"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.io.use_plugin</span></tt></a>(name[,&nbsp;kind])</td>
 <td>Set the default plugin for a specified operation.</td>
 </tr>
 </tbody>
@@ -656,7 +656,7 @@ Useful for IP cameras and other real time video feeds.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>fname</strong> : string</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>fname</strong> : string</p>
 <blockquote>
 <div><p>Image file name, e.g. <tt class="docutils literal"><span class="pre">test.jpg</span></tt>.</p>
 </div></blockquote>
@@ -671,7 +671,7 @@ Images that are already in grey-scale format are not converted.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>img_array</strong> : ndarray</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>img_array</strong> : ndarray</p>
 <blockquote class="last">
 <div><p>The different colour bands/channels are stored in the
 third dimension, such that a grey-image is MxN, an
@@ -694,7 +694,7 @@ RGB-image MxNx3 and an RGBA-image MxNx4.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>load_pattern</strong> : str or list</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>load_pattern</strong> : str or list</p>
 <blockquote>
 <div><p>List of objects to load. These are usually filenames, but may
 vary depending on the currently active plugin.  See the docstring
@@ -707,7 +707,7 @@ time.  Otherwise, images will be cached once they are loaded.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>ic</strong> : ImageCollection</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>ic</strong> : ImageCollection</p>
 <blockquote class="last">
 <div><p>Collection of images.</p>
 </div></blockquote>
@@ -728,7 +728,7 @@ time.  Otherwise, images will be cached once they are loaded.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>fname</strong> : str</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>fname</strong> : str</p>
 <blockquote>
 <div><p>Target filename.</p>
 </div></blockquote>
@@ -759,7 +759,7 @@ candidate is found.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>arr</strong> : ndarray</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>arr</strong> : ndarray</p>
 <blockquote>
 <div><p>Image data.</p>
 </div></blockquote>
@@ -786,7 +786,7 @@ candidate is found.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>f</strong> : string or open file</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>f</strong> : string or open file</p>
 <blockquote>
 <div><p>Input file generated by the feature detectors from
 <a class="reference external" href="http://people.cs.ubc.ca/~lowe/keypoints/">http://people.cs.ubc.ca/~lowe/keypoints/</a> or
@@ -794,7 +794,7 @@ candidate is found.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>data</strong> : record array with fields</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>data</strong> : record array with fields</p>
 <blockquote class="last">
 <div><ul>
 <li><dl class="first docutils">
@@ -846,7 +846,7 @@ candidate is found.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>f</strong> : string or open file</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>f</strong> : string or open file</p>
 <blockquote>
 <div><p>Input file generated by the feature detectors from
 <a class="reference external" href="http://people.cs.ubc.ca/~lowe/keypoints/">http://people.cs.ubc.ca/~lowe/keypoints/</a> or
@@ -854,7 +854,7 @@ candidate is found.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>data</strong> : record array with fields</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>data</strong> : record array with fields</p>
 <blockquote class="last">
 <div><ul>
 <li><dl class="first docutils">
@@ -906,13 +906,13 @@ candidate is found.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>plugin</strong> : str</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>plugin</strong> : str</p>
 <blockquote>
 <div><p>Name of plugin.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>m</strong> : dict</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>m</strong> : dict</p>
 <blockquote class="last">
 <div><p>Meta data as specified in plugin <tt class="docutils literal"><span class="pre">.ini</span></tt>.</p>
 </div></blockquote>
@@ -933,7 +933,7 @@ candidate is found.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>loaded</strong> : bool</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>loaded</strong> : bool</p>
 <blockquote class="last">
 <div><p>If True, show only those plugins currently loaded.  By default,
 all plugins are shown.</p>
@@ -955,7 +955,7 @@ all plugins are shown.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>img</strong> : ndarray</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>img</strong> : ndarray</p>
 <blockquote class="last">
 <div><p>Image popped from the stack.</p>
 </div></blockquote>
@@ -976,7 +976,7 @@ all plugins are shown.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>img</strong> : ndarray</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>img</strong> : ndarray</p>
 <blockquote class="last">
 <div><p>Image to push.</p>
 </div></blockquote>
@@ -1021,7 +1021,7 @@ will be loaded if it hasn&#8217;t been already.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
 <blockquote>
 <div><p>Name of plugin.</p>
 </div></blockquote>
@@ -1065,7 +1065,7 @@ the plugin is set for all functions.</p>
       
     <div class="footer">
         &copy; Copyright 2011, scikits-image team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1pre.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
     </div>
 

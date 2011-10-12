@@ -3,16 +3,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
     <title>Module: data &mdash; scikits.image v0.4dev docs</title>
-    
     <link rel="stylesheet" href="../_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -63,7 +60,7 @@
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" size="18" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
@@ -85,25 +82,25 @@
   <div class="section" id="module-scikits.image.data">
 <span id="module-data"></span><h1>Module: <tt class="xref py py-mod docutils literal"><span class="pre">data</span></tt><a class="headerlink" href="#module-scikits.image.data" title="Permalink to this headline">¶</a></h1>
 <p>Convenience functions to load sample data.</p>
-<table border="1" class="longtable docutils">
+<table border="1" class="docutils">
 <colgroup>
 <col width="10%" />
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#scikits.image.data.camera" title="scikits.image.data.camera"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.data.camera</span></tt></a>()</td>
+<tr><td><a class="reference internal" href="#scikits.image.data.camera" title="scikits.image.data.camera"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.data.camera</span></tt></a>()</td>
 <td>Gray &#8220;camera&#8221; image, often used for segmentation</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#scikits.image.data.checkerboard" title="scikits.image.data.checkerboard"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.data.checkerboard</span></tt></a>()</td>
+<tr><td><a class="reference internal" href="#scikits.image.data.checkerboard" title="scikits.image.data.checkerboard"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.data.checkerboard</span></tt></a>()</td>
 <td>Checkerboard image.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#scikits.image.data.imread" title="scikits.image.data.imread"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.data.imread</span></tt></a>(fname[,&nbsp;as_grey,&nbsp;...])</td>
+<tr><td><a class="reference internal" href="#scikits.image.data.imread" title="scikits.image.data.imread"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.data.imread</span></tt></a>(fname,&nbsp;**plugin_args)</td>
 <td>Load an image from file.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#scikits.image.data.lena" title="scikits.image.data.lena"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.data.lena</span></tt></a>()</td>
+<tr><td><a class="reference internal" href="#scikits.image.data.lena" title="scikits.image.data.lena"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.data.lena</span></tt></a>()</td>
 <td>Colour &#8220;Lena&#8221; image.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#scikits.image.data.load" title="scikits.image.data.load"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.data.load</span></tt></a>(f)</td>
+<tr><td><a class="reference internal" href="#scikits.image.data.load" title="scikits.image.data.load"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.data.load</span></tt></a>(f)</td>
 <td>Load an image file located in the data directory.</td>
 </tr>
 </tbody>
@@ -137,7 +134,7 @@ and denoising examples.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>fname</strong> : string</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>fname</strong> : string</p>
 <blockquote>
 <div><p>Image file name, e.g. <tt class="docutils literal"><span class="pre">test.jpg</span></tt>.</p>
 </div></blockquote>
@@ -152,7 +149,7 @@ Images that are already in grey-scale format are not converted.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>img_array</strong> : ndarray</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>img_array</strong> : ndarray</p>
 <blockquote class="last">
 <div><p>The different colour bands/channels are stored in the
 third dimension, such that a grey-image is MxN, an
@@ -184,13 +181,13 @@ RGB-image MxNx3 and an RGBA-image MxNx4.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>f</strong> : string</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>f</strong> : string</p>
 <blockquote>
 <div><p>File name.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>img</strong> : ndarray</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>img</strong> : ndarray</p>
 <blockquote class="last">
 <div><p>Image loaded from scikits.image.data_dir.</p>
 </div></blockquote>
@@ -216,7 +213,7 @@ RGB-image MxNx3 and an RGBA-image MxNx4.</p>
       
     <div class="footer">
         &copy; Copyright 2011, scikits-image team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1pre.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
     </div>
 

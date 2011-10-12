@@ -3,16 +3,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
     <title>Module: morphology &mdash; scikits.image v0.4dev docs</title>
-    
     <link rel="stylesheet" href="../_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -71,7 +68,7 @@
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" size="18" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
@@ -92,49 +89,49 @@
             
   <div class="section" id="module-scikits.image.morphology">
 <span id="module-morphology"></span><h1>Module: <tt class="xref py py-mod docutils literal"><span class="pre">morphology</span></tt><a class="headerlink" href="#module-scikits.image.morphology" title="Permalink to this headline">¶</a></h1>
-<table border="1" class="longtable docutils">
+<table border="1" class="docutils">
 <colgroup>
 <col width="10%" />
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#scikits.image.morphology.diamond" title="scikits.image.morphology.diamond"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.morphology.diamond</span></tt></a>(radius[,&nbsp;dtype])</td>
+<tr><td><a class="reference internal" href="#scikits.image.morphology.diamond" title="scikits.image.morphology.diamond"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.morphology.diamond</span></tt></a>(radius[,&nbsp;dtype])</td>
 <td>Generates a flat, diamond-shaped structuring element of a given radius.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#scikits.image.morphology.disk" title="scikits.image.morphology.disk"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.morphology.disk</span></tt></a>(radius[,&nbsp;dtype])</td>
+<tr><td><a class="reference internal" href="#scikits.image.morphology.disk" title="scikits.image.morphology.disk"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.morphology.disk</span></tt></a>(radius[,&nbsp;dtype])</td>
 <td>Generates a flat, disk-shaped structuring element of a given radius.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#scikits.image.morphology.greyscale_black_top_hat" title="scikits.image.morphology.greyscale_black_top_hat"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.morphology.greyscale_black_top_hat</span></tt></a>(...)</td>
+<tr><td><a class="reference internal" href="#scikits.image.morphology.greyscale_black_top_hat" title="scikits.image.morphology.greyscale_black_top_hat"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.morphology.greyscale_black_top_hat</span></tt></a>(...)</td>
 <td>Applies a black top hat on an image given a flat structuring element.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#scikits.image.morphology.greyscale_close" title="scikits.image.morphology.greyscale_close"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.morphology.greyscale_close</span></tt></a>(...)</td>
+<tr><td><a class="reference internal" href="#scikits.image.morphology.greyscale_close" title="scikits.image.morphology.greyscale_close"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.morphology.greyscale_close</span></tt></a>(...)</td>
 <td>Performs a greyscale morphological closing on an image given a flat structuring element defined as a dilation followed by an erosion.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#scikits.image.morphology.greyscale_dilate" title="scikits.image.morphology.greyscale_dilate"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.morphology.greyscale_dilate</span></tt></a>(...)</td>
+<tr><td><a class="reference internal" href="#scikits.image.morphology.greyscale_dilate" title="scikits.image.morphology.greyscale_dilate"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.morphology.greyscale_dilate</span></tt></a>(...)</td>
 <td>Performs a greyscale morphological dilation on an image given a flat structuring element.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#scikits.image.morphology.greyscale_erode" title="scikits.image.morphology.greyscale_erode"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.morphology.greyscale_erode</span></tt></a>(...)</td>
+<tr><td><a class="reference internal" href="#scikits.image.morphology.greyscale_erode" title="scikits.image.morphology.greyscale_erode"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.morphology.greyscale_erode</span></tt></a>(...)</td>
 <td>Performs a greyscale morphological erosion on an image given a flat structuring element.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#scikits.image.morphology.greyscale_open" title="scikits.image.morphology.greyscale_open"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.morphology.greyscale_open</span></tt></a>(...)</td>
+<tr><td><a class="reference internal" href="#scikits.image.morphology.greyscale_open" title="scikits.image.morphology.greyscale_open"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.morphology.greyscale_open</span></tt></a>(...)</td>
 <td>Performs a greyscale morphological opening on an image given a flat structuring element defined as a erosion followed by a dilation.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#scikits.image.morphology.greyscale_white_top_hat" title="scikits.image.morphology.greyscale_white_top_hat"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.morphology.greyscale_white_top_hat</span></tt></a>(...)</td>
+<tr><td><a class="reference internal" href="#scikits.image.morphology.greyscale_white_top_hat" title="scikits.image.morphology.greyscale_white_top_hat"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.morphology.greyscale_white_top_hat</span></tt></a>(...)</td>
 <td>Applies a white top hat on an image given a flat structuring element.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#scikits.image.morphology.is_local_maximum" title="scikits.image.morphology.is_local_maximum"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.morphology.is_local_maximum</span></tt></a>(image)</td>
+<tr><td><a class="reference internal" href="#scikits.image.morphology.is_local_maximum" title="scikits.image.morphology.is_local_maximum"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.morphology.is_local_maximum</span></tt></a>(image)</td>
 <td>Return a boolean array of points that are local maxima</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#scikits.image.morphology.label" title="scikits.image.morphology.label"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.morphology.label</span></tt></a></td>
+<tr><td><a class="reference internal" href="#scikits.image.morphology.label" title="scikits.image.morphology.label"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.morphology.label</span></tt></a></td>
 <td>Label connected regions of an integer array.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#scikits.image.morphology.rectangle" title="scikits.image.morphology.rectangle"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.morphology.rectangle</span></tt></a>(width,&nbsp;height)</td>
+<tr><td><a class="reference internal" href="#scikits.image.morphology.rectangle" title="scikits.image.morphology.rectangle"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.morphology.rectangle</span></tt></a>(width,&nbsp;height)</td>
 <td>Generates a flat, rectangular-shaped structuring element of a given width and height.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#scikits.image.morphology.square" title="scikits.image.morphology.square"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.morphology.square</span></tt></a>(width[,&nbsp;dtype])</td>
+<tr><td><a class="reference internal" href="#scikits.image.morphology.square" title="scikits.image.morphology.square"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.morphology.square</span></tt></a>(width[,&nbsp;dtype])</td>
 <td>Generates a flat, square-shaped structuring element.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#scikits.image.morphology.watershed" title="scikits.image.morphology.watershed"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.morphology.watershed</span></tt></a>(image,&nbsp;...)</td>
+<tr><td><a class="reference internal" href="#scikits.image.morphology.watershed" title="scikits.image.morphology.watershed"><tt class="xref py py-obj docutils literal"><span class="pre">scikits.image.morphology.watershed</span></tt></a>(image,&nbsp;...)</td>
 <td>Return a matrix labeled using the watershed segmentation algorithm</td>
 </tr>
 </tbody>
@@ -152,7 +149,7 @@ neighborhood is no greater than radius.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>radius</strong> : string</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>radius</strong> : string</p>
 <blockquote>
 <div><p>The radius of the disk-shaped structuring element.</p>
 </div></blockquote>
@@ -162,7 +159,7 @@ neighborhood is no greater than radius.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>selem</strong> : ndarray</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>selem</strong> : ndarray</p>
 <blockquote class="last">
 <div><p>The structuring element where elements of the neighborhood
 are 1 and 0 otherwise.</p>
@@ -186,7 +183,7 @@ it and the origin is no greater than a radius.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>radius</strong> : string</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>radius</strong> : string</p>
 <blockquote>
 <div><p>The radius of the disk-shaped structuring element.</p>
 </div></blockquote>
@@ -196,7 +193,7 @@ it and the origin is no greater than a radius.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>selem</strong> : ndarray</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>selem</strong> : ndarray</p>
 <blockquote class="last">
 <div><p>The structuring element where elements of the neighborhood
 are 1 and 0 otherwise.</p>
@@ -218,7 +215,7 @@ are 1 and 0 otherwise.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>The image as an ndarray.</p>
 </div></blockquote>
@@ -233,7 +230,7 @@ is passed, a new array will be allocated.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>opening</strong> : ndarray</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>opening</strong> : ndarray</p>
 <blockquote class="last">
 <div><p>The result of the black top filter.</p>
 </div></blockquote>
@@ -255,7 +252,7 @@ structuring element defined as a dilation followed by an erosion.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>The image as an ndarray.</p>
 </div></blockquote>
@@ -270,7 +267,7 @@ is passed, a new array will be allocated.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>opening</strong> : ndarray</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>opening</strong> : ndarray</p>
 <blockquote class="last">
 <div><p>The result of the morphological opening.</p>
 </div></blockquote>
@@ -293,7 +290,7 @@ pixels in the neighborhood centered at (i,j).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>The image as an ndarray.</p>
 </div></blockquote>
@@ -308,7 +305,7 @@ passed, a new array will be allocated.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>dilated</strong> : ndarray</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>dilated</strong> : ndarray</p>
 <blockquote class="last">
 <div><p>The result of the morphological dilation.</p>
 </div></blockquote>
@@ -331,7 +328,7 @@ pixels in the neighborhood centered at (i,j).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>The image as an ndarray.</p>
 </div></blockquote>
@@ -346,7 +343,7 @@ passed, a new array will be allocated.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>eroded</strong> : ndarray</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>eroded</strong> : ndarray</p>
 <blockquote class="last">
 <div><p>The result of the morphological erosion.</p>
 </div></blockquote>
@@ -368,7 +365,7 @@ structuring element defined as a erosion followed by a dilation.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>The image as an ndarray.</p>
 </div></blockquote>
@@ -383,7 +380,7 @@ is passed, a new array will be allocated.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>opening</strong> : ndarray</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>opening</strong> : ndarray</p>
 <blockquote class="last">
 <div><p>The result of the morphological opening.</p>
 </div></blockquote>
@@ -404,7 +401,7 @@ is passed, a new array will be allocated.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>The image as an ndarray.</p>
 </div></blockquote>
@@ -419,7 +416,7 @@ is passed, a new array will be allocated.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>opening</strong> : ndarray</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>opening</strong> : ndarray</p>
 <blockquote class="last">
 <div><p>The result of the morphological white top hat.</p>
 </div></blockquote>
@@ -440,7 +437,7 @@ is passed, a new array will be allocated.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image: ndarray (2-D, 3-D, ...)</strong> :</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image: ndarray (2-D, 3-D, ...)</strong> :</p>
 <blockquote>
 <div><p>intensity image</p>
 </div></blockquote>
@@ -456,7 +453,7 @@ to be the point in question.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>result: ndarray of bools</strong> :</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>result: ndarray of bools</strong> :</p>
 <blockquote class="last">
 <div><p>mask that is True for pixels that are local maxima of <cite>image</cite></p>
 </div></blockquote>
@@ -513,13 +510,13 @@ having equal value.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>input</strong> : ndarray of dtype int</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>input</strong> : ndarray of dtype int</p>
 <blockquote>
 <div><p>Image to label.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>labels</strong> : ndarray of dtype int</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>labels</strong> : ndarray of dtype int</p>
 <blockquote class="last">
 <div><p>Labeled array, where all connected regions are assigned the
 same integer value.</p>
@@ -543,7 +540,7 @@ to the neighboorhood.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>width</strong> : int</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>width</strong> : int</p>
 <blockquote>
 <div><p>The width of the rectangle</p>
 </div></blockquote>
@@ -553,7 +550,7 @@ to the neighboorhood.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>selem</strong> : ndarray</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>selem</strong> : ndarray</p>
 <blockquote class="last">
 <div><p>A structuring element consisting only of ones, i.e. every
 pixel belongs to the neighborhood.</p>
@@ -577,13 +574,13 @@ along the perimeter has a chessboard distance no greater than radius
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>width</strong> : int</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>width</strong> : int</p>
 <blockquote>
 <div><p>The width and height of the square</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>selem</strong> : ndarray</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>selem</strong> : ndarray</p>
 <blockquote class="last">
 <div><p>A structuring element consisting only of ones, i.e. every
 pixel belongs to the neighborhood.</p>
@@ -605,7 +602,7 @@ pixel belongs to the neighborhood.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image: ndarray (2-D, 3-D, ...) of integers</strong> :</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image: ndarray (2-D, 3-D, ...) of integers</strong> :</p>
 <blockquote>
 <div><p>Data array where the lowest value points are labeled first.</p>
 </div></blockquote>
@@ -633,7 +630,7 @@ will be labeled.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out: ndarray</strong> :</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out: ndarray</strong> :</p>
 <blockquote class="last">
 <div><p>A labeled matrix of the same type and shape as markers</p>
 </div></blockquote>
@@ -711,7 +708,7 @@ separate overlapping spheres.</p>
       
     <div class="footer">
         &copy; Copyright 2011, scikits-image team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1pre.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
     </div>
 
