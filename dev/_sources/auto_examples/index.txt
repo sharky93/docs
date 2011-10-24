@@ -51,6 +51,11 @@ General-purpose and introductory examples for the scikit.
 
    :ref:`example_plot_radon_transform.py`
 
+.. figure:: ./images/thumb/plot_skeleton.png
+   :target: ./plot_skeleton.html
+
+   :ref:`example_plot_skeleton.py`
+
 .. figure:: ./images/thumb/plot_watershed.png
    :target: ./plot_watershed.html
 

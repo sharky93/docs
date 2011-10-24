@@ -3,13 +3,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>I/O Plugin Infrastructure &mdash; scikits.image v0.4dev docs</title>
+    <title>I/O Plugin Infrastructure &mdash; skimage v0.4dev docs</title>
+    
     <link rel="stylesheet" href="../_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -22,7 +25,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="scikits.image v0.4dev docs" href="../index.html" /> 
+    <link rel="top" title="skimage v0.4dev docs" href="../index.html" /> 
   </head>
   <body>
     <div class="header-wrapper">
@@ -48,7 +51,7 @@
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" size="18" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
@@ -72,8 +75,8 @@
 <p>A plugin consists of two files, the source and the descriptor <tt class="docutils literal"><span class="pre">.ini</span></tt>.  Let&#8217;s
 say we&#8217;d like to provide a plugin for <tt class="docutils literal"><span class="pre">imshow</span></tt> using <tt class="docutils literal"><span class="pre">matplotlib</span></tt>.  We&#8217;ll
 call our plugin <tt class="docutils literal"><span class="pre">mpl</span></tt>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">scikits</span><span class="o">/</span><span class="n">image</span><span class="o">/</span><span class="n">io</span><span class="o">/</span><span class="n">_plugins</span><span class="o">/</span><span class="n">mpl</span><span class="o">.</span><span class="n">py</span>
-<span class="n">scikits</span><span class="o">/</span><span class="n">image</span><span class="o">/</span><span class="n">io</span><span class="o">/</span><span class="n">_plugins</span><span class="o">/</span><span class="n">mpl</span><span class="o">.</span><span class="n">ini</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">skimage</span><span class="o">/</span><span class="n">io</span><span class="o">/</span><span class="n">_plugins</span><span class="o">/</span><span class="n">mpl</span><span class="o">.</span><span class="n">py</span>
+<span class="n">skimage</span><span class="o">/</span><span class="n">io</span><span class="o">/</span><span class="n">_plugins</span><span class="o">/</span><span class="n">mpl</span><span class="o">.</span><span class="n">ini</span>
 </pre></div>
 </div>
 <p>The name of the <tt class="docutils literal"><span class="pre">.py</span></tt> and <tt class="docutils literal"><span class="pre">.ini</span></tt> files must correspond.  Inside the
@@ -112,9 +115,9 @@ provide it as follows:</p>
 </pre></div>
 </div>
 <p>Any plugin in the <tt class="docutils literal"><span class="pre">_plugins</span></tt> directory is automatically examined by
-<tt class="docutils literal"><span class="pre">scikits.image.io</span></tt> upon import.  You may list all the plugins on your
+<tt class="docutils literal"><span class="pre">skimage.io</span></tt> upon import.  You may list all the plugins on your
 system:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">scikits.image.io</span> <span class="kn">as</span> <span class="nn">io</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">skimage.io</span> <span class="kn">as</span> <span class="nn">io</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">io</span><span class="o">.</span><span class="n">plugins</span><span class="p">()</span>
 <span class="go">{&#39;gtk&#39;: [&#39;imshow&#39;],</span>
 <span class="go"> &#39;matplotlib&#39;: [&#39;imshow&#39;, &#39;imsave&#39;],</span>
@@ -129,7 +132,7 @@ system:</p>
 </pre></div>
 </div>
 <p>A plugin is loaded using the <tt class="docutils literal"><span class="pre">use_plugin</span></tt> command:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">scikits.image.io</span> <span class="kn">as</span> <span class="nn">io</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">skimage.io</span> <span class="kn">as</span> <span class="nn">io</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">io</span><span class="o">.</span><span class="n">use_plugin</span><span class="p">(</span><span class="s">&#39;pil&#39;</span><span class="p">)</span> <span class="c"># Use all capabilities provided by PIL</span>
 </pre></div>
 </div>
@@ -160,8 +163,8 @@ last plugin loaded is used.</p>
     <div class="footer-wrapper">
       
     <div class="footer">
-        &copy; Copyright 2011, scikits-image team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+        &copy; Copyright 2011, the Image Scikit team.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1pre.
     </div>
     </div>
 

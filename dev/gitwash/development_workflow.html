@@ -3,13 +3,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Development workflow &mdash; scikits.image v0.4dev docs</title>
+    <title>Development workflow &mdash; skimage v0.4dev docs</title>
+    
     <link rel="stylesheet" href="../_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -22,7 +25,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="scikits.image v0.4dev docs" href="../index.html" /> 
+    <link rel="top" title="skimage v0.4dev docs" href="../index.html" /> 
   </head>
   <body>
     <div class="header-wrapper">
@@ -74,7 +77,7 @@
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" size="18" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
@@ -95,12 +98,12 @@
             
   <div class="section" id="development-workflow">
 <span id="id1"></span><h1>Development workflow<a class="headerlink" href="#development-workflow" title="Permalink to this headline">¶</a></h1>
-<p>You already have your own forked copy of the <a class="reference external" href="http://scikits-image.org">scikits.image</a> repository, by
-following <a class="reference internal" href="forking_hell.html#forking"><em>Making your own copy (fork) of scikits.image</em></a>. You have <a class="reference internal" href="set_up_fork.html#set-up-fork"><em>Set up your fork</em></a>. You have configured
+<p>You already have your own forked copy of the <a class="reference external" href="http://scikits-image.org">scikits-image</a> repository, by
+following <a class="reference internal" href="forking_hell.html#forking"><em>Making your own copy (fork) of scikits-image</em></a>. You have <a class="reference internal" href="set_up_fork.html#set-up-fork"><em>Set up your fork</em></a>. You have configured
 git by following <a class="reference internal" href="configure_git.html#configure-git"><em>Configure git</em></a>.  Now you are ready for some real work.</p>
 <div class="section" id="workflow-summary">
 <h2>Workflow summary<a class="headerlink" href="#workflow-summary" title="Permalink to this headline">¶</a></h2>
-<p>In what follows we&#8217;ll refer to the upstream scikits.image <tt class="docutils literal"><span class="pre">master</span></tt> branch, as
+<p>In what follows we&#8217;ll refer to the upstream scikits-image <tt class="docutils literal"><span class="pre">master</span></tt> branch, as
 &#8220;trunk&#8221;.</p>
 <ul class="simple">
 <li>Don&#8217;t use your <tt class="docutils literal"><span class="pre">master</span></tt> branch for anything.  Consider deleting it.</li>
@@ -113,7 +116,7 @@ branch&#8221; (<a class="reference external" href="http://mail.scipy.org/piperma
 <li>If you can possibly avoid it, avoid merging trunk or any other branches into
 your feature branch while you are working.</li>
 <li>If you do find yourself merging from trunk, consider <a class="reference internal" href="#rebase-on-trunk"><em>Rebasing on trunk</em></a></li>
-<li>Ask on the <a class="reference external" href="http://groups.google.com/group/scikits-image">scikits.image mailing list</a> if you get stuck.</li>
+<li>Ask on the <a class="reference external" href="http://groups.google.com/group/scikits-image">scikits-image mailing list</a> if you get stuck.</li>
 <li>Ask for code review!</li>
 </ul>
 <p>This way of working helps to keep work well organized, with readable history.
@@ -155,7 +158,7 @@ git branch my-new-feature upstream/master
 git checkout my-new-feature</pre>
 </div>
 <p>Generally, you will want to keep your feature branches on your public <a class="reference external" href="http://github.com">github</a>
-fork of <a class="reference external" href="http://scikits-image.org">scikits.image</a>.  To do this, you <a class="reference external" href="http://www.kernel.org/pub/software/scm/git/docs/git-push.html">git push</a> this new branch up to your
+fork of <a class="reference external" href="http://scikits-image.org">scikits-image</a>.  To do this, you <a class="reference external" href="http://www.kernel.org/pub/software/scm/git/docs/git-push.html">git push</a> this new branch up to your
 github repo.  Generally (if you followed the instructions in these pages, and by
 default), git will have a link to your github repo, called <tt class="docutils literal"><span class="pre">origin</span></tt>.  You push
 up to your own repo on github with:</p>
@@ -223,7 +226,7 @@ page might also be useful.</p>
 <p>When you are ready to ask for someone to review your code and consider a merge:</p>
 <ol class="arabic">
 <li><p class="first">Go to the URL of your forked repo, say
-<tt class="docutils literal"><span class="pre">http://github.com/your-user-name/scikits.image</span></tt>.</p>
+<tt class="docutils literal"><span class="pre">http://github.com/your-user-name/scikits-image</span></tt>.</p>
 </li>
 <li><p class="first">Use the &#8216;Switch Branches&#8217; dropdown menu near the top left of the page to
 select the branch with your changes:</p>
@@ -258,16 +261,16 @@ git push origin :my-unwanted-branch</pre>
 <p>If you want to work on some stuff with other people, where you are all
 committing into the same repository, or even the same branch, then just
 share it via github.</p>
-<p>First fork scikits.image into your account, as from <a class="reference internal" href="forking_hell.html#forking"><em>Making your own copy (fork) of scikits.image</em></a>.</p>
+<p>First fork scikits-image into your account, as from <a class="reference internal" href="forking_hell.html#forking"><em>Making your own copy (fork) of scikits-image</em></a>.</p>
 <p>Then, go to your forked repository github page, say
-<tt class="docutils literal"><span class="pre">http://github.com/your-user-name/scikits.image</span></tt></p>
+<tt class="docutils literal"><span class="pre">http://github.com/your-user-name/scikits-image</span></tt></p>
 <p>Click on the &#8216;Admin&#8217; button, and add anyone else to the repo as a
 collaborator:</p>
 <blockquote>
 <div><img alt="../_images/pull_button.png" src="../_images/pull_button.png" />
 </div></blockquote>
 <p>Now all those people can do:</p>
-<div class="highlight-python"><pre>git clone git@githhub.com:your-user-name/scikits.image.git</pre>
+<div class="highlight-python"><pre>git clone git@githhub.com:your-user-name/scikits-image.git</pre>
 </div>
 <p>Remember that links starting with <tt class="docutils literal"><span class="pre">git&#64;</span></tt> use the ssh protocol and are
 read-write; links starting with <tt class="docutils literal"><span class="pre">git://</span></tt> are read-only.</p>
@@ -456,8 +459,8 @@ Successfully rebased and updated refs/heads/my-feature-branch.</pre>
     <div class="footer-wrapper">
       
     <div class="footer">
-        &copy; Copyright 2011, scikits-image team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+        &copy; Copyright 2011, the Image Scikit team.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1pre.
     </div>
     </div>
 

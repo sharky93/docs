@@ -3,13 +3,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>How to contribute to scikits.image &mdash; scikits.image v0.4dev docs</title>
+    <title>How to contribute to skimage &mdash; skimage v0.4dev docs</title>
+    
     <link rel="stylesheet" href="_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
@@ -22,7 +25,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="scikits.image v0.4dev docs" href="index.html" /> 
+    <link rel="top" title="skimage v0.4dev docs" href="index.html" /> 
   </head>
   <body>
     <div class="header-wrapper">
@@ -42,7 +45,7 @@
         <div class="sphinxsidebarwrapper"> 
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">How to contribute to <tt class="docutils literal"><span class="pre">scikits.image</span></tt></a><ul>
+<li><a class="reference internal" href="#">How to contribute to <tt class="docutils literal"><span class="pre">skimage</span></tt></a><ul>
 <li><a class="reference internal" href="#tasks">Tasks</a></li>
 <li><a class="reference internal" href="#infrastructure">Infrastructure</a><ul>
 <li><a class="reference internal" href="#adapt-existing-code-for-use">Adapt existing code for use</a></li>
@@ -72,7 +75,7 @@
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" size="18" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
@@ -91,15 +94,15 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="how-to-contribute-to-scikits-image">
-<h1>How to contribute to <tt class="docutils literal"><span class="pre">scikits.image</span></tt><a class="headerlink" href="#how-to-contribute-to-scikits-image" title="Permalink to this headline">¶</a></h1>
-<p>Developing Open Source is great fun!  Join us on the <a class="reference external" href="http://groups.google.com/group/scikits-image">scikits-image mailing
+  <div class="section" id="how-to-contribute-to-skimage">
+<h1>How to contribute to <tt class="docutils literal"><span class="pre">skimage</span></tt><a class="headerlink" href="#how-to-contribute-to-skimage" title="Permalink to this headline">¶</a></h1>
+<p>Developing Open Source is great fun!  Join us on the <a class="reference external" href="http://groups.google.com/group/scikits-image">skimage mailing
 list</a> and tell us which of the
 following challenges you&#8217;d like to solve.</p>
 <ul class="simple">
 <li>Mentoring is available for those new to scientific programming in Python.</li>
 <li>The technical detail of the <a class="reference internal" href="#development-process">development process</a> is given below.</li>
-<li><a class="reference internal" href="gitwash/index.html"><em>How to use GitHub</em></a> when developing scikits.image</li>
+<li><a class="reference internal" href="gitwash/index.html"><em>How to use GitHub</em></a> when developing skimage</li>
 </ul>
 <div class="contents local topic" id="contents">
 <ul class="simple">
@@ -247,10 +250,10 @@ who contributed.</p>
 <div class="section" id="development-process">
 <h2><a class="toc-backref" href="#id10">Development process</a><a class="headerlink" href="#development-process" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="gitwash/index.html"><em>Read this overview</em></a> of how to use Git with
-<tt class="docutils literal"><span class="pre">scikits.image</span></tt>.  Here&#8217;s the long and short of it:</p>
+<tt class="docutils literal"><span class="pre">skimage</span></tt>.  Here&#8217;s the long and short of it:</p>
 <blockquote>
 <div><ul class="simple">
-<li>Go to <a class="reference external" href="http://github.com/scikits-image/scikits.image">https://github.com/scikits-image/scikits.image</a> and follow the
+<li>Go to <a class="reference external" href="http://github.com/scikits-image/scikits-image">https://github.com/scikits-image/scikits-image</a> and follow the
 instructions on making your own fork.</li>
 <li>Create a new branch for the feature you want to work on.  Since the
 branch name will appear in the merge message, use a sensible name
@@ -300,18 +303,18 @@ i.e. statement coverage should be at 100%.</p>
 (using <tt class="docutils literal"><span class="pre">easy_install</span> <span class="pre">coverage</span></tt>) and then run:</p>
 <div class="highlight-python"><pre>$ make coverage</pre>
 </div>
-<p>This will print a report with one line for each file in <cite>scikits.image</cite>,
+<p>This will print a report with one line for each file in <cite>skimage</cite>,
 detailing the test coverage:</p>
 <div class="highlight-python"><pre>Name                                             Stmts   Exec  Cover   Missing
 ------------------------------------------------------------------------------
-scikits/image/color/colorconv                       77     77   100%
-scikits/image/filter/__init__                        1      1   100%
+skimage/color/colorconv                             77     77   100%
+skimage/filter/__init__                              1      1   100%
 ...</pre>
 </div>
 </div>
 <div class="section" id="bugs">
 <h3><a class="toc-backref" href="#id13">Bugs</a><a class="headerlink" href="#bugs" title="Permalink to this headline">¶</a></h3>
-<p>Please <a class="reference external" href="https://github.com/scikits-image/scikits.image/issues">report bugs on Github</a>.</p>
+<p>Please <a class="reference external" href="https://github.com/scikits-image/scikits-image/issues">report bugs on Github</a>.</p>
 </div>
 </div>
 </div>
@@ -328,8 +331,8 @@ scikits/image/filter/__init__                        1      1   100%
     <div class="footer-wrapper">
       
     <div class="footer">
-        &copy; Copyright 2011, scikits-image team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+        &copy; Copyright 2011, the Image Scikit team.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1pre.
     </div>
     </div>
 

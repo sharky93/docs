@@ -3,13 +3,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Image data types and what they mean &mdash; scikits.image v0.4dev docs</title>
+    <title>Image data types and what they mean &mdash; skimage v0.4dev docs</title>
+    
     <link rel="stylesheet" href="../_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -22,7 +25,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="scikits.image v0.4dev docs" href="../index.html" /> 
+    <link rel="top" title="skimage v0.4dev docs" href="../index.html" /> 
   </head>
   <body>
     <div class="header-wrapper">
@@ -57,7 +60,7 @@
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" size="18" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
@@ -82,31 +85,31 @@
 <p class="first admonition-title">Note</p>
 <p class="last">This is a preliminary design document.</p>
 </div>
-<p>In <tt class="docutils literal"><span class="pre">scikits.image</span></tt>, we assume the following dtype ranges:</p>
+<p>In <tt class="docutils literal"><span class="pre">skimage</span></tt>, we assume the following dtype ranges:</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="41%" />
 <col width="59%" />
 </colgroup>
 <thead valign="bottom">
-<tr><th class="head">Data type</th>
+<tr class="row-odd"><th class="head">Data type</th>
 <th class="head">Range</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr><td>uint8</td>
+<tr class="row-even"><td>uint8</td>
 <td>0 to 255</td>
 </tr>
-<tr><td>uint16</td>
+<tr class="row-odd"><td>uint16</td>
 <td>0 to 65535</td>
 </tr>
-<tr><td>float</td>
+<tr class="row-even"><td>float</td>
 <td>0 to 1</td>
 </tr>
-<tr><td>int8</td>
+<tr class="row-odd"><td>int8</td>
 <td>-128 to 127</td>
 </tr>
-<tr><td>int16</td>
+<tr class="row-even"><td>int16</td>
 <td>-32768 to 32767</td>
 </tr>
 </tbody>
@@ -126,20 +129,20 @@ users:</p>
 <col width="72%" />
 </colgroup>
 <thead valign="bottom">
-<tr><th class="head">Function name</th>
+<tr class="row-odd"><th class="head">Function name</th>
 <th class="head">Description</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr><td>img_as_float</td>
+<tr class="row-even"><td>img_as_float</td>
 <td>Convert to 64-bit floating point repr.
 Scaled to 0/1.</td>
 </tr>
-<tr><td>img_as_uint</td>
+<tr class="row-odd"><td>img_as_uint</td>
 <td>Convert to 16-bit uint repr.
 Scaled to 0-65535.</td>
 </tr>
-<tr><td>img_as_int</td>
+<tr class="row-even"><td>img_as_int</td>
 <td>Convert to 16-bit int repr.
 Scaled to -32767 to 32768.</td>
 </tr>
@@ -178,8 +181,8 @@ purposes), may do:</p>
     <div class="footer-wrapper">
       
     <div class="footer">
-        &copy; Copyright 2011, scikits-image team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+        &copy; Copyright 2011, the Image Scikit team.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1pre.
     </div>
     </div>
 

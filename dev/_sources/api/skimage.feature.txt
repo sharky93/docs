@@ -1,0 +1,16 @@
+.. AUTO-GENERATED FILE -- DO NOT EDIT!
+
+Module: :mod:`feature`
+======================
+.. automodule:: skimage.feature
+
+.. currentmodule:: skimage.feature
+.. autosummary::
+
+   skimage.feature.hog
+
+hog
+---
+
+.. autofunction:: skimage.feature.hog
+
