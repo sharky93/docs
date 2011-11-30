@@ -36,6 +36,21 @@ General-purpose and introductory examples for the scikit.
 
 
 
+.. figure:: ./images/thumb/plot_canny.png
+   :target: ./plot_canny.html
+
+   :ref:`example_plot_canny.py`
+
+.. figure:: ./images/thumb/plot_convex_hull.png
+   :target: ./plot_convex_hull.html
+
+   :ref:`example_plot_convex_hull.py`
+
+.. figure:: ./images/thumb/plot_glcm.png
+   :target: ./plot_glcm.html
+
+   :ref:`example_plot_glcm.py`
+
 .. figure:: ./images/thumb/plot_hough_transform.png
    :target: ./plot_hough_transform.html
 
@@ -45,6 +60,11 @@ General-purpose and introductory examples for the scikit.
    :target: ./plot_lena_tv_denoise.html
 
    :ref:`example_plot_lena_tv_denoise.py`
+
+.. figure:: ./images/thumb/plot_medial_transform.png
+   :target: ./plot_medial_transform.html
+
+   :ref:`example_plot_medial_transform.py`
 
 .. figure:: ./images/thumb/plot_radon_transform.png
    :target: ./plot_radon_transform.html

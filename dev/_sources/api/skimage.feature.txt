@@ -7,7 +7,19 @@ Module: :mod:`feature`
 .. currentmodule:: skimage.feature
 .. autosummary::
 
+   skimage.feature.greycomatrix
+   skimage.feature.greycoprops
    skimage.feature.hog
+
+greycomatrix
+------------
+
+.. autofunction:: skimage.feature.greycomatrix
+
+greycoprops
+-----------
+
+.. autofunction:: skimage.feature.greycoprops
 
 hog
 ---

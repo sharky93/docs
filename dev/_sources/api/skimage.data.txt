@@ -9,6 +9,7 @@ Module: :mod:`data`
 
    skimage.data.camera
    skimage.data.checkerboard
+   skimage.data.coins
    skimage.data.imread
    skimage.data.lena
    skimage.data.load
@@ -22,6 +23,11 @@ checkerboard
 ------------
 
 .. autofunction:: skimage.data.checkerboard
+
+coins
+-----
+
+.. autofunction:: skimage.data.coins
 
 imread
 ------
