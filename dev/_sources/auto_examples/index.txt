@@ -41,6 +41,11 @@ General-purpose and introductory examples for the scikit.
 
    :ref:`example_plot_canny.py`
 
+.. figure:: ./images/thumb/plot_contours.png
+   :target: ./plot_contours.html
+
+   :ref:`example_plot_contours.py`
+
 .. figure:: ./images/thumb/plot_convex_hull.png
    :target: ./plot_convex_hull.html
 

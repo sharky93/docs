@@ -13,6 +13,7 @@ API Reference
    skimage.filter
    skimage.graph
    skimage.io
+   skimage.measure
    skimage.morphology
    skimage.transform
    skimage.util
