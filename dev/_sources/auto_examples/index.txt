@@ -91,3 +91,20 @@ General-purpose and introductory examples for the scikit.
 
     <div style="clear: both"></div>
     
+
+
+Longer examples and demonstrations
+----------------------------------
+
+
+
+.. figure:: applications/images/thumb/plot_coins_segmentation.png
+   :target: ./applications/plot_coins_segmentation.html
+
+   :ref:`example_applications_plot_coins_segmentation.py`
+
+
+.. raw:: html
+
+    <div style="clear: both"></div>
+    

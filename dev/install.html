@@ -111,13 +111,11 @@ in-place:</p>
 <ul class="simple">
 <li><a class="reference external" href="http://python.org">Python &gt;= 2.5</a></li>
 <li><a class="reference external" href="http://numpy.scipy.org/">Numpy &gt;= 1.4</a></li>
-<li><a class="reference external" href="http://www.cython.org/">Cython &gt;= 0.13</a></li>
+<li><a class="reference external" href="http://www.cython.org/">Cython &gt;= 0.15</a></li>
 </ul>
 </div>
 <div class="section" id="known-build-errors">
 <h1>Known build errors<a class="headerlink" href="#known-build-errors" title="Permalink to this headline">¶</a></h1>
-<p>If Cython compilation fails with the error <tt class="docutils literal"><span class="pre">cpython.pycapsule.pxd</span> <span class="pre">not</span>
-<span class="pre">found</span></tt> (for Cython 0.14), try to <a class="reference external" href="http://www.cython.org/#download">install Cython 0.15</a> instead.</p>
 <p>On Windows, the error <tt class="docutils literal"><span class="pre">Error:unable</span> <span class="pre">to</span> <span class="pre">find</span> <span class="pre">vcvarsall.bat</span></tt> means that
 distutils is not correctly configured to use the C compiler. Edit (create
 if not existing) the configuration file <tt class="docutils literal"><span class="pre">distutils.cfg</span></tt> (located for
@@ -139,9 +137,7 @@ example at <tt class="docutils literal"><span class="pre">C:\Python26\Lib\distut
 functionality is only available with the following installed:</p>
 <dl class="docutils">
 <dt><a class="reference external" href="http://wiki.python.org/moin/PyQt">PyQt4</a></dt>
-<dd>The <cite>qt</cite> plugin that provides <cite>imshow</cite> and <cite>scivi</cite>.</dd>
-<dt><a class="reference external" href="http://www.pygtk.org/">PyGTK</a></dt>
-<dd>The <cite>gtk</cite> plugin that provides <cite>imshow</cite>.</dd>
+<dd>The <cite>qt</cite> plugin that provides <tt class="docutils literal"><span class="pre">imshow(x,</span> <span class="pre">fancy=True)</span></tt> and <cite>scivi</cite>.</dd>
 </dl>
 </div>
 
