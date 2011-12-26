@@ -1,0 +1,28 @@
+
+
+.. _example_plot_equalize.py:
+
+
+======================
+Histogram Equalization
+======================
+
+This examples takes an image with low contrast and enhances its contrast using
+histogram equalization. Histogram equalization enhances contrast by "spreading
+out the most frequent intensity values" in an image [1]_. The equalized image
+has a roughly linear cumulative distribution function, as shown in this example.
+
+.. [1] http://en.wikipedia.org/wiki/Histogram_equalization
+
+
+
+
+.. image:: images/plot_equalize_1.png
+    :align: center
+
+
+**Python source code:** :download:`plot_equalize.py <plot_equalize.py>`
+
+.. literalinclude:: plot_equalize.py
+    :lines: 14-
+    

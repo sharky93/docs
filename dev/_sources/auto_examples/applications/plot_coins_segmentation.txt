@@ -40,12 +40,12 @@ labeled individually.
 
     *
 
-      .. image:: images/plot_coins_segmentation_1.png
+      .. image:: images/plot_coins_segmentation_4.png
             :scale: 50
 
     *
 
-      .. image:: images/plot_coins_segmentation_2.png
+      .. image:: images/plot_coins_segmentation_5.png
             :scale: 50
 
     *
@@ -55,12 +55,12 @@ labeled individually.
 
     *
 
-      .. image:: images/plot_coins_segmentation_4.png
+      .. image:: images/plot_coins_segmentation_2.png
             :scale: 50
 
     *
 
-      .. image:: images/plot_coins_segmentation_5.png
+      .. image:: images/plot_coins_segmentation_1.png
             :scale: 50
 
 

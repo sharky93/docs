@@ -1,0 +1,28 @@
+.. AUTO-GENERATED FILE -- DO NOT EDIT!
+
+Module: :mod:`exposure`
+=======================
+.. automodule:: skimage.exposure
+
+.. currentmodule:: skimage.exposure
+.. autosummary::
+
+   skimage.exposure.cumulative_distribution
+   skimage.exposure.equalize
+   skimage.exposure.histogram
+
+cumulative_distribution
+-----------------------
+
+.. autofunction:: skimage.exposure.cumulative_distribution
+
+equalize
+--------
+
+.. autofunction:: skimage.exposure.equalize
+
+histogram
+---------
+
+.. autofunction:: skimage.exposure.histogram
+

@@ -51,6 +51,11 @@ General-purpose and introductory examples for the scikit.
 
    :ref:`example_plot_convex_hull.py`
 
+.. figure:: ./images/thumb/plot_equalize.png
+   :target: ./plot_equalize.html
+
+   :ref:`example_plot_equalize.py`
+
 .. figure:: ./images/thumb/plot_glcm.png
    :target: ./plot_glcm.html
 
@@ -70,6 +75,11 @@ General-purpose and introductory examples for the scikit.
    :target: ./plot_medial_transform.html
 
    :ref:`example_plot_medial_transform.py`
+
+.. figure:: ./images/thumb/plot_otsu.png
+   :target: ./plot_otsu.html
+
+   :ref:`example_plot_otsu.py`
 
 .. figure:: ./images/thumb/plot_radon_transform.png
    :target: ./plot_radon_transform.html
