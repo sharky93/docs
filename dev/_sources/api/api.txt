@@ -16,5 +16,6 @@ API Reference
    skimage.io
    skimage.measure
    skimage.morphology
+   skimage.segmentation
    skimage.transform
    skimage.util

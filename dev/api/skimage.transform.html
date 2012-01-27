@@ -68,7 +68,7 @@
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" size="18" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
@@ -89,7 +89,7 @@
             
   <div class="section" id="module-skimage.transform">
 <span id="module-transform"></span><h1>Module: <tt class="xref py py-mod docutils literal"><span class="pre">transform</span></tt><a class="headerlink" href="#module-skimage.transform" title="Permalink to this headline">¶</a></h1>
-<table border="1" class="docutils">
+<table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
 <col width="90%" />
@@ -834,21 +834,21 @@ projection data. This algorithm is called filtered back projection.</p>
 <blockquote>
 <div><p>Input image with nonzero values representing edges.</p>
 </div></blockquote>
-<p><strong>value_threshold: int</strong> :</p>
+<p><strong>threshold</strong> : int</p>
 <blockquote>
 <div><p>Threshold</p>
 </div></blockquote>
-<p><strong>line_length: int, optional (default 50)</strong> :</p>
+<p><strong>line_length</strong> : int, optional (default 50)</p>
 <blockquote>
 <div><p>Minimum accepted length of detected lines.
 Increase the parameter to extract longer lines.</p>
 </div></blockquote>
-<p><strong>line_gap: int, optional, (default 10)</strong> :</p>
+<p><strong>line_gap</strong> : int, optional, (default 10)</p>
 <blockquote>
 <div><p>Maximum gap between pixels to still form a line. 
 Increase the parameter to merge broken lines more aggresively.</p>
 </div></blockquote>
-<p><strong>theta :1D ndarray, dtype=double, optional, default (-pi/2 .. pi/2)</strong> :</p>
+<p><strong>theta</strong> : 1D ndarray, dtype=double, optional, default (-pi/2 .. pi/2)</p>
 <blockquote>
 <div><p>Angles at which to compute the transform, in radians.</p>
 </div></blockquote>
@@ -922,7 +922,7 @@ projection angles.</p>
       
     <div class="footer">
         &copy; Copyright 2011, the scikits-image team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.8.
     </div>
     </div>
 

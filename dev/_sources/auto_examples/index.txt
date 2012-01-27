@@ -61,6 +61,11 @@ General-purpose and introductory examples for the scikit.
 
    :ref:`example_plot_glcm.py`
 
+.. figure:: ./images/thumb/plot_harris.png
+   :target: ./plot_harris.html
+
+   :ref:`example_plot_harris.py`
+
 .. figure:: ./images/thumb/plot_hough_transform.png
    :target: ./plot_hough_transform.html
 
@@ -85,6 +90,11 @@ General-purpose and introductory examples for the scikit.
    :target: ./plot_radon_transform.html
 
    :ref:`example_plot_radon_transform.py`
+
+.. figure:: ./images/thumb/plot_random_walker_segmentation.png
+   :target: ./plot_random_walker_segmentation.html
+
+   :ref:`example_plot_random_walker_segmentation.py`
 
 .. figure:: ./images/thumb/plot_skeleton.png
    :target: ./plot_skeleton.html

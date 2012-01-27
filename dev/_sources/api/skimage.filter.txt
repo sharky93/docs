@@ -25,6 +25,7 @@ Inheritance diagram for ``skimage.filter``:
 .. autosummary::
 
    skimage.filter.canny
+   skimage.filter.harris
    skimage.filter.hprewitt
    skimage.filter.hsobel
    skimage.filter.inverse
@@ -42,6 +43,11 @@ canny
 -----
 
 .. autofunction:: skimage.filter.canny
+
+harris
+------
+
+.. autofunction:: skimage.filter.harris
 
 hprewitt
 --------
