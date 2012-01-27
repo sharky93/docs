@@ -4,7 +4,8 @@ Harris Corner detector
 ===============================================================================
 
 The Harris corner filter detects interest points using edge detection in
-multiple direction.
+multiple directions.
+
 """
 
 from matplotlib import pyplot as plt
@@ -13,18 +14,18 @@ from skimage import data, img_as_float
 from skimage.filter import harris
 
 
-def plot_harris_points(image, filtered_coords):
-    """ plots corners found in image"""
-
-    plt.plot()
-    plt.imshow(image)
-    plt.plot([p[1] for p in filtered_coords],
-             [p[0] for p in filtered_coords],
-             'b.')
-    plt.axis('off')
-    plt.show()
+# Find corner features
+image = img_as_float(data.lena())
+filtered_coords = harris(image, 6)
 
 
-im = img_as_float(data.lena())
-filtered_coords = harris(im, 6)
-plot_harris_points(im, filtered_coords)
+# Display
+plt.figure(figsize=(8, 8))
+plt.imshow(image, cmap=plt.cm.gray)
+plt.scatter(filtered_coords[:, 1], filtered_coords[:, 0],
+            s=50, marker='s', c='g', alpha=0.5)
+
+plt.axis('off')
+plt.axis('image')
+
+plt.show()

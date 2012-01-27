@@ -70,7 +70,7 @@
   <div class="section" id="harris-corner-detector">
 <span id="example-plot-harris-py"></span><h1>Harris Corner detector<a class="headerlink" href="#harris-corner-detector" title="Permalink to this headline">¶</a></h1>
 <p>The Harris corner filter detects interest points using edge detection in
-multiple direction.</p>
+multiple directions.</p>
 <img alt="../_images/plot_harris_1.png" class="align-center" src="../_images/plot_harris_1.png" />
 <p><strong>Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_harris.py"><tt class="xref download docutils literal"><span class="pre">plot_harris.py</span></tt></a></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
@@ -79,21 +79,21 @@ multiple direction.</p>
 <span class="kn">from</span> <span class="nn">skimage.filter</span> <span class="kn">import</span> <span class="n">harris</span>
 
 
-<span class="k">def</span> <span class="nf">plot_harris_points</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">filtered_coords</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; plots corners found in image&quot;&quot;&quot;</span>
-
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">filtered_coords</span><span class="p">],</span>
-             <span class="p">[</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">filtered_coords</span><span class="p">],</span>
-             <span class="s">&#39;b.&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s">&#39;off&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c"># Find corner features</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">img_as_float</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">lena</span><span class="p">())</span>
+<span class="n">filtered_coords</span> <span class="o">=</span> <span class="n">harris</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 
 
-<span class="n">im</span> <span class="o">=</span> <span class="n">img_as_float</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">lena</span><span class="p">())</span>
-<span class="n">filtered_coords</span> <span class="o">=</span> <span class="n">harris</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
-<span class="n">plot_harris_points</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">filtered_coords</span><span class="p">)</span>
+<span class="c"># Display</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gray</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">filtered_coords</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">filtered_coords</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span>
+            <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s">&#39;s&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s">&#39;g&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s">&#39;image&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
