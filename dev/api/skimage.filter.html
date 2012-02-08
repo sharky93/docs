@@ -45,7 +45,6 @@
 <li><a class="reference internal" href="#">Module: <tt class="docutils literal"><span class="pre">filter</span></tt></a><ul>
 <li><a class="reference internal" href="#lpifilter2d"><tt class="docutils literal"><span class="pre">LPIFilter2D</span></tt></a></li>
 <li><a class="reference internal" href="#canny">canny</a></li>
-<li><a class="reference internal" href="#harris">harris</a></li>
 <li><a class="reference internal" href="#hprewitt">hprewitt</a></li>
 <li><a class="reference internal" href="#hsobel">hsobel</a></li>
 <li><a class="reference internal" href="#inverse">inverse</a></li>
@@ -67,6 +66,13 @@
     <li><a href="../_sources/api/skimage.filter.txt"
            rel="nofollow">Show Source</a></li>
   </ul>
+
+  <h3>Version</h3>
+
+    <script type="text/javascript" src="_static/docversions.js"></script>
+    <script type="text/javascript">
+      insert_version_links();
+    </script>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -145,9 +151,6 @@ passed through.</p>
 <tbody valign="top">
 <tr><td><a class="reference internal" href="#skimage.filter.canny" title="skimage.filter.canny"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.canny</span></tt></a>(image[,&nbsp;sigma,&nbsp;...])</td>
 <td>Edge filter an image using the Canny algorithm.</td>
-</tr>
-<tr><td><a class="reference internal" href="#skimage.filter.harris" title="skimage.filter.harris"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.harris</span></tt></a>(image[,&nbsp;min_distance,&nbsp;...])</td>
-<td>Return corners from a Harris response image</td>
 </tr>
 <tr><td><a class="reference internal" href="#skimage.filter.hprewitt" title="skimage.filter.hprewitt"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.hprewitt</span></tt></a>(image[,&nbsp;mask])</td>
 <td>Find the horizontal edges of an image using the Prewitt transform.</td>
@@ -268,43 +271,6 @@ Pattern Analysis and Machine Intelligence, 8:679-714, 1986</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">edges2</span> <span class="o">=</span> <span class="nb">filter</span><span class="o">.</span><span class="n">canny</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>    
 </pre></div>
 </div>
-</dd></dl>
-
-</div>
-<div class="section" id="harris">
-<h2>harris<a class="headerlink" href="#harris" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="skimage.filter.harris">
-<tt class="descclassname">skimage.filter.</tt><tt class="descname">harris</tt><big>(</big><em>image</em>, <em>min_distance=10</em>, <em>threshold=0.1</em>, <em>eps=1e-06</em>, <em>gaussian_deviation=1</em><big>)</big><a class="headerlink" href="#skimage.filter.harris" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return corners from a Harris response image</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image: ndarray of floats</strong> :</p>
-<blockquote>
-<div><p>Input image</p>
-</div></blockquote>
-<p><strong>min_distance: int, optional</strong> :</p>
-<blockquote>
-<div><p>Minimum number of pixels separating interest points and image boundary</p>
-</div></blockquote>
-<p><strong>threshold: float, optional</strong> :</p>
-<blockquote>
-<div><p>Relative threshold impacting the number of interest points.</p>
-</div></blockquote>
-<p><strong>eps: float, optional</strong> :</p>
-<blockquote>
-<div><p>Normalisation factor</p>
-</div></blockquote>
-<p><strong>gaussian_deviation: integer, optional</strong> :</p>
-<blockquote class="last">
-<div><p>Standard deviation used for the Gaussian kernel</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
 </dd></dl>
 
 </div>
@@ -615,10 +581,10 @@ integer arrays.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r35" rules="none">
+<table class="docutils citation" frame="void" id="r18" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[R35]</a></td><td>Wikipedia, <a class="reference external" href="http://en.wikipedia.org/wiki/Otsu's_Method">http://en.wikipedia.org/wiki/Otsu&#8217;s_Method</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id1">[R18]</a></td><td>Wikipedia, <a class="reference external" href="http://en.wikipedia.org/wiki/Otsu's_Method">http://en.wikipedia.org/wiki/Otsu&#8217;s_Method</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -689,12 +655,12 @@ the integral of the norm of the image gradient. Total variation
 denoising tends to produce &#8220;cartoon-like&#8221; images, that is, 
 piecewise-constant images.</p>
 <p>This code is an implementation of the algorithm of Rudin, Fatemi and Osher 
-that was proposed by Chambolle in <a class="reference internal" href="#r36">[R36]</a>.</p>
+that was proposed by Chambolle in <a class="reference internal" href="#r19">[R19]</a>.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r36" rules="none">
+<table class="docutils citation" frame="void" id="r19" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R36]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id3">2</a>)</em> A. Chambolle, An algorithm for total variation minimization and 
+<tr><td class="label">[R19]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id3">2</a>)</em> A. Chambolle, An algorithm for total variation minimization and 
 applications, Journal of Mathematical Imaging and Vision, 
 Springer, 2004, 20, 89-97.</td></tr>
 </tbody>

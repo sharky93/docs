@@ -68,6 +68,13 @@
     <li><a href="../_sources/api/skimage.morphology.txt"
            rel="nofollow">Show Source</a></li>
   </ul>
+
+  <h3>Version</h3>
+
+    <script type="text/javascript" src="_static/docversions.js"></script>
+    <script type="text/javascript">
+      insert_version_links();
+    </script>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -175,10 +182,10 @@ polygon that surround all white pixels in the input image.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r43" rules="none">
+<table class="docutils citation" frame="void" id="r26" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[R43]</a></td><td><a class="reference external" href="http://blogs.mathworks.com/steve/2011/10/04/binary-image-convex-hull-algorithm-notes/">http://blogs.mathworks.com/steve/2011/10/04/binary-image-convex-hull-algorithm-notes/</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id1">[R26]</a></td><td><a class="reference external" href="http://blogs.mathworks.com/steve/2011/10/04/binary-image-convex-hull-algorithm-notes/">http://blogs.mathworks.com/steve/2011/10/04/binary-image-convex-hull-algorithm-notes/</a></td></tr>
 </tbody>
 </table>
 </dd></dl>
@@ -190,14 +197,14 @@ polygon that surround all white pixels in the input image.</p>
 <dt id="skimage.morphology.diamond">
 <tt class="descclassname">skimage.morphology.</tt><tt class="descname">diamond</tt><big>(</big><em>radius</em>, <em>dtype=&lt;type 'numpy.uint8'&gt;</em><big>)</big><a class="headerlink" href="#skimage.morphology.diamond" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates a flat, diamond-shaped structuring element of a given
-radius.  A pixel is part of the neighborhood (i.e. labeled 1) iff
+radius.  A pixel is part of the neighborhood (i.e. labeled 1) if
 the city block/manhattan distance between it and the center of the
 neighborhood is no greater than radius.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>radius</strong> : string</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>radius</strong> : int</p>
 <blockquote>
 <div><p>The radius of the diamond-shaped structuring element.</p>
 </div></blockquote>
@@ -225,13 +232,13 @@ are 1 and 0 otherwise.</p>
 <dt id="skimage.morphology.disk">
 <tt class="descclassname">skimage.morphology.</tt><tt class="descname">disk</tt><big>(</big><em>radius</em>, <em>dtype=&lt;type 'numpy.uint8'&gt;</em><big>)</big><a class="headerlink" href="#skimage.morphology.disk" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates a flat, disk-shaped structuring element of a given radius.
-A pixel is within the neighborhood iff the euclidean distance between
+A pixel is within the neighborhood if the euclidean distance between
 it and the origin is no greater than a radius.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>radius</strong> : string</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>radius</strong> : int</p>
 <blockquote>
 <div><p>The radius of the disk-shaped structuring element.</p>
 </div></blockquote>
@@ -673,8 +680,16 @@ to be the point in question.</p>
 <dt id="skimage.morphology.label">
 <tt class="descclassname">skimage.morphology.</tt><tt class="descname">label</tt><big>(</big><big>)</big><a class="headerlink" href="#skimage.morphology.label" title="Permalink to this definition">¶</a></dt>
 <dd><p>Label connected regions of an integer array.</p>
-<p>Connectivity is defined as two (8-connected) neighboring entries
-having equal value.</p>
+<p>Two pixels are connected when they are neighbors and have the same value.
+They can be neighbors either in a 4- or 8-connected sense:</p>
+<div class="highlight-python"><pre>4-connectivity      8-connectivity
+
+     [ ]           [ ]  [ ]  [ ]
+      |               \  |  /
+[ ]--[ ]--[ ]      [ ]--[ ]--[ ]
+      |               /  |  \ 
+     [ ]           [ ]  [ ]  [ ]</pre>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -682,6 +697,15 @@ having equal value.</p>
 <tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>input</strong> : ndarray of dtype int</p>
 <blockquote>
 <div><p>Image to label.</p>
+</div></blockquote>
+<p><strong>neighbors</strong> : {4, 8}, int</p>
+<blockquote>
+<div><p>Whether to use 4- or 8-connectivity.</p>
+</div></blockquote>
+<p><strong>background</strong> : int</p>
+<blockquote>
+<div><p>Consider all pixels with this value as background pixels, and label
+them as -1.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -694,6 +718,37 @@ same integer value.</p>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">x</span>
+<span class="go">[[1 0 0]</span>
+<span class="go"> [0 1 0]</span>
+<span class="go"> [0 0 1]]</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">m</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">neighbors</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="go">[[0 1 1]</span>
+<span class="go"> [2 3 1]</span>
+<span class="go"> [2 2 4]]</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">m</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">neighbors</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="go">[[0 1 1]</span>
+<span class="go"> [1 0 1]</span>
+<span class="go"> [1 1 0]]</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+<span class="gp">... </span>              <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+<span class="gp">... </span>              <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">m</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="go">[[ 0 -1 -1]</span>
+<span class="go"> [ 0  0  1]</span>
+<span class="go"> [-1 -1 -1]]</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>
@@ -861,10 +916,10 @@ the iterations.</p>
 medial axis transform, which is also often referred to as
 &#8220;skeletonization&#8221;.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r44" rules="none">
+<table class="docutils citation" frame="void" id="r27" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[R44]</a></td><td>A fast parallel algorithm for thinning digital patterns, 
+<tr><td class="label"><a class="fn-backref" href="#id2">[R27]</a></td><td>A fast parallel algorithm for thinning digital patterns, 
 T. Y. ZHANG and C. Y. SUEN, Communications of the ACM,
 March 1984, Volume 27, Number 3</td></tr>
 </tbody>
@@ -982,7 +1037,7 @@ will be labeled.</p>
 </dl>
 </div>
 <p class="rubric">Notes</p>
-<p>This function implements a watershed algorithm [R45]_that apportions pixels
+<p>This function implements a watershed algorithm [R28]_that apportions pixels
 into marked basins. The algorithm uses a priority queue to hold the pixels
 with the metric for the priority queue being pixel value, then the time of
 entry into the queue - this settles ties in favor of the closest marker.</p>
@@ -1000,16 +1055,16 @@ the local minima of the gradient of the image, or the local maxima of the
 distance function to the background for separating overlapping objects
 (see example).</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r45" rules="none">
+<table class="docutils citation" frame="void" id="r28" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[R45]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Watershed_%28image_processing%29">http://en.wikipedia.org/wiki/Watershed_%28image_processing%29</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id3">[R28]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Watershed_%28image_processing%29">http://en.wikipedia.org/wiki/Watershed_%28image_processing%29</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r46" rules="none">
+<table class="docutils citation" frame="void" id="r29" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[R46]</a></td><td><a class="reference external" href="http://cmm.ensmp.fr/~beucher/wtshed.html">http://cmm.ensmp.fr/~beucher/wtshed.html</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id4">[R29]</a></td><td><a class="reference external" href="http://cmm.ensmp.fr/~beucher/wtshed.html">http://cmm.ensmp.fr/~beucher/wtshed.html</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>

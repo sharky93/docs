@@ -7,12 +7,18 @@
 Histogram Equalization
 ======================
 
-This examples takes an image with low contrast and enhances its contrast using
-histogram equalization. Histogram equalization enhances contrast by "spreading
-out the most frequent intensity values" in an image [1]_. The equalized image
-has a roughly linear cumulative distribution function, as shown in this example.
+This examples enhances an image with low contrast, using a method called
+*histogram equalization*, which "spreads out the most frequent intensity
+values" in an image [1]_. The equalized image has a roughly linear cumulative
+distribution function.
+
+While histogram equalization has the advantage that it requires no parameters,
+it sometimes yields unnatural looking images.  An alternative method is
+*contrast stretching*, where the image is rescaled to include all intensities
+that fall within the 2nd and 98th percentiles [2]_.
 
 .. [1] http://en.wikipedia.org/wiki/Histogram_equalization
+.. [2] http://homepages.inf.ed.ac.uk/rbf/HIPR2/stretch.htm
 
 
 
@@ -24,5 +30,5 @@ has a roughly linear cumulative distribution function, as shown in this example.
 **Python source code:** :download:`plot_equalize.py <plot_equalize.py>`
 
 .. literalinclude:: plot_equalize.py
-    :lines: 14-
+    :lines: 20-
     

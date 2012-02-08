@@ -13,6 +13,7 @@ Module: :mod:`data`
    skimage.data.imread
    skimage.data.lena
    skimage.data.load
+   skimage.data.moon
 
 camera
 ------
@@ -43,4 +44,9 @@ load
 ----
 
 .. autofunction:: skimage.data.load
+
+moon
+----
+
+.. autofunction:: skimage.data.moon
 

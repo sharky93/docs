@@ -45,6 +45,13 @@
     <li><a href="../_sources/auto_examples/plot_equalize.txt"
            rel="nofollow">Show Source</a></li>
   </ul>
+
+  <h3>Version</h3>
+
+    <script type="text/javascript" src="_static/docversions.js"></script>
+    <script type="text/javascript">
+      insert_version_links();
+    </script>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -69,59 +76,91 @@
             
   <div class="section" id="histogram-equalization">
 <span id="example-plot-equalize-py"></span><h1>Histogram Equalization<a class="headerlink" href="#histogram-equalization" title="Permalink to this headline">¶</a></h1>
-<p>This examples takes an image with low contrast and enhances its contrast using
-histogram equalization. Histogram equalization enhances contrast by &#8220;spreading
-out the most frequent intensity values&#8221; in an image <a class="footnote-reference" href="#id2" id="id1">[1]</a>. The equalized image
-has a roughly linear cumulative distribution function, as shown in this example.</p>
-<table class="docutils footnote" frame="void" id="id2" rules="none">
+<p>This examples enhances an image with low contrast, using a method called
+<em>histogram equalization</em>, which &#8220;spreads out the most frequent intensity
+values&#8221; in an image <a class="footnote-reference" href="#id3" id="id1">[1]</a>. The equalized image has a roughly linear cumulative
+distribution function.</p>
+<p>While histogram equalization has the advantage that it requires no parameters,
+it sometimes yields unnatural looking images.  An alternative method is
+<em>contrast stretching</em>, where the image is rescaled to include all intensities
+that fall within the 2nd and 98th percentiles <a class="footnote-reference" href="#id4" id="id2">[2]</a>.</p>
+<table class="docutils footnote" frame="void" id="id3" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Histogram_equalization">http://en.wikipedia.org/wiki/Histogram_equalization</a></td></tr>
 </tbody>
 </table>
+<table class="docutils footnote" frame="void" id="id4" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><a class="reference external" href="http://homepages.inf.ed.ac.uk/rbf/HIPR2/stretch.htm">http://homepages.inf.ed.ac.uk/rbf/HIPR2/stretch.htm</a></td></tr>
+</tbody>
+</table>
 <img alt="../_images/plot_equalize_1.png" class="align-center" src="../_images/plot_equalize_1.png" />
 <p><strong>Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_equalize.py"><tt class="xref download docutils literal"><span class="pre">plot_equalize.py</span></tt></a></p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-
-<span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
 <span class="kn">from</span> <span class="nn">skimage.util.dtype</span> <span class="kn">import</span> <span class="n">dtype_range</span>
 <span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">exposure</span>
 
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 
-<span class="k">def</span> <span class="nf">plot_hist</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">256</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Plot histogram and cumulative histogram for image&quot;&quot;&quot;</span>
-    <span class="n">img_cdf</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">exposure</span><span class="o">.</span><span class="n">cumulative_distribution</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">bins</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Number of pixels&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Pixel intensiy&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
-    <span class="n">ax_cdf</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
-    <span class="n">ax_cdf</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">img_cdf</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">plot_img_and_hist</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">axes</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">256</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Plot an image along with its histogram and cumulative histogram.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ax_img</span><span class="p">,</span> <span class="n">ax_hist</span> <span class="o">=</span> <span class="n">axes</span>
+    <span class="n">ax_cdf</span> <span class="o">=</span> <span class="n">ax_hist</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
+
+    <span class="c"># Display image</span>
+    <span class="n">ax_img</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gray</span><span class="p">)</span>
+    <span class="n">ax_img</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
+
+    <span class="c"># Display histogram</span>
+    <span class="n">ax_hist</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">)</span>
+    <span class="n">ax_hist</span><span class="o">.</span><span class="n">ticklabel_format</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s">&#39;y&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s">&#39;scientific&#39;</span><span class="p">,</span> <span class="n">scilimits</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="n">ax_hist</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">&#39;Pixel intensity&#39;</span><span class="p">)</span>
+
     <span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span> <span class="o">=</span> <span class="n">dtype_range</span><span class="p">[</span><span class="n">img</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">type</span><span class="p">]</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">)</span>
+    <span class="n">ax_hist</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">)</span>
 
-    <span class="n">ax_cdf</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">&#39;Fraction of total intensity&#39;</span><span class="p">)</span>
+    <span class="c"># Display cumulative distribution</span>
+    <span class="n">img_cdf</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">exposure</span><span class="o">.</span><span class="n">cumulative_distribution</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">bins</span><span class="p">)</span>
+    <span class="n">ax_cdf</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">img_cdf</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span>
 
-<span class="n">img_orig</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">camera</span><span class="p">()</span>
-<span class="c"># squeeze image intensities to lower image contrast</span>
-<span class="n">img</span> <span class="o">=</span> <span class="n">img_orig</span> <span class="o">/</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">100</span>
+    <span class="k">return</span> <span class="n">ax_img</span><span class="p">,</span> <span class="n">ax_hist</span><span class="p">,</span> <span class="n">ax_cdf</span>
+
+
+<span class="c"># Load an example image</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">moon</span><span class="p">()</span>
+
+<span class="c"># Contrast stretching</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">p98</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="mi">98</span><span class="p">)</span>
+<span class="n">img_rescale</span> <span class="o">=</span> <span class="n">exposure</span><span class="o">.</span><span class="n">rescale_intensity</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">in_range</span><span class="o">=</span><span class="p">(</span><span class="n">p2</span><span class="p">,</span> <span class="n">p98</span><span class="p">))</span>
+
+<span class="c"># Equalization</span>
 <span class="n">img_eq</span> <span class="o">=</span> <span class="n">exposure</span><span class="o">.</span><span class="n">equalize</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gray</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">255</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&#39;Low contrast input image&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s">&#39;off&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">plot_hist</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img_eq</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gray</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&#39;After</span><span class="se">\n</span><span class="s">histogram equalization&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s">&#39;off&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">plot_hist</span><span class="p">(</span><span class="n">img_eq</span><span class="p">)</span>
+<span class="c"># Display results</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">ax_img</span><span class="p">,</span> <span class="n">ax_hist</span><span class="p">,</span> <span class="n">ax_cdf</span> <span class="o">=</span> <span class="n">plot_img_and_hist</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">axes</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">ax_img</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;Low contrast image&#39;</span><span class="p">)</span>
+<span class="n">ax_hist</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">&#39;Number of pixels&#39;</span><span class="p">)</span>
+
+<span class="n">ax_img</span><span class="p">,</span> <span class="n">ax_hist</span><span class="p">,</span> <span class="n">ax_cdf</span> <span class="o">=</span> <span class="n">plot_img_and_hist</span><span class="p">(</span><span class="n">img_rescale</span><span class="p">,</span> <span class="n">axes</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">ax_img</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;Contrast stretching&#39;</span><span class="p">)</span>
+
+<span class="n">ax_img</span><span class="p">,</span> <span class="n">ax_hist</span><span class="p">,</span> <span class="n">ax_cdf</span> <span class="o">=</span> <span class="n">plot_img_and_hist</span><span class="p">(</span><span class="n">img_eq</span><span class="p">,</span> <span class="n">axes</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="n">ax_img</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;Histogram equalization&#39;</span><span class="p">)</span>
+<span class="n">ax_cdf</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">&#39;Fraction of total intensity&#39;</span><span class="p">)</span>
+
+
+<span class="c"># prevent overlap of y-axis labels</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">wspace</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>

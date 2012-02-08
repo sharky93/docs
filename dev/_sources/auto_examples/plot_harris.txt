@@ -7,9 +7,11 @@
 Harris Corner detector
 ===============================================================================
 
-The Harris corner filter detects interest points using edge detection in
-multiple directions.
+The Harris corner filter [1]_ detects "interest points" [2]_ using edge
+detection in multiple directions.
 
+.. [1] http://en.wikipedia.org/wiki/Corner_detection
+.. [2] http://en.wikipedia.org/wiki/Interest_point_detection
 
 
 
@@ -20,5 +22,5 @@ multiple directions.
 **Python source code:** :download:`plot_harris.py <plot_harris.py>`
 
 .. literalinclude:: plot_harris.py
-    :lines: 10-
+    :lines: 12-
     
