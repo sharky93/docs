@@ -28,6 +28,7 @@ that fall within the 2nd and 98th percentiles [2]_.
 
 
 **Python source code:** :download:`plot_equalize.py <plot_equalize.py>`
+(generated using ``skimage`` |version|)
 
 .. literalinclude:: plot_equalize.py
     :lines: 20-

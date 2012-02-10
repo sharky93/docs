@@ -138,9 +138,9 @@ examples in the documentation.</p>
 <div class="section" id="known-build-errors">
 <h1>Known build errors<a class="headerlink" href="#known-build-errors" title="Permalink to this headline">¶</a></h1>
 <p>On Windows, the error <tt class="docutils literal"><span class="pre">Error:unable</span> <span class="pre">to</span> <span class="pre">find</span> <span class="pre">vcvarsall.bat</span></tt> means that
-distutils is not correctly configured to use the C compiler. Edit (create
+distutils is not correctly configured to use the C compiler. Modify (or create,
 if not existing) the configuration file <tt class="docutils literal"><span class="pre">distutils.cfg</span></tt> (located for
-example at <tt class="docutils literal"><span class="pre">C:\Python26\Lib\distutils\distutils.cfg</span></tt>) to be:</p>
+example at <tt class="docutils literal"><span class="pre">C:\Python26\Lib\distutils\distutils.cfg</span></tt>) to contain:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="n">build</span><span class="p">]</span>
 <span class="n">compiler</span><span class="o">=</span><span class="n">mingw32</span>
 </pre></div>
@@ -158,7 +158,10 @@ example at <tt class="docutils literal"><span class="pre">C:\Python26\Lib\distut
 functionality is only available with the following installed:</p>
 <dl class="docutils">
 <dt><a class="reference external" href="http://wiki.python.org/moin/PyQt">PyQt4</a></dt>
-<dd>The <cite>qt</cite> plugin that provides <tt class="docutils literal"><span class="pre">imshow(x,</span> <span class="pre">fancy=True)</span></tt> and <cite>skivi</cite>.</dd>
+<dd>The <tt class="docutils literal"><span class="pre">qt</span></tt> plugin that provides <tt class="docutils literal"><span class="pre">imshow(x,</span> <span class="pre">fancy=True)</span></tt> and <cite>skivi</cite>.</dd>
+<dt><a class="reference external" href="http://freeimage.sf.net">FreeImage</a></dt>
+<dd>The <tt class="docutils literal"><span class="pre">freeimage</span></tt> plugin provides support for reading various types of
+image file formats, including multi-page TIFFs.</dd>
 </dl>
 </div>
 

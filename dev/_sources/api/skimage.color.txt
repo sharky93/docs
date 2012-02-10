@@ -8,6 +8,7 @@ Module: :mod:`color`
 .. autosummary::
 
    skimage.color.convert_colorspace
+   skimage.color.gray2rgb
    skimage.color.hsv2rgb
    skimage.color.rgb2gray
    skimage.color.rgb2grey
@@ -21,6 +22,11 @@ convert_colorspace
 ------------------
 
 .. autofunction:: skimage.color.convert_colorspace
+
+gray2rgb
+--------
+
+.. autofunction:: skimage.color.gray2rgb
 
 hsv2rgb
 -------

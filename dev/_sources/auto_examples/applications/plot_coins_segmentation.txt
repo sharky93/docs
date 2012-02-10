@@ -65,6 +65,7 @@ labeled individually.
 
 
 **Python source code:** :download:`plot_coins_segmentation.py <plot_coins_segmentation.py>`
+(generated using ``skimage`` |version|)
 
 .. literalinclude:: plot_coins_segmentation.py
     :lines: 32-

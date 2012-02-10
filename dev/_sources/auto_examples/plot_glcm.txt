@@ -30,6 +30,7 @@ regression, to label image patches from new images.
 
 
 **Python source code:** :download:`plot_glcm.py <plot_glcm.py>`
+(generated using ``skimage`` |version|)
 
 .. literalinclude:: plot_glcm.py
     :lines: 22-

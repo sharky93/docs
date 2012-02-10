@@ -24,6 +24,7 @@ A good overview of the algorithm is given on `Steve Eddin's blog
 
 
 **Python source code:** :download:`plot_convex_hull.py <plot_convex_hull.py>`
+(generated using ``skimage`` |version|)
 
 .. literalinclude:: plot_convex_hull.py
     :lines: 16-

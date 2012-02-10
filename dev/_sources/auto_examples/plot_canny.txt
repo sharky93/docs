@@ -25,6 +25,7 @@ the hysteresis thresholding.
 
 
 **Python source code:** :download:`plot_canny.py <plot_canny.py>`
+(generated using ``skimage`` |version|)
 
 .. literalinclude:: plot_canny.py
     :lines: 17-

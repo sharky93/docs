@@ -20,6 +20,7 @@ detection in multiple directions.
 
 
 **Python source code:** :download:`plot_harris.py <plot_harris.py>`
+(generated using ``skimage`` |version|)
 
 .. literalinclude:: plot_harris.py
     :lines: 12-

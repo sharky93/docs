@@ -34,6 +34,7 @@ more details on the algorithm.
 
 
 **Python source code:** :download:`plot_watershed.py <plot_watershed.py>`
+(generated using ``skimage`` |version|)
 
 .. literalinclude:: plot_watershed.py
     :lines: 26-

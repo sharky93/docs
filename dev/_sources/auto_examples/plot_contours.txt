@@ -26,6 +26,7 @@ Cubes: A High Resolution 3D Surface Construction Algorithm. Computer Graphics
 
 
 **Python source code:** :download:`plot_contours.py <plot_contours.py>`
+(generated using ``skimage`` |version|)
 
 .. literalinclude:: plot_contours.py
     :lines: 18-

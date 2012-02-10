@@ -25,6 +25,7 @@ the intra-class variance.
 
 
 **Python source code:** :download:`plot_otsu.py <plot_otsu.py>`
+(generated using ``skimage`` |version|)
 
 .. literalinclude:: plot_otsu.py
     :lines: 17-

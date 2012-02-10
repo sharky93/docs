@@ -53,6 +53,7 @@
     <ul>
 <li><a class="reference internal" href="#">Module: <tt class="docutils literal"><span class="pre">color</span></tt></a><ul>
 <li><a class="reference internal" href="#convert-colorspace">convert_colorspace</a></li>
+<li><a class="reference internal" href="#gray2rgb">gray2rgb</a></li>
 <li><a class="reference internal" href="#hsv2rgb">hsv2rgb</a></li>
 <li><a class="reference internal" href="#rgb2gray">rgb2gray</a></li>
 <li><a class="reference internal" href="#rgb2grey">rgb2grey</a></li>
@@ -105,6 +106,9 @@
 <tbody valign="top">
 <tr><td><a class="reference internal" href="#skimage.color.convert_colorspace" title="skimage.color.convert_colorspace"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.convert_colorspace</span></tt></a>(arr,&nbsp;...)</td>
 <td>Convert an image array to a new color space.</td>
+</tr>
+<tr><td><a class="reference internal" href="#skimage.color.gray2rgb" title="skimage.color.gray2rgb"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.gray2rgb</span></tt></a>(image)</td>
+<td>Create an RGB representation of a grey-level image.</td>
 </tr>
 <tr><td><a class="reference internal" href="#skimage.color.hsv2rgb" title="skimage.color.hsv2rgb"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.hsv2rgb</span></tt></a>(hsv)</td>
 <td>HSV to RGB color space conversion.</td>
@@ -181,6 +185,39 @@ from XYZ to HSV is implemented as XYZ -&gt; RGB -&gt; HSV instead of directly.</
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lena_hsv</span> <span class="o">=</span> <span class="n">convert_colorspace</span><span class="p">(</span><span class="n">lena</span><span class="p">,</span> <span class="s">&#39;RGB&#39;</span><span class="p">,</span> <span class="s">&#39;HSV&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</dd></dl>
+
+</div>
+<div class="section" id="gray2rgb">
+<h2>gray2rgb<a class="headerlink" href="#gray2rgb" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.color.gray2rgb">
+<tt class="descclassname">skimage.color.</tt><tt class="descname">gray2rgb</tt><big>(</big><em>image</em><big>)</big><a class="headerlink" href="#skimage.color.gray2rgb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an RGB representation of a grey-level image.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : array_like</p>
+<blockquote>
+<div><p>Input image of shape <tt class="docutils literal"><span class="pre">(M,</span> <span class="pre">N)</span></tt>.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>rgb</strong> : ndarray</p>
+<blockquote>
+<div><p>RGB image of shape <tt class="docutils literal"><span class="pre">(M,</span> <span class="pre">N,</span> <span class="pre">3)</span></tt>.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<blockquote class="last">
+<div><p>If the input is not 2-dimensional.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>

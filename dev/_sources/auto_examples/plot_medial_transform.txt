@@ -30,6 +30,7 @@ a skeleton by iterative morphological thinnings.
 
 
 **Python source code:** :download:`plot_medial_transform.py <plot_medial_transform.py>`
+(generated using ``skimage`` |version|)
 
 .. literalinclude:: plot_medial_transform.py
     :lines: 22-
