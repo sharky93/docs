@@ -72,6 +72,12 @@ General-purpose and introductory examples for the scikit.
 
    :ref:`example_plot_harris.py`
 
+.. figure:: ./images/thumb/plot_hog.png
+   :figclass: gallery
+   :target: ./plot_hog.html
+
+   :ref:`example_plot_hog.py`
+
 .. figure:: ./images/thumb/plot_hough_transform.png
    :figclass: gallery
    :target: ./plot_hough_transform.html
