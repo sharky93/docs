@@ -55,9 +55,7 @@
 <li><a class="reference internal" href="#imagecollection"><tt class="docutils literal"><span class="pre">ImageCollection</span></tt></a><ul>
 </ul>
 </li>
-<li><a class="reference internal" href="#multiimage"><tt class="docutils literal"><span class="pre">MultiImage</span></tt></a><ul>
-</ul>
-</li>
+<li><a class="reference internal" href="#multiimage"><tt class="docutils literal"><span class="pre">MultiImage</span></tt></a></li>
 <li><a class="reference internal" href="#video"><tt class="docutils literal"><span class="pre">Video</span></tt></a><ul>
 </ul>
 </li>
@@ -113,41 +111,6 @@
 <p>Inheritance diagram for <tt class="docutils literal"><span class="pre">skimage.io</span></tt>:</p>
 <span class="target" id="module-skimage.io"></span><p>Utilities to read and write images in various formats.</p>
 <p>The following plug-ins are available:</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="14%" />
-<col width="86%" />
-</colgroup>
-<tbody valign="top">
-<tr><td>Plugin</td>
-<td>Description</td>
-</tr>
-<tr><td>pil</td>
-<td>Image reading via the Python Imaging Library</td>
-</tr>
-<tr><td>qt</td>
-<td>Fast image display using the Qt library</td>
-</tr>
-<tr><td>freeimage</td>
-<td>Load images using the FreeImage library</td>
-</tr>
-<tr><td>gtk</td>
-<td>Fast image display using the GTK library</td>
-</tr>
-<tr><td>matplotlib</td>
-<td>Display or save images using Matplotlib</td>
-</tr>
-<tr><td>fits</td>
-<td>FITS image reading via PyFITS</td>
-</tr>
-<tr><td>null</td>
-<td>Default plugin that does nothing</td>
-</tr>
-<tr><td>gdal</td>
-<td>Image reading via the GDAL Library (www.gdal.org)</td>
-</tr>
-</tbody>
-</table>
 <div class="section" id="imagecollection">
 <h2><a class="reference internal" href="#skimage.io.ImageCollection" title="skimage.io.ImageCollection"><tt class="xref py py-class docutils literal"><span class="pre">ImageCollection</span></tt></a><a class="headerlink" href="#imagecollection" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
@@ -359,34 +322,6 @@ from file.</p>
 <div class="figure">
 <img alt="../_images/show_collection.png" src="../_images/show_collection.png" />
 </div>
-<p class="rubric">Attributes</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr><td><a class="reference internal" href="#skimage.io.MultiImage.filename" title="skimage.io.MultiImage.filename"><tt class="xref py py-obj docutils literal"><span class="pre">filename</span></tt></a></td>
-<td></td>
-</tr>
-<tr><td><a class="reference internal" href="#skimage.io.MultiImage.conserve_memory" title="skimage.io.MultiImage.conserve_memory"><tt class="xref py py-obj docutils literal"><span class="pre">conserve_memory</span></tt></a></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table border="1" class="docutils">
-<colgroup>
-<col width="20%" />
-<col width="7%" />
-<col width="74%" />
-</colgroup>
-<tbody valign="top">
-<tr><td>numframes</td>
-<td>int</td>
-<td>The number of frames in the image.</td>
-</tr>
-</tbody>
-</table>
 <dl class="method">
 <dt id="skimage.io.MultiImage.__init__">
 <tt class="descname">__init__</tt><big>(</big><em>filename</em>, <em>conserve_memory=True</em>, <em>dtype=None</em><big>)</big><a class="headerlink" href="#skimage.io.MultiImage.__init__" title="Permalink to this definition">¶</a></dt>

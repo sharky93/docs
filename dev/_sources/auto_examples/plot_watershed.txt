@@ -23,9 +23,10 @@ opposite of the distance) are chosen as markers, and the flooding of
 basins from such markers separates the two circles along a watershed
 line.
 
-See `Wikipedia
-<http://en.wikipedia.org/wiki/Watershed_(image_processing)>`__ for
-more details on the algorithm.
+See Wikipedia_ for more details on the algorithm.
+
+.. _Wikipedia: <http://en.wikipedia.org/wiki/Watershed_(image_processing)>
+
 
 
 
@@ -37,5 +38,5 @@ more details on the algorithm.
 (generated using ``skimage`` |version|)
 
 .. literalinclude:: plot_watershed.py
-    :lines: 26-
+    :lines: 27-
     

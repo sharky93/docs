@@ -56,7 +56,7 @@ References
 .. [1] C. Galamhos, J. Matas and J. Kittler,"Progressive probabilistic
        Hough transform for line detection", in IEEE Computer Society
        Conference on Computer Vision and Pattern Recognition, 1999.
-        
+
 .. [2] Duda, R. O. and P. E. Hart, "Use of the Hough Transformation to
        Detect Lines and Curves in Pictures," Comm. ACM, Vol. 15,
        pp. 11-15 (January, 1972)
@@ -69,12 +69,12 @@ References
 
     *
 
-      .. image:: images/plot_hough_transform_2.png
+      .. image:: images/plot_hough_transform_1.png
             :scale: 50
 
     *
 
-      .. image:: images/plot_hough_transform_1.png
+      .. image:: images/plot_hough_transform_2.png
             :scale: 50
 
 

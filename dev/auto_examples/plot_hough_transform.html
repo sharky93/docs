@@ -23,7 +23,10 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/docversions.js"></script>
-    <link rel="top" title="skimage v0.5dev docs" href="../index.html" /> 
+    <link rel="top" title="skimage v0.5dev docs" href="../index.html" />
+    <link rel="up" title="Examples" href="index.html" />
+    <link rel="next" title="Denoising the picture of Lena using total variation" href="plot_lena_tv_denoise.html" />
+    <link rel="prev" title="Histogram of Oriented Gradients" href="plot_hog.html" /> 
   </head>
   <body>
     <div class="header-wrapper">
@@ -60,6 +63,12 @@
 
 
 
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="plot_hog.html"
+                        title="previous chapter">Histogram of Oriented Gradients</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="plot_lena_tv_denoise.html"
+                        title="next chapter">Denoising the picture of Lena using total variation</a></p>
 
   <h3>Version</h3>
 
@@ -145,9 +154,9 @@ pp. 11-15 (January, 1972)</td></tr>
 </tbody>
 </table>
 <ul class="horizontal">
-<li><a class="first reference internal image-reference" href="../_images/plot_hough_transform_2.png"><img alt="../_images/plot_hough_transform_2.png" src="../_images/plot_hough_transform_2.png" style="width: 600.0px; height: 200.0px;" /></a>
+<li><a class="first reference internal image-reference" href="../_images/plot_hough_transform_1.png"><img alt="../_images/plot_hough_transform_1.png" src="../_images/plot_hough_transform_1.png" style="width: 400.0px; height: 200.0px;" /></a>
 </li>
-<li><a class="first reference internal image-reference" href="../_images/plot_hough_transform_1.png"><img alt="../_images/plot_hough_transform_1.png" src="../_images/plot_hough_transform_1.png" style="width: 600.0px; height: 250.0px;" /></a>
+<li><a class="first reference internal image-reference" href="../_images/plot_hough_transform_2.png"><img alt="../_images/plot_hough_transform_2.png" src="../_images/plot_hough_transform_2.png" style="width: 400.0px; height: 150.0px;" /></a>
 </li>
 </ul>
 <p><strong>Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_hough_transform.py"><tt class="xref download docutils literal"><span class="pre">plot_hough_transform.py</span></tt></a>
@@ -172,7 +181,7 @@ pp. 11-15 (January, 1972)</td></tr>
 
 <span class="n">h</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="n">hough</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gray</span><span class="p">)</span>
@@ -194,7 +203,7 @@ pp. 11-15 (January, 1972)</td></tr>
 <span class="n">edges</span> <span class="o">=</span> <span class="n">canny</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
 <span class="n">lines</span> <span class="o">=</span> <span class="n">probabilistic_hough</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">line_length</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">line_gap</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">131</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gray</span><span class="p">)</span>

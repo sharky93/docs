@@ -53,12 +53,9 @@
     <ul>
 <li><a class="reference internal" href="#">Module: <tt class="docutils literal"><span class="pre">transform</span></tt></a><ul>
 <li><a class="reference internal" href="#fast-homography">fast_homography</a></li>
-<li><a class="reference internal" href="#fft">fft</a></li>
-<li><a class="reference internal" href="#fftshift">fftshift</a></li>
 <li><a class="reference internal" href="#frt2">frt2</a></li>
 <li><a class="reference internal" href="#homography">homography</a></li>
 <li><a class="reference internal" href="#hough">hough</a></li>
-<li><a class="reference internal" href="#ifft">ifft</a></li>
 <li><a class="reference internal" href="#ifrt2">ifrt2</a></li>
 <li><a class="reference internal" href="#integral-image">integral_image</a></li>
 <li><a class="reference internal" href="#integrate">integrate</a></li>
@@ -110,12 +107,6 @@
 <tr><td><a class="reference internal" href="#skimage.transform.fast_homography" title="skimage.transform.fast_homography"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.fast_homography</span></tt></a></td>
 <td>Projective transformation (homography).</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.transform.fft" title="skimage.transform.fft"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.fft</span></tt></a>(x[,&nbsp;n,&nbsp;axis,&nbsp;overwrite_x])</td>
-<td>Return discrete Fourier transform of real or complex sequence.</td>
-</tr>
-<tr><td><a class="reference internal" href="#skimage.transform.fftshift" title="skimage.transform.fftshift"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.fftshift</span></tt></a>(x[,&nbsp;axes])</td>
-<td>Shift the zero-frequency component to the center of the spectrum.</td>
-</tr>
 <tr><td><a class="reference internal" href="#skimage.transform.frt2" title="skimage.transform.frt2"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.frt2</span></tt></a>(a)</td>
 <td>Compute the 2-dimensional finite radon transform (FRT) for an n x n</td>
 </tr>
@@ -124,9 +115,6 @@
 </tr>
 <tr><td><a class="reference internal" href="#skimage.transform.hough" title="skimage.transform.hough"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.hough</span></tt></a>(img[,&nbsp;theta])</td>
 <td>Perform a straight line Hough transform.</td>
-</tr>
-<tr><td><a class="reference internal" href="#skimage.transform.ifft" title="skimage.transform.ifft"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.ifft</span></tt></a>(x[,&nbsp;n,&nbsp;axis,&nbsp;overwrite_x])</td>
-<td>Return discrete inverse Fourier transform of real or complex sequence.</td>
 </tr>
 <tr><td><a class="reference internal" href="#skimage.transform.ifrt2" title="skimage.transform.ifrt2"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.ifrt2</span></tt></a>(a)</td>
 <td>Compute the 2-dimensional inverse finite radon transform (iFRT) for</td>
@@ -205,144 +193,6 @@ outside the image boundaries.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="fft">
-<h2>fft<a class="headerlink" href="#fft" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="skimage.transform.fft">
-<tt class="descclassname">skimage.transform.</tt><tt class="descname">fft</tt><big>(</big><em>x</em>, <em>n=None</em>, <em>axis=-1</em>, <em>overwrite_x=0</em><big>)</big><a class="headerlink" href="#skimage.transform.fft" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return discrete Fourier transform of real or complex sequence.</p>
-<p>The returned complex array contains <tt class="docutils literal"><span class="pre">y(0),</span> <span class="pre">y(1),...,</span> <span class="pre">y(n-1)</span></tt> where</p>
-<p><tt class="docutils literal"><span class="pre">y(j)</span> <span class="pre">=</span> <span class="pre">(x</span> <span class="pre">*</span> <span class="pre">exp(-2*pi*sqrt(-1)*j*np.arange(n)/n)).sum()</span></tt>.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>x</strong> : array_like</p>
-<blockquote>
-<div><p>Array to Fourier transform.</p>
-</div></blockquote>
-<p><strong>n</strong> : int, optional</p>
-<blockquote>
-<div><p>Length of the Fourier transform.  If <tt class="docutils literal"><span class="pre">n</span> <span class="pre">&lt;</span> <span class="pre">x.shape[axis]</span></tt>, <cite>x</cite> is
-truncated.  If <tt class="docutils literal"><span class="pre">n</span> <span class="pre">&gt;</span> <span class="pre">x.shape[axis]</span></tt>, <cite>x</cite> is zero-padded. The
-default results in <tt class="docutils literal"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">x.shape[axis]</span></tt>.</p>
-</div></blockquote>
-<p><strong>axis</strong> : int, optional</p>
-<blockquote>
-<div><p>Axis along which the fft&#8217;s are computed; the default is over the
-last axis (i.e., <tt class="docutils literal"><span class="pre">axis=-1</span></tt>).</p>
-</div></blockquote>
-<p><strong>overwrite_x</strong> : bool, optional</p>
-<blockquote>
-<div><p>If True the contents of <cite>x</cite> can be destroyed; the default is False.</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>z</strong> : complex ndarray</p>
-<blockquote class="last">
-<div><dl class="docutils">
-<dt>with the elements:</dt>
-<dd><p class="first last">[y(0),y(1),..,y(n/2),y(1-n/2),...,y(-1)]        if n is even
-[y(0),y(1),..,y((n-1)/2),y(-(n-1)/2),...,y(-1)]  if n is odd</p>
-</dd>
-<dt>where</dt>
-<dd><p class="first last">y(j) = sum[k=0..n-1] x[k] * exp(-sqrt(-1)*j*k* 2*pi/n), j = 0..n-1</p>
-</dd>
-</dl>
-<p>Note that y(-j) = y(n-j).conjugate().</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition-see-also admonition seealso">
-<p class="first admonition-title">See also</p>
-<dl class="last docutils">
-<dt><a class="reference internal" href="#skimage.transform.ifft" title="skimage.transform.ifft"><tt class="xref py py-obj docutils literal"><span class="pre">ifft</span></tt></a></dt>
-<dd>Inverse FFT</dd>
-<dt><tt class="xref py py-obj docutils literal"><span class="pre">rfft</span></tt></dt>
-<dd>FFT of a real sequence</dd>
-</dl>
-</div>
-<p class="rubric">Notes</p>
-<p>The packing of the result is &#8220;standard&#8221;: If A = fft(a, n), then A[0]
-contains the zero-frequency term, A[1:n/2+1] contains the
-positive-frequency terms, and A[n/2+1:] contains the negative-frequency
-terms, in order of decreasingly negative frequency. So for an 8-point
-transform, the frequencies of the result are [ 0, 1, 2, 3, 4, -3, -2, -1].</p>
-<p>For n even, A[n/2] contains the sum of the positive and negative-frequency
-terms. For n even and x real, A[n/2] will always be real.</p>
-<p>This is most efficient for n a power of two.</p>
-<p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.fftpack</span> <span class="kn">import</span> <span class="n">fft</span><span class="p">,</span> <span class="n">ifft</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">fft</span><span class="p">(</span><span class="n">ifft</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span> <span class="n">x</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1e-15</span><span class="p">)</span> <span class="c">#within numerical accuracy.</span>
-<span class="go">True</span>
-</pre></div>
-</div>
-</dd></dl>
-
-</div>
-<div class="section" id="fftshift">
-<h2>fftshift<a class="headerlink" href="#fftshift" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="skimage.transform.fftshift">
-<tt class="descclassname">skimage.transform.</tt><tt class="descname">fftshift</tt><big>(</big><em>x</em>, <em>axes=None</em><big>)</big><a class="headerlink" href="#skimage.transform.fftshift" title="Permalink to this definition">¶</a></dt>
-<dd><p>Shift the zero-frequency component to the center of the spectrum.</p>
-<p>This function swaps half-spaces for all axes listed (defaults to all).
-Note that <tt class="docutils literal"><span class="pre">y[0]</span></tt> is the Nyquist component only if <tt class="docutils literal"><span class="pre">len(x)</span></tt> is even.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>x</strong> : array_like</p>
-<blockquote>
-<div><p>Input array.</p>
-</div></blockquote>
-<p><strong>axes</strong> : int or shape tuple, optional</p>
-<blockquote>
-<div><p>Axes over which to shift.  Default is None, which shifts all axes.</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>y</strong> : ndarray</p>
-<blockquote class="last">
-<div><p>The shifted array.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition-see-also admonition seealso">
-<p class="first admonition-title">See also</p>
-<dl class="last docutils">
-<dt><tt class="xref py py-obj docutils literal"><span class="pre">ifftshift</span></tt></dt>
-<dd>The inverse of <cite>fftshift</cite>.</dd>
-</dl>
-</div>
-<p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">freqs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftfreq</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">freqs</span>
-<span class="go">array([ 0.,  1.,  2.,  3.,  4., -5., -4., -3., -2., -1.])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftshift</span><span class="p">(</span><span class="n">freqs</span><span class="p">)</span>
-<span class="go">array([-5., -4., -3., -2., -1.,  0.,  1.,  2.,  3.,  4.])</span>
-</pre></div>
-</div>
-<p>Shift the zero-frequency component only along the second axis:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">freqs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftfreq</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="mf">1.</span><span class="o">/</span><span class="mi">9</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">freqs</span>
-<span class="go">array([[ 0.,  1.,  2.],</span>
-<span class="go">       [ 3.,  4., -4.],</span>
-<span class="go">       [-3., -2., -1.]])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftshift</span><span class="p">(</span><span class="n">freqs</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,))</span>
-<span class="go">array([[ 2.,  0.,  1.],</span>
-<span class="go">       [-4.,  3.,  4.],</span>
-<span class="go">       [-1., -3., -2.]])</span>
-</pre></div>
-</div>
-</dd></dl>
-
-</div>
 <div class="section" id="frt2">
 <h2>frt2<a class="headerlink" href="#frt2" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
@@ -382,7 +232,7 @@ The idea for this algorithm is due to Vlad Negnevitski.</p>
 <table class="docutils citation" frame="void" id="frt" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[FRT]</td><td>A. Kingston and I. Svalbe, &#8220;Projective transforms on periodic
+<tr><td class="label"><a class="fn-backref" href="#id1">[FRT]</a></td><td>A. Kingston and I. Svalbe, &#8220;Projective transforms on periodic
 discrete image arrays,&#8221; in P. Hawkes (Ed), Advances in Imaging
 and Electron Physics, 139 (2006)</td></tr>
 </tbody>
@@ -601,44 +451,6 @@ Defaults to -pi/2 .. pi/2</p>
 </dd></dl>
 
 </div>
-<div class="section" id="ifft">
-<h2>ifft<a class="headerlink" href="#ifft" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="skimage.transform.ifft">
-<tt class="descclassname">skimage.transform.</tt><tt class="descname">ifft</tt><big>(</big><em>x</em>, <em>n=None</em>, <em>axis=-1</em>, <em>overwrite_x=0</em><big>)</big><a class="headerlink" href="#skimage.transform.ifft" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return discrete inverse Fourier transform of real or complex sequence.</p>
-<p>The returned complex array contains <tt class="docutils literal"><span class="pre">y(0),</span> <span class="pre">y(1),...,</span> <span class="pre">y(n-1)</span></tt> where</p>
-<p><tt class="docutils literal"><span class="pre">y(j)</span> <span class="pre">=</span> <span class="pre">(x</span> <span class="pre">*</span> <span class="pre">exp(2*pi*sqrt(-1)*j*np.arange(n)/n)).mean()</span></tt>.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>x</strong> : array_like</p>
-<blockquote>
-<div><p>Transformed data to invert.</p>
-</div></blockquote>
-<p><strong>n</strong> : int, optional</p>
-<blockquote>
-<div><p>Length of the inverse Fourier transform.  If <tt class="docutils literal"><span class="pre">n</span> <span class="pre">&lt;</span> <span class="pre">x.shape[axis]</span></tt>,
-<cite>x</cite> is truncated.  If <tt class="docutils literal"><span class="pre">n</span> <span class="pre">&gt;</span> <span class="pre">x.shape[axis]</span></tt>, <cite>x</cite> is zero-padded.
-The default results in <tt class="docutils literal"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">x.shape[axis]</span></tt>.</p>
-</div></blockquote>
-<p><strong>axis</strong> : int, optional</p>
-<blockquote>
-<div><p>Axis along which the ifft&#8217;s are computed; the default is over the
-last axis (i.e., <tt class="docutils literal"><span class="pre">axis=-1</span></tt>).</p>
-</div></blockquote>
-<p><strong>overwrite_x</strong> : bool, optional</p>
-<blockquote class="last">
-<div><p>If True the contents of <cite>x</cite> can be destroyed; the default is False.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-</div>
 <div class="section" id="ifrt2">
 <h2>ifrt2<a class="headerlink" href="#ifrt2" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
@@ -673,13 +485,13 @@ an (n+1) x n integer array.</p>
 </div>
 <p class="rubric">Notes</p>
 <p>The FRT has a unique inverse iff n is prime.
-See [FRT] for an overview.
+See <a class="reference internal" href="#r50">[R50]</a> for an overview.
 The idea for this algorithm is due to Vlad Negnevitski.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="id2" rules="none">
+<table class="docutils citation" frame="void" id="r50" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[FRT]</td><td>A. Kingston and I. Svalbe, &#8220;Projective transforms on periodic
+<tr><td class="label">[R50]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id3">2</a>)</em> A. Kingston and I. Svalbe, &#8220;Projective transforms on periodic
 discrete image arrays,&#8221; in P. Hawkes (Ed), Advances in Imaging
 and Electron Physics, 139 (2006)</td></tr>
 </tbody>
@@ -733,10 +545,10 @@ left of it, i.e.:</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r48" rules="none">
+<table class="docutils citation" frame="void" id="r51" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[R48]</a></td><td>F.C. Crow, &#8220;Summed-area tables for texture mapping,&#8221;
+<tr><td class="label"><a class="fn-backref" href="#id4">[R51]</a></td><td>F.C. Crow, &#8220;Summed-area tables for texture mapping,&#8221;
 ACM SIGGRAPH Computer Graphics, vol. 18, 1984, pp. 207-212.</td></tr>
 </tbody>
 </table>
@@ -876,10 +688,10 @@ line start and end.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r49" rules="none">
+<table class="docutils citation" frame="void" id="r52" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id5">[R49]</a></td><td>C. Galamhos, J. Matas and J. Kittler,&#8221;Progressive probabilistic Hough 
+<tr><td class="label"><a class="fn-backref" href="#id5">[R52]</a></td><td>C. Galamhos, J. Matas and J. Kittler,&#8221;Progressive probabilistic Hough 
 transform for line detection&#8221;, in  IEEE Computer Society Conference on 
 Computer Vision and Pattern Recognition, 1999.</td></tr>
 </tbody>

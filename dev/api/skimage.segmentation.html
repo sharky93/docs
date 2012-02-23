@@ -132,25 +132,21 @@ into account (they are removed from the graph).</p>
 <div><p>Mode for solving the linear system in the random walker
 algorithm.</p>
 <ul class="simple">
-<li>&#8216;bf&#8217; (brute force, default): an LU factorization of the</li>
+<li>&#8216;bf&#8217; (brute force, default): an LU factorization of the Laplacian is
+computed. This is fast for small images (&lt;1024x1024), but very slow
+(due to the memory cost) and memory-consuming for big images (in 3-D
+for example).</li>
+<li>&#8216;cg&#8217; (conjugate gradient): the linear system is solved iteratively
+using the Conjugate Gradient method from scipy.sparse.linalg. This is
+less memory-consuming than the brute force method for large images,
+but it is quite slow.</li>
+<li>&#8216;cg_mg&#8217; (conjugate gradient with multigrid preconditioner): a
+preconditioner is computed using a multigrid solver, then the
+solution is computed with the Conjugate Gradient method.  This mode
+requires that the pyamg module (<a class="reference external" href="http://code.google.com/p/pyamg/">http://code.google.com/p/pyamg/</a>) is
+installed. For images of size &gt; 512x512, this is the recommended
+(fastest) mode.</li>
 </ul>
-<p>Laplacian is computed. This is fast for small images (&lt;1024x1024),
-but very slow (due to the memory cost) and memory-consuming for
-big images (in 3-D for example).</p>
-<ul class="simple">
-<li>&#8216;cg&#8217; (conjugate gradient): the linear system is solved</li>
-</ul>
-<p>iteratively using the Conjugate Gradient method from
-scipy.sparse.linalg. This is less memory-consuming than the
-brute force method for large images, but it is quite slow.</p>
-<ul class="simple">
-<li>&#8216;cg_mg&#8217; (conjugate gradient with multigrid preconditioner):</li>
-</ul>
-<p>a preconditioner is computed using a multigrid solver, then
-the solution is computed with the Conjugate Gradient method.
-This mode requires that the pyamg module
-(<a class="reference external" href="http://code.google.com/p/pyamg/">http://code.google.com/p/pyamg/</a>) is installed. For images of
-size &gt; 512x512, this is the recommended (fastest) mode.</p>
 </div></blockquote>
 <p><strong>tol</strong> : float</p>
 <blockquote>
@@ -203,17 +199,14 @@ is defined as:</p>
 </div></blockquote>
 <p>The weight w_ij is a decreasing function of the norm of the local gradient.
 This ensures that diffusion is easier between pixels of similar values.</p>
-<p>When the Laplacian is decomposed into blocks of marked and unmarked pixels</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>L = M B.T</dt>
-<dd>B A</dd>
-</dl>
-</div></blockquote>
+<p>When the Laplacian is decomposed into blocks of marked and unmarked pixels:</p>
+<div class="highlight-python"><pre>L = M B.T
+    B A</pre>
+</div>
 <p>with first indices corresponding to marked pixels, and then to unmarked
-pixels, minimizing x.T L x for one phase amount to solving</p>
-<blockquote>
-<div>A x = - B x_m</div></blockquote>
+pixels, minimizing x.T L x for one phase amount to solving:</p>
+<div class="highlight-python"><pre>A x = - B x_m</pre>
+</div>
 <p>where x_m=1 on markers of the given phase, and 0 on other markers.
 This linear system is solved in the algorithm using a direct method for
 small images, and an iterative method for larger images.</p>

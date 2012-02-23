@@ -1,32 +1,11 @@
 
-.. raw:: html
-
-    <style type="text/css">
-    .figure {
-        float: left;
-        margin: 1em;
-    }
-
-    .figure img {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 200px;
-    }
-
-    .figure .caption {
-        width: 200px;
-        text-align: center !important;
-    }
-    </style>
-
 Examples
 ========
 
 .. _examples-index:
 
 
-
+.. _examples_gallery:
 
 General examples
 -------------------
@@ -35,6 +14,28 @@ General-purpose and introductory examples for the scikit.
 
 
 
+
+
+.. toctree::
+   :hidden:
+
+   plot_canny
+   plot_contours
+   plot_convex_hull
+   plot_equalize
+   plot_gabors_from_lena
+   plot_glcm
+   plot_harris
+   plot_hog
+   plot_hough_transform
+   plot_lena_tv_denoise
+   plot_medial_transform
+   plot_otsu
+   plot_radon_transform
+   plot_random_walker_segmentation
+   plot_skeleton
+   plot_view_as_blocks
+   plot_watershed
 
 .. figure:: ./images/thumb/plot_canny.png
    :figclass: gallery
@@ -59,6 +60,12 @@ General-purpose and introductory examples for the scikit.
    :target: ./plot_equalize.html
 
    :ref:`example_plot_equalize.py`
+
+.. figure:: ./images/thumb/plot_gabors_from_lena.png
+   :figclass: gallery
+   :target: ./plot_gabors_from_lena.html
+
+   :ref:`example_plot_gabors_from_lena.py`
 
 .. figure:: ./images/thumb/plot_glcm.png
    :figclass: gallery
@@ -120,6 +127,12 @@ General-purpose and introductory examples for the scikit.
 
    :ref:`example_plot_skeleton.py`
 
+.. figure:: ./images/thumb/plot_view_as_blocks.png
+   :figclass: gallery
+   :target: ./plot_view_as_blocks.html
+
+   :ref:`example_plot_view_as_blocks.py`
+
 .. figure:: ./images/thumb/plot_watershed.png
    :figclass: gallery
    :target: ./plot_watershed.html
@@ -132,11 +145,16 @@ General-purpose and introductory examples for the scikit.
     <div style="clear: both"></div>
     
 
-
 Longer examples and demonstrations
 ----------------------------------
 
 
+
+
+.. toctree::
+   :hidden:
+
+   plot_coins_segmentation
 
 .. figure:: applications/images/thumb/plot_coins_segmentation.png
    :figclass: gallery

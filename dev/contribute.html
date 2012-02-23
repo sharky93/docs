@@ -23,7 +23,9 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/docversions.js"></script>
-    <link rel="top" title="skimage v0.5dev docs" href="index.html" /> 
+    <link rel="top" title="skimage v0.5dev docs" href="index.html" />
+    <link rel="next" title="Working with scikits-image source code" href="gitwash/index.html" />
+    <link rel="prev" title="Getting help on using skimage" href="user_guide/getting_help.html" /> 
   </head>
   <body>
     <div class="header-wrapper">
@@ -54,7 +56,7 @@
 <li><a class="reference internal" href="#">How to contribute to <tt class="docutils literal"><span class="pre">skimage</span></tt></a><ul>
 <li><a class="reference internal" href="#tasks">Tasks</a><ul>
 <li><a class="reference internal" href="#implement-algorithms">Implement Algorithms</a></li>
-<li><a class="reference internal" href="#drawing">Drawing</a></li>
+<li><a class="reference internal" href="#drawing-directly-on-an-ndarray">Drawing (directly on an ndarray)</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#infrastructure">Infrastructure</a><ul>
@@ -77,6 +79,12 @@
 
 
 
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="user_guide/getting_help.html"
+                        title="previous chapter">Getting help on using <tt class="docutils literal"><span class="pre">skimage</span></tt></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="gitwash/index.html"
+                        title="next chapter">Working with <em>scikits-image</em> source code</a></p>
 
   <h3>Version</h3>
 
@@ -106,7 +114,9 @@
           <div class="body">
             
   <div class="section" id="how-to-contribute-to-skimage">
-<h1>How to contribute to <tt class="docutils literal"><span class="pre">skimage</span></tt><a class="headerlink" href="#how-to-contribute-to-skimage" title="Permalink to this headline">¶</a></h1>
+<span id="howto-contribute"></span><h1>How to contribute to <tt class="docutils literal"><span class="pre">skimage</span></tt><a class="headerlink" href="#how-to-contribute-to-skimage" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
 <p>Developing Open Source is great fun!  Join us on the <a class="reference external" href="http://groups.google.com/group/scikits-image">skimage mailing
 list</a> and tell us which of the
 following challenges you&#8217;d like to solve.</p>
@@ -119,7 +129,7 @@ following challenges you&#8217;d like to solve.</p>
 <ul class="simple">
 <li><a class="reference internal" href="#tasks" id="id1">Tasks</a><ul>
 <li><a class="reference internal" href="#implement-algorithms" id="id2">Implement Algorithms</a></li>
-<li><a class="reference internal" href="#drawing" id="id3">Drawing</a></li>
+<li><a class="reference internal" href="#drawing-directly-on-an-ndarray" id="id3">Drawing (directly on an ndarray)</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#infrastructure" id="id4">Infrastructure</a><ul>
@@ -146,16 +156,17 @@ following challenges you&#8217;d like to solve.</p>
 <li>Graph cut segmentation</li>
 <li>Fast 2D convex hull (consider using CellProfiler version)
 <a class="reference external" href="http://www.tcs.fudan.edu.cn/rudolf/Courses/Algorithms/Alg_cs_07w/Webprojects/Zhaobo_hull/index.html#section26">Algorithm overview</a>.
-<a class="reference external" href="http://cm.bell-labs.com/cm/cs/who/clarkson/2dch.c">One free implementation</a>.</li>
-<li><span class="strike">Histograms of oriented gradients</span></li>
-<li><span class="strike">Fast radon transform</span></li>
-<li><span class="strike">Probabilistic Hough transform</span></li>
+<a class="reference external" href="http://cm.bell-labs.com/cm/cs/who/clarkson/2dch.c">One free implementation</a>.
+[Compare against current implementation]</li>
+<li>Convex hulls of objects in a labels matrix (simply adapt current convex hull
+image code&#8211;this one&#8217;s low hanging fruit).  Generalise this solution to also
+skeletonize objects in a labels matrix.</li>
 </ul>
 </div>
-<div class="section" id="drawing">
-<h3><a class="toc-backref" href="#id3">Drawing</a><a class="headerlink" href="#drawing" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="drawing-directly-on-an-ndarray">
+<h3><a class="toc-backref" href="#id3">Drawing (directly on an ndarray)</a><a class="headerlink" href="#drawing-directly-on-an-ndarray" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Wu&#8217;s algorithm for lines and circles</li>
+<li>Wu&#8217;s algorithm for circles</li>
 <li>Text rendering</li>
 </ul>
 </div>
@@ -174,11 +185,9 @@ or tests.</p>
 <blockquote>
 <div><ul class="simple">
 <li><span class="strike">Connected components</span></li>
-<li><span class="strike">Grey-level co-occurrence matrices</span></li>
-<li>Marching squares</li>
 <li>Nadav&#8217;s bilateral filtering (first compare against CellProfiler&#8217;s
-code, based on <a class="reference external" href="http://groups.csail.mit.edu/graphics/bilagrid/bilagrid_web.pdf">http://groups.csail.mit.edu/graphics/bilagrid/bilagrid_web.pdf</a>)</li>
-<li>2D iso-contour finding (sub-pixel precision) [ask Zach Pincus]</li>
+code, based on <a class="reference external" href="http://groups.csail.mit.edu/graphics/bilagrid/bilagrid_web.pdf">http://groups.csail.mit.edu/graphics/bilagrid/bilagrid_web.pdf</a>)
+Also see <a class="reference external" href="https://github.com/stefanv/scikits-image/tree/bilateral">https://github.com/stefanv/scikits-image/tree/bilateral</a></li>
 <li>2D image warping via thin-plate splines [ask Zach Pincus]</li>
 </ul>
 </div></blockquote>
@@ -186,21 +195,12 @@ code, based on <a class="reference external" href="http://groups.csail.mit.edu/g
 <div class="section" id="merge-code-provided-by-cellprofiler-team">
 <h3>Merge code provided by <a class="reference external" href="http://www.cellprofiler.org">CellProfiler</a> team<a class="headerlink" href="#merge-code-provided-by-cellprofiler-team" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><span class="strike">Canny filter</span> (Canny, J., <em>A Computational Approach To Edge Detection</em>,
-IEEE Trans. Pattern Analysis and Machine Intelligence, 8:679-714, 1986)</li>
-<li><span class="strike">Prewitt filter</span> - convolution with <tt class="docutils literal"><span class="pre">[[1,1,1],</span> <span class="pre">[0,0,0],</span> <span class="pre">[-1,-1,-1]]</span></tt> to
-detect edges</li>
-<li><span class="strike">Sobel filter - convolution with</span> <tt class="docutils literal"><span class="pre">[[1,2,1],</span> <span class="pre">[0,0,0],</span> <span class="pre">[-1,-2,-1]]</span></tt> <span class="strike">to detect edges</span></li>
 <li>Roberts filter - convolution with diagonal and anti-diagonal
 kernels to detect edges</li>
-<li>Convex hulls of objects in a labels matrix</li>
 <li>Minimum enclosing circles of objects in a labels matrix</li>
-<li>Map-coloring of a labels matrix - assign each label a color so that
-all adjacent labels have different colors</li>
-<li><span class="strike">Skeletonize</span>, spur removal, thinning, thickening, and other morphological
-operations on binary images, framework for creating arbitrary morphological
-operations using a 3x3 grid.</li>
-<li>Skeletonize objects in a labels matrix</li>
+<li>spur removal, thinning, thickening, and other morphological operations on
+binary images, framework for creating arbitrary morphological operations
+using a 3x3 grid.</li>
 </ul>
 <p>Their SVN repository is read-accessible at</p>
 <ul class="simple">
@@ -235,7 +235,6 @@ who contributed.</p>
 <li>Fast, SSE2 convolution (high priority) (see prototype in pull requests)</li>
 <li>Should take kernel or function for parameter (currently only takes function)</li>
 <li>Kernel shape should be specifiable (currently defaults to image shape)</li>
-<li>Due to the above, the tests run unnecessarily slowly</li>
 </ul>
 </div>
 <div class="section" id="io">
@@ -249,13 +248,9 @@ who contributed.</p>
 <div class="section" id="docs">
 <h3><a class="toc-backref" href="#id9">docs</a><a class="headerlink" href="#docs" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Write topics for the <a class="reference external" href="http://scikits-image.org/docs/dev/user_guide.html">user guide</a>:<ul>
-<li>Introduction to I/O and image processing with examples</li>
-</ul>
-</li>
-<li><span class="strike">Build docs outside source directory</span></li>
+<li>Add examples to the gallery</li>
+<li>Write topics for the <a class="reference external" href="http://scikits-image.org/docs/dev/user_guide.html">user guide</a></li>
 <li>Integrate BiBTeX plugin into Sphinx build</li>
-<li><span class="strike">Create a kick-ass website</span></li>
 </ul>
 </div>
 </div>
@@ -302,6 +297,7 @@ where possible.</li>
 <li>No major changes should be committed without review.  Ask on the
 <a class="reference external" href="http://groups.google.com/group/scikits-image">mailing list</a> if
 you get no response to your pull request.</li>
+<li>Examples in the gallery should have a maximum figure width of 8 inches.</li>
 </ul>
 </div></blockquote>
 </div>
@@ -309,9 +305,8 @@ you get no response to your pull request.</li>
 <h3><a class="toc-backref" href="#id12">Test coverage</a><a class="headerlink" href="#test-coverage" title="Permalink to this headline">¶</a></h3>
 <p>Tests for a module should ideally cover all code in that module,
 i.e. statement coverage should be at 100%.</p>
-<blockquote>
-<div>To measure the test coverage, install</div></blockquote>
-<p><a class="reference external" href="http://nedbatchelder.com/code/coverage/">coverage.py</a>
+<p>To measure the test coverage, install
+<a class="reference external" href="http://nedbatchelder.com/code/coverage/">coverage.py</a>
 (using <tt class="docutils literal"><span class="pre">easy_install</span> <span class="pre">coverage</span></tt>) and then run:</p>
 <div class="highlight-python"><pre>$ make coverage</pre>
 </div>
