@@ -69,12 +69,12 @@ References
 
     *
 
-      .. image:: images/plot_hough_transform_2.png
+      .. image:: images/plot_hough_transform_1.png
             :scale: 50
 
     *
 
-      .. image:: images/plot_hough_transform_1.png
+      .. image:: images/plot_hough_transform_2.png
             :scale: 50
 
 

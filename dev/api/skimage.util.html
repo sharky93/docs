@@ -98,16 +98,16 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr><td><a class="reference internal" href="#skimage.util.img_as_float" title="skimage.util.img_as_float"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.img_as_float</span></tt></a>(image)</td>
+<tr><td><a class="reference internal" href="#skimage.util.img_as_float" title="skimage.util.img_as_float"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.img_as_float</span></tt></a>(image[,&nbsp;force_copy])</td>
 <td>Convert an image to double-precision floating point format.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.util.img_as_int" title="skimage.util.img_as_int"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.img_as_int</span></tt></a>(image)</td>
+<tr><td><a class="reference internal" href="#skimage.util.img_as_int" title="skimage.util.img_as_int"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.img_as_int</span></tt></a>(image[,&nbsp;force_copy])</td>
 <td>Convert an image to 16-bit signed integer format.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.util.img_as_ubyte" title="skimage.util.img_as_ubyte"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.img_as_ubyte</span></tt></a>(image)</td>
+<tr><td><a class="reference internal" href="#skimage.util.img_as_ubyte" title="skimage.util.img_as_ubyte"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.img_as_ubyte</span></tt></a>(image[,&nbsp;force_copy])</td>
 <td>Convert an image to 8-bit unsigned integer format.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.util.img_as_uint" title="skimage.util.img_as_uint"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.img_as_uint</span></tt></a>(image)</td>
+<tr><td><a class="reference internal" href="#skimage.util.img_as_uint" title="skimage.util.img_as_uint"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.img_as_uint</span></tt></a>(image[,&nbsp;force_copy])</td>
 <td>Convert an image to 16-bit unsigned integer format.</td>
 </tr>
 </tbody>
@@ -116,7 +116,7 @@
 <h2>img_as_float<a class="headerlink" href="#img-as-float" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.util.img_as_float">
-<tt class="descclassname">skimage.util.</tt><tt class="descname">img_as_float</tt><big>(</big><em>image</em><big>)</big><a class="headerlink" href="#skimage.util.img_as_float" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">skimage.util.</tt><tt class="descname">img_as_float</tt><big>(</big><em>image</em>, <em>force_copy=False</em><big>)</big><a class="headerlink" href="#skimage.util.img_as_float" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert an image to double-precision floating point format.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -125,6 +125,10 @@
 <tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Input image.</p>
+</div></blockquote>
+<p><strong>force_copy</strong> : bool</p>
+<blockquote>
+<div><p>Force a copy of the data, irrespective of its current dtype.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -146,7 +150,7 @@ Negative input values will be shifted to the positive domain.</p>
 <h2>img_as_int<a class="headerlink" href="#img-as-int" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.util.img_as_int">
-<tt class="descclassname">skimage.util.</tt><tt class="descname">img_as_int</tt><big>(</big><em>image</em><big>)</big><a class="headerlink" href="#skimage.util.img_as_int" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">skimage.util.</tt><tt class="descname">img_as_int</tt><big>(</big><em>image</em>, <em>force_copy=False</em><big>)</big><a class="headerlink" href="#skimage.util.img_as_int" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert an image to 16-bit signed integer format.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -155,6 +159,10 @@ Negative input values will be shifted to the positive domain.</p>
 <tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Input image.</p>
+</div></blockquote>
+<p><strong>force_copy</strong> : bool</p>
+<blockquote>
+<div><p>Force a copy of the data, irrespective of its current dtype.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -176,7 +184,7 @@ the output image will still only have positive values.</p>
 <h2>img_as_ubyte<a class="headerlink" href="#img-as-ubyte" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.util.img_as_ubyte">
-<tt class="descclassname">skimage.util.</tt><tt class="descname">img_as_ubyte</tt><big>(</big><em>image</em><big>)</big><a class="headerlink" href="#skimage.util.img_as_ubyte" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">skimage.util.</tt><tt class="descname">img_as_ubyte</tt><big>(</big><em>image</em>, <em>force_copy=False</em><big>)</big><a class="headerlink" href="#skimage.util.img_as_ubyte" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert an image to 8-bit unsigned integer format.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -185,6 +193,10 @@ the output image will still only have positive values.</p>
 <tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Input image.</p>
+</div></blockquote>
+<p><strong>force_copy</strong> : bool</p>
+<blockquote>
+<div><p>Force a copy of the data, irrespective of its current dtype.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -206,7 +218,7 @@ the output image will still only have positive values.</p>
 <h2>img_as_uint<a class="headerlink" href="#img-as-uint" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.util.img_as_uint">
-<tt class="descclassname">skimage.util.</tt><tt class="descname">img_as_uint</tt><big>(</big><em>image</em><big>)</big><a class="headerlink" href="#skimage.util.img_as_uint" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">skimage.util.</tt><tt class="descname">img_as_uint</tt><big>(</big><em>image</em>, <em>force_copy=False</em><big>)</big><a class="headerlink" href="#skimage.util.img_as_uint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert an image to 16-bit unsigned integer format.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -215,6 +227,10 @@ the output image will still only have positive values.</p>
 <tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Input image.</p>
+</div></blockquote>
+<p><strong>force_copy</strong> : bool</p>
+<blockquote>
+<div><p>Force a copy of the data, irrespective of its current dtype.</p>
 </div></blockquote>
 </td>
 </tr>

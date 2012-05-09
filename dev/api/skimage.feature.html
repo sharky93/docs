@@ -56,6 +56,7 @@
 <li><a class="reference internal" href="#greycoprops">greycoprops</a></li>
 <li><a class="reference internal" href="#harris">harris</a></li>
 <li><a class="reference internal" href="#hog">hog</a></li>
+<li><a class="reference internal" href="#match-template">match_template</a></li>
 <li><a class="reference internal" href="#peak-local-max">peak_local_max</a></li>
 </ul>
 </li>
@@ -110,6 +111,9 @@
 </tr>
 <tr><td><a class="reference internal" href="#skimage.feature.hog" title="skimage.feature.hog"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.hog</span></tt></a>(image[,&nbsp;orientations,&nbsp;...])</td>
 <td>Extract Histogram of Oriented Gradients (HOG) for a given image.</td>
+</tr>
+<tr><td><a class="reference internal" href="#skimage.feature.match_template" title="skimage.feature.match_template"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.match_template</span></tt></a>(image,&nbsp;template)</td>
+<td>Match a template to an image using normalized correlation.</td>
 </tr>
 <tr><td><a class="reference internal" href="#skimage.feature.peak_local_max" title="skimage.feature.peak_local_max"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.peak_local_max</span></tt></a>(image[,&nbsp;...])</td>
 <td>Return coordinates of peaks in an image.</td>
@@ -177,24 +181,24 @@ type uint32, otherwise it is float64.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r28" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[R28]</a></td><td>The GLCM Tutorial Home Page,
-<a class="reference external" href="http://www.fp.ucalgary.ca/mhallbey/tutorial.htm">http://www.fp.ucalgary.ca/mhallbey/tutorial.htm</a></td></tr>
-</tbody>
-</table>
 <table class="docutils citation" frame="void" id="r29" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[R29]</a></td><td>Pattern Recognition Engineering, Morton Nadler &amp; Eric P. 
-Smith</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id1">[R29]</a></td><td>The GLCM Tutorial Home Page,
+<a class="reference external" href="http://www.fp.ucalgary.ca/mhallbey/tutorial.htm">http://www.fp.ucalgary.ca/mhallbey/tutorial.htm</a></td></tr>
 </tbody>
 </table>
 <table class="docutils citation" frame="void" id="r30" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[R30]</a></td><td>Wikipedia, <a class="reference external" href="http://en.wikipedia.org/wiki/Co-occurrence_matrix">http://en.wikipedia.org/wiki/Co-occurrence_matrix</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id2">[R30]</a></td><td>Pattern Recognition Engineering, Morton Nadler &amp; Eric P. 
+Smith</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="r31" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[R31]</a></td><td>Wikipedia, <a class="reference external" href="http://en.wikipedia.org/wiki/Co-occurrence_matrix">http://en.wikipedia.org/wiki/Co-occurrence_matrix</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -277,10 +281,10 @@ the d&#8217;th distance and the a&#8217;th angle.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r31" rules="none">
+<table class="docutils citation" frame="void" id="r32" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[R31]</a></td><td>The GLCM Tutorial Home Page,
+<tr><td class="label"><a class="fn-backref" href="#id4">[R32]</a></td><td>The GLCM Tutorial Home Page,
 <a class="reference external" href="http://www.fp.ucalgary.ca/mhallbey/tutorial.htm">http://www.fp.ucalgary.ca/mhallbey/tutorial.htm</a></td></tr>
 </tbody>
 </table>
@@ -335,8 +339,33 @@ the d&#8217;th distance and the a&#8217;th angle.</p>
 </td>
 </tr>
 <tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>coordinates</strong> : (N, 2) array</p>
-<blockquote class="last">
+<blockquote>
 <div><p>(row, column) coordinates of interest points.</p>
+</div></blockquote>
+<p><strong>Examples</strong> :</p>
+<p><strong>&#8212;&#8212;-</strong> :</p>
+<p><strong>&gt;&gt;&gt; square = np.zeros([10,10])</strong> :</p>
+<p><strong>&gt;&gt;&gt; square[2:8,2:8] = 1</strong> :</p>
+<p><strong>&gt;&gt;&gt; square</strong> :</p>
+<p><strong>array([[ 0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.],</strong> :</p>
+<blockquote>
+<div><p>[ 0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.],
+[ 0.,  0.,  1.,  1.,  1.,  1.,  1.,  1.,  0.,  0.],
+[ 0.,  0.,  1.,  1.,  1.,  1.,  1.,  1.,  0.,  0.],
+[ 0.,  0.,  1.,  1.,  1.,  1.,  1.,  1.,  0.,  0.],
+[ 0.,  0.,  1.,  1.,  1.,  1.,  1.,  1.,  0.,  0.],
+[ 0.,  0.,  1.,  1.,  1.,  1.,  1.,  1.,  0.,  0.],
+[ 0.,  0.,  1.,  1.,  1.,  1.,  1.,  1.,  0.,  0.],
+[ 0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.],
+[ 0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.]])</p>
+</div></blockquote>
+<p><strong>&gt;&gt;&gt; harris(square, min_distance=1)</strong> :</p>
+<p><strong>Corners of the square</strong> :</p>
+<p><strong>array([[3, 3],</strong> :</p>
+<blockquote class="last">
+<div><p>[3, 6],
+[6, 3],
+[6, 6]])</p>
 </div></blockquote>
 </td>
 </tr>
@@ -414,14 +443,92 @@ Vision and Pattern Recognition 2005 San Diego, CA, USA</li>
 </dd></dl>
 
 </div>
+<div class="section" id="match-template">
+<h2>match_template<a class="headerlink" href="#match-template" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.feature.match_template">
+<tt class="descclassname">skimage.feature.</tt><tt class="descname">match_template</tt><big>(</big><em>image</em>, <em>template</em>, <em>pad_input=False</em><big>)</big><a class="headerlink" href="#skimage.feature.match_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Match a template to an image using normalized correlation.</p>
+<p>The output is an array with values between -1.0 and 1.0, which correspond
+to the probability that the template is found at that position.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : array_like</p>
+<blockquote>
+<div><p>Image to process.</p>
+</div></blockquote>
+<p><strong>template</strong> : array_like</p>
+<blockquote>
+<div><p>Template to locate.</p>
+</div></blockquote>
+<p><strong>pad_input</strong> : bool</p>
+<blockquote>
+<div><p>If True, pad <cite>image</cite> with image mean so that output is the same size as
+the image, and output values correspond to the template center.
+Otherwise, the output is an array with shape <cite>(M - m + 1, N - n + 1)</cite>
+for an <cite>(M, N)</cite> image and an <cite>(m, n)</cite> template, and matches correspond
+to origin (top-left corner) of the template.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : ndarray</p>
+<blockquote class="last">
+<div><p>Correlation results between -1.0 and 1.0. For an <cite>(M, N)</cite> image and an
+<cite>(m, n)</cite> template, the <cite>output</cite> is <cite>(M - m + 1, N - n + 1)</cite> when
+<cite>pad_input = False</cite> and <cite>(M, N)</cite> when <cite>pad_input = True</cite>.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">template</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">template</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">template</span>
+<span class="go">[[ 0.  0.  0.]</span>
+<span class="go"> [ 0.  1.  0.]</span>
+<span class="go"> [ 0.  0.  0.]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">image</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">image</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">image</span>
+<span class="go">[[ 0.  0.  0.  0.  0.  0.]</span>
+<span class="go"> [ 0.  1.  0.  0.  0.  0.]</span>
+<span class="go"> [ 0.  0.  0.  0.  0.  0.]</span>
+<span class="go"> [ 0.  0.  0.  0.  0.  0.]</span>
+<span class="go"> [ 0.  0.  0.  0. -1.  0.]</span>
+<span class="go"> [ 0.  0.  0.  0.  0.  0.]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">match_template</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">template</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="go">[[ 1.    -0.125  0.     0.   ]</span>
+<span class="go"> [-0.125 -0.125  0.     0.   ]</span>
+<span class="go"> [ 0.     0.     0.125  0.125]</span>
+<span class="go"> [ 0.     0.     0.125 -1.   ]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">match_template</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">template</span><span class="p">,</span> <span class="n">pad_input</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="go">[[-0.125 -0.125 -0.125  0.     0.     0.   ]</span>
+<span class="go"> [-0.125  1.    -0.125  0.     0.     0.   ]</span>
+<span class="go"> [-0.125 -0.125 -0.125  0.     0.     0.   ]</span>
+<span class="go"> [ 0.     0.     0.     0.125  0.125  0.125]</span>
+<span class="go"> [ 0.     0.     0.     0.125 -1.     0.125]</span>
+<span class="go"> [ 0.     0.     0.     0.125  0.125  0.125]]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
 <div class="section" id="peak-local-max">
 <h2>peak_local_max<a class="headerlink" href="#peak-local-max" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.feature.peak_local_max">
-<tt class="descclassname">skimage.feature.</tt><tt class="descname">peak_local_max</tt><big>(</big><em>image</em>, <em>min_distance=10</em>, <em>threshold=0.1</em><big>)</big><a class="headerlink" href="#skimage.feature.peak_local_max" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">skimage.feature.</tt><tt class="descname">peak_local_max</tt><big>(</big><em>image</em>, <em>min_distance=10</em>, <em>threshold='deprecated'</em>, <em>threshold_abs=0</em>, <em>threshold_rel=0.1</em>, <em>num_peaks=inf</em><big>)</big><a class="headerlink" href="#skimage.feature.peak_local_max" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return coordinates of peaks in an image.</p>
 <p>Peaks are the local maxima in a region of <cite>2 * min_distance + 1</cite>
 (i.e. peaks are separated by at least <cite>min_distance</cite>).</p>
+<p>NOTE: If peaks are flat (i.e. multiple pixels have exact same intensity),
+the coordinates of all pixels are returned.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -430,13 +537,26 @@ Vision and Pattern Recognition 2005 San Diego, CA, USA</li>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
-<p><strong>min_distance: int, optional</strong> :</p>
+<p><strong>min_distance: int</strong> :</p>
 <blockquote>
 <div><p>Minimum number of pixels separating peaks and image boundary.</p>
 </div></blockquote>
-<p><strong>threshold: float, optional</strong> :</p>
+<p><strong>threshold</strong> : float</p>
 <blockquote>
-<div><p>Candidate peaks are calculated as <cite>max(image) * threshold</cite>.</p>
+<div><p>Deprecated. See <cite>threshold_rel</cite>.</p>
+</div></blockquote>
+<p><strong>threshold_abs: float</strong> :</p>
+<blockquote>
+<div><p>Minimum intensity of peaks.</p>
+</div></blockquote>
+<p><strong>threshold_rel: float</strong> :</p>
+<blockquote>
+<div><p>Minimum intensity of peaks calculated as <cite>max(image) * threshold_rel</cite>.</p>
+</div></blockquote>
+<p><strong>num_peaks</strong> : int</p>
+<blockquote>
+<div><p>Maximum number of peaks. When the number of peaks exceeds <cite>num_peaks</cite>,
+return <cite>num_peaks</cite> coordinates based on peak intensity.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -448,6 +568,35 @@ Vision and Pattern Recognition 2005 San Diego, CA, USA</li>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Notes</p>
+<p>The peak local maximum function returns the coordinates of local peaks (maxima)
+in a image. A maximum filter is used for finding local maxima. This operation
+dilates the original image. After comparison between dilated and original image, 
+peak_local_max function returns the coordinates of peaks where
+dilated image = original.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">im</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">im</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">im</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">im</span>
+<span class="go">array([[ 0. ,  0. ,  0. ,  0. ,  0. ,  0. ,  0. ],</span>
+<span class="go">       [ 0. ,  0. ,  0. ,  0. ,  0. ,  0. ,  0. ],</span>
+<span class="go">       [ 0. ,  0. ,  0. ,  0. ,  0. ,  0. ,  0. ],</span>
+<span class="go">       [ 0. ,  0. ,  1.5,  0. ,  1. ,  0. ,  0. ],</span>
+<span class="go">       [ 0. ,  0. ,  0. ,  0. ,  0. ,  0. ,  0. ],</span>
+<span class="go">       [ 0. ,  0. ,  0. ,  0. ,  0. ,  0. ,  0. ],</span>
+<span class="go">       [ 0. ,  0. ,  0. ,  0. ,  0. ,  0. ,  0. ]])</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">peak_local_max</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">min_distance</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">array([[3, 2],</span>
+<span class="go">       [3, 4]])</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">peak_local_max</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">min_distance</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">array([[3, 2]])</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>

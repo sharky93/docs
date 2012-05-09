@@ -32,6 +32,7 @@ Inheritance diagram for ``skimage.filter``:
    skimage.filter.prewitt
    skimage.filter.rank_order
    skimage.filter.sobel
+   skimage.filter.threshold_adaptive
    skimage.filter.threshold_otsu
    skimage.filter.tv_denoise
    skimage.filter.vprewitt
@@ -77,6 +78,11 @@ sobel
 -----
 
 .. autofunction:: skimage.filter.sobel
+
+threshold_adaptive
+------------------
+
+.. autofunction:: skimage.filter.threshold_adaptive
 
 threshold_otsu
 --------------

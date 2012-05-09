@@ -61,6 +61,7 @@
 <li><a class="reference internal" href="#prewitt">prewitt</a></li>
 <li><a class="reference internal" href="#rank-order">rank_order</a></li>
 <li><a class="reference internal" href="#sobel">sobel</a></li>
+<li><a class="reference internal" href="#threshold-adaptive">threshold_adaptive</a></li>
 <li><a class="reference internal" href="#threshold-otsu">threshold_otsu</a></li>
 <li><a class="reference internal" href="#tv-denoise">tv_denoise</a></li>
 <li><a class="reference internal" href="#vprewitt">vprewitt</a></li>
@@ -177,6 +178,9 @@ passed through.</p>
 </tr>
 <tr><td><a class="reference internal" href="#skimage.filter.sobel" title="skimage.filter.sobel"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.sobel</span></tt></a>(image[,&nbsp;mask])</td>
 <td>Calculate the absolute magnitude Sobel to find edges.</td>
+</tr>
+<tr><td><a class="reference internal" href="#skimage.filter.threshold_adaptive" title="skimage.filter.threshold_adaptive"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.threshold_adaptive</span></tt></a>(image,&nbsp;...)</td>
+<td>Applies an adaptive threshold to an array.</td>
 </tr>
 <tr><td><a class="reference internal" href="#skimage.filter.threshold_otsu" title="skimage.filter.threshold_otsu"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.threshold_otsu</span></tt></a>(image[,&nbsp;nbins])</td>
 <td>Return threshold value based on Otsu&#8217;s method.</td>
@@ -556,6 +560,95 @@ has to be further processed to perform edge detection.</p>
 </dd></dl>
 
 </div>
+<div class="section" id="threshold-adaptive">
+<h2>threshold_adaptive<a class="headerlink" href="#threshold-adaptive" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.filter.threshold_adaptive">
+<tt class="descclassname">skimage.filter.</tt><tt class="descname">threshold_adaptive</tt><big>(</big><em>image</em>, <em>block_size</em>, <em>method='gaussian'</em>, <em>offset=0</em>, <em>mode='reflect'</em>, <em>param=None</em><big>)</big><a class="headerlink" href="#skimage.filter.threshold_adaptive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies an adaptive threshold to an array.</p>
+<p>Also known as local or dynamic thresholding where the threshold value is the
+weighted mean for the local neighborhood of a pixel subtracted by a
+constant. Alternatively the threshold can be determined dynamically by a
+a given function using the &#8216;generic&#8217; method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : NxM ndarray</p>
+<blockquote>
+<div><p>Input image.</p>
+</div></blockquote>
+<p><strong>block_size</strong> : int</p>
+<blockquote>
+<div><p>Uneven size of pixel neighborhood which is used to calculate the
+threshold value (e.g. 3, 5, 7, ..., 21, ...).</p>
+</div></blockquote>
+<p><strong>method</strong> : {&#8216;generic&#8217;, &#8216;gaussian&#8217;, &#8216;mean&#8217;, &#8216;median&#8217;}, optional</p>
+<blockquote>
+<div><p>Method used to determine adaptive threshold for local neighbourhood in
+weighted mean image.</p>
+<blockquote>
+<div><ul>
+<li><p class="first">&#8216;generic&#8217;: use custom function (see <cite>param</cite> parameter)</p>
+</li>
+<li><dl class="first docutils">
+<dt>&#8216;gaussian&#8217;: apply gaussian filter (see <cite>param</cite> parameter for custom</dt>
+<dd><p class="first last">sigma value)</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">&#8216;mean&#8217;: apply arithmetic mean filter</p>
+</li>
+<li><p class="first">&#8216;median&#8217; apply median rank filter</p>
+</li>
+</ul>
+</div></blockquote>
+<p>By default the &#8216;gaussian&#8217; method is used.</p>
+</div></blockquote>
+<p><strong>offset</strong> : float, optional</p>
+<blockquote>
+<div><p>Constant subtracted from weighted mean of neighborhood to calculate
+the local threshold value. Default offset is 0.</p>
+</div></blockquote>
+<p><strong>mode</strong> : {&#8216;reflect&#8217;, &#8216;constant&#8217;, &#8216;nearest&#8217;, &#8216;mirror&#8217;, &#8216;wrap&#8217;}, optional</p>
+<blockquote>
+<div><p>The mode parameter determines how the array borders are handled, where
+cval is the value when mode is equal to &#8216;constant&#8217;.
+Default is &#8216;reflect&#8217;.</p>
+</div></blockquote>
+<p><strong>param</strong> : {int, function}, optional</p>
+<blockquote>
+<div><p>Either specify sigma for &#8216;gaussian&#8217; method or function object for
+&#8216;generic&#8217; method. This functions takes the flat array of local
+neighbourhood as a single argument and returns the calculated threshold
+for the centre pixel.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>threshold</strong> : NxM ndarray</p>
+<blockquote class="last">
+<div><p>Thresholded binary image</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">References</p>
+<dl class="docutils">
+<dt><a class="reference external" href="http://docs.opencv.org/modules/imgproc/doc/miscellaneous_transformations">http://docs.opencv.org/modules/imgproc/doc/miscellaneous_transformations</a></dt>
+<dd>.html?highlight=threshold#adaptivethreshold</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.data</span> <span class="kn">import</span> <span class="n">camera</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">image</span> <span class="o">=</span> <span class="n">camera</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">binary_image1</span> <span class="o">=</span> <span class="n">threshold_adaptive</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="s">&#39;mean&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">arr</span><span class="p">:</span> <span class="n">arr</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">binary_image2</span> <span class="o">=</span> <span class="n">threshold_adaptive</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="s">&#39;generic&#39;</span><span class="p">,</span> <span class="n">param</span><span class="o">=</span><span class="n">func</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
 <div class="section" id="threshold-otsu">
 <h2>threshold_otsu<a class="headerlink" href="#threshold-otsu" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
@@ -586,10 +679,10 @@ integer arrays.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r34" rules="none">
+<table class="docutils citation" frame="void" id="r35" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[R34]</a></td><td>Wikipedia, <a class="reference external" href="http://en.wikipedia.org/wiki/Otsu's_Method">http://en.wikipedia.org/wiki/Otsu&#8217;s_Method</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id1">[R35]</a></td><td>Wikipedia, <a class="reference external" href="http://en.wikipedia.org/wiki/Otsu's_Method">http://en.wikipedia.org/wiki/Otsu&#8217;s_Method</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -660,12 +753,12 @@ the integral of the norm of the image gradient. Total variation
 denoising tends to produce &#8220;cartoon-like&#8221; images, that is, 
 piecewise-constant images.</p>
 <p>This code is an implementation of the algorithm of Rudin, Fatemi and Osher 
-that was proposed by Chambolle in <a class="reference internal" href="#r35">[R35]</a>.</p>
+that was proposed by Chambolle in <a class="reference internal" href="#r36">[R36]</a>.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r35" rules="none">
+<table class="docutils citation" frame="void" id="r36" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R35]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id3">2</a>)</em> A. Chambolle, An algorithm for total variation minimization and 
+<tr><td class="label">[R36]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id3">2</a>)</em> A. Chambolle, An algorithm for total variation minimization and 
 applications, Journal of Mathematical Imaging and Vision, 
 Springer, 2004, 20, 89-97.</td></tr>
 </tbody>

@@ -11,6 +11,7 @@ Module: :mod:`feature`
    skimage.feature.greycoprops
    skimage.feature.harris
    skimage.feature.hog
+   skimage.feature.match_template
    skimage.feature.peak_local_max
 
 greycomatrix
@@ -32,6 +33,11 @@ hog
 ---
 
 .. autofunction:: skimage.feature.hog
+
+match_template
+--------------
+
+.. autofunction:: skimage.feature.match_template
 
 peak_local_max
 --------------

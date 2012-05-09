@@ -31,9 +31,14 @@ General-purpose and introductory examples for the scikit.
    plot_lena_tv_denoise
    plot_medial_transform
    plot_otsu
+   plot_peak_local_max
    plot_radon_transform
    plot_random_walker_segmentation
+   plot_shapes
    plot_skeleton
+   plot_swirl
+   plot_template
+   plot_threshold_adaptive
    plot_view_as_blocks
    plot_watershed
 
@@ -109,6 +114,12 @@ General-purpose and introductory examples for the scikit.
 
    :ref:`example_plot_otsu.py`
 
+.. figure:: ./images/thumb/plot_peak_local_max.png
+   :figclass: gallery
+   :target: ./plot_peak_local_max.html
+
+   :ref:`example_plot_peak_local_max.py`
+
 .. figure:: ./images/thumb/plot_radon_transform.png
    :figclass: gallery
    :target: ./plot_radon_transform.html
@@ -121,11 +132,35 @@ General-purpose and introductory examples for the scikit.
 
    :ref:`example_plot_random_walker_segmentation.py`
 
+.. figure:: ./images/thumb/plot_shapes.png
+   :figclass: gallery
+   :target: ./plot_shapes.html
+
+   :ref:`example_plot_shapes.py`
+
 .. figure:: ./images/thumb/plot_skeleton.png
    :figclass: gallery
    :target: ./plot_skeleton.html
 
    :ref:`example_plot_skeleton.py`
+
+.. figure:: ./images/thumb/plot_swirl.png
+   :figclass: gallery
+   :target: ./plot_swirl.html
+
+   :ref:`example_plot_swirl.py`
+
+.. figure:: ./images/thumb/plot_template.png
+   :figclass: gallery
+   :target: ./plot_template.html
+
+   :ref:`example_plot_template.py`
+
+.. figure:: ./images/thumb/plot_threshold_adaptive.png
+   :figclass: gallery
+   :target: ./plot_threshold_adaptive.html
+
+   :ref:`example_plot_threshold_adaptive.py`
 
 .. figure:: ./images/thumb/plot_view_as_blocks.png
    :figclass: gallery

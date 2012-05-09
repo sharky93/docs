@@ -52,9 +52,13 @@
     <h3>Contents</h3>
     <ul>
 <li><a class="reference internal" href="#">Module: <tt class="docutils literal"><span class="pre">morphology</span></tt></a><ul>
+<li><a class="reference internal" href="#black-tophat">black_tophat</a></li>
+<li><a class="reference internal" href="#closing">closing</a></li>
 <li><a class="reference internal" href="#convex-hull-image">convex_hull_image</a></li>
 <li><a class="reference internal" href="#diamond">diamond</a></li>
+<li><a class="reference internal" href="#dilation">dilation</a></li>
 <li><a class="reference internal" href="#disk">disk</a></li>
+<li><a class="reference internal" href="#erosion">erosion</a></li>
 <li><a class="reference internal" href="#greyscale-black-top-hat">greyscale_black_top_hat</a></li>
 <li><a class="reference internal" href="#greyscale-close">greyscale_close</a></li>
 <li><a class="reference internal" href="#greyscale-dilate">greyscale_dilate</a></li>
@@ -64,10 +68,12 @@
 <li><a class="reference internal" href="#is-local-maximum">is_local_maximum</a></li>
 <li><a class="reference internal" href="#label">label</a></li>
 <li><a class="reference internal" href="#medial-axis">medial_axis</a></li>
+<li><a class="reference internal" href="#opening">opening</a></li>
 <li><a class="reference internal" href="#rectangle">rectangle</a></li>
 <li><a class="reference internal" href="#skeletonize">skeletonize</a></li>
 <li><a class="reference internal" href="#square">square</a></li>
 <li><a class="reference internal" href="#watershed">watershed</a></li>
+<li><a class="reference internal" href="#white-tophat">white_tophat</a></li>
 </ul>
 </li>
 </ul>
@@ -110,32 +116,44 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
+<tr><td><a class="reference internal" href="#skimage.morphology.black_tophat" title="skimage.morphology.black_tophat"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.black_tophat</span></tt></a>(image,&nbsp;selem)</td>
+<td>Return black top hat of an image.</td>
+</tr>
+<tr><td><a class="reference internal" href="#skimage.morphology.closing" title="skimage.morphology.closing"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.closing</span></tt></a>(image,&nbsp;selem[,&nbsp;out])</td>
+<td>Return greyscale morphological closing of an image.</td>
+</tr>
 <tr><td><a class="reference internal" href="#skimage.morphology.convex_hull_image" title="skimage.morphology.convex_hull_image"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.convex_hull_image</span></tt></a>(image)</td>
 <td>Compute the convex hull image of a binary image.</td>
 </tr>
 <tr><td><a class="reference internal" href="#skimage.morphology.diamond" title="skimage.morphology.diamond"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.diamond</span></tt></a>(radius[,&nbsp;dtype])</td>
 <td>Generates a flat, diamond-shaped structuring element of a given radius.</td>
 </tr>
+<tr><td><a class="reference internal" href="#skimage.morphology.dilation" title="skimage.morphology.dilation"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.dilation</span></tt></a>(image,&nbsp;selem[,&nbsp;...])</td>
+<td>Return greyscale morphological dilation of an image.</td>
+</tr>
 <tr><td><a class="reference internal" href="#skimage.morphology.disk" title="skimage.morphology.disk"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.disk</span></tt></a>(radius[,&nbsp;dtype])</td>
 <td>Generates a flat, disk-shaped structuring element of a given radius.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.morphology.greyscale_black_top_hat" title="skimage.morphology.greyscale_black_top_hat"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.greyscale_black_top_hat</span></tt></a>(...)</td>
-<td>Return black top hat of an image.</td>
-</tr>
-<tr><td><a class="reference internal" href="#skimage.morphology.greyscale_close" title="skimage.morphology.greyscale_close"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.greyscale_close</span></tt></a>(image,&nbsp;selem)</td>
-<td>Return greyscale morphological closing of an image.</td>
-</tr>
-<tr><td><a class="reference internal" href="#skimage.morphology.greyscale_dilate" title="skimage.morphology.greyscale_dilate"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.greyscale_dilate</span></tt></a>(image,&nbsp;selem)</td>
-<td>Return greyscale morphological dilation of an image.</td>
-</tr>
-<tr><td><a class="reference internal" href="#skimage.morphology.greyscale_erode" title="skimage.morphology.greyscale_erode"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.greyscale_erode</span></tt></a>(image,&nbsp;selem)</td>
+<tr><td><a class="reference internal" href="#skimage.morphology.erosion" title="skimage.morphology.erosion"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.erosion</span></tt></a>(image,&nbsp;selem[,&nbsp;...])</td>
 <td>Return greyscale morphological erosion of an image.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.morphology.greyscale_open" title="skimage.morphology.greyscale_open"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.greyscale_open</span></tt></a>(image,&nbsp;selem)</td>
-<td>Return greyscale morphological opening of an image.</td>
+<tr><td><a class="reference internal" href="#skimage.morphology.greyscale_black_top_hat" title="skimage.morphology.greyscale_black_top_hat"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.greyscale_black_top_hat</span></tt></a>(...)</td>
+<td></td>
+</tr>
+<tr><td><a class="reference internal" href="#skimage.morphology.greyscale_close" title="skimage.morphology.greyscale_close"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.greyscale_close</span></tt></a>(*args,&nbsp;...)</td>
+<td></td>
+</tr>
+<tr><td><a class="reference internal" href="#skimage.morphology.greyscale_dilate" title="skimage.morphology.greyscale_dilate"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.greyscale_dilate</span></tt></a>(*args,&nbsp;...)</td>
+<td></td>
+</tr>
+<tr><td><a class="reference internal" href="#skimage.morphology.greyscale_erode" title="skimage.morphology.greyscale_erode"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.greyscale_erode</span></tt></a>(*args,&nbsp;...)</td>
+<td></td>
+</tr>
+<tr><td><a class="reference internal" href="#skimage.morphology.greyscale_open" title="skimage.morphology.greyscale_open"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.greyscale_open</span></tt></a>(*args,&nbsp;...)</td>
+<td></td>
 </tr>
 <tr><td><a class="reference internal" href="#skimage.morphology.greyscale_white_top_hat" title="skimage.morphology.greyscale_white_top_hat"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.greyscale_white_top_hat</span></tt></a>(...)</td>
-<td>Return white top hat of an image.</td>
+<td></td>
 </tr>
 <tr><td><a class="reference internal" href="#skimage.morphology.is_local_maximum" title="skimage.morphology.is_local_maximum"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.is_local_maximum</span></tt></a>(image[,&nbsp;...])</td>
 <td>Return a boolean array of points that are local maxima</td>
@@ -145,6 +163,9 @@
 </tr>
 <tr><td><a class="reference internal" href="#skimage.morphology.medial_axis" title="skimage.morphology.medial_axis"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.medial_axis</span></tt></a>(image[,&nbsp;...])</td>
 <td>Compute the medial axis transform of a binary image</td>
+</tr>
+<tr><td><a class="reference internal" href="#skimage.morphology.opening" title="skimage.morphology.opening"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.opening</span></tt></a>(image,&nbsp;selem[,&nbsp;out])</td>
+<td>Return greyscale morphological opening of an image.</td>
 </tr>
 <tr><td><a class="reference internal" href="#skimage.morphology.rectangle" title="skimage.morphology.rectangle"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.rectangle</span></tt></a>(width,&nbsp;height)</td>
 <td>Generates a flat, rectangular-shaped structuring element of a given width and height.</td>
@@ -158,8 +179,123 @@
 <tr><td><a class="reference internal" href="#skimage.morphology.watershed" title="skimage.morphology.watershed"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.watershed</span></tt></a>(image,&nbsp;markers)</td>
 <td>Return a matrix labeled using the watershed segmentation algorithm</td>
 </tr>
+<tr><td><a class="reference internal" href="#skimage.morphology.white_tophat" title="skimage.morphology.white_tophat"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.white_tophat</span></tt></a>(image,&nbsp;selem)</td>
+<td>Return white top hat of an image.</td>
+</tr>
 </tbody>
 </table>
+<div class="section" id="black-tophat">
+<h2>black_tophat<a class="headerlink" href="#black-tophat" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.morphology.black_tophat">
+<tt class="descclassname">skimage.morphology.</tt><tt class="descname">black_tophat</tt><big>(</big><em>image</em>, <em>selem</em>, <em>out=None</em><big>)</big><a class="headerlink" href="#skimage.morphology.black_tophat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return black top hat of an image.</p>
+<p>The black top hat of an image is defined as its morphological closing minus
+the original image. This operation returns the dark spots of the image that
+are smaller than the structuring element. Note that dark spots in the
+original image are bright spots after the black top hat.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<blockquote>
+<div><p>Image array.</p>
+</div></blockquote>
+<p><strong>selem</strong> : ndarray</p>
+<blockquote>
+<div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
+</div></blockquote>
+<p><strong>out</strong> : ndarray</p>
+<blockquote>
+<div><p>The array to store the result of the morphology. If None
+is passed, a new array will be allocated.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>opening</strong> : uint8 array</p>
+<blockquote class="last">
+<div><p>The result of the black top filter.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Change dark peak to bright peak and subtract background</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.morphology</span> <span class="kn">import</span> <span class="n">square</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dark_on_grey</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+<span class="gp">... </span>                         <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+<span class="gp">... </span>                         <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+<span class="gp">... </span>                         <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+<span class="gp">... </span>                         <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">black_tophat</span><span class="p">(</span><span class="n">dark_on_grey</span><span class="p">,</span> <span class="n">square</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="go">array([[0, 0, 0, 0, 0],</span>
+<span class="go">       [0, 0, 1, 0, 0],</span>
+<span class="go">       [0, 1, 5, 1, 0],</span>
+<span class="go">       [0, 0, 1, 0, 0],</span>
+<span class="go">       [0, 0, 0, 0, 0]], dtype=&#39;uint8&#39;)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="closing">
+<h2>closing<a class="headerlink" href="#closing" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.morphology.closing">
+<tt class="descclassname">skimage.morphology.</tt><tt class="descname">closing</tt><big>(</big><em>image</em>, <em>selem</em>, <em>out=None</em><big>)</big><a class="headerlink" href="#skimage.morphology.closing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return greyscale morphological closing of an image.</p>
+<p>The morphological closing on an image is defined as a dilation followed by
+an erosion. Closing can remove small dark spots (i.e. &#8220;pepper&#8221;) and connect
+small bright cracks. This tends to &#8220;close&#8221; up (dark) gaps between (bright)
+features.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<blockquote>
+<div><p>Image array.</p>
+</div></blockquote>
+<p><strong>selem</strong> : ndarray</p>
+<blockquote>
+<div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
+</div></blockquote>
+<p><strong>out</strong> : ndarray</p>
+<blockquote>
+<div><p>The array to store the result of the morphology. If None,
+is passed, a new array will be allocated.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>closing</strong> : uint8 array</p>
+<blockquote class="last">
+<div><p>The result of the morphological closing.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Close a gap between two bright lines</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.morphology</span> <span class="kn">import</span> <span class="n">square</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">broken_line</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+<span class="gp">... </span>                        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+<span class="gp">... </span>                        <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+<span class="gp">... </span>                        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+<span class="gp">... </span>                        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">closing</span><span class="p">(</span><span class="n">broken_line</span><span class="p">,</span> <span class="n">square</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="go">array([[0, 0, 0, 0, 0],</span>
+<span class="go">       [0, 0, 0, 0, 0],</span>
+<span class="go">       [1, 1, 1, 1, 1],</span>
+<span class="go">       [0, 0, 0, 0, 0],</span>
+<span class="go">       [0, 0, 0, 0, 0]], dtype=&#39;uint8&#39;)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
 <div class="section" id="convex-hull-image">
 <h2>convex_hull_image<a class="headerlink" href="#convex-hull-image" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
@@ -187,10 +323,10 @@ polygon that surround all white pixels in the input image.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r42" rules="none">
+<table class="docutils citation" frame="void" id="r43" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[R42]</a></td><td><a class="reference external" href="http://blogs.mathworks.com/steve/2011/10/04/binary-image-convex-hull-algorithm-notes/">http://blogs.mathworks.com/steve/2011/10/04/binary-image-convex-hull-algorithm-notes/</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id1">[R43]</a></td><td><a class="reference external" href="http://blogs.mathworks.com/steve/2011/10/04/binary-image-convex-hull-algorithm-notes/">http://blogs.mathworks.com/steve/2011/10/04/binary-image-convex-hull-algorithm-notes/</a></td></tr>
 </tbody>
 </table>
 </dd></dl>
@@ -231,6 +367,66 @@ are 1 and 0 otherwise.</p>
 </dd></dl>
 
 </div>
+<div class="section" id="dilation">
+<h2>dilation<a class="headerlink" href="#dilation" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.morphology.dilation">
+<tt class="descclassname">skimage.morphology.</tt><tt class="descname">dilation</tt><big>(</big><em>image</em>, <em>selem</em>, <em>out=None</em>, <em>shift_x=False</em>, <em>shift_y=False</em><big>)</big><a class="headerlink" href="#skimage.morphology.dilation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return greyscale morphological dilation of an image.</p>
+<p>Morphological dilation sets a pixel at (i,j) to the maximum over all pixels
+in the neighborhood centered at (i,j). Dilation enlarges bright regions
+and shrinks dark regions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<blockquote>
+<div><p>Image array.</p>
+</div></blockquote>
+<p><strong>selem</strong> : ndarray</p>
+<blockquote>
+<div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
+</div></blockquote>
+<p><strong>out</strong> : ndarray</p>
+<blockquote>
+<div><p>The array to store the result of the morphology. If None, is
+passed, a new array will be allocated.</p>
+</div></blockquote>
+<p><strong>shift_x, shift_y</strong> : bool</p>
+<blockquote>
+<div><p>shift structuring element about center point. This only affects
+eccentric structuring elements (i.e. selem with even numbered sides).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>dilated</strong> : uint8 array</p>
+<blockquote class="last">
+<div><p>The result of the morphological dilation.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Dilation enlarges bright regions</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.morphology</span> <span class="kn">import</span> <span class="n">square</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bright_pixel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+<span class="gp">... </span>                         <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+<span class="gp">... </span>                         <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+<span class="gp">... </span>                         <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+<span class="gp">... </span>                         <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dilation</span><span class="p">(</span><span class="n">bright_pixel</span><span class="p">,</span> <span class="n">square</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="go">array([[0, 0, 0, 0, 0],</span>
+<span class="go">       [0, 1, 1, 1, 0],</span>
+<span class="go">       [0, 1, 1, 1, 0],</span>
+<span class="go">       [0, 1, 1, 1, 0],</span>
+<span class="go">       [0, 0, 0, 0, 0]], dtype=&#39;uint8&#39;)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
 <div class="section" id="disk">
 <h2>disk<a class="headerlink" href="#disk" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
@@ -265,183 +461,11 @@ are 1 and 0 otherwise.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="greyscale-black-top-hat">
-<h2>greyscale_black_top_hat<a class="headerlink" href="#greyscale-black-top-hat" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="erosion">
+<h2>erosion<a class="headerlink" href="#erosion" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="skimage.morphology.greyscale_black_top_hat">
-<tt class="descclassname">skimage.morphology.</tt><tt class="descname">greyscale_black_top_hat</tt><big>(</big><em>image</em>, <em>selem</em>, <em>out=None</em><big>)</big><a class="headerlink" href="#skimage.morphology.greyscale_black_top_hat" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return black top hat of an image.</p>
-<p>The black top hat of an image is defined as its morphological closing minus
-the original image. This operation returns the dark spots of the image that
-are smaller than the structuring element. Note that dark spots in the
-original image are bright spots after the black top hat.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
-<blockquote>
-<div><p>The image as a uint8 ndarray.</p>
-</div></blockquote>
-<p><strong>selem</strong> : ndarray</p>
-<blockquote>
-<div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
-</div></blockquote>
-<p><strong>out</strong> : ndarray</p>
-<blockquote>
-<div><p>The array to store the result of the morphology. If None
-is passed, a new array will be allocated.</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>opening</strong> : ndarray</p>
-<blockquote class="last">
-<div><p>The result of the black top filter.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Change dark peak to bright peak and subtract background</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.morphology</span> <span class="kn">import</span> <span class="n">square</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">dark_on_grey</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
-<span class="gp">... </span>                         <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
-<span class="gp">... </span>                         <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
-<span class="gp">... </span>                         <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
-<span class="gp">... </span>                         <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">greyscale_black_top_hat</span><span class="p">(</span><span class="n">dark_on_grey</span><span class="p">,</span> <span class="n">square</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
-<span class="go">array([[0, 0, 0, 0, 0],</span>
-<span class="go">       [0, 0, 1, 0, 0],</span>
-<span class="go">       [0, 1, 5, 1, 0],</span>
-<span class="go">       [0, 0, 1, 0, 0],</span>
-<span class="go">       [0, 0, 0, 0, 0]], dtype=&#39;uint8&#39;)</span>
-</pre></div>
-</div>
-</dd></dl>
-
-</div>
-<div class="section" id="greyscale-close">
-<h2>greyscale_close<a class="headerlink" href="#greyscale-close" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="skimage.morphology.greyscale_close">
-<tt class="descclassname">skimage.morphology.</tt><tt class="descname">greyscale_close</tt><big>(</big><em>image</em>, <em>selem</em>, <em>out=None</em><big>)</big><a class="headerlink" href="#skimage.morphology.greyscale_close" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return greyscale morphological closing of an image.</p>
-<p>The morphological closing on an image is defined as a dilation followed by
-an erosion. Closing can remove small dark spots (i.e. &#8220;pepper&#8221;) and connect
-small bright cracks. This tends to &#8220;close&#8221; up (dark) gaps between (bright)
-features.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
-<blockquote>
-<div><p>The image as a uint8 ndarray.</p>
-</div></blockquote>
-<p><strong>selem</strong> : ndarray</p>
-<blockquote>
-<div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
-</div></blockquote>
-<p><strong>out</strong> : ndarray</p>
-<blockquote>
-<div><p>The array to store the result of the morphology. If None,
-is passed, a new array will be allocated.</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>opening</strong> : ndarray</p>
-<blockquote class="last">
-<div><p>The result of the morphological opening.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Close a gap between two bright lines</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.morphology</span> <span class="kn">import</span> <span class="n">square</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">broken_line</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-<span class="gp">... </span>                        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-<span class="gp">... </span>                        <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
-<span class="gp">... </span>                        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-<span class="gp">... </span>                        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">greyscale_close</span><span class="p">(</span><span class="n">broken_line</span><span class="p">,</span> <span class="n">square</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
-<span class="go">array([[0, 0, 0, 0, 0],</span>
-<span class="go">       [0, 0, 0, 0, 0],</span>
-<span class="go">       [1, 1, 1, 1, 1],</span>
-<span class="go">       [0, 0, 0, 0, 0],</span>
-<span class="go">       [0, 0, 0, 0, 0]], dtype=&#39;uint8&#39;)</span>
-</pre></div>
-</div>
-</dd></dl>
-
-</div>
-<div class="section" id="greyscale-dilate">
-<h2>greyscale_dilate<a class="headerlink" href="#greyscale-dilate" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="skimage.morphology.greyscale_dilate">
-<tt class="descclassname">skimage.morphology.</tt><tt class="descname">greyscale_dilate</tt><big>(</big><em>image</em>, <em>selem</em>, <em>out=None</em>, <em>shift_x=False</em>, <em>shift_y=False</em><big>)</big><a class="headerlink" href="#skimage.morphology.greyscale_dilate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return greyscale morphological dilation of an image.</p>
-<p>Morphological dilation sets a pixel at (i,j) to the maximum over all pixels
-in the neighborhood centered at (i,j). Dilation enlarges bright regions
-and shrinks dark regions.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
-<blockquote>
-<div><p>The image as a uint8 ndarray.</p>
-</div></blockquote>
-<p><strong>selem</strong> : ndarray</p>
-<blockquote>
-<div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
-</div></blockquote>
-<p><strong>out</strong> : ndarray</p>
-<blockquote>
-<div><p>The array to store the result of the morphology. If None, is
-passed, a new array will be allocated.</p>
-</div></blockquote>
-<p><strong>shift_x, shift_y</strong> : bool</p>
-<blockquote>
-<div><p>shift structuring element about center point. This only affects
-eccentric structuring elements (i.e. selem with even numbered sides).</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>dilated</strong> : ndarray</p>
-<blockquote class="last">
-<div><p>The result of the morphological dilation.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Dilation enlarges bright regions</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.morphology</span> <span class="kn">import</span> <span class="n">square</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">bright_pixel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-<span class="gp">... </span>                         <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-<span class="gp">... </span>                         <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-<span class="gp">... </span>                         <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-<span class="gp">... </span>                         <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">greyscale_dilate</span><span class="p">(</span><span class="n">bright_pixel</span><span class="p">,</span> <span class="n">square</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
-<span class="go">array([[0, 0, 0, 0, 0],</span>
-<span class="go">       [0, 1, 1, 1, 0],</span>
-<span class="go">       [0, 1, 1, 1, 0],</span>
-<span class="go">       [0, 1, 1, 1, 0],</span>
-<span class="go">       [0, 0, 0, 0, 0]], dtype=&#39;uint8&#39;)</span>
-</pre></div>
-</div>
-</dd></dl>
-
-</div>
-<div class="section" id="greyscale-erode">
-<h2>greyscale_erode<a class="headerlink" href="#greyscale-erode" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="skimage.morphology.greyscale_erode">
-<tt class="descclassname">skimage.morphology.</tt><tt class="descname">greyscale_erode</tt><big>(</big><em>image</em>, <em>selem</em>, <em>out=None</em>, <em>shift_x=False</em>, <em>shift_y=False</em><big>)</big><a class="headerlink" href="#skimage.morphology.greyscale_erode" title="Permalink to this definition">¶</a></dt>
+<dt id="skimage.morphology.erosion">
+<tt class="descclassname">skimage.morphology.</tt><tt class="descname">erosion</tt><big>(</big><em>image</em>, <em>selem</em>, <em>out=None</em>, <em>shift_x=False</em>, <em>shift_y=False</em><big>)</big><a class="headerlink" href="#skimage.morphology.erosion" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return greyscale morphological erosion of an image.</p>
 <p>Morphological erosion sets a pixel at (i,j) to the minimum over all pixels
 in the neighborhood centered at (i,j). Erosion shrinks bright regions and
@@ -452,7 +476,7 @@ enlarges dark regions.</p>
 <tbody valign="top">
 <tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
-<div><p>The image as a uint8 ndarray.</p>
+<div><p>Image array.</p>
 </div></blockquote>
 <p><strong>selem</strong> : ndarray</p>
 <blockquote>
@@ -470,7 +494,7 @@ eccentric structuring elements (i.e. selem with even numbered sides).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>eroded</strong> : ndarray</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>eroded</strong> : uint8 array</p>
 <blockquote class="last">
 <div><p>The result of the morphological erosion.</p>
 </div></blockquote>
@@ -486,7 +510,7 @@ eccentric structuring elements (i.e. selem with even numbered sides).</p>
 <span class="gp">... </span>                          <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
 <span class="gp">... </span>                          <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
 <span class="gp">... </span>                          <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">greyscale_erode</span><span class="p">(</span><span class="n">bright_square</span><span class="p">,</span> <span class="n">square</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">erosion</span><span class="p">(</span><span class="n">bright_square</span><span class="p">,</span> <span class="n">square</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
 <span class="go">array([[0, 0, 0, 0, 0],</span>
 <span class="go">       [0, 0, 0, 0, 0],</span>
 <span class="go">       [0, 0, 1, 0, 0],</span>
@@ -495,117 +519,54 @@ eccentric structuring elements (i.e. selem with even numbered sides).</p>
 </pre></div>
 </div>
 </dd></dl>
+
+</div>
+<div class="section" id="greyscale-black-top-hat">
+<h2>greyscale_black_top_hat<a class="headerlink" href="#greyscale-black-top-hat" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.morphology.greyscale_black_top_hat">
+<tt class="descclassname">skimage.morphology.</tt><tt class="descname">greyscale_black_top_hat</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.morphology.greyscale_black_top_hat" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="greyscale-close">
+<h2>greyscale_close<a class="headerlink" href="#greyscale-close" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.morphology.greyscale_close">
+<tt class="descclassname">skimage.morphology.</tt><tt class="descname">greyscale_close</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.morphology.greyscale_close" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="greyscale-dilate">
+<h2>greyscale_dilate<a class="headerlink" href="#greyscale-dilate" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.morphology.greyscale_dilate">
+<tt class="descclassname">skimage.morphology.</tt><tt class="descname">greyscale_dilate</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.morphology.greyscale_dilate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="greyscale-erode">
+<h2>greyscale_erode<a class="headerlink" href="#greyscale-erode" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.morphology.greyscale_erode">
+<tt class="descclassname">skimage.morphology.</tt><tt class="descname">greyscale_erode</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.morphology.greyscale_erode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </div>
 <div class="section" id="greyscale-open">
 <h2>greyscale_open<a class="headerlink" href="#greyscale-open" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.morphology.greyscale_open">
-<tt class="descclassname">skimage.morphology.</tt><tt class="descname">greyscale_open</tt><big>(</big><em>image</em>, <em>selem</em>, <em>out=None</em><big>)</big><a class="headerlink" href="#skimage.morphology.greyscale_open" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return greyscale morphological opening of an image.</p>
-<p>The morphological opening on an image is defined as an erosion followed by
-a dilation. Opening can remove small bright spots (i.e. &#8220;salt&#8221;) and connect
-small dark cracks. This tends to &#8220;open&#8221; up (dark) gaps between (bright)
-features.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
-<blockquote>
-<div><p>The image as a uint8 ndarray.</p>
-</div></blockquote>
-<p><strong>selem</strong> : ndarray</p>
-<blockquote>
-<div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
-</div></blockquote>
-<p><strong>out</strong> : ndarray</p>
-<blockquote>
-<div><p>The array to store the result of the morphology. If None
-is passed, a new array will be allocated.</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>opening</strong> : ndarray</p>
-<blockquote class="last">
-<div><p>The result of the morphological opening.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Open up gap between two bright regions (but also shrink regions)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.morphology</span> <span class="kn">import</span> <span class="n">square</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">bad_connection</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
-<span class="gp">... </span>                           <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
-<span class="gp">... </span>                           <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
-<span class="gp">... </span>                           <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
-<span class="gp">... </span>                           <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">greyscale_open</span><span class="p">(</span><span class="n">bad_connection</span><span class="p">,</span> <span class="n">square</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
-<span class="go">array([[0, 0, 0, 0, 0],</span>
-<span class="go">       [1, 1, 0, 1, 1],</span>
-<span class="go">       [1, 1, 0, 1, 1],</span>
-<span class="go">       [1, 1, 0, 1, 1],</span>
-<span class="go">       [0, 0, 0, 0, 0]], dtype=&#39;uint8&#39;)</span>
-</pre></div>
-</div>
-</dd></dl>
+<tt class="descclassname">skimage.morphology.</tt><tt class="descname">greyscale_open</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.morphology.greyscale_open" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </div>
 <div class="section" id="greyscale-white-top-hat">
 <h2>greyscale_white_top_hat<a class="headerlink" href="#greyscale-white-top-hat" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.morphology.greyscale_white_top_hat">
-<tt class="descclassname">skimage.morphology.</tt><tt class="descname">greyscale_white_top_hat</tt><big>(</big><em>image</em>, <em>selem</em>, <em>out=None</em><big>)</big><a class="headerlink" href="#skimage.morphology.greyscale_white_top_hat" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return white top hat of an image.</p>
-<p>The white top hat of an image is defined as the image minus its
-morphological opening. This operation returns the bright spots of the image
-that are smaller than the structuring element.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
-<blockquote>
-<div><p>The image as a uint8 ndarray.</p>
-</div></blockquote>
-<p><strong>selem</strong> : ndarray</p>
-<blockquote>
-<div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
-</div></blockquote>
-<p><strong>out</strong> : ndarray</p>
-<blockquote>
-<div><p>The array to store the result of the morphology. If None
-is passed, a new array will be allocated.</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>opening</strong> : ndarray</p>
-<blockquote class="last">
-<div><p>The result of the morphological white top hat.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Subtract grey background from bright peak</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.morphology</span> <span class="kn">import</span> <span class="n">square</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">bright_on_grey</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-<span class="gp">... </span>                           <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
-<span class="gp">... </span>                           <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
-<span class="gp">... </span>                           <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
-<span class="gp">... </span>                           <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">greyscale_white_top_hat</span><span class="p">(</span><span class="n">bright_on_grey</span><span class="p">,</span> <span class="n">square</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
-<span class="go">array([[0, 0, 0, 0, 0],</span>
-<span class="go">       [0, 0, 1, 0, 0],</span>
-<span class="go">       [0, 1, 5, 1, 0],</span>
-<span class="go">       [0, 0, 1, 0, 0],</span>
-<span class="go">       [0, 0, 0, 0, 0]], dtype=&#39;uint8&#39;)</span>
-</pre></div>
-</div>
-</dd></dl>
+<tt class="descclassname">skimage.morphology.</tt><tt class="descname">greyscale_white_top_hat</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.morphology.greyscale_white_top_hat" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </div>
 <div class="section" id="is-local-maximum">
@@ -842,6 +803,62 @@ pass.</li>
 </dd></dl>
 
 </div>
+<div class="section" id="opening">
+<h2>opening<a class="headerlink" href="#opening" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.morphology.opening">
+<tt class="descclassname">skimage.morphology.</tt><tt class="descname">opening</tt><big>(</big><em>image</em>, <em>selem</em>, <em>out=None</em><big>)</big><a class="headerlink" href="#skimage.morphology.opening" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return greyscale morphological opening of an image.</p>
+<p>The morphological opening on an image is defined as an erosion followed by
+a dilation. Opening can remove small bright spots (i.e. &#8220;salt&#8221;) and connect
+small dark cracks. This tends to &#8220;open&#8221; up (dark) gaps between (bright)
+features.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<blockquote>
+<div><p>Image array.</p>
+</div></blockquote>
+<p><strong>selem</strong> : ndarray</p>
+<blockquote>
+<div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
+</div></blockquote>
+<p><strong>out</strong> : ndarray</p>
+<blockquote>
+<div><p>The array to store the result of the morphology. If None
+is passed, a new array will be allocated.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>opening</strong> : uint8 array</p>
+<blockquote class="last">
+<div><p>The result of the morphological opening.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Open up gap between two bright regions (but also shrink regions)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.morphology</span> <span class="kn">import</span> <span class="n">square</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bad_connection</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+<span class="gp">... </span>                           <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+<span class="gp">... </span>                           <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+<span class="gp">... </span>                           <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+<span class="gp">... </span>                           <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">opening</span><span class="p">(</span><span class="n">bad_connection</span><span class="p">,</span> <span class="n">square</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="go">array([[0, 0, 0, 0, 0],</span>
+<span class="go">       [1, 1, 0, 1, 1],</span>
+<span class="go">       [1, 1, 0, 1, 1],</span>
+<span class="go">       [1, 1, 0, 1, 1],</span>
+<span class="go">       [0, 0, 0, 0, 0]], dtype=&#39;uint8&#39;)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
 <div class="section" id="rectangle">
 <h2>rectangle<a class="headerlink" href="#rectangle" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
@@ -921,10 +938,10 @@ the iterations.</p>
 medial axis transform, which is also often referred to as
 &#8220;skeletonization&#8221;.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r43" rules="none">
+<table class="docutils citation" frame="void" id="r44" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[R43]</a></td><td>A fast parallel algorithm for thinning digital patterns, 
+<tr><td class="label"><a class="fn-backref" href="#id2">[R44]</a></td><td>A fast parallel algorithm for thinning digital patterns, 
 T. Y. ZHANG and C. Y. SUEN, Communications of the ACM,
 March 1984, Volume 27, Number 3</td></tr>
 </tbody>
@@ -1042,7 +1059,7 @@ will be labeled.</p>
 </dl>
 </div>
 <p class="rubric">Notes</p>
-<p>This function implements a watershed algorithm [R44]_that apportions pixels
+<p>This function implements a watershed algorithm [R45]_that apportions pixels
 into marked basins. The algorithm uses a priority queue to hold the pixels
 with the metric for the priority queue being pixel value, then the time of
 entry into the queue - this settles ties in favor of the closest marker.</p>
@@ -1060,16 +1077,16 @@ the local minima of the gradient of the image, or the local maxima of the
 distance function to the background for separating overlapping objects
 (see example).</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r44" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[R44]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Watershed_%28image_processing%29">http://en.wikipedia.org/wiki/Watershed_%28image_processing%29</a></td></tr>
-</tbody>
-</table>
 <table class="docutils citation" frame="void" id="r45" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[R45]</a></td><td><a class="reference external" href="http://cmm.ensmp.fr/~beucher/wtshed.html">http://cmm.ensmp.fr/~beucher/wtshed.html</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id3">[R45]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Watershed_%28image_processing%29">http://en.wikipedia.org/wiki/Watershed_%28image_processing%29</a></td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="r46" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[R46]</a></td><td><a class="reference external" href="http://cmm.ensmp.fr/~beucher/wtshed.html">http://cmm.ensmp.fr/~beucher/wtshed.html</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -1093,6 +1110,61 @@ distance function to the background for separating overlapping objects
 </div>
 <p>The algorithm works also for 3-D images, and can be used for example to
 separate overlapping spheres.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="white-tophat">
+<h2>white_tophat<a class="headerlink" href="#white-tophat" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.morphology.white_tophat">
+<tt class="descclassname">skimage.morphology.</tt><tt class="descname">white_tophat</tt><big>(</big><em>image</em>, <em>selem</em>, <em>out=None</em><big>)</big><a class="headerlink" href="#skimage.morphology.white_tophat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return white top hat of an image.</p>
+<p>The white top hat of an image is defined as the image minus its
+morphological opening. This operation returns the bright spots of the image
+that are smaller than the structuring element.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<blockquote>
+<div><p>Image array.</p>
+</div></blockquote>
+<p><strong>selem</strong> : ndarray</p>
+<blockquote>
+<div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
+</div></blockquote>
+<p><strong>out</strong> : ndarray</p>
+<blockquote>
+<div><p>The array to store the result of the morphology. If None
+is passed, a new array will be allocated.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>opening</strong> : uint8 array</p>
+<blockquote class="last">
+<div><p>The result of the morphological white top hat.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Subtract grey background from bright peak</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.morphology</span> <span class="kn">import</span> <span class="n">square</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bright_on_grey</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+<span class="gp">... </span>                           <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+<span class="gp">... </span>                           <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+<span class="gp">... </span>                           <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+<span class="gp">... </span>                           <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">white_tophat</span><span class="p">(</span><span class="n">bright_on_grey</span><span class="p">,</span> <span class="n">square</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="go">array([[0, 0, 0, 0, 0],</span>
+<span class="go">       [0, 0, 1, 0, 0],</span>
+<span class="go">       [0, 1, 5, 1, 0],</span>
+<span class="go">       [0, 0, 1, 0, 0],</span>
+<span class="go">       [0, 0, 0, 0, 0]], dtype=&#39;uint8&#39;)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>
