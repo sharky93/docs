@@ -7,13 +7,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Watershed segmentation &mdash; skimage v0.6dev docs</title>
+    <title>Watershed segmentation &mdash; skimage v0.6 docs</title>
     <link rel="stylesheet" href="../_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6dev',
+        VERSION:     '0.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,8 +23,9 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/docversions.js"></script>
-    <link rel="top" title="skimage v0.6dev docs" href="../index.html" />
-    <link rel="up" title="Examples" href="index.html" />
+    <link rel="top" title="skimage v0.6 docs" href="../index.html" />
+    <link rel="up" title="General examples" href="index.html" />
+    <link rel="next" title="Comparing edge-based segmentation and region-based segmentation" href="applications/plot_coins_segmentation.html" />
     <link rel="prev" title="Block views on images/arrays" href="plot_view_as_blocks.html" /> 
   </head>
   <body>
@@ -56,6 +57,9 @@
   <h4>Previous topic</h4>
   <p class="topless"><a href="plot_view_as_blocks.html"
                         title="previous chapter">Block views on images/arrays</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="applications/plot_coins_segmentation.html"
+                        title="next chapter">Comparing edge-based segmentation and region-based segmentation</a></p>
 
   <h3>Version</h3>
 
@@ -99,10 +103,8 @@ background. The maxima of this distance (i.e., the minima of the
 opposite of the distance) are chosen as markers, and the flooding of
 basins from such markers separates the two circles along a watershed
 line.</p>
-<p>See <a class="reference external" href="&lt;http://en.wikipedia.org/wiki/Watershed_(image_processing)&gt;">Wikipedia</a> for more details on the algorithm.</p>
+<p>See <a class="reference external" href="http://en.wikipedia.org/wiki/Watershed_(image_processing)">Wikipedia</a> for more details on the algorithm.</p>
 <img alt="../_images/plot_watershed_1.png" class="align-center" src="../_images/plot_watershed_1.png" />
-<p><strong>Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_watershed.py"><tt class="xref download docutils literal"><span class="pre">plot_watershed.py</span></tt></a>
-(generated using <tt class="docutils literal"><span class="pre">skimage</span></tt> 0.6dev)</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">ndimage</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
@@ -139,6 +141,8 @@ line.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+<p><strong>Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_watershed.py"><tt class="xref download docutils literal"><span class="pre">download</span></tt></a>
+(generated using <tt class="docutils literal"><span class="pre">skimage</span></tt> 0.6)</p>
 </div>
 
 

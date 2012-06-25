@@ -1,5 +1,3 @@
-
-
 .. _example_plot_template.py:
 
 
@@ -22,15 +20,15 @@ the template.
 .. [1] J. P. Lewis, "Fast Normalized Cross-Correlation", Industrial Light and
        Magic.
 
-
-
 .. image:: images/plot_template_1.png
     :align: center
 
 
-**Python source code:** :download:`plot_template.py <plot_template.py>`
-(generated using ``skimage`` |version|)
-
 .. literalinclude:: plot_template.py
     :lines: 21-
-    
+
+
+
+**Python source code:** :download:`download <plot_template.py>`
+(generated using ``skimage`` |version|)
+

@@ -1,5 +1,3 @@
-
-
 .. _example_plot_threshold_adaptive.py:
 
 
@@ -19,15 +17,15 @@ calculates thresholds in regions of size `block_size` surrounding each pixel
 local neighborhood minus an offset value.
 
 
-
-
 .. image:: images/plot_threshold_adaptive_1.png
     :align: center
 
 
-**Python source code:** :download:`plot_threshold_adaptive.py <plot_threshold_adaptive.py>`
-(generated using ``skimage`` |version|)
-
 .. literalinclude:: plot_threshold_adaptive.py
     :lines: 18-
-    
+
+
+
+**Python source code:** :download:`download <plot_threshold_adaptive.py>`
+(generated using ``skimage`` |version|)
+

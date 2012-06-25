@@ -1,5 +1,3 @@
-
-
 .. _example_plot_swirl.py:
 
 
@@ -68,15 +66,15 @@ transformation of ``radius`` into :math:`r` is to ensure that the
 transformation decays to :math:`\approx 1/1000^{\mathsf{th}}` within the
 specified radius.
 
-
-
 .. image:: images/plot_swirl_1.png
     :align: center
 
 
-**Python source code:** :download:`plot_swirl.py <plot_swirl.py>`
-(generated using ``skimage`` |version|)
-
 .. literalinclude:: plot_swirl.py
     :lines: 67-
-    
+
+
+
+**Python source code:** :download:`download <plot_swirl.py>`
+(generated using ``skimage`` |version|)
+

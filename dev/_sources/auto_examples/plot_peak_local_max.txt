@@ -1,5 +1,3 @@
-
-
 .. _example_plot_peak_local_max.py:
 
 
@@ -14,15 +12,15 @@ size of the dilation. Locations where the original image is equal to the
 dilated image are returned as local maxima.
 
 
-
-
 .. image:: images/plot_peak_local_max_1.png
     :align: center
 
 
-**Python source code:** :download:`plot_peak_local_max.py <plot_peak_local_max.py>`
-(generated using ``skimage`` |version|)
-
 .. literalinclude:: plot_peak_local_max.py
     :lines: 13-
-    
+
+
+
+**Python source code:** :download:`download <plot_peak_local_max.py>`
+(generated using ``skimage`` |version|)
+

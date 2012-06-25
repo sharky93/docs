@@ -1,5 +1,3 @@
-
-
 .. _example_plot_watershed.py:
 
 
@@ -25,18 +23,18 @@ line.
 
 See Wikipedia_ for more details on the algorithm.
 
-.. _Wikipedia: <http://en.wikipedia.org/wiki/Watershed_(image_processing)>
-
-
+.. _Wikipedia: http://en.wikipedia.org/wiki/Watershed_(image_processing)
 
 
 .. image:: images/plot_watershed_1.png
     :align: center
 
 
-**Python source code:** :download:`plot_watershed.py <plot_watershed.py>`
-(generated using ``skimage`` |version|)
-
 .. literalinclude:: plot_watershed.py
     :lines: 27-
-    
+
+
+
+**Python source code:** :download:`download <plot_watershed.py>`
+(generated using ``skimage`` |version|)
+

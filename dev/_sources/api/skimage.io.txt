@@ -59,6 +59,7 @@ Inheritance diagram for ``skimage.io``:
    skimage.io.plugins
    skimage.io.pop
    skimage.io.push
+   skimage.io.reset_plugins
    skimage.io.show
    skimage.io.use_plugin
 
@@ -116,6 +117,11 @@ push
 ----
 
 .. autofunction:: skimage.io.push
+
+reset_plugins
+-------------
+
+.. autofunction:: skimage.io.reset_plugins
 
 show
 ----

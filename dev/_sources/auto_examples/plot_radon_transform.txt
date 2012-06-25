@@ -1,5 +1,3 @@
-
-
 .. _example_plot_radon_transform.py:
 
 
@@ -21,15 +19,15 @@ This script performs the radon transform, and reconstructs the
 input image based on the resulting sinogram.
 
 
-
-
 .. image:: images/plot_radon_transform_1.png
     :align: center
 
 
-**Python source code:** :download:`plot_radon_transform.py <plot_radon_transform.py>`
-(generated using ``skimage`` |version|)
-
 .. literalinclude:: plot_radon_transform.py
     :lines: 20-
-    
+
+
+
+**Python source code:** :download:`download <plot_radon_transform.py>`
+(generated using ``skimage`` |version|)
+

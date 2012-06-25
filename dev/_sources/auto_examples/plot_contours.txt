@@ -1,5 +1,3 @@
-
-
 .. _example_plot_contours.py:
 
 
@@ -19,15 +17,15 @@ Cubes: A High Resolution 3D Surface Construction Algorithm. Computer Graphics
 (SIGGRAPH 87 Proceedings) 21(4) July 1987, p. 163-170).
 
 
-
-
 .. image:: images/plot_contours_1.png
     :align: center
 
 
-**Python source code:** :download:`plot_contours.py <plot_contours.py>`
-(generated using ``skimage`` |version|)
-
 .. literalinclude:: plot_contours.py
     :lines: 18-
-    
+
+
+
+**Python source code:** :download:`download <plot_contours.py>`
+(generated using ``skimage`` |version|)
+

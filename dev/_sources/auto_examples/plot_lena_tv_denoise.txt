@@ -1,5 +1,3 @@
-
-
 .. _example_plot_lena_tv_denoise.py:
 
 
@@ -19,15 +17,15 @@ It is possible to change the degree of posterization by controlling
 the tradeoff between denoising and faithfulness to the original image.
 
 
-
-
 .. image:: images/plot_lena_tv_denoise_1.png
     :align: center
 
 
-**Python source code:** :download:`plot_lena_tv_denoise.py <plot_lena_tv_denoise.py>`
-(generated using ``skimage`` |version|)
-
 .. literalinclude:: plot_lena_tv_denoise.py
     :lines: 18-
-    
+
+
+
+**Python source code:** :download:`download <plot_lena_tv_denoise.py>`
+(generated using ``skimage`` |version|)
+

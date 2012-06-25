@@ -11,6 +11,8 @@ Module: :mod:`util`
    skimage.util.img_as_int
    skimage.util.img_as_ubyte
    skimage.util.img_as_uint
+   skimage.util.view_as_blocks
+   skimage.util.view_as_windows
 
 img_as_float
 ------------
@@ -31,4 +33,14 @@ img_as_uint
 -----------
 
 .. autofunction:: skimage.util.img_as_uint
+
+view_as_blocks
+--------------
+
+.. autofunction:: skimage.util.view_as_blocks
+
+view_as_windows
+---------------
+
+.. autofunction:: skimage.util.view_as_windows
 

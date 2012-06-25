@@ -1,5 +1,3 @@
-
-
 .. _example_plot_shapes.py:
 
 
@@ -14,15 +12,15 @@ This example shows how to fill several different shapes:
 * ellipse
 
 
-
-
 .. image:: images/plot_shapes_1.png
     :align: center
 
 
-**Python source code:** :download:`plot_shapes.py <plot_shapes.py>`
-(generated using ``skimage`` |version|)
-
 .. literalinclude:: plot_shapes.py
     :lines: 13-
-    
+
+
+
+**Python source code:** :download:`download <plot_shapes.py>`
+(generated using ``skimage`` |version|)
+
