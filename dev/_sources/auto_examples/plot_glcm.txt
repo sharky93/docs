@@ -1,3 +1,5 @@
+
+
 .. _example_plot_glcm.py:
 
 
@@ -21,15 +23,15 @@ this example) would be to train a classifier, such as logistic
 regression, to label image patches from new images.
 
 
+
+
 .. image:: images/plot_glcm_1.png
     :align: center
 
 
-.. literalinclude:: plot_glcm.py
-    :lines: 22-
-
-
-
-**Python source code:** :download:`download <plot_glcm.py>`
+**Python source code:** :download:`plot_glcm.py <plot_glcm.py>`
 (generated using ``skimage`` |version|)
 
+.. literalinclude:: plot_glcm.py
+    :lines: 22-
+    

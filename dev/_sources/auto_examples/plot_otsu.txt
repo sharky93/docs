@@ -1,3 +1,5 @@
+
+
 .. _example_plot_otsu.py:
 
 
@@ -16,15 +18,15 @@ the intra-class variance.
 .. [1] http://en.wikipedia.org/wiki/Otsu's_method
 
 
+
+
 .. image:: images/plot_otsu_1.png
     :align: center
 
 
-.. literalinclude:: plot_otsu.py
-    :lines: 17-
-
-
-
-**Python source code:** :download:`download <plot_otsu.py>`
+**Python source code:** :download:`plot_otsu.py <plot_otsu.py>`
 (generated using ``skimage`` |version|)
 
+.. literalinclude:: plot_otsu.py
+    :lines: 17-
+    

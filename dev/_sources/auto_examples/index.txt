@@ -217,6 +217,7 @@ Longer examples and demonstrations
    :hidden:
 
    applications/plot_coins_segmentation
+   plot_geometric
 
 
 .. figure:: applications/images/thumb/plot_coins_segmentation.png
@@ -224,4 +225,11 @@ Longer examples and demonstrations
    :target: ./applications/plot_coins_segmentation.html
 
    :ref:`example_applications_plot_coins_segmentation.py`
+
+
+.. figure:: applications/images/thumb/plot_geometric.png
+   :figclass: gallery
+   :target: ./applications/plot_geometric.html
+
+   :ref:`example_applications_plot_geometric.py`
 

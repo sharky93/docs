@@ -3,17 +3,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Module: transform &mdash; skimage v0.6 docs</title>
+    <title>Module: transform &mdash; skimage v0.7dev docs</title>
+    
     <link rel="stylesheet" href="../_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6',
+        VERSION:     '0.7dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +26,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/docversions.js"></script>
-    <link rel="top" title="skimage v0.6 docs" href="../index.html" /> 
+    <link rel="top" title="skimage v0.7dev docs" href="../index.html" /> 
   </head>
   <body>
     <div class="header-wrapper">
@@ -52,8 +55,22 @@
     <h3>Contents</h3>
     <ul>
 <li><a class="reference internal" href="#">Module: <tt class="docutils literal"><span class="pre">transform</span></tt></a><ul>
+<li><a class="reference internal" href="#affinetransformation"><tt class="docutils literal"><span class="pre">AffineTransformation</span></tt></a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#polynomialtransformation"><tt class="docutils literal"><span class="pre">PolynomialTransformation</span></tt></a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#projectivetransformation"><tt class="docutils literal"><span class="pre">ProjectiveTransformation</span></tt></a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#similaritytransformation"><tt class="docutils literal"><span class="pre">SimilarityTransformation</span></tt></a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#estimate-transformation">estimate_transformation</a></li>
 <li><a class="reference internal" href="#fast-homography">fast_homography</a></li>
 <li><a class="reference internal" href="#frt2">frt2</a></li>
+<li><a class="reference internal" href="#geometric-transform">geometric_transform</a></li>
 <li><a class="reference internal" href="#homography">homography</a></li>
 <li><a class="reference internal" href="#hough">hough</a></li>
 <li><a class="reference internal" href="#ifrt2">ifrt2</a></li>
@@ -98,52 +115,728 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="module-skimage.transform">
-<span id="module-transform"></span><h1>Module: <tt class="xref py py-mod docutils literal"><span class="pre">transform</span></tt><a class="headerlink" href="#module-skimage.transform" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-transform">
+<h1>Module: <tt class="xref py py-mod docutils literal"><span class="pre">transform</span></tt><a class="headerlink" href="#module-transform" title="Permalink to this headline">¶</a></h1>
+<p>Inheritance diagram for <tt class="docutils literal"><span class="pre">skimage.transform</span></tt>:</p>
+<span class="target" id="module-skimage.transform"></span><div class="section" id="affinetransformation">
+<h2><a class="reference internal" href="#skimage.transform.AffineTransformation" title="skimage.transform.AffineTransformation"><tt class="xref py py-class docutils literal"><span class="pre">AffineTransformation</span></tt></a><a class="headerlink" href="#affinetransformation" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="skimage.transform.AffineTransformation">
+<em class="property">class </em><tt class="descclassname">skimage.transform.</tt><tt class="descname">AffineTransformation</tt><big>(</big><em>matrix=None</em><big>)</big><a class="headerlink" href="#skimage.transform.AffineTransformation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">skimage.transform.geometric.GeometricTransformation</span></tt></p>
+<dl class="docutils">
+<dt>2D affine transformation of the following form</dt>
+<dd><dl class="first last docutils">
+<dt>X = a0*x + a1*y + a2 =</dt>
+<dd>= sx*x*cos(rotation) - sy*y*sin(rotation+shear) + a2</dd>
+<dt>Y = b0*x + b1*y + b2 =</dt>
+<dd>= sx*x*sin(rotation) + sy*y*cos(rotation+shear) + b2</dd>
+</dl>
+</dd>
+<dt>where the homogeneous transformation matrix is:</dt>
+<dd><dl class="first last docutils">
+<dt>[[a0  a1  a2]</dt>
+<dd>[b0  b1  b2]
+[0   0    1]]</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr><td><a class="reference internal" href="#skimage.transform.fast_homography" title="skimage.transform.fast_homography"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.fast_homography</span></tt></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.AffineTransformation.estimate" title="skimage.transform.AffineTransformation.estimate"><tt class="xref py py-obj docutils literal"><span class="pre">estimate</span></tt></a>(src,&nbsp;dst)</td>
+<td>Set the transformation matrix with the estimated parameters of the given control points.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.transform.AffineTransformation.forward" title="skimage.transform.AffineTransformation.forward"><tt class="xref py py-obj docutils literal"><span class="pre">forward</span></tt></a>(coords)</td>
+<td>Apply forward transformation.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.AffineTransformation.from_params" title="skimage.transform.AffineTransformation.from_params"><tt class="xref py py-obj docutils literal"><span class="pre">from_params</span></tt></a>(scale,&nbsp;rotation,&nbsp;shear,&nbsp;translation)</td>
+<td>Set the transformation matrix with the explicit transformation parameters.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.transform.AffineTransformation.reverse" title="skimage.transform.AffineTransformation.reverse"><tt class="xref py py-obj docutils literal"><span class="pre">reverse</span></tt></a>(coords)</td>
+<td>Apply reverse transformation.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="skimage.transform.AffineTransformation.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>matrix=None</em><big>)</big><a class="headerlink" href="#skimage.transform.AffineTransformation.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create geometric transformation which contains the transformation
+parameters and can perform forward and reverse transformations.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>matrix</strong> : 3x3 array, optional</p>
+<blockquote class="last">
+<div><p>homogeneous transformation matrix</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="skimage.transform.AffineTransformation.estimate">
+<tt class="descname">estimate</tt><big>(</big><em>src</em>, <em>dst</em><big>)</big><a class="headerlink" href="#skimage.transform.AffineTransformation.estimate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the transformation matrix with the estimated parameters of the
+given control points.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>src</strong> : Nx2 array</p>
+<blockquote>
+<div><p>source coordinates</p>
+</div></blockquote>
+<p><strong>dst</strong> : Nx2 array</p>
+<blockquote class="last">
+<div><p>destination coordinates</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="skimage.transform.AffineTransformation.forward">
+<tt class="descname">forward</tt><big>(</big><em>coords</em><big>)</big><a class="headerlink" href="#skimage.transform.AffineTransformation.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply forward transformation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>coords</strong> : Nx2 array</p>
+<blockquote>
+<div><p>source coordinates</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>coords</strong> : Nx2 array</p>
+<blockquote class="last">
+<div><p>transformed coordinates</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="skimage.transform.AffineTransformation.from_params">
+<tt class="descname">from_params</tt><big>(</big><em>scale</em>, <em>rotation</em>, <em>shear</em>, <em>translation</em><big>)</big><a class="headerlink" href="#skimage.transform.AffineTransformation.from_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the transformation matrix with the explicit transformation
+parameters.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>scale</strong> : (sx, sy) as array, list or tuple</p>
+<blockquote>
+<div><p>scale factors</p>
+</div></blockquote>
+<p><strong>rotation</strong> : float</p>
+<blockquote>
+<div><p>rotation angle in counter-clockwise direction</p>
+</div></blockquote>
+<p><strong>shear</strong> : float</p>
+<blockquote>
+<div><p>shear angle in counter-clockwise direction</p>
+</div></blockquote>
+<p><strong>translation</strong> : (tx, ty) as array, list or tuple</p>
+<blockquote class="last">
+<div><p>translation parameters</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="skimage.transform.AffineTransformation.reverse">
+<tt class="descname">reverse</tt><big>(</big><em>coords</em><big>)</big><a class="headerlink" href="#skimage.transform.AffineTransformation.reverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply reverse transformation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>coords</strong> : Nx2 array</p>
+<blockquote>
+<div><p>source coordinates</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>coords</strong> : Nx2 array</p>
+<blockquote class="last">
+<div><p>transformed coordinates</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="skimage.transform.AffineTransformation.rotation">
+<tt class="descname">rotation</tt><a class="headerlink" href="#skimage.transform.AffineTransformation.rotation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="skimage.transform.AffineTransformation.scale">
+<tt class="descname">scale</tt><a class="headerlink" href="#skimage.transform.AffineTransformation.scale" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="skimage.transform.AffineTransformation.shear">
+<tt class="descname">shear</tt><a class="headerlink" href="#skimage.transform.AffineTransformation.shear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="skimage.transform.AffineTransformation.translation">
+<tt class="descname">translation</tt><a class="headerlink" href="#skimage.transform.AffineTransformation.translation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="polynomialtransformation">
+<h2><a class="reference internal" href="#skimage.transform.PolynomialTransformation" title="skimage.transform.PolynomialTransformation"><tt class="xref py py-class docutils literal"><span class="pre">PolynomialTransformation</span></tt></a><a class="headerlink" href="#polynomialtransformation" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="skimage.transform.PolynomialTransformation">
+<em class="property">class </em><tt class="descclassname">skimage.transform.</tt><tt class="descname">PolynomialTransformation</tt><big>(</big><em>coeffs=None</em><big>)</big><a class="headerlink" href="#skimage.transform.PolynomialTransformation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">skimage.transform.geometric.GeometricTransformation</span></tt></p>
+<p>2D affine transformation of the following form
+X = sum[j=0:n]( sum[i=0:j]( a_ji * x**(j - i) * y**i ))
+Y = sum[j=0:n]( sum[i=0:j]( b_ji * x**(j - i) * y**i ))</p>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.PolynomialTransformation.estimate" title="skimage.transform.PolynomialTransformation.estimate"><tt class="xref py py-obj docutils literal"><span class="pre">estimate</span></tt></a>(src,&nbsp;dst,&nbsp;order)</td>
+<td>Set the transformation matrix with the explicit transformation parameters.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.transform.PolynomialTransformation.forward" title="skimage.transform.PolynomialTransformation.forward"><tt class="xref py py-obj docutils literal"><span class="pre">forward</span></tt></a>(coords)</td>
+<td>Apply forward transformation.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.PolynomialTransformation.reverse" title="skimage.transform.PolynomialTransformation.reverse"><tt class="xref py py-obj docutils literal"><span class="pre">reverse</span></tt></a>(coords)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="skimage.transform.PolynomialTransformation.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>coeffs=None</em><big>)</big><a class="headerlink" href="#skimage.transform.PolynomialTransformation.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create polynomial transformation which contains the transformation
+parameters and can perform forward and reverse transformations.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>coeffs</strong> : array, optional</p>
+<blockquote class="last">
+<div><p>polynomial coefficients</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="skimage.transform.PolynomialTransformation.estimate">
+<tt class="descname">estimate</tt><big>(</big><em>src</em>, <em>dst</em>, <em>order</em><big>)</big><a class="headerlink" href="#skimage.transform.PolynomialTransformation.estimate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the transformation matrix with the explicit transformation
+parameters.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>src</strong> : Nx2 array</p>
+<blockquote>
+<div><p>source coordinates</p>
+</div></blockquote>
+<p><strong>dst</strong> : Nx2 array</p>
+<blockquote>
+<div><p>destination coordinates</p>
+</div></blockquote>
+<p><strong>order</strong> : int</p>
+<blockquote class="last">
+<div><p>polynomial order (number of coefficients is order + 1)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="skimage.transform.PolynomialTransformation.forward">
+<tt class="descname">forward</tt><big>(</big><em>coords</em><big>)</big><a class="headerlink" href="#skimage.transform.PolynomialTransformation.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply forward transformation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>coords</strong> : Nx2 array</p>
+<blockquote>
+<div><p>source coordinates</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>coords</strong> : Nx2 array</p>
+<blockquote class="last">
+<div><p>transformed coordinates</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="skimage.transform.PolynomialTransformation.reverse">
+<tt class="descname">reverse</tt><big>(</big><em>coords</em><big>)</big><a class="headerlink" href="#skimage.transform.PolynomialTransformation.reverse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="projectivetransformation">
+<h2><a class="reference internal" href="#skimage.transform.ProjectiveTransformation" title="skimage.transform.ProjectiveTransformation"><tt class="xref py py-class docutils literal"><span class="pre">ProjectiveTransformation</span></tt></a><a class="headerlink" href="#projectivetransformation" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="skimage.transform.ProjectiveTransformation">
+<em class="property">class </em><tt class="descclassname">skimage.transform.</tt><tt class="descname">ProjectiveTransformation</tt><big>(</big><em>matrix=None</em><big>)</big><a class="headerlink" href="#skimage.transform.ProjectiveTransformation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">skimage.transform.geometric.GeometricTransformation</span></tt></p>
+<dl class="docutils">
+<dt>2D projective transformation of the following form</dt>
+<dd>X = (a0 + a1*x + a2*y) / (c0*x + c1*y + 1)
+Y = (b0 + b1*x + b2*y) / (c0*x + c1*y + 1)</dd>
+<dt>where the homogeneous transformation matrix is:</dt>
+<dd><dl class="first last docutils">
+<dt>[[a0  a1  a2]</dt>
+<dd>[b0  b1  b2]
+[c0  c1   1]]</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.ProjectiveTransformation.estimate" title="skimage.transform.ProjectiveTransformation.estimate"><tt class="xref py py-obj docutils literal"><span class="pre">estimate</span></tt></a>(src,&nbsp;dst)</td>
+<td>Set the transformation matrix with the explicit transformation parameters.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.transform.ProjectiveTransformation.forward" title="skimage.transform.ProjectiveTransformation.forward"><tt class="xref py py-obj docutils literal"><span class="pre">forward</span></tt></a>(coords)</td>
+<td>Apply forward transformation.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.ProjectiveTransformation.reverse" title="skimage.transform.ProjectiveTransformation.reverse"><tt class="xref py py-obj docutils literal"><span class="pre">reverse</span></tt></a>(coords)</td>
+<td>Apply reverse transformation.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="skimage.transform.ProjectiveTransformation.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>matrix=None</em><big>)</big><a class="headerlink" href="#skimage.transform.ProjectiveTransformation.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create geometric transformation which contains the transformation
+parameters and can perform forward and reverse transformations.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>matrix</strong> : 3x3 array, optional</p>
+<blockquote class="last">
+<div><p>homogeneous transformation matrix</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="skimage.transform.ProjectiveTransformation.estimate">
+<tt class="descname">estimate</tt><big>(</big><em>src</em>, <em>dst</em><big>)</big><a class="headerlink" href="#skimage.transform.ProjectiveTransformation.estimate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the transformation matrix with the explicit transformation
+parameters.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>src</strong> : Nx2 array</p>
+<blockquote>
+<div><p>source coordinates</p>
+</div></blockquote>
+<p><strong>dst</strong> : Nx2 array</p>
+<blockquote class="last">
+<div><p>destination coordinates</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="skimage.transform.ProjectiveTransformation.forward">
+<tt class="descname">forward</tt><big>(</big><em>coords</em><big>)</big><a class="headerlink" href="#skimage.transform.ProjectiveTransformation.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply forward transformation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>coords</strong> : Nx2 array</p>
+<blockquote>
+<div><p>source coordinates</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>coords</strong> : Nx2 array</p>
+<blockquote class="last">
+<div><p>transformed coordinates</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="skimage.transform.ProjectiveTransformation.reverse">
+<tt class="descname">reverse</tt><big>(</big><em>coords</em><big>)</big><a class="headerlink" href="#skimage.transform.ProjectiveTransformation.reverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply reverse transformation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>coords</strong> : Nx2 array</p>
+<blockquote>
+<div><p>source coordinates</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>coords</strong> : Nx2 array</p>
+<blockquote class="last">
+<div><p>transformed coordinates</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="similaritytransformation">
+<h2><a class="reference internal" href="#skimage.transform.SimilarityTransformation" title="skimage.transform.SimilarityTransformation"><tt class="xref py py-class docutils literal"><span class="pre">SimilarityTransformation</span></tt></a><a class="headerlink" href="#similaritytransformation" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="skimage.transform.SimilarityTransformation">
+<em class="property">class </em><tt class="descclassname">skimage.transform.</tt><tt class="descname">SimilarityTransformation</tt><big>(</big><em>matrix=None</em><big>)</big><a class="headerlink" href="#skimage.transform.SimilarityTransformation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">skimage.transform.geometric.GeometricTransformation</span></tt></p>
+<dl class="docutils">
+<dt>2D similarity transformation of the following form:</dt>
+<dd><dl class="first last docutils">
+<dt>X = a0*x - b0*y + a1 =</dt>
+<dd>= m*x*cos(rotation) - m*y*sin(rotation) + a1</dd>
+<dt>Y = b0*x + a0*y + b1 =</dt>
+<dd>= m*x*sin(rotation) + m*y*cos(rotation) + b1</dd>
+</dl>
+</dd>
+<dt>where the homogeneous transformation matrix is:</dt>
+<dd><dl class="first last docutils">
+<dt>[[a0 -b0  a1]</dt>
+<dd>[b0  a0  b1]
+[0   0    1]]</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.SimilarityTransformation.estimate" title="skimage.transform.SimilarityTransformation.estimate"><tt class="xref py py-obj docutils literal"><span class="pre">estimate</span></tt></a>(src,&nbsp;dst)</td>
+<td>Set the transformation matrix with the estimated parameters of the given control points.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.transform.SimilarityTransformation.forward" title="skimage.transform.SimilarityTransformation.forward"><tt class="xref py py-obj docutils literal"><span class="pre">forward</span></tt></a>(coords)</td>
+<td>Apply forward transformation.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.SimilarityTransformation.from_params" title="skimage.transform.SimilarityTransformation.from_params"><tt class="xref py py-obj docutils literal"><span class="pre">from_params</span></tt></a>(scale,&nbsp;rotation,&nbsp;translation)</td>
+<td>Set the transformation matrix with the explicit transformation parameters.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.transform.SimilarityTransformation.reverse" title="skimage.transform.SimilarityTransformation.reverse"><tt class="xref py py-obj docutils literal"><span class="pre">reverse</span></tt></a>(coords)</td>
+<td>Apply reverse transformation.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="skimage.transform.SimilarityTransformation.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>matrix=None</em><big>)</big><a class="headerlink" href="#skimage.transform.SimilarityTransformation.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create geometric transformation which contains the transformation
+parameters and can perform forward and reverse transformations.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>matrix</strong> : 3x3 array, optional</p>
+<blockquote class="last">
+<div><p>homogeneous transformation matrix</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="skimage.transform.SimilarityTransformation.estimate">
+<tt class="descname">estimate</tt><big>(</big><em>src</em>, <em>dst</em><big>)</big><a class="headerlink" href="#skimage.transform.SimilarityTransformation.estimate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the transformation matrix with the estimated parameters of the
+given control points.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>src</strong> : Nx2 array</p>
+<blockquote>
+<div><p>source coordinates</p>
+</div></blockquote>
+<p><strong>dst</strong> : Nx2 array</p>
+<blockquote class="last">
+<div><p>destination coordinates</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="skimage.transform.SimilarityTransformation.forward">
+<tt class="descname">forward</tt><big>(</big><em>coords</em><big>)</big><a class="headerlink" href="#skimage.transform.SimilarityTransformation.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply forward transformation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>coords</strong> : Nx2 array</p>
+<blockquote>
+<div><p>source coordinates</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>coords</strong> : Nx2 array</p>
+<blockquote class="last">
+<div><p>transformed coordinates</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="skimage.transform.SimilarityTransformation.from_params">
+<tt class="descname">from_params</tt><big>(</big><em>scale</em>, <em>rotation</em>, <em>translation</em><big>)</big><a class="headerlink" href="#skimage.transform.SimilarityTransformation.from_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the transformation matrix with the explicit transformation
+parameters.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>scale</strong> : float</p>
+<blockquote>
+<div><p>scale factor</p>
+</div></blockquote>
+<p><strong>rotation</strong> : float</p>
+<blockquote>
+<div><p>rotation angle in counter-clockwise direction</p>
+</div></blockquote>
+<p><strong>translation</strong> : (tx, ty) as array, list or tuple</p>
+<blockquote class="last">
+<div><p>x, y translation parameters</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="skimage.transform.SimilarityTransformation.reverse">
+<tt class="descname">reverse</tt><big>(</big><em>coords</em><big>)</big><a class="headerlink" href="#skimage.transform.SimilarityTransformation.reverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply reverse transformation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>coords</strong> : Nx2 array</p>
+<blockquote>
+<div><p>source coordinates</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>coords</strong> : Nx2 array</p>
+<blockquote class="last">
+<div><p>transformed coordinates</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="skimage.transform.SimilarityTransformation.rotation">
+<tt class="descname">rotation</tt><a class="headerlink" href="#skimage.transform.SimilarityTransformation.rotation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="skimage.transform.SimilarityTransformation.scale">
+<tt class="descname">scale</tt><a class="headerlink" href="#skimage.transform.SimilarityTransformation.scale" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="skimage.transform.SimilarityTransformation.translation">
+<tt class="descname">translation</tt><a class="headerlink" href="#skimage.transform.SimilarityTransformation.translation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.estimate_transformation" title="skimage.transform.estimate_transformation"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.estimate_transformation</span></tt></a>(...)</td>
+<td>Estimate 2D geometric transformation parameters.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.transform.fast_homography" title="skimage.transform.fast_homography"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.fast_homography</span></tt></a></td>
 <td>Projective transformation (homography).</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.transform.frt2" title="skimage.transform.frt2"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.frt2</span></tt></a>(a)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.frt2" title="skimage.transform.frt2"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.frt2</span></tt></a>(a)</td>
 <td>Compute the 2-dimensional finite radon transform (FRT) for an n x n</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.transform.homography" title="skimage.transform.homography"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.homography</span></tt></a>(image,&nbsp;H[,&nbsp;...])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.transform.geometric_transform" title="skimage.transform.geometric_transform"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.geometric_transform</span></tt></a>(...)</td>
+<td>Apply 2D geometric transformation.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.homography" title="skimage.transform.homography"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.homography</span></tt></a>(image,&nbsp;H[,&nbsp;...])</td>
 <td>Perform a projective transformation (homography) on an image.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.transform.hough" title="skimage.transform.hough"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.hough</span></tt></a>(img[,&nbsp;theta])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.transform.hough" title="skimage.transform.hough"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.hough</span></tt></a>(img[,&nbsp;theta])</td>
 <td>Perform a straight line Hough transform.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.transform.ifrt2" title="skimage.transform.ifrt2"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.ifrt2</span></tt></a>(a)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.ifrt2" title="skimage.transform.ifrt2"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.ifrt2</span></tt></a>(a)</td>
 <td>Compute the 2-dimensional inverse finite radon transform (iFRT) for</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.transform.integral_image" title="skimage.transform.integral_image"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.integral_image</span></tt></a>(x)</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.transform.integral_image" title="skimage.transform.integral_image"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.integral_image</span></tt></a>(x)</td>
 <td>Integral image / summed area table.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.transform.integrate" title="skimage.transform.integrate"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.integrate</span></tt></a>(ii,&nbsp;r0,&nbsp;c0,&nbsp;r1,&nbsp;c1)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.integrate" title="skimage.transform.integrate"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.integrate</span></tt></a>(ii,&nbsp;r0,&nbsp;c0,&nbsp;r1,&nbsp;c1)</td>
 <td>Use an integral image to integrate over a given window.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.transform.iradon" title="skimage.transform.iradon"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.iradon</span></tt></a>(radon_image[,&nbsp;...])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.transform.iradon" title="skimage.transform.iradon"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.iradon</span></tt></a>(radon_image[,&nbsp;...])</td>
 <td>Inverse radon transform.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.transform.probabilistic_hough" title="skimage.transform.probabilistic_hough"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.probabilistic_hough</span></tt></a>(img[,&nbsp;...])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.probabilistic_hough" title="skimage.transform.probabilistic_hough"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.probabilistic_hough</span></tt></a>(img[,&nbsp;...])</td>
 <td>Performs a progressive probabilistic line Hough transform and returns the detected lines.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.transform.radon" title="skimage.transform.radon"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.radon</span></tt></a>(image[,&nbsp;theta])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.transform.radon" title="skimage.transform.radon"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.radon</span></tt></a>(image[,&nbsp;theta])</td>
 <td>Calculates the radon transform of an image given specified projection angles.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.transform.swirl" title="skimage.transform.swirl"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.swirl</span></tt></a>(image[,&nbsp;center,&nbsp;...])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.swirl" title="skimage.transform.swirl"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.swirl</span></tt></a>(image[,&nbsp;center,&nbsp;...])</td>
 <td>Perform a swirl transformation.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.transform.warp" title="skimage.transform.warp"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.warp</span></tt></a>(image,&nbsp;reverse_map[,&nbsp;...])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.transform.warp" title="skimage.transform.warp"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.warp</span></tt></a>(image[,&nbsp;reverse_map,&nbsp;...])</td>
 <td>Warp an image according to a given coordinate transformation.</td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="section" id="estimate-transformation">
+<h2>estimate_transformation<a class="headerlink" href="#estimate-transformation" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.transform.estimate_transformation">
+<tt class="descclassname">skimage.transform.</tt><tt class="descname">estimate_transformation</tt><big>(</big><em>ttype</em>, <em>src</em>, <em>dst</em>, <em>order=None</em><big>)</big><a class="headerlink" href="#skimage.transform.estimate_transformation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Estimate 2D geometric transformation parameters.</p>
+<p>You can determine the over-, well- and under-determined parameters
+with the least-squares method.</p>
+<p>Number of source must match number of destination coordinates.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>ttype</strong> : str</p>
+<blockquote>
+<div><p>one of similarity, affine, projective, polynomial</p>
+</div></blockquote>
+<p><strong>kwargs :: array or int</strong> :</p>
+<blockquote>
+<div><p>function parameters (src, dst, n, angle):</p>
+<blockquote>
+<div><p>NAME / TTYPE        FUNCTION PARAMETERS
+&#8216;similarity&#8217;        <cite>src, `dst</cite>
+&#8216;affine&#8217;            <cite>src, `dst</cite>
+&#8216;projective&#8217;        <cite>src, `dst</cite>
+&#8216;polynomial&#8217;        <cite>src, `dst</cite>, <cite>order</cite> (polynomial order)</p>
+</div></blockquote>
+<p>See examples section below for usage.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>tform</strong> : subclass of <tt class="xref py py-class docutils literal"><span class="pre">GeometricTransformation</span></tt></p>
+<blockquote class="last">
+<div><p>tform object containing the transformation parameters and providing
+access to forward and reverse transformation functions</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">transform</span> <span class="k">as</span> <span class="n">tf</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># estimate transformation parameters</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">src</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dst</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tform</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">estimate_transformation</span><span class="p">(</span><span class="s">&#39;similarity&#39;</span><span class="p">,</span> <span class="n">src</span><span class="p">,</span> <span class="n">dst</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tform</span><span class="o">.</span><span class="n">matrix</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tform</span><span class="o">.</span><span class="n">reverse</span><span class="p">(</span><span class="n">tform</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">src</span><span class="p">))</span> <span class="c"># == src</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># warp image using the estimated transformation</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">image</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">camera</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tf</span><span class="o">.</span><span class="n">warp</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">tform</span><span class="p">)</span> <span class="c"># == warp(image, reverse_map=tform.reverse)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tf</span><span class="o">.</span><span class="n">warp</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">reverse_map</span><span class="o">=</span><span class="n">tform</span><span class="o">.</span><span class="n">forward</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># create transformation with explicit parameters</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tform2</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">SimilarityTransformation</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">scale</span> <span class="o">=</span> <span class="mf">1.1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rotation</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">translation</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tform2</span><span class="o">.</span><span class="n">from_params</span><span class="p">(</span><span class="n">scale</span><span class="p">,</span> <span class="n">rotation</span><span class="p">,</span> <span class="n">translation</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># unite transformations, applied in order from left to right</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tform3</span> <span class="o">=</span> <span class="n">tform</span> <span class="o">+</span> <span class="n">tform2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tform3</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">src</span><span class="p">)</span> <span class="c"># == tform2.forward(tform.forward(src))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
 <div class="section" id="fast-homography">
 <h2>fast_homography<a class="headerlink" href="#fast-homography" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
@@ -169,7 +862,7 @@ E.g., to rotate by theta degrees clockwise, the matrix should be</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : 2-D array</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : 2-D array</p>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
@@ -212,13 +905,13 @@ integer array.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>a</strong> : array_like</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>a</strong> : array_like</p>
 <blockquote>
 <div><p>A 2-D square n x n integer array.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>FRT</strong> : 2-D ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>FRT</strong> : 2-D ndarray</p>
 <blockquote class="last">
 <div><p>Finite Radon Transform array of (n+1) x n integer coefficients.</p>
 </div></blockquote>
@@ -267,6 +960,40 @@ Use a prime number for the array dimensions</p>
 </dd></dl>
 
 </div>
+<div class="section" id="geometric-transform">
+<h2>geometric_transform<a class="headerlink" href="#geometric-transform" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.transform.geometric_transform">
+<tt class="descclassname">skimage.transform.</tt><tt class="descname">geometric_transform</tt><big>(</big><em>coords</em>, <em>matrix</em><big>)</big><a class="headerlink" href="#skimage.transform.geometric_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply 2D geometric transformation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>ttype</strong> : Nx2 array</p>
+<blockquote>
+<div><blockquote>
+<div><p>x, y coordinates to transform</p>
+</div></blockquote>
+<dl class="docutils">
+<dt>matrix <span class="classifier-delimiter">:</span> <span class="classifier">3x3 array</span></dt>
+<dd><p class="first last">homogeneous transformation matrix</p>
+</dd>
+</dl>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>coords</strong> : Nx2 array</p>
+<blockquote class="last">
+<div><p>transformed coordinates</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
 <div class="section" id="homography">
 <h2>homography<a class="headerlink" href="#homography" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
@@ -290,7 +1017,7 @@ E.g., to rotate by theta degrees clockwise, the matrix should be</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : 2-D array</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : 2-D array</p>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
@@ -370,7 +1097,7 @@ the image boundaries.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>img</strong> : (M, N) ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>img</strong> : (M, N) ndarray</p>
 <blockquote>
 <div><p>Input image with nonzero values representing edges.</p>
 </div></blockquote>
@@ -381,7 +1108,7 @@ Defaults to -pi/2 .. pi/2</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>H</strong> : 2-D ndarray of uint64</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>H</strong> : 2-D ndarray of uint64</p>
 <blockquote>
 <div><p>Hough transform accumulator.</p>
 </div></blockquote>
@@ -470,13 +1197,13 @@ an (n+1) x n integer array.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>a</strong> : array_like</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>a</strong> : array_like</p>
 <blockquote>
 <div><p>A 2-D (n+1) row x n column integer array.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>iFRT</strong> : 2-D n x n ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>iFRT</strong> : 2-D n x n ndarray</p>
 <blockquote class="last">
 <div><p>Inverse Finite Radon Transform array of n x n integer coefficients.</p>
 </div></blockquote>
@@ -493,13 +1220,13 @@ an (n+1) x n integer array.</p>
 </div>
 <p class="rubric">Notes</p>
 <p>The FRT has a unique inverse iff n is prime.
-See <a class="reference internal" href="#r51">[R51]</a> for an overview.
+See <a class="reference internal" href="#r52">[R52]</a> for an overview.
 The idea for this algorithm is due to Vlad Negnevitski.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r51" rules="none">
+<table class="docutils citation" frame="void" id="r52" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R51]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id3">2</a>)</em> A. Kingston and I. Svalbe, &#8220;Projective transforms on periodic
+<tr><td class="label">[R52]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id3">2</a>)</em> A. Kingston and I. Svalbe, &#8220;Projective transforms on periodic
 discrete image arrays,&#8221; in P. Hawkes (Ed), Advances in Imaging
 and Electron Physics, 139 (2006)</td></tr>
 </tbody>
@@ -533,18 +1260,18 @@ and Electron Physics, 139 (2006)</td></tr>
 <p>The integral image contains the sum of all elements above and to the
 left of it, i.e.:</p>
 <div class="math">
-<p><img src="../_images/math/60eb18acdabe921f0fcbc69cf1dfc9fe4934bb1d.png" alt="S[m, n] = \sum_{i \leq m} \sum_{j \leq n} X[i, j]" /></p>
+<p><img src="../_images/math/60eb18acdabe921f0fcbc69cf1dfc9fe4934bb1d.png" alt="S[m, n] = \sum_{i \leq m} \sum_{j \leq n} X[i, j]"/></p>
 </div><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>x</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>x</strong> : ndarray</p>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>S</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>S</strong> : ndarray</p>
 <blockquote class="last">
 <div><p>Integral image / summed area table.</p>
 </div></blockquote>
@@ -553,10 +1280,10 @@ left of it, i.e.:</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r52" rules="none">
+<table class="docutils citation" frame="void" id="r53" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[R52]</a></td><td>F.C. Crow, &#8220;Summed-area tables for texture mapping,&#8221;
+<tr><td class="label"><a class="fn-backref" href="#id4">[R53]</a></td><td>F.C. Crow, &#8220;Summed-area tables for texture mapping,&#8221;
 ACM SIGGRAPH Computer Graphics, vol. 18, 1984, pp. 207-212.</td></tr>
 </tbody>
 </table>
@@ -573,7 +1300,7 @@ ACM SIGGRAPH Computer Graphics, vol. 18, 1984, pp. 207-212.</td></tr>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>ii</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>ii</strong> : ndarray</p>
 <blockquote>
 <div><p>Integral image.</p>
 </div></blockquote>
@@ -587,7 +1314,7 @@ ACM SIGGRAPH Computer Graphics, vol. 18, 1984, pp. 207-212.</td></tr>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>S</strong> : int</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>S</strong> : int</p>
 <blockquote class="last">
 <div><p>Integral (sum) over the given window.</p>
 </div></blockquote>
@@ -610,7 +1337,7 @@ back projection algorithm.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>radon_image</strong> : array_like, dtype=float</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>radon_image</strong> : array_like, dtype=float</p>
 <blockquote>
 <div><p>Image containing radon transform (sinogram). Each column of
 the image corresponds to a projection along a different angle.</p>
@@ -637,7 +1364,7 @@ Methods available: nearest, linear.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : ndarray</p>
 <blockquote class="last">
 <div><p>Reconstructed image.</p>
 </div></blockquote>
@@ -662,7 +1389,7 @@ projection data. This algorithm is called filtered back projection.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>img</strong> : (M, N) ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>img</strong> : (M, N) ndarray</p>
 <blockquote>
 <div><p>Input image with nonzero values representing edges.</p>
 </div></blockquote>
@@ -677,7 +1404,7 @@ Increase the parameter to extract longer lines.</p>
 </div></blockquote>
 <p><strong>line_gap</strong> : int, optional, (default 10)</p>
 <blockquote>
-<div><p>Maximum gap between pixels to still form a line. 
+<div><p>Maximum gap between pixels to still form a line.
 Increase the parameter to merge broken lines more aggresively.</p>
 </div></blockquote>
 <p><strong>theta</strong> : 1D ndarray, dtype=double, optional, default (-pi/2 .. pi/2)</p>
@@ -686,9 +1413,9 @@ Increase the parameter to merge broken lines more aggresively.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>lines</strong> : list</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>lines</strong> : list</p>
 <blockquote class="last">
-<div><p>List of lines identified, lines in format ((x0, y0), (x1, y0)), indicating 
+<div><p>List of lines identified, lines in format ((x0, y0), (x1, y0)), indicating
 line start and end.</p>
 </div></blockquote>
 </td>
@@ -696,11 +1423,11 @@ line start and end.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r53" rules="none">
+<table class="docutils citation" frame="void" id="r54" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id5">[R53]</a></td><td>C. Galamhos, J. Matas and J. Kittler,&#8221;Progressive probabilistic Hough 
-transform for line detection&#8221;, in  IEEE Computer Society Conference on 
+<tr><td class="label"><a class="fn-backref" href="#id5">[R54]</a></td><td>C. Galamhos, J. Matas and J. Kittler,&#8221;Progressive probabilistic Hough
+transform for line detection&#8221;, in  IEEE Computer Society Conference on
 Computer Vision and Pattern Recognition, 1999.</td></tr>
 </tbody>
 </table>
@@ -718,7 +1445,7 @@ projection angles.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : array_like, dtype=float</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : array_like, dtype=float</p>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
@@ -728,7 +1455,7 @@ projection angles.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : ndarray</p>
 <blockquote class="last">
 <div><p>Radon transform (sinogram).</p>
 </div></blockquote>
@@ -749,7 +1476,7 @@ projection angles.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
@@ -772,7 +1499,7 @@ rapidly beyond <cite>radius</cite>.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>swirled</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>swirled</strong> : ndarray</p>
 <blockquote class="last">
 <div><p>Swirled version of the input.</p>
 </div></blockquote>
@@ -787,21 +1514,23 @@ rapidly beyond <cite>radius</cite>.</p>
 <h2>warp<a class="headerlink" href="#warp" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.transform.warp">
-<tt class="descclassname">skimage.transform.</tt><tt class="descname">warp</tt><big>(</big><em>image</em>, <em>reverse_map</em>, <em>map_args={}</em>, <em>output_shape=None</em>, <em>order=1</em>, <em>mode='constant'</em>, <em>cval=0.0</em><big>)</big><a class="headerlink" href="#skimage.transform.warp" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">skimage.transform.</tt><tt class="descname">warp</tt><big>(</big><em>image</em>, <em>reverse_map=None</em>, <em>map_args={}</em>, <em>output_shape=None</em>, <em>order=1</em>, <em>mode='constant'</em>, <em>cval=0.0</em><big>)</big><a class="headerlink" href="#skimage.transform.warp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Warp an image according to a given coordinate transformation.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : 2-D array</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : 2-D array</p>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
-<p><strong>reverse_map</strong> : callable xy = f(xy, <a href="#id6"><span class="problematic" id="id7">**</span></a>kwargs)</p>
+<p><strong>reverse_map</strong> : transformation object, callable xy = f(xy, <a href="#id6"><span class="problematic" id="id7">**</span></a>kwargs)</p>
 <blockquote>
-<div><p>Reverse coordinate map.  A function that transforms a Px2 array of
+<div><p>Reverse coordinate map. A function that transforms a Px2 array of
 <tt class="docutils literal"><span class="pre">(x,</span> <span class="pre">y)</span></tt> coordinates in the <em>output image</em> into their corresponding
-coordinates in the <em>source image</em>.  Also see examples below.</p>
+coordinates in the <em>source image</em>. In case of a transformation object
+its <cite>reverse</cite> method will be used as transformation function. Also see
+examples below.</p>
 </div></blockquote>
 <p><strong>map_args</strong> : dict, optional</p>
 <blockquote>
@@ -860,7 +1589,7 @@ the image boundaries.</p>
       
     <div class="footer">
         &copy; Copyright 2011, the scikits-image team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.8.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
     </div>
     </div>
 

@@ -1,3 +1,5 @@
+
+
 .. _example_plot_skeleton.py:
 
 
@@ -17,15 +19,15 @@ results. The input is a 2D ndarray, with either boolean or integer elements.
 In the case of boolean, 'True' indicates foreground, and for integer arrays,
 the foreground is 1's.
 
+
+
 .. image:: images/plot_skeleton_1.png
     :align: center
 
 
-.. literalinclude:: plot_skeleton.py
-    :lines: 18-
-
-
-
-**Python source code:** :download:`download <plot_skeleton.py>`
+**Python source code:** :download:`plot_skeleton.py <plot_skeleton.py>`
 (generated using ``skimage`` |version|)
 
+.. literalinclude:: plot_skeleton.py
+    :lines: 18-
+    

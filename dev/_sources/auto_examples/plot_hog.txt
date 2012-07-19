@@ -1,3 +1,5 @@
+
+
 .. _example_plot_hog.py:
 
 
@@ -80,15 +82,15 @@ References
        keypoints," International Journal of Computer Vision, 60, 2 (2004),
        pp. 91-110.
 
+
+
 .. image:: images/plot_hog_1.png
     :align: center
 
 
-.. literalinclude:: plot_hog.py
-    :lines: 81-
-
-
-
-**Python source code:** :download:`download <plot_hog.py>`
+**Python source code:** :download:`plot_hog.py <plot_hog.py>`
 (generated using ``skimage`` |version|)
 
+.. literalinclude:: plot_hog.py
+    :lines: 81-
+    
