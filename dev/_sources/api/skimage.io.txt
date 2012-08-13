@@ -48,6 +48,7 @@ Inheritance diagram for ``skimage.io``:
   .. automethod:: __init__
 .. autosummary::
 
+   skimage.io.concatenate_images
    skimage.io.imread
    skimage.io.imread_collection
    skimage.io.imsave
@@ -62,6 +63,11 @@ Inheritance diagram for ``skimage.io``:
    skimage.io.reset_plugins
    skimage.io.show
    skimage.io.use_plugin
+
+concatenate_images
+------------------
+
+.. autofunction:: skimage.io.concatenate_images
 
 imread
 ------

@@ -3,16 +3,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
     <title>API Reference &mdash; skimage v0.7dev docs</title>
-    
     <link rel="stylesheet" href="../_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -100,12 +97,16 @@
 <li class="toctree-l2"><a class="reference internal" href="skimage.color.html#convert-colorspace">convert_colorspace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.color.html#gray2rgb">gray2rgb</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.color.html#hsv2rgb">hsv2rgb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.color.html#lab2rgb">lab2rgb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.color.html#lab2xyz">lab2xyz</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.color.html#rgb2gray">rgb2gray</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.color.html#rgb2grey">rgb2grey</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.color.html#rgb2hsv">rgb2hsv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.color.html#rgb2lab">rgb2lab</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.color.html#rgb2rgbcie">rgb2rgbcie</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.color.html#rgb2xyz">rgb2xyz</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.color.html#rgbcie2rgb">rgbcie2rgb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.color.html#xyz2lab">xyz2lab</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.color.html#xyz2rgb">xyz2rgb</a></li>
 </ul>
 </li>
@@ -178,10 +179,13 @@
 <li class="toctree-l2"><a class="reference internal" href="skimage.io.html#imagecollection"><tt class="docutils literal"><span class="pre">ImageCollection</span></tt></a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="skimage.io.html#multiimage"><tt class="docutils literal"><span class="pre">MultiImage</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.io.html#multiimage"><tt class="docutils literal"><span class="pre">MultiImage</span></tt></a><ul class="simple">
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.io.html#video"><tt class="docutils literal"><span class="pre">Video</span></tt></a><ul class="simple">
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.io.html#concatenate-images">concatenate_images</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.io.html#imread">imread</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.io.html#imread-collection">imread_collection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.io.html#imsave">imsave</a></li>
@@ -200,6 +204,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="skimage.measure.html">Module: <tt class="docutils literal"><span class="pre">measure</span></tt></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="skimage.measure.html#find-contours">find_contours</a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.measure.html#perimeter">perimeter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.measure.html#regionprops">regionprops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.measure.html#structural-similarity">structural_similarity</a></li>
 </ul>
@@ -234,22 +239,21 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="skimage.transform.html">Module: <tt class="docutils literal"><span class="pre">transform</span></tt></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="skimage.transform.html#affinetransformation"><tt class="docutils literal"><span class="pre">AffineTransformation</span></tt></a><ul class="simple">
+<li class="toctree-l2"><a class="reference internal" href="skimage.transform.html#affinetransform"><tt class="docutils literal"><span class="pre">AffineTransform</span></tt></a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="skimage.transform.html#polynomialtransformation"><tt class="docutils literal"><span class="pre">PolynomialTransformation</span></tt></a><ul class="simple">
+<li class="toctree-l2"><a class="reference internal" href="skimage.transform.html#polynomialtransform"><tt class="docutils literal"><span class="pre">PolynomialTransform</span></tt></a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="skimage.transform.html#projectivetransformation"><tt class="docutils literal"><span class="pre">ProjectiveTransformation</span></tt></a><ul class="simple">
+<li class="toctree-l2"><a class="reference internal" href="skimage.transform.html#projectivetransform"><tt class="docutils literal"><span class="pre">ProjectiveTransform</span></tt></a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="skimage.transform.html#similaritytransformation"><tt class="docutils literal"><span class="pre">SimilarityTransformation</span></tt></a><ul class="simple">
+<li class="toctree-l2"><a class="reference internal" href="skimage.transform.html#similaritytransform"><tt class="docutils literal"><span class="pre">SimilarityTransform</span></tt></a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="skimage.transform.html#estimate-transformation">estimate_transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.transform.html#estimate-transform">estimate_transform</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.transform.html#fast-homography">fast_homography</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.transform.html#frt2">frt2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="skimage.transform.html#geometric-transform">geometric_transform</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.transform.html#homography">homography</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.transform.html#hough">hough</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.transform.html#ifrt2">ifrt2</a></li>
@@ -288,7 +292,7 @@
       
     <div class="footer">
         &copy; Copyright 2011, the scikits-image team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.8.
     </div>
     </div>
 

@@ -3,16 +3,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
     <title>Module: measure &mdash; skimage v0.7dev docs</title>
-    
     <link rel="stylesheet" href="../_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -56,6 +53,7 @@
     <ul>
 <li><a class="reference internal" href="#">Module: <tt class="docutils literal"><span class="pre">measure</span></tt></a><ul>
 <li><a class="reference internal" href="#find-contours">find_contours</a></li>
+<li><a class="reference internal" href="#perimeter">perimeter</a></li>
 <li><a class="reference internal" href="#regionprops">regionprops</a></li>
 <li><a class="reference internal" href="#structural-similarity">structural_similarity</a></li>
 </ul>
@@ -100,13 +98,16 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.measure.find_contours" title="skimage.measure.find_contours"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.measure.find_contours</span></tt></a>(array,&nbsp;level)</td>
+<tr><td><a class="reference internal" href="#skimage.measure.find_contours" title="skimage.measure.find_contours"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.measure.find_contours</span></tt></a>(array,&nbsp;level)</td>
 <td>Find iso-valued contours in a 2D array for a given level value.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.measure.regionprops" title="skimage.measure.regionprops"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.measure.regionprops</span></tt></a>(label_image[,&nbsp;...])</td>
+<tr><td><a class="reference internal" href="#skimage.measure.perimeter" title="skimage.measure.perimeter"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.measure.perimeter</span></tt></a>(image[,&nbsp;neighbourhood])</td>
+<td>Calculate total perimeter of all objects in binary image.</td>
+</tr>
+<tr><td><a class="reference internal" href="#skimage.measure.regionprops" title="skimage.measure.regionprops"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.measure.regionprops</span></tt></a>(label_image[,&nbsp;...])</td>
 <td>Measure properties of labelled image regions.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.measure.structural_similarity" title="skimage.measure.structural_similarity"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.measure.structural_similarity</span></tt></a>(X,&nbsp;Y)</td>
+<tr><td><a class="reference internal" href="#skimage.measure.structural_similarity" title="skimage.measure.structural_similarity"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.measure.structural_similarity</span></tt></a>(X,&nbsp;Y)</td>
 <td>Compute the mean structural similarity index between two images.</td>
 </tr>
 </tbody>
@@ -124,7 +125,7 @@ interpolated to provide better precision for the output contours.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>array</strong> : 2D ndarray of double</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>array</strong> : 2D ndarray of double</p>
 <blockquote>
 <div><p>Input data in which to find contours.</p>
 </div></blockquote>
@@ -148,7 +149,7 @@ on the left of the contour. (See below for details.)</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>contours</strong> : list of (n,2)-ndarrays</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>contours</strong> : list of (n,2)-ndarrays</p>
 <blockquote class="last">
 <div><p>Each contour is an ndarray of shape <tt class="docutils literal"><span class="pre">(n,</span> <span class="pre">2)</span></tt>,
 consisting of n <tt class="docutils literal"><span class="pre">(x,</span> <span class="pre">y)</span></tt> coordinates along the contour.</p>
@@ -159,7 +160,7 @@ consisting of n <tt class="docutils literal"><span class="pre">(x,</span> <span 
 </table>
 <p class="rubric">Notes</p>
 <p>The marching squares algorithm is a special case of the marching cubes
-algorithm <a class="reference internal" href="#r39">[R39]</a>.  A simple explanation is available here:</p>
+algorithm <a class="reference internal" href="#r46">[R46]</a>.  A simple explanation is available here:</p>
 <div class="highlight-python"><pre>http://www.essi.fr/~lingrand/MarchingCubes/algo.html</pre>
 </div>
 <p>There is a single ambiguous case in the marching squares algorithm: when
@@ -203,14 +204,55 @@ high value of the array. This will often yield degenerate contours,
 especially around structures that are a single array element wide. Instead
 choose a middle value, as above.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r39" rules="none">
+<table class="docutils citation" frame="void" id="r46" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R39]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>)</em> Lorensen, William and Harvey E. Cline. Marching Cubes: A High
+<tr><td class="label">[R46]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>)</em> Lorensen, William and Harvey E. Cline. Marching Cubes: A High
 Resolution 3D Surface Construction Algorithm. Computer Graphics
 (SIGGRAPH 87 Proceedings) 21(4) July 1987, p. 163-170).</td></tr>
 </tbody>
 </table>
+</dd></dl>
+
+</div>
+<div class="section" id="perimeter">
+<h2>perimeter<a class="headerlink" href="#perimeter" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.measure.perimeter">
+<tt class="descclassname">skimage.measure.</tt><tt class="descname">perimeter</tt><big>(</big><em>image</em>, <em>neighbourhood=4</em><big>)</big><a class="headerlink" href="#skimage.measure.perimeter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate total perimeter of all objects in binary image.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : array</p>
+<blockquote>
+<div><p>binary image</p>
+</div></blockquote>
+<p><strong>neighbourhood: 4 or 8, optional</strong> :</p>
+<blockquote>
+<div><p>neighbourhood connectivity for border pixel determination, default 4</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>perimeter</strong> : float</p>
+<blockquote class="last">
+<div><p>total perimeter of all objects in binary image</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">References</p>
+<ol class="upperalpha" start="11">
+<li><dl class="first docutils">
+<dt>Benkrid, D. Crookes. Design and FPGA Implementation of a Perimeter</dt>
+<dd><p class="first last">Estimator. The Queen&#8217;s University of Belfast.
+<a class="reference external" href="http://www.cs.qub.ac.uk/~d.crookes/webpubs/papers/perimeter.doc">http://www.cs.qub.ac.uk/~d.crookes/webpubs/papers/perimeter.doc</a></p>
+</dd>
+</dl>
+</li>
+</ol>
 </dd></dl>
 
 </div>
@@ -224,7 +266,7 @@ Resolution 3D Surface Construction Algorithm. Computer Graphics
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>label_image</strong> : N x M ndarray</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>label_image</strong> : N x M ndarray</p>
 <blockquote>
 <div><p>Labelled input image.</p>
 </div></blockquote>
@@ -390,6 +432,13 @@ the same second-moments as the region. Ranging from <cite>-pi/2</cite> to
 </dl>
 </li>
 <li><dl class="first docutils">
+<dt>Perimeter <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Perimeter of object which approximates the contour as a line through
+the centers of border pixels using a 4-connectivity.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
 <dt>Solidity <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd><p class="first last">Ratio of pixels in the region to pixels of the convex hull image.</p>
 </dd>
@@ -452,7 +501,7 @@ area).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>properties</strong> : list of dicts</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>properties</strong> : list of dicts</p>
 <blockquote class="last">
 <div><p>List containing a property dict for each region. The property dicts
 contain all the specified properties plus a &#8216;Label&#8217; field.</p>
@@ -506,7 +555,7 @@ contain all the specified properties plus a &#8216;Label&#8217; field.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>X, Y</strong> : (N,N) ndarray</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>X, Y</strong> : (N,N) ndarray</p>
 <blockquote>
 <div><p>Images.</p>
 </div></blockquote>
@@ -527,7 +576,7 @@ the image data-type.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>s</strong> : float</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>s</strong> : float</p>
 <blockquote>
 <div><p>Strucutural similarity.</p>
 </div></blockquote>
@@ -541,10 +590,10 @@ This is only returned if <cite>gradient</cite> is set to True.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r40" rules="none">
+<table class="docutils citation" frame="void" id="r47" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[R40]</a></td><td>Wang, Z., Bovik, A. C., Sheikh, H. R., &amp; Simoncelli, E. P.
+<tr><td class="label"><a class="fn-backref" href="#id3">[R47]</a></td><td>Wang, Z., Bovik, A. C., Sheikh, H. R., &amp; Simoncelli, E. P.
 (2004). Image quality assessment: From error visibility to
 structural similarity. IEEE Transactions on Image Processing,
 13, 600-612.</td></tr>
@@ -568,7 +617,7 @@ structural similarity. IEEE Transactions on Image Processing,
       
     <div class="footer">
         &copy; Copyright 2011, the scikits-image team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.8.
     </div>
     </div>
 

@@ -1,5 +1,3 @@
-
-
 .. _example_plot_medial_transform.py:
 
 
@@ -23,15 +21,15 @@ For a skeleton with fewer branches, there exists another skeletonization
 algorithm in ``skimage``: ``skimage.morphology.skeletonize``, that computes
 a skeleton by iterative morphological thinnings.
 
-
-
 .. image:: images/plot_medial_transform_1.png
     :align: center
 
 
-**Python source code:** :download:`plot_medial_transform.py <plot_medial_transform.py>`
-(generated using ``skimage`` |version|)
-
 .. literalinclude:: plot_medial_transform.py
     :lines: 22-
-    
+
+
+
+**Python source code:** :download:`download <plot_medial_transform.py>`
+(generated using ``skimage`` |version|)
+

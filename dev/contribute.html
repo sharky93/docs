@@ -3,16 +3,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
     <title>SciPy 2012 Sprint &mdash; skimage v0.7dev docs</title>
-    
     <link rel="stylesheet" href="_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
@@ -129,7 +126,8 @@
   <div class="section" id="scipy-2012-sprint">
 <h1>SciPy 2012 Sprint<a class="headerlink" href="#scipy-2012-sprint" title="Permalink to this headline">¶</a></h1>
 <p>Welcome! Stefan van der Walt and Tony Yu are organizing a coding sprint for
-scikits-image at SciPy 2012. Anyone who&#8217;s interested can join the party on July 20th starting at 9 AM (location to be determined).</p>
+scikits-image at SciPy 2012. Anyone who&#8217;s interested can join the party on July
+20th starting at 9 AM (location to be determined).</p>
 <p>We have a list of tasks for all levels of programmers, but we&#8217;d be really
 interested in new ideas as well.</p>
 <div class="section" id="basic">
@@ -152,13 +150,25 @@ interested in new ideas as well.</p>
 </div>
 <div class="section" id="features">
 <h3>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>Add text, anti-aliasing to the draw module</li>
-<li>Lab color space conversion</li>
-<li>Add slicing to ImageCollection object</li>
-<li>Add imread_collection to all imread backends</li>
-<li>Add an htmlrepr to the Image object, and return Image objects from all I/O routines? (allows automatic display of images in IPython notebook)</li>
-<li>Add &#64;greyimage decorator to check if input is a greyscale image</li>
+<ul>
+<li><p class="first">Add text, anti-aliasing to the draw module</p>
+</li>
+<li><p class="first">Lab color space conversion</p>
+</li>
+<li><p class="first">Add slicing to ImageCollection object</p>
+</li>
+<li><p class="first">Add imread_collection to all imread backends</p>
+</li>
+<li><p class="first">Resurrect the <a class="reference external" href="http://bit.ly/skimage_image_cls">Image object</a> and add
+EXIF and TIFF tags.
+- Add IPython display protocol.
+- Add an htmlrepr to the Image object.  Should we return image objects from</p>
+<blockquote>
+<div><p>all I/O routines?</p>
+</div></blockquote>
+</li>
+<li><p class="first">Add &#64;greyimage decorator to check if input is a greyscale image</p>
+</li>
 </ul>
 </div>
 </div>
@@ -168,7 +178,9 @@ interested in new ideas as well.</p>
 scikits-image internals.</p>
 <ul class="simple">
 <li>Add binary features (BRIEF, BRISK, FREAK)</li>
-<li>Blurring kernel estimation</li>
+<li>Add <a class="reference external" href="http://pr.willowgarage.com/wiki/Star_Detector">STAR features</a></li>
+<li>Using the visualization tools, add an FFT-domain image editor</li>
+<li><a class="reference external" href="http://bit.ly/Nril3u">Blurring kernel estimation</a></li>
 <li>Better video loading (move to plugin framework, add backends)</li>
 </ul>
 </div>
@@ -400,7 +412,7 @@ skimage/filter/__init__                              1      1   100%
       
     <div class="footer">
         &copy; Copyright 2011, the scikits-image team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.8.
     </div>
     </div>
 

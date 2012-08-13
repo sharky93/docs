@@ -10,12 +10,16 @@ Module: :mod:`color`
    skimage.color.convert_colorspace
    skimage.color.gray2rgb
    skimage.color.hsv2rgb
+   skimage.color.lab2rgb
+   skimage.color.lab2xyz
    skimage.color.rgb2gray
    skimage.color.rgb2grey
    skimage.color.rgb2hsv
+   skimage.color.rgb2lab
    skimage.color.rgb2rgbcie
    skimage.color.rgb2xyz
    skimage.color.rgbcie2rgb
+   skimage.color.xyz2lab
    skimage.color.xyz2rgb
 
 convert_colorspace
@@ -33,6 +37,16 @@ hsv2rgb
 
 .. autofunction:: skimage.color.hsv2rgb
 
+lab2rgb
+-------
+
+.. autofunction:: skimage.color.lab2rgb
+
+lab2xyz
+-------
+
+.. autofunction:: skimage.color.lab2xyz
+
 rgb2gray
 --------
 
@@ -48,6 +62,11 @@ rgb2hsv
 
 .. autofunction:: skimage.color.rgb2hsv
 
+rgb2lab
+-------
+
+.. autofunction:: skimage.color.rgb2lab
+
 rgb2rgbcie
 ----------
 
@@ -62,6 +81,11 @@ rgbcie2rgb
 ----------
 
 .. autofunction:: skimage.color.rgbcie2rgb
+
+xyz2lab
+-------
+
+.. autofunction:: skimage.color.xyz2lab
 
 xyz2rgb
 -------

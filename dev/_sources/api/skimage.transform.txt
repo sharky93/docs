@@ -11,11 +11,11 @@ Inheritance diagram for ``skimage.transform``:
 
 .. currentmodule:: skimage.transform
 
-:class:`AffineTransformation`
------------------------------
+:class:`AffineTransform`
+------------------------
 
 
-.. autoclass:: AffineTransformation
+.. autoclass:: AffineTransform
   :members:
   :undoc-members:
   :show-inheritance:
@@ -23,11 +23,11 @@ Inheritance diagram for ``skimage.transform``:
 
   .. automethod:: __init__
 
-:class:`PolynomialTransformation`
----------------------------------
+:class:`PolynomialTransform`
+----------------------------
 
 
-.. autoclass:: PolynomialTransformation
+.. autoclass:: PolynomialTransform
   :members:
   :undoc-members:
   :show-inheritance:
@@ -35,11 +35,11 @@ Inheritance diagram for ``skimage.transform``:
 
   .. automethod:: __init__
 
-:class:`ProjectiveTransformation`
----------------------------------
+:class:`ProjectiveTransform`
+----------------------------
 
 
-.. autoclass:: ProjectiveTransformation
+.. autoclass:: ProjectiveTransform
   :members:
   :undoc-members:
   :show-inheritance:
@@ -47,11 +47,11 @@ Inheritance diagram for ``skimage.transform``:
 
   .. automethod:: __init__
 
-:class:`SimilarityTransformation`
----------------------------------
+:class:`SimilarityTransform`
+----------------------------
 
 
-.. autoclass:: SimilarityTransformation
+.. autoclass:: SimilarityTransform
   :members:
   :undoc-members:
   :show-inheritance:
@@ -60,10 +60,9 @@ Inheritance diagram for ``skimage.transform``:
   .. automethod:: __init__
 .. autosummary::
 
-   skimage.transform.estimate_transformation
+   skimage.transform.estimate_transform
    skimage.transform.fast_homography
    skimage.transform.frt2
-   skimage.transform.geometric_transform
    skimage.transform.homography
    skimage.transform.hough
    skimage.transform.ifrt2
@@ -75,10 +74,10 @@ Inheritance diagram for ``skimage.transform``:
    skimage.transform.swirl
    skimage.transform.warp
 
-estimate_transformation
------------------------
+estimate_transform
+------------------
 
-.. autofunction:: skimage.transform.estimate_transformation
+.. autofunction:: skimage.transform.estimate_transform
 
 fast_homography
 ---------------
@@ -89,11 +88,6 @@ frt2
 ----
 
 .. autofunction:: skimage.transform.frt2
-
-geometric_transform
--------------------
-
-.. autofunction:: skimage.transform.geometric_transform
 
 homography
 ----------

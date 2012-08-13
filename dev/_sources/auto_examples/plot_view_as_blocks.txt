@@ -1,5 +1,3 @@
-
-
 .. _example_plot_view_as_blocks.py:
 
 
@@ -17,15 +15,15 @@ median value of that block. The results are displayed altogether, along
 with a spline interpolation of order 3 rescaling of the original `lena`
 image.
 
-
-
 .. image:: images/plot_view_as_blocks_1.png
     :align: center
 
 
-**Python source code:** :download:`plot_view_as_blocks.py <plot_view_as_blocks.py>`
-(generated using ``skimage`` |version|)
-
 .. literalinclude:: plot_view_as_blocks.py
     :lines: 16-
-    
+
+
+
+**Python source code:** :download:`download <plot_view_as_blocks.py>`
+(generated using ``skimage`` |version|)
+

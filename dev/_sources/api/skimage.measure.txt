@@ -8,6 +8,7 @@ Module: :mod:`measure`
 .. autosummary::
 
    skimage.measure.find_contours
+   skimage.measure.perimeter
    skimage.measure.regionprops
    skimage.measure.structural_similarity
 
@@ -15,6 +16,11 @@ find_contours
 -------------
 
 .. autofunction:: skimage.measure.find_contours
+
+perimeter
+---------
+
+.. autofunction:: skimage.measure.perimeter
 
 regionprops
 -----------
