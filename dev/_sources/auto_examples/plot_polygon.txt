@@ -1,0 +1,22 @@
+.. _example_plot_polygon.py:
+
+
+====================
+Approximate Polygons
+====================
+
+This example shows how to approximate polygonal chains with the Douglas-Peucker
+algorithm.
+
+.. image:: images/plot_polygon_1.png
+    :align: center
+
+
+.. literalinclude:: plot_polygon.py
+    :lines: 9-
+
+
+
+**Python source code:** :download:`download <plot_polygon.py>`
+(generated using ``skimage`` |version|)
+

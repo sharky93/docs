@@ -56,6 +56,7 @@
 <li><a class="reference internal" href="#greycoprops">greycoprops</a></li>
 <li><a class="reference internal" href="#harris">harris</a></li>
 <li><a class="reference internal" href="#hog">hog</a></li>
+<li><a class="reference internal" href="#local-binary-pattern">local_binary_pattern</a></li>
 <li><a class="reference internal" href="#match-template">match_template</a></li>
 <li><a class="reference internal" href="#peak-local-max">peak_local_max</a></li>
 </ul>
@@ -111,6 +112,9 @@
 </tr>
 <tr><td><a class="reference internal" href="#skimage.feature.hog" title="skimage.feature.hog"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.hog</span></tt></a>(image[,&nbsp;orientations,&nbsp;...])</td>
 <td>Extract Histogram of Oriented Gradients (HOG) for a given image.</td>
+</tr>
+<tr><td><a class="reference internal" href="#skimage.feature.local_binary_pattern" title="skimage.feature.local_binary_pattern"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.local_binary_pattern</span></tt></a>(image,&nbsp;P,&nbsp;R)</td>
+<td>Gray scale and rotation invariant LBP (Local Binary Patterns).</td>
 </tr>
 <tr><td><a class="reference internal" href="#skimage.feature.match_template" title="skimage.feature.match_template"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.match_template</span></tt></a>(image,&nbsp;template)</td>
 <td>Match a template to an image using normalized correlation.</td>
@@ -181,24 +185,24 @@ type uint32, otherwise it is float64.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r36" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[R36]</a></td><td>The GLCM Tutorial Home Page,
-<a class="reference external" href="http://www.fp.ucalgary.ca/mhallbey/tutorial.htm">http://www.fp.ucalgary.ca/mhallbey/tutorial.htm</a></td></tr>
-</tbody>
-</table>
 <table class="docutils citation" frame="void" id="r37" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[R37]</a></td><td>Pattern Recognition Engineering, Morton Nadler &amp; Eric P.
-Smith</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id1">[R37]</a></td><td>The GLCM Tutorial Home Page,
+<a class="reference external" href="http://www.fp.ucalgary.ca/mhallbey/tutorial.htm">http://www.fp.ucalgary.ca/mhallbey/tutorial.htm</a></td></tr>
 </tbody>
 </table>
 <table class="docutils citation" frame="void" id="r38" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[R38]</a></td><td>Wikipedia, <a class="reference external" href="http://en.wikipedia.org/wiki/Co-occurrence_matrix">http://en.wikipedia.org/wiki/Co-occurrence_matrix</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id2">[R38]</a></td><td>Pattern Recognition Engineering, Morton Nadler &amp; Eric P.
+Smith</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="r39" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[R39]</a></td><td>Wikipedia, <a class="reference external" href="http://en.wikipedia.org/wiki/Co-occurrence_matrix">http://en.wikipedia.org/wiki/Co-occurrence_matrix</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -281,10 +285,10 @@ the d&#8217;th distance and the a&#8217;th angle.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r39" rules="none">
+<table class="docutils citation" frame="void" id="r40" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[R39]</a></td><td>The GLCM Tutorial Home Page,
+<tr><td class="label"><a class="fn-backref" href="#id4">[R40]</a></td><td>The GLCM Tutorial Home Page,
 <a class="reference external" href="http://www.fp.ucalgary.ca/mhallbey/tutorial.htm">http://www.fp.ucalgary.ca/mhallbey/tutorial.htm</a></td></tr>
 </tbody>
 </table>
@@ -440,6 +444,82 @@ processing.</p>
 Human Detection, IEEE Computer Society Conference on Computer
 Vision and Pattern Recognition 2005 San Diego, CA, USA</li>
 </ul>
+</dd></dl>
+
+</div>
+<div class="section" id="local-binary-pattern">
+<h2>local_binary_pattern<a class="headerlink" href="#local-binary-pattern" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.feature.local_binary_pattern">
+<tt class="descclassname">skimage.feature.</tt><tt class="descname">local_binary_pattern</tt><big>(</big><em>image</em>, <em>P</em>, <em>R</em>, <em>method='default'</em><big>)</big><a class="headerlink" href="#skimage.feature.local_binary_pattern" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gray scale and rotation invariant LBP (Local Binary Patterns).</p>
+<p>LBP is an invariant descriptor that can be used for texture classification.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : (N, M) array</p>
+<blockquote>
+<div><p>Graylevel image.</p>
+</div></blockquote>
+<p><strong>P</strong> : int</p>
+<blockquote>
+<div><p>Number of circularly symmetric neighbour set points (quantization of the
+angular space).</p>
+</div></blockquote>
+<p><strong>R</strong> : float</p>
+<blockquote>
+<div><p>Radius of circle (spatial resolution of the operator).</p>
+</div></blockquote>
+<p><strong>method</strong> : {&#8216;D&#8217;, &#8216;R&#8217;, &#8216;U&#8217;, &#8216;V&#8217;}</p>
+<blockquote>
+<div><p>Method to determine the pattern::
+* &#8216;default&#8217;: original local binary pattern which is gray scale but not</p>
+<blockquote>
+<div><p>rotation invariant.</p>
+</div></blockquote>
+<ul>
+<li><dl class="first docutils">
+<dt>&#8216;ror&#8217;: extension of default implementation which is gray scale and</dt>
+<dd><p class="first last">rotation invariant.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>&#8216;uniform&#8217;: improved rotation invariance with uniform patterns and</dt>
+<dd><p class="first last">finer quantization of the angular space which is gray scale and
+rotation invariant.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>&#8216;var&#8217;: rotation invariant variance measures of the contrast of local</dt>
+<dd><p class="first last">image texture which is rotation but not gray scale invariant.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : (N, M) array</p>
+<blockquote class="last">
+<div><p>LBP image.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">References</p>
+<table class="docutils citation" frame="void" id="r41" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[R41]</a></td><td>Multiresolution Gray-Scale and Rotation Invariant Texture
+Classification with Local Binary Patterns.
+Timo Ojala, Matti Pietikainen, Topi Maenpaa.
+<a class="reference external" href="http://www.rafbis.it/biplab15/images/stories/docenti/Danielriccio/">http://www.rafbis.it/biplab15/images/stories/docenti/Danielriccio/</a>           Articoliriferimento/LBP.pdf, 2002.</td></tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>

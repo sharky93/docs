@@ -52,10 +52,12 @@
     <h3>Contents</h3>
     <ul>
 <li><a class="reference internal" href="#">Module: <tt class="docutils literal"><span class="pre">measure</span></tt></a><ul>
+<li><a class="reference internal" href="#approximate-polygon">approximate_polygon</a></li>
 <li><a class="reference internal" href="#find-contours">find_contours</a></li>
 <li><a class="reference internal" href="#perimeter">perimeter</a></li>
 <li><a class="reference internal" href="#regionprops">regionprops</a></li>
 <li><a class="reference internal" href="#structural-similarity">structural_similarity</a></li>
+<li><a class="reference internal" href="#subdivide-polygon">subdivide_polygon</a></li>
 </ul>
 </li>
 </ul>
@@ -98,6 +100,9 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
+<tr><td><a class="reference internal" href="#skimage.measure.approximate_polygon" title="skimage.measure.approximate_polygon"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.measure.approximate_polygon</span></tt></a>(coords,&nbsp;...)</td>
+<td>Approximate a polygonal chain with the specified tolerance.</td>
+</tr>
 <tr><td><a class="reference internal" href="#skimage.measure.find_contours" title="skimage.measure.find_contours"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.measure.find_contours</span></tt></a>(array,&nbsp;level)</td>
 <td>Find iso-valued contours in a 2D array for a given level value.</td>
 </tr>
@@ -110,8 +115,54 @@
 <tr><td><a class="reference internal" href="#skimage.measure.structural_similarity" title="skimage.measure.structural_similarity"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.measure.structural_similarity</span></tt></a>(X,&nbsp;Y)</td>
 <td>Compute the mean structural similarity index between two images.</td>
 </tr>
+<tr><td><a class="reference internal" href="#skimage.measure.subdivide_polygon" title="skimage.measure.subdivide_polygon"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.measure.subdivide_polygon</span></tt></a>(coords[,&nbsp;...])</td>
+<td>Subdivision of polygonal curves using B-Splines.</td>
+</tr>
 </tbody>
 </table>
+<div class="section" id="approximate-polygon">
+<h2>approximate_polygon<a class="headerlink" href="#approximate-polygon" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.measure.approximate_polygon">
+<tt class="descclassname">skimage.measure.</tt><tt class="descname">approximate_polygon</tt><big>(</big><em>coords</em>, <em>tolerance</em><big>)</big><a class="headerlink" href="#skimage.measure.approximate_polygon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Approximate a polygonal chain with the specified tolerance.</p>
+<p>It is based on the Douglas-Peucker algorithm.</p>
+<p>Note that the approximated polygon is always within the convex hull of the
+original polygon.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>coords</strong> : (N, 2) array</p>
+<blockquote>
+<div><p>Coordinate array.</p>
+</div></blockquote>
+<p><strong>tolerance</strong> : float</p>
+<blockquote>
+<div><p>Maximum distance from original points of polygon to approximated
+polygonal chain. If tolerance is 0, the original coordinate array
+is returned.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>coords</strong> : (M, 2) array</p>
+<blockquote class="last">
+<div><p>Approximated polygonal chain where M &lt;= N.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">References</p>
+<table class="docutils citation" frame="void" id="r50" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[R50]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Ramer-Douglas-Peucker_algorithm">http://en.wikipedia.org/wiki/Ramer-Douglas-Peucker_algorithm</a></td></tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
 <div class="section" id="find-contours">
 <h2>find_contours<a class="headerlink" href="#find-contours" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
@@ -160,7 +211,7 @@ consisting of n <tt class="docutils literal"><span class="pre">(x,</span> <span 
 </table>
 <p class="rubric">Notes</p>
 <p>The marching squares algorithm is a special case of the marching cubes
-algorithm <a class="reference internal" href="#r46">[R46]</a>.  A simple explanation is available here:</p>
+algorithm <a class="reference internal" href="#r51">[R51]</a>.  A simple explanation is available here:</p>
 <div class="highlight-python"><pre>http://www.essi.fr/~lingrand/MarchingCubes/algo.html</pre>
 </div>
 <p>There is a single ambiguous case in the marching squares algorithm: when
@@ -204,10 +255,10 @@ high value of the array. This will often yield degenerate contours,
 especially around structures that are a single array element wide. Instead
 choose a middle value, as above.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r46" rules="none">
+<table class="docutils citation" frame="void" id="r51" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R46]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>)</em> Lorensen, William and Harvey E. Cline. Marching Cubes: A High
+<tr><td class="label">[R51]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id3">2</a>)</em> Lorensen, William and Harvey E. Cline. Marching Cubes: A High
 Resolution 3D Surface Construction Algorithm. Computer Graphics
 (SIGGRAPH 87 Proceedings) 21(4) July 1987, p. 163-170).</td></tr>
 </tbody>
@@ -427,7 +478,7 @@ order.</p>
 <dt>Orientation <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd><p class="first last">Angle between the X-axis and the major axis of the ellipse that has
 the same second-moments as the region. Ranging from <cite>-pi/2</cite> to
-<cite>-pi/2</cite> in counter-clockwise direction.</p>
+<cite>pi/2</cite> in counter-clockwise direction.</p>
 </dd>
 </dl>
 </li>
@@ -590,13 +641,58 @@ This is only returned if <cite>gradient</cite> is set to True.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r47" rules="none">
+<table class="docutils citation" frame="void" id="r52" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[R47]</a></td><td>Wang, Z., Bovik, A. C., Sheikh, H. R., &amp; Simoncelli, E. P.
+<tr><td class="label"><a class="fn-backref" href="#id4">[R52]</a></td><td>Wang, Z., Bovik, A. C., Sheikh, H. R., &amp; Simoncelli, E. P.
 (2004). Image quality assessment: From error visibility to
 structural similarity. IEEE Transactions on Image Processing,
 13, 600-612.</td></tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="subdivide-polygon">
+<h2>subdivide_polygon<a class="headerlink" href="#subdivide-polygon" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.measure.subdivide_polygon">
+<tt class="descclassname">skimage.measure.</tt><tt class="descname">subdivide_polygon</tt><big>(</big><em>coords</em>, <em>degree=2</em>, <em>preserve_ends=False</em><big>)</big><a class="headerlink" href="#skimage.measure.subdivide_polygon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subdivision of polygonal curves using B-Splines.</p>
+<p>Note that the resulting curve is always within the convex hull of the
+original polygon. Circular polygons stay closed after subdivision.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>coords</strong> : (N, 2) array</p>
+<blockquote>
+<div><p>Coordinate array.</p>
+</div></blockquote>
+<p><strong>degree</strong> : {1, 2, 3, 4, 5, 6, 7}, optional</p>
+<blockquote>
+<div><p>Degree of B-Spline. Default is 2.</p>
+</div></blockquote>
+<p><strong>preserve_ends</strong> : bool, optional</p>
+<blockquote>
+<div><p>Preserve first and last coordinate of non-circular polygon. Default is
+False.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>coords</strong> : (M, 2) array</p>
+<blockquote class="last">
+<div><p>Subdivided coordinate array.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">References</p>
+<table class="docutils citation" frame="void" id="r53" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[R53]</a></td><td><a class="reference external" href="http://mrl.nyu.edu/publications/subdiv-course2000/coursenotes00.pdf">http://mrl.nyu.edu/publications/subdiv-course2000/coursenotes00.pdf</a></td></tr>
 </tbody>
 </table>
 </dd></dl>

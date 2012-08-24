@@ -23,12 +23,15 @@ General-purpose and introductory examples for the scikit.
    plot_hog
    plot_hough_transform
    plot_lena_tv_denoise
+   plot_local_binary_pattern
    plot_medial_transform
    plot_otsu
    plot_peak_local_max
+   plot_polygon
    plot_radon_transform
    plot_random_walker_segmentation
    plot_regionprops
+   plot_segmentations
    plot_shapes
    plot_skeleton
    plot_ssim
@@ -109,6 +112,13 @@ General-purpose and introductory examples for the scikit.
    :ref:`example_plot_lena_tv_denoise.py`
 
 
+.. figure:: images/thumb/plot_local_binary_pattern.png
+   :figclass: gallery
+   :target: ./plot_local_binary_pattern.html
+
+   :ref:`example_plot_local_binary_pattern.py`
+
+
 .. figure:: images/thumb/plot_medial_transform.png
    :figclass: gallery
    :target: ./plot_medial_transform.html
@@ -130,6 +140,13 @@ General-purpose and introductory examples for the scikit.
    :ref:`example_plot_peak_local_max.py`
 
 
+.. figure:: images/thumb/plot_polygon.png
+   :figclass: gallery
+   :target: ./plot_polygon.html
+
+   :ref:`example_plot_polygon.py`
+
+
 .. figure:: images/thumb/plot_radon_transform.png
    :figclass: gallery
    :target: ./plot_radon_transform.html
@@ -149,6 +166,13 @@ General-purpose and introductory examples for the scikit.
    :target: ./plot_regionprops.html
 
    :ref:`example_plot_regionprops.py`
+
+
+.. figure:: images/thumb/plot_segmentations.png
+   :figclass: gallery
+   :target: ./plot_segmentations.html
+
+   :ref:`example_plot_segmentations.py`
 
 
 .. figure:: images/thumb/plot_shapes.png

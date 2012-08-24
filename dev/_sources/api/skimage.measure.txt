@@ -7,10 +7,17 @@ Module: :mod:`measure`
 .. currentmodule:: skimage.measure
 .. autosummary::
 
+   skimage.measure.approximate_polygon
    skimage.measure.find_contours
    skimage.measure.perimeter
    skimage.measure.regionprops
    skimage.measure.structural_similarity
+   skimage.measure.subdivide_polygon
+
+approximate_polygon
+-------------------
+
+.. autofunction:: skimage.measure.approximate_polygon
 
 find_contours
 -------------
@@ -31,4 +38,9 @@ structural_similarity
 ---------------------
 
 .. autofunction:: skimage.measure.structural_similarity
+
+subdivide_polygon
+-----------------
+
+.. autofunction:: skimage.measure.subdivide_polygon
 

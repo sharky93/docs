@@ -73,6 +73,7 @@ Inheritance diagram for ``skimage.transform``:
    skimage.transform.radon
    skimage.transform.swirl
    skimage.transform.warp
+   skimage.transform.warp_coords
 
 estimate_transform
 ------------------
@@ -138,4 +139,9 @@ warp
 ----
 
 .. autofunction:: skimage.transform.warp
+
+warp_coords
+-----------
+
+.. autofunction:: skimage.transform.warp_coords
 

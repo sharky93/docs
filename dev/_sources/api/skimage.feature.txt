@@ -11,6 +11,7 @@ Module: :mod:`feature`
    skimage.feature.greycoprops
    skimage.feature.harris
    skimage.feature.hog
+   skimage.feature.local_binary_pattern
    skimage.feature.match_template
    skimage.feature.peak_local_max
 
@@ -33,6 +34,11 @@ hog
 ---
 
 .. autofunction:: skimage.feature.hog
+
+local_binary_pattern
+--------------------
+
+.. autofunction:: skimage.feature.local_binary_pattern
 
 match_template
 --------------

@@ -11,6 +11,18 @@ Inheritance diagram for ``skimage.io``:
 
 .. currentmodule:: skimage.io
 
+:class:`Image`
+--------------
+
+
+.. autoclass:: Image
+  :members:
+  :undoc-members:
+  :show-inheritance:
+  :inherited-members:
+
+  .. automethod:: __init__
+
 :class:`ImageCollection`
 ------------------------
 

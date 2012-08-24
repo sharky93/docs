@@ -77,6 +77,7 @@
 <li><a class="reference internal" href="#radon">radon</a></li>
 <li><a class="reference internal" href="#swirl">swirl</a></li>
 <li><a class="reference internal" href="#warp">warp</a></li>
+<li><a class="reference internal" href="#warp-coords">warp_coords</a></li>
 </ul>
 </li>
 </ul>
@@ -670,6 +671,9 @@ smallest singular value normed by the coefficient c3.</p>
 <tr><td><a class="reference internal" href="#skimage.transform.warp" title="skimage.transform.warp"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.warp</span></tt></a>(image[,&nbsp;inverse_map,&nbsp;...])</td>
 <td>Warp an image according to a given coordinate transformation.</td>
 </tr>
+<tr><td><a class="reference internal" href="#skimage.transform.warp_coords" title="skimage.transform.warp_coords"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.warp_coords</span></tt></a>(orows,&nbsp;ocols,&nbsp;...)</td>
+<td>Build the source coordinates for the output pixels of an image warp.</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -785,10 +789,6 @@ E.g., to rotate by theta degrees clockwise, the matrix should be</p>
 <p><strong>output_shape</strong> : tuple (rows, cols)</p>
 <blockquote>
 <div><p>Shape of the output image generated.</p>
-</div></blockquote>
-<p><strong>order</strong> : int</p>
-<blockquote>
-<div><p>Order of splines used in interpolation.</p>
 </div></blockquote>
 <p><strong>mode</strong> : {&#8216;constant&#8217;, &#8216;mirror&#8217;, &#8216;wrap&#8217;}</p>
 <blockquote>
@@ -1098,13 +1098,13 @@ an (n+1) x n integer array.</p>
 </div>
 <p class="rubric">Notes</p>
 <p>The FRT has a unique inverse iff n is prime.
-See <a class="reference internal" href="#r59">[R59]</a> for an overview.
+See <a class="reference internal" href="#r71">[R71]</a> for an overview.
 The idea for this algorithm is due to Vlad Negnevitski.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r59" rules="none">
+<table class="docutils citation" frame="void" id="r71" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R59]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id3">2</a>)</em> A. Kingston and I. Svalbe, &#8220;Projective transforms on periodic
+<tr><td class="label">[R71]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id3">2</a>)</em> A. Kingston and I. Svalbe, &#8220;Projective transforms on periodic
 discrete image arrays,&#8221; in P. Hawkes (Ed), Advances in Imaging
 and Electron Physics, 139 (2006)</td></tr>
 </tbody>
@@ -1158,10 +1158,10 @@ left of it, i.e.:</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r60" rules="none">
+<table class="docutils citation" frame="void" id="r72" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[R60]</a></td><td>F.C. Crow, &#8220;Summed-area tables for texture mapping,&#8221;
+<tr><td class="label"><a class="fn-backref" href="#id4">[R72]</a></td><td>F.C. Crow, &#8220;Summed-area tables for texture mapping,&#8221;
 ACM SIGGRAPH Computer Graphics, vol. 18, 1984, pp. 207-212.</td></tr>
 </tbody>
 </table>
@@ -1301,10 +1301,10 @@ line start and end.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r61" rules="none">
+<table class="docutils citation" frame="void" id="r73" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id5">[R61]</a></td><td>C. Galamhos, J. Matas and J. Kittler,&#8221;Progressive probabilistic Hough
+<tr><td class="label"><a class="fn-backref" href="#id5">[R73]</a></td><td>C. Galamhos, J. Matas and J. Kittler,&#8221;Progressive probabilistic Hough
 transform for line detection&#8221;, in  IEEE Computer Society Conference on
 Computer Vision and Pattern Recognition, 1999.</td></tr>
 </tbody>
@@ -1427,7 +1427,7 @@ inverse).</p>
 <div><p>How to handle values outside the image borders.  See
 <cite>scipy.ndimage.map_coordinates</cite> for detail.</p>
 </div></blockquote>
-<p><strong>cval</strong> : string</p>
+<p><strong>cval</strong> : float</p>
 <blockquote class="last">
 <div><p>Used in conjunction with mode &#8216;constant&#8217;, the value outside
 the image boundaries.</p>
@@ -1446,6 +1446,73 @@ the image boundaries.</p>
 <span class="gp">... </span>    <span class="k">return</span> <span class="n">xy</span>
 <span class="go">&gt;&gt;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">warp</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">shift_right</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="warp-coords">
+<h2>warp_coords<a class="headerlink" href="#warp-coords" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.transform.warp_coords">
+<tt class="descclassname">skimage.transform.</tt><tt class="descname">warp_coords</tt><big>(</big><em>orows</em>, <em>ocols</em>, <em>bands</em>, <em>coord_transform_fn</em>, <em>dtype=&lt;type 'numpy.float64'&gt;</em><big>)</big><a class="headerlink" href="#skimage.transform.warp_coords" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build the source coordinates for the output pixels of an image warp.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>orows</strong> : int</p>
+<blockquote>
+<div><p>number of output rows</p>
+</div></blockquote>
+<p><strong>ocols</strong> : int</p>
+<blockquote>
+<div><p>number of output columns</p>
+</div></blockquote>
+<p><strong>bands</strong> : int</p>
+<blockquote>
+<div><p>number of color bands (aka channels)</p>
+</div></blockquote>
+<p><strong>coord_transform_fn</strong> : callable like GeometricTransform.inverse</p>
+<blockquote>
+<div><p>Return input coordinates for given output coordinates</p>
+</div></blockquote>
+<p><strong>dtype</strong> : np.dtype or string</p>
+<blockquote>
+<div><p>dtype for return value (sane choices: float32 or float64)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>coords</strong> : (3, orows, ocols, bands) array of dtype <cite>dtype</cite></p>
+<blockquote class="last">
+<div><p>Coordinates for <cite>scipy.ndimage.map_coordinates</cite>, that will yield
+an image of shape (orows, ocols, bands) by drawing from source
+points according to the <cite>coord_transform_fn</cite>.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>This is a lower-level routine that produces the source coordinates used by
+<cite>warp()</cite>.</p>
+<p>It is provided separately from <cite>warp</cite> to give additional flexibility to
+users who would like, for example, to re-use a particular coordinate
+mapping, to use specific dtypes at various points along the the
+image-warping process, or to implement different post-processing logic
+than <cite>warp</cite> performs after the call to <cite>ndimage.map_coordinates</cite>.</p>
+<p class="rubric">Examples</p>
+<p>Produce a coordinate map that Shifts an image to the right:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.ndimage</span> <span class="kn">import</span> <span class="n">map_coordinates</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">shift_right</span><span class="p">(</span><span class="n">xy</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">xy</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">10</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="n">xy</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">coords</span> <span class="o">=</span> <span class="n">warp_coords</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">shift_right</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">image</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">lena</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">warped_image</span> <span class="o">=</span> <span class="n">map_coordinates</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">coords</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
