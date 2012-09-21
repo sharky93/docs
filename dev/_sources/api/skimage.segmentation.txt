@@ -7,12 +7,18 @@ Module: :mod:`segmentation`
 .. currentmodule:: skimage.segmentation
 .. autosummary::
 
+   skimage.segmentation.clear_border
    skimage.segmentation.felzenszwalb
    skimage.segmentation.find_boundaries
    skimage.segmentation.quickshift
    skimage.segmentation.random_walker
    skimage.segmentation.slic
    skimage.segmentation.visualize_boundaries
+
+clear_border
+------------
+
+.. autofunction:: skimage.segmentation.clear_border
 
 felzenszwalb
 ------------

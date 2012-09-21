@@ -103,7 +103,7 @@
 <tr><td><a class="reference internal" href="#skimage.measure.approximate_polygon" title="skimage.measure.approximate_polygon"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.measure.approximate_polygon</span></tt></a>(coords,&nbsp;...)</td>
 <td>Approximate a polygonal chain with the specified tolerance.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.measure.find_contours" title="skimage.measure.find_contours"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.measure.find_contours</span></tt></a>(array,&nbsp;level)</td>
+<tr><td><a class="reference internal" href="skimage.measure.find_contours.html#module-skimage.measure.find_contours" title="skimage.measure.find_contours"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.measure.find_contours</span></tt></a>(array,&nbsp;level)</td>
 <td>Find iso-valued contours in a 2D array for a given level value.</td>
 </tr>
 <tr><td><a class="reference internal" href="#skimage.measure.perimeter" title="skimage.measure.perimeter"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.measure.perimeter</span></tt></a>(image[,&nbsp;neighbourhood])</td>
@@ -154,10 +154,10 @@ is returned.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r50" rules="none">
+<table class="docutils citation" frame="void" id="r106" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[R50]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Ramer-Douglas-Peucker_algorithm">http://en.wikipedia.org/wiki/Ramer-Douglas-Peucker_algorithm</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id1">[R106]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Ramer-Douglas-Peucker_algorithm">http://en.wikipedia.org/wiki/Ramer-Douglas-Peucker_algorithm</a></td></tr>
 </tbody>
 </table>
 </dd></dl>
@@ -211,7 +211,7 @@ consisting of n <tt class="docutils literal"><span class="pre">(x,</span> <span 
 </table>
 <p class="rubric">Notes</p>
 <p>The marching squares algorithm is a special case of the marching cubes
-algorithm <a class="reference internal" href="#r51">[R51]</a>.  A simple explanation is available here:</p>
+algorithm <a class="reference internal" href="#r107">[R107]</a>.  A simple explanation is available here:</p>
 <div class="highlight-python"><pre>http://www.essi.fr/~lingrand/MarchingCubes/algo.html</pre>
 </div>
 <p>There is a single ambiguous case in the marching squares algorithm: when
@@ -255,10 +255,10 @@ high value of the array. This will often yield degenerate contours,
 especially around structures that are a single array element wide. Instead
 choose a middle value, as above.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r51" rules="none">
+<table class="docutils citation" frame="void" id="r107" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R51]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id3">2</a>)</em> Lorensen, William and Harvey E. Cline. Marching Cubes: A High
+<tr><td class="label">[R107]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id3">2</a>)</em> Lorensen, William and Harvey E. Cline. Marching Cubes: A High
 Resolution 3D Surface Construction Algorithm. Computer Graphics
 (SIGGRAPH 87 Proceedings) 21(4) July 1987, p. 163-170).</td></tr>
 </tbody>
@@ -280,7 +280,7 @@ Resolution 3D Surface Construction Algorithm. Computer Graphics
 <blockquote>
 <div><p>binary image</p>
 </div></blockquote>
-<p><strong>neighbourhood: 4 or 8, optional</strong> :</p>
+<p><strong>neighbourhood</strong> : 4 or 8, optional</p>
 <blockquote>
 <div><p>neighbourhood connectivity for border pixel determination, default 4</p>
 </div></blockquote>
@@ -295,15 +295,14 @@ Resolution 3D Surface Construction Algorithm. Computer Graphics
 </tbody>
 </table>
 <p class="rubric">References</p>
-<ol class="upperalpha" start="11">
-<li><dl class="first docutils">
-<dt>Benkrid, D. Crookes. Design and FPGA Implementation of a Perimeter</dt>
-<dd><p class="first last">Estimator. The Queen&#8217;s University of Belfast.
-<a class="reference external" href="http://www.cs.qub.ac.uk/~d.crookes/webpubs/papers/perimeter.doc">http://www.cs.qub.ac.uk/~d.crookes/webpubs/papers/perimeter.doc</a></p>
-</dd>
-</dl>
-</li>
-</ol>
+<table class="docutils citation" frame="void" id="r108" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[R108]</a></td><td>K. Benkrid, D. Crookes. Design and FPGA Implementation of
+a Perimeter Estimator. The Queen&#8217;s University of Belfast.
+<a class="reference external" href="http://www.cs.qub.ac.uk/~d.crookes/webpubs/papers/perimeter.doc">http://www.cs.qub.ac.uk/~d.crookes/webpubs/papers/perimeter.doc</a></td></tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>
@@ -317,7 +316,7 @@ Resolution 3D Surface Construction Algorithm. Computer Graphics
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>label_image</strong> : N x M ndarray</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>label_image</strong> : (N, M) ndarray</p>
 <blockquote>
 <div><p>Labelled input image.</p>
 </div></blockquote>
@@ -325,12 +324,14 @@ Resolution 3D Surface Construction Algorithm. Computer Graphics
 <blockquote>
 <div><p>Shape measurements to be determined for each labelled image region.
 Default is <cite>[&#8216;Area&#8217;, &#8216;Centroid&#8217;]</cite>. The following properties can be
-determined:
-* Area : int</p>
-<blockquote>
-<div><p>Number of pixels of region.</p>
-</div></blockquote>
+determined:</p>
 <ul>
+<li><dl class="first docutils">
+<dt>Area <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of pixels of region.</p>
+</dd>
+</dl>
+</li>
 <li><dl class="first docutils">
 <dt>BoundingBox <span class="classifier-delimiter">:</span> <span class="classifier">tuple</span></dt>
 <dd><p class="first last">Bounding box <cite>(min_row, min_col, max_row, max_col)</cite></p>
@@ -338,12 +339,11 @@ determined:
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>CentralMoments <span class="classifier-delimiter">:</span> <span class="classifier">3 x 3 ndarray</span></dt>
-<dd><dl class="first docutils">
-<dt>Central moments (translation invariant) up to 3rd order.</dt>
-<dd><p class="first last">mu_ji = sum{ array(x, y) * (x - x_c)^j * (y - y_c)^i }</p>
-</dd>
-</dl>
+<dt>CentralMoments <span class="classifier-delimiter">:</span> <span class="classifier">(3, 3) ndarray</span></dt>
+<dd><p class="first">Central moments (translation invariant) up to 3rd order.</p>
+<blockquote>
+<div><p>mu_ji = sum{ array(x, y) * (x - x_c)^j * (y - y_c)^i }</p>
+</div></blockquote>
 <p class="last">where the sum is over the <cite>x</cite>, <cite>y</cite> coordinates of the region,
 and <cite>x_c</cite> and <cite>y_c</cite> are the coordinates of the region&#8217;s centroid.</p>
 </dd>
@@ -362,8 +362,14 @@ and <cite>x_c</cite> and <cite>y_c</cite> are the coordinates of the region&#821
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>ConvexImage <span class="classifier-delimiter">:</span> <span class="classifier">H x J ndarray</span></dt>
+<dt>ConvexImage <span class="classifier-delimiter">:</span> <span class="classifier">(H, J) ndarray</span></dt>
 <dd><p class="first last">Binary convex hull image which has the same size as bounding box.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Coordinates <span class="classifier-delimiter">:</span> <span class="classifier">(N, 2) ndarray</span></dt>
+<dd><p class="first last">Coordinate list <cite>(row, col)</cite> of the region.</p>
 </dd>
 </dl>
 </li>
@@ -402,7 +408,7 @@ Computed as <cite>Area / (rows*cols)</cite></p>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>FilledImage <span class="classifier-delimiter">:</span> <span class="classifier">H x J ndarray</span></dt>
+<dt>FilledImage <span class="classifier-delimiter">:</span> <span class="classifier">(H, J) ndarray</span></dt>
 <dd><p class="first last">Binary region image with filled holes which has the same size as
 bounding box.</p>
 </dd>
@@ -415,7 +421,7 @@ bounding box.</p>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>Image <span class="classifier-delimiter">:</span> <span class="classifier">H x J ndarray</span></dt>
+<dt>Image <span class="classifier-delimiter">:</span> <span class="classifier">(H, J) ndarray</span></dt>
 <dd><p class="first last">Sliced binary region image which has the same size as bounding box.</p>
 </dd>
 </dl>
@@ -453,18 +459,17 @@ normalized second central moments as the region.</p>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>Moments <span class="classifier-delimiter">:</span> <span class="classifier">3 x 3 ndarray</span></dt>
-<dd><dl class="first docutils">
-<dt>Spatial moments up to 3rd order.</dt>
-<dd><p class="first last">m_ji = sum{ array(x, y) * x^j * y^i }</p>
-</dd>
-</dl>
+<dt>Moments <span class="classifier-delimiter">:</span> <span class="classifier">(3, 3) ndarray</span></dt>
+<dd><p class="first">Spatial moments up to 3rd order.</p>
+<blockquote>
+<div><p>m_ji = sum{ array(x, y) * x^j * y^i }</p>
+</div></blockquote>
 <p class="last">where the sum is over the <cite>x</cite>, <cite>y</cite> coordinates of the region.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>NormalizedMoments <span class="classifier-delimiter">:</span> <span class="classifier">3 x 3 ndarray</span></dt>
+<dt>NormalizedMoments <span class="classifier-delimiter">:</span> <span class="classifier">(3, 3) ndarray</span></dt>
 <dd><p class="first">Normalized moments (translation and scale invariant) up to 3rd
 order.</p>
 <blockquote>
@@ -496,7 +501,7 @@ the centers of border pixels using a 4-connectivity.</p>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>WeightedCentralMoments <span class="classifier-delimiter">:</span> <span class="classifier">3 x 3 ndarray</span></dt>
+<dt>WeightedCentralMoments <span class="classifier-delimiter">:</span> <span class="classifier">(3, 3) ndarray</span></dt>
 <dd><p class="first">Central moments (translation invariant) of intensity image up to 3rd
 order.</p>
 <blockquote>
@@ -522,18 +527,17 @@ image.</p>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>WeightedMoments <span class="classifier-delimiter">:</span> <span class="classifier">3 x 3 ndarray</span></dt>
-<dd><dl class="first docutils">
-<dt>Spatial moments of intensity image up to 3rd order.</dt>
-<dd><p class="first last">wm_ji = sum{ array(x, y) * x^j * y^i }</p>
-</dd>
-</dl>
+<dt>WeightedMoments <span class="classifier-delimiter">:</span> <span class="classifier">(3, 3) ndarray</span></dt>
+<dd><p class="first">Spatial moments of intensity image up to 3rd order.</p>
+<blockquote>
+<div><p>wm_ji = sum{ array(x, y) * x^j * y^i }</p>
+</div></blockquote>
 <p class="last">where the sum is over the <cite>x</cite>, <cite>y</cite> coordinates of the region.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>WeightedNormalizedMoments <span class="classifier-delimiter">:</span> <span class="classifier">3 x 3 ndarray</span></dt>
+<dt>WeightedNormalizedMoments <span class="classifier-delimiter">:</span> <span class="classifier">(3, 3) ndarray</span></dt>
 <dd><p class="first">Normalized moments (translation and scale invariant) of intensity
 image up to 3rd order.</p>
 <blockquote>
@@ -546,7 +550,7 @@ area).</p>
 </li>
 </ul>
 </div></blockquote>
-<p><strong>intensity_image</strong> : N x M ndarray, optional</p>
+<p><strong>intensity_image</strong> : (N, M) ndarray, optional</p>
 <blockquote>
 <div><p>Intensity image with same size as labelled image. Default is None.</p>
 </div></blockquote>
@@ -562,28 +566,34 @@ contain all the specified properties plus a &#8216;Label&#8217; field.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<dl class="docutils">
-<dt>Wilhelm Burger, Mark Burge. Principles of Digital Image Processing: Core</dt>
-<dd>Algorithms. Springer-Verlag, London, 2009.</dd>
-</dl>
-<ol class="upperalpha" start="2">
-<li><dl class="first docutils">
-<dt>Jähne. Digital Image Processing. Springer-Verlag,</dt>
-<dd><p class="first last">Berlin-Heidelberg, 6. edition, 2005.</p>
-</dd>
-</dl>
-</li>
-</ol>
-<ol class="upperalpha" start="20">
-<li><ol class="first upperalpha simple" start="8">
-<li>Reiss. Recognizing Planar Objects Using Invariant Image Features,</li>
-</ol>
-<blockquote>
-<div><p>from Lecture notes in computer science, p. 676. Springer, Berlin, 1993.</p>
-</div></blockquote>
-</li>
-</ol>
-<p><a class="reference external" href="http://en.wikipedia.org/wiki/Image_moment">http://en.wikipedia.org/wiki/Image_moment</a></p>
+<table class="docutils citation" frame="void" id="r109" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[R109]</a></td><td>Wilhelm Burger, Mark Burge. Principles of Digital Image Processing:
+Core Algorithms. Springer-Verlag, London, 2009.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="r110" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id6">[R110]</a></td><td>B. Jähne. Digital Image Processing. Springer-Verlag,
+Berlin-Heidelberg, 6. edition, 2005.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="r111" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id7">[R111]</a></td><td>T. H. Reiss. Recognizing Planar Objects Using Invariant Image
+Features, from Lecture notes in computer science, p. 676. Springer,
+Berlin, 1993.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="r112" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id8">[R112]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Image_moment">http://en.wikipedia.org/wiki/Image_moment</a></td></tr>
+</tbody>
+</table>
 <p class="rubric">Examples</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.data</span> <span class="kn">import</span> <span class="n">coins</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.morphology</span> <span class="kn">import</span> <span class="n">label</span>
@@ -641,10 +651,10 @@ This is only returned if <cite>gradient</cite> is set to True.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r52" rules="none">
+<table class="docutils citation" frame="void" id="r113" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[R52]</a></td><td>Wang, Z., Bovik, A. C., Sheikh, H. R., &amp; Simoncelli, E. P.
+<tr><td class="label"><a class="fn-backref" href="#id9">[R113]</a></td><td>Wang, Z., Bovik, A. C., Sheikh, H. R., &amp; Simoncelli, E. P.
 (2004). Image quality assessment: From error visibility to
 structural similarity. IEEE Transactions on Image Processing,
 13, 600-612.</td></tr>
@@ -689,10 +699,10 @@ False.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r53" rules="none">
+<table class="docutils citation" frame="void" id="r114" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id5">[R53]</a></td><td><a class="reference external" href="http://mrl.nyu.edu/publications/subdiv-course2000/coursenotes00.pdf">http://mrl.nyu.edu/publications/subdiv-course2000/coursenotes00.pdf</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id10">[R114]</a></td><td><a class="reference external" href="http://mrl.nyu.edu/publications/subdiv-course2000/coursenotes00.pdf">http://mrl.nyu.edu/publications/subdiv-course2000/coursenotes00.pdf</a></td></tr>
 </tbody>
 </table>
 </dd></dl>

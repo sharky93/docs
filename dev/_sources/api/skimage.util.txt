@@ -7,12 +7,18 @@ Module: :mod:`util`
 .. currentmodule:: skimage.util
 .. autosummary::
 
+   skimage.util.img_as_bool
    skimage.util.img_as_float
    skimage.util.img_as_int
    skimage.util.img_as_ubyte
    skimage.util.img_as_uint
    skimage.util.view_as_blocks
    skimage.util.view_as_windows
+
+img_as_bool
+-----------
+
+.. autofunction:: skimage.util.img_as_bool
 
 img_as_float
 ------------

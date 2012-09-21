@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>SciPy 2012 Sprint &mdash; skimage v0.7dev docs</title>
+    <title>How to contribute to skimage &mdash; skimage v0.7dev docs</title>
     <link rel="stylesheet" href="_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/docversions.js"></script>
     <link rel="top" title="skimage v0.7dev docs" href="index.html" />
     <link rel="next" title="Working with scikits-image source code" href="gitwash/index.html" />
-    <link rel="prev" title="Getting help on using skimage" href="user_guide/getting_help.html" /> 
+    <link rel="prev" title="Image Viewer" href="user_guide/viewer.html" /> 
   </head>
   <body>
     <div class="header-wrapper">
@@ -53,17 +53,7 @@
   
     <h3>Contents</h3>
     <ul>
-<li><a class="reference internal" href="#">SciPy 2012 Sprint</a><ul>
-<li><a class="reference internal" href="#basic">Basic</a><ul>
-<li><a class="reference internal" href="#code-review">Code review</a></li>
-<li><a class="reference internal" href="#docs">Docs</a></li>
-<li><a class="reference internal" href="#features">Features</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#intermediate">Intermediate</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#how-to-contribute-to-skimage">How to contribute to <tt class="docutils literal"><span class="pre">skimage</span></tt></a><ul>
+<li><a class="reference internal" href="#">How to contribute to <tt class="docutils literal"><span class="pre">skimage</span></tt></a><ul>
 <li><a class="reference internal" href="#tasks">Tasks</a><ul>
 <li><a class="reference internal" href="#implement-algorithms">Implement Algorithms</a></li>
 <li><a class="reference internal" href="#drawing-directly-on-an-ndarray">Drawing (directly on an ndarray)</a></li>
@@ -74,7 +64,8 @@
 <li><a class="reference internal" href="#merge-code-provided-by-cellprofiler-team">Merge code provided by CellProfiler team</a></li>
 <li><a class="reference internal" href="#rework-linear-filters">Rework linear filters</a></li>
 <li><a class="reference internal" href="#io">io</a></li>
-<li><a class="reference internal" href="#id1">docs</a></li>
+<li><a class="reference internal" href="#viewer">viewer</a></li>
+<li><a class="reference internal" href="#docs">docs</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#development-process">Development process</a><ul>
@@ -91,8 +82,8 @@
 
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="user_guide/getting_help.html"
-                        title="previous chapter">Getting help on using <tt class="docutils literal"><span class="pre">skimage</span></tt></a></p>
+  <p class="topless"><a href="user_guide/viewer.html"
+                        title="previous chapter">Image Viewer</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="gitwash/index.html"
                         title="next chapter">Working with <em>scikits-image</em> source code</a></p>
@@ -124,69 +115,7 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="scipy-2012-sprint">
-<h1>SciPy 2012 Sprint<a class="headerlink" href="#scipy-2012-sprint" title="Permalink to this headline">¶</a></h1>
-<p>Welcome! Stefan van der Walt and Tony Yu are organizing a coding sprint for
-scikits-image at SciPy 2012. Anyone who&#8217;s interested can join the party on July
-20th starting at 9 AM (location to be determined).</p>
-<p>We have a list of tasks for all levels of programmers, but we&#8217;d be really
-interested in new ideas as well.</p>
-<div class="section" id="basic">
-<h2>Basic<a class="headerlink" href="#basic" title="Permalink to this headline">¶</a></h2>
-<p>These tasks should just require some basic Python knowledge.</p>
-<div class="section" id="code-review">
-<h3>Code review<a class="headerlink" href="#code-review" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>geometric transformation PR</li>
-<li>morphological reconstruction PR</li>
-<li>Testing visualization tools</li>
-</ul>
-</div>
-<div class="section" id="docs">
-<h3>Docs<a class="headerlink" href="#docs" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>Task-based examples (<a class="reference external" href="http://stackoverflow.com/questions/8479058/how-do-i-find-waldo-with-mathematica">Where&#8217;s Waldo</a>, <a class="reference external" href="http://stackoverflow.com/questions/10196198/how-to-remove-convexity-defects-in-sudoku-square/11366549#11366549">Flatten Sudoku Puzzle</a>)</li>
-<li>Organize/add-topics to user guide (Add overview of packages)</li>
-</ul>
-</div>
-<div class="section" id="features">
-<h3>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h3>
-<ul>
-<li><p class="first">Add text, anti-aliasing to the draw module</p>
-</li>
-<li><p class="first">Lab color space conversion</p>
-</li>
-<li><p class="first">Add slicing to ImageCollection object</p>
-</li>
-<li><p class="first">Add imread_collection to all imread backends</p>
-</li>
-<li><p class="first">Resurrect the <a class="reference external" href="http://bit.ly/skimage_image_cls">Image object</a> and add
-EXIF and TIFF tags.
-- Add IPython display protocol.
-- Add an htmlrepr to the Image object.  Should we return image objects from</p>
-<blockquote>
-<div><p>all I/O routines?</p>
-</div></blockquote>
-</li>
-<li><p class="first">Add &#64;greyimage decorator to check if input is a greyscale image</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="section" id="intermediate">
-<h2>Intermediate<a class="headerlink" href="#intermediate" title="Permalink to this headline">¶</a></h2>
-<p>These tasks may require some understanding of image processing algorithms or
-scikits-image internals.</p>
-<ul class="simple">
-<li>Add binary features (BRIEF, BRISK, FREAK)</li>
-<li>Add <a class="reference external" href="http://pr.willowgarage.com/wiki/Star_Detector">STAR features</a></li>
-<li>Using the visualization tools, add an FFT-domain image editor</li>
-<li><a class="reference external" href="http://bit.ly/Nril3u">Blurring kernel estimation</a></li>
-<li>Better video loading (move to plugin framework, add backends)</li>
-</ul>
-</div>
-</div>
-<div class="section" id="how-to-contribute-to-skimage">
+  <div class="section" id="how-to-contribute-to-skimage">
 <span id="howto-contribute"></span><h1>How to contribute to <tt class="docutils literal"><span class="pre">skimage</span></tt><a class="headerlink" href="#how-to-contribute-to-skimage" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 </div>
@@ -200,17 +129,18 @@ following challenges you&#8217;d like to solve.</p>
 </ul>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#tasks" id="id2">Tasks</a><ul>
-<li><a class="reference internal" href="#implement-algorithms" id="id3">Implement Algorithms</a></li>
-<li><a class="reference internal" href="#drawing-directly-on-an-ndarray" id="id4">Drawing (directly on an ndarray)</a></li>
+<li><a class="reference internal" href="#tasks" id="id1">Tasks</a><ul>
+<li><a class="reference internal" href="#implement-algorithms" id="id2">Implement Algorithms</a></li>
+<li><a class="reference internal" href="#drawing-directly-on-an-ndarray" id="id3">Drawing (directly on an ndarray)</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#infrastructure" id="id5">Infrastructure</a><ul>
-<li><a class="reference internal" href="#adapt-existing-code-for-use" id="id6">Adapt existing code for use</a></li>
-<li><a class="reference internal" href="#merge-code-provided-by-cellprofiler-team" id="id7">Merge code provided by CellProfiler team</a></li>
-<li><a class="reference internal" href="#rework-linear-filters" id="id8">Rework linear filters</a></li>
-<li><a class="reference internal" href="#io" id="id9">io</a></li>
-<li><a class="reference internal" href="#id1" id="id10">docs</a></li>
+<li><a class="reference internal" href="#infrastructure" id="id4">Infrastructure</a><ul>
+<li><a class="reference internal" href="#adapt-existing-code-for-use" id="id5">Adapt existing code for use</a></li>
+<li><a class="reference internal" href="#merge-code-provided-by-cellprofiler-team" id="id6">Merge code provided by CellProfiler team</a></li>
+<li><a class="reference internal" href="#rework-linear-filters" id="id7">Rework linear filters</a></li>
+<li><a class="reference internal" href="#io" id="id8">io</a></li>
+<li><a class="reference internal" href="#viewer" id="id9">viewer</a></li>
+<li><a class="reference internal" href="#docs" id="id10">docs</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#development-process" id="id11">Development process</a><ul>
@@ -223,9 +153,9 @@ following challenges you&#8217;d like to solve.</p>
 </ul>
 </div>
 <div class="section" id="tasks">
-<h2><a class="toc-backref" href="#id2">Tasks</a><a class="headerlink" href="#tasks" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id1">Tasks</a><a class="headerlink" href="#tasks" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="implement-algorithms">
-<h3><a class="toc-backref" href="#id3">Implement Algorithms</a><a class="headerlink" href="#implement-algorithms" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id2">Implement Algorithms</a><a class="headerlink" href="#implement-algorithms" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Graph cut segmentation</li>
 <li><a class="reference external" href="http://www.cs.huji.ac.il/~yweiss/Colorization/">Image colorization</a></li>
@@ -236,24 +166,29 @@ following challenges you&#8217;d like to solve.</p>
 <li>Convex hulls of objects in a labels matrix (simply adapt current convex hull
 image code&#8211;this one&#8217;s low hanging fruit).  Generalise this solution to also
 skeletonize objects in a labels matrix.</li>
+<li>Add binary features (BRIEF, BRISK, FREAK)</li>
+<li>Add <a class="reference external" href="http://pr.willowgarage.com/wiki/Star_Detector">STAR features</a></li>
+<li><a class="reference external" href="http://bit.ly/Nril3u">Blurring kernel estimation</a></li>
 </ul>
 </div>
 <div class="section" id="drawing-directly-on-an-ndarray">
-<h3><a class="toc-backref" href="#id4">Drawing (directly on an ndarray)</a><a class="headerlink" href="#drawing-directly-on-an-ndarray" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id3">Drawing (directly on an ndarray)</a><a class="headerlink" href="#drawing-directly-on-an-ndarray" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Wu&#8217;s algorithm for circles</li>
 <li>Text rendering</li>
+<li>Add anti-aliasing</li>
 </ul>
 </div>
 </div>
 <div class="section" id="infrastructure">
-<h2><a class="toc-backref" href="#id5">Infrastructure</a><a class="headerlink" href="#infrastructure" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id4">Infrastructure</a><a class="headerlink" href="#infrastructure" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
+<li>Add &#64;greyimage decorator to check if input is a greyscale image</li>
 <li><span class="strike">Implement a new backend system so that we may start including
 PyOpenCL-based algorithms</span></li>
 </ul>
 <div class="section" id="adapt-existing-code-for-use">
-<h3><a class="toc-backref" href="#id6">Adapt existing code for use</a><a class="headerlink" href="#adapt-existing-code-for-use" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id5">Adapt existing code for use</a><a class="headerlink" href="#adapt-existing-code-for-use" title="Permalink to this headline">¶</a></h3>
 <p>These snippets and packages have already been written.  Some need to be
 modified to work as part of the scikit, others may be lacking in documentation
 or tests.</p>
@@ -305,7 +240,7 @@ BSD license (<a class="reference internal" href="cell_profiler.html"><em>CellPro
 who contributed.</p>
 </div>
 <div class="section" id="rework-linear-filters">
-<h3><a class="toc-backref" href="#id8">Rework linear filters</a><a class="headerlink" href="#rework-linear-filters" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id7">Rework linear filters</a><a class="headerlink" href="#rework-linear-filters" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Fast, SSE2 convolution (high priority) (see prototype in pull requests)</li>
 <li>Should take kernel or function for parameter (currently only takes function)</li>
@@ -313,15 +248,23 @@ who contributed.</p>
 </ul>
 </div>
 <div class="section" id="io">
-<h3><a class="toc-backref" href="#id9">io</a><a class="headerlink" href="#io" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id8">io</a><a class="headerlink" href="#io" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Update <tt class="docutils literal"><span class="pre">qt_plugin.py</span></tt> and other plugins to view collections.</li>
 <li>Rewrite GTK backend using GObject Introspection for Py3K compatibility.</li>
 <li>Add DICOM plugin for <a class="reference external" href="http://sourceforge.net/apps/mediawiki/gdcm">GDCM</a>.</li>
+<li>Add <tt class="docutils literal"><span class="pre">imread_collection</span></tt> to all <tt class="docutils literal"><span class="pre">imread</span></tt> backends</li>
+<li>Better video loading (move to plugin framework, add backends)</li>
 </ul>
 </div>
-<div class="section" id="id1">
-<h3><a class="toc-backref" href="#id10">docs</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="viewer">
+<h3><a class="toc-backref" href="#id9">viewer</a><a class="headerlink" href="#viewer" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Using the visualization tools, add an FFT-domain image editor</li>
+</ul>
+</div>
+<div class="section" id="docs">
+<h3><a class="toc-backref" href="#id10">docs</a><a class="headerlink" href="#docs" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Add examples to the gallery</li>
 <li>Write topics for the <a class="reference external" href="http://scikits-image.org/docs/dev/user_guide.html">user guide</a></li>

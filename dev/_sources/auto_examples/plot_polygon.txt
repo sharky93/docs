@@ -1,12 +1,12 @@
 .. _example_plot_polygon.py:
 
 
-====================
-Approximate Polygons
-====================
+==================================
+Approximate and subdivide polygons
+==================================
 
-This example shows how to approximate polygonal chains with the Douglas-Peucker
-algorithm.
+This example shows how to approximate (Douglas-Peucker algorithm) and subdivide
+(B-Splines) polygonal chains.
 
 .. image:: images/plot_polygon_1.png
     :align: center

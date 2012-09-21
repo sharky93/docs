@@ -161,17 +161,17 @@ May be used to directly index into an array, e.g.
 <tbody valign="top">
 <tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>cy, cx</strong> : double</p>
 <blockquote>
-<div><p>centre coordinate of circle</p>
+<div><p>Centre coordinate of circle.</p>
 </div></blockquote>
 <p><strong>radius: double</strong> :</p>
 <blockquote>
-<div><p>radius of circle</p>
+<div><p>Radius of circle.</p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>rr, cc</strong> : ndarray of int</p>
 <blockquote class="last">
-<div><p>Pixel coordinates of ellipse.
+<div><p>Pixel coordinates of circle.
 May be used to directly index into an array, e.g.
 <tt class="docutils literal"><span class="pre">img[rr,</span> <span class="pre">cc]</span> <span class="pre">=</span> <span class="pre">1</span></tt>.</p>
 </div></blockquote>
@@ -194,11 +194,11 @@ May be used to directly index into an array, e.g.
 <tbody valign="top">
 <tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>cy, cx</strong> : double</p>
 <blockquote>
-<div><p>centre coordinate of ellipse</p>
+<div><p>Centre coordinate of ellipse.</p>
 </div></blockquote>
 <p><strong>b, a: double</strong> :</p>
 <blockquote>
-<div><p>minor and major semi-axes. (x/a)**2 + (y/b)**2 = 1</p>
+<div><p>Minor and major semi-axes. <tt class="docutils literal"><span class="pre">(x/a)**2</span> <span class="pre">+</span> <span class="pre">(y/b)**2</span> <span class="pre">=</span> <span class="pre">1</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -260,11 +260,11 @@ May be used to directly index into an array, e.g.
 <tbody valign="top">
 <tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>y</strong> : (N,) ndarray</p>
 <blockquote>
-<div><p>y coordinates of vertices of polygon</p>
+<div><p>Y-coordinates of vertices of polygon.</p>
 </div></blockquote>
 <p><strong>x</strong> : (N,) ndarray</p>
 <blockquote>
-<div><p>x coordinates of vertices of polygon</p>
+<div><p>X-coordinates of vertices of polygon.</p>
 </div></blockquote>
 <p><strong>shape</strong> : tuple, optional</p>
 <blockquote>

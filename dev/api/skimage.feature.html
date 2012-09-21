@@ -185,24 +185,24 @@ type uint32, otherwise it is float64.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r37" rules="none">
+<table class="docutils citation" frame="void" id="r72" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[R37]</a></td><td>The GLCM Tutorial Home Page,
+<tr><td class="label"><a class="fn-backref" href="#id1">[R72]</a></td><td>The GLCM Tutorial Home Page,
 <a class="reference external" href="http://www.fp.ucalgary.ca/mhallbey/tutorial.htm">http://www.fp.ucalgary.ca/mhallbey/tutorial.htm</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r38" rules="none">
+<table class="docutils citation" frame="void" id="r73" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[R38]</a></td><td>Pattern Recognition Engineering, Morton Nadler &amp; Eric P.
+<tr><td class="label"><a class="fn-backref" href="#id2">[R73]</a></td><td>Pattern Recognition Engineering, Morton Nadler &amp; Eric P.
 Smith</td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r39" rules="none">
+<table class="docutils citation" frame="void" id="r74" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[R39]</a></td><td>Wikipedia, <a class="reference external" href="http://en.wikipedia.org/wiki/Co-occurrence_matrix">http://en.wikipedia.org/wiki/Co-occurrence_matrix</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id3">[R74]</a></td><td>Wikipedia, <a class="reference external" href="http://en.wikipedia.org/wiki/Co-occurrence_matrix">http://en.wikipedia.org/wiki/Co-occurrence_matrix</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -285,10 +285,10 @@ the d&#8217;th distance and the a&#8217;th angle.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r40" rules="none">
+<table class="docutils citation" frame="void" id="r75" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[R40]</a></td><td>The GLCM Tutorial Home Page,
+<tr><td class="label"><a class="fn-backref" href="#id4">[R75]</a></td><td>The GLCM Tutorial Home Page,
 <a class="reference external" href="http://www.fp.ucalgary.ca/mhallbey/tutorial.htm">http://www.fp.ucalgary.ca/mhallbey/tutorial.htm</a></td></tr>
 </tbody>
 </table>
@@ -471,14 +471,16 @@ angular space).</p>
 <blockquote>
 <div><p>Radius of circle (spatial resolution of the operator).</p>
 </div></blockquote>
-<p><strong>method</strong> : {&#8216;D&#8217;, &#8216;R&#8217;, &#8216;U&#8217;, &#8216;V&#8217;}</p>
+<p><strong>method</strong> : {&#8216;default&#8217;, &#8216;ror&#8217;, &#8216;uniform&#8217;, &#8216;var&#8217;}</p>
 <blockquote>
-<div><p>Method to determine the pattern::
-* &#8216;default&#8217;: original local binary pattern which is gray scale but not</p>
-<blockquote>
-<div><p>rotation invariant.</p>
-</div></blockquote>
+<div><p>Method to determine the pattern.</p>
 <ul>
+<li><dl class="first docutils">
+<dt>&#8216;default&#8217;: original local binary pattern which is gray scale but not</dt>
+<dd><p class="first last">rotation invariant.</p>
+</dd>
+</dl>
+</li>
 <li><dl class="first docutils">
 <dt>&#8216;ror&#8217;: extension of default implementation which is gray scale and</dt>
 <dd><p class="first last">rotation invariant.</p>
@@ -511,10 +513,10 @@ rotation invariant.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r41" rules="none">
+<table class="docutils citation" frame="void" id="r76" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id5">[R41]</a></td><td>Multiresolution Gray-Scale and Rotation Invariant Texture
+<tr><td class="label"><a class="fn-backref" href="#id5">[R76]</a></td><td>Multiresolution Gray-Scale and Rotation Invariant Texture
 Classification with Local Binary Patterns.
 Timo Ojala, Matti Pietikainen, Topi Maenpaa.
 <a class="reference external" href="http://www.rafbis.it/biplab15/images/stories/docenti/Danielriccio/">http://www.rafbis.it/biplab15/images/stories/docenti/Danielriccio/</a>           Articoliriferimento/LBP.pdf, 2002.</td></tr>
@@ -613,11 +615,11 @@ the coordinates of all pixels are returned.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image: ndarray of floats</strong> :</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray of floats</p>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
-<p><strong>min_distance: int</strong> :</p>
+<p><strong>min_distance</strong> : int</p>
 <blockquote>
 <div><p>Minimum number of pixels separating peaks and image boundary.</p>
 </div></blockquote>
@@ -625,11 +627,11 @@ the coordinates of all pixels are returned.</p>
 <blockquote>
 <div><p>Deprecated. See <cite>threshold_rel</cite>.</p>
 </div></blockquote>
-<p><strong>threshold_abs: float</strong> :</p>
+<p><strong>threshold_abs</strong> : float</p>
 <blockquote>
 <div><p>Minimum intensity of peaks.</p>
 </div></blockquote>
-<p><strong>threshold_rel: float</strong> :</p>
+<p><strong>threshold_rel</strong> : float</p>
 <blockquote>
 <div><p>Minimum intensity of peaks calculated as <cite>max(image) * threshold_rel</cite>.</p>
 </div></blockquote>

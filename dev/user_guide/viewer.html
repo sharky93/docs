@@ -3,20 +3,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Scikits-image viewer &mdash; skimage v0.6dev docs</title>
-    
+    <title>Image Viewer &mdash; skimage v0.7dev docs</title>
     <link rel="stylesheet" href="../_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6dev',
+        VERSION:     '0.7dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,9 +23,9 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/docversions.js"></script>
-    <link rel="top" title="skimage v0.6dev docs" href="../index.html" />
+    <link rel="top" title="skimage v0.7dev docs" href="../index.html" />
     <link rel="up" title="User Guide" href="../user_guide.html" />
-    <link rel="next" title="SciPy 2012 Sprint" href="../contribute.html" />
+    <link rel="next" title="How to contribute to skimage" href="../contribute.html" />
     <link rel="prev" title="Getting help on using skimage" href="getting_help.html" /> 
   </head>
   <body>
@@ -55,6 +52,14 @@
     </p>
     <p>&nbsp;</p>
   
+    <h3>Contents</h3>
+    <ul>
+<li><a class="reference internal" href="#">Image Viewer</a><ul>
+<li><a class="reference internal" href="#quick-start">Quick Start</a></li>
+</ul>
+</li>
+</ul>
+
 
 
   <h4>Previous topic</h4>
@@ -62,7 +67,7 @@
                         title="previous chapter">Getting help on using <tt class="docutils literal docutils literal docutils literal"><span class="pre">skimage</span></tt></a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="../contribute.html"
-                        title="next chapter">SciPy 2012 Sprint</a></p>
+                        title="next chapter">How to contribute to <tt class="docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal"><span class="pre">skimage</span></tt></a></p>
 
   <h3>Version</h3>
 
@@ -91,111 +96,72 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="scikits-image-viewer">
-<h1>Scikits-image viewer<a class="headerlink" href="#scikits-image-viewer" title="Permalink to this headline">¶</a></h1>
-<p><cite>skimage.viewer</cite> provides a <a class="reference external" href="http://matplotlib.sourceforge.net/">matplotlib</a>-based <cite>ImageViewer</cite> for displaying images, with the goal of making
-it easy to create interactive image editors. You can simply use it to display
-an image:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.viewer</span> <span class="kn">import</span> <span class="n">ImageViewer</span>
+  <div class="section" id="image-viewer">
+<h1>Image Viewer<a class="headerlink" href="#image-viewer" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="quick-start">
+<h2>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">skimage.viewer</span></tt> provides a <a class="reference external" href="http://matplotlib.sourceforge.net/">matplotlib</a>-based canvas for displaying images and
+a Qt-based GUI-toolkit, with the goal of making it easy to create interactive
+image editors. You can simply use it to display an image:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
+<span class="kn">from</span> <span class="nn">skimage.viewer</span> <span class="kn">import</span> <span class="n">ImageViewer</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="n">image</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">camera</span><span class="p">()</span>
-
-<span class="gp">&gt;&gt;&gt; </span><span class="n">view</span> <span class="o">=</span> <span class="n">ImageViewer</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">view</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">coins</span><span class="p">()</span>
+<span class="n">viewer</span> <span class="o">=</span> <span class="n">ImageViewer</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+<span class="n">viewer</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Of course, you can easily use matplotlib&#8217;s <cite>imshow</cite> function (or alternatively,
-<cite>skimage.io.imshow</cite> which adds support for multiple io-plugins) to display
-images. The advantage of <cite>ImageViewer</cite> is that you can (fairly) easily add
-plugins. Before discussing how to do that, let&#8217;s list some important attributes
-of <cite>ImageViewer</cite>:</p>
-<div class="highlight-python"><pre>image : array
-    Image being viewed. Setting this value will update the displayed frame.
-canvas, fig, ax : matplotlib canvas, figure, and axes
-    matplotlib canvas, figure, and axes used to display image.
-plugins : list
-    List of attached plugins.</pre>
-</div>
-<p><cite>ImageViewer.image</cite> is implemented as a property&#8212;so that setting <cite>image</cite>
-will update the displayed plot. Also, you can see from the list above that you
-have access to matplotlib <cite>canvas</cite>, <cite>figure</cite>, and <cite>axes</cite> objects if needed.</p>
-<p>The final attribute listed above is just a Python list of plugins, which
-contains references to plugins for manipulating images. Currently, only a few
-plugins are implemented, but it should be fairly easy to write your own. Before
-going into the details, let&#8217;s see an example of how a plugin is added to the
-viewer:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">skimage</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.viewer.plugins</span> <span class="kn">import</span> <span class="n">EdgeDetector</span>
+<p>Of course, you could just as easily use <tt class="docutils literal"><span class="pre">imshow</span></tt> from <a class="reference external" href="http://matplotlib.sourceforge.net/">matplotlib</a> (or
+alternatively, <tt class="docutils literal"><span class="pre">skimage.io.imshow</span></tt> which adds support for multiple
+io-plugins) to display images. The advantage of <tt class="docutils literal"><span class="pre">ImageViewer</span></tt> is that you can
+easily add plugins for manipulating images. Currently, only a few plugins are
+implemented, but it is easy to write your own. Before going into the details,
+let&#8217;s see an example of how a plugin is added to the viewer:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">skimage.viewer.plugins</span> <span class="kn">import</span> <span class="n">Canny</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="n">image</span> <span class="o">=</span> <span class="n">skimage</span><span class="o">.</span><span class="n">img_as_float</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">camera</span><span class="p">())</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">view</span> <span class="o">=</span> <span class="n">ImageViewer</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">EdgeDetector</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">view</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">viewer</span> <span class="o">=</span> <span class="n">ImageViewer</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+<span class="n">viewer</span> <span class="o">+=</span> <span class="n">Canny</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
+<span class="n">viewer</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>As you can see above, the plugin (here, <cite>EdgeDetector</cite>) is simply initialized
-with the viewer. This call adds the viewer to the plugin (which is required
-because the plugin is manipulating the image and needs to update the viewer),
-and under the hood, the plugin is adding itself to the viewer (this cross
-reference is used to clean things up if the viewer is closed&#8212;it isn&#8217;t too
-important to understand).</p>
-<p>To explain how to create a plugin, let&#8217;s look at a slightly-simplified version
-of <cite>EdgeDetector</cite>. The main parts to notice are that the plugin 1) subclasses
-<cite>Plugin</cite>, 2) takes an <cite>ImageViewer</cite> instance as an argument, and 3) creates its
-own <cite>figure</cite>, which holds some slider widgets for adjusting the parameters of
-the edge detector:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-
-<span class="kn">from</span> <span class="nn">skimage.filter</span> <span class="kn">import</span> <span class="n">canny</span>
+<p>At the moment, there aren&#8217;t very many plugins pre-defined, but there&#8217;s a really
+simple interface for creating your own plugin. First, let&#8217;s create a plugin to
+call the total-variation denoising function, <tt class="docutils literal"><span class="pre">tv_denoise</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">skimage.filter</span> <span class="kn">import</span> <span class="n">tv_denoise</span>
 <span class="kn">from</span> <span class="nn">skimage.viewer.plugins.base</span> <span class="kn">import</span> <span class="n">Plugin</span>
-<span class="kn">from</span> <span class="nn">skimage.viewer.widgets.slider</span> <span class="kn">import</span> <span class="n">Slider</span>
 
-<span class="k">class</span> <span class="nc">EdgeDetector</span><span class="p">(</span><span class="n">Plugin</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Plugin to detect edges in an image using a Sobel detector.</span>
-
-<span class="sd">    Parameters</span>
-<span class="sd">    ----------</span>
-<span class="sd">    image_viewer : ImageViewer instance.</span>
-<span class="sd">        Window containing image used in measurement.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image_viewer</span><span class="p">,</span> <span class="n">sigma_range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">low_range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-                 <span class="n">high_range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)):</span>
-        <span class="c"># custom figure to control the layout of sliders</span>
-        <span class="n">figure</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-        <span class="n">Plugin</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image_viewer</span><span class="p">,</span> <span class="n">figure</span><span class="o">=</span><span class="n">figure</span><span class="p">)</span>
-
-        <span class="c"># unpack the 3 axes created above and use them for slider widgets.</span>
-        <span class="n">ax_sigma</span><span class="p">,</span> <span class="n">ax_low</span><span class="p">,</span> <span class="n">ax_high</span> <span class="o">=</span> <span class="n">axes</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">slider_sigma</span> <span class="o">=</span> <span class="n">Slider</span><span class="p">(</span><span class="n">ax_sigma</span><span class="p">,</span> <span class="n">sigma_range</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;sigma&#39;</span><span class="p">,</span>
-                                   <span class="n">value</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">on_release</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">update_image</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">slider_low</span> <span class="o">=</span> <span class="n">Slider</span><span class="p">(</span><span class="n">ax_low</span><span class="p">,</span> <span class="n">low_range</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;low&#39;</span><span class="p">,</span>
-                                 <span class="n">value</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">on_release</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">update_image</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">slider_high</span> <span class="o">=</span> <span class="n">Slider</span><span class="p">(</span><span class="n">ax_high</span><span class="p">,</span> <span class="n">high_range</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;high&#39;</span><span class="p">,</span>
-                                  <span class="n">value</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">on_release</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">update_image</span><span class="p">)</span>
-
-        <span class="c"># save original image b/c we always want to filter the original.</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">original_image</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">viewer</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">update_image</span><span class="p">()</span>
-
-    <span class="k">def</span> <span class="nf">update_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">viewer</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">canny</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">original_image</span><span class="p">,</span>
-                                  <span class="n">sigma</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">slider_sigma</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
-                                  <span class="n">low_threshold</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">slider_low</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
-                                  <span class="n">high_threshold</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">slider_high</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">viewer</span><span class="o">.</span><span class="n">redraw</span><span class="p">()</span>
+<span class="n">denoise_plugin</span> <span class="o">=</span> <span class="n">Plugin</span><span class="p">(</span><span class="n">image_filter</span><span class="o">=</span><span class="n">tv_denoise</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Note that the <cite>ImageViewer</cite> instance gets passed to the <cite>Plugin</cite> base class,
-which saves it in the <cite>viewer</cite> attribute. The viewer can then be accessed in
-order to update the displayed image (see <cite>update_image</cite> method). Finally, the slider widgets are connected to the <cite>update_image</cite> method so that the <cite>canny</cite>
-filter is applied to the image whenever you adjust the sliders.</p>
-<p>The actual implementation of <cite>EdgeDetector</cite> has a few other parts (slightly
-enhancing user-interaction and aesthetics), but this is really all you need to
-write your own plugin. You can find more examples by browsing the source in
-<cite>skimage.viewer.plugins</cite>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <tt class="docutils literal"><span class="pre">Plugin</span></tt> assumes the first argument given to the image filter is the
+image from the image viewer. In the future, this should be changed so you
+can pass the image to a different argument of the filter function.</p>
+</div>
+<p>To actually interact with the filter, you have to add widgets that adjust the
+parameters of the function. Typically, that means adding a slider widget and
+connecting it to the filter parameter and the minimum and maximum values of the
+slider:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">skimage.viewer.widgets</span> <span class="kn">import</span> <span class="n">Slider</span>
+<span class="kn">from</span> <span class="nn">skimage.viewer.widgets.history</span> <span class="kn">import</span> <span class="n">SaveButtons</span>
+
+<span class="n">denoise_plugin</span> <span class="o">+=</span> <span class="n">Slider</span><span class="p">(</span><span class="s">&#39;weight&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">update_on</span><span class="o">=</span><span class="s">&#39;release&#39;</span><span class="p">)</span>
+<span class="n">denoise_plugin</span> <span class="o">+=</span> <span class="n">SaveButtons</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Here, we connect a slider widget to the filter&#8217;s &#8216;weight&#8217; argument.  We also
+added some buttons for saving the image to file or to the <tt class="docutils literal"><span class="pre">scikits-image</span></tt>
+image stack (see <tt class="docutils literal"><span class="pre">skimage.io.push</span></tt> and <tt class="docutils literal"><span class="pre">skimage.io.pop</span></tt>).</p>
+<p>All that&#8217;s left is to create an image viewer and add the plugin to that viewer.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">viewer</span> <span class="o">=</span> <span class="n">ImageViewer</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+<span class="n">viewer</span> <span class="o">+=</span> <span class="n">denoise_plugin</span>
+<span class="n">viewer</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/denoise_viewer_window.png" src="../_images/denoise_viewer_window.png" />
+<img alt="../_images/denoise_plugin_window.png" src="../_images/denoise_plugin_window.png" />
+</div>
 </div>
 
 
@@ -211,7 +177,7 @@ write your own plugin. You can find more examples by browsing the source in
       
     <div class="footer">
         &copy; Copyright 2011, the scikits-image team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.8.
     </div>
     </div>
 

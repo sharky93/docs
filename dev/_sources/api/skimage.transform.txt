@@ -2,11 +2,6 @@
 
 Module: :mod:`transform`
 ========================
-Inheritance diagram for ``skimage.transform``:
-
-.. inheritance-diagram:: skimage.transform 
-   :parts: 3
-
 .. automodule:: skimage.transform
 
 .. currentmodule:: skimage.transform
@@ -19,7 +14,17 @@ Inheritance diagram for ``skimage.transform``:
   :members:
   :undoc-members:
   :show-inheritance:
-  :inherited-members:
+
+  .. automethod:: __init__
+
+:class:`PiecewiseAffineTransform`
+---------------------------------
+
+
+.. autoclass:: PiecewiseAffineTransform
+  :members:
+  :undoc-members:
+  :show-inheritance:
 
   .. automethod:: __init__
 
@@ -31,7 +36,6 @@ Inheritance diagram for ``skimage.transform``:
   :members:
   :undoc-members:
   :show-inheritance:
-  :inherited-members:
 
   .. automethod:: __init__
 
@@ -43,7 +47,6 @@ Inheritance diagram for ``skimage.transform``:
   :members:
   :undoc-members:
   :show-inheritance:
-  :inherited-members:
 
   .. automethod:: __init__
 
@@ -55,13 +58,11 @@ Inheritance diagram for ``skimage.transform``:
   :members:
   :undoc-members:
   :show-inheritance:
-  :inherited-members:
 
   .. automethod:: __init__
 .. autosummary::
 
    skimage.transform.estimate_transform
-   skimage.transform.fast_homography
    skimage.transform.frt2
    skimage.transform.homography
    skimage.transform.hough
@@ -70,7 +71,13 @@ Inheritance diagram for ``skimage.transform``:
    skimage.transform.integrate
    skimage.transform.iradon
    skimage.transform.probabilistic_hough
+   skimage.transform.pyramid_expand
+   skimage.transform.pyramid_gaussian
+   skimage.transform.pyramid_laplacian
+   skimage.transform.pyramid_reduce
    skimage.transform.radon
+   skimage.transform.resize
+   skimage.transform.rotate
    skimage.transform.swirl
    skimage.transform.warp
    skimage.transform.warp_coords
@@ -79,11 +86,6 @@ estimate_transform
 ------------------
 
 .. autofunction:: skimage.transform.estimate_transform
-
-fast_homography
----------------
-
-.. autofunction:: skimage.transform.fast_homography
 
 frt2
 ----
@@ -125,10 +127,40 @@ probabilistic_hough
 
 .. autofunction:: skimage.transform.probabilistic_hough
 
+pyramid_expand
+--------------
+
+.. autofunction:: skimage.transform.pyramid_expand
+
+pyramid_gaussian
+----------------
+
+.. autofunction:: skimage.transform.pyramid_gaussian
+
+pyramid_laplacian
+-----------------
+
+.. autofunction:: skimage.transform.pyramid_laplacian
+
+pyramid_reduce
+--------------
+
+.. autofunction:: skimage.transform.pyramid_reduce
+
 radon
 -----
 
 .. autofunction:: skimage.transform.radon
+
+resize
+------
+
+.. autofunction:: skimage.transform.resize
+
+rotate
+------
+
+.. autofunction:: skimage.transform.rotate
 
 swirl
 -----

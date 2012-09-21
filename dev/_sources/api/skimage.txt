@@ -8,6 +8,7 @@
 .. autosummary::
 
    skimage.get_log
+   skimage.img_as_bool
    skimage.img_as_float
    skimage.img_as_int
    skimage.img_as_ubyte
@@ -17,6 +18,11 @@ get_log
 -------
 
 .. autofunction:: skimage.get_log
+
+img_as_bool
+-----------
+
+.. autofunction:: skimage.img_as_bool
 
 img_as_float
 ------------

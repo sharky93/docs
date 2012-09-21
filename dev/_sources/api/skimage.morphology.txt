@@ -7,6 +7,10 @@ Module: :mod:`morphology`
 .. currentmodule:: skimage.morphology
 .. autosummary::
 
+   skimage.morphology.binary_closing
+   skimage.morphology.binary_dilation
+   skimage.morphology.binary_erosion
+   skimage.morphology.binary_opening
    skimage.morphology.black_tophat
    skimage.morphology.closing
    skimage.morphology.convex_hull_image
@@ -24,11 +28,32 @@ Module: :mod:`morphology`
    skimage.morphology.label
    skimage.morphology.medial_axis
    skimage.morphology.opening
+   skimage.morphology.reconstruction
    skimage.morphology.rectangle
    skimage.morphology.skeletonize
    skimage.morphology.square
    skimage.morphology.watershed
    skimage.morphology.white_tophat
+
+binary_closing
+--------------
+
+.. autofunction:: skimage.morphology.binary_closing
+
+binary_dilation
+---------------
+
+.. autofunction:: skimage.morphology.binary_dilation
+
+binary_erosion
+--------------
+
+.. autofunction:: skimage.morphology.binary_erosion
+
+binary_opening
+--------------
+
+.. autofunction:: skimage.morphology.binary_opening
 
 black_tophat
 ------------
@@ -114,6 +139,11 @@ opening
 -------
 
 .. autofunction:: skimage.morphology.opening
+
+reconstruction
+--------------
+
+.. autofunction:: skimage.morphology.reconstruction
 
 rectangle
 ---------

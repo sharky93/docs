@@ -101,10 +101,9 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="module-filter">
-<h1>Module: <tt class="xref py py-mod docutils literal"><span class="pre">filter</span></tt><a class="headerlink" href="#module-filter" title="Permalink to this headline">¶</a></h1>
-<p>Inheritance diagram for <tt class="docutils literal"><span class="pre">skimage.filter</span></tt>:</p>
-<span class="target" id="module-skimage.filter"></span><div class="section" id="lpifilter2d">
+  <div class="section" id="module-skimage.filter">
+<span id="module-filter"></span><h1>Module: <tt class="xref py py-mod docutils literal"><span class="pre">filter</span></tt><a class="headerlink" href="#module-skimage.filter" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="lpifilter2d">
 <h2><a class="reference internal" href="#skimage.filter.LPIFilter2D" title="skimage.filter.LPIFilter2D"><tt class="xref py py-class docutils literal"><span class="pre">LPIFilter2D</span></tt></a><a class="headerlink" href="#lpifilter2d" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="skimage.filter.LPIFilter2D">
@@ -120,14 +119,17 @@
 <tbody valign="top">
 <tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>impulse_response</strong> : callable <cite>f(r, c, **filter_params)</cite></p>
 <blockquote class="last">
-<div><p>Function that yields the impulse response.  <cite>r</cite> and
-<cite>c</cite> are 1-dimensional vectors that represent row and
-column positions, in other words coordinates are
-(r[0],c[0]),(r[0],c[1]) etc.  <cite>**filter_params</cite> are
-passed through.</p>
-<p>In other words, example would be called like this:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<div><p>Function that yields the impulse response.  <cite>r</cite> and <cite>c</cite> are
+1-dimensional vectors that represent row and column positions, in
+other words coordinates are (r[0],c[0]),(r[0],c[1]) etc.
+<cite>**filter_params</cite> are passed through.</p>
+<p>In other words, <cite>impulse_response</cite> would be called like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">impulse_response</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="o">**</span><span class="n">filter_params</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">pass</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">filter_params</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;kw1&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;kw2&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&#39;kw3&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">impulse_response</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="o">**</span><span class="n">filter_params</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -139,10 +141,8 @@ passed through.</p>
 <p class="rubric">Examples</p>
 <p>Gaussian filter:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">filt_func</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
-<span class="go">        return np.exp(-np.hypot(r, c)/1)</span>
-</pre></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">filter</span> <span class="o">=</span> <span class="n">LPIFilter2D</span><span class="p">(</span><span class="n">filt_func</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">hypot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span><span class="o">/</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">filter</span> <span class="o">=</span> <span class="n">LPIFilter2D</span><span class="p">(</span><span class="n">filt_func</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -299,7 +299,9 @@ Pattern Analysis and Machine Intelligence, 8:679-714, 1986</p>
 </div></blockquote>
 <p><strong>mask</strong> : array_like, dtype=bool, optional</p>
 <blockquote>
-<div><p>An optional mask to limit the application to a certain area.</p>
+<div><p>An optional mask to limit the application to a certain area.
+Note that pixels surrounding masked regions are also masked to
+prevent masked regions from affecting the result.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -337,7 +339,9 @@ result at each point:</p>
 </div></blockquote>
 <p><strong>mask</strong> : array_like, dtype=bool, optional</p>
 <blockquote>
-<div><p>An optional mask to limit the application to a certain area.</p>
+<div><p>An optional mask to limit the application to a certain area.
+Note that pixels surrounding masked regions are also masked to
+prevent masked regions from affecting the result.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -383,10 +387,9 @@ result at each point:</p>
 </div></blockquote>
 <p><strong>max_gain</strong> : float</p>
 <blockquote class="last">
-<div><p>Limit the filter gain.  Often, the filter contains
-zeros, which would cause the inverse filter to have
-infinite gain.  High gain causes amplification of
-artefacts, so a conservative limit is recommended.</p>
+<div><p>Limit the filter gain.  Often, the filter contains zeros, which would
+cause the inverse filter to have infinite gain.  High gain causes
+amplification of artefacts, so a conservative limit is recommended.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -457,7 +460,9 @@ in practice, it will be the lowest value in the valid area.</p>
 </div></blockquote>
 <p><strong>mask</strong> : array_like, dtype=bool, optional</p>
 <blockquote>
-<div><p>An optional mask to limit the application to a certain area.</p>
+<div><p>An optional mask to limit the application to a certain area.
+Note that pixels surrounding masked regions are also masked to
+prevent masked regions from affecting the result.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -539,7 +544,9 @@ n - 1, where n is the number of distinct unique values in
 </div></blockquote>
 <p><strong>mask</strong> : array_like, dtype=bool, optional</p>
 <blockquote>
-<div><p>An optional mask to limit the application to a certain area.</p>
+<div><p>An optional mask to limit the application to a certain area.
+Note that pixels surrounding masked regions are also masked to
+prevent masked regions from affecting the result.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -574,7 +581,7 @@ a given function using the &#8216;generic&#8217; method.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : NxM ndarray</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : (N, M) ndarray</p>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
@@ -587,8 +594,7 @@ threshold value (e.g. 3, 5, 7, ..., 21, ...).</p>
 <blockquote>
 <div><p>Method used to determine adaptive threshold for local neighbourhood in
 weighted mean image.</p>
-<blockquote>
-<div><ul>
+<ul>
 <li><p class="first">&#8216;generic&#8217;: use custom function (see <cite>param</cite> parameter)</p>
 </li>
 <li><dl class="first docutils">
@@ -602,7 +608,6 @@ weighted mean image.</p>
 <li><p class="first">&#8216;median&#8217; apply median rank filter</p>
 </li>
 </ul>
-</div></blockquote>
 <p>By default the &#8216;gaussian&#8217; method is used.</p>
 </div></blockquote>
 <p><strong>offset</strong> : float, optional</p>
@@ -625,7 +630,7 @@ for the centre pixel.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>threshold</strong> : NxM ndarray</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>threshold</strong> : (N, M) ndarray</p>
 <blockquote class="last">
 <div><p>Thresholded binary image</p>
 </div></blockquote>
@@ -679,10 +684,10 @@ integer arrays.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r44" rules="none">
+<table class="docutils citation" frame="void" id="r89" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[R44]</a></td><td>Wikipedia, <a class="reference external" href="http://en.wikipedia.org/wiki/Otsu's_Method">http://en.wikipedia.org/wiki/Otsu&#8217;s_Method</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id1">[R89]</a></td><td>Wikipedia, <a class="reference external" href="http://en.wikipedia.org/wiki/Otsu's_Method">http://en.wikipedia.org/wiki/Otsu&#8217;s_Method</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -699,7 +704,7 @@ integer arrays.</p>
 <h2>tv_denoise<a class="headerlink" href="#tv-denoise" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.filter.tv_denoise">
-<tt class="descclassname">skimage.filter.</tt><tt class="descname">tv_denoise</tt><big>(</big><em>im</em>, <em>weight=50</em>, <em>eps=0.0002</em>, <em>keep_type=False</em>, <em>n_iter_max=200</em><big>)</big><a class="headerlink" href="#skimage.filter.tv_denoise" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">skimage.filter.</tt><tt class="descname">tv_denoise</tt><big>(</big><em>im</em>, <em>weight=50</em>, <em>eps=0.0002</em>, <em>n_iter_max=200</em><big>)</big><a class="headerlink" href="#skimage.filter.tv_denoise" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform total-variation denoising on 2-d and 3-d images</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -724,12 +729,6 @@ determines the stop criterion. The algorithm stops when:</p>
 <div><p>(E_(n-1) - E_n) &lt; eps * E_0</p>
 </div></blockquote>
 </div></blockquote>
-<p><strong>keep_type: bool, optional (False)</strong> :</p>
-<blockquote>
-<div><p>whether the output has the same dtype as the input array.
-keep_type is False by default, and the dtype of the output
-is np.float</p>
-</div></blockquote>
 <p><strong>n_iter_max: int, optional</strong> :</p>
 <blockquote>
 <div><p>maximal number of iterations used for the optimization.</p>
@@ -738,7 +737,7 @@ is np.float</p>
 </tr>
 <tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out: ndarray</strong> :</p>
 <blockquote class="last">
-<div><p>denoised array</p>
+<div><p>denoised array of floats</p>
 </div></blockquote>
 </td>
 </tr>
@@ -753,12 +752,12 @@ the integral of the norm of the image gradient. Total variation
 denoising tends to produce &#8220;cartoon-like&#8221; images, that is,
 piecewise-constant images.</p>
 <p>This code is an implementation of the algorithm of Rudin, Fatemi and Osher
-that was proposed by Chambolle in <a class="reference internal" href="#r45">[R45]</a>.</p>
+that was proposed by Chambolle in <a class="reference internal" href="#r90">[R90]</a>.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r45" rules="none">
+<table class="docutils citation" frame="void" id="r90" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R45]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id3">2</a>)</em> A. Chambolle, An algorithm for total variation minimization and
+<tr><td class="label">[R90]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id3">2</a>)</em> A. Chambolle, An algorithm for total variation minimization and
 applications, Journal of Mathematical Imaging and Vision,
 Springer, 2004, 20, 89-97.</td></tr>
 </tbody>
@@ -798,7 +797,9 @@ Springer, 2004, 20, 89-97.</td></tr>
 </div></blockquote>
 <p><strong>mask</strong> : array_like, dtype=bool, optional</p>
 <blockquote>
-<div><p>An optional mask to limit the application to a certain area.</p>
+<div><p>An optional mask to limit the application to a certain area.
+Note that pixels surrounding masked regions are also masked to
+prevent masked regions from affecting the result.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -836,7 +837,9 @@ result at each point:</p>
 </div></blockquote>
 <p><strong>mask</strong> : array_like, dtype=bool, optional</p>
 <blockquote>
-<div><p>An optional mask to limit the application to a certain area</p>
+<div><p>An optional mask to limit the application to a certain area
+Note that pixels surrounding masked regions are also masked to
+prevent masked regions from affecting the result.</p>
 </div></blockquote>
 </td>
 </tr>

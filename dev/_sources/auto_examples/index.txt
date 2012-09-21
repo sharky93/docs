@@ -21,15 +21,20 @@ General-purpose and introductory examples for the scikit.
    plot_glcm
    plot_harris
    plot_hog
+   plot_holes_and_peaks
    plot_hough_transform
+   plot_label
    plot_lena_tv_denoise
    plot_local_binary_pattern
    plot_medial_transform
    plot_otsu
    plot_peak_local_max
+   plot_piecewise_affine
    plot_polygon
+   plot_pyramid
    plot_radon_transform
    plot_random_walker_segmentation
+   plot_regional_maxima
    plot_regionprops
    plot_segmentations
    plot_shapes
@@ -98,11 +103,25 @@ General-purpose and introductory examples for the scikit.
    :ref:`example_plot_hog.py`
 
 
+.. figure:: images/thumb/plot_holes_and_peaks.png
+   :figclass: gallery
+   :target: ./plot_holes_and_peaks.html
+
+   :ref:`example_plot_holes_and_peaks.py`
+
+
 .. figure:: images/thumb/plot_hough_transform.png
    :figclass: gallery
    :target: ./plot_hough_transform.html
 
    :ref:`example_plot_hough_transform.py`
+
+
+.. figure:: images/thumb/plot_label.png
+   :figclass: gallery
+   :target: ./plot_label.html
+
+   :ref:`example_plot_label.py`
 
 
 .. figure:: images/thumb/plot_lena_tv_denoise.png
@@ -140,11 +159,25 @@ General-purpose and introductory examples for the scikit.
    :ref:`example_plot_peak_local_max.py`
 
 
+.. figure:: images/thumb/plot_piecewise_affine.png
+   :figclass: gallery
+   :target: ./plot_piecewise_affine.html
+
+   :ref:`example_plot_piecewise_affine.py`
+
+
 .. figure:: images/thumb/plot_polygon.png
    :figclass: gallery
    :target: ./plot_polygon.html
 
    :ref:`example_plot_polygon.py`
+
+
+.. figure:: images/thumb/plot_pyramid.png
+   :figclass: gallery
+   :target: ./plot_pyramid.html
+
+   :ref:`example_plot_pyramid.py`
 
 
 .. figure:: images/thumb/plot_radon_transform.png
@@ -159,6 +192,13 @@ General-purpose and introductory examples for the scikit.
    :target: ./plot_random_walker_segmentation.html
 
    :ref:`example_plot_random_walker_segmentation.py`
+
+
+.. figure:: images/thumb/plot_regional_maxima.png
+   :figclass: gallery
+   :target: ./plot_regional_maxima.html
+
+   :ref:`example_plot_regional_maxima.py`
 
 
 .. figure:: images/thumb/plot_regionprops.png
