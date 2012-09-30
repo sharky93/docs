@@ -3,17 +3,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Module: io.video &mdash; skimage v0.7dev docs</title>
+    <title>Module: io.video &mdash; skimage v0.8dev docs</title>
+    
     <link rel="stylesheet" href="../_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.7dev',
+        VERSION:     '0.8dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +26,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/docversions.js"></script>
-    <link rel="top" title="skimage v0.7dev docs" href="../index.html" /> 
+    <link rel="top" title="skimage v0.8dev docs" href="../index.html" /> 
   </head>
   <body>
     <div class="header-wrapper">
@@ -53,7 +56,6 @@
     <ul>
 <li><a class="reference internal" href="#">Module: <tt class="docutils literal"><span class="pre">io.video</span></tt></a><ul>
 <li><a class="reference internal" href="#cvvideo"><tt class="docutils literal"><span class="pre">CvVideo</span></tt></a></li>
-<li><a class="reference internal" href="#discoverer"><tt class="docutils literal"><span class="pre">Discoverer</span></tt></a></li>
 <li><a class="reference internal" href="#gstvideo"><tt class="docutils literal"><span class="pre">GstVideo</span></tt></a></li>
 <li><a class="reference internal" href="#imagecollection"><tt class="docutils literal"><span class="pre">ImageCollection</span></tt></a><ul>
 </ul>
@@ -106,7 +108,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>source</strong> : str</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>source</strong> : str</p>
 <blockquote>
 <div><p>Media location URI. Video file path or http address of IP camera.</p>
 </div></blockquote>
@@ -131,7 +133,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : int</p>
+<tr class="field-odd field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : int</p>
 <blockquote class="last">
 <div><p>Time length [ms].</p>
 </div></blockquote>
@@ -149,7 +151,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : int</p>
+<tr class="field-odd field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : int</p>
 <blockquote class="last">
 <div><p>Frame count.</p>
 </div></blockquote>
@@ -167,7 +169,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : array (image)</p>
+<tr class="field-odd field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : array (image)</p>
 <blockquote class="last">
 <div><p>Retrieved image.</p>
 </div></blockquote>
@@ -185,7 +187,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>frame_number</strong> : int</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>frame_number</strong> : int</p>
 <blockquote class="last">
 <div><p>Frame position</p>
 </div></blockquote>
@@ -203,7 +205,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>milliseconds</strong> : int</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>milliseconds</strong> : int</p>
 <blockquote class="last">
 <div><p>Time position</p>
 </div></blockquote>
@@ -211,45 +213,6 @@
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="discoverer">
-<h2><a class="reference internal" href="#skimage.io.video.Discoverer" title="skimage.io.video.Discoverer"><tt class="xref py py-class docutils literal"><span class="pre">Discoverer</span></tt></a><a class="headerlink" href="#discoverer" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="skimage.io.video.Discoverer">
-<em class="property">class </em><tt class="descclassname">skimage.io.video.</tt><tt class="descname">Discoverer</tt><big>(</big><em>filename</em>, <em>max_interleave=1.0</em>, <em>timeout=3000</em><big>)</big><a class="headerlink" href="#skimage.io.video.Discoverer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">gst.Pipeline</span></tt></p>
-<p>Discovers information about files.
-This class is event-based and needs a mainloop to work properly.
-Emits the &#8216;discovered&#8217; signal when discovery is finished.</p>
-<p>The &#8216;discovered&#8217; callback has one boolean argument, which is True if the
-file contains decodable multimedia streams.</p>
-<dl class="method">
-<dt id="skimage.io.video.Discoverer.__init__">
-<tt class="descname">__init__</tt><big>(</big><em>filename</em>, <em>max_interleave=1.0</em>, <em>timeout=3000</em><big>)</big><a class="headerlink" href="#skimage.io.video.Discoverer.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>filename: str; absolute path of the file to be discovered.
-max_interleave: int or float; the maximum frame interleave in seconds.</p>
-<blockquote>
-<div>The value must be greater than the input file frame interleave
-or the discoverer may not find out all input file&#8217;s streams.
-The default value is 1 second and you shouldn&#8217;t have to change it,
-changing it mean larger discovering time and bigger memory usage.</div></blockquote>
-<p>timeout: int; duration in ms for the discovery to complete.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="skimage.io.video.Discoverer.discover">
-<tt class="descname">discover</tt><big>(</big><big>)</big><a class="headerlink" href="#skimage.io.video.Discoverer.discover" title="Permalink to this definition">¶</a></dt>
-<dd><p>Find the information on the given file asynchronously</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="skimage.io.video.Discoverer.print_info">
-<tt class="descname">print_info</tt><big>(</big><big>)</big><a class="headerlink" href="#skimage.io.video.Discoverer.print_info" title="Permalink to this definition">¶</a></dt>
-<dd><p>prints out the information on the given file</p>
 </dd></dl>
 
 </dd></dl>
@@ -266,7 +229,7 @@ changing it mean larger discovering time and bigger memory usage.</div></blockqu
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>source</strong> : str</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>source</strong> : str</p>
 <blockquote>
 <div><p>Media location URI. Video file path or http address of IP camera.</p>
 </div></blockquote>
@@ -297,7 +260,7 @@ cameras and other real time video feeds.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : int</p>
+<tr class="field-odd field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : int</p>
 <blockquote class="last">
 <div><p>Time length [ms].</p>
 </div></blockquote>
@@ -315,7 +278,7 @@ cameras and other real time video feeds.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : int</p>
+<tr class="field-odd field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : int</p>
 <blockquote class="last">
 <div><p>Frame count.</p>
 </div></blockquote>
@@ -333,7 +296,7 @@ cameras and other real time video feeds.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : array (image)</p>
+<tr class="field-odd field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : array (image)</p>
 <blockquote class="last">
 <div><p>Retrieved image.</p>
 </div></blockquote>
@@ -351,7 +314,7 @@ cameras and other real time video feeds.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>frame_number</strong> : int</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>frame_number</strong> : int</p>
 <blockquote class="last">
 <div><p>Frame position</p>
 </div></blockquote>
@@ -369,7 +332,7 @@ cameras and other real time video feeds.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>milliseconds</strong> : int</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>milliseconds</strong> : int</p>
 <blockquote class="last">
 <div><p>Time position</p>
 </div></blockquote>
@@ -395,7 +358,7 @@ slicing returns a new ImageCollection, <em>not</em> a view into the data.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>load_pattern</strong> : str or list</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>load_pattern</strong> : str or list</p>
 <blockquote>
 <div><p>Pattern glob or filenames to load. The path can be absolute or
 relative.  Multiple patterns should be separated by a colon,
@@ -461,7 +424,7 @@ frame from a video file:</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr><td><a class="reference internal" href="#skimage.io.video.ImageCollection.files" title="skimage.io.video.ImageCollection.files"><tt class="xref py py-obj docutils literal"><span class="pre">files</span></tt></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.io.video.ImageCollection.files" title="skimage.io.video.ImageCollection.files"><tt class="xref py py-obj docutils literal"><span class="pre">files</span></tt></a></td>
 <td></td>
 </tr>
 </tbody>
@@ -480,13 +443,13 @@ frame from a video file:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>ar</strong> : np.ndarray</p>
+<tr class="field-odd field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>ar</strong> : np.ndarray</p>
 <blockquote>
 <div><p>An array having one more dimension than the images in <cite>self</cite>.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<tr class="field-even field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
 <div><p>If images in the <cite>ImageCollection</cite> don&#8217;t have identical shapes.</p>
 </div></blockquote>
@@ -518,7 +481,7 @@ frame from a video file:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>n</strong> : None or int</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>n</strong> : None or int</p>
 <blockquote class="last">
 <div><p>Clear the cache for this image only. By default, the
 entire cache is erased.</p>
@@ -543,7 +506,7 @@ entire cache is erased.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>source</strong> : str</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>source</strong> : str</p>
 <blockquote>
 <div><p>Media location URI. Video file path or http address of IP camera.</p>
 </div></blockquote>
@@ -578,7 +541,7 @@ Useful for IP cameras and other real time video feeds.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : int</p>
+<tr class="field-odd field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : int</p>
 <blockquote class="last">
 <div><p>Time length [ms].</p>
 </div></blockquote>
@@ -596,7 +559,7 @@ Useful for IP cameras and other real time video feeds.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : int</p>
+<tr class="field-odd field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : int</p>
 <blockquote class="last">
 <div><p>Frame count.</p>
 </div></blockquote>
@@ -614,7 +577,7 @@ Useful for IP cameras and other real time video feeds.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : array (image)</p>
+<tr class="field-odd field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : array (image)</p>
 <blockquote class="last">
 <div><p>Retrieved image.</p>
 </div></blockquote>
@@ -632,13 +595,13 @@ Useful for IP cameras and other real time video feeds.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>time_range: range (int), optional</strong> :</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>time_range: range (int), optional</strong> :</p>
 <blockquote>
 <div><p>Time steps to extract, defaults to the entire length of video.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output: ImageCollection</strong> :</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output: ImageCollection</strong> :</p>
 <blockquote class="last">
 <div><p>Collection of images iterator.</p>
 </div></blockquote>
@@ -656,13 +619,13 @@ Useful for IP cameras and other real time video feeds.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>frame_number</strong> : int</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>frame_number</strong> : int</p>
 <blockquote>
 <div><p>Frame position</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : array (image)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : array (image)</p>
 <blockquote class="last">
 <div><p>Retrieved image.</p>
 </div></blockquote>
@@ -680,7 +643,7 @@ Useful for IP cameras and other real time video feeds.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>frame_number</strong> : int</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>frame_number</strong> : int</p>
 <blockquote class="last">
 <div><p>Frame position</p>
 </div></blockquote>
@@ -698,7 +661,7 @@ Useful for IP cameras and other real time video feeds.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>milliseconds</strong> : int</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>milliseconds</strong> : int</p>
 <blockquote class="last">
 <div><p>Time position</p>
 </div></blockquote>
@@ -734,7 +697,7 @@ Useful for IP cameras and other real time video feeds.</p>
       
     <div class="footer">
         &copy; Copyright 2011, the scikits-image team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.8.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
     </div>
     </div>
 

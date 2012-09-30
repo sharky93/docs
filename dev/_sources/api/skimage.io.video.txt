@@ -17,17 +17,6 @@ Module: :mod:`io.video`
 
   .. automethod:: __init__
 
-:class:`Discoverer`
--------------------
-
-
-.. autoclass:: Discoverer
-  :members:
-  :undoc-members:
-  :show-inheritance:
-
-  .. automethod:: __init__
-
 :class:`GstVideo`
 -----------------
 

@@ -3,17 +3,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Module: transform.pyramids &mdash; skimage v0.7dev docs</title>
+    <title>Module: transform.pyramids &mdash; skimage v0.8dev docs</title>
+    
     <link rel="stylesheet" href="../_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.7dev',
+        VERSION:     '0.8dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +26,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/docversions.js"></script>
-    <link rel="top" title="skimage v0.7dev docs" href="../index.html" /> 
+    <link rel="top" title="skimage v0.8dev docs" href="../index.html" /> 
   </head>
   <body>
     <div class="header-wrapper">
@@ -100,22 +103,22 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr><td><a class="reference internal" href="#skimage.transform.pyramids.img_as_float" title="skimage.transform.pyramids.img_as_float"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.pyramids.img_as_float</span></tt></a>(image)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.pyramids.img_as_float" title="skimage.transform.pyramids.img_as_float"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.pyramids.img_as_float</span></tt></a>(image)</td>
 <td>Convert an image to double-precision floating point format.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.transform.pyramids.pyramid_expand" title="skimage.transform.pyramids.pyramid_expand"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.pyramids.pyramid_expand</span></tt></a>(image)</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.transform.pyramids.pyramid_expand" title="skimage.transform.pyramids.pyramid_expand"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.pyramids.pyramid_expand</span></tt></a>(image)</td>
 <td>Upsample and then smooth image.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.transform.pyramids.pyramid_gaussian" title="skimage.transform.pyramids.pyramid_gaussian"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.pyramids.pyramid_gaussian</span></tt></a>(image)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.pyramids.pyramid_gaussian" title="skimage.transform.pyramids.pyramid_gaussian"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.pyramids.pyramid_gaussian</span></tt></a>(image)</td>
 <td>Yield images of the gaussian pyramid formed by the input image.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.transform.pyramids.pyramid_laplacian" title="skimage.transform.pyramids.pyramid_laplacian"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.pyramids.pyramid_laplacian</span></tt></a>(image)</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.transform.pyramids.pyramid_laplacian" title="skimage.transform.pyramids.pyramid_laplacian"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.pyramids.pyramid_laplacian</span></tt></a>(image)</td>
 <td>Yield images of the laplacian pyramid formed by the input image.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.transform.pyramids.pyramid_reduce" title="skimage.transform.pyramids.pyramid_reduce"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.pyramids.pyramid_reduce</span></tt></a>(image)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.pyramids.pyramid_reduce" title="skimage.transform.pyramids.pyramid_reduce"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.pyramids.pyramid_reduce</span></tt></a>(image)</td>
 <td>Smooth and then downsample image.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.transform.pyramids.resize" title="skimage.transform.pyramids.resize"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.pyramids.resize</span></tt></a>(image,&nbsp;...)</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.transform.pyramids.resize" title="skimage.transform.pyramids.resize"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.pyramids.resize</span></tt></a>(image,&nbsp;...)</td>
 <td>Resize image.</td>
 </tr>
 </tbody>
@@ -130,7 +133,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
@@ -140,7 +143,7 @@
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray of float64</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray of float64</p>
 <blockquote class="last">
 <div><p>Output image.</p>
 </div></blockquote>
@@ -149,8 +152,8 @@
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>The range of a floating point image is [0, 1].
-Negative input values will be shifted to the positive domain.</p>
+<p>The range of a floating point image is [0.0, 1.0] or [-1.0, 1.0] when
+converting from unsigned or signed datatypes, respectively.</p>
 </dd></dl>
 
 </div>
@@ -164,7 +167,7 @@ Negative input values will be shifted to the positive domain.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : array</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : array</p>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
@@ -194,7 +197,7 @@ cval is the value when mode is equal to &#8216;constant&#8217;.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : array</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : array</p>
 <blockquote class="last">
 <div><p>Upsampled and smoothed float image.</p>
 </div></blockquote>
@@ -216,14 +219,14 @@ cval is the value when mode is equal to &#8216;constant&#8217;.</p>
 <p>Recursively applies the <cite>pyramid_reduce</cite> function to the image, and yields
 the downscaled images.</p>
 <p>Note that the first image of the pyramid will be the original, unscaled
-image. The total number of images is <cite>max_layer + 1</cite>. In case all layers are
-computed, the last image is either a one-pixel image or the image where the
-reduction does not change its shape.</p>
+image. The total number of images is <cite>max_layer + 1</cite>. In case all layers
+are computed, the last image is either a one-pixel image or the image where
+the reduction does not change its shape.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : array</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : array</p>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
@@ -258,7 +261,7 @@ cval is the value when mode is equal to &#8216;constant&#8217;.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>pyramid</strong> : generator</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>pyramid</strong> : generator</p>
 <blockquote class="last">
 <div><p>Generator yielding pyramid layers as float images.</p>
 </div></blockquote>
@@ -285,13 +288,13 @@ downsampled, smoothed image:</p>
 <p>Note that the first image of the pyramid will be the difference between the
 original, unscaled image and its smoothed version. The total number of
 images is <cite>max_layer + 1</cite>. In case all layers are computed, the last image
-is either a one-pixel image or the image where the reduction does not change
-its shape.</p>
+is either a one-pixel image or the image where the reduction does not
+change its shape.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : array</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : array</p>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
@@ -326,7 +329,7 @@ cval is the value when mode is equal to &#8216;constant&#8217;.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>pyramid</strong> : generator</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>pyramid</strong> : generator</p>
 <blockquote class="last">
 <div><p>Generator yielding pyramid layers as float images.</p>
 </div></blockquote>
@@ -350,7 +353,7 @@ cval is the value when mode is equal to &#8216;constant&#8217;.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : array</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : array</p>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
@@ -380,7 +383,7 @@ cval is the value when mode is equal to &#8216;constant&#8217;.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : array</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : array</p>
 <blockquote class="last">
 <div><p>Smoothed and downsampled float image.</p>
 </div></blockquote>
@@ -403,7 +406,7 @@ cval is the value when mode is equal to &#8216;constant&#8217;.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
@@ -413,7 +416,7 @@ cval is the value when mode is equal to &#8216;constant&#8217;.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>resized</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>resized</strong> : ndarray</p>
 <blockquote class="last">
 <div><p>Resized version of the input.</p>
 </div></blockquote>
@@ -439,7 +442,7 @@ cval is the value when mode is equal to &#8216;constant&#8217;.</p>
       
     <div class="footer">
         &copy; Copyright 2011, the scikits-image team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.8.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
     </div>
     </div>
 

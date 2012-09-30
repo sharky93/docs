@@ -3,17 +3,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Module: io._plugins &mdash; skimage v0.7dev docs</title>
+    <title>Module: io._plugins &mdash; skimage v0.8dev docs</title>
+    
     <link rel="stylesheet" href="../_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.7dev',
+        VERSION:     '0.8dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +26,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/docversions.js"></script>
-    <link rel="top" title="skimage v0.7dev docs" href="../index.html" /> 
+    <link rel="top" title="skimage v0.8dev docs" href="../index.html" /> 
   </head>
   <body>
     <div class="header-wrapper">
@@ -100,22 +103,22 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr><td><a class="reference internal" href="#skimage.io._plugins.available" title="skimage.io._plugins.available"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io._plugins.available</span></tt></a>([loaded])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.io._plugins.available" title="skimage.io._plugins.available"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io._plugins.available</span></tt></a>([loaded])</td>
 <td>List available plugins.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.io._plugins.call" title="skimage.io._plugins.call"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io._plugins.call</span></tt></a>(kind,&nbsp;*args,&nbsp;**kwargs)</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.io._plugins.call" title="skimage.io._plugins.call"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io._plugins.call</span></tt></a>(kind,&nbsp;*args,&nbsp;**kwargs)</td>
 <td>Find the appropriate plugin of &#8216;kind&#8217; and execute it.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.io._plugins.configuration" title="skimage.io._plugins.configuration"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io._plugins.configuration</span></tt></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.io._plugins.configuration" title="skimage.io._plugins.configuration"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io._plugins.configuration</span></tt></a>()</td>
 <td>Return the currently preferred plugin order.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.io._plugins.info" title="skimage.io._plugins.info"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io._plugins.info</span></tt></a>(plugin)</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.io._plugins.info" title="skimage.io._plugins.info"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io._plugins.info</span></tt></a>(plugin)</td>
 <td>Return plugin meta-data.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.io._plugins.reset_plugins" title="skimage.io._plugins.reset_plugins"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io._plugins.reset_plugins</span></tt></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.io._plugins.reset_plugins" title="skimage.io._plugins.reset_plugins"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io._plugins.reset_plugins</span></tt></a>()</td>
 <td>Clear the plugin state to the default, i.e., where no plugins are loaded</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.io._plugins.use" title="skimage.io._plugins.use"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io._plugins.use</span></tt></a>(name[,&nbsp;kind])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.io._plugins.use" title="skimage.io._plugins.use"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io._plugins.use</span></tt></a>(name[,&nbsp;kind])</td>
 <td>Set the default plugin for a specified operation.</td>
 </tr>
 </tbody>
@@ -130,14 +133,14 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>loaded</strong> : bool</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>loaded</strong> : bool</p>
 <blockquote>
 <div><p>If True, show only those plugins currently loaded.  By default,
 all plugins are shown.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>p</strong> : dict</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>p</strong> : dict</p>
 <blockquote class="last">
 <div><p>Dictionary with plugin names as keys and exposed functions as
 values.</p>
@@ -159,7 +162,7 @@ values.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>kind</strong> : {&#8216;imshow&#8217;, &#8216;imsave&#8217;, &#8216;imread&#8217;, &#8216;imread_collection&#8217;}</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>kind</strong> : {&#8216;imshow&#8217;, &#8216;imsave&#8217;, &#8216;imread&#8217;, &#8216;imread_collection&#8217;}</p>
 <blockquote>
 <div><p>Function to look up.</p>
 </div></blockquote>
@@ -189,7 +192,7 @@ matching plugin is used.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>p</strong> : dict</p>
+<tr class="field-odd field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>p</strong> : dict</p>
 <blockquote class="last">
 <div><p>Dictionary of preferred plugin order, with function name as key and
 plugins (in order of preference) as value.</p>
@@ -211,13 +214,13 @@ plugins (in order of preference) as value.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>plugin</strong> : str</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>plugin</strong> : str</p>
 <blockquote>
 <div><p>Name of plugin.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>m</strong> : dict</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>m</strong> : dict</p>
 <blockquote class="last">
 <div><p>Meta data as specified in plugin <tt class="docutils literal"><span class="pre">.ini</span></tt>.</p>
 </div></blockquote>
@@ -248,7 +251,7 @@ will be loaded if it hasn&#8217;t been already.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
 <blockquote>
 <div><p>Name of plugin.</p>
 </div></blockquote>
@@ -292,7 +295,7 @@ the plugin is set for all functions.</p>
       
     <div class="footer">
         &copy; Copyright 2011, the scikits-image team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.8.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
     </div>
     </div>
 

@@ -3,17 +3,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Module: feature &mdash; skimage v0.7dev docs</title>
+    <title>Module: feature &mdash; skimage v0.8dev docs</title>
+    
     <link rel="stylesheet" href="../_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.7dev',
+        VERSION:     '0.8dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +26,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/docversions.js"></script>
-    <link rel="top" title="skimage v0.7dev docs" href="../index.html" /> 
+    <link rel="top" title="skimage v0.8dev docs" href="../index.html" /> 
   </head>
   <body>
     <div class="header-wrapper">
@@ -101,25 +104,25 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr><td><a class="reference internal" href="#skimage.feature.greycomatrix" title="skimage.feature.greycomatrix"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.greycomatrix</span></tt></a>(image,&nbsp;...[,&nbsp;...])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.feature.greycomatrix" title="skimage.feature.greycomatrix"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.greycomatrix</span></tt></a>(image,&nbsp;...[,&nbsp;...])</td>
 <td>Calculate the grey-level co-occurrence matrix.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.feature.greycoprops" title="skimage.feature.greycoprops"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.greycoprops</span></tt></a>(P[,&nbsp;prop])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.feature.greycoprops" title="skimage.feature.greycoprops"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.greycoprops</span></tt></a>(P[,&nbsp;prop])</td>
 <td>Calculate texture properties of a GLCM.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.feature.harris" title="skimage.feature.harris"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.harris</span></tt></a>(image[,&nbsp;...])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.feature.harris" title="skimage.feature.harris"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.harris</span></tt></a>(image[,&nbsp;...])</td>
 <td>Return corners from a Harris response image</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.feature.hog" title="skimage.feature.hog"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.hog</span></tt></a>(image[,&nbsp;orientations,&nbsp;...])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.feature.hog" title="skimage.feature.hog"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.hog</span></tt></a>(image[,&nbsp;orientations,&nbsp;...])</td>
 <td>Extract Histogram of Oriented Gradients (HOG) for a given image.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.feature.local_binary_pattern" title="skimage.feature.local_binary_pattern"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.local_binary_pattern</span></tt></a>(image,&nbsp;P,&nbsp;R)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.feature.local_binary_pattern" title="skimage.feature.local_binary_pattern"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.local_binary_pattern</span></tt></a>(image,&nbsp;P,&nbsp;R)</td>
 <td>Gray scale and rotation invariant LBP (Local Binary Patterns).</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.feature.match_template" title="skimage.feature.match_template"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.match_template</span></tt></a>(image,&nbsp;template)</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.feature.match_template" title="skimage.feature.match_template"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.match_template</span></tt></a>(image,&nbsp;template)</td>
 <td>Match a template to an image using normalized correlation.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.feature.peak_local_max" title="skimage.feature.peak_local_max"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.peak_local_max</span></tt></a>(image[,&nbsp;...])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.feature.peak_local_max" title="skimage.feature.peak_local_max"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.peak_local_max</span></tt></a>(image[,&nbsp;...])</td>
 <td>Return coordinates of peaks in an image.</td>
 </tr>
 </tbody>
@@ -136,7 +139,7 @@ greyscale values at a given offset over an image.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : array_like of uint8</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : array_like of uint8</p>
 <blockquote>
 <div><p>Integer typed input image. The image will be cast to uint8, so
 the maximum value must be less than 256.</p>
@@ -172,7 +175,7 @@ default is False.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>P</strong> : 4-D ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>P</strong> : 4-D ndarray</p>
 <blockquote class="last">
 <div><p>The grey-level co-occurrence histogram. The value
 <cite>P[i,j,d,theta]</cite> is the number of times that grey-level <cite>j</cite>
@@ -252,7 +255,7 @@ follows:</p>
 <dt>&#8216;correlation&#8217;:</dt>
 <dd><div class="first last math">
 <p><img src="../_images/math/c649a0ee8056e19b6bb96959c6590078b369a2e5.png" alt="\sum_{i,j=0}^{levels-1} P_{i,j}\left[\frac{(i-\mu_i) \
-(j-\mu_j)}{\sqrt{(\sigma_i^2)(\sigma_j^2)}}\right]" /></p>
+(j-\mu_j)}{\sqrt{(\sigma_i^2)(\sigma_j^2)}}\right]"/></p>
 </div></dd>
 </dl>
 </li>
@@ -261,7 +264,7 @@ follows:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>P</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>P</strong> : ndarray</p>
 <blockquote>
 <div><p>Input array. <cite>P</cite> is the grey-level co-occurrence histogram
 for which to compute the specified property. The value
@@ -275,7 +278,7 @@ grey-level i.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>results</strong> : 2-D ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>results</strong> : 2-D ndarray</p>
 <blockquote class="last">
 <div><p>2-dimensional array. <cite>results[d, a]</cite> is the property &#8216;prop&#8217; for
 the d&#8217;th distance and the a&#8217;th angle.</p>
@@ -314,13 +317,13 @@ the d&#8217;th distance and the a&#8217;th angle.</p>
 <h2>harris<a class="headerlink" href="#harris" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.feature.harris">
-<tt class="descclassname">skimage.feature.</tt><tt class="descname">harris</tt><big>(</big><em>image</em>, <em>min_distance=10</em>, <em>threshold=0.1</em>, <em>eps=1e-06</em>, <em>gaussian_deviation=1</em><big>)</big><a class="headerlink" href="#skimage.feature.harris" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">skimage.feature.</tt><tt class="descname">harris</tt><big>(</big><em>image</em>, <em>min_distance=10</em>, <em>threshold=0.10000000000000001</em>, <em>eps=9.9999999999999995e-07</em>, <em>gaussian_deviation=1</em><big>)</big><a class="headerlink" href="#skimage.feature.harris" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return corners from a Harris response image</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray of floats</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray of floats</p>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
@@ -342,7 +345,7 @@ the d&#8217;th distance and the a&#8217;th angle.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>coordinates</strong> : (N, 2) array</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>coordinates</strong> : (N, 2) array</p>
 <blockquote>
 <div><p>(row, column) coordinates of interest points.</p>
 </div></blockquote>
@@ -398,7 +401,7 @@ the d&#8217;th distance and the a&#8217;th angle.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : (M, N) ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : (M, N) ndarray</p>
 <blockquote>
 <div><p>Input image (greyscale).</p>
 </div></blockquote>
@@ -425,7 +428,7 @@ processing.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>newarr</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>newarr</strong> : ndarray</p>
 <blockquote>
 <div><p>HOG for the image as a 1D (flattened) array.</p>
 </div></blockquote>
@@ -458,14 +461,14 @@ Vision and Pattern Recognition 2005 San Diego, CA, USA</li>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : (N, M) array</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : (N, M) array</p>
 <blockquote>
 <div><p>Graylevel image.</p>
 </div></blockquote>
 <p><strong>P</strong> : int</p>
 <blockquote>
-<div><p>Number of circularly symmetric neighbour set points (quantization of the
-angular space).</p>
+<div><p>Number of circularly symmetric neighbour set points (quantization of
+the angular space).</p>
 </div></blockquote>
 <p><strong>R</strong> : float</p>
 <blockquote>
@@ -504,7 +507,7 @@ rotation invariant.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : (N, M) array</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : (N, M) array</p>
 <blockquote class="last">
 <div><p>LBP image.</p>
 </div></blockquote>
@@ -537,7 +540,7 @@ to the probability that the template is found at that position.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : array_like</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : array_like</p>
 <blockquote>
 <div><p>Image to process.</p>
 </div></blockquote>
@@ -555,7 +558,7 @@ to origin (top-left corner) of the template.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : ndarray</p>
 <blockquote class="last">
 <div><p>Correlation results between -1.0 and 1.0. For an <cite>(M, N)</cite> image and an
 <cite>(m, n)</cite> template, the <cite>output</cite> is <cite>(M - m + 1, N - n + 1)</cite> when
@@ -605,7 +608,7 @@ to origin (top-left corner) of the template.</p>
 <h2>peak_local_max<a class="headerlink" href="#peak-local-max" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.feature.peak_local_max">
-<tt class="descclassname">skimage.feature.</tt><tt class="descname">peak_local_max</tt><big>(</big><em>image</em>, <em>min_distance=10</em>, <em>threshold='deprecated'</em>, <em>threshold_abs=0</em>, <em>threshold_rel=0.1</em>, <em>num_peaks=inf</em><big>)</big><a class="headerlink" href="#skimage.feature.peak_local_max" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">skimage.feature.</tt><tt class="descname">peak_local_max</tt><big>(</big><em>image</em>, <em>min_distance=10</em>, <em>threshold='deprecated'</em>, <em>threshold_abs=0</em>, <em>threshold_rel=0.10000000000000001</em>, <em>num_peaks=inf</em><big>)</big><a class="headerlink" href="#skimage.feature.peak_local_max" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return coordinates of peaks in an image.</p>
 <p>Peaks are the local maxima in a region of <cite>2 * min_distance + 1</cite>
 (i.e. peaks are separated by at least <cite>min_distance</cite>).</p>
@@ -615,7 +618,7 @@ the coordinates of all pixels are returned.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray of floats</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray of floats</p>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
@@ -642,7 +645,7 @@ return <cite>num_peaks</cite> coordinates based on peak intensity.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>coordinates</strong> : (N, 2) array</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>coordinates</strong> : (N, 2) array</p>
 <blockquote class="last">
 <div><p>(row, column) coordinates of peaks.</p>
 </div></blockquote>
@@ -697,7 +700,7 @@ dilated image = original.</p>
       
     <div class="footer">
         &copy; Copyright 2011, the scikits-image team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.8.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
     </div>
     </div>
 

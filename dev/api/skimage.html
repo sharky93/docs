@@ -3,17 +3,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>skimage &mdash; skimage v0.7dev docs</title>
+    <title>skimage &mdash; skimage v0.8dev docs</title>
+    
     <link rel="stylesheet" href="../_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.7dev',
+        VERSION:     '0.8dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +26,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/docversions.js"></script>
-    <link rel="top" title="skimage v0.7dev docs" href="../index.html" /> 
+    <link rel="top" title="skimage v0.8dev docs" href="../index.html" /> 
   </head>
   <body>
     <div class="header-wrapper">
@@ -154,22 +157,22 @@ following subpackages:</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr><td><a class="reference internal" href="#skimage.get_log" title="skimage.get_log"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.get_log</span></tt></a>([name])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.get_log" title="skimage.get_log"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.get_log</span></tt></a>([name])</td>
 <td>Return a console logger.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.img_as_bool" title="skimage.img_as_bool"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.img_as_bool</span></tt></a>(image[,&nbsp;force_copy])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.img_as_bool" title="skimage.img_as_bool"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.img_as_bool</span></tt></a>(image[,&nbsp;force_copy])</td>
 <td>Convert an image to boolean format.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.img_as_float" title="skimage.img_as_float"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.img_as_float</span></tt></a>(image[,&nbsp;force_copy])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.img_as_float" title="skimage.img_as_float"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.img_as_float</span></tt></a>(image[,&nbsp;force_copy])</td>
 <td>Convert an image to double-precision floating point format.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.img_as_int" title="skimage.img_as_int"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.img_as_int</span></tt></a>(image[,&nbsp;force_copy])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.img_as_int" title="skimage.img_as_int"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.img_as_int</span></tt></a>(image[,&nbsp;force_copy])</td>
 <td>Convert an image to 16-bit signed integer format.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.img_as_ubyte" title="skimage.img_as_ubyte"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.img_as_ubyte</span></tt></a>(image[,&nbsp;force_copy])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.img_as_ubyte" title="skimage.img_as_ubyte"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.img_as_ubyte</span></tt></a>(image[,&nbsp;force_copy])</td>
 <td>Convert an image to 8-bit unsigned integer format.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.img_as_uint" title="skimage.img_as_uint"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.img_as_uint</span></tt></a>(image[,&nbsp;force_copy])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.img_as_uint" title="skimage.img_as_uint"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.img_as_uint</span></tt></a>(image[,&nbsp;force_copy])</td>
 <td>Convert an image to 16-bit unsigned integer format.</td>
 </tr>
 </tbody>
@@ -186,7 +189,7 @@ following subpackages:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
 <blockquote class="last">
 <div><p>Name of the log.</p>
 </div></blockquote>
@@ -215,7 +218,7 @@ following subpackages:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
@@ -225,7 +228,7 @@ following subpackages:</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray of bool (<cite>bool_</cite>)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray of bool (<cite>bool_</cite>)</p>
 <blockquote class="last">
 <div><p>Output image.</p>
 </div></blockquote>
@@ -249,7 +252,7 @@ half is False. All negative values (if present) are False.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
@@ -259,7 +262,7 @@ half is False. All negative values (if present) are False.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray of float64</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray of float64</p>
 <blockquote class="last">
 <div><p>Output image.</p>
 </div></blockquote>
@@ -268,8 +271,8 @@ half is False. All negative values (if present) are False.</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>The range of a floating point image is [0, 1].
-Negative input values will be shifted to the positive domain.</p>
+<p>The range of a floating point image is [0.0, 1.0] or [-1.0, 1.0] when
+converting from unsigned or signed datatypes, respectively.</p>
 </dd></dl>
 
 </div>
@@ -283,7 +286,7 @@ Negative input values will be shifted to the positive domain.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
@@ -293,7 +296,7 @@ Negative input values will be shifted to the positive domain.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray of uint16</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray of uint16</p>
 <blockquote class="last">
 <div><p>Output image.</p>
 </div></blockquote>
@@ -317,7 +320,7 @@ the output image will still only have positive values.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
@@ -327,7 +330,7 @@ the output image will still only have positive values.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray of ubyte (uint8)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray of ubyte (uint8)</p>
 <blockquote class="last">
 <div><p>Output image.</p>
 </div></blockquote>
@@ -351,7 +354,7 @@ the output image will still only have positive values.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
@@ -361,7 +364,7 @@ the output image will still only have positive values.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray of uint16</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray of uint16</p>
 <blockquote class="last">
 <div><p>Output image.</p>
 </div></blockquote>
@@ -389,7 +392,7 @@ the output image will still only have positive values.</p>
       
     <div class="footer">
         &copy; Copyright 2011, the scikits-image team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.8.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
     </div>
     </div>
 

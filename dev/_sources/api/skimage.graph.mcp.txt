@@ -29,13 +29,7 @@ Module: :mod:`graph.mcp`
   .. automethod:: __init__
 .. autosummary::
 
-   skimage.graph.mcp.make_offsets
    skimage.graph.mcp.route_through_array
-
-make_offsets
-------------
-
-.. autofunction:: skimage.graph.mcp.make_offsets
 
 route_through_array
 -------------------

@@ -3,17 +3,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Module: feature.texture &mdash; skimage v0.7dev docs</title>
+    <title>Module: feature.texture &mdash; skimage v0.8dev docs</title>
+    
     <link rel="stylesheet" href="../_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.7dev',
+        VERSION:     '0.8dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +26,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/docversions.js"></script>
-    <link rel="top" title="skimage v0.7dev docs" href="../index.html" /> 
+    <link rel="top" title="skimage v0.8dev docs" href="../index.html" /> 
   </head>
   <body>
     <div class="header-wrapper">
@@ -98,13 +101,13 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr><td><a class="reference internal" href="#skimage.feature.texture.greycomatrix" title="skimage.feature.texture.greycomatrix"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.texture.greycomatrix</span></tt></a>(image,&nbsp;...)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.feature.texture.greycomatrix" title="skimage.feature.texture.greycomatrix"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.texture.greycomatrix</span></tt></a>(image,&nbsp;...)</td>
 <td>Calculate the grey-level co-occurrence matrix.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.feature.texture.greycoprops" title="skimage.feature.texture.greycoprops"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.texture.greycoprops</span></tt></a>(P[,&nbsp;prop])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.feature.texture.greycoprops" title="skimage.feature.texture.greycoprops"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.texture.greycoprops</span></tt></a>(P[,&nbsp;prop])</td>
 <td>Calculate texture properties of a GLCM.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.feature.texture.local_binary_pattern" title="skimage.feature.texture.local_binary_pattern"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.texture.local_binary_pattern</span></tt></a>(...)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.feature.texture.local_binary_pattern" title="skimage.feature.texture.local_binary_pattern"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.texture.local_binary_pattern</span></tt></a>(...)</td>
 <td>Gray scale and rotation invariant LBP (Local Binary Patterns).</td>
 </tr>
 </tbody>
@@ -121,7 +124,7 @@ greyscale values at a given offset over an image.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : array_like of uint8</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : array_like of uint8</p>
 <blockquote>
 <div><p>Integer typed input image. The image will be cast to uint8, so
 the maximum value must be less than 256.</p>
@@ -157,7 +160,7 @@ default is False.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>P</strong> : 4-D ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>P</strong> : 4-D ndarray</p>
 <blockquote class="last">
 <div><p>The grey-level co-occurrence histogram. The value
 <cite>P[i,j,d,theta]</cite> is the number of times that grey-level <cite>j</cite>
@@ -237,7 +240,7 @@ follows:</p>
 <dt>&#8216;correlation&#8217;:</dt>
 <dd><div class="first last math">
 <p><img src="../_images/math/c649a0ee8056e19b6bb96959c6590078b369a2e5.png" alt="\sum_{i,j=0}^{levels-1} P_{i,j}\left[\frac{(i-\mu_i) \
-(j-\mu_j)}{\sqrt{(\sigma_i^2)(\sigma_j^2)}}\right]" /></p>
+(j-\mu_j)}{\sqrt{(\sigma_i^2)(\sigma_j^2)}}\right]"/></p>
 </div></dd>
 </dl>
 </li>
@@ -246,7 +249,7 @@ follows:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>P</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>P</strong> : ndarray</p>
 <blockquote>
 <div><p>Input array. <cite>P</cite> is the grey-level co-occurrence histogram
 for which to compute the specified property. The value
@@ -260,7 +263,7 @@ grey-level i.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>results</strong> : 2-D ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>results</strong> : 2-D ndarray</p>
 <blockquote class="last">
 <div><p>2-dimensional array. <cite>results[d, a]</cite> is the property &#8216;prop&#8217; for
 the d&#8217;th distance and the a&#8217;th angle.</p>
@@ -306,14 +309,14 @@ the d&#8217;th distance and the a&#8217;th angle.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : (N, M) array</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : (N, M) array</p>
 <blockquote>
 <div><p>Graylevel image.</p>
 </div></blockquote>
 <p><strong>P</strong> : int</p>
 <blockquote>
-<div><p>Number of circularly symmetric neighbour set points (quantization of the
-angular space).</p>
+<div><p>Number of circularly symmetric neighbour set points (quantization of
+the angular space).</p>
 </div></blockquote>
 <p><strong>R</strong> : float</p>
 <blockquote>
@@ -352,7 +355,7 @@ rotation invariant.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : (N, M) array</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : (N, M) array</p>
 <blockquote class="last">
 <div><p>LBP image.</p>
 </div></blockquote>
@@ -388,7 +391,7 @@ Timo Ojala, Matti Pietikainen, Topi Maenpaa.
       
     <div class="footer">
         &copy; Copyright 2011, the scikits-image team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.8.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
     </div>
     </div>
 

@@ -3,17 +3,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Module: draw &mdash; skimage v0.7dev docs</title>
+    <title>Module: draw &mdash; skimage v0.8dev docs</title>
+    
     <link rel="stylesheet" href="../_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.7dev',
+        VERSION:     '0.8dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +26,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/docversions.js"></script>
-    <link rel="top" title="skimage v0.7dev docs" href="../index.html" /> 
+    <link rel="top" title="skimage v0.8dev docs" href="../index.html" /> 
   </head>
   <body>
     <div class="header-wrapper">
@@ -99,19 +102,19 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr><td><a class="reference internal" href="#skimage.draw.bresenham" title="skimage.draw.bresenham"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.draw.bresenham</span></tt></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.draw.bresenham" title="skimage.draw.bresenham"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.draw.bresenham</span></tt></a></td>
 <td>Generate line pixel coordinates.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.draw.circle" title="skimage.draw.circle"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.draw.circle</span></tt></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.draw.circle" title="skimage.draw.circle"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.draw.circle</span></tt></a></td>
 <td>Generate coordinates of pixels within circle.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.draw.ellipse" title="skimage.draw.ellipse"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.draw.ellipse</span></tt></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.draw.ellipse" title="skimage.draw.ellipse"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.draw.ellipse</span></tt></a></td>
 <td>Generate coordinates of pixels within ellipse.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.draw.line" title="skimage.draw.line"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.draw.line</span></tt></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.draw.line" title="skimage.draw.line"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.draw.line</span></tt></a></td>
 <td>Generate line pixel coordinates.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.draw.polygon" title="skimage.draw.polygon"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.draw.polygon</span></tt></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.draw.polygon" title="skimage.draw.polygon"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.draw.polygon</span></tt></a></td>
 <td>Generate coordinates of pixels within polygon.</td>
 </tr>
 </tbody>
@@ -126,7 +129,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>y, x</strong> : int</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>y, x</strong> : int</p>
 <blockquote>
 <div><p>Starting position (row, column).</p>
 </div></blockquote>
@@ -136,7 +139,7 @@
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>rr, cc</strong> : (N,) ndarray of int</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>rr, cc</strong> : (N,) ndarray of int</p>
 <blockquote class="last">
 <div><p>Indices of pixels that belong to the line.
 May be used to directly index into an array, e.g.
@@ -159,7 +162,7 @@ May be used to directly index into an array, e.g.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>cy, cx</strong> : double</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>cy, cx</strong> : double</p>
 <blockquote>
 <div><p>Centre coordinate of circle.</p>
 </div></blockquote>
@@ -169,7 +172,7 @@ May be used to directly index into an array, e.g.
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>rr, cc</strong> : ndarray of int</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>rr, cc</strong> : ndarray of int</p>
 <blockquote class="last">
 <div><p>Pixel coordinates of circle.
 May be used to directly index into an array, e.g.
@@ -192,7 +195,7 @@ May be used to directly index into an array, e.g.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>cy, cx</strong> : double</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>cy, cx</strong> : double</p>
 <blockquote>
 <div><p>Centre coordinate of ellipse.</p>
 </div></blockquote>
@@ -202,7 +205,7 @@ May be used to directly index into an array, e.g.
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>rr, cc</strong> : ndarray of int</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>rr, cc</strong> : ndarray of int</p>
 <blockquote class="last">
 <div><p>Pixel coordinates of ellipse.
 May be used to directly index into an array, e.g.
@@ -225,7 +228,7 @@ May be used to directly index into an array, e.g.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>y, x</strong> : int</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>y, x</strong> : int</p>
 <blockquote>
 <div><p>Starting position (row, column).</p>
 </div></blockquote>
@@ -235,7 +238,7 @@ May be used to directly index into an array, e.g.
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>rr, cc</strong> : (N,) ndarray of int</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>rr, cc</strong> : (N,) ndarray of int</p>
 <blockquote class="last">
 <div><p>Indices of pixels that belong to the line.
 May be used to directly index into an array, e.g.
@@ -258,7 +261,7 @@ May be used to directly index into an array, e.g.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>y</strong> : (N,) ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>y</strong> : (N,) ndarray</p>
 <blockquote>
 <div><p>Y-coordinates of vertices of polygon.</p>
 </div></blockquote>
@@ -274,7 +277,7 @@ By default the full extents of the polygon are used.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>rr, cc</strong> : ndarray of int</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>rr, cc</strong> : ndarray of int</p>
 <blockquote class="last">
 <div><p>Pixel coordinates of polygon.
 May be used to directly index into an array, e.g.
@@ -302,7 +305,7 @@ May be used to directly index into an array, e.g.
       
     <div class="footer">
         &copy; Copyright 2011, the scikits-image team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.8.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
     </div>
     </div>
 

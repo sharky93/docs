@@ -3,17 +3,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Module: transform.integral &mdash; skimage v0.7dev docs</title>
+    <title>Module: transform.integral &mdash; skimage v0.8dev docs</title>
+    
     <link rel="stylesheet" href="../_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.7dev',
+        VERSION:     '0.8dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +26,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/docversions.js"></script>
-    <link rel="top" title="skimage v0.7dev docs" href="../index.html" /> 
+    <link rel="top" title="skimage v0.8dev docs" href="../index.html" /> 
   </head>
   <body>
     <div class="header-wrapper">
@@ -96,10 +99,10 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr><td><a class="reference internal" href="#skimage.transform.integral.integral_image" title="skimage.transform.integral.integral_image"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.integral.integral_image</span></tt></a>(x)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.integral.integral_image" title="skimage.transform.integral.integral_image"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.integral.integral_image</span></tt></a>(x)</td>
 <td>Integral image / summed area table.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.transform.integral.integrate" title="skimage.transform.integral.integrate"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.integral.integrate</span></tt></a>(ii,&nbsp;r0,&nbsp;...)</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.transform.integral.integrate" title="skimage.transform.integral.integrate"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.integral.integrate</span></tt></a>(ii,&nbsp;r0,&nbsp;...)</td>
 <td>Use an integral image to integrate over a given window.</td>
 </tr>
 </tbody>
@@ -113,18 +116,18 @@
 <p>The integral image contains the sum of all elements above and to the
 left of it, i.e.:</p>
 <div class="math">
-<p><img src="../_images/math/60eb18acdabe921f0fcbc69cf1dfc9fe4934bb1d.png" alt="S[m, n] = \sum_{i \leq m} \sum_{j \leq n} X[i, j]" /></p>
+<p><img src="../_images/math/60eb18acdabe921f0fcbc69cf1dfc9fe4934bb1d.png" alt="S[m, n] = \sum_{i \leq m} \sum_{j \leq n} X[i, j]"/></p>
 </div><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>x</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>x</strong> : ndarray</p>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>S</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>S</strong> : ndarray</p>
 <blockquote class="last">
 <div><p>Integral image / summed area table.</p>
 </div></blockquote>
@@ -153,7 +156,7 @@ ACM SIGGRAPH Computer Graphics, vol. 18, 1984, pp. 207-212.</td></tr>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>ii</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>ii</strong> : ndarray</p>
 <blockquote>
 <div><p>Integral image.</p>
 </div></blockquote>
@@ -167,7 +170,7 @@ ACM SIGGRAPH Computer Graphics, vol. 18, 1984, pp. 207-212.</td></tr>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>S</strong> : int</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>S</strong> : int</p>
 <blockquote class="last">
 <div><p>Integral (sum) over the given window.</p>
 </div></blockquote>
@@ -193,7 +196,7 @@ ACM SIGGRAPH Computer Graphics, vol. 18, 1984, pp. 207-212.</td></tr>
       
     <div class="footer">
         &copy; Copyright 2011, the scikits-image team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.8.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
     </div>
     </div>
 

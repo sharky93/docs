@@ -3,17 +3,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Module: color.colorconv &mdash; skimage v0.7dev docs</title>
+    <title>Module: color.colorconv &mdash; skimage v0.8dev docs</title>
+    
     <link rel="stylesheet" href="../_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.7dev',
+        VERSION:     '0.8dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +26,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/docversions.js"></script>
-    <link rel="top" title="skimage v0.7dev docs" href="../index.html" /> 
+    <link rel="top" title="skimage v0.8dev docs" href="../index.html" /> 
   </head>
   <body>
     <div class="header-wrapper">
@@ -147,13 +150,13 @@ functions are greater than zero everywhere.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">author:</th><td class="field-body">Nicolas Pinto (rgb2hsv)</td>
+<tr class="field-odd field"><th class="field-name">author:</th><td class="field-body">Nicolas Pinto (rgb2hsv)</td>
 </tr>
-<tr class="field"><th class="field-name">author:</th><td class="field-body">Ralf Gommers (hsv2rgb)</td>
+<tr class="field-even field"><th class="field-name">author:</th><td class="field-body">Ralf Gommers (hsv2rgb)</td>
 </tr>
-<tr class="field"><th class="field-name">author:</th><td class="field-body">Travis Oliphant (XYZ and RGB CIE functions)</td>
+<tr class="field-odd field"><th class="field-name">author:</th><td class="field-body">Travis Oliphant (XYZ and RGB CIE functions)</td>
 </tr>
-<tr class="field"><th class="field-name">license:</th><td class="field-body">modified BSD</td>
+<tr class="field-even field"><th class="field-name">license:</th><td class="field-body">modified BSD</td>
 </tr>
 </tbody>
 </table>
@@ -191,46 +194,46 @@ functions are greater than zero everywhere.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr><td><a class="reference internal" href="#skimage.color.colorconv.convert_colorspace" title="skimage.color.colorconv.convert_colorspace"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.colorconv.convert_colorspace</span></tt></a>(...)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.color.colorconv.convert_colorspace" title="skimage.color.colorconv.convert_colorspace"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.colorconv.convert_colorspace</span></tt></a>(...)</td>
 <td>Convert an image array to a new color space.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.color.colorconv.gray2rgb" title="skimage.color.colorconv.gray2rgb"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.colorconv.gray2rgb</span></tt></a>(image)</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.color.colorconv.gray2rgb" title="skimage.color.colorconv.gray2rgb"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.colorconv.gray2rgb</span></tt></a>(image)</td>
 <td>Create an RGB representation of a grey-level image.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.color.colorconv.hsv2rgb" title="skimage.color.colorconv.hsv2rgb"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.colorconv.hsv2rgb</span></tt></a>(hsv)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.color.colorconv.hsv2rgb" title="skimage.color.colorconv.hsv2rgb"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.colorconv.hsv2rgb</span></tt></a>(hsv)</td>
 <td>HSV to RGB color space conversion.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.color.colorconv.lab2rgb" title="skimage.color.colorconv.lab2rgb"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.colorconv.lab2rgb</span></tt></a>(lab)</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.color.colorconv.lab2rgb" title="skimage.color.colorconv.lab2rgb"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.colorconv.lab2rgb</span></tt></a>(lab)</td>
 <td>Lab to RGB color space conversion.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.color.colorconv.lab2xyz" title="skimage.color.colorconv.lab2xyz"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.colorconv.lab2xyz</span></tt></a>(lab)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.color.colorconv.lab2xyz" title="skimage.color.colorconv.lab2xyz"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.colorconv.lab2xyz</span></tt></a>(lab)</td>
 <td>CIE-LAB to XYZcolor space conversion.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.color.colorconv.rgb2gray" title="skimage.color.colorconv.rgb2gray"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.colorconv.rgb2gray</span></tt></a>(rgb)</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.color.colorconv.rgb2gray" title="skimage.color.colorconv.rgb2gray"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.colorconv.rgb2gray</span></tt></a>(rgb)</td>
 <td>Compute luminance of an RGB image.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.color.colorconv.rgb2grey" title="skimage.color.colorconv.rgb2grey"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.colorconv.rgb2grey</span></tt></a>(rgb)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.color.colorconv.rgb2grey" title="skimage.color.colorconv.rgb2grey"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.colorconv.rgb2grey</span></tt></a>(rgb)</td>
 <td>Compute luminance of an RGB image.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.color.colorconv.rgb2hsv" title="skimage.color.colorconv.rgb2hsv"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.colorconv.rgb2hsv</span></tt></a>(rgb)</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.color.colorconv.rgb2hsv" title="skimage.color.colorconv.rgb2hsv"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.colorconv.rgb2hsv</span></tt></a>(rgb)</td>
 <td>RGB to HSV color space conversion.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.color.colorconv.rgb2lab" title="skimage.color.colorconv.rgb2lab"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.colorconv.rgb2lab</span></tt></a>(rgb)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.color.colorconv.rgb2lab" title="skimage.color.colorconv.rgb2lab"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.colorconv.rgb2lab</span></tt></a>(rgb)</td>
 <td>RGB to lab color space conversion.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.color.colorconv.rgb2rgbcie" title="skimage.color.colorconv.rgb2rgbcie"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.colorconv.rgb2rgbcie</span></tt></a>(rgb)</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.color.colorconv.rgb2rgbcie" title="skimage.color.colorconv.rgb2rgbcie"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.colorconv.rgb2rgbcie</span></tt></a>(rgb)</td>
 <td>RGB to RGB CIE color space conversion.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.color.colorconv.rgb2xyz" title="skimage.color.colorconv.rgb2xyz"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.colorconv.rgb2xyz</span></tt></a>(rgb)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.color.colorconv.rgb2xyz" title="skimage.color.colorconv.rgb2xyz"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.colorconv.rgb2xyz</span></tt></a>(rgb)</td>
 <td>RGB to XYZ color space conversion.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.color.colorconv.rgbcie2rgb" title="skimage.color.colorconv.rgbcie2rgb"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.colorconv.rgbcie2rgb</span></tt></a>(rgbcie)</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.color.colorconv.rgbcie2rgb" title="skimage.color.colorconv.rgbcie2rgb"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.colorconv.rgbcie2rgb</span></tt></a>(rgbcie)</td>
 <td>RGB CIE to RGB color space conversion.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.color.colorconv.xyz2lab" title="skimage.color.colorconv.xyz2lab"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.colorconv.xyz2lab</span></tt></a>(xyz)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.color.colorconv.xyz2lab" title="skimage.color.colorconv.xyz2lab"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.colorconv.xyz2lab</span></tt></a>(xyz)</td>
 <td>XYZ to CIE-LAB color space conversion.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.color.colorconv.xyz2rgb" title="skimage.color.colorconv.xyz2rgb"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.colorconv.xyz2rgb</span></tt></a>(xyz)</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.color.colorconv.xyz2rgb" title="skimage.color.colorconv.xyz2rgb"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.colorconv.xyz2rgb</span></tt></a>(xyz)</td>
 <td>XYZ to RGB color space conversion.</td>
 </tr>
 </tbody>
@@ -245,7 +248,7 @@ functions are greater than zero everywhere.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>arr</strong> : array_like</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>arr</strong> : array_like</p>
 <blockquote>
 <div><p>The image to convert.</p>
 </div></blockquote>
@@ -263,7 +266,7 @@ case.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>newarr</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>newarr</strong> : ndarray</p>
 <blockquote class="last">
 <div><p>The converted image.</p>
 </div></blockquote>
@@ -293,19 +296,19 @@ from XYZ to HSV is implemented as XYZ -&gt; RGB -&gt; HSV instead of directly.</
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : array_like</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : array_like</p>
 <blockquote>
 <div><p>Input image of shape <tt class="docutils literal"><span class="pre">(M,</span> <span class="pre">N)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>rgb</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>rgb</strong> : ndarray</p>
 <blockquote>
 <div><p>RGB image of shape <tt class="docutils literal"><span class="pre">(M,</span> <span class="pre">N,</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
 <div><p>If the input is not 2-dimensional.</p>
 </div></blockquote>
@@ -326,19 +329,19 @@ from XYZ to HSV is implemented as XYZ -&gt; RGB -&gt; HSV instead of directly.</
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>hsv</strong> : array_like</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>hsv</strong> : array_like</p>
 <blockquote>
 <div><p>The image in HSV format, in a 3-D array of shape (.., .., 3).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
 <blockquote>
 <div><p>The image in RGB format, in a 3-D array of shape (.., .., 3).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
 <div><p>If <cite>hsv</cite> is not a 3-D array of shape (.., .., 3).</p>
 </div></blockquote>
@@ -378,19 +381,19 @@ precision, due to integer arithmetic and rounding <a class="reference internal" 
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgb</strong> : array_like</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgb</strong> : array_like</p>
 <blockquote>
 <div><p>The image in Lab format, in a 3-D array of shape (.., .., 3).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
 <blockquote>
 <div><p>The image in RGB format, in a 3-D array of shape (.., .., 3).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
 <div><p>If <cite>lab</cite> is not a 3-D array of shape (.., .., 3).</p>
 </div></blockquote>
@@ -413,19 +416,19 @@ precision, due to integer arithmetic and rounding <a class="reference internal" 
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>lab</strong> : array_like</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>lab</strong> : array_like</p>
 <blockquote>
 <div><p>The image in lab format, in a 3-D array of shape (.., .., 3).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
 <blockquote>
 <div><p>The image in XYZ format, in a 3-D array of shape (.., .., 3).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
 <div><p>If <cite>lab</cite> is not a 3-D array of shape (.., .., 3).</p>
 </div></blockquote>
@@ -462,20 +465,20 @@ CIE XYZ tristimulus values x_ref = 95.047, y_ref = 100., z_ref = 108.883</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgb</strong> : array_like</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgb</strong> : array_like</p>
 <blockquote>
 <div><p>The image in RGB format, in a 3-D array of shape (.., .., 3),
 or in RGBA format with shape (.., .., 4).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
 <blockquote>
 <div><p>The luminance image, a 2-D array.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
 <div><p>If <cite>rgb2grey</cite> is not a 3-D array of shape (.., .., 3) or
 (.., .., 4).</p>
@@ -517,20 +520,20 @@ CRT phosphors:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgb</strong> : array_like</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgb</strong> : array_like</p>
 <blockquote>
 <div><p>The image in RGB format, in a 3-D array of shape (.., .., 3),
 or in RGBA format with shape (.., .., 4).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
 <blockquote>
 <div><p>The luminance image, a 2-D array.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
 <div><p>If <cite>rgb2grey</cite> is not a 3-D array of shape (.., .., 3) or
 (.., .., 4).</p>
@@ -572,19 +575,19 @@ CRT phosphors:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgb</strong> : array_like</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgb</strong> : array_like</p>
 <blockquote>
 <div><p>The image in RGB format, in a 3-D array of shape (.., .., 3).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
 <blockquote>
 <div><p>The image in HSV format, in a 3-D array of shape (.., .., 3).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
 <div><p>If <cite>rgb</cite> is not a 3-D array of shape (.., .., 3).</p>
 </div></blockquote>
@@ -624,19 +627,19 @@ precision, due to integer arithmetic and rounding <a class="reference internal" 
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgb</strong> : array_like</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgb</strong> : array_like</p>
 <blockquote>
 <div><p>The image in RGB format, in a 3-D array of shape (.., .., 3).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
 <blockquote>
 <div><p>The image in Lab format, in a 3-D array of shape (.., .., 3).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
 <div><p>If <cite>rgb</cite> is not a 3-D array of shape (.., .., 3).</p>
 </div></blockquote>
@@ -659,19 +662,19 @@ precision, due to integer arithmetic and rounding <a class="reference internal" 
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgb</strong> : array_like</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgb</strong> : array_like</p>
 <blockquote>
 <div><p>The image in RGB format, in a 3-D array of shape (.., .., 3).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
 <blockquote>
 <div><p>The image in RGB CIE format, in a 3-D array of shape (.., .., 3).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
 <div><p>If <cite>rgb</cite> is not a 3-D array of shape (.., .., 3).</p>
 </div></blockquote>
@@ -706,19 +709,19 @@ precision, due to integer arithmetic and rounding <a class="reference internal" 
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgb</strong> : array_like</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgb</strong> : array_like</p>
 <blockquote>
 <div><p>The image in RGB format, in a 3-D array of shape (.., .., 3).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
 <blockquote>
 <div><p>The image in XYZ format, in a 3-D array of shape (.., .., 3).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
 <div><p>If <cite>rgb</cite> is not a 3-D array of shape (.., .., 3).</p>
 </div></blockquote>
@@ -755,19 +758,19 @@ however that this function converts from sRGB.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgbcie</strong> : array_like</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgbcie</strong> : array_like</p>
 <blockquote>
 <div><p>The image in RGB CIE format, in a 3-D array of shape (.., .., 3).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
 <blockquote>
 <div><p>The image in RGB format, in a 3-D array of shape (.., .., 3).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
 <div><p>If <cite>rgbcie</cite> is not a 3-D array of shape (.., .., 3).</p>
 </div></blockquote>
@@ -803,19 +806,19 @@ however that this function converts from sRGB.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>xyz</strong> : array_like</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>xyz</strong> : array_like</p>
 <blockquote>
 <div><p>The image in XYZ format, in a 3-D array of shape (.., .., 3).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
 <blockquote>
 <div><p>The image in CIE-LAB format, in a 3-D array of shape (.., .., 3).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
 <div><p>If <cite>xyz</cite> is not a 3-D array of shape (.., .., 3).</p>
 </div></blockquote>
@@ -860,19 +863,19 @@ CIE XYZ tristimulus values x_ref = 95.047, y_ref = 100., z_ref = 108.883</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>xyz</strong> : array_like</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>xyz</strong> : array_like</p>
 <blockquote>
 <div><p>The image in XYZ format, in a 3-D array of shape (.., .., 3).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
 <blockquote>
 <div><p>The image in RGB format, in a 3-D array of shape (.., .., 3).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
 <div><p>If <cite>xyz</cite> is not a 3-D array of shape (.., .., 3).</p>
 </div></blockquote>
@@ -916,7 +919,7 @@ however that this function converts to sRGB.</p>
       
     <div class="footer">
         &copy; Copyright 2011, the scikits-image team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.8.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
     </div>
     </div>
 

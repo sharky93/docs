@@ -3,17 +3,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Module: util.montage &mdash; skimage v0.7dev docs</title>
+    <title>Module: util.montage &mdash; skimage v0.8dev docs</title>
+    
     <link rel="stylesheet" href="../_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.7dev',
+        VERSION:     '0.8dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +26,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/docversions.js"></script>
-    <link rel="top" title="skimage v0.7dev docs" href="../index.html" /> 
+    <link rel="top" title="skimage v0.8dev docs" href="../index.html" /> 
   </head>
   <body>
     <div class="header-wrapper">
@@ -95,7 +98,7 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr><td><a class="reference internal" href="#skimage.util.montage.montage2d" title="skimage.util.montage.montage2d"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.montage.montage2d</span></tt></a>(arr_in[,&nbsp;...])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.util.montage.montage2d" title="skimage.util.montage.montage2d"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.montage.montage2d</span></tt></a>(arr_in[,&nbsp;...])</td>
 <td>Create a 2-dimensional &#8216;montage&#8217; from a 3-dimensional input array representing an ensemble of equally shaped 2-dimensional images.</td>
 </tr>
 </tbody>
@@ -115,7 +118,7 @@ representing an ensemble of equally shaped 2-dimensional images.</p>
 <col width="33%" />
 </colgroup>
 <tbody valign="top">
-<tr><td>1</td>
+<tr class="row-odd"><td>1</td>
 <td>2</td>
 <td>3</td>
 </tr>
@@ -128,10 +131,10 @@ representing an ensemble of equally shaped 2-dimensional images.</p>
 <col width="50%" />
 </colgroup>
 <tbody valign="top">
-<tr><td>1</td>
+<tr class="row-odd"><td>1</td>
 <td>2</td>
 </tr>
-<tr><td>3</td>
+<tr class="row-even"><td>3</td>
 <td><ul class="first last simple">
 <li></li>
 </ul>
@@ -144,7 +147,7 @@ representing an ensemble of equally shaped 2-dimensional images.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>arr_in: ndarray, shape=[n_images, height, width]</strong> :</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>arr_in: ndarray, shape=[n_images, height, width]</strong> :</p>
 <blockquote>
 <div><p>3-dimensional input array representing an ensemble of n_images
 of equal shape (i.e. [height, width]).</p>
@@ -160,7 +163,7 @@ is not an integer. If &#8216;mean&#8217; is chosen, then fill = arr_in.mean().</
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>arr_out: ndarray, shape=[alpha * height, alpha * width]</strong> :</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>arr_out: ndarray, shape=[alpha * height, alpha * width]</strong> :</p>
 <blockquote class="last">
 <div><p>Output array where &#8216;alpha&#8217; has been determined automatically to
 fit (at least) the <cite>n_images</cite> in <cite>arr_in</cite>.</p>
@@ -210,7 +213,7 @@ fit (at least) the <cite>n_images</cite> in <cite>arr_in</cite>.</p>
       
     <div class="footer">
         &copy; Copyright 2011, the scikits-image team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.8.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
     </div>
     </div>
 

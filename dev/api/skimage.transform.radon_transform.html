@@ -3,17 +3,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Module: transform.radon_transform &mdash; skimage v0.7dev docs</title>
+    <title>Module: transform.radon_transform &mdash; skimage v0.8dev docs</title>
+    
     <link rel="stylesheet" href="../_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.7dev',
+        VERSION:     '0.8dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +26,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/docversions.js"></script>
-    <link rel="top" title="skimage v0.7dev docs" href="../index.html" /> 
+    <link rel="top" title="skimage v0.8dev docs" href="../index.html" /> 
   </head>
   <body>
     <div class="header-wrapper">
@@ -111,19 +114,19 @@ Imaging&#8221;, IEEE Press 1988.</dd>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr><td><a class="reference internal" href="#skimage.transform.radon_transform.fft" title="skimage.transform.radon_transform.fft"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.radon_transform.fft</span></tt></a>(x[,&nbsp;...])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.radon_transform.fft" title="skimage.transform.radon_transform.fft"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.radon_transform.fft</span></tt></a>(x[,&nbsp;...])</td>
 <td>Return discrete Fourier transform of real or complex sequence.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.transform.radon_transform.fftshift" title="skimage.transform.radon_transform.fftshift"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.radon_transform.fftshift</span></tt></a>(x)</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.transform.radon_transform.fftshift" title="skimage.transform.radon_transform.fftshift"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.radon_transform.fftshift</span></tt></a>(x)</td>
 <td>Shift the zero-frequency component to the center of the spectrum.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.transform.radon_transform.ifft" title="skimage.transform.radon_transform.ifft"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.radon_transform.ifft</span></tt></a>(x[,&nbsp;...])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.radon_transform.ifft" title="skimage.transform.radon_transform.ifft"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.radon_transform.ifft</span></tt></a>(x[,&nbsp;...])</td>
 <td>Return discrete inverse Fourier transform of real or complex sequence.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.transform.radon_transform.iradon" title="skimage.transform.radon_transform.iradon"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.radon_transform.iradon</span></tt></a>(...)</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.transform.radon_transform.iradon" title="skimage.transform.radon_transform.iradon"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.radon_transform.iradon</span></tt></a>(...)</td>
 <td>Inverse radon transform.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.transform.radon_transform.radon" title="skimage.transform.radon_transform.radon"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.radon_transform.radon</span></tt></a>(image)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.radon_transform.radon" title="skimage.transform.radon_transform.radon"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.radon_transform.radon</span></tt></a>(image)</td>
 <td>Calculates the radon transform of an image given specified projection angles.</td>
 </tr>
 </tbody>
@@ -140,7 +143,7 @@ Imaging&#8221;, IEEE Press 1988.</dd>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>x</strong> : array_like</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>x</strong> : array_like</p>
 <blockquote>
 <div><p>Array to Fourier transform.</p>
 </div></blockquote>
@@ -161,7 +164,7 @@ last axis (i.e., <tt class="docutils literal"><span class="pre">axis=-1</span></
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>z</strong> : complex ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>z</strong> : complex ndarray</p>
 <blockquote class="last">
 <div><p>with the elements:</p>
 <div class="highlight-python"><pre>[y(0),y(1),..,y(n/2),y(1-n/2),...,y(-1)]        if n is even
@@ -216,7 +219,7 @@ Note that <tt class="docutils literal"><span class="pre">y[0]</span></tt> is the
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>x</strong> : array_like</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>x</strong> : array_like</p>
 <blockquote>
 <div><p>Input array.</p>
 </div></blockquote>
@@ -226,7 +229,7 @@ Note that <tt class="docutils literal"><span class="pre">y[0]</span></tt> is the
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>y</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>y</strong> : ndarray</p>
 <blockquote class="last">
 <div><p>The shifted array.</p>
 </div></blockquote>
@@ -276,7 +279,7 @@ Note that <tt class="docutils literal"><span class="pre">y[0]</span></tt> is the
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>x</strong> : array_like</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>x</strong> : array_like</p>
 <blockquote>
 <div><p>Transformed data to invert.</p>
 </div></blockquote>
@@ -314,7 +317,7 @@ back projection algorithm.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>radon_image</strong> : array_like, dtype=float</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>radon_image</strong> : array_like, dtype=float</p>
 <blockquote>
 <div><p>Image containing radon transform (sinogram). Each column of
 the image corresponds to a projection along a different angle.</p>
@@ -341,7 +344,7 @@ Methods available: nearest, linear.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : ndarray</p>
 <blockquote class="last">
 <div><p>Reconstructed image.</p>
 </div></blockquote>
@@ -367,7 +370,7 @@ projection angles.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : array_like, dtype=float</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : array_like, dtype=float</p>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
@@ -377,7 +380,7 @@ projection angles.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : ndarray</p>
 <blockquote class="last">
 <div><p>Radon transform (sinogram).</p>
 </div></blockquote>
@@ -403,7 +406,7 @@ projection angles.</p>
       
     <div class="footer">
         &copy; Copyright 2011, the scikits-image team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.8.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
     </div>
     </div>
 

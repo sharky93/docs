@@ -3,17 +3,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Module: filter.lpi_filter &mdash; skimage v0.7dev docs</title>
+    <title>Module: filter.lpi_filter &mdash; skimage v0.8dev docs</title>
+    
     <link rel="stylesheet" href="../_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.7dev',
+        VERSION:     '0.8dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +26,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/docversions.js"></script>
-    <link rel="top" title="skimage v0.7dev docs" href="../index.html" /> 
+    <link rel="top" title="skimage v0.8dev docs" href="../index.html" /> 
   </head>
   <body>
     <div class="header-wrapper">
@@ -98,9 +101,9 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">author:</th><td class="field-body">Stefan van der Walt, 2008</td>
+<tr class="field-odd field"><th class="field-name">author:</th><td class="field-body">Stefan van der Walt, 2008</td>
 </tr>
-<tr class="field"><th class="field-name">license:</th><td class="field-body">modified BSD</td>
+<tr class="field-even field"><th class="field-name">license:</th><td class="field-body">modified BSD</td>
 </tr>
 </tbody>
 </table>
@@ -118,7 +121,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>impulse_response</strong> : callable <cite>f(r, c, **filter_params)</cite></p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>impulse_response</strong> : callable <cite>f(r, c, **filter_params)</cite></p>
 <blockquote class="last">
 <div><p>Function that yields the impulse response.  <cite>r</cite> and <cite>c</cite> are
 1-dimensional vectors that represent row and column positions, in
@@ -156,19 +159,19 @@ other words coordinates are (r[0],c[0]),(r[0],c[1]) etc.
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr><td><a class="reference internal" href="#skimage.filter.lpi_filter.constrained_least_squares" title="skimage.filter.lpi_filter.constrained_least_squares"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.lpi_filter.constrained_least_squares</span></tt></a>(...)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.lpi_filter.constrained_least_squares" title="skimage.filter.lpi_filter.constrained_least_squares"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.lpi_filter.constrained_least_squares</span></tt></a>(...)</td>
 <td></td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.filter.lpi_filter.forward" title="skimage.filter.lpi_filter.forward"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.lpi_filter.forward</span></tt></a>(data[,&nbsp;...])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.lpi_filter.forward" title="skimage.filter.lpi_filter.forward"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.lpi_filter.forward</span></tt></a>(data[,&nbsp;...])</td>
 <td>Apply the given filter to data.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.filter.lpi_filter.ifftshift" title="skimage.filter.lpi_filter.ifftshift"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.lpi_filter.ifftshift</span></tt></a>(x[,&nbsp;axes])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.lpi_filter.ifftshift" title="skimage.filter.lpi_filter.ifftshift"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.lpi_filter.ifftshift</span></tt></a>(x[,&nbsp;axes])</td>
 <td>The inverse of fftshift.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.filter.lpi_filter.inverse" title="skimage.filter.lpi_filter.inverse"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.lpi_filter.inverse</span></tt></a>(data[,&nbsp;...])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.lpi_filter.inverse" title="skimage.filter.lpi_filter.inverse"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.lpi_filter.inverse</span></tt></a>(data[,&nbsp;...])</td>
 <td>Apply the filter in reverse to the given data.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.filter.lpi_filter.wiener" title="skimage.filter.lpi_filter.wiener"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.lpi_filter.wiener</span></tt></a>(data[,&nbsp;...])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.lpi_filter.wiener" title="skimage.filter.lpi_filter.wiener"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.lpi_filter.wiener</span></tt></a>(data[,&nbsp;...])</td>
 <td>Minimum Mean Square Error (Wiener) inverse filter.</td>
 </tr>
 </tbody>
@@ -192,7 +195,7 @@ other words coordinates are (r[0],c[0]),(r[0],c[1]) etc.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>data</strong> : (M,N) ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>data</strong> : (M,N) ndarray</p>
 <blockquote>
 <div><p>Input data.</p>
 </div></blockquote>
@@ -230,7 +233,7 @@ other words coordinates are (r[0],c[0]),(r[0],c[1]) etc.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>x</strong> : array_like</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>x</strong> : array_like</p>
 <blockquote>
 <div><p>Input array.</p>
 </div></blockquote>
@@ -240,7 +243,7 @@ other words coordinates are (r[0],c[0]),(r[0],c[1]) etc.
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>y</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>y</strong> : ndarray</p>
 <blockquote class="last">
 <div><p>The shifted array.</p>
 </div></blockquote>
@@ -280,7 +283,7 @@ other words coordinates are (r[0],c[0]),(r[0],c[1]) etc.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>data</strong> : (M,N) ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>data</strong> : (M,N) ndarray</p>
 <blockquote>
 <div><p>Input data.</p>
 </div></blockquote>
@@ -315,7 +318,7 @@ amplification of artefacts, so a conservative limit is recommended.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>data</strong> : (M,N) ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>data</strong> : (M,N) ndarray</p>
 <blockquote>
 <div><p>Input data.</p>
 </div></blockquote>
@@ -354,7 +357,7 @@ image.</p>
       
     <div class="footer">
         &copy; Copyright 2011, the scikits-image team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.8.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
     </div>
     </div>
 
