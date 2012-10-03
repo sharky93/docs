@@ -1,18 +1,20 @@
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Module: io.collection &mdash; skimage v0.8dev docs</title>
     
-    <title>Module: io.collection &mdash; skimage v0.8dev docs</title>
     
-    <link rel="stylesheet" href="../_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link href="../_static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../_static/css/custom.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
     
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="../_static/js/bootstrap.min.js"></script>
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -22,81 +24,34 @@
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/docversions.js"></script>
-    <link rel="top" title="skimage v0.8dev docs" href="../index.html" /> 
-  </head>
-  <body>
-    <div class="header-wrapper">
-      <div class="header">
-          <div class="logo"><a href="http://scikits-image.org">
-            <img class="logo" src="../_static/scikits_image_logo_small.png" alt="Logo"/>
-          </a></div>
-       
-       </div>
-    </div>
-
-    <div class="content-wrapper">
-      <div class="content">
-             
-            
-      <div class="sphinxsidebar">
-        <div class="sphinxsidebarwrapper"> 
-
-  
-    <h3>Navigation</h3>
-    <p>
-    <a href="../index.html">Documentation Home</a>
-    </p>
-    <p>&nbsp;</p>
-  
-    <h3>Contents</h3>
-    <ul>
-<li><a class="reference internal" href="#">Module: <tt class="docutils literal"><span class="pre">io.collection</span></tt></a><ul>
-<li><a class="reference internal" href="#imagecollection"><tt class="docutils literal"><span class="pre">ImageCollection</span></tt></a><ul>
-</ul>
-</li>
-<li><a class="reference internal" href="#multiimage"><tt class="docutils literal"><span class="pre">MultiImage</span></tt></a></li>
-<li><a class="reference internal" href="#alphanumeric-key">alphanumeric_key</a></li>
-<li><a class="reference internal" href="#concatenate-images">concatenate_images</a></li>
-<li><a class="reference internal" href="#copy">copy</a></li>
-<li><a class="reference internal" href="#glob">glob</a></li>
-<li><a class="reference internal" href="#imread">imread</a></li>
-</ul>
-</li>
-</ul>
-
-
-
-
-  <h3>Version</h3>
-
-    <script type="text/javascript">
-      insert_version_links();
-    </script>
-<div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <link rel="top" title="skimage v0.8dev docs" href="../index.html" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <link rel="shortcut icon" href="../_static/favicon.ico">
+</head>
+<body class="container">
+    <a href="http://scikit-image.org" class="logo"><img src="../_static/img/logo.png" alt=""></a>
+    <div class="clearfix"></div>
+    <div class="navbar">
+        <div class="navbar-inner">
+            <ul class="nav">
+                <li><a href="../index.html">Home</a></li>
+<li><a href="/download.html">Download</a></li>
+<li><a href="/docs/dev/auto_examples">Gallery</a></li>
+<li><a href="/docs">Documentation</a></li>
+<li><a href="https://github.com/scikit-image/scikit-image">Source</a></li>
+            </ul>
+            <form class="navbar-form pull-right" action="../search.html" method="get">
+                <input type="text" class="search span3" name="q" placeholder="Search documentation ...">
+                <input type="hidden" name="check_keywords" value="yes" >
+                <input type="hidden" name="area" value="default" >
+            </form>
         </div>
-      </div>
-        
-        <div class="document">
-            
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body">
+    </div>
+    <div class="row">
+        <div class="span9">
             
   <div class="section" id="module-skimage.io.collection">
 <span id="module-io-collection"></span><h1>Module: <tt class="xref py py-mod docutils literal"><span class="pre">io.collection</span></tt><a class="headerlink" href="#module-skimage.io.collection" title="Permalink to this headline">¶</a></h1>
@@ -114,7 +69,7 @@ slicing returns a new ImageCollection, <em>not</em> a view into the data.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>load_pattern</strong> : str or list</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>load_pattern</strong> : str or list</p>
 <blockquote>
 <div><p>Pattern glob or filenames to load. The path can be absolute or
 relative.  Multiple patterns should be separated by a colon,
@@ -180,7 +135,7 @@ frame from a video file:</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.io.collection.ImageCollection.files" title="skimage.io.collection.ImageCollection.files"><tt class="xref py py-obj docutils literal"><span class="pre">files</span></tt></a></td>
+<tr><td><a class="reference internal" href="#skimage.io.collection.ImageCollection.files" title="skimage.io.collection.ImageCollection.files"><tt class="xref py py-obj docutils literal"><span class="pre">files</span></tt></a></td>
 <td></td>
 </tr>
 </tbody>
@@ -199,13 +154,13 @@ frame from a video file:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>ar</strong> : np.ndarray</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>ar</strong> : np.ndarray</p>
 <blockquote>
 <div><p>An array having one more dimension than the images in <cite>self</cite>.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<tr class="field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
 <div><p>If images in the <cite>ImageCollection</cite> don&#8217;t have identical shapes.</p>
 </div></blockquote>
@@ -237,7 +192,7 @@ frame from a video file:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>n</strong> : None or int</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>n</strong> : None or int</p>
 <blockquote class="last">
 <div><p>Clear the cache for this image only. By default, the
 entire cache is erased.</p>
@@ -262,7 +217,7 @@ entire cache is erased.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
 <blockquote>
 <div><p>The complete path to the image file.</p>
 </div></blockquote>
@@ -343,13 +298,13 @@ from file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>ar</strong> : np.ndarray</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>ar</strong> : np.ndarray</p>
 <blockquote>
 <div><p>An array having one more dimension than the images in <cite>self</cite>.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<tr class="field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
 <div><p>If images in the <cite>MultiImage</cite> don&#8217;t have identical shapes.</p>
 </div></blockquote>
@@ -381,19 +336,19 @@ from file.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.io.collection.alphanumeric_key" title="skimage.io.collection.alphanumeric_key"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.collection.alphanumeric_key</span></tt></a>(s)</td>
+<tr><td><a class="reference internal" href="#skimage.io.collection.alphanumeric_key" title="skimage.io.collection.alphanumeric_key"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.collection.alphanumeric_key</span></tt></a>(s)</td>
 <td>Convert string to list of strings and ints that gives intuitive sorting.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.io.collection.concatenate_images" title="skimage.io.collection.concatenate_images"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.collection.concatenate_images</span></tt></a>(ic)</td>
+<tr><td><a class="reference internal" href="#skimage.io.collection.concatenate_images" title="skimage.io.collection.concatenate_images"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.collection.concatenate_images</span></tt></a>(ic)</td>
 <td>Concatenate all images in the image collection into an array.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.io.collection.copy" title="skimage.io.collection.copy"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.collection.copy</span></tt></a>(x)</td>
+<tr><td><a class="reference internal" href="#skimage.io.collection.copy" title="skimage.io.collection.copy"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.collection.copy</span></tt></a>(x)</td>
 <td>Shallow copy operation on arbitrary Python objects.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.io.collection.glob" title="skimage.io.collection.glob"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.collection.glob</span></tt></a>(pathname)</td>
+<tr><td><a class="reference internal" href="#skimage.io.collection.glob" title="skimage.io.collection.glob"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.collection.glob</span></tt></a>(pathname)</td>
 <td>Return a list of paths matching a pathname pattern.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.io.collection.imread" title="skimage.io.collection.imread"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.collection.imread</span></tt></a>(fname[,&nbsp;...])</td>
+<tr><td><a class="reference internal" href="#skimage.io.collection.imread" title="skimage.io.collection.imread"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.collection.imread</span></tt></a>(fname,&nbsp;...[,&nbsp;...])</td>
 <td>Load an image from file.</td>
 </tr>
 </tbody>
@@ -409,9 +364,9 @@ from file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><strong>s: string</strong> :</td>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><strong>s: string</strong> :</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><strong>k: a list of strings and ints</strong> :</td>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><strong>k: a list of strings and ints</strong> :</td>
 </tr>
 </tbody>
 </table>
@@ -439,19 +394,19 @@ from file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>ic: an iterable of images (including ImageCollection and MultiImage)</strong> :</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>ic: an iterable of images (including ImageCollection and MultiImage)</strong> :</p>
 <blockquote>
 <div><p>The images to be concatenated.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>ar</strong> : np.ndarray</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>ar</strong> : np.ndarray</p>
 <blockquote>
 <div><p>An array having one more dimension than the images in <cite>ic</cite>.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<tr class="field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
 <div><p>If images in <cite>ic</cite> don&#8217;t have identical shapes.</p>
 </div></blockquote>
@@ -496,7 +451,7 @@ from file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>fname</strong> : string</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>fname</strong> : string</p>
 <blockquote>
 <div><p>Image file name, e.g. <tt class="docutils literal"><span class="pre">test.jpg</span></tt>.</p>
 </div></blockquote>
@@ -511,7 +466,7 @@ Images that are already in grey-scale format are not converted.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>img_array</strong> : ndarray</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>img_array</strong> : ndarray</p>
 <blockquote class="last">
 <div><p>The different colour bands/channels are stored in the
 third dimension, such that a grey-image is MxN, an
@@ -527,21 +482,48 @@ RGB-image MxNx3 and an RGBA-image MxNx4.</p>
 </div>
 
 
-          </div>
         </div>
-      </div>
+        <div class="span3"><h4 class="sidebar-box-heading">Navigation</h4>
+<div class="well sidebar-box">
+    <ul class="nav nav-list">
+        <li><a href="../index.html">Documentation Home</a></li>
+    </ul>
+</div>
+        <h4 class="sidebar-box-heading">Contents</h4>
+        <div class="well sidebar-box toc">
+            <ul class="nav nav-list">
+<li><a class="reference internal" href="#">Module: <tt class="docutils literal"><span class="pre">io.collection</span></tt></a><ul class="nav nav-list">
+<li><a class="reference internal" href="#imagecollection"><tt class="docutils literal"><span class="pre">ImageCollection</span></tt></a><ul class="nav nav-list">
+</ul>
+</li>
+<li><a class="reference internal" href="#multiimage"><tt class="docutils literal"><span class="pre">MultiImage</span></tt></a></li>
+<li><a class="reference internal" href="#alphanumeric-key">alphanumeric_key</a></li>
+<li><a class="reference internal" href="#concatenate-images">concatenate_images</a></li>
+<li><a class="reference internal" href="#copy">copy</a></li>
+<li><a class="reference internal" href="#glob">glob</a></li>
+<li><a class="reference internal" href="#imread">imread</a></li>
+</ul>
+</li>
+</ul>
+
         </div>
-        <div class="clearer"></div>
-    </div>
-    </div>
 
-    <div class="footer-wrapper">
-      
-    <div class="footer">
-        &copy; Copyright 2011, the scikits-image team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+<h4 class="sidebar-box-heading">Versions</h4>
+<div class="well sidebar-box">
+    <ul class="nav nav-list">
+        <script src="../_static/docversions.js"></script>
+        <script type="text/javascript">
+            insert_version_links();
+        </script>
+    </ul>
+</div>
+        </div>
     </div>
+    <div class="well footer">
+        <small>
+            &copy; Copyright the scikit-image development team.
+            Created using <a href="http://twitter.github.com/bootstrap/">Bootstrap</a> and <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+        </small>
     </div>
-
-  </body>
+</body>
 </html>

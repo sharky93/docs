@@ -1,18 +1,20 @@
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Module: segmentation &mdash; skimage v0.8dev docs</title>
     
-    <title>Module: segmentation &mdash; skimage v0.8dev docs</title>
     
-    <link rel="stylesheet" href="../_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link href="../_static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../_static/css/custom.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
     
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="../_static/js/bootstrap.min.js"></script>
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -22,79 +24,34 @@
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/docversions.js"></script>
-    <link rel="top" title="skimage v0.8dev docs" href="../index.html" /> 
-  </head>
-  <body>
-    <div class="header-wrapper">
-      <div class="header">
-          <div class="logo"><a href="http://scikits-image.org">
-            <img class="logo" src="../_static/scikits_image_logo_small.png" alt="Logo"/>
-          </a></div>
-       
-       </div>
-    </div>
-
-    <div class="content-wrapper">
-      <div class="content">
-             
-            
-      <div class="sphinxsidebar">
-        <div class="sphinxsidebarwrapper"> 
-
-  
-    <h3>Navigation</h3>
-    <p>
-    <a href="../index.html">Documentation Home</a>
-    </p>
-    <p>&nbsp;</p>
-  
-    <h3>Contents</h3>
-    <ul>
-<li><a class="reference internal" href="#">Module: <tt class="docutils literal"><span class="pre">segmentation</span></tt></a><ul>
-<li><a class="reference internal" href="#clear-border">clear_border</a></li>
-<li><a class="reference internal" href="#felzenszwalb">felzenszwalb</a></li>
-<li><a class="reference internal" href="#find-boundaries">find_boundaries</a></li>
-<li><a class="reference internal" href="#quickshift">quickshift</a></li>
-<li><a class="reference internal" href="#random-walker">random_walker</a></li>
-<li><a class="reference internal" href="#slic">slic</a></li>
-<li><a class="reference internal" href="#visualize-boundaries">visualize_boundaries</a></li>
-</ul>
-</li>
-</ul>
-
-
-
-
-  <h3>Version</h3>
-
-    <script type="text/javascript">
-      insert_version_links();
-    </script>
-<div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <link rel="top" title="skimage v0.8dev docs" href="../index.html" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <link rel="shortcut icon" href="../_static/favicon.ico">
+</head>
+<body class="container">
+    <a href="http://scikit-image.org" class="logo"><img src="../_static/img/logo.png" alt=""></a>
+    <div class="clearfix"></div>
+    <div class="navbar">
+        <div class="navbar-inner">
+            <ul class="nav">
+                <li><a href="../index.html">Home</a></li>
+<li><a href="/download.html">Download</a></li>
+<li><a href="/docs/dev/auto_examples">Gallery</a></li>
+<li><a href="/docs">Documentation</a></li>
+<li><a href="https://github.com/scikit-image/scikit-image">Source</a></li>
+            </ul>
+            <form class="navbar-form pull-right" action="../search.html" method="get">
+                <input type="text" class="search span3" name="q" placeholder="Search documentation ...">
+                <input type="hidden" name="check_keywords" value="yes" >
+                <input type="hidden" name="area" value="default" >
+            </form>
         </div>
-      </div>
-        
-        <div class="document">
-            
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body">
+    </div>
+    <div class="row">
+        <div class="span9">
             
   <div class="section" id="module-skimage.segmentation">
 <span id="module-segmentation"></span><h1>Module: <tt class="xref py py-mod docutils literal"><span class="pre">segmentation</span></tt><a class="headerlink" href="#module-skimage.segmentation" title="Permalink to this headline">¶</a></h1>
@@ -104,25 +61,25 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.segmentation.clear_border" title="skimage.segmentation.clear_border"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.clear_border</span></tt></a>(image[,&nbsp;...])</td>
+<tr><td><a class="reference internal" href="#skimage.segmentation.clear_border" title="skimage.segmentation.clear_border"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.clear_border</span></tt></a>(image[,&nbsp;...])</td>
 <td>Clear objects connected to image border.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.segmentation.felzenszwalb" title="skimage.segmentation.felzenszwalb"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.felzenszwalb</span></tt></a>(image[,&nbsp;...])</td>
+<tr><td><a class="reference internal" href="#skimage.segmentation.felzenszwalb" title="skimage.segmentation.felzenszwalb"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.felzenszwalb</span></tt></a>(image[,&nbsp;...])</td>
 <td>Computes Felsenszwalb&#8217;s efficient graph based image segmentation.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.segmentation.find_boundaries" title="skimage.segmentation.find_boundaries"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.find_boundaries</span></tt></a>(label_img)</td>
+<tr><td><a class="reference internal" href="#skimage.segmentation.find_boundaries" title="skimage.segmentation.find_boundaries"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.find_boundaries</span></tt></a>(label_img)</td>
 <td></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.segmentation.quickshift" title="skimage.segmentation.quickshift"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.quickshift</span></tt></a></td>
+<tr><td><a class="reference internal" href="#skimage.segmentation.quickshift" title="skimage.segmentation.quickshift"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.quickshift</span></tt></a></td>
 <td>Segments image using quickshift clustering in Color-(x,y) space.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.segmentation.random_walker" title="skimage.segmentation.random_walker"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.random_walker</span></tt></a>(data,&nbsp;labels)</td>
+<tr><td><a class="reference internal" href="#skimage.segmentation.random_walker" title="skimage.segmentation.random_walker"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.random_walker</span></tt></a>(data,&nbsp;labels)</td>
 <td>Random walker algorithm for segmentation from markers, for gray-level or multichannel images.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.segmentation.slic" title="skimage.segmentation.slic"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.slic</span></tt></a></td>
+<tr><td><a class="reference internal" href="#skimage.segmentation.slic" title="skimage.segmentation.slic"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.slic</span></tt></a></td>
 <td>Segments image using k-means clustering in Color-(x,y) space.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.segmentation.visualize_boundaries" title="skimage.segmentation.visualize_boundaries"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.visualize_boundaries</span></tt></a>(...)</td>
+<tr><td><a class="reference internal" href="#skimage.segmentation.visualize_boundaries" title="skimage.segmentation.visualize_boundaries"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.visualize_boundaries</span></tt></a>(...)</td>
 <td></td>
 </tr>
 </tbody>
@@ -138,7 +95,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : (N, M) array</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : (N, M) array</p>
 <blockquote>
 <div><p>Binary image.</p>
 </div></blockquote>
@@ -152,7 +109,7 @@
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>image</strong> : (N, M) array</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>image</strong> : (N, M) array</p>
 <blockquote class="last">
 <div><p>Cleared binary image.</p>
 </div></blockquote>
@@ -185,7 +142,7 @@
 <h2>felzenszwalb<a class="headerlink" href="#felzenszwalb" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.segmentation.felzenszwalb">
-<tt class="descclassname">skimage.segmentation.</tt><tt class="descname">felzenszwalb</tt><big>(</big><em>image</em>, <em>scale=1</em>, <em>sigma=0.80000000000000004</em>, <em>min_size=20</em><big>)</big><a class="headerlink" href="#skimage.segmentation.felzenszwalb" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">skimage.segmentation.</tt><tt class="descname">felzenszwalb</tt><big>(</big><em>image</em>, <em>scale=1</em>, <em>sigma=0.8</em>, <em>min_size=20</em><big>)</big><a class="headerlink" href="#skimage.segmentation.felzenszwalb" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes Felsenszwalb&#8217;s efficient graph based image segmentation.</p>
 <p>Produces an oversegmentation of a multichannel (i.e. RGB) image
 using a fast, minimum spanning tree based clustering on the image grid.
@@ -202,7 +159,7 @@ intersection of the separate segmentations on the color channels.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : (width, height, 3) or (width, height) ndarray</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : (width, height, 3) or (width, height) ndarray</p>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
@@ -220,7 +177,7 @@ intersection of the separate segmentations on the color channels.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>segment_mask</strong> : (width, height) ndarray</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>segment_mask</strong> : (width, height) ndarray</p>
 <blockquote class="last">
 <div><p>Integer mask indicating segment labels.</p>
 </div></blockquote>
@@ -229,10 +186,10 @@ intersection of the separate segmentations on the color channels.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r146" rules="none">
+<table class="docutils citation" frame="void" id="r84" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[R146]</a></td><td>Efficient graph-based image segmentation, Felzenszwalb, P.F. and
+<tr><td class="label"><a class="fn-backref" href="#id1">[R84]</a></td><td>Efficient graph-based image segmentation, Felzenszwalb, P.F. and
 Huttenlocher, D.P.  International Journal of Computer Vision, 2004</td></tr>
 </tbody>
 </table>
@@ -259,7 +216,7 @@ algorithm.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : (width, height, channels) ndarray</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : (width, height, channels) ndarray</p>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
@@ -297,7 +254,7 @@ segmentation. For this purpose, the input is assumed to be RGB.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>segment_mask</strong> : (width, height) ndarray</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>segment_mask</strong> : (width, height) ndarray</p>
 <blockquote class="last">
 <div><p>Integer mask indicating segment labels.</p>
 </div></blockquote>
@@ -310,10 +267,10 @@ segmentation. For this purpose, the input is assumed to be RGB.</p>
 segmentation, though this is not strictly necessary. For this to work, the
 image must be given in RGB format.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r147" rules="none">
+<table class="docutils citation" frame="void" id="r85" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[R147]</a></td><td>Quick shift and kernel methods for mode seeking,
+<tr><td class="label"><a class="fn-backref" href="#id2">[R85]</a></td><td>Quick shift and kernel methods for mode seeking,
 Vedaldi, A. and Soatto, S.
 European Conference on Computer Vision, 2008</td></tr>
 </tbody>
@@ -332,7 +289,7 @@ multichannel images.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>data</strong> : array_like</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>data</strong> : array_like</p>
 <blockquote>
 <div><p>Image to be segmented in phases. Gray-level <cite>data</cite> can be two- or
 three-dimensional; multichannel data can be three- or four-
@@ -408,7 +365,7 @@ out-of-plane voxel spacing represents the third spatial dimension.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : ndarray</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : ndarray</p>
 <blockquote class="last">
 <div><p>If <cite>return_full_prob</cite> is False, array of ints of same shape as <cite>data</cite>,
 in which each pixel has been labeled according to the marker that
@@ -424,7 +381,7 @@ that label <cite>label_nb</cite> reaches the pixel <cite>(i, j)</cite> first.</p
 <div class="admonition-see-also admonition seealso">
 <p class="first admonition-title">See also</p>
 <dl class="last docutils">
-<dt><a class="reference internal" href="skimage.morphology.watershed.html#module-skimage.morphology.watershed" title="skimage.morphology.watershed"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.watershed</span></tt></a></dt>
+<dt><a class="reference internal" href="skimage.morphology.html#skimage.morphology.watershed" title="skimage.morphology.watershed"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.watershed</span></tt></a></dt>
 <dd>watershed segmentation A segmentation algorithm based on mathematical morphology and &#8220;flooding&#8221; of regions from markers.</dd>
 </dl>
 </div>
@@ -502,7 +459,7 @@ small images, and an iterative method for larger images.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : (width, height, 3) ndarray</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : (width, height, 3) ndarray</p>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
@@ -532,7 +489,7 @@ recommended.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>segment_mask</strong> : (width, height) ndarray</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>segment_mask</strong> : (width, height) ndarray</p>
 <blockquote class="last">
 <div><p>Integer mask indicating segment labels.</p>
 </div></blockquote>
@@ -543,10 +500,10 @@ recommended.</p>
 <p class="rubric">Notes</p>
 <p>The image is smoothed using a Gaussian kernel prior to segmentation.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r148" rules="none">
+<table class="docutils citation" frame="void" id="r86" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[R148]</a></td><td>Radhakrishna Achanta, Appu Shaji, Kevin Smith, Aurelien Lucchi,
+<tr><td class="label"><a class="fn-backref" href="#id3">[R86]</a></td><td>Radhakrishna Achanta, Appu Shaji, Kevin Smith, Aurelien Lucchi,
 Pascal Fua, and Sabine Süsstrunk, SLIC Superpixels Compared to
 State-of-the-art Superpixel Methods, TPAMI, May 2012.</td></tr>
 </tbody>
@@ -574,21 +531,46 @@ State-of-the-art Superpixel Methods, TPAMI, May 2012.</td></tr>
 </div>
 
 
-          </div>
         </div>
-      </div>
+        <div class="span3"><h4 class="sidebar-box-heading">Navigation</h4>
+<div class="well sidebar-box">
+    <ul class="nav nav-list">
+        <li><a href="../index.html">Documentation Home</a></li>
+    </ul>
+</div>
+        <h4 class="sidebar-box-heading">Contents</h4>
+        <div class="well sidebar-box toc">
+            <ul class="nav nav-list">
+<li><a class="reference internal" href="#">Module: <tt class="docutils literal"><span class="pre">segmentation</span></tt></a><ul class="nav nav-list">
+<li><a class="reference internal" href="#clear-border">clear_border</a></li>
+<li><a class="reference internal" href="#felzenszwalb">felzenszwalb</a></li>
+<li><a class="reference internal" href="#find-boundaries">find_boundaries</a></li>
+<li><a class="reference internal" href="#quickshift">quickshift</a></li>
+<li><a class="reference internal" href="#random-walker">random_walker</a></li>
+<li><a class="reference internal" href="#slic">slic</a></li>
+<li><a class="reference internal" href="#visualize-boundaries">visualize_boundaries</a></li>
+</ul>
+</li>
+</ul>
+
         </div>
-        <div class="clearer"></div>
-    </div>
-    </div>
 
-    <div class="footer-wrapper">
-      
-    <div class="footer">
-        &copy; Copyright 2011, the scikits-image team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+<h4 class="sidebar-box-heading">Versions</h4>
+<div class="well sidebar-box">
+    <ul class="nav nav-list">
+        <script src="../_static/docversions.js"></script>
+        <script type="text/javascript">
+            insert_version_links();
+        </script>
+    </ul>
+</div>
+        </div>
     </div>
+    <div class="well footer">
+        <small>
+            &copy; Copyright the scikit-image development team.
+            Created using <a href="http://twitter.github.com/bootstrap/">Bootstrap</a> and <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+        </small>
     </div>
-
-  </body>
+</body>
 </html>

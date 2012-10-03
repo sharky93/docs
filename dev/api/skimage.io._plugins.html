@@ -1,18 +1,20 @@
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Module: io._plugins &mdash; skimage v0.8dev docs</title>
     
-    <title>Module: io._plugins &mdash; skimage v0.8dev docs</title>
     
-    <link rel="stylesheet" href="../_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link href="../_static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../_static/css/custom.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
     
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="../_static/js/bootstrap.min.js"></script>
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -22,78 +24,34 @@
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/docversions.js"></script>
-    <link rel="top" title="skimage v0.8dev docs" href="../index.html" /> 
-  </head>
-  <body>
-    <div class="header-wrapper">
-      <div class="header">
-          <div class="logo"><a href="http://scikits-image.org">
-            <img class="logo" src="../_static/scikits_image_logo_small.png" alt="Logo"/>
-          </a></div>
-       
-       </div>
-    </div>
-
-    <div class="content-wrapper">
-      <div class="content">
-             
-            
-      <div class="sphinxsidebar">
-        <div class="sphinxsidebarwrapper"> 
-
-  
-    <h3>Navigation</h3>
-    <p>
-    <a href="../index.html">Documentation Home</a>
-    </p>
-    <p>&nbsp;</p>
-  
-    <h3>Contents</h3>
-    <ul>
-<li><a class="reference internal" href="#">Module: <tt class="docutils literal"><span class="pre">io._plugins</span></tt></a><ul>
-<li><a class="reference internal" href="#available">available</a></li>
-<li><a class="reference internal" href="#call">call</a></li>
-<li><a class="reference internal" href="#configuration">configuration</a></li>
-<li><a class="reference internal" href="#info">info</a></li>
-<li><a class="reference internal" href="#reset-plugins">reset_plugins</a></li>
-<li><a class="reference internal" href="#use">use</a></li>
-</ul>
-</li>
-</ul>
-
-
-
-
-  <h3>Version</h3>
-
-    <script type="text/javascript">
-      insert_version_links();
-    </script>
-<div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <link rel="top" title="skimage v0.8dev docs" href="../index.html" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <link rel="shortcut icon" href="../_static/favicon.ico">
+</head>
+<body class="container">
+    <a href="http://scikit-image.org" class="logo"><img src="../_static/img/logo.png" alt=""></a>
+    <div class="clearfix"></div>
+    <div class="navbar">
+        <div class="navbar-inner">
+            <ul class="nav">
+                <li><a href="../index.html">Home</a></li>
+<li><a href="/download.html">Download</a></li>
+<li><a href="/docs/dev/auto_examples">Gallery</a></li>
+<li><a href="/docs">Documentation</a></li>
+<li><a href="https://github.com/scikit-image/scikit-image">Source</a></li>
+            </ul>
+            <form class="navbar-form pull-right" action="../search.html" method="get">
+                <input type="text" class="search span3" name="q" placeholder="Search documentation ...">
+                <input type="hidden" name="check_keywords" value="yes" >
+                <input type="hidden" name="area" value="default" >
+            </form>
         </div>
-      </div>
-        
-        <div class="document">
-            
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body">
+    </div>
+    <div class="row">
+        <div class="span9">
             
   <div class="section" id="module-skimage.io._plugins">
 <span id="module-io-plugins"></span><h1>Module: <tt class="xref py py-mod docutils literal"><span class="pre">io._plugins</span></tt><a class="headerlink" href="#module-skimage.io._plugins" title="Permalink to this headline">¶</a></h1>
@@ -103,22 +61,22 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.io._plugins.available" title="skimage.io._plugins.available"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io._plugins.available</span></tt></a>([loaded])</td>
+<tr><td><a class="reference internal" href="#skimage.io._plugins.available" title="skimage.io._plugins.available"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io._plugins.available</span></tt></a>([loaded])</td>
 <td>List available plugins.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.io._plugins.call" title="skimage.io._plugins.call"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io._plugins.call</span></tt></a>(kind,&nbsp;*args,&nbsp;**kwargs)</td>
+<tr><td><a class="reference internal" href="#skimage.io._plugins.call" title="skimage.io._plugins.call"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io._plugins.call</span></tt></a>(kind,&nbsp;*args,&nbsp;**kwargs)</td>
 <td>Find the appropriate plugin of &#8216;kind&#8217; and execute it.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.io._plugins.configuration" title="skimage.io._plugins.configuration"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io._plugins.configuration</span></tt></a>()</td>
+<tr><td><a class="reference internal" href="#skimage.io._plugins.configuration" title="skimage.io._plugins.configuration"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io._plugins.configuration</span></tt></a>()</td>
 <td>Return the currently preferred plugin order.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.io._plugins.info" title="skimage.io._plugins.info"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io._plugins.info</span></tt></a>(plugin)</td>
+<tr><td><a class="reference internal" href="#skimage.io._plugins.info" title="skimage.io._plugins.info"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io._plugins.info</span></tt></a>(plugin)</td>
 <td>Return plugin meta-data.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.io._plugins.reset_plugins" title="skimage.io._plugins.reset_plugins"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io._plugins.reset_plugins</span></tt></a>()</td>
+<tr><td><a class="reference internal" href="#skimage.io._plugins.reset_plugins" title="skimage.io._plugins.reset_plugins"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io._plugins.reset_plugins</span></tt></a>()</td>
 <td>Clear the plugin state to the default, i.e., where no plugins are loaded</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.io._plugins.use" title="skimage.io._plugins.use"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io._plugins.use</span></tt></a>(name[,&nbsp;kind])</td>
+<tr><td><a class="reference internal" href="#skimage.io._plugins.use" title="skimage.io._plugins.use"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io._plugins.use</span></tt></a>(name[,&nbsp;kind])</td>
 <td>Set the default plugin for a specified operation.</td>
 </tr>
 </tbody>
@@ -133,14 +91,14 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>loaded</strong> : bool</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>loaded</strong> : bool</p>
 <blockquote>
 <div><p>If True, show only those plugins currently loaded.  By default,
 all plugins are shown.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>p</strong> : dict</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>p</strong> : dict</p>
 <blockquote class="last">
 <div><p>Dictionary with plugin names as keys and exposed functions as
 values.</p>
@@ -162,7 +120,7 @@ values.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>kind</strong> : {&#8216;imshow&#8217;, &#8216;imsave&#8217;, &#8216;imread&#8217;, &#8216;imread_collection&#8217;}</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>kind</strong> : {&#8216;imshow&#8217;, &#8216;imsave&#8217;, &#8216;imread&#8217;, &#8216;imread_collection&#8217;}</p>
 <blockquote>
 <div><p>Function to look up.</p>
 </div></blockquote>
@@ -192,7 +150,7 @@ matching plugin is used.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>p</strong> : dict</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>p</strong> : dict</p>
 <blockquote class="last">
 <div><p>Dictionary of preferred plugin order, with function name as key and
 plugins (in order of preference) as value.</p>
@@ -214,13 +172,13 @@ plugins (in order of preference) as value.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>plugin</strong> : str</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>plugin</strong> : str</p>
 <blockquote>
 <div><p>Name of plugin.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>m</strong> : dict</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>m</strong> : dict</p>
 <blockquote class="last">
 <div><p>Meta data as specified in plugin <tt class="docutils literal"><span class="pre">.ini</span></tt>.</p>
 </div></blockquote>
@@ -251,7 +209,7 @@ will be loaded if it hasn&#8217;t been already.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
 <blockquote>
 <div><p>Name of plugin.</p>
 </div></blockquote>
@@ -283,21 +241,45 @@ the plugin is set for all functions.</p>
 </div>
 
 
-          </div>
         </div>
-      </div>
+        <div class="span3"><h4 class="sidebar-box-heading">Navigation</h4>
+<div class="well sidebar-box">
+    <ul class="nav nav-list">
+        <li><a href="../index.html">Documentation Home</a></li>
+    </ul>
+</div>
+        <h4 class="sidebar-box-heading">Contents</h4>
+        <div class="well sidebar-box toc">
+            <ul class="nav nav-list">
+<li><a class="reference internal" href="#">Module: <tt class="docutils literal"><span class="pre">io._plugins</span></tt></a><ul class="nav nav-list">
+<li><a class="reference internal" href="#available">available</a></li>
+<li><a class="reference internal" href="#call">call</a></li>
+<li><a class="reference internal" href="#configuration">configuration</a></li>
+<li><a class="reference internal" href="#info">info</a></li>
+<li><a class="reference internal" href="#reset-plugins">reset_plugins</a></li>
+<li><a class="reference internal" href="#use">use</a></li>
+</ul>
+</li>
+</ul>
+
         </div>
-        <div class="clearer"></div>
-    </div>
-    </div>
 
-    <div class="footer-wrapper">
-      
-    <div class="footer">
-        &copy; Copyright 2011, the scikits-image team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+<h4 class="sidebar-box-heading">Versions</h4>
+<div class="well sidebar-box">
+    <ul class="nav nav-list">
+        <script src="../_static/docversions.js"></script>
+        <script type="text/javascript">
+            insert_version_links();
+        </script>
+    </ul>
+</div>
+        </div>
     </div>
+    <div class="well footer">
+        <small>
+            &copy; Copyright the scikit-image development team.
+            Created using <a href="http://twitter.github.com/bootstrap/">Bootstrap</a> and <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+        </small>
     </div>
-
-  </body>
+</body>
 </html>

@@ -1,18 +1,20 @@
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Module: data &mdash; skimage v0.8dev docs</title>
     
-    <title>Module: data &mdash; skimage v0.8dev docs</title>
     
-    <link rel="stylesheet" href="../_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link href="../_static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../_static/css/custom.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
     
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="../_static/js/bootstrap.min.js"></script>
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -22,81 +24,34 @@
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/docversions.js"></script>
-    <link rel="top" title="skimage v0.8dev docs" href="../index.html" /> 
-  </head>
-  <body>
-    <div class="header-wrapper">
-      <div class="header">
-          <div class="logo"><a href="http://scikits-image.org">
-            <img class="logo" src="../_static/scikits_image_logo_small.png" alt="Logo"/>
-          </a></div>
-       
-       </div>
-    </div>
-
-    <div class="content-wrapper">
-      <div class="content">
-             
-            
-      <div class="sphinxsidebar">
-        <div class="sphinxsidebarwrapper"> 
-
-  
-    <h3>Navigation</h3>
-    <p>
-    <a href="../index.html">Documentation Home</a>
-    </p>
-    <p>&nbsp;</p>
-  
-    <h3>Contents</h3>
-    <ul>
-<li><a class="reference internal" href="#">Module: <tt class="docutils literal"><span class="pre">data</span></tt></a><ul>
-<li><a class="reference internal" href="#camera">camera</a></li>
-<li><a class="reference internal" href="#checkerboard">checkerboard</a></li>
-<li><a class="reference internal" href="#coins">coins</a></li>
-<li><a class="reference internal" href="#imread">imread</a></li>
-<li><a class="reference internal" href="#lena">lena</a></li>
-<li><a class="reference internal" href="#load">load</a></li>
-<li><a class="reference internal" href="#moon">moon</a></li>
-<li><a class="reference internal" href="#page">page</a></li>
-<li><a class="reference internal" href="#text">text</a></li>
-</ul>
-</li>
-</ul>
-
-
-
-
-  <h3>Version</h3>
-
-    <script type="text/javascript">
-      insert_version_links();
-    </script>
-<div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <link rel="top" title="skimage v0.8dev docs" href="../index.html" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <link rel="shortcut icon" href="../_static/favicon.ico">
+</head>
+<body class="container">
+    <a href="http://scikit-image.org" class="logo"><img src="../_static/img/logo.png" alt=""></a>
+    <div class="clearfix"></div>
+    <div class="navbar">
+        <div class="navbar-inner">
+            <ul class="nav">
+                <li><a href="../index.html">Home</a></li>
+<li><a href="/download.html">Download</a></li>
+<li><a href="/docs/dev/auto_examples">Gallery</a></li>
+<li><a href="/docs">Documentation</a></li>
+<li><a href="https://github.com/scikit-image/scikit-image">Source</a></li>
+            </ul>
+            <form class="navbar-form pull-right" action="../search.html" method="get">
+                <input type="text" class="search span3" name="q" placeholder="Search documentation ...">
+                <input type="hidden" name="check_keywords" value="yes" >
+                <input type="hidden" name="area" value="default" >
+            </form>
         </div>
-      </div>
-        
-        <div class="document">
-            
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body">
+    </div>
+    <div class="row">
+        <div class="span9">
             
   <div class="section" id="module-skimage.data">
 <span id="module-data"></span><h1>Module: <tt class="xref py py-mod docutils literal"><span class="pre">data</span></tt><a class="headerlink" href="#module-skimage.data" title="Permalink to this headline">¶</a></h1>
@@ -113,31 +68,31 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.data.camera" title="skimage.data.camera"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.data.camera</span></tt></a>()</td>
+<tr><td><a class="reference internal" href="#skimage.data.camera" title="skimage.data.camera"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.data.camera</span></tt></a>()</td>
 <td>Gray-level &#8220;camera&#8221; image.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.data.checkerboard" title="skimage.data.checkerboard"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.data.checkerboard</span></tt></a>()</td>
+<tr><td><a class="reference internal" href="#skimage.data.checkerboard" title="skimage.data.checkerboard"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.data.checkerboard</span></tt></a>()</td>
 <td>Checkerboard image.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.data.coins" title="skimage.data.coins"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.data.coins</span></tt></a>()</td>
+<tr><td><a class="reference internal" href="#skimage.data.coins" title="skimage.data.coins"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.data.coins</span></tt></a>()</td>
 <td>Greek coins from Pompeii.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.data.imread" title="skimage.data.imread"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.data.imread</span></tt></a>(fname[,&nbsp;as_grey,&nbsp;...])</td>
+<tr><td><a class="reference internal" href="#skimage.data.imread" title="skimage.data.imread"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.data.imread</span></tt></a>(fname,&nbsp;**plugin_args[,&nbsp;...])</td>
 <td>Load an image from file.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.data.lena" title="skimage.data.lena"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.data.lena</span></tt></a>()</td>
+<tr><td><a class="reference internal" href="#skimage.data.lena" title="skimage.data.lena"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.data.lena</span></tt></a>()</td>
 <td>Colour &#8220;Lena&#8221; image.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.data.load" title="skimage.data.load"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.data.load</span></tt></a>(f)</td>
+<tr><td><a class="reference internal" href="#skimage.data.load" title="skimage.data.load"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.data.load</span></tt></a>(f)</td>
 <td>Load an image file located in the data directory.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.data.moon" title="skimage.data.moon"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.data.moon</span></tt></a>()</td>
+<tr><td><a class="reference internal" href="#skimage.data.moon" title="skimage.data.moon"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.data.moon</span></tt></a>()</td>
 <td>Surface of the moon.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.data.page" title="skimage.data.page"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.data.page</span></tt></a>()</td>
+<tr><td><a class="reference internal" href="#skimage.data.page" title="skimage.data.page"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.data.page</span></tt></a>()</td>
 <td>Scanned page.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.data.text" title="skimage.data.text"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.data.text</span></tt></a>()</td>
+<tr><td><a class="reference internal" href="#skimage.data.text" title="skimage.data.text"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.data.text</span></tt></a>()</td>
 <td>Gray-level &#8220;text&#8221; image used for corner detection.</td>
 </tr>
 </tbody>
@@ -192,7 +147,7 @@ simple segmentation is not sufficient.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>fname</strong> : string</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>fname</strong> : string</p>
 <blockquote>
 <div><p>Image file name, e.g. <tt class="docutils literal"><span class="pre">test.jpg</span></tt>.</p>
 </div></blockquote>
@@ -207,7 +162,7 @@ Images that are already in grey-scale format are not converted.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>img_array</strong> : ndarray</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>img_array</strong> : ndarray</p>
 <blockquote class="last">
 <div><p>The different colour bands/channels are stored in the
 third dimension, such that a grey-image is MxN, an
@@ -243,13 +198,13 @@ contains smooth, textured, shaded as well as detail areas.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>f</strong> : string</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>f</strong> : string</p>
 <blockquote>
 <div><p>File name.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>img</strong> : ndarray</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>img</strong> : ndarray</p>
 <blockquote class="last">
 <div><p>Image loaded from skimage.data_dir.</p>
 </div></blockquote>
@@ -298,21 +253,48 @@ background illumination.</p>
 </div>
 
 
-          </div>
         </div>
-      </div>
+        <div class="span3"><h4 class="sidebar-box-heading">Navigation</h4>
+<div class="well sidebar-box">
+    <ul class="nav nav-list">
+        <li><a href="../index.html">Documentation Home</a></li>
+    </ul>
+</div>
+        <h4 class="sidebar-box-heading">Contents</h4>
+        <div class="well sidebar-box toc">
+            <ul class="nav nav-list">
+<li><a class="reference internal" href="#">Module: <tt class="docutils literal"><span class="pre">data</span></tt></a><ul class="nav nav-list">
+<li><a class="reference internal" href="#camera">camera</a></li>
+<li><a class="reference internal" href="#checkerboard">checkerboard</a></li>
+<li><a class="reference internal" href="#coins">coins</a></li>
+<li><a class="reference internal" href="#imread">imread</a></li>
+<li><a class="reference internal" href="#lena">lena</a></li>
+<li><a class="reference internal" href="#load">load</a></li>
+<li><a class="reference internal" href="#moon">moon</a></li>
+<li><a class="reference internal" href="#page">page</a></li>
+<li><a class="reference internal" href="#text">text</a></li>
+</ul>
+</li>
+</ul>
+
         </div>
-        <div class="clearer"></div>
-    </div>
-    </div>
 
-    <div class="footer-wrapper">
-      
-    <div class="footer">
-        &copy; Copyright 2011, the scikits-image team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+<h4 class="sidebar-box-heading">Versions</h4>
+<div class="well sidebar-box">
+    <ul class="nav nav-list">
+        <script src="../_static/docversions.js"></script>
+        <script type="text/javascript">
+            insert_version_links();
+        </script>
+    </ul>
+</div>
+        </div>
     </div>
+    <div class="well footer">
+        <small>
+            &copy; Copyright the scikit-image development team.
+            Created using <a href="http://twitter.github.com/bootstrap/">Bootstrap</a> and <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+        </small>
     </div>
-
-  </body>
+</body>
 </html>

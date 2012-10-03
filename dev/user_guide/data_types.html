@@ -1,18 +1,20 @@
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Image data types and what they mean &mdash; skimage v0.8dev docs</title>
     
-    <title>Image data types and what they mean &mdash; skimage v0.8dev docs</title>
     
-    <link rel="stylesheet" href="../_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link href="../_static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../_static/css/custom.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
     
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="../_static/js/bootstrap.min.js"></script>
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -22,87 +24,37 @@
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/docversions.js"></script>
-    <link rel="top" title="skimage v0.8dev docs" href="../index.html" />
-    <link rel="up" title="User Guide" href="../user_guide.html" />
-    <link rel="next" title="I/O Plugin Infrastructure" href="plugins.html" />
-    <link rel="prev" title="User Guide" href="../user_guide.html" /> 
-  </head>
-  <body>
-    <div class="header-wrapper">
-      <div class="header">
-          <div class="logo"><a href="http://scikits-image.org">
-            <img class="logo" src="../_static/scikits_image_logo_small.png" alt="Logo"/>
-          </a></div>
-       
-       </div>
-    </div>
-
-    <div class="content-wrapper">
-      <div class="content">
-             
-            
-      <div class="sphinxsidebar">
-        <div class="sphinxsidebarwrapper"> 
-
-  
-    <h3>Navigation</h3>
-    <p>
-    <a href="../index.html">Documentation Home</a>
-    </p>
-    <p>&nbsp;</p>
-  
-    <h3>Contents</h3>
-    <ul>
-<li><a class="reference internal" href="#">Image data types and what they mean</a><ul>
-<li><a class="reference internal" href="#input-types">Input types</a></li>
-<li><a class="reference internal" href="#output-types">Output types</a></li>
-<li><a class="reference internal" href="#image-processing-pipeline">Image processing pipeline</a></li>
-<li><a class="reference internal" href="#rescaling-intensity-values">Rescaling intensity values</a></li>
-<li><a class="reference internal" href="#note-about-negative-values">Note about negative values</a></li>
-<li><a class="reference internal" href="#references">References</a></li>
-</ul>
-</li>
-</ul>
-
-
-
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="../user_guide.html"
-                        title="previous chapter">User Guide</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="plugins.html"
-                        title="next chapter">I/O Plugin Infrastructure</a></p>
-
-  <h3>Version</h3>
-
-    <script type="text/javascript">
-      insert_version_links();
-    </script>
-<div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <link rel="top" title="skimage v0.8dev docs" href="../index.html" />
+        <link rel="up" title="User Guide" href="../user_guide.html" />
+        <link rel="next" title="I/O Plugin Infrastructure" href="plugins.html" />
+        <link rel="prev" title="User Guide" href="../user_guide.html" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <link rel="shortcut icon" href="../_static/favicon.ico">
+</head>
+<body class="container">
+    <a href="http://scikit-image.org" class="logo"><img src="../_static/img/logo.png" alt=""></a>
+    <div class="clearfix"></div>
+    <div class="navbar">
+        <div class="navbar-inner">
+            <ul class="nav">
+                <li><a href="../index.html">Home</a></li>
+<li><a href="/download.html">Download</a></li>
+<li><a href="/docs/dev/auto_examples">Gallery</a></li>
+<li><a href="/docs">Documentation</a></li>
+<li><a href="https://github.com/scikit-image/scikit-image">Source</a></li>
+            </ul>
+            <form class="navbar-form pull-right" action="../search.html" method="get">
+                <input type="text" class="search span3" name="q" placeholder="Search documentation ...">
+                <input type="hidden" name="check_keywords" value="yes" >
+                <input type="hidden" name="area" value="default" >
+            </form>
         </div>
-      </div>
-        
-        <div class="document">
-            
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body">
+    </div>
+    <div class="row">
+        <div class="span9">
             
   <div class="section" id="image-data-types-and-what-they-mean">
 <h1>Image data types and what they mean<a class="headerlink" href="#image-data-types-and-what-they-mean" title="Permalink to this headline">¶</a></h1>
@@ -116,30 +68,30 @@ ranges:</p>
 <col width="79%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Data type</th>
+<tr><th class="head">Data type</th>
 <th class="head">Range</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>uint8</td>
+<tr><td>uint8</td>
 <td>0 to 255</td>
 </tr>
-<tr class="row-odd"><td>uint16</td>
+<tr><td>uint16</td>
 <td>0 to 65535</td>
 </tr>
-<tr class="row-even"><td>uint32</td>
+<tr><td>uint32</td>
 <td>0 to 2<sup>32</sup></td>
 </tr>
-<tr class="row-odd"><td>float</td>
+<tr><td>float</td>
 <td>-1 to 1</td>
 </tr>
-<tr class="row-even"><td>int8</td>
+<tr><td>int8</td>
 <td>-128 to 127</td>
 </tr>
-<tr class="row-odd"><td>int16</td>
+<tr><td>int16</td>
 <td>-32768 to 32767</td>
 </tr>
-<tr class="row-even"><td>int32</td>
+<tr><td>int32</td>
 <td>-2<sup>31</sup> to 2<sup>31</sup> - 1</td>
 </tr>
 </tbody>
@@ -176,21 +128,21 @@ and users:</p>
 <col width="72%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Function name</th>
+<tr><th class="head">Function name</th>
 <th class="head">Description</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>img_as_float</td>
+<tr><td>img_as_float</td>
 <td>Convert to 64-bit floating point.</td>
 </tr>
-<tr class="row-odd"><td>img_as_ubyte</td>
+<tr><td>img_as_ubyte</td>
 <td>Convert to 8-bit uint.</td>
 </tr>
-<tr class="row-even"><td>img_as_uint</td>
+<tr><td>img_as_uint</td>
 <td>Convert to 16-bit uint.</td>
 </tr>
-<tr class="row-odd"><td>img_as_int</td>
+<tr><td>img_as_int</td>
 <td>Convert to 16-bit int.</td>
 </tr>
 </tbody>
@@ -298,21 +250,57 @@ just the positive range of a signed dtype.</p>
 </div>
 
 
-          </div>
         </div>
-      </div>
+        <div class="span3"><h4 class="sidebar-box-heading">Navigation</h4>
+<div class="well sidebar-box">
+    <ul class="nav nav-list">
+        <li><a href="../index.html">Documentation Home</a></li>
+    </ul>
+</div>
+    <h4 class="sidebar-box-heading">Previous topic</h4>
+    <div class="well sidebar-box">
+        <ul class="nav nav-list">
+            <li><a href="../user_guide.html" title="previous chapter">User Guide</a></li>
+        </ul>
+    </div>
+    <h4 class="sidebar-box-heading">Next topic</h4>
+    <div class="well sidebar-box">
+        <ul class="nav nav-list">
+            <li><a href="plugins.html" title="next chapter">I/O Plugin Infrastructure</a></li>
+        </ul>
+    </div>
+        <h4 class="sidebar-box-heading">Contents</h4>
+        <div class="well sidebar-box toc">
+            <ul class="nav nav-list">
+<li><a class="reference internal" href="#">Image data types and what they mean</a><ul class="nav nav-list">
+<li><a class="reference internal" href="#input-types">Input types</a></li>
+<li><a class="reference internal" href="#output-types">Output types</a></li>
+<li><a class="reference internal" href="#image-processing-pipeline">Image processing pipeline</a></li>
+<li><a class="reference internal" href="#rescaling-intensity-values">Rescaling intensity values</a></li>
+<li><a class="reference internal" href="#note-about-negative-values">Note about negative values</a></li>
+<li><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+</ul>
+
         </div>
-        <div class="clearer"></div>
-    </div>
-    </div>
 
-    <div class="footer-wrapper">
-      
-    <div class="footer">
-        &copy; Copyright 2011, the scikits-image team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+<h4 class="sidebar-box-heading">Versions</h4>
+<div class="well sidebar-box">
+    <ul class="nav nav-list">
+        <script src="../_static/docversions.js"></script>
+        <script type="text/javascript">
+            insert_version_links();
+        </script>
+    </ul>
+</div>
+        </div>
     </div>
+    <div class="well footer">
+        <small>
+            &copy; Copyright the scikit-image development team.
+            Created using <a href="http://twitter.github.com/bootstrap/">Bootstrap</a> and <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+        </small>
     </div>
-
-  </body>
+</body>
 </html>

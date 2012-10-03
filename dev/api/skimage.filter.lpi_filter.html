@@ -1,18 +1,20 @@
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Module: filter.lpi_filter &mdash; skimage v0.8dev docs</title>
     
-    <title>Module: filter.lpi_filter &mdash; skimage v0.8dev docs</title>
     
-    <link rel="stylesheet" href="../_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link href="../_static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../_static/css/custom.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
     
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="../_static/js/bootstrap.min.js"></script>
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -22,78 +24,34 @@
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/docversions.js"></script>
-    <link rel="top" title="skimage v0.8dev docs" href="../index.html" /> 
-  </head>
-  <body>
-    <div class="header-wrapper">
-      <div class="header">
-          <div class="logo"><a href="http://scikits-image.org">
-            <img class="logo" src="../_static/scikits_image_logo_small.png" alt="Logo"/>
-          </a></div>
-       
-       </div>
-    </div>
-
-    <div class="content-wrapper">
-      <div class="content">
-             
-            
-      <div class="sphinxsidebar">
-        <div class="sphinxsidebarwrapper"> 
-
-  
-    <h3>Navigation</h3>
-    <p>
-    <a href="../index.html">Documentation Home</a>
-    </p>
-    <p>&nbsp;</p>
-  
-    <h3>Contents</h3>
-    <ul>
-<li><a class="reference internal" href="#">Module: <tt class="docutils literal"><span class="pre">filter.lpi_filter</span></tt></a><ul>
-<li><a class="reference internal" href="#lpifilter2d"><tt class="docutils literal"><span class="pre">LPIFilter2D</span></tt></a></li>
-<li><a class="reference internal" href="#constrained-least-squares">constrained_least_squares</a></li>
-<li><a class="reference internal" href="#forward">forward</a></li>
-<li><a class="reference internal" href="#ifftshift">ifftshift</a></li>
-<li><a class="reference internal" href="#inverse">inverse</a></li>
-<li><a class="reference internal" href="#wiener">wiener</a></li>
-</ul>
-</li>
-</ul>
-
-
-
-
-  <h3>Version</h3>
-
-    <script type="text/javascript">
-      insert_version_links();
-    </script>
-<div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <link rel="top" title="skimage v0.8dev docs" href="../index.html" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <link rel="shortcut icon" href="../_static/favicon.ico">
+</head>
+<body class="container">
+    <a href="http://scikit-image.org" class="logo"><img src="../_static/img/logo.png" alt=""></a>
+    <div class="clearfix"></div>
+    <div class="navbar">
+        <div class="navbar-inner">
+            <ul class="nav">
+                <li><a href="../index.html">Home</a></li>
+<li><a href="/download.html">Download</a></li>
+<li><a href="/docs/dev/auto_examples">Gallery</a></li>
+<li><a href="/docs">Documentation</a></li>
+<li><a href="https://github.com/scikit-image/scikit-image">Source</a></li>
+            </ul>
+            <form class="navbar-form pull-right" action="../search.html" method="get">
+                <input type="text" class="search span3" name="q" placeholder="Search documentation ...">
+                <input type="hidden" name="check_keywords" value="yes" >
+                <input type="hidden" name="area" value="default" >
+            </form>
         </div>
-      </div>
-        
-        <div class="document">
-            
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body">
+    </div>
+    <div class="row">
+        <div class="span9">
             
   <div class="section" id="module-skimage.filter.lpi_filter">
 <span id="module-filter-lpi-filter"></span><h1>Module: <tt class="xref py py-mod docutils literal"><span class="pre">filter.lpi_filter</span></tt><a class="headerlink" href="#module-skimage.filter.lpi_filter" title="Permalink to this headline">¶</a></h1>
@@ -101,9 +59,9 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">author:</th><td class="field-body">Stefan van der Walt, 2008</td>
+<tr class="field"><th class="field-name">author:</th><td class="field-body">Stefan van der Walt, 2008</td>
 </tr>
-<tr class="field-even field"><th class="field-name">license:</th><td class="field-body">modified BSD</td>
+<tr class="field"><th class="field-name">license:</th><td class="field-body">modified BSD</td>
 </tr>
 </tbody>
 </table>
@@ -121,7 +79,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>impulse_response</strong> : callable <cite>f(r, c, **filter_params)</cite></p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>impulse_response</strong> : callable <cite>f(r, c, **filter_params)</cite></p>
 <blockquote class="last">
 <div><p>Function that yields the impulse response.  <cite>r</cite> and <cite>c</cite> are
 1-dimensional vectors that represent row and column positions, in
@@ -159,19 +117,19 @@ other words coordinates are (r[0],c[0]),(r[0],c[1]) etc.
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.lpi_filter.constrained_least_squares" title="skimage.filter.lpi_filter.constrained_least_squares"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.lpi_filter.constrained_least_squares</span></tt></a>(...)</td>
+<tr><td><a class="reference internal" href="#skimage.filter.lpi_filter.constrained_least_squares" title="skimage.filter.lpi_filter.constrained_least_squares"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.lpi_filter.constrained_least_squares</span></tt></a>(...)</td>
 <td></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.lpi_filter.forward" title="skimage.filter.lpi_filter.forward"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.lpi_filter.forward</span></tt></a>(data[,&nbsp;...])</td>
+<tr><td><a class="reference internal" href="#skimage.filter.lpi_filter.forward" title="skimage.filter.lpi_filter.forward"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.lpi_filter.forward</span></tt></a>(data[,&nbsp;...])</td>
 <td>Apply the given filter to data.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.lpi_filter.ifftshift" title="skimage.filter.lpi_filter.ifftshift"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.lpi_filter.ifftshift</span></tt></a>(x[,&nbsp;axes])</td>
+<tr><td><a class="reference internal" href="#skimage.filter.lpi_filter.ifftshift" title="skimage.filter.lpi_filter.ifftshift"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.lpi_filter.ifftshift</span></tt></a>(x[,&nbsp;axes])</td>
 <td>The inverse of fftshift.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.lpi_filter.inverse" title="skimage.filter.lpi_filter.inverse"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.lpi_filter.inverse</span></tt></a>(data[,&nbsp;...])</td>
+<tr><td><a class="reference internal" href="#skimage.filter.lpi_filter.inverse" title="skimage.filter.lpi_filter.inverse"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.lpi_filter.inverse</span></tt></a>(data[,&nbsp;...])</td>
 <td>Apply the filter in reverse to the given data.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.lpi_filter.wiener" title="skimage.filter.lpi_filter.wiener"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.lpi_filter.wiener</span></tt></a>(data[,&nbsp;...])</td>
+<tr><td><a class="reference internal" href="#skimage.filter.lpi_filter.wiener" title="skimage.filter.lpi_filter.wiener"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.lpi_filter.wiener</span></tt></a>(data[,&nbsp;...])</td>
 <td>Minimum Mean Square Error (Wiener) inverse filter.</td>
 </tr>
 </tbody>
@@ -195,7 +153,7 @@ other words coordinates are (r[0],c[0]),(r[0],c[1]) etc.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>data</strong> : (M,N) ndarray</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>data</strong> : (M,N) ndarray</p>
 <blockquote>
 <div><p>Input data.</p>
 </div></blockquote>
@@ -233,7 +191,7 @@ other words coordinates are (r[0],c[0]),(r[0],c[1]) etc.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>x</strong> : array_like</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>x</strong> : array_like</p>
 <blockquote>
 <div><p>Input array.</p>
 </div></blockquote>
@@ -243,7 +201,7 @@ other words coordinates are (r[0],c[0]),(r[0],c[1]) etc.
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>y</strong> : ndarray</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>y</strong> : ndarray</p>
 <blockquote class="last">
 <div><p>The shifted array.</p>
 </div></blockquote>
@@ -283,7 +241,7 @@ other words coordinates are (r[0],c[0]),(r[0],c[1]) etc.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>data</strong> : (M,N) ndarray</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>data</strong> : (M,N) ndarray</p>
 <blockquote>
 <div><p>Input data.</p>
 </div></blockquote>
@@ -318,7 +276,7 @@ amplification of artefacts, so a conservative limit is recommended.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>data</strong> : (M,N) ndarray</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>data</strong> : (M,N) ndarray</p>
 <blockquote>
 <div><p>Input data.</p>
 </div></blockquote>
@@ -345,21 +303,45 @@ image.</p>
 </div>
 
 
-          </div>
         </div>
-      </div>
+        <div class="span3"><h4 class="sidebar-box-heading">Navigation</h4>
+<div class="well sidebar-box">
+    <ul class="nav nav-list">
+        <li><a href="../index.html">Documentation Home</a></li>
+    </ul>
+</div>
+        <h4 class="sidebar-box-heading">Contents</h4>
+        <div class="well sidebar-box toc">
+            <ul class="nav nav-list">
+<li><a class="reference internal" href="#">Module: <tt class="docutils literal"><span class="pre">filter.lpi_filter</span></tt></a><ul class="nav nav-list">
+<li><a class="reference internal" href="#lpifilter2d"><tt class="docutils literal"><span class="pre">LPIFilter2D</span></tt></a></li>
+<li><a class="reference internal" href="#constrained-least-squares">constrained_least_squares</a></li>
+<li><a class="reference internal" href="#forward">forward</a></li>
+<li><a class="reference internal" href="#ifftshift">ifftshift</a></li>
+<li><a class="reference internal" href="#inverse">inverse</a></li>
+<li><a class="reference internal" href="#wiener">wiener</a></li>
+</ul>
+</li>
+</ul>
+
         </div>
-        <div class="clearer"></div>
-    </div>
-    </div>
 
-    <div class="footer-wrapper">
-      
-    <div class="footer">
-        &copy; Copyright 2011, the scikits-image team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+<h4 class="sidebar-box-heading">Versions</h4>
+<div class="well sidebar-box">
+    <ul class="nav nav-list">
+        <script src="../_static/docversions.js"></script>
+        <script type="text/javascript">
+            insert_version_links();
+        </script>
+    </ul>
+</div>
+        </div>
     </div>
+    <div class="well footer">
+        <small>
+            &copy; Copyright the scikit-image development team.
+            Created using <a href="http://twitter.github.com/bootstrap/">Bootstrap</a> and <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+        </small>
     </div>
-
-  </body>
+</body>
 </html>

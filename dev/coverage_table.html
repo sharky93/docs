@@ -1,18 +1,20 @@
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Coverage Tables &mdash; skimage v0.8dev docs</title>
     
-    <title>Coverage Tables &mdash; skimage v0.8dev docs</title>
     
-    <link rel="stylesheet" href="_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link href="_static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="_static/css/custom.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
     
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="_static/js/bootstrap.min.js"></script>
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
@@ -22,139 +24,37 @@
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/docversions.js"></script>
-    <link rel="top" title="skimage v0.8dev docs" href="index.html" />
-    <link rel="up" title="How to contribute to skimage" href="contribute.html" />
-    <link rel="next" title="CellProfiler BSD license announcement" href="cell_profiler.html" />
-    <link rel="prev" title="Project ideas for Google Summer of Code 2011" href="gsoc2011.html" /> 
-  </head>
-  <body>
-    <div class="header-wrapper">
-      <div class="header">
-          <div class="logo"><a href="http://scikits-image.org">
-            <img class="logo" src="_static/scikits_image_logo_small.png" alt="Logo"/>
-          </a></div>
-       
-       </div>
-    </div>
-
-    <div class="content-wrapper">
-      <div class="content">
-             
-            
-      <div class="sphinxsidebar">
-        <div class="sphinxsidebarwrapper"> 
-
-  
-    <h3>Navigation</h3>
-    <p>
-    <a href="index.html">Documentation Home</a>
-    </p>
-    <p>&nbsp;</p>
-  
-    <h3>Contents</h3>
-    <ul>
-<li><a class="reference internal" href="#">Coverage Tables</a><ul>
-<li><a class="reference internal" href="#color-key">Color Key</a></li>
-<li><a class="reference internal" href="#coverage-bar">Coverage Bar</a></li>
-<li><a class="reference internal" href="#image-display-and-exploration">Image Display and Exploration</a><ul>
-<li><a class="reference internal" href="#id1">Image Display and Exploration</a></li>
-<li><a class="reference internal" href="#image-file-i-o">Image File I/O</a></li>
-<li><a class="reference internal" href="#image-types-and-type-conversions">Image Types and Type Conversions</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#gui-tools">GUI Tools</a><ul>
-<li><a class="reference internal" href="#modular-interactive-tools">Modular Interactive Tools</a></li>
-<li><a class="reference internal" href="#navigational-tools-for-image-scroll-panel">Navigational Tools for Image Scroll Panel</a></li>
-<li><a class="reference internal" href="#utilities-for-interactive-tools">Utilities for Interactive Tools</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#spatial-transformations-and-image-registration">Spatial Transformations and Image Registration</a><ul>
-<li><a class="reference internal" href="#spatial-transformations">Spatial Transformations</a></li>
-<li><a class="reference internal" href="#image-registration">Image Registration</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#image-analysis-and-statistics">Image Analysis and Statistics</a><ul>
-<li><a class="reference internal" href="#image-analysis">Image Analysis</a></li>
-<li><a class="reference internal" href="#texture-analysis">Texture Analysis</a></li>
-<li><a class="reference internal" href="#pixel-values-and-statistics">Pixel Values and Statistics</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#image-arithmetic">Image Arithmetic</a></li>
-<li><a class="reference internal" href="#image-enhancement-and-restoration">Image Enhancement and Restoration</a><ul>
-<li><a class="reference internal" href="#image-enhancement">Image Enhancement</a></li>
-<li><a class="reference internal" href="#image-restoration-deblurring">Image Restoration (Deblurring)</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#linear-filtering-and-transforms">Linear Filtering and Transforms</a><ul>
-<li><a class="reference internal" href="#linear-filtering">Linear Filtering</a></li>
-<li><a class="reference internal" href="#linear-2-d-filter-design">Linear 2-D Filter Design</a></li>
-<li><a class="reference internal" href="#image-transforms">Image Transforms</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#morphological-operations">Morphological Operations</a><ul>
-<li><a class="reference internal" href="#intensity-and-binary-images">Intensity and Binary Images</a></li>
-<li><a class="reference internal" href="#binary-images">Binary Images</a></li>
-<li><a class="reference internal" href="#structuring-element-creation-and-manipulation">Structuring Element Creation and Manipulation</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#roi-based-neighborhood-and-block-processing">ROI-Based, Neighborhood, and Block Processing</a><ul>
-<li><a class="reference internal" href="#roi-based-processing">ROI-Based Processing</a></li>
-<li><a class="reference internal" href="#neighborhood-and-block-processing">Neighborhood and Block Processing</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#colormaps-and-color-space">Colormaps and Color Space</a><ul>
-<li><a class="reference internal" href="#color-space-conversions">Color Space Conversions</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#utilities">Utilities</a><ul>
-<li><a class="reference internal" href="#validation">Validation</a></li>
-<li><a class="reference internal" href="#array-operations">Array Operations</a></li>
-<li><a class="reference internal" href="#performance">Performance</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="gsoc2011.html"
-                        title="previous chapter">Project ideas for Google Summer of Code 2011</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="cell_profiler.html"
-                        title="next chapter">CellProfiler BSD license announcement</a></p>
-
-  <h3>Version</h3>
-
-    <script type="text/javascript">
-      insert_version_links();
-    </script>
-<div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <link rel="top" title="skimage v0.8dev docs" href="index.html" />
+        <link rel="up" title="How to contribute to skimage" href="contribute.html" />
+        <link rel="next" title="CellProfiler BSD license announcement" href="cell_profiler.html" />
+        <link rel="prev" title="Project ideas for Google Summer of Code 2011" href="gsoc2011.html" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <link rel="shortcut icon" href="_static/favicon.ico">
+</head>
+<body class="container">
+    <a href="http://scikit-image.org" class="logo"><img src="_static/img/logo.png" alt=""></a>
+    <div class="clearfix"></div>
+    <div class="navbar">
+        <div class="navbar-inner">
+            <ul class="nav">
+                <li><a href="index.html">Home</a></li>
+<li><a href="/download.html">Download</a></li>
+<li><a href="/docs/dev/auto_examples">Gallery</a></li>
+<li><a href="/docs">Documentation</a></li>
+<li><a href="https://github.com/scikit-image/scikit-image">Source</a></li>
+            </ul>
+            <form class="navbar-form pull-right" action="search.html" method="get">
+                <input type="text" class="search span3" name="q" placeholder="Search documentation ...">
+                <input type="hidden" name="check_keywords" value="yes" >
+                <input type="hidden" name="area" value="default" >
+            </form>
         </div>
-      </div>
-        
-        <div class="document">
-            
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body">
+    </div>
+    <div class="row">
+        <div class="span9">
             
   <div class="section" id="coverage-tables">
 <h1>Coverage Tables<a class="headerlink" href="#coverage-tables" title="Permalink to this headline">¶</a></h1>
@@ -184,44 +84,44 @@ setting up its structure.</p>
 <col width="20%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Functionality</th>
+<tr><th class="head">Functionality</th>
 <th class="head">Matlab</th>
 <th class="head">Scipy</th>
 <th class="head">Scipy</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>Make movie from multiframe image</td>
+<tr><td>Make movie from multiframe image</td>
 <td>immovie</td>
 <td><span class="done">immovie</span></td>
 <td><span class="partial">immovie</span></td>
 </tr>
-<tr class="row-odd"><td>Play movies, videos, or image sequences</td>
+<tr><td>Play movies, videos, or image sequences</td>
 <td>implay</td>
 <td><span class="na">n/a</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Display image</td>
+<tr><td>Display image</td>
 <td>imshow</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Image Tool</td>
+<tr><td>Image Tool</td>
 <td>imtool</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Display multiple image frames as rectangular montage</td>
+<tr><td>Display multiple image frames as rectangular montage</td>
 <td>montage</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Display multiple images in single figure</td>
+<tr><td>Display multiple images in single figure</td>
 <td>subimage</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Display image as texture-mapped surface</td>
+<tr><td>Display image as texture-mapped surface</td>
 <td>warp</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
@@ -239,109 +139,109 @@ setting up its structure.</p>
 <col width="18%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Functionality</th>
+<tr><th class="head">Functionality</th>
 <th class="head">Matlab</th>
 <th class="head">Scipy</th>
 <th class="head">Scipy</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>Read metadata from header file of Analyze 7.5 data set</td>
+<tr><td>Read metadata from header file of Analyze 7.5 data set</td>
 <td>analyze75info</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Read image data from image file of Analyze 7.5 data set</td>
+<tr><td>Read image data from image file of Analyze 7.5 data set</td>
 <td>analyze75read</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Anonymize DICOM file</td>
+<tr><td>Anonymize DICOM file</td>
 <td>dicomanon</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Get or set active DICOM data dictionary</td>
+<tr><td>Get or set active DICOM data dictionary</td>
 <td>dicomdict</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Read metadata from DICOM message</td>
+<tr><td>Read metadata from DICOM message</td>
 <td>dicominfo</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Find attribute in DICOM data dictionary</td>
+<tr><td>Find attribute in DICOM data dictionary</td>
 <td>dicomlookup</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Read DICOM image</td>
+<tr><td>Read DICOM image</td>
 <td>dicomread</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Generate DICOM unique identifier</td>
+<tr><td>Generate DICOM unique identifier</td>
 <td>dicomuid</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Write images as DICOM files</td>
+<tr><td>Write images as DICOM files</td>
 <td>dicomwrite</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Read high dynamic range (HDR) image</td>
+<tr><td>Read high dynamic range (HDR) image</td>
 <td>hdrread</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Write Radiance high dynamic range (HDR) image file</td>
+<tr><td>Write Radiance high dynamic range (HDR) image file</td>
 <td>hdrwrite</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Read metadata from Interfile file</td>
+<tr><td>Read metadata from Interfile file</td>
 <td>interfileinfo</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Read images in Interfile format</td>
+<tr><td>Read images in Interfile format</td>
 <td>interfileread</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Check if file is R-Set</td>
+<tr><td>Check if file is R-Set</td>
 <td>isrset</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Create high dynamic range image</td>
+<tr><td>Create high dynamic range image</td>
 <td>makehdr</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Read metadata from National Imagery Transmission Format (NITF) file</td>
+<tr><td>Read metadata from National Imagery Transmission Format (NITF) file</td>
 <td>nitfinfo</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Read image from NITF file</td>
+<tr><td>Read image from NITF file</td>
 <td>nitfread</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Open R-Set file</td>
+<tr><td>Open R-Set file</td>
 <td>openrset</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Create reduced resolution data set from image file</td>
+<tr><td>Create reduced resolution data set from image file</td>
 <td>rsetwrite</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Render high dynamic range image for viewing</td>
+<tr><td>Render high dynamic range image for viewing</td>
 <td>tonemap</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
@@ -359,89 +259,89 @@ setting up its structure.</p>
 <col width="18%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Functionality</th>
+<tr><th class="head">Functionality</th>
 <th class="head">Matlab</th>
 <th class="head">Scipy</th>
 <th class="head">Scipy</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>Convert Bayer pattern encoded image to truecolor image</td>
+<tr><td>Convert Bayer pattern encoded image to truecolor image</td>
 <td>demosaic</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Convert grayscale or binary image to indexed image</td>
+<tr><td>Convert grayscale or binary image to indexed image</td>
 <td>gray2ind</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Convert grayscale image to indexed image using multilevel thresholding</td>
+<tr><td>Convert grayscale image to indexed image using multilevel thresholding</td>
 <td>grayslice</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Global image threshold using Otsu&#8217;s method</td>
+<tr><td>Global image threshold using Otsu&#8217;s method</td>
 <td>graythresh</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Convert image to binary image, based on threshold</td>
+<tr><td>Convert image to binary image, based on threshold</td>
 <td>im2bw</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Convert image to double precision</td>
+<tr><td>Convert image to double precision</td>
 <td>im2double</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Convert image to 16-bit signed integers</td>
+<tr><td>Convert image to 16-bit signed integers</td>
 <td>im2int16</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Convert image to Java buffered image</td>
+<tr><td>Convert image to Java buffered image</td>
 <td>im2java2d</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Convert image to single precision</td>
+<tr><td>Convert image to single precision</td>
 <td>im2single</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Convert image to 16-bit unsigned integers</td>
+<tr><td>Convert image to 16-bit unsigned integers</td>
 <td>im2uint16</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Convert image to 8-bit unsigned integers</td>
+<tr><td>Convert image to 8-bit unsigned integers</td>
 <td>im2uint8</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Convert indexed image to grayscale image</td>
+<tr><td>Convert indexed image to grayscale image</td>
 <td>ind2gray</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Convert indexed image to RGB image</td>
+<tr><td>Convert indexed image to RGB image</td>
 <td>ind2rgb</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Convert label matrix into RGB image</td>
+<tr><td>Convert label matrix into RGB image</td>
 <td>label2rgb</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Convert matrix to grayscale image</td>
+<tr><td>Convert matrix to grayscale image</td>
 <td>mat2gray</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Convert RGB image or colormap to grayscale</td>
+<tr><td>Convert RGB image or colormap to grayscale</td>
 <td>rgb2gray</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
@@ -462,49 +362,49 @@ setting up its structure.</p>
 <col width="22%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Functionality</th>
+<tr><th class="head">Functionality</th>
 <th class="head">Matlab</th>
 <th class="head">Scipy</th>
 <th class="head">Scipy</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>Image Information tool</td>
+<tr><td>Image Information tool</td>
 <td>imageinfo</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Adjust Contrast tool</td>
+<tr><td>Adjust Contrast tool</td>
 <td>imcontrast</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Display Range tool</td>
+<tr><td>Display Range tool</td>
 <td>imdisplayrange</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Distance tool</td>
+<tr><td>Distance tool</td>
 <td>imdistline</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Pixel Information tool</td>
+<tr><td>Pixel Information tool</td>
 <td>impixelinfo</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Pixel Information tool without text label</td>
+<tr><td>Pixel Information tool without text label</td>
 <td>impixelinfoval</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Pixel Region tool</td>
+<tr><td>Pixel Region tool</td>
 <td>impixelregion</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Pixel Region tool panel</td>
+<tr><td>Pixel Region tool panel</td>
 <td>impixelregionpanel</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
@@ -522,29 +422,29 @@ setting up its structure.</p>
 <col width="20%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Functionality</th>
+<tr><th class="head">Functionality</th>
 <th class="head">Matlab</th>
 <th class="head">Scipy</th>
 <th class="head">Scipy</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>Magnification box for scroll panel</td>
+<tr><td>Magnification box for scroll panel</td>
 <td>immagbox</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Overview tool for image displayed in scroll panel</td>
+<tr><td>Overview tool for image displayed in scroll panel</td>
 <td>imoverview</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Overview tool panel for image displayed in scroll panel</td>
+<tr><td>Overview tool panel for image displayed in scroll panel</td>
 <td>imoverviewpanel</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Scroll panel for interactive image navigation</td>
+<tr><td>Scroll panel for interactive image navigation</td>
 <td>imscrollpanel</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
@@ -562,139 +462,139 @@ setting up its structure.</p>
 <col width="19%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Functionality</th>
+<tr><th class="head">Functionality</th>
 <th class="head">Matlab</th>
 <th class="head">Scipy</th>
 <th class="head">Scipy</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>Convert axes coordinates to pixel coordinates</td>
+<tr><td>Convert axes coordinates to pixel coordinates</td>
 <td>axes2pix</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Image data from axes</td>
+<tr><td>Image data from axes</td>
 <td>getimage</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Image model object from image object</td>
+<tr><td>Image model object from image object</td>
 <td>getimagemodel</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Information about image attributes</td>
+<tr><td>Information about image attributes</td>
 <td>imattributes</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Create draggable ellipse</td>
+<tr><td>Create draggable ellipse</td>
 <td>imellipse</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Create draggable freehand region</td>
+<tr><td>Create draggable freehand region</td>
 <td>imfreehand</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Get handle to current axes containing image</td>
+<tr><td>Get handle to current axes containing image</td>
 <td>imgca</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Get handle to current figure containing image</td>
+<tr><td>Get handle to current figure containing image</td>
 <td>imgcf</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Open Image dialog box</td>
+<tr><td>Open Image dialog box</td>
 <td>imgetfile</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Get all image handles</td>
+<tr><td>Get all image handles</td>
 <td>imhandles</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Create draggable, resizable line</td>
+<tr><td>Create draggable, resizable line</td>
 <td>imline</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Create draggable point</td>
+<tr><td>Create draggable point</td>
 <td>impoint</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Create draggable, resizable polygon</td>
+<tr><td>Create draggable, resizable polygon</td>
 <td>impoly</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Create draggable rectangle</td>
+<tr><td>Create draggable rectangle</td>
 <td>imrect</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Region-of-interest (ROI) base class</td>
+<tr><td>Region-of-interest (ROI) base class</td>
 <td>imroi</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Add function handle to callback list</td>
+<tr><td>Add function handle to callback list</td>
 <td>iptaddcallback</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Check validity of handle</td>
+<tr><td>Check validity of handle</td>
 <td>iptcheckhandle</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Get Application Programmer Interface (API) for handle</td>
+<tr><td>Get Application Programmer Interface (API) for handle</td>
 <td>iptgetapi</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Retrieve pointer behavior from HG object</td>
+<tr><td>Retrieve pointer behavior from HG object</td>
 <td>iptGetPointerBehavior</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Directories containing IPT and MATLAB icons</td>
+<tr><td>Directories containing IPT and MATLAB icons</td>
 <td>ipticondir</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Create pointer manager in figure</td>
+<tr><td>Create pointer manager in figure</td>
 <td>iptPointerManager</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Delete function handle from callback list</td>
+<tr><td>Delete function handle from callback list</td>
 <td>iptremovecallback</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Store pointer behavior structure in Handle Graphics object</td>
+<tr><td>Store pointer behavior structure in Handle Graphics object</td>
 <td>iptSetPointerBehavior</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Align figure windows</td>
+<tr><td>Align figure windows</td>
 <td>iptwindowalign</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Create rectangularly bounded drag constraint function</td>
+<tr><td>Create rectangularly bounded drag constraint function</td>
 <td>makeConstrainToRectFcn</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Adjust display size of image</td>
+<tr><td>Adjust display size of image</td>
 <td>truesize</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
@@ -715,74 +615,74 @@ setting up its structure.</p>
 <col width="21%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Functionality</th>
+<tr><th class="head">Functionality</th>
 <th class="head">Matlab</th>
 <th class="head">Scipy</th>
 <th class="head">Scipy</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>Create checkerboard image</td>
+<tr><td>Create checkerboard image</td>
 <td>checkerboard</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Find output bounds for spatial transformation</td>
+<tr><td>Find output bounds for spatial transformation</td>
 <td>findbounds</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Flip input and output roles of TFORM structure</td>
+<tr><td>Flip input and output roles of TFORM structure</td>
 <td>fliptform</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Crop image</td>
+<tr><td>Crop image</td>
 <td>imcrop</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Image pyramid reduction and expansion</td>
+<tr><td>Image pyramid reduction and expansion</td>
 <td>impyramid</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Resize image</td>
+<tr><td>Resize image</td>
 <td>imresize</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Rotate image</td>
+<tr><td>Rotate image</td>
 <td>imrotate</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Apply 2-D spatial transformation to image</td>
+<tr><td>Apply 2-D spatial transformation to image</td>
 <td>imtransform</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Create resampling structure</td>
+<tr><td>Create resampling structure</td>
 <td>makeresampler</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Create spatial transformation structure (TFORM)</td>
+<tr><td>Create spatial transformation structure (TFORM)</td>
 <td>maketform</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Apply spatial transformation to N-D array</td>
+<tr><td>Apply spatial transformation to N-D array</td>
 <td>tformarray</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Apply forward spatial transformation</td>
+<tr><td>Apply forward spatial transformation</td>
 <td>tformfwd</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Apply inverse spatial transformation</td>
+<tr><td>Apply inverse spatial transformation</td>
 <td>tforminv</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
@@ -800,34 +700,34 @@ setting up its structure.</p>
 <col width="20%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Functionality</th>
+<tr><th class="head">Functionality</th>
 <th class="head">Matlab</th>
 <th class="head">Scipy</th>
 <th class="head">Scipy</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>Infer spatial transformation from control point pairs</td>
+<tr><td>Infer spatial transformation from control point pairs</td>
 <td>cp2tform</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Tune control-point locations using cross correlation</td>
+<tr><td>Tune control-point locations using cross correlation</td>
 <td>cpcorr</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Control Point Selection Tool</td>
+<tr><td>Control Point Selection Tool</td>
 <td>cpselect</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Convert CPSTRUCT to valid pairs of control points</td>
+<tr><td>Convert CPSTRUCT to valid pairs of control points</td>
 <td>cpstruct2pairs</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Normalized 2-D cross-correlation</td>
+<tr><td>Normalized 2-D cross-correlation</td>
 <td>normxcorr2</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
@@ -848,64 +748,64 @@ setting up its structure.</p>
 <col width="21%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Functionality</th>
+<tr><th class="head">Functionality</th>
 <th class="head">Matlab</th>
 <th class="head">Scipy</th>
 <th class="head">Scipy</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>Trace region boundaries in binary image</td>
+<tr><td>Trace region boundaries in binary image</td>
 <td>bwboundaries</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Trace object in binary image</td>
+<tr><td>Trace object in binary image</td>
 <td>bwtraceboundary</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Find corner points in image</td>
+<tr><td>Find corner points in image</td>
 <td>corner</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Create corner metric matrix from image</td>
+<tr><td>Create corner metric matrix from image</td>
 <td>cornermetric</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Find edges in grayscale image</td>
+<tr><td>Find edges in grayscale image</td>
 <td>edge</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Hough transform</td>
+<tr><td>Hough transform</td>
 <td>hough</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Extract line segments based on Hough transform</td>
+<tr><td>Extract line segments based on Hough transform</td>
 <td>houghlines</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Identify peaks in Hough transform</td>
+<tr><td>Identify peaks in Hough transform</td>
 <td>houghpeaks</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Quadtree decomposition</td>
+<tr><td>Quadtree decomposition</td>
 <td>qtdecomp</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Block values in quadtree decomposition</td>
+<tr><td>Block values in quadtree decomposition</td>
 <td>qtgetblk</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Set block values in quadtree decomposition</td>
+<tr><td>Set block values in quadtree decomposition</td>
 <td>qtsetblk</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
@@ -923,39 +823,39 @@ setting up its structure.</p>
 <col width="21%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Functionality</th>
+<tr><th class="head">Functionality</th>
 <th class="head">Matlab</th>
 <th class="head">Scipy</th>
 <th class="head">Scipy</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>Entropy of grayscale image</td>
+<tr><td>Entropy of grayscale image</td>
 <td>entropy</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Local entropy of grayscale image</td>
+<tr><td>Local entropy of grayscale image</td>
 <td>entropyfilt</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Create gray-level co-occurrence matrix from image</td>
+<tr><td>Create gray-level co-occurrence matrix from image</td>
 <td>graycomatrix</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Properties of gray-level co-occurrence matrix</td>
+<tr><td>Properties of gray-level co-occurrence matrix</td>
 <td>graycoprops</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Local range of image</td>
+<tr><td>Local range of image</td>
 <td>rangefilt</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Local standard deviation of image</td>
+<tr><td>Local standard deviation of image</td>
 <td>stdfilt</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
@@ -973,49 +873,49 @@ setting up its structure.</p>
 <col width="21%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Functionality</th>
+<tr><th class="head">Functionality</th>
 <th class="head">Matlab</th>
 <th class="head">Scipy</th>
 <th class="head">Scipy</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>2-D correlation coefficient</td>
+<tr><td>2-D correlation coefficient</td>
 <td>corr2</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Create contour plot of image data</td>
+<tr><td>Create contour plot of image data</td>
 <td>imcontour</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Display histogram of image data</td>
+<tr><td>Display histogram of image data</td>
 <td>imhist</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Pixel color values</td>
+<tr><td>Pixel color values</td>
 <td>impixel</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Pixel-value cross-sections along line segments</td>
+<tr><td>Pixel-value cross-sections along line segments</td>
 <td>improfile</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Average or mean of matrix elements</td>
+<tr><td>Average or mean of matrix elements</td>
 <td>mean2</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Measure properties of image regions</td>
+<tr><td>Measure properties of image regions</td>
 <td>regionprops</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Standard deviation of matrix elements</td>
+<tr><td>Standard deviation of matrix elements</td>
 <td>std2</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
@@ -1039,44 +939,44 @@ setting up its structure.</p>
 <col width="19%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Functionality</th>
+<tr><th class="head">Functionality</th>
 <th class="head">Matlab</th>
 <th class="head">Scipy</th>
 <th class="head">Scipy</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>Absolute difference of two images</td>
+<tr><td>Absolute difference of two images</td>
 <td>imabsdiff</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Add two images or add constant to image</td>
+<tr><td>Add two images or add constant to image</td>
 <td>imadd</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Complement image</td>
+<tr><td>Complement image</td>
 <td>imcomplement</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Divide one image into another or divide image by constant</td>
+<tr><td>Divide one image into another or divide image by constant</td>
 <td>imdivide</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Linear combination of images</td>
+<tr><td>Linear combination of images</td>
 <td>imlincomb</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Multiply two images or multiply image by constant</td>
+<tr><td>Multiply two images or multiply image by constant</td>
 <td>immultiply</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Subtract one image from another or subtract constant from image</td>
+<tr><td>Subtract one image from another or subtract constant from image</td>
 <td>imsubtract</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
@@ -1094,59 +994,59 @@ setting up its structure.</p>
 <col width="20%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Functionality</th>
+<tr><th class="head">Functionality</th>
 <th class="head">Matlab</th>
 <th class="head">Scipy</th>
 <th class="head">Scipy</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>Contrast-limited adaptive histogram equalization (CLAHE)</td>
+<tr><td>Contrast-limited adaptive histogram equalization (CLAHE)</td>
 <td>adapthisteq</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Apply decorrelation stretch to multichannel image</td>
+<tr><td>Apply decorrelation stretch to multichannel image</td>
 <td>decorrstretch</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Enhance contrast using histogram equalization</td>
+<tr><td>Enhance contrast using histogram equalization</td>
 <td>histeq</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Adjust image intensity values or colormap</td>
+<tr><td>Adjust image intensity values or colormap</td>
 <td>imadjust</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Add noise to image</td>
+<tr><td>Add noise to image</td>
 <td>imnoise</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Convert integer values using lookup table</td>
+<tr><td>Convert integer values using lookup table</td>
 <td>intlut</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>2-D median filtering</td>
+<tr><td>2-D median filtering</td>
 <td>medfilt2</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>2-D order-statistic filtering</td>
+<tr><td>2-D order-statistic filtering</td>
 <td>ordfilt2</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Find limits to contrast stretch image</td>
+<tr><td>Find limits to contrast stretch image</td>
 <td>stretchlim</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>2-D adaptive noise-removal filtering</td>
+<tr><td>2-D adaptive noise-removal filtering</td>
 <td>wiener2</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
@@ -1167,44 +1067,44 @@ setting up its structure.</p>
 <col width="19%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Functionality</th>
+<tr><th class="head">Functionality</th>
 <th class="head">Matlab</th>
 <th class="head">Scipy</th>
 <th class="head">Scipy</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>Deblur image using blind deconvolution</td>
+<tr><td>Deblur image using blind deconvolution</td>
 <td>deconvblind</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Deblur image using Lucy-Richardson method</td>
+<tr><td>Deblur image using Lucy-Richardson method</td>
 <td>deconvlucy</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Deblur image using regularized filter</td>
+<tr><td>Deblur image using regularized filter</td>
 <td>deconvreg</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Deblur image using Wiener filter</td>
+<tr><td>Deblur image using Wiener filter</td>
 <td>deconvwnr</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Taper discontinuities along image edges</td>
+<tr><td>Taper discontinuities along image edges</td>
 <td>edgetaper</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Convert optical transfer function to point-spread function</td>
+<tr><td>Convert optical transfer function to point-spread function</td>
 <td>otf2psf</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Convert point-spread function to optical transfer function</td>
+<tr><td>Convert point-spread function to optical transfer function</td>
 <td>psf2otf</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
@@ -1222,24 +1122,24 @@ setting up its structure.</p>
 <col width="22%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Functionality</th>
+<tr><th class="head">Functionality</th>
 <th class="head">Matlab</th>
 <th class="head">Scipy</th>
 <th class="head">Scipy</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>2-D convolution matrix</td>
+<tr><td>2-D convolution matrix</td>
 <td>convmtx2</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Create predefined 2-D filter</td>
+<tr><td>Create predefined 2-D filter</td>
 <td>fspecial</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>N-D filtering of multidimensional images</td>
+<tr><td>N-D filtering of multidimensional images</td>
 <td>imfilter</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
@@ -1257,34 +1157,34 @@ setting up its structure.</p>
 <col width="21%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Functionality</th>
+<tr><th class="head">Functionality</th>
 <th class="head">Matlab</th>
 <th class="head">Scipy</th>
 <th class="head">Scipy</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>2-D frequency response</td>
+<tr><td>2-D frequency response</td>
 <td>freqz2</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>2-D FIR filter using frequency sampling</td>
+<tr><td>2-D FIR filter using frequency sampling</td>
 <td>fsamp2</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>2-D FIR filter using frequency transformation</td>
+<tr><td>2-D FIR filter using frequency transformation</td>
 <td>ftrans2</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>2-D FIR filter using 1-D window method</td>
+<tr><td>2-D FIR filter using 1-D window method</td>
 <td>fwind1</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>2-D FIR filter using 2-D window method</td>
+<tr><td>2-D FIR filter using 2-D window method</td>
 <td>fwind2</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
@@ -1305,59 +1205,59 @@ setting up its structure.</p>
 <col width="21%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Functionality</th>
+<tr><th class="head">Functionality</th>
 <th class="head">Matlab</th>
 <th class="head">Scipy</th>
 <th class="head">Scipy</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>2-D discrete cosine transform</td>
+<tr><td>2-D discrete cosine transform</td>
 <td>dct2</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Discrete cosine transform matrix</td>
+<tr><td>Discrete cosine transform matrix</td>
 <td>dctmtx</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Convert fan-beam projections to parallel-beam</td>
+<tr><td>Convert fan-beam projections to parallel-beam</td>
 <td>fan2para</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Fan-beam transform</td>
+<tr><td>Fan-beam transform</td>
 <td>fanbeam</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>2-D inverse discrete cosine transform</td>
+<tr><td>2-D inverse discrete cosine transform</td>
 <td>idct2</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Inverse fan-beam transform</td>
+<tr><td>Inverse fan-beam transform</td>
 <td>ifanbeam</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Inverse Radon transform</td>
+<tr><td>Inverse Radon transform</td>
 <td>iradon</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Convert parallel-beam projections to fan-beam</td>
+<tr><td>Convert parallel-beam projections to fan-beam</td>
 <td>para2fan</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Create head phantom image</td>
+<tr><td>Create head phantom image</td>
 <td>phantom</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Radon transform</td>
+<tr><td>Radon transform</td>
 <td>radon</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
@@ -1375,99 +1275,99 @@ setting up its structure.</p>
 <col width="20%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Functionality</th>
+<tr><th class="head">Functionality</th>
 <th class="head">Matlab</th>
 <th class="head">Scipy</th>
 <th class="head">Scipy</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>Create connectivity array</td>
+<tr><td>Create connectivity array</td>
 <td>conndef</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Bottom-hat filtering</td>
+<tr><td>Bottom-hat filtering</td>
 <td>imbothat</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Suppress light structures connected to image border</td>
+<tr><td>Suppress light structures connected to image border</td>
 <td>imclearborder</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Morphologically close image</td>
+<tr><td>Morphologically close image</td>
 <td>imclose</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Dilate image</td>
+<tr><td>Dilate image</td>
 <td>imdilate</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Erode image</td>
+<tr><td>Erode image</td>
 <td>imerode</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Extended-maxima transform</td>
+<tr><td>Extended-maxima transform</td>
 <td>imextendedmax</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Extended-minima transform</td>
+<tr><td>Extended-minima transform</td>
 <td>imextendedmin</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Fill image regions and holes</td>
+<tr><td>Fill image regions and holes</td>
 <td>imfill</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>H-maxima transform</td>
+<tr><td>H-maxima transform</td>
 <td>imhmax</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>H-minima transform</td>
+<tr><td>H-minima transform</td>
 <td>imhmin</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Impose minima</td>
+<tr><td>Impose minima</td>
 <td>imimposemin</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Morphologically open image</td>
+<tr><td>Morphologically open image</td>
 <td>imopen</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Morphological reconstruction</td>
+<tr><td>Morphological reconstruction</td>
 <td>imreconstruct</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Regional maxima</td>
+<tr><td>Regional maxima</td>
 <td>imregionalmax</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Regional minima</td>
+<tr><td>Regional minima</td>
 <td>imregionalmin</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Top-hat filtering</td>
+<tr><td>Top-hat filtering</td>
 <td>imtophat</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Watershed transform</td>
+<tr><td>Watershed transform</td>
 <td>watershed</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
@@ -1485,99 +1385,99 @@ setting up its structure.</p>
 <col width="19%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Functionality</th>
+<tr><th class="head">Functionality</th>
 <th class="head">Matlab</th>
 <th class="head">Scipy</th>
 <th class="head">Scipy</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>Generate convex hull image from binary image</td>
+<tr><td>Generate convex hull image from binary image</td>
 <td>bwconvhull</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Neighborhood operations on binary images using lookup tables</td>
+<tr><td>Neighborhood operations on binary images using lookup tables</td>
 <td>applylut</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Area of objects in binary image</td>
+<tr><td>Area of objects in binary image</td>
 <td>bwarea</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Morphologically open binary image (remove small objects)</td>
+<tr><td>Morphologically open binary image (remove small objects)</td>
 <td>bwareaopen</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Find connected components in binary image</td>
+<tr><td>Find connected components in binary image</td>
 <td>bwconncomp</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Distance transform of binary image</td>
+<tr><td>Distance transform of binary image</td>
 <td>bwdist</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Euler number of binary image</td>
+<tr><td>Euler number of binary image</td>
 <td>bweuler</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Binary hit-miss operation</td>
+<tr><td>Binary hit-miss operation</td>
 <td>bwhitmiss</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Label connected components in 2-D binary image</td>
+<tr><td>Label connected components in 2-D binary image</td>
 <td>bwlabel</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Label connected components in binary image</td>
+<tr><td>Label connected components in binary image</td>
 <td>bwlabeln</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Morphological operations on binary images</td>
+<tr><td>Morphological operations on binary images</td>
 <td>bwmorph</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Pack binary image</td>
+<tr><td>Pack binary image</td>
 <td>bwpack</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Find perimeter of objects in binary image</td>
+<tr><td>Find perimeter of objects in binary image</td>
 <td>bwperim</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Select objects in binary image</td>
+<tr><td>Select objects in binary image</td>
 <td>bwselect</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Ultimate erosion</td>
+<tr><td>Ultimate erosion</td>
 <td>bwulterode</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Unpack binary image</td>
+<tr><td>Unpack binary image</td>
 <td>bwunpack</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Top-hat filtering</td>
+<tr><td>Top-hat filtering</td>
 <td>imtophat</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Create lookup table for use with <tt class="docutils literal"><span class="pre">applylut</span></tt></td>
+<tr><td>Create lookup table for use with <tt class="docutils literal"><span class="pre">applylut</span></tt></td>
 <td>makelut</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
@@ -1598,49 +1498,49 @@ setting up its structure.</p>
 <col width="20%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Functionality</th>
+<tr><th class="head">Functionality</th>
 <th class="head">Matlab</th>
 <th class="head">Scipy</th>
 <th class="head">Scipy</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>Height of structuring element</td>
+<tr><td>Height of structuring element</td>
 <td>getheight</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Structuring element neighbor locations and heights</td>
+<tr><td>Structuring element neighbor locations and heights</td>
 <td>getneighbors</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Structuring element neighborhood</td>
+<tr><td>Structuring element neighborhood</td>
 <td>getnhood</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Sequence of decomposed structuring elements</td>
+<tr><td>Sequence of decomposed structuring elements</td>
 <td>getsequence</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>True for flat structuring element</td>
+<tr><td>True for flat structuring element</td>
 <td>isflat</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Reflect structuring element</td>
+<tr><td>Reflect structuring element</td>
 <td>reflect</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Create morphological structuring element (<tt class="docutils literal"><span class="pre">STREL</span></tt>)</td>
+<tr><td>Create morphological structuring element (<tt class="docutils literal"><span class="pre">STREL</span></tt>)</td>
 <td>strel</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Translate structuring element (<tt class="docutils literal"><span class="pre">STREL</span></tt>)</td>
+<tr><td>Translate structuring element (<tt class="docutils literal"><span class="pre">STREL</span></tt>)</td>
 <td>translate</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
@@ -1658,34 +1558,34 @@ setting up its structure.</p>
 <col width="18%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Functionality</th>
+<tr><th class="head">Functionality</th>
 <th class="head">Matlab</th>
 <th class="head">Scipy</th>
 <th class="head">Scipy</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>Convert region of interest (ROI) polygon to region mask</td>
+<tr><td>Convert region of interest (ROI) polygon to region mask</td>
 <td>poly2mask</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Select region of interest (ROI) based on color</td>
+<tr><td>Select region of interest (ROI) based on color</td>
 <td>roicolor</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Fill in specified region of interest (ROI) polygon in grayscale image</td>
+<tr><td>Fill in specified region of interest (ROI) polygon in grayscale image</td>
 <td>roifill</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Filter region of interest (ROI) in image</td>
+<tr><td>Filter region of interest (ROI) in image</td>
 <td>roifilt2</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Specify polygonal region of interest (ROI)</td>
+<tr><td>Specify polygonal region of interest (ROI)</td>
 <td>roipoly</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
@@ -1706,59 +1606,59 @@ setting up its structure.</p>
 <col width="21%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Functionality</th>
+<tr><th class="head">Functionality</th>
 <th class="head">Matlab</th>
 <th class="head">Scipy</th>
 <th class="head">Scipy</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>Determine optimal block size for block processing</td>
+<tr><td>Determine optimal block size for block processing</td>
 <td>bestblk</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Distinct block processing for image</td>
+<tr><td>Distinct block processing for image</td>
 <td>blockproc</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Close ImageAdapter object</td>
+<tr><td>Close ImageAdapter object</td>
 <td>close (ImageAdapter)</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Rearrange matrix columns into blocks</td>
+<tr><td>Rearrange matrix columns into blocks</td>
 <td>col2im</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Columnwise neighborhood operations</td>
+<tr><td>Columnwise neighborhood operations</td>
 <td>colfilt</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Rearrange image blocks into columns</td>
+<tr><td>Rearrange image blocks into columns</td>
 <td>im2col</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Interface for image I/O</td>
+<tr><td>Interface for image I/O</td>
 <td>ImageAdapter</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>General sliding-neighborhood operations</td>
+<tr><td>General sliding-neighborhood operations</td>
 <td>nlfilter</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Read region of image</td>
+<tr><td>Read region of image</td>
 <td>readRegion (ImageAdapter)</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Write block of data to region of image</td>
+<tr><td>Write block of data to region of image</td>
 <td>writeRegion (ImageAdapter)</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
@@ -1779,94 +1679,94 @@ setting up its structure.</p>
 <col width="20%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Functionality</th>
+<tr><th class="head">Functionality</th>
 <th class="head">Matlab</th>
 <th class="head">Scipy</th>
 <th class="head">Scipy</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>Apply device-independent color space transformation</td>
+<tr><td>Apply device-independent color space transformation</td>
 <td>applycform</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Search for ICC profiles</td>
+<tr><td>Search for ICC profiles</td>
 <td>iccfind</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Read ICC profile</td>
+<tr><td>Read ICC profile</td>
 <td>iccread</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Find system default ICC profile repository</td>
+<tr><td>Find system default ICC profile repository</td>
 <td>iccroot</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Write ICC color profile to disk file</td>
+<tr><td>Write ICC color profile to disk file</td>
 <td>iccwrite</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>True for valid ICC color profile</td>
+<tr><td>True for valid ICC color profile</td>
 <td>isicc</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Convert L*a*b* data to double</td>
+<tr><td>Convert L*a*b* data to double</td>
 <td>lab2double</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Convert L*a*b* data to uint16</td>
+<tr><td>Convert L*a*b* data to uint16</td>
 <td>lab2uint16</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Convert L*a*b* data to uint8</td>
+<tr><td>Convert L*a*b* data to uint8</td>
 <td>lab2uint8</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Create color transformation structure</td>
+<tr><td>Create color transformation structure</td>
 <td>makecform</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Convert NTSC values to RGB color space</td>
+<tr><td>Convert NTSC values to RGB color space</td>
 <td>ntsc2rgb</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Convert RGB color values to NTSC color space</td>
+<tr><td>Convert RGB color values to NTSC color space</td>
 <td>rgb2ntsc</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Convert RGB color values to YCbCr color space</td>
+<tr><td>Convert RGB color values to YCbCr color space</td>
 <td>rgb2ycbcr</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>XYZ color values of standard illuminants</td>
+<tr><td>XYZ color values of standard illuminants</td>
 <td>whitepoint</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Convert XYZ color values to double</td>
+<tr><td>Convert XYZ color values to double</td>
 <td>xyz2double</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Convert XYZ color values to uint16</td>
+<tr><td>Convert XYZ color values to uint16</td>
 <td>xyz2uint16</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Convert YCbCr color values to RGB color space</td>
+<tr><td>Convert YCbCr color values to RGB color space</td>
 <td>ycbcr2rgb</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
@@ -1884,44 +1784,44 @@ setting up its structure.</p>
 <col width="21%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Functionality</th>
+<tr><th class="head">Functionality</th>
 <th class="head">Matlab</th>
 <th class="head">Scipy</th>
 <th class="head">Scipy</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>Default display range of image based on its class</td>
+<tr><td>Default display range of image based on its class</td>
 <td>getrangefromclass</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Check validity of connectivity argument</td>
+<tr><td>Check validity of connectivity argument</td>
 <td>iptcheckconn</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Check validity of array</td>
+<tr><td>Check validity of array</td>
 <td>iptcheckinput</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Check validity of colormap</td>
+<tr><td>Check validity of colormap</td>
 <td>iptcheckmap</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Check number of input arguments</td>
+<tr><td>Check number of input arguments</td>
 <td>iptchecknargin</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-odd"><td>Check validity of option string</td>
+<tr><td>Check validity of option string</td>
 <td>iptcheckstrs</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
 </tr>
-<tr class="row-even"><td>Convert positive integer to ordinal string</td>
+<tr><td>Convert positive integer to ordinal string</td>
 <td>iptnum2ordinal</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
@@ -1939,14 +1839,14 @@ setting up its structure.</p>
 <col width="25%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Functionality</th>
+<tr><th class="head">Functionality</th>
 <th class="head">Matlab</th>
 <th class="head">Scipy</th>
 <th class="head">Scipy</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>Pad array</td>
+<tr><td>Pad array</td>
 <td>padarray</td>
 <td><span class="missing">Not Implemented</span></td>
 <td><span class="missing">Not Implemented</span></td>
@@ -1958,21 +1858,109 @@ setting up its structure.</p>
 </div>
 
 
-          </div>
         </div>
-      </div>
+        <div class="span3"><h4 class="sidebar-box-heading">Navigation</h4>
+<div class="well sidebar-box">
+    <ul class="nav nav-list">
+        <li><a href="index.html">Documentation Home</a></li>
+    </ul>
+</div>
+    <h4 class="sidebar-box-heading">Previous topic</h4>
+    <div class="well sidebar-box">
+        <ul class="nav nav-list">
+            <li><a href="gsoc2011.html" title="previous chapter">Project ideas for Google Summer of Code 2011</a></li>
+        </ul>
+    </div>
+    <h4 class="sidebar-box-heading">Next topic</h4>
+    <div class="well sidebar-box">
+        <ul class="nav nav-list">
+            <li><a href="cell_profiler.html" title="next chapter">CellProfiler BSD license announcement</a></li>
+        </ul>
+    </div>
+        <h4 class="sidebar-box-heading">Contents</h4>
+        <div class="well sidebar-box toc">
+            <ul class="nav nav-list">
+<li><a class="reference internal" href="#">Coverage Tables</a><ul class="nav nav-list">
+<li><a class="reference internal" href="#color-key">Color Key</a></li>
+<li><a class="reference internal" href="#coverage-bar">Coverage Bar</a></li>
+<li><a class="reference internal" href="#image-display-and-exploration">Image Display and Exploration</a><ul class="nav nav-list">
+<li><a class="reference internal" href="#id1">Image Display and Exploration</a></li>
+<li><a class="reference internal" href="#image-file-i-o">Image File I/O</a></li>
+<li><a class="reference internal" href="#image-types-and-type-conversions">Image Types and Type Conversions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#gui-tools">GUI Tools</a><ul class="nav nav-list">
+<li><a class="reference internal" href="#modular-interactive-tools">Modular Interactive Tools</a></li>
+<li><a class="reference internal" href="#navigational-tools-for-image-scroll-panel">Navigational Tools for Image Scroll Panel</a></li>
+<li><a class="reference internal" href="#utilities-for-interactive-tools">Utilities for Interactive Tools</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#spatial-transformations-and-image-registration">Spatial Transformations and Image Registration</a><ul class="nav nav-list">
+<li><a class="reference internal" href="#spatial-transformations">Spatial Transformations</a></li>
+<li><a class="reference internal" href="#image-registration">Image Registration</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#image-analysis-and-statistics">Image Analysis and Statistics</a><ul class="nav nav-list">
+<li><a class="reference internal" href="#image-analysis">Image Analysis</a></li>
+<li><a class="reference internal" href="#texture-analysis">Texture Analysis</a></li>
+<li><a class="reference internal" href="#pixel-values-and-statistics">Pixel Values and Statistics</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#image-arithmetic">Image Arithmetic</a></li>
+<li><a class="reference internal" href="#image-enhancement-and-restoration">Image Enhancement and Restoration</a><ul class="nav nav-list">
+<li><a class="reference internal" href="#image-enhancement">Image Enhancement</a></li>
+<li><a class="reference internal" href="#image-restoration-deblurring">Image Restoration (Deblurring)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#linear-filtering-and-transforms">Linear Filtering and Transforms</a><ul class="nav nav-list">
+<li><a class="reference internal" href="#linear-filtering">Linear Filtering</a></li>
+<li><a class="reference internal" href="#linear-2-d-filter-design">Linear 2-D Filter Design</a></li>
+<li><a class="reference internal" href="#image-transforms">Image Transforms</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#morphological-operations">Morphological Operations</a><ul class="nav nav-list">
+<li><a class="reference internal" href="#intensity-and-binary-images">Intensity and Binary Images</a></li>
+<li><a class="reference internal" href="#binary-images">Binary Images</a></li>
+<li><a class="reference internal" href="#structuring-element-creation-and-manipulation">Structuring Element Creation and Manipulation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#roi-based-neighborhood-and-block-processing">ROI-Based, Neighborhood, and Block Processing</a><ul class="nav nav-list">
+<li><a class="reference internal" href="#roi-based-processing">ROI-Based Processing</a></li>
+<li><a class="reference internal" href="#neighborhood-and-block-processing">Neighborhood and Block Processing</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#colormaps-and-color-space">Colormaps and Color Space</a><ul class="nav nav-list">
+<li><a class="reference internal" href="#color-space-conversions">Color Space Conversions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#utilities">Utilities</a><ul class="nav nav-list">
+<li><a class="reference internal" href="#validation">Validation</a></li>
+<li><a class="reference internal" href="#array-operations">Array Operations</a></li>
+<li><a class="reference internal" href="#performance">Performance</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
         </div>
-        <div class="clearer"></div>
-    </div>
-    </div>
 
-    <div class="footer-wrapper">
-      
-    <div class="footer">
-        &copy; Copyright 2011, the scikits-image team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+<h4 class="sidebar-box-heading">Versions</h4>
+<div class="well sidebar-box">
+    <ul class="nav nav-list">
+        <script src="_static/docversions.js"></script>
+        <script type="text/javascript">
+            insert_version_links();
+        </script>
+    </ul>
+</div>
+        </div>
     </div>
+    <div class="well footer">
+        <small>
+            &copy; Copyright the scikit-image development team.
+            Created using <a href="http://twitter.github.com/bootstrap/">Bootstrap</a> and <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+        </small>
     </div>
-
-  </body>
+</body>
 </html>

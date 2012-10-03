@@ -1,18 +1,20 @@
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Module: measure.find_contours &mdash; skimage v0.8dev docs</title>
     
-    <title>Module: measure.find_contours &mdash; skimage v0.8dev docs</title>
     
-    <link rel="stylesheet" href="../_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link href="../_static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../_static/css/custom.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
     
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="../_static/js/bootstrap.min.js"></script>
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -22,74 +24,34 @@
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/docversions.js"></script>
-    <link rel="top" title="skimage v0.8dev docs" href="../index.html" /> 
-  </head>
-  <body>
-    <div class="header-wrapper">
-      <div class="header">
-          <div class="logo"><a href="http://scikits-image.org">
-            <img class="logo" src="../_static/scikits_image_logo_small.png" alt="Logo"/>
-          </a></div>
-       
-       </div>
-    </div>
-
-    <div class="content-wrapper">
-      <div class="content">
-             
-            
-      <div class="sphinxsidebar">
-        <div class="sphinxsidebarwrapper"> 
-
-  
-    <h3>Navigation</h3>
-    <p>
-    <a href="../index.html">Documentation Home</a>
-    </p>
-    <p>&nbsp;</p>
-  
-    <h3>Contents</h3>
-    <ul>
-<li><a class="reference internal" href="#">Module: <tt class="docutils literal"><span class="pre">measure.find_contours</span></tt></a><ul>
-<li><a class="reference internal" href="#deque"><tt class="docutils literal"><span class="pre">deque</span></tt></a></li>
-<li><a class="reference internal" href="#find-contours">find_contours</a></li>
-</ul>
-</li>
-</ul>
-
-
-
-
-  <h3>Version</h3>
-
-    <script type="text/javascript">
-      insert_version_links();
-    </script>
-<div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <link rel="top" title="skimage v0.8dev docs" href="../index.html" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <link rel="shortcut icon" href="../_static/favicon.ico">
+</head>
+<body class="container">
+    <a href="http://scikit-image.org" class="logo"><img src="../_static/img/logo.png" alt=""></a>
+    <div class="clearfix"></div>
+    <div class="navbar">
+        <div class="navbar-inner">
+            <ul class="nav">
+                <li><a href="../index.html">Home</a></li>
+<li><a href="/download.html">Download</a></li>
+<li><a href="/docs/dev/auto_examples">Gallery</a></li>
+<li><a href="/docs">Documentation</a></li>
+<li><a href="https://github.com/scikit-image/scikit-image">Source</a></li>
+            </ul>
+            <form class="navbar-form pull-right" action="../search.html" method="get">
+                <input type="text" class="search span3" name="q" placeholder="Search documentation ...">
+                <input type="hidden" name="check_keywords" value="yes" >
+                <input type="hidden" name="area" value="default" >
+            </form>
         </div>
-      </div>
-        
-        <div class="document">
-            
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body">
+    </div>
+    <div class="row">
+        <div class="span9">
             
   <div class="section" id="module-skimage.measure.find_contours">
 <span id="module-measure-find-contours"></span><h1>Module: <tt class="xref py py-mod docutils literal"><span class="pre">measure.find_contours</span></tt><a class="headerlink" href="#module-skimage.measure.find_contours" title="Permalink to this headline">¶</a></h1>
@@ -100,11 +62,11 @@
 <em class="property">class </em><tt class="descclassname">skimage.measure.find_contours.</tt><tt class="descname">deque</tt><a class="headerlink" href="#skimage.measure.find_contours.deque" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
 <p>deque(iterable[, maxlen]) &#8211;&gt; deque object</p>
-<p>Build an ordered collection accessible from endpoints only.</p>
+<p>Build an ordered collection with optimized access from its endpoints.</p>
 <dl class="method">
 <dt id="skimage.measure.find_contours.deque.__init__">
 <tt class="descname">__init__</tt><big>(</big><big>)</big><a class="headerlink" href="#skimage.measure.find_contours.deque.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>x.__init__(...) initializes x; see x.__class__.__doc__ for signature</p>
+<dd><p>x.__init__(...) initializes x; see help(type(x)) for signature</p>
 </dd></dl>
 
 <dl class="method">
@@ -126,6 +88,12 @@
 </dd></dl>
 
 <dl class="method">
+<dt id="skimage.measure.find_contours.deque.count">
+<tt class="descname">count</tt><big>(</big><big>)</big><a class="headerlink" href="#skimage.measure.find_contours.deque.count" title="Permalink to this definition">¶</a></dt>
+<dd><p>D.count(value) -&gt; integer &#8211; return number of occurrences of value</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="skimage.measure.find_contours.deque.extend">
 <tt class="descname">extend</tt><big>(</big><big>)</big><a class="headerlink" href="#skimage.measure.find_contours.deque.extend" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extend the right side of the deque with elements from the iterable</p>
@@ -135,6 +103,12 @@
 <dt id="skimage.measure.find_contours.deque.extendleft">
 <tt class="descname">extendleft</tt><big>(</big><big>)</big><a class="headerlink" href="#skimage.measure.find_contours.deque.extendleft" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extend the left side of the deque with elements from the iterable</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="skimage.measure.find_contours.deque.maxlen">
+<tt class="descname">maxlen</tt><a class="headerlink" href="#skimage.measure.find_contours.deque.maxlen" title="Permalink to this definition">¶</a></dt>
+<dd><p>maximum size of a deque or None if unbounded</p>
 </dd></dl>
 
 <dl class="method">
@@ -156,6 +130,12 @@
 </dd></dl>
 
 <dl class="method">
+<dt id="skimage.measure.find_contours.deque.reverse">
+<tt class="descname">reverse</tt><big>(</big><big>)</big><a class="headerlink" href="#skimage.measure.find_contours.deque.reverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>D.reverse() &#8211; reverse <em>IN PLACE</em></p>
+</dd></dl>
+
+<dl class="method">
 <dt id="skimage.measure.find_contours.deque.rotate">
 <tt class="descname">rotate</tt><big>(</big><big>)</big><a class="headerlink" href="#skimage.measure.find_contours.deque.rotate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rotate the deque n steps to the right (default n=1).  If n is negative, rotates left.</p>
@@ -169,7 +149,7 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.measure.find_contours.find_contours" title="skimage.measure.find_contours.find_contours"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.measure.find_contours.find_contours</span></tt></a>(...)</td>
+<tr><td><a class="reference internal" href="#skimage.measure.find_contours.find_contours" title="skimage.measure.find_contours.find_contours"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.measure.find_contours.find_contours</span></tt></a>(...)</td>
 <td>Find iso-valued contours in a 2D array for a given level value.</td>
 </tr>
 </tbody>
@@ -188,7 +168,7 @@ interpolated to provide better precision for the output contours.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>array</strong> : 2D ndarray of double</p>
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>array</strong> : 2D ndarray of double</p>
 <blockquote>
 <div><p>Input data in which to find contours.</p>
 </div></blockquote>
@@ -212,7 +192,7 @@ on the left of the contour. (See below for details.)</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>contours</strong> : list of (n,2)-ndarrays</p>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>contours</strong> : list of (n,2)-ndarrays</p>
 <blockquote class="last">
 <div><p>Each contour is an ndarray of shape <tt class="docutils literal"><span class="pre">(n,</span> <span class="pre">2)</span></tt>,
 consisting of n <tt class="docutils literal"><span class="pre">(x,</span> <span class="pre">y)</span></tt> coordinates along the contour.</p>
@@ -281,21 +261,41 @@ Resolution 3D Surface Construction Algorithm. Computer Graphics
 </div>
 
 
-          </div>
         </div>
-      </div>
+        <div class="span3"><h4 class="sidebar-box-heading">Navigation</h4>
+<div class="well sidebar-box">
+    <ul class="nav nav-list">
+        <li><a href="../index.html">Documentation Home</a></li>
+    </ul>
+</div>
+        <h4 class="sidebar-box-heading">Contents</h4>
+        <div class="well sidebar-box toc">
+            <ul class="nav nav-list">
+<li><a class="reference internal" href="#">Module: <tt class="docutils literal"><span class="pre">measure.find_contours</span></tt></a><ul class="nav nav-list">
+<li><a class="reference internal" href="#deque"><tt class="docutils literal"><span class="pre">deque</span></tt></a></li>
+<li><a class="reference internal" href="#find-contours">find_contours</a></li>
+</ul>
+</li>
+</ul>
+
         </div>
-        <div class="clearer"></div>
-    </div>
-    </div>
 
-    <div class="footer-wrapper">
-      
-    <div class="footer">
-        &copy; Copyright 2011, the scikits-image team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+<h4 class="sidebar-box-heading">Versions</h4>
+<div class="well sidebar-box">
+    <ul class="nav nav-list">
+        <script src="../_static/docversions.js"></script>
+        <script type="text/javascript">
+            insert_version_links();
+        </script>
+    </ul>
+</div>
+        </div>
     </div>
+    <div class="well footer">
+        <small>
+            &copy; Copyright the scikit-image development team.
+            Created using <a href="http://twitter.github.com/bootstrap/">Bootstrap</a> and <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+        </small>
     </div>
-
-  </body>
+</body>
 </html>

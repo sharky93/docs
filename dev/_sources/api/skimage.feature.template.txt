@@ -7,7 +7,13 @@ Module: :mod:`feature.template`
 .. currentmodule:: skimage.feature.template
 .. autosummary::
 
+   skimage.feature.template.convert
    skimage.feature.template.match_template
+
+convert
+-------
+
+.. autofunction:: skimage.feature.template.convert
 
 match_template
 --------------
