@@ -10,6 +10,7 @@ Module: :mod:`segmentation`
    skimage.segmentation.clear_border
    skimage.segmentation.felzenszwalb
    skimage.segmentation.find_boundaries
+   skimage.segmentation.mark_boundaries
    skimage.segmentation.quickshift
    skimage.segmentation.random_walker
    skimage.segmentation.slic
@@ -29,6 +30,11 @@ find_boundaries
 ---------------
 
 .. autofunction:: skimage.segmentation.find_boundaries
+
+mark_boundaries
+---------------
+
+.. autofunction:: skimage.segmentation.mark_boundaries
 
 quickshift
 ----------

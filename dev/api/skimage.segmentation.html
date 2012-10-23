@@ -32,7 +32,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico">
 </head>
 <body class="container">
-    <a href="http://skimage.org" class="logo"><img src="../_static/img/logo.png" alt=""></a>
+    <a href="http://scikit-image.org" class="logo"><img src="../_static/img/logo.png" alt=""></a>
     <div class="clearfix"></div>
     <div class="navbar">
         <div class="navbar-inner">
@@ -68,7 +68,10 @@
 <td>Computes Felsenszwalb&#8217;s efficient graph based image segmentation.</td>
 </tr>
 <tr><td><a class="reference internal" href="#skimage.segmentation.find_boundaries" title="skimage.segmentation.find_boundaries"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.find_boundaries</span></tt></a>(label_img)</td>
-<td></td>
+<td>Return bool array where boundaries between labeled regions are True.</td>
+</tr>
+<tr><td><a class="reference internal" href="#skimage.segmentation.mark_boundaries" title="skimage.segmentation.mark_boundaries"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.mark_boundaries</span></tt></a>(image,&nbsp;...)</td>
+<td>Return image with boundaries between labeled regions highlighted.</td>
 </tr>
 <tr><td><a class="reference internal" href="#skimage.segmentation.quickshift" title="skimage.segmentation.quickshift"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.quickshift</span></tt></a></td>
 <td>Segments image using quickshift clustering in Color-(x,y) space.</td>
@@ -186,10 +189,10 @@ intersection of the separate segmentations on the color channels.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r81" rules="none">
+<table class="docutils citation" frame="void" id="r91" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[R81]</a></td><td>Efficient graph-based image segmentation, Felzenszwalb, P.F. and
+<tr><td class="label"><a class="fn-backref" href="#id1">[R91]</a></td><td>Efficient graph-based image segmentation, Felzenszwalb, P.F. and
 Huttenlocher, D.P.  International Journal of Computer Vision, 2004</td></tr>
 </tbody>
 </table>
@@ -201,7 +204,42 @@ Huttenlocher, D.P.  International Journal of Computer Vision, 2004</td></tr>
 <dl class="function">
 <dt id="skimage.segmentation.find_boundaries">
 <tt class="descclassname">skimage.segmentation.</tt><tt class="descname">find_boundaries</tt><big>(</big><em>label_img</em><big>)</big><a class="headerlink" href="#skimage.segmentation.find_boundaries" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Return bool array where boundaries between labeled regions are True.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="mark-boundaries">
+<h2>mark_boundaries<a class="headerlink" href="#mark-boundaries" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.segmentation.mark_boundaries">
+<tt class="descclassname">skimage.segmentation.</tt><tt class="descname">mark_boundaries</tt><big>(</big><em>image</em>, <em>label_img</em>, <em>color=(1</em>, <em>1</em>, <em>0)</em>, <em>outline_color=None</em><big>)</big><a class="headerlink" href="#skimage.segmentation.mark_boundaries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return image with boundaries between labeled regions highlighted.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : (M, N[, 3]) array</p>
+<blockquote>
+<div><p>Grayscale or RGB image.</p>
+</div></blockquote>
+<p><strong>label_img</strong> : (M, N) array</p>
+<blockquote>
+<div><p>Label array where regions are marked by different integer values.</p>
+</div></blockquote>
+<p><strong>color</strong> : length-3 sequence</p>
+<blockquote>
+<div><p>RGB color of boundaries in the output image.</p>
+</div></blockquote>
+<p><strong>outline_color</strong> : length-3 sequence</p>
+<blockquote class="last">
+<div><p>RGB color surrounding boundaries in the output image. If None, no
+outline is drawn.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 </div>
 <div class="section" id="quickshift">
@@ -267,10 +305,10 @@ segmentation. For this purpose, the input is assumed to be RGB.</p>
 segmentation, though this is not strictly necessary. For this to work, the
 image must be given in RGB format.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r82" rules="none">
+<table class="docutils citation" frame="void" id="r92" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[R82]</a></td><td>Quick shift and kernel methods for mode seeking,
+<tr><td class="label"><a class="fn-backref" href="#id2">[R92]</a></td><td>Quick shift and kernel methods for mode seeking,
 Vedaldi, A. and Soatto, S.
 European Conference on Computer Vision, 2008</td></tr>
 </tbody>
@@ -500,10 +538,10 @@ recommended.</p>
 <p class="rubric">Notes</p>
 <p>The image is smoothed using a Gaussian kernel prior to segmentation.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r83" rules="none">
+<table class="docutils citation" frame="void" id="r93" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[R83]</a></td><td>Radhakrishna Achanta, Appu Shaji, Kevin Smith, Aurelien Lucchi,
+<tr><td class="label"><a class="fn-backref" href="#id3">[R93]</a></td><td>Radhakrishna Achanta, Appu Shaji, Kevin Smith, Aurelien Lucchi,
 Pascal Fua, and Sabine Süsstrunk, SLIC Superpixels Compared to
 State-of-the-art Superpixel Methods, TPAMI, May 2012.</td></tr>
 </tbody>
@@ -524,7 +562,7 @@ State-of-the-art Superpixel Methods, TPAMI, May 2012.</td></tr>
 <h2>visualize_boundaries<a class="headerlink" href="#visualize-boundaries" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.segmentation.visualize_boundaries">
-<tt class="descclassname">skimage.segmentation.</tt><tt class="descname">visualize_boundaries</tt><big>(</big><em>img</em>, <em>label_img</em><big>)</big><a class="headerlink" href="#skimage.segmentation.visualize_boundaries" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">skimage.segmentation.</tt><tt class="descname">visualize_boundaries</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.segmentation.visualize_boundaries" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -545,6 +583,7 @@ State-of-the-art Superpixel Methods, TPAMI, May 2012.</td></tr>
 <li><a class="reference internal" href="#clear-border">clear_border</a></li>
 <li><a class="reference internal" href="#felzenszwalb">felzenszwalb</a></li>
 <li><a class="reference internal" href="#find-boundaries">find_boundaries</a></li>
+<li><a class="reference internal" href="#mark-boundaries">mark_boundaries</a></li>
 <li><a class="reference internal" href="#quickshift">quickshift</a></li>
 <li><a class="reference internal" href="#random-walker">random_walker</a></li>
 <li><a class="reference internal" href="#slic">slic</a></li>

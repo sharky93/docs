@@ -32,7 +32,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico">
 </head>
 <body class="container">
-    <a href="http://skimage.org" class="logo"><img src="../_static/img/logo.png" alt=""></a>
+    <a href="http://scikit-image.org" class="logo"><img src="../_static/img/logo.png" alt=""></a>
     <div class="clearfix"></div>
     <div class="navbar">
         <div class="navbar-inner">
@@ -575,8 +575,11 @@ smallest singular value normed by the coefficient c3.</p>
 <tr><td><a class="reference internal" href="#skimage.transform.radon" title="skimage.transform.radon"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.radon</span></tt></a>(image[,&nbsp;theta])</td>
 <td>Calculates the radon transform of an image given specified projection angles.</td>
 </tr>
+<tr><td><a class="reference internal" href="#skimage.transform.rescale" title="skimage.transform.rescale"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.rescale</span></tt></a>(image,&nbsp;scale[,&nbsp;...])</td>
+<td>Scale image by a certain factor.</td>
+</tr>
 <tr><td><a class="reference internal" href="#skimage.transform.resize" title="skimage.transform.resize"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.resize</span></tt></a>(image,&nbsp;output_shape)</td>
-<td>Resize image.</td>
+<td>Resize image to match a certain size.</td>
 </tr>
 <tr><td><a class="reference internal" href="#skimage.transform.rotate" title="skimage.transform.rotate"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.rotate</span></tt></a>(image,&nbsp;angle[,&nbsp;...])</td>
 <td>Rotate image by a certain angle around its center.</td>
@@ -955,13 +958,13 @@ an (n+1) x n integer array.</p>
 </div>
 <p class="rubric">Notes</p>
 <p>The FRT has a unique inverse iff n is prime.
-See <a class="reference internal" href="#r87">[R87]</a> for an overview.
+See <a class="reference internal" href="#r102">[R102]</a> for an overview.
 The idea for this algorithm is due to Vlad Negnevitski.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r87" rules="none">
+<table class="docutils citation" frame="void" id="r102" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R87]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id3">2</a>)</em> A. Kingston and I. Svalbe, &#8220;Projective transforms on periodic
+<tr><td class="label">[R102]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id3">2</a>)</em> A. Kingston and I. Svalbe, &#8220;Projective transforms on periodic
 discrete image arrays,&#8221; in P. Hawkes (Ed), Advances in Imaging
 and Electron Physics, 139 (2006)</td></tr>
 </tbody>
@@ -1015,10 +1018,10 @@ left of it, i.e.:</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r88" rules="none">
+<table class="docutils citation" frame="void" id="r103" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[R88]</a></td><td>F.C. Crow, &#8220;Summed-area tables for texture mapping,&#8221;
+<tr><td class="label"><a class="fn-backref" href="#id4">[R103]</a></td><td>F.C. Crow, &#8220;Summed-area tables for texture mapping,&#8221;
 ACM SIGGRAPH Computer Graphics, vol. 18, 1984, pp. 207-212.</td></tr>
 </tbody>
 </table>
@@ -1158,10 +1161,10 @@ line start and end.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r89" rules="none">
+<table class="docutils citation" frame="void" id="r104" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id5">[R89]</a></td><td>C. Galamhos, J. Matas and J. Kittler, &#8220;Progressive probabilistic
+<tr><td class="label"><a class="fn-backref" href="#id5">[R104]</a></td><td>C. Galamhos, J. Matas and J. Kittler, &#8220;Progressive probabilistic
 Hough transform for line detection&#8221;, in IEEE Computer Society
 Conference on Computer Vision and Pattern Recognition, 1999.</td></tr>
 </tbody>
@@ -1218,7 +1221,12 @@ cval is the value when mode is equal to &#8216;constant&#8217;.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<p>..[1] <a class="reference external" href="http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf">http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf</a></p>
+<table class="docutils citation" frame="void" id="r105" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id6">[R105]</a></td><td><a class="reference external" href="http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf">http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf</a></td></tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>
@@ -1282,7 +1290,12 @@ cval is the value when mode is equal to &#8216;constant&#8217;.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<p>..[1] <a class="reference external" href="http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf">http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf</a></p>
+<table class="docutils citation" frame="void" id="r106" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id7">[R106]</a></td><td><a class="reference external" href="http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf">http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf</a></td></tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>
@@ -1350,8 +1363,18 @@ cval is the value when mode is equal to &#8216;constant&#8217;.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<p>..[1] <a class="reference external" href="http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf">http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf</a>
-..[2] <a class="reference external" href="http://sepwww.stanford.edu/~morgan/texturematch/paper_html/node3.html">http://sepwww.stanford.edu/~morgan/texturematch/paper_html/node3.html</a></p>
+<table class="docutils citation" frame="void" id="r107" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id8">[R107]</a></td><td><a class="reference external" href="http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf">http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf</a></td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="r108" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id9">[R108]</a></td><td><a class="reference external" href="http://sepwww.stanford.edu/~morgan/texturematch/paper_html/node3.html">http://sepwww.stanford.edu/~morgan/texturematch/paper_html/node3.html</a></td></tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>
@@ -1404,7 +1427,12 @@ cval is the value when mode is equal to &#8216;constant&#8217;.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<p>..[1] <a class="reference external" href="http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf">http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf</a></p>
+<table class="docutils citation" frame="void" id="r109" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id10">[R109]</a></td><td><a class="reference external" href="http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf">http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf</a></td></tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>
@@ -1440,12 +1468,44 @@ projection angles.</p>
 </dd></dl>
 
 </div>
+<div class="section" id="rescale">
+<h2>rescale<a class="headerlink" href="#rescale" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.transform.rescale">
+<tt class="descclassname">skimage.transform.</tt><tt class="descname">rescale</tt><big>(</big><em>image</em>, <em>scale</em>, <em>order=1</em>, <em>mode='constant'</em>, <em>cval=0.0</em><big>)</big><a class="headerlink" href="#skimage.transform.rescale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Scale image by a certain factor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<blockquote>
+<div><p>Input image.</p>
+</div></blockquote>
+<p><strong>scale</strong> : {float, tuple of floats}</p>
+<blockquote>
+<div><p>Scale factors. Separate scale factors can be defined as
+<cite>(row_scale, col_scale)</cite>.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>scaled</strong> : ndarray</p>
+<blockquote class="last">
+<div><p>Scaled version of the input.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
 <div class="section" id="resize">
 <h2>resize<a class="headerlink" href="#resize" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.transform.resize">
 <tt class="descclassname">skimage.transform.</tt><tt class="descname">resize</tt><big>(</big><em>image</em>, <em>output_shape</em>, <em>order=1</em>, <em>mode='constant'</em>, <em>cval=0.0</em><big>)</big><a class="headerlink" href="#skimage.transform.resize" title="Permalink to this definition">¶</a></dt>
-<dd><p>Resize image.</p>
+<dd><p>Resize image to match a certain size.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1456,7 +1516,10 @@ projection angles.</p>
 </div></blockquote>
 <p><strong>output_shape</strong> : tuple or ndarray</p>
 <blockquote>
-<div><p>Size of the generated output image <cite>(rows, cols)</cite>.</p>
+<div><p>Size of the generated output image <cite>(rows, cols[, dim])</cite>. If <cite>dim</cite> is
+not provided, the number of channels are preserved. In case the number
+of input channels does not equal the number of output channels a
+3-dimensional interpolation is applied.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1707,6 +1770,7 @@ than <cite>warp</cite> performs after the call to <cite>ndimage.map_coordinates<
 <li><a class="reference internal" href="#pyramid-laplacian">pyramid_laplacian</a></li>
 <li><a class="reference internal" href="#pyramid-reduce">pyramid_reduce</a></li>
 <li><a class="reference internal" href="#radon">radon</a></li>
+<li><a class="reference internal" href="#rescale">rescale</a></li>
 <li><a class="reference internal" href="#resize">resize</a></li>
 <li><a class="reference internal" href="#rotate">rotate</a></li>
 <li><a class="reference internal" href="#swirl">swirl</a></li>

@@ -32,7 +32,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico">
 </head>
 <body class="container">
-    <a href="http://skimage.org" class="logo"><img src="../_static/img/logo.png" alt=""></a>
+    <a href="http://scikit-image.org" class="logo"><img src="../_static/img/logo.png" alt=""></a>
     <div class="clearfix"></div>
     <div class="navbar">
         <div class="navbar-inner">
@@ -65,10 +65,16 @@
 <td>Convert an image array to a new color space.</td>
 </tr>
 <tr><td><a class="reference internal" href="#skimage.color.gray2rgb" title="skimage.color.gray2rgb"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.gray2rgb</span></tt></a>(image)</td>
-<td>Create an RGB representation of a grey-level image.</td>
+<td>Create an RGB representation of a gray-level image.</td>
 </tr>
 <tr><td><a class="reference internal" href="#skimage.color.hsv2rgb" title="skimage.color.hsv2rgb"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.hsv2rgb</span></tt></a>(hsv)</td>
 <td>HSV to RGB color space conversion.</td>
+</tr>
+<tr><td><a class="reference internal" href="#skimage.color.is_gray" title="skimage.color.is_gray"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.is_gray</span></tt></a>(image)</td>
+<td>Test whether the image is gray (i.e.</td>
+</tr>
+<tr><td><a class="reference internal" href="#skimage.color.is_rgb" title="skimage.color.is_rgb"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.is_rgb</span></tt></a>(image)</td>
+<td>Test whether the image is RGB or RGBA.</td>
 </tr>
 <tr><td><a class="reference internal" href="#skimage.color.lab2rgb" title="skimage.color.lab2rgb"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.lab2rgb</span></tt></a>(lab)</td>
 <td>Lab to RGB color space conversion.</td>
@@ -158,7 +164,7 @@ from XYZ to HSV is implemented as XYZ -&gt; RGB -&gt; HSV instead of directly.</
 <dl class="function">
 <dt id="skimage.color.gray2rgb">
 <tt class="descclassname">skimage.color.</tt><tt class="descname">gray2rgb</tt><big>(</big><em>image</em><big>)</big><a class="headerlink" href="#skimage.color.gray2rgb" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create an RGB representation of a grey-level image.</p>
+<dd><p>Create an RGB representation of a gray-level image.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -235,6 +241,48 @@ precision, due to integer arithmetic and rounding <a class="reference internal" 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lena_rgb</span> <span class="o">=</span> <span class="n">hsv2rgb</span><span class="p">(</span><span class="n">lena_hsv</span><span class="p">)</span>
 </pre></div>
 </div>
+</dd></dl>
+
+</div>
+<div class="section" id="is-gray">
+<h2>is_gray<a class="headerlink" href="#is-gray" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.color.is_gray">
+<tt class="descclassname">skimage.color.</tt><tt class="descname">is_gray</tt><big>(</big><em>image</em><big>)</big><a class="headerlink" href="#skimage.color.is_gray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test whether the image is gray (i.e. has only one color band).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<blockquote class="last">
+<div><p>Input image.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="is-rgb">
+<h2>is_rgb<a class="headerlink" href="#is-rgb" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.color.is_rgb">
+<tt class="descclassname">skimage.color.</tt><tt class="descname">is_rgb</tt><big>(</big><em>image</em><big>)</big><a class="headerlink" href="#skimage.color.is_rgb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test whether the image is RGB or RGBA.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<blockquote class="last">
+<div><p>Input image.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>
@@ -347,7 +395,7 @@ or in RGBA format with shape (.., .., 4).</p>
 </tr>
 <tr class="field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
-<div><p>If <cite>rgb2grey</cite> is not a 3-D array of shape (.., .., 3) or
+<div><p>If <cite>rgb2gray</cite> is not a 3-D array of shape (.., .., 3) or
 (.., .., 4).</p>
 </div></blockquote>
 </td>
@@ -368,10 +416,10 @@ CRT phosphors:</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.color</span> <span class="kn">import</span> <span class="n">rgb2grey</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.color</span> <span class="kn">import</span> <span class="n">rgb2gray</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lena</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">lena</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">lena_grey</span> <span class="o">=</span> <span class="n">rgb2grey</span><span class="p">(</span><span class="n">lena</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lena_gray</span> <span class="o">=</span> <span class="n">rgb2gray</span><span class="p">(</span><span class="n">lena</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -402,7 +450,7 @@ or in RGBA format with shape (.., .., 4).</p>
 </tr>
 <tr class="field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
-<div><p>If <cite>rgb2grey</cite> is not a 3-D array of shape (.., .., 3) or
+<div><p>If <cite>rgb2gray</cite> is not a 3-D array of shape (.., .., 3) or
 (.., .., 4).</p>
 </div></blockquote>
 </td>
@@ -423,10 +471,10 @@ CRT phosphors:</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.color</span> <span class="kn">import</span> <span class="n">rgb2grey</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.color</span> <span class="kn">import</span> <span class="n">rgb2gray</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lena</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">lena</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">lena_grey</span> <span class="o">=</span> <span class="n">rgb2grey</span><span class="p">(</span><span class="n">lena</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lena_gray</span> <span class="o">=</span> <span class="n">rgb2gray</span><span class="p">(</span><span class="n">lena</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -788,6 +836,8 @@ however that this function converts to sRGB.</p>
 <li><a class="reference internal" href="#convert-colorspace">convert_colorspace</a></li>
 <li><a class="reference internal" href="#gray2rgb">gray2rgb</a></li>
 <li><a class="reference internal" href="#hsv2rgb">hsv2rgb</a></li>
+<li><a class="reference internal" href="#is-gray">is_gray</a></li>
+<li><a class="reference internal" href="#is-rgb">is_rgb</a></li>
 <li><a class="reference internal" href="#lab2rgb">lab2rgb</a></li>
 <li><a class="reference internal" href="#lab2xyz">lab2xyz</a></li>
 <li><a class="reference internal" href="#rgb2gray">rgb2gray</a></li>

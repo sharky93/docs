@@ -19,17 +19,22 @@ Module: :mod:`filter`
 .. autosummary::
 
    skimage.filter.canny
+   skimage.filter.denoise_bilateral
+   skimage.filter.denoise_tv
    skimage.filter.hprewitt
+   skimage.filter.hscharr
    skimage.filter.hsobel
    skimage.filter.inverse
    skimage.filter.median_filter
    skimage.filter.prewitt
    skimage.filter.rank_order
+   skimage.filter.scharr
    skimage.filter.sobel
    skimage.filter.threshold_adaptive
    skimage.filter.threshold_otsu
    skimage.filter.tv_denoise
    skimage.filter.vprewitt
+   skimage.filter.vscharr
    skimage.filter.vsobel
    skimage.filter.wiener
 
@@ -38,10 +43,25 @@ canny
 
 .. autofunction:: skimage.filter.canny
 
+denoise_bilateral
+-----------------
+
+.. autofunction:: skimage.filter.denoise_bilateral
+
+denoise_tv
+----------
+
+.. autofunction:: skimage.filter.denoise_tv
+
 hprewitt
 --------
 
 .. autofunction:: skimage.filter.hprewitt
+
+hscharr
+-------
+
+.. autofunction:: skimage.filter.hscharr
 
 hsobel
 ------
@@ -68,6 +88,11 @@ rank_order
 
 .. autofunction:: skimage.filter.rank_order
 
+scharr
+------
+
+.. autofunction:: skimage.filter.scharr
+
 sobel
 -----
 
@@ -92,6 +117,11 @@ vprewitt
 --------
 
 .. autofunction:: skimage.filter.vprewitt
+
+vscharr
+-------
+
+.. autofunction:: skimage.filter.vscharr
 
 vsobel
 ------

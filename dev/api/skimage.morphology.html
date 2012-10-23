@@ -32,7 +32,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico">
 </head>
 <body class="container">
-    <a href="http://skimage.org" class="logo"><img src="../_static/img/logo.png" alt=""></a>
+    <a href="http://scikit-image.org" class="logo"><img src="../_static/img/logo.png" alt=""></a>
     <div class="clearfix"></div>
     <div class="navbar">
         <div class="navbar-inner">
@@ -349,6 +349,7 @@ is passed, a new array will be allocated.</p>
 </table>
 <p class="rubric">Examples</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Change dark peak to bright peak and subtract background</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.morphology</span> <span class="kn">import</span> <span class="n">square</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dark_on_grey</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
 <span class="gp">... </span>                         <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
@@ -405,6 +406,7 @@ is passed, a new array will be allocated.</p>
 </table>
 <p class="rubric">Examples</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Close a gap between two bright lines</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.morphology</span> <span class="kn">import</span> <span class="n">square</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">broken_line</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
 <span class="gp">... </span>                        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
@@ -449,10 +451,10 @@ polygon that surround all white pixels in the input image.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r71" rules="none">
+<table class="docutils citation" frame="void" id="r81" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[R71]</a></td><td><a class="reference external" href="http://blogs.mathworks.com/steve/2011/10/04/binary-image-convex-hull-algorithm-notes/">http://blogs.mathworks.com/steve/2011/10/04/binary-image-convex-hull-algorithm-notes/</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id1">[R81]</a></td><td><a class="reference external" href="http://blogs.mathworks.com/steve/2011/10/04/binary-image-convex-hull-algorithm-notes/">http://blogs.mathworks.com/steve/2011/10/04/binary-image-convex-hull-algorithm-notes/</a></td></tr>
 </tbody>
 </table>
 </dd></dl>
@@ -536,6 +538,7 @@ eccentric structuring elements (i.e. selem with even numbered sides).</p>
 </table>
 <p class="rubric">Examples</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Dilation enlarges bright regions</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.morphology</span> <span class="kn">import</span> <span class="n">square</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">bright_pixel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
 <span class="gp">... </span>                         <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
@@ -630,6 +633,7 @@ eccentric structuring elements (i.e. selem with even numbered sides).</p>
 </table>
 <p class="rubric">Examples</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Erosion shrinks bright regions</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.morphology</span> <span class="kn">import</span> <span class="n">square</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">bright_square</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
 <span class="gp">... </span>                          <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
@@ -967,6 +971,7 @@ is passed, a new array will be allocated.</p>
 </table>
 <p class="rubric">Examples</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Open up gap between two bright regions (but also shrink regions)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.morphology</span> <span class="kn">import</span> <span class="n">square</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">bad_connection</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
 <span class="gp">... </span>                           <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
@@ -1041,28 +1046,28 @@ to the corresponding mask value; for erosion, the reverse is true.</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>The algorithm is taken from <a class="reference internal" href="#r72">[R72]</a>. Applications for greyscale reconstruction
-are discussed in <a class="reference internal" href="#r73">[R73]</a> and <a class="reference internal" href="#r74">[R74]</a>.</p>
+<p>The algorithm is taken from <a class="reference internal" href="#r82">[R82]</a>. Applications for greyscale reconstruction
+are discussed in <a class="reference internal" href="#r83">[R83]</a> and <a class="reference internal" href="#r84">[R84]</a>.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r72" rules="none">
+<table class="docutils citation" frame="void" id="r82" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R72]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id5">2</a>)</em> Robinson, &#8220;Efficient morphological reconstruction: a downhill
+<tr><td class="label">[R82]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id5">2</a>)</em> Robinson, &#8220;Efficient morphological reconstruction: a downhill
 filter&#8221;, Pattern Recognition Letters 25 (2004) 1759-1767.</td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r73" rules="none">
+<table class="docutils citation" frame="void" id="r83" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R73]</td><td><em>(<a class="fn-backref" href="#id3">1</a>, <a class="fn-backref" href="#id6">2</a>)</em> Vincent, L., &#8220;Morphological Grayscale Reconstruction in Image
+<tr><td class="label">[R83]</td><td><em>(<a class="fn-backref" href="#id3">1</a>, <a class="fn-backref" href="#id6">2</a>)</em> Vincent, L., &#8220;Morphological Grayscale Reconstruction in Image
 Analysis: Applications and Efficient Algorithms&#8221;, IEEE Transactions
 on Image Processing (1993)</td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r74" rules="none">
+<table class="docutils citation" frame="void" id="r84" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R74]</td><td><em>(<a class="fn-backref" href="#id4">1</a>, <a class="fn-backref" href="#id7">2</a>)</em> Soille, P., &#8220;Morphological Image Analysis: Principles and
+<tr><td class="label">[R84]</td><td><em>(<a class="fn-backref" href="#id4">1</a>, <a class="fn-backref" href="#id7">2</a>)</em> Soille, P., &#8220;Morphological Image Analysis: Principles and
 Applications&#8221;, Chapter 6, 2nd edition (2003), ISBN 3540429883.</td></tr>
 </tbody>
 </table>
@@ -1188,10 +1193,10 @@ the iterations.</p>
 medial axis transform, which is also often referred to as
 &#8220;skeletonization&#8221;.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r75" rules="none">
+<table class="docutils citation" frame="void" id="r85" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id8">[R75]</a></td><td>A fast parallel algorithm for thinning digital patterns,
+<tr><td class="label"><a class="fn-backref" href="#id8">[R85]</a></td><td>A fast parallel algorithm for thinning digital patterns,
 T. Y. ZHANG and C. Y. SUEN, Communications of the ACM,
 March 1984, Volume 27, Number 3</td></tr>
 </tbody>
@@ -1309,7 +1314,7 @@ will be labeled.</p>
 </dl>
 </div>
 <p class="rubric">Notes</p>
-<p>This function implements a watershed algorithm [R76]_that apportions pixels
+<p>This function implements a watershed algorithm [R86]_that apportions pixels
 into marked basins. The algorithm uses a priority queue to hold the pixels
 with the metric for the priority queue being pixel value, then the time of
 entry into the queue - this settles ties in favor of the closest marker.</p>
@@ -1327,16 +1332,16 @@ the local minima of the gradient of the image, or the local maxima of the
 distance function to the background for separating overlapping objects
 (see example).</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r76" rules="none">
+<table class="docutils citation" frame="void" id="r86" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id9">[R76]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Watershed_%28image_processing%29">http://en.wikipedia.org/wiki/Watershed_%28image_processing%29</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id9">[R86]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Watershed_%28image_processing%29">http://en.wikipedia.org/wiki/Watershed_%28image_processing%29</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r77" rules="none">
+<table class="docutils citation" frame="void" id="r87" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id10">[R77]</a></td><td><a class="reference external" href="http://cmm.ensmp.fr/~beucher/wtshed.html">http://cmm.ensmp.fr/~beucher/wtshed.html</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id10">[R87]</a></td><td><a class="reference external" href="http://cmm.ensmp.fr/~beucher/wtshed.html">http://cmm.ensmp.fr/~beucher/wtshed.html</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -1401,6 +1406,7 @@ is passed, a new array will be allocated.</p>
 </table>
 <p class="rubric">Examples</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Subtract grey background from bright peak</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.morphology</span> <span class="kn">import</span> <span class="n">square</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">bright_on_grey</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
 <span class="gp">... </span>                           <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
