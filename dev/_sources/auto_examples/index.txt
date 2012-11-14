@@ -13,10 +13,12 @@ General-purpose and introductory examples for the scikit.
 .. toctree::
    :hidden:
 
+   plot_16bitbilateral
    plot_canny
    plot_contours
    plot_convex_hull
    plot_denoise
+   plot_entropy
    plot_equalize
    plot_gabors_from_lena
    plot_glcm
@@ -26,6 +28,9 @@ General-purpose and introductory examples for the scikit.
    plot_hough_transform
    plot_label
    plot_local_binary_pattern
+   plot_local_equalize
+   plot_local_otsu
+   plot_marked_watershed
    plot_medial_transform
    plot_otsu
    plot_peak_local_max
@@ -45,6 +50,13 @@ General-purpose and introductory examples for the scikit.
    plot_threshold_adaptive
    plot_view_as_blocks
    plot_watershed
+
+
+.. figure:: images/thumb/plot_16bitbilateral.png
+   :figclass: gallery
+   :target: ./plot_16bitbilateral.html
+
+   :ref:`example_plot_16bitbilateral.py`
 
 
 .. figure:: images/thumb/plot_canny.png
@@ -73,6 +85,13 @@ General-purpose and introductory examples for the scikit.
    :target: ./plot_denoise.html
 
    :ref:`example_plot_denoise.py`
+
+
+.. figure:: images/thumb/plot_entropy.png
+   :figclass: gallery
+   :target: ./plot_entropy.html
+
+   :ref:`example_plot_entropy.py`
 
 
 .. figure:: images/thumb/plot_equalize.png
@@ -136,6 +155,27 @@ General-purpose and introductory examples for the scikit.
    :target: ./plot_local_binary_pattern.html
 
    :ref:`example_plot_local_binary_pattern.py`
+
+
+.. figure:: images/thumb/plot_local_equalize.png
+   :figclass: gallery
+   :target: ./plot_local_equalize.html
+
+   :ref:`example_plot_local_equalize.py`
+
+
+.. figure:: images/thumb/plot_local_otsu.png
+   :figclass: gallery
+   :target: ./plot_local_otsu.html
+
+   :ref:`example_plot_local_otsu.py`
+
+
+.. figure:: images/thumb/plot_marked_watershed.png
+   :figclass: gallery
+   :target: ./plot_marked_watershed.html
+
+   :ref:`example_plot_marked_watershed.py`
 
 
 .. figure:: images/thumb/plot_medial_transform.png
@@ -282,6 +322,7 @@ Longer examples and demonstrations
 
    applications/plot_coins_segmentation
    plot_geometric
+   plot_rank_filters
 
 
 .. figure:: applications/images/thumb/plot_coins_segmentation.png
@@ -296,4 +337,11 @@ Longer examples and demonstrations
    :target: ./applications/plot_geometric.html
 
    :ref:`example_applications_plot_geometric.py`
+
+
+.. figure:: applications/images/thumb/plot_rank_filters.png
+   :figclass: gallery
+   :target: ./applications/plot_rank_filters.html
+
+   :ref:`example_applications_plot_rank_filters.py`
 

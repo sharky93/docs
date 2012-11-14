@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Histogram Equalization &mdash; skimage v0.8dev docs</title>
+        <title>Local Histogram Equalization &mdash; skimage v0.8dev docs</title>
     
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -29,8 +29,8 @@
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <link rel="top" title="skimage v0.8dev docs" href="../index.html" />
         <link rel="up" title="General examples" href="index.html" />
-        <link rel="next" title="Gabors / Primary Visual Cortex “Simple Cells” from Lena" href="plot_gabors_from_lena.html" />
-        <link rel="prev" title="Entropy" href="plot_entropy.html" />
+        <link rel="next" title="Local Otsu Threshold" href="plot_local_otsu.html" />
+        <link rel="prev" title="Local Binary Pattern for texture classification" href="plot_local_binary_pattern.html" />
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <link rel="shortcut icon" href="../_static/favicon.ico">
 </head>
@@ -56,16 +56,13 @@
     <div class="row">
         <div class="span9">
             
-  <div class="section" id="histogram-equalization">
-<span id="example-plot-equalize-py"></span><h1>Histogram Equalization<a class="headerlink" href="#histogram-equalization" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="local-histogram-equalization">
+<span id="example-plot-local-equalize-py"></span><h1>Local Histogram Equalization<a class="headerlink" href="#local-histogram-equalization" title="Permalink to this headline">¶</a></h1>
 <p>This examples enhances an image with low contrast, using a method called
-<em>histogram equalization</em>, which &#8220;spreads out the most frequent intensity
-values&#8221; in an image <a class="footnote-reference" href="#id3" id="id1">[1]</a>. The equalized image has a roughly linear cumulative
-distribution function.</p>
-<p>While histogram equalization has the advantage that it requires no parameters,
-it sometimes yields unnatural looking images.  An alternative method is
-<em>contrast stretching</em>, where the image is rescaled to include all intensities
-that fall within the 2nd and 98th percentiles <a class="footnote-reference" href="#id4" id="id2">[2]</a>.</p>
+<em>local histogram equalization</em>, which &#8220;spreads out the most frequent intensity
+values&#8221; in an image .
+The equalized image <a class="footnote-reference" href="#id3" id="id1">[1]</a> has a roughly linear cumulative distribution function for each pixel neighborhood.
+The local version <a class="footnote-reference" href="#id4" id="id2">[2]</a> of the histogram equalization emphasized every local graylevel variations.</p>
 <table class="docutils footnote" frame="void" id="id3" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
@@ -75,17 +72,20 @@ that fall within the 2nd and 98th percentiles <a class="footnote-reference" href
 <table class="docutils footnote" frame="void" id="id4" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><a class="reference external" href="http://homepages.inf.ed.ac.uk/rbf/HIPR2/stretch.htm">http://homepages.inf.ed.ac.uk/rbf/HIPR2/stretch.htm</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Adaptive_histogram_equalization">http://en.wikipedia.org/wiki/Adaptive_histogram_equalization</a></td></tr>
 </tbody>
 </table>
-<img alt="../_images/plot_equalize_1.png" class="align-center" src="../_images/plot_equalize_1.png" />
+<img alt="../_images/plot_local_equalize_1.png" class="align-center" src="../_images/plot_local_equalize_1.png" />
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
 <span class="kn">from</span> <span class="nn">skimage.util.dtype</span> <span class="kn">import</span> <span class="n">dtype_range</span>
 <span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">exposure</span>
+<span class="kn">from</span> <span class="nn">skimage.morphology</span> <span class="kn">import</span> <span class="n">disk</span>
 
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">skimage.filter</span> <span class="kn">import</span> <span class="n">rank</span>
+
 
 <span class="k">def</span> <span class="nf">plot_img_and_hist</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">axes</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">256</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Plot an image along with its histogram and cumulative histogram.</span>
@@ -119,10 +119,11 @@ that fall within the 2nd and 98th percentiles <a class="footnote-reference" href
 <span class="c"># Contrast stretching</span>
 <span class="n">p2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">p98</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="mi">98</span><span class="p">)</span>
-<span class="n">img_rescale</span> <span class="o">=</span> <span class="n">exposure</span><span class="o">.</span><span class="n">rescale_intensity</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">in_range</span><span class="o">=</span><span class="p">(</span><span class="n">p2</span><span class="p">,</span> <span class="n">p98</span><span class="p">))</span>
+<span class="n">img_rescale</span> <span class="o">=</span> <span class="n">exposure</span><span class="o">.</span><span class="n">equalize</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
 
 <span class="c"># Equalization</span>
-<span class="n">img_eq</span> <span class="o">=</span> <span class="n">exposure</span><span class="o">.</span><span class="n">equalize</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="n">selem</span> <span class="o">=</span> <span class="n">disk</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">img_eq</span> <span class="o">=</span> <span class="n">rank</span><span class="o">.</span><span class="n">equalize</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">selem</span><span class="o">=</span><span class="n">selem</span><span class="p">)</span>
 
 
 <span class="c"># Display results</span>
@@ -133,10 +134,10 @@ that fall within the 2nd and 98th percentiles <a class="footnote-reference" href
 <span class="n">ax_hist</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">&#39;Number of pixels&#39;</span><span class="p">)</span>
 
 <span class="n">ax_img</span><span class="p">,</span> <span class="n">ax_hist</span><span class="p">,</span> <span class="n">ax_cdf</span> <span class="o">=</span> <span class="n">plot_img_and_hist</span><span class="p">(</span><span class="n">img_rescale</span><span class="p">,</span> <span class="n">axes</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
-<span class="n">ax_img</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;Contrast stretching&#39;</span><span class="p">)</span>
+<span class="n">ax_img</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;Global equalise&#39;</span><span class="p">)</span>
 
 <span class="n">ax_img</span><span class="p">,</span> <span class="n">ax_hist</span><span class="p">,</span> <span class="n">ax_cdf</span> <span class="o">=</span> <span class="n">plot_img_and_hist</span><span class="p">(</span><span class="n">img_eq</span><span class="p">,</span> <span class="n">axes</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">])</span>
-<span class="n">ax_img</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;Histogram equalization&#39;</span><span class="p">)</span>
+<span class="n">ax_img</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;Local equalize&#39;</span><span class="p">)</span>
 <span class="n">ax_cdf</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">&#39;Fraction of total intensity&#39;</span><span class="p">)</span>
 
 
@@ -145,7 +146,7 @@ that fall within the 2nd and 98th percentiles <a class="footnote-reference" href
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_equalize.py"><tt class="xref download docutils literal"><span class="pre">download</span></tt></a>
+<p><strong>Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_local_equalize.py"><tt class="xref download docutils literal"><span class="pre">download</span></tt></a>
 (generated using <tt class="docutils literal"><span class="pre">skimage</span></tt> 0.8dev)</p>
 </div>
 
@@ -160,13 +161,13 @@ that fall within the 2nd and 98th percentiles <a class="footnote-reference" href
     <h4 class="sidebar-box-heading">Previous topic</h4>
     <div class="well sidebar-box">
         <ul class="nav nav-list">
-            <li><a href="plot_entropy.html" title="previous chapter">Entropy</a></li>
+            <li><a href="plot_local_binary_pattern.html" title="previous chapter">Local Binary Pattern for texture classification</a></li>
         </ul>
     </div>
     <h4 class="sidebar-box-heading">Next topic</h4>
     <div class="well sidebar-box">
         <ul class="nav nav-list">
-            <li><a href="plot_gabors_from_lena.html" title="next chapter">Gabors / Primary Visual Cortex &#8220;Simple Cells&#8221; from Lena</a></li>
+            <li><a href="plot_local_otsu.html" title="next chapter">Local Otsu Threshold</a></li>
         </ul>
     </div>
 

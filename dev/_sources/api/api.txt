@@ -12,6 +12,7 @@ API Reference
    skimage.exposure
    skimage.feature
    skimage.filter
+   skimage.filter.rank
    skimage.graph
    skimage.io
    skimage.io._plugins
