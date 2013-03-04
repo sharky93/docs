@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Module: exposure &mdash; skimage v0.8dev docs</title>
+        <title>Module: exposure &mdash; skimage v0.9dev docs</title>
     
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -18,7 +18,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.8dev',
+        VERSION:     '0.9dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -27,7 +27,7 @@
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
-        <link rel="top" title="skimage v0.8dev docs" href="../index.html" />
+        <link rel="top" title="skimage v0.9dev docs" href="../index.html" />
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <link rel="shortcut icon" href="../_static/favicon.ico">
 </head>
@@ -61,16 +61,22 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr><td><a class="reference internal" href="#skimage.exposure.cumulative_distribution" title="skimage.exposure.cumulative_distribution"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.exposure.cumulative_distribution</span></tt></a>(image)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.exposure.cumulative_distribution" title="skimage.exposure.cumulative_distribution"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.exposure.cumulative_distribution</span></tt></a>(image)</td>
 <td>Return cumulative distribution function (cdf) for the given image.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.exposure.equalize" title="skimage.exposure.equalize"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.exposure.equalize</span></tt></a>(image[,&nbsp;nbins])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.exposure.equalize" title="skimage.exposure.equalize"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.exposure.equalize</span></tt></a>(*args,&nbsp;**kwargs)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.exposure.equalize_adapthist" title="skimage.exposure.equalize_adapthist"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.exposure.equalize_adapthist</span></tt></a>(image[,&nbsp;...])</td>
+<td>Contrast Limited Adaptive Histogram Equalization.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.exposure.equalize_hist" title="skimage.exposure.equalize_hist"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.exposure.equalize_hist</span></tt></a>(image[,&nbsp;nbins])</td>
 <td>Return image after histogram equalization.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.exposure.histogram" title="skimage.exposure.histogram"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.exposure.histogram</span></tt></a>(image[,&nbsp;nbins])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.exposure.histogram" title="skimage.exposure.histogram"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.exposure.histogram</span></tt></a>(image[,&nbsp;nbins])</td>
 <td>Return histogram of image.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.exposure.rescale_intensity" title="skimage.exposure.rescale_intensity"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.exposure.rescale_intensity</span></tt></a>(image[,&nbsp;...])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.exposure.rescale_intensity" title="skimage.exposure.rescale_intensity"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.exposure.rescale_intensity</span></tt></a>(image[,&nbsp;...])</td>
 <td>Return image after stretching or shrinking its intensity levels.</td>
 </tr>
 </tbody>
@@ -85,7 +91,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : array</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : array</p>
 <blockquote>
 <div><p>Image array.</p>
 </div></blockquote>
@@ -95,7 +101,7 @@
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>img_cdf</strong> : array</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>img_cdf</strong> : array</p>
 <blockquote>
 <div><p>Values of cumulative distribution function.</p>
 </div></blockquote>
@@ -108,10 +114,10 @@
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r29" rules="none">
+<table class="docutils citation" frame="void" id="r66" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[R29]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Cumulative_distribution_function">http://en.wikipedia.org/wiki/Cumulative_distribution_function</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id1">[R66]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Cumulative_distribution_function">http://en.wikipedia.org/wiki/Cumulative_distribution_function</a></td></tr>
 </tbody>
 </table>
 </dd></dl>
@@ -121,13 +127,97 @@
 <h2>equalize<a class="headerlink" href="#equalize" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.exposure.equalize">
-<tt class="descclassname">skimage.exposure.</tt><tt class="descname">equalize</tt><big>(</big><em>image</em>, <em>nbins=256</em><big>)</big><a class="headerlink" href="#skimage.exposure.equalize" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">skimage.exposure.</tt><tt class="descname">equalize</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.exposure.equalize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="equalize-adapthist">
+<h2>equalize_adapthist<a class="headerlink" href="#equalize-adapthist" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.exposure.equalize_adapthist">
+<tt class="descclassname">skimage.exposure.</tt><tt class="descname">equalize_adapthist</tt><big>(</big><em>image</em>, <em>ntiles_x=8</em>, <em>ntiles_y=8</em>, <em>clip_limit=0.01</em>, <em>nbins=256</em><big>)</big><a class="headerlink" href="#skimage.exposure.equalize_adapthist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contrast Limited Adaptive Histogram Equalization.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : array-like</p>
+<blockquote>
+<div><p>Input image.</p>
+</div></blockquote>
+<p><strong>ntiles_x</strong> : int, optional</p>
+<blockquote>
+<div><p>Number of tile regions in the X direction.  Ranges between 2 and 16.</p>
+</div></blockquote>
+<p><strong>ntiles_y</strong> : int, optional</p>
+<blockquote>
+<div><p>Number of tile regions in the Y direction.  Ranges between 2 and 16.</p>
+</div></blockquote>
+<p><strong>clip_limit</strong> : float: optional</p>
+<blockquote>
+<div><p>Clipping limit, normalized between 0 and 1 (higher values give more
+contrast).</p>
+</div></blockquote>
+<p><strong>nbins</strong> : int, optional</p>
+<blockquote>
+<div><p>Number of gray bins for histogram (&#8220;dynamic range&#8221;).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
+<blockquote class="last">
+<div><p>Equalized image.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul>
+<li><p class="first">The algorithm relies on an image whose rows and columns are even
+multiples of the number of tiles, so the extra rows and columns are left
+at their original values, thus  preserving the input image shape.</p>
+</li>
+<li><dl class="first docutils">
+<dt>For color images, the following steps are performed:</dt>
+<dd><ul class="first last simple">
+<li>The image is converted to LAB color space</li>
+<li>The CLAHE algorithm is run on the L channel</li>
+<li>The image is converted back to RGB space and returned</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">For RGBA images, the original alpha channel is removed.</p>
+</li>
+</ul>
+<p class="rubric">References</p>
+<table class="docutils citation" frame="void" id="r67" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[R67]</a></td><td><a class="reference external" href="http://tog.acm.org/resources/GraphicsGems/gems.html#gemsvi">http://tog.acm.org/resources/GraphicsGems/gems.html#gemsvi</a></td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="r68" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[R68]</a></td><td><a class="reference external" href="https://en.wikipedia.org/wiki/CLAHE#CLAHE">https://en.wikipedia.org/wiki/CLAHE#CLAHE</a></td></tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="equalize-hist">
+<h2>equalize_hist<a class="headerlink" href="#equalize-hist" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.exposure.equalize_hist">
+<tt class="descclassname">skimage.exposure.</tt><tt class="descname">equalize_hist</tt><big>(</big><em>image</em>, <em>nbins=256</em><big>)</big><a class="headerlink" href="#skimage.exposure.equalize_hist" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return image after histogram equalization.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : array</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : array</p>
 <blockquote>
 <div><p>Image array.</p>
 </div></blockquote>
@@ -137,7 +227,7 @@
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : float array</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : float array</p>
 <blockquote class="last">
 <div><p>Image array after histogram equalization.</p>
 </div></blockquote>
@@ -146,18 +236,18 @@
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>This function is adapted from <a class="reference internal" href="#r30">[R30]</a> with the author&#8217;s permission.</p>
+<p>This function is adapted from <a class="reference internal" href="#r69">[R69]</a> with the author&#8217;s permission.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r30" rules="none">
+<table class="docutils citation" frame="void" id="r69" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R30]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id3">2</a>)</em> <a class="reference external" href="http://www.janeriksolem.net/2009/06/histogram-equalization-with-python-and.html">http://www.janeriksolem.net/2009/06/histogram-equalization-with-python-and.html</a></td></tr>
+<tr><td class="label">[R69]</td><td><em>(<a class="fn-backref" href="#id4">1</a>, <a class="fn-backref" href="#id5">2</a>)</em> <a class="reference external" href="http://www.janeriksolem.net/2009/06/histogram-equalization-with-python-and.html">http://www.janeriksolem.net/2009/06/histogram-equalization-with-python-and.html</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r31" rules="none">
+<table class="docutils citation" frame="void" id="r70" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[R31]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Histogram_equalization">http://en.wikipedia.org/wiki/Histogram_equalization</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id6">[R70]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Histogram_equalization">http://en.wikipedia.org/wiki/Histogram_equalization</a></td></tr>
 </tbody>
 </table>
 </dd></dl>
@@ -176,7 +266,7 @@ its own bin, which improves speed and intensity-resolution.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : array</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : array</p>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
@@ -187,7 +277,7 @@ integer arrays.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>hist</strong> : array</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>hist</strong> : array</p>
 <blockquote>
 <div><p>The values of the histogram.</p>
 </div></blockquote>
@@ -214,7 +304,7 @@ maximum values given by <cite>in_range</cite> match those given by <cite>out_ran
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : array</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : array</p>
 <blockquote>
 <div><p>Image array.</p>
 </div></blockquote>
@@ -232,7 +322,7 @@ details.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : array</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : array</p>
 <blockquote class="last">
 <div><p>Image array after rescaling its intensity. This image is the same dtype
 as the input image.</p>
@@ -296,6 +386,8 @@ just the positive range, use the <cite>out_range</cite> parameter:</p>
 <li><a class="reference internal" href="#">Module: <tt class="docutils literal"><span class="pre">exposure</span></tt></a><ul class="nav nav-list">
 <li><a class="reference internal" href="#cumulative-distribution">cumulative_distribution</a></li>
 <li><a class="reference internal" href="#equalize">equalize</a></li>
+<li><a class="reference internal" href="#equalize-adapthist">equalize_adapthist</a></li>
+<li><a class="reference internal" href="#equalize-hist">equalize_hist</a></li>
 <li><a class="reference internal" href="#histogram">histogram</a></li>
 <li><a class="reference internal" href="#rescale-intensity">rescale_intensity</a></li>
 </ul>

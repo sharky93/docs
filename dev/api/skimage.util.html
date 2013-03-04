@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Module: util &mdash; skimage v0.8dev docs</title>
+        <title>Module: util &mdash; skimage v0.9dev docs</title>
     
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -18,7 +18,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.8dev',
+        VERSION:     '0.9dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -27,7 +27,7 @@
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
-        <link rel="top" title="skimage v0.8dev docs" href="../index.html" />
+        <link rel="top" title="skimage v0.9dev docs" href="../index.html" />
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <link rel="shortcut icon" href="../_static/favicon.ico">
 </head>
@@ -61,25 +61,25 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr><td><a class="reference internal" href="#skimage.util.img_as_bool" title="skimage.util.img_as_bool"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.img_as_bool</span></tt></a>(image[,&nbsp;force_copy])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.util.img_as_bool" title="skimage.util.img_as_bool"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.img_as_bool</span></tt></a>(image[,&nbsp;force_copy])</td>
 <td>Convert an image to boolean format.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.util.img_as_float" title="skimage.util.img_as_float"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.img_as_float</span></tt></a>(image[,&nbsp;force_copy])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.util.img_as_float" title="skimage.util.img_as_float"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.img_as_float</span></tt></a>(image[,&nbsp;force_copy])</td>
 <td>Convert an image to double-precision floating point format.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.util.img_as_int" title="skimage.util.img_as_int"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.img_as_int</span></tt></a>(image[,&nbsp;force_copy])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.util.img_as_int" title="skimage.util.img_as_int"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.img_as_int</span></tt></a>(image[,&nbsp;force_copy])</td>
 <td>Convert an image to 16-bit signed integer format.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.util.img_as_ubyte" title="skimage.util.img_as_ubyte"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.img_as_ubyte</span></tt></a>(image[,&nbsp;force_copy])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.util.img_as_ubyte" title="skimage.util.img_as_ubyte"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.img_as_ubyte</span></tt></a>(image[,&nbsp;force_copy])</td>
 <td>Convert an image to 8-bit unsigned integer format.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.util.img_as_uint" title="skimage.util.img_as_uint"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.img_as_uint</span></tt></a>(image[,&nbsp;force_copy])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.util.img_as_uint" title="skimage.util.img_as_uint"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.img_as_uint</span></tt></a>(image[,&nbsp;force_copy])</td>
 <td>Convert an image to 16-bit unsigned integer format.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.util.view_as_blocks" title="skimage.util.view_as_blocks"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.view_as_blocks</span></tt></a>(arr_in,&nbsp;block_shape)</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.util.view_as_blocks" title="skimage.util.view_as_blocks"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.view_as_blocks</span></tt></a>(arr_in,&nbsp;block_shape)</td>
 <td>Block view of the input n-dimensional array (using re-striding).</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.util.view_as_windows" title="skimage.util.view_as_windows"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.view_as_windows</span></tt></a>(arr_in,&nbsp;...)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.util.view_as_windows" title="skimage.util.view_as_windows"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.view_as_windows</span></tt></a>(arr_in,&nbsp;...)</td>
 <td>Rolling window view of the input n-dimensional array.</td>
 </tr>
 </tbody>
@@ -94,7 +94,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
@@ -104,7 +104,7 @@
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray of bool (<cite>bool_</cite>)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray of bool (<cite>bool_</cite>)</p>
 <blockquote class="last">
 <div><p>Output image.</p>
 </div></blockquote>
@@ -128,7 +128,7 @@ half is False. All negative values (if present) are False.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
@@ -138,7 +138,7 @@ half is False. All negative values (if present) are False.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray of float64</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray of float64</p>
 <blockquote class="last">
 <div><p>Output image.</p>
 </div></blockquote>
@@ -162,7 +162,7 @@ converting from unsigned or signed datatypes, respectively.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
@@ -172,7 +172,7 @@ converting from unsigned or signed datatypes, respectively.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray of uint16</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray of uint16</p>
 <blockquote class="last">
 <div><p>Output image.</p>
 </div></blockquote>
@@ -196,7 +196,7 @@ the output image will still only have positive values.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
@@ -206,7 +206,7 @@ the output image will still only have positive values.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray of ubyte (uint8)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray of ubyte (uint8)</p>
 <blockquote class="last">
 <div><p>Output image.</p>
 </div></blockquote>
@@ -230,7 +230,7 @@ the output image will still only have positive values.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
@@ -240,7 +240,7 @@ the output image will still only have positive values.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray of uint16</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray of uint16</p>
 <blockquote class="last">
 <div><p>Output image.</p>
 </div></blockquote>
@@ -264,7 +264,7 @@ the output image will still only have positive values.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>arr_in: ndarray</strong> :</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>arr_in: ndarray</strong> :</p>
 <blockquote>
 <div><p>The n-dimensional input array.</p>
 </div></blockquote>
@@ -275,7 +275,7 @@ corresponding dimensions of <cite>arr_in</cite>.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>arr_out: ndarray</strong> :</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>arr_out: ndarray</strong> :</p>
 <blockquote class="last">
 <div><p>Block view of the input array.</p>
 </div></blockquote>
@@ -346,18 +346,18 @@ shifted by a single row or column (or an index of a higher dimension).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>arr_in: ndarray</strong> :</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>arr_in: ndarray</strong> :</p>
 <blockquote>
 <div><p>The n-dimensional input array.</p>
 </div></blockquote>
 <p><strong>window_shape: tuple</strong> :</p>
 <blockquote>
 <div><p>Defines the shape of the elementary n-dimensional orthotope
-(better know as hyperrectangle <a class="reference internal" href="#r111">[R111]</a>) of the rolling window view.</p>
+(better know as hyperrectangle <a class="reference internal" href="#r212">[R212]</a>) of the rolling window view.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>arr_out: ndarray</strong> :</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>arr_out: ndarray</strong> :</p>
 <blockquote class="last">
 <div><p>(rolling) window view of the input array.</p>
 </div></blockquote>
@@ -379,10 +379,10 @@ the rolling view (if one was to reshape the view for example) would
 be 8*(100-3+1)**3*3**3 which is about 203 MB! The scaling becomes
 even worse as the dimension of the input array becomes larger.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r111" rules="none">
+<table class="docutils citation" frame="void" id="r212" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R111]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>)</em> <a class="reference external" href="http://en.wikipedia.org/wiki/Hyperrectangle">http://en.wikipedia.org/wiki/Hyperrectangle</a></td></tr>
+<tr><td class="label">[R212]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>)</em> <a class="reference external" href="http://en.wikipedia.org/wiki/Hyperrectangle">http://en.wikipedia.org/wiki/Hyperrectangle</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>

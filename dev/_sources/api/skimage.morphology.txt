@@ -30,6 +30,7 @@ Module: :mod:`morphology`
    skimage.morphology.opening
    skimage.morphology.reconstruction
    skimage.morphology.rectangle
+   skimage.morphology.remove_small_objects
    skimage.morphology.skeletonize
    skimage.morphology.square
    skimage.morphology.watershed
@@ -149,6 +150,11 @@ rectangle
 ---------
 
 .. autofunction:: skimage.morphology.rectangle
+
+remove_small_objects
+--------------------
+
+.. autofunction:: skimage.morphology.remove_small_objects
 
 skeletonize
 -----------

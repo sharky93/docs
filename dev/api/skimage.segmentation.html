@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Module: segmentation &mdash; skimage v0.8dev docs</title>
+        <title>Module: segmentation &mdash; skimage v0.9dev docs</title>
     
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -18,7 +18,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.8dev',
+        VERSION:     '0.9dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -27,7 +27,7 @@
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
-        <link rel="top" title="skimage v0.8dev docs" href="../index.html" />
+        <link rel="top" title="skimage v0.9dev docs" href="../index.html" />
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <link rel="shortcut icon" href="../_static/favicon.ico">
 </head>
@@ -61,28 +61,34 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr><td><a class="reference internal" href="#skimage.segmentation.clear_border" title="skimage.segmentation.clear_border"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.clear_border</span></tt></a>(image[,&nbsp;...])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.segmentation.clear_border" title="skimage.segmentation.clear_border"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.clear_border</span></tt></a>(image[,&nbsp;...])</td>
 <td>Clear objects connected to image border.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.segmentation.felzenszwalb" title="skimage.segmentation.felzenszwalb"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.felzenszwalb</span></tt></a>(image[,&nbsp;...])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.segmentation.felzenszwalb" title="skimage.segmentation.felzenszwalb"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.felzenszwalb</span></tt></a>(image[,&nbsp;...])</td>
 <td>Computes Felsenszwalb&#8217;s efficient graph based image segmentation.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.segmentation.find_boundaries" title="skimage.segmentation.find_boundaries"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.find_boundaries</span></tt></a>(label_img)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.segmentation.find_boundaries" title="skimage.segmentation.find_boundaries"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.find_boundaries</span></tt></a>(label_img)</td>
 <td>Return bool array where boundaries between labeled regions are True.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.segmentation.mark_boundaries" title="skimage.segmentation.mark_boundaries"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.mark_boundaries</span></tt></a>(image,&nbsp;...)</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.segmentation.join_segmentations" title="skimage.segmentation.join_segmentations"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.join_segmentations</span></tt></a>(s1,&nbsp;s2)</td>
+<td>Return the join of the two input segmentations.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.segmentation.mark_boundaries" title="skimage.segmentation.mark_boundaries"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.mark_boundaries</span></tt></a>(image,&nbsp;...)</td>
 <td>Return image with boundaries between labeled regions highlighted.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.segmentation.quickshift" title="skimage.segmentation.quickshift"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.quickshift</span></tt></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.segmentation.quickshift" title="skimage.segmentation.quickshift"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.quickshift</span></tt></a></td>
 <td>Segments image using quickshift clustering in Color-(x,y) space.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.segmentation.random_walker" title="skimage.segmentation.random_walker"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.random_walker</span></tt></a>(data,&nbsp;labels)</td>
-<td>Random walker algorithm for segmentation from markers, for gray-level or multichannel images.</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.segmentation.random_walker" title="skimage.segmentation.random_walker"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.random_walker</span></tt></a>(data,&nbsp;labels)</td>
+<td>Random walker algorithm for segmentation from markers.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.segmentation.slic" title="skimage.segmentation.slic"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.slic</span></tt></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.segmentation.relabel_from_one" title="skimage.segmentation.relabel_from_one"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.relabel_from_one</span></tt></a>(...)</td>
+<td>Convert labels in an arbitrary label field to {1, ...</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.segmentation.slic" title="skimage.segmentation.slic"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.slic</span></tt></a></td>
 <td>Segments image using k-means clustering in Color-(x,y) space.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.segmentation.visualize_boundaries" title="skimage.segmentation.visualize_boundaries"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.visualize_boundaries</span></tt></a>(...)</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.segmentation.visualize_boundaries" title="skimage.segmentation.visualize_boundaries"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.visualize_boundaries</span></tt></a>(...)</td>
 <td></td>
 </tr>
 </tbody>
@@ -98,7 +104,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : (N, M) array</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : (N, M) array</p>
 <blockquote>
 <div><p>Binary image.</p>
 </div></blockquote>
@@ -112,7 +118,7 @@
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>image</strong> : (N, M) array</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>image</strong> : (N, M) array</p>
 <blockquote class="last">
 <div><p>Cleared binary image.</p>
 </div></blockquote>
@@ -162,7 +168,7 @@ intersection of the separate segmentations on the color channels.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : (width, height, 3) or (width, height) ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : (width, height, 3) or (width, height) ndarray</p>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
@@ -180,7 +186,7 @@ intersection of the separate segmentations on the color channels.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>segment_mask</strong> : (width, height) ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>segment_mask</strong> : (width, height) ndarray</p>
 <blockquote class="last">
 <div><p>Integer mask indicating segment labels.</p>
 </div></blockquote>
@@ -189,10 +195,10 @@ intersection of the separate segmentations on the color channels.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r91" rules="none">
+<table class="docutils citation" frame="void" id="r176" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[R91]</a></td><td>Efficient graph-based image segmentation, Felzenszwalb, P.F. and
+<tr><td class="label"><a class="fn-backref" href="#id1">[R176]</a></td><td>Efficient graph-based image segmentation, Felzenszwalb, P.F. and
 Huttenlocher, D.P.  International Journal of Computer Vision, 2004</td></tr>
 </tbody>
 </table>
@@ -208,17 +214,62 @@ Huttenlocher, D.P.  International Journal of Computer Vision, 2004</td></tr>
 </dd></dl>
 
 </div>
+<div class="section" id="join-segmentations">
+<h2>join_segmentations<a class="headerlink" href="#join-segmentations" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.segmentation.join_segmentations">
+<tt class="descclassname">skimage.segmentation.</tt><tt class="descname">join_segmentations</tt><big>(</big><em>s1</em>, <em>s2</em><big>)</big><a class="headerlink" href="#skimage.segmentation.join_segmentations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the join of the two input segmentations.</p>
+<p>The join J of S1 and S2 is defined as the segmentation in which two voxels
+are in the same segment in J if and only if they are in the same segment
+in <em>both</em> S1 and S2.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>s1, s2</strong> : numpy arrays</p>
+<blockquote>
+<div><p>s1 and s2 are label fields of the same shape.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>j</strong> : numpy array</p>
+<blockquote class="last">
+<div><p>The join segmentation of s1 and s2.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.segmentation</span> <span class="kn">import</span> <span class="n">join_segmentations</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+<span class="gp">... </span>               <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+<span class="gp">... </span>               <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+<span class="gp">... </span>               <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+<span class="gp">... </span>               <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">join_segmentations</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">)</span>
+<span class="go">array([[0, 1, 3, 2],</span>
+<span class="go">       [0, 5, 3, 2],</span>
+<span class="go">       [4, 5, 5, 3]])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
 <div class="section" id="mark-boundaries">
 <h2>mark_boundaries<a class="headerlink" href="#mark-boundaries" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.segmentation.mark_boundaries">
-<tt class="descclassname">skimage.segmentation.</tt><tt class="descname">mark_boundaries</tt><big>(</big><em>image</em>, <em>label_img</em>, <em>color=(1</em>, <em>1</em>, <em>0)</em>, <em>outline_color=None</em><big>)</big><a class="headerlink" href="#skimage.segmentation.mark_boundaries" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">skimage.segmentation.</tt><tt class="descname">mark_boundaries</tt><big>(</big><em>image</em>, <em>label_img</em>, <em>color=(1</em>, <em>1</em>, <em>0)</em>, <em>outline_color=(0</em>, <em>0</em>, <em>0)</em><big>)</big><a class="headerlink" href="#skimage.segmentation.mark_boundaries" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return image with boundaries between labeled regions highlighted.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : (M, N[, 3]) array</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : (M, N[, 3]) array</p>
 <blockquote>
 <div><p>Grayscale or RGB image.</p>
 </div></blockquote>
@@ -254,7 +305,7 @@ algorithm.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : (width, height, channels) ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : (width, height, channels) ndarray</p>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
@@ -292,7 +343,7 @@ segmentation. For this purpose, the input is assumed to be RGB.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>segment_mask</strong> : (width, height) ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>segment_mask</strong> : (width, height) ndarray</p>
 <blockquote class="last">
 <div><p>Integer mask indicating segment labels.</p>
 </div></blockquote>
@@ -305,10 +356,10 @@ segmentation. For this purpose, the input is assumed to be RGB.</p>
 segmentation, though this is not strictly necessary. For this to work, the
 image must be given in RGB format.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r92" rules="none">
+<table class="docutils citation" frame="void" id="r177" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[R92]</a></td><td>Quick shift and kernel methods for mode seeking,
+<tr><td class="label"><a class="fn-backref" href="#id2">[R177]</a></td><td>Quick shift and kernel methods for mode seeking,
 Vedaldi, A. and Soatto, S.
 European Conference on Computer Vision, 2008</td></tr>
 </tbody>
@@ -321,13 +372,14 @@ European Conference on Computer Vision, 2008</td></tr>
 <dl class="function">
 <dt id="skimage.segmentation.random_walker">
 <tt class="descclassname">skimage.segmentation.</tt><tt class="descname">random_walker</tt><big>(</big><em>data</em>, <em>labels</em>, <em>beta=130</em>, <em>mode='bf'</em>, <em>tol=0.001</em>, <em>copy=True</em>, <em>multichannel=False</em>, <em>return_full_prob=False</em>, <em>depth=1.0</em><big>)</big><a class="headerlink" href="#skimage.segmentation.random_walker" title="Permalink to this definition">¶</a></dt>
-<dd><p>Random walker algorithm for segmentation from markers, for gray-level or
-multichannel images.</p>
+<dd><p>Random walker algorithm for segmentation from markers.</p>
+<p>Random walker algorithm is implemented for gray-level or multichannel
+images.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>data</strong> : array_like</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>data</strong> : array_like</p>
 <blockquote>
 <div><p>Image to be segmented in phases. Gray-level <cite>data</cite> can be two- or
 three-dimensional; multichannel data can be three- or four-
@@ -403,14 +455,16 @@ out-of-plane voxel spacing represents the third spatial dimension.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : ndarray</p>
 <blockquote class="last">
-<div><p>If <cite>return_full_prob</cite> is False, array of ints of same shape as <cite>data</cite>,
-in which each pixel has been labeled according to the marker that
-reached the pixel first by anisotropic diffusion.
-If <cite>return_full_prob</cite> is True, array of floats of shape
+<div><ul class="simple">
+<li>If <cite>return_full_prob</cite> is False, array of ints of same shape as
+<cite>data</cite>, in which each pixel has been labeled according to the marker
+that reached the pixel first by anisotropic diffusion.</li>
+<li>If <cite>return_full_prob</cite> is True, array of floats of shape
 <cite>(nlabels, data.shape)</cite>. <cite>output[label_nb, i, j]</cite> is the probability
-that label <cite>label_nb</cite> reaches the pixel <cite>(i, j)</cite> first.</p>
+that label <cite>label_nb</cite> reaches the pixel <cite>(i, j)</cite> first.</li>
+</ul>
 </div></blockquote>
 </td>
 </tr>
@@ -419,7 +473,7 @@ that label <cite>label_nb</cite> reaches the pixel <cite>(i, j)</cite> first.</p
 <div class="admonition-see-also admonition seealso">
 <p class="first admonition-title">See also</p>
 <dl class="last docutils">
-<dt><a class="reference internal" href="skimage.morphology.html#skimage.morphology.watershed" title="skimage.morphology.watershed"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.watershed</span></tt></a></dt>
+<dt><a class="reference internal" href="skimage.morphology.watershed.html#module-skimage.morphology.watershed" title="skimage.morphology.watershed"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.watershed</span></tt></a></dt>
 <dd>watershed segmentation A segmentation algorithm based on mathematical morphology and &#8220;flooding&#8221; of regions from markers.</dd>
 </dl>
 </div>
@@ -487,6 +541,56 @@ small images, and an iterative method for larger images.</p>
 </dd></dl>
 
 </div>
+<div class="section" id="relabel-from-one">
+<h2>relabel_from_one<a class="headerlink" href="#relabel-from-one" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.segmentation.relabel_from_one">
+<tt class="descclassname">skimage.segmentation.</tt><tt class="descname">relabel_from_one</tt><big>(</big><em>label_field</em><big>)</big><a class="headerlink" href="#skimage.segmentation.relabel_from_one" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert labels in an arbitrary label field to {1, ... number_of_labels}.</p>
+<p>This function also returns the forward map (mapping the original labels to
+the reduced labels) and the inverse map (mapping the reduced labels back
+to the original ones).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>label_field</strong> : numpy ndarray (integer type)</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>relabeled</strong> : numpy array of same shape as ar</p>
+<p><strong>forward_map</strong> : 1d numpy array of length np.unique(ar) + 1</p>
+<p><strong>inverse_map</strong> : 1d numpy array of length len(np.unique(ar))</p>
+<blockquote class="last">
+<div><p>The length is len(np.unique(ar)) + 1 if 0 is not in np.unique(ar)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.segmentation</span> <span class="kn">import</span> <span class="n">relabel_from_one</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">label_field</span> <span class="o">=</span> <span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">42</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">relab</span><span class="p">,</span> <span class="n">fw</span><span class="p">,</span> <span class="n">inv</span> <span class="o">=</span> <span class="n">relabel_from_one</span><span class="p">(</span><span class="n">label_field</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">relab</span>
+<span class="go">array([1, 1, 2, 2, 3, 5, 4])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fw</span>
+<span class="go">array([0, 1, 0, 0, 0, 2, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,</span>
+<span class="go">       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0,</span>
+<span class="go">       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,</span>
+<span class="go">       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,</span>
+<span class="go">       0, 0, 0, 0, 0, 0, 0, 5])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">inv</span>
+<span class="go">array([ 0,  1,  5,  8, 42, 99])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">fw</span><span class="p">[</span><span class="n">label_field</span><span class="p">]</span> <span class="o">==</span> <span class="n">relab</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">inv</span><span class="p">[</span><span class="n">relab</span><span class="p">]</span> <span class="o">==</span> <span class="n">label_field</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
 <div class="section" id="slic">
 <h2>slic<a class="headerlink" href="#slic" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
@@ -497,7 +601,7 @@ small images, and an iterative method for larger images.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : (width, height, 3) ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : (width, height [, 3]) ndarray</p>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
@@ -527,7 +631,7 @@ recommended.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>segment_mask</strong> : (width, height) ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>segment_mask</strong> : (width, height) ndarray</p>
 <blockquote class="last">
 <div><p>Integer mask indicating segment labels.</p>
 </div></blockquote>
@@ -538,10 +642,10 @@ recommended.</p>
 <p class="rubric">Notes</p>
 <p>The image is smoothed using a Gaussian kernel prior to segmentation.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r93" rules="none">
+<table class="docutils citation" frame="void" id="r178" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[R93]</a></td><td>Radhakrishna Achanta, Appu Shaji, Kevin Smith, Aurelien Lucchi,
+<tr><td class="label"><a class="fn-backref" href="#id3">[R178]</a></td><td>Radhakrishna Achanta, Appu Shaji, Kevin Smith, Aurelien Lucchi,
 Pascal Fua, and Sabine Süsstrunk, SLIC Superpixels Compared to
 State-of-the-art Superpixel Methods, TPAMI, May 2012.</td></tr>
 </tbody>
@@ -583,9 +687,11 @@ State-of-the-art Superpixel Methods, TPAMI, May 2012.</td></tr>
 <li><a class="reference internal" href="#clear-border">clear_border</a></li>
 <li><a class="reference internal" href="#felzenszwalb">felzenszwalb</a></li>
 <li><a class="reference internal" href="#find-boundaries">find_boundaries</a></li>
+<li><a class="reference internal" href="#join-segmentations">join_segmentations</a></li>
 <li><a class="reference internal" href="#mark-boundaries">mark_boundaries</a></li>
 <li><a class="reference internal" href="#quickshift">quickshift</a></li>
 <li><a class="reference internal" href="#random-walker">random_walker</a></li>
+<li><a class="reference internal" href="#relabel-from-one">relabel_from_one</a></li>
 <li><a class="reference internal" href="#slic">slic</a></li>
 <li><a class="reference internal" href="#visualize-boundaries">visualize_boundaries</a></li>
 </ul>

@@ -20,7 +20,8 @@ Module: :mod:`filter`
 
    skimage.filter.canny
    skimage.filter.denoise_bilateral
-   skimage.filter.denoise_tv
+   skimage.filter.denoise_tv_bregman
+   skimage.filter.denoise_tv_chambolle
    skimage.filter.hprewitt
    skimage.filter.hscharr
    skimage.filter.hsobel
@@ -48,10 +49,15 @@ denoise_bilateral
 
 .. autofunction:: skimage.filter.denoise_bilateral
 
-denoise_tv
-----------
+denoise_tv_bregman
+------------------
 
-.. autofunction:: skimage.filter.denoise_tv
+.. autofunction:: skimage.filter.denoise_tv_bregman
+
+denoise_tv_chambolle
+--------------------
+
+.. autofunction:: skimage.filter.denoise_tv_chambolle
 
 hprewitt
 --------

@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Module: viewer.utils &mdash; skimage v0.8dev docs</title>
+        <title>Module: viewer.utils &mdash; skimage v0.9dev docs</title>
     
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -18,7 +18,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.8dev',
+        VERSION:     '0.9dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -27,7 +27,7 @@
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
-        <link rel="top" title="skimage v0.8dev docs" href="../index.html" />
+        <link rel="top" title="skimage v0.9dev docs" href="../index.html" />
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <link rel="shortcut icon" href="../_static/favicon.ico">
 </head>
@@ -75,7 +75,7 @@
 <dl class="class">
 <dt id="skimage.viewer.utils.LinearColormap">
 <em class="property">class </em><tt class="descclassname">skimage.viewer.utils.</tt><tt class="descname">LinearColormap</tt><big>(</big><em>name</em>, <em>segmented_data</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.viewer.utils.LinearColormap" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">matplotlib.colors.LinearSegmentedColormap</span></tt></p>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
 <p>LinearSegmentedColormap in which color varies smoothly.</p>
 <p>This class is a simplification of LinearSegmentedColormap, which doesn&#8217;t
 support jumps in color intensities.</p>
@@ -83,7 +83,7 @@ support jumps in color intensities.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
 <blockquote>
 <div><p>Name of colormap.</p>
 </div></blockquote>
@@ -112,7 +112,7 @@ intensity.</p>
 <dl class="class">
 <dt id="skimage.viewer.utils.MatplotlibCanvas">
 <em class="property">class </em><tt class="descclassname">skimage.viewer.utils.</tt><tt class="descname">MatplotlibCanvas</tt><big>(</big><em>parent</em>, <em>figure</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.viewer.utils.MatplotlibCanvas" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">matplotlib.backends.backend_qt4agg.FigureCanvasQTAgg</span></tt></p>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
 <p>Canvas for displaying images.</p>
 <dl class="method">
 <dt id="skimage.viewer.utils.MatplotlibCanvas.__init__">
@@ -142,13 +142,13 @@ intensity.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr><td><a class="reference internal" href="#skimage.viewer.utils.figimage" title="skimage.viewer.utils.figimage"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.viewer.utils.figimage</span></tt></a>(image,&nbsp;**kwargs)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.viewer.utils.figimage" title="skimage.viewer.utils.figimage"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.viewer.utils.figimage</span></tt></a>(image[,&nbsp;...])</td>
 <td>Return figure and axes with figure tightly surrounding image.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.viewer.utils.init_qtapp" title="skimage.viewer.utils.init_qtapp"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.viewer.utils.init_qtapp</span></tt></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.viewer.utils.init_qtapp" title="skimage.viewer.utils.init_qtapp"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.viewer.utils.init_qtapp</span></tt></a>()</td>
 <td>Initialize QAppliction.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.viewer.utils.start_qtapp" title="skimage.viewer.utils.start_qtapp"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.viewer.utils.start_qtapp</span></tt></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.viewer.utils.start_qtapp" title="skimage.viewer.utils.start_qtapp"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.viewer.utils.start_qtapp</span></tt></a>()</td>
 <td>Start Qt mainloop</td>
 </tr>
 </tbody>
@@ -167,7 +167,7 @@ overlays of axes artists.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : array</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : array</p>
 <blockquote>
 <div><p>image to plot</p>
 </div></blockquote>

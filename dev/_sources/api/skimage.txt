@@ -13,6 +13,7 @@
    skimage.img_as_int
    skimage.img_as_ubyte
    skimage.img_as_uint
+   skimage.test
 
 get_log
 -------
@@ -43,4 +44,9 @@ img_as_uint
 -----------
 
 .. autofunction:: skimage.img_as_uint
+
+test
+----
+
+.. autofunction:: skimage.test
 

@@ -64,8 +64,10 @@ Module: :mod:`transform`
 
    skimage.transform.estimate_transform
    skimage.transform.frt2
-   skimage.transform.homography
    skimage.transform.hough
+   skimage.transform.hough_circle
+   skimage.transform.hough_line
+   skimage.transform.hough_peaks
    skimage.transform.ifrt2
    skimage.transform.integral_image
    skimage.transform.integrate
@@ -93,15 +95,25 @@ frt2
 
 .. autofunction:: skimage.transform.frt2
 
-homography
-----------
-
-.. autofunction:: skimage.transform.homography
-
 hough
 -----
 
 .. autofunction:: skimage.transform.hough
+
+hough_circle
+------------
+
+.. autofunction:: skimage.transform.hough_circle
+
+hough_line
+----------
+
+.. autofunction:: skimage.transform.hough_line
+
+hough_peaks
+-----------
+
+.. autofunction:: skimage.transform.hough_peaks
 
 ifrt2
 -----

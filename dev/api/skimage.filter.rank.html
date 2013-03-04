@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Module: filter.rank &mdash; skimage v0.8dev docs</title>
+        <title>Module: filter.rank &mdash; skimage v0.9dev docs</title>
     
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -18,7 +18,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.8dev',
+        VERSION:     '0.9dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -27,7 +27,7 @@
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
-        <link rel="top" title="skimage v0.8dev docs" href="../index.html" />
+        <link rel="top" title="skimage v0.9dev docs" href="../index.html" />
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <link rel="shortcut icon" href="../_static/favicon.ico">
 </head>
@@ -61,85 +61,85 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr><td><a class="reference internal" href="#skimage.filter.rank.autolevel" title="skimage.filter.rank.autolevel"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.autolevel</span></tt></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.autolevel" title="skimage.filter.rank.autolevel"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.autolevel</span></tt></a></td>
 <td>Autolevel image using local histogram.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.filter.rank.bilateral_mean" title="skimage.filter.rank.bilateral_mean"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.bilateral_mean</span></tt></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.bilateral_mean" title="skimage.filter.rank.bilateral_mean"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.bilateral_mean</span></tt></a></td>
 <td>Apply a flat kernel bilateral filter.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.filter.rank.bilateral_pop" title="skimage.filter.rank.bilateral_pop"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.bilateral_pop</span></tt></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.bilateral_pop" title="skimage.filter.rank.bilateral_pop"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.bilateral_pop</span></tt></a></td>
 <td>Return the number (population) of pixels actually inside the bilateral neighborhood, i.e.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.filter.rank.bottomhat" title="skimage.filter.rank.bottomhat"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.bottomhat</span></tt></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.bottomhat" title="skimage.filter.rank.bottomhat"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.bottomhat</span></tt></a></td>
 <td>Returns greyscale local bottomhat of an image.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.filter.rank.entropy" title="skimage.filter.rank.entropy"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.entropy</span></tt></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.entropy" title="skimage.filter.rank.entropy"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.entropy</span></tt></a></td>
 <td>Returns the entropy <a class="reference internal" href="#wiki-entropy">[wiki_entropy]</a> computed locally.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.filter.rank.equalize" title="skimage.filter.rank.equalize"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.equalize</span></tt></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.equalize" title="skimage.filter.rank.equalize"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.equalize</span></tt></a></td>
 <td>Equalize image using local histogram.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.filter.rank.gradient" title="skimage.filter.rank.gradient"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.gradient</span></tt></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.gradient" title="skimage.filter.rank.gradient"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.gradient</span></tt></a></td>
 <td>Return greyscale local gradient of an image (i.e.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.filter.rank.maximum" title="skimage.filter.rank.maximum"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.maximum</span></tt></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.maximum" title="skimage.filter.rank.maximum"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.maximum</span></tt></a></td>
 <td>Return greyscale local maximum of an image.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.filter.rank.mean" title="skimage.filter.rank.mean"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.mean</span></tt></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.mean" title="skimage.filter.rank.mean"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.mean</span></tt></a></td>
 <td>Return greyscale local mean of an image.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.filter.rank.meansubstraction" title="skimage.filter.rank.meansubstraction"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.meansubstraction</span></tt></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.meansubstraction" title="skimage.filter.rank.meansubstraction"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.meansubstraction</span></tt></a></td>
 <td>Return image substracted from its local mean.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.filter.rank.median" title="skimage.filter.rank.median"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.median</span></tt></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.median" title="skimage.filter.rank.median"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.median</span></tt></a></td>
 <td>Return greyscale local median of an image.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.filter.rank.minimum" title="skimage.filter.rank.minimum"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.minimum</span></tt></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.minimum" title="skimage.filter.rank.minimum"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.minimum</span></tt></a></td>
 <td>Return greyscale local minimum of an image.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.filter.rank.modal" title="skimage.filter.rank.modal"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.modal</span></tt></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.modal" title="skimage.filter.rank.modal"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.modal</span></tt></a></td>
 <td>Return greyscale local mode of an image.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.filter.rank.morph_contr_enh" title="skimage.filter.rank.morph_contr_enh"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.morph_contr_enh</span></tt></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.morph_contr_enh" title="skimage.filter.rank.morph_contr_enh"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.morph_contr_enh</span></tt></a></td>
 <td>Enhance an image replacing each pixel by the local maximum if pixel</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.filter.rank.noise_filter" title="skimage.filter.rank.noise_filter"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.noise_filter</span></tt></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.noise_filter" title="skimage.filter.rank.noise_filter"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.noise_filter</span></tt></a></td>
 <td>Returns the noise feature as described in <a class="reference internal" href="#hashimoto12">[Hashimoto12]</a></td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.filter.rank.otsu" title="skimage.filter.rank.otsu"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.otsu</span></tt></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.otsu" title="skimage.filter.rank.otsu"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.otsu</span></tt></a></td>
 <td>Returns the Otsu&#8217;s threshold value for each pixel.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.filter.rank.percentile" title="skimage.filter.rank.percentile"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.percentile</span></tt></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.percentile" title="skimage.filter.rank.percentile"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.percentile</span></tt></a></td>
 <td>Return greyscale local percentile of an image.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.filter.rank.percentile_autolevel" title="skimage.filter.rank.percentile_autolevel"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.percentile_autolevel</span></tt></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.percentile_autolevel" title="skimage.filter.rank.percentile_autolevel"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.percentile_autolevel</span></tt></a></td>
 <td>Return greyscale local autolevel of an image.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.filter.rank.percentile_gradient" title="skimage.filter.rank.percentile_gradient"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.percentile_gradient</span></tt></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.percentile_gradient" title="skimage.filter.rank.percentile_gradient"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.percentile_gradient</span></tt></a></td>
 <td>Return greyscale local percentile_gradient of an image.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.filter.rank.percentile_mean" title="skimage.filter.rank.percentile_mean"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.percentile_mean</span></tt></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.percentile_mean" title="skimage.filter.rank.percentile_mean"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.percentile_mean</span></tt></a></td>
 <td>Return greyscale local mean of an image.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.filter.rank.percentile_mean_substraction" title="skimage.filter.rank.percentile_mean_substraction"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.percentile_mean_substraction</span></tt></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.percentile_mean_substraction" title="skimage.filter.rank.percentile_mean_substraction"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.percentile_mean_substraction</span></tt></a></td>
 <td>Return greyscale local mean_substraction of an image.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.filter.rank.percentile_morph_contr_enh" title="skimage.filter.rank.percentile_morph_contr_enh"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.percentile_morph_contr_enh</span></tt></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.percentile_morph_contr_enh" title="skimage.filter.rank.percentile_morph_contr_enh"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.percentile_morph_contr_enh</span></tt></a></td>
 <td>Return greyscale local morph_contr_enh of an image.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.filter.rank.percentile_pop" title="skimage.filter.rank.percentile_pop"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.percentile_pop</span></tt></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.percentile_pop" title="skimage.filter.rank.percentile_pop"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.percentile_pop</span></tt></a></td>
 <td>Return greyscale local pop of an image.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.filter.rank.percentile_threshold" title="skimage.filter.rank.percentile_threshold"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.percentile_threshold</span></tt></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.percentile_threshold" title="skimage.filter.rank.percentile_threshold"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.percentile_threshold</span></tt></a></td>
 <td>Return greyscale local threshold of an image.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.filter.rank.pop" title="skimage.filter.rank.pop"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.pop</span></tt></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.pop" title="skimage.filter.rank.pop"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.pop</span></tt></a></td>
 <td>Return the number (population) of pixels actually inside the neighborhood.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.filter.rank.threshold" title="skimage.filter.rank.threshold"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.threshold</span></tt></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.threshold" title="skimage.filter.rank.threshold"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.threshold</span></tt></a></td>
 <td>Return greyscale local threshold of an image.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.filter.rank.tophat" title="skimage.filter.rank.tophat"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.tophat</span></tt></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.tophat" title="skimage.filter.rank.tophat"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.tophat</span></tt></a></td>
 <td>Return greyscale local tophat of an image.</td>
 </tr>
 </tbody>
@@ -154,7 +154,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Image array (uint8 array or uint16). If image is uint16, the algorithm
 uses max. 12bit histogram, an exception will be raised if image has a
@@ -181,7 +181,7 @@ structuring element).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
 <blockquote class="last">
 <div><p>The result of the local autolevel.</p>
 </div></blockquote>
@@ -220,11 +220,10 @@ averaged. Return greyscale local bilateral_mean of an image.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
-<div><p>Image array (uint8 array or uint16). If image is uint16, as the
-algorithm uses max. 12bit histogram, an exception will be raised if
-image has a value &gt; 4095</p>
+<div><p>Image array (uint16). As the algorithm uses max. 12bit histogram,
+an exception will be raised if image has a value &gt; 4095</p>
 </div></blockquote>
 <p><strong>selem</strong> : ndarray</p>
 <blockquote>
@@ -251,7 +250,7 @@ structuring element).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint16 array (uint8 image are casted to uint16)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint16 array</p>
 <blockquote class="last">
 <div><p>The result of the local bilateral mean.</p>
 </div></blockquote>
@@ -265,15 +264,14 @@ structuring element).</p>
 </div>
 <p class="rubric">Notes</p>
 <ul class="simple">
-<li>input image can be 8-bit or 16-bit with a value &lt; 4096 (i.e. 12 bit)</li>
-<li>8-bit images are casted in 16-bit</li>
+<li>input image are 16-bit only</li>
 </ul>
 <p class="rubric">Examples</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.morphology</span> <span class="kn">import</span> <span class="n">disk</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.filter.rank</span> <span class="kn">import</span> <span class="n">bilateral_mean</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c"># Load test image</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ima</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">camera</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># Load test image / cast to uint16</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ima</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">camera</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint16</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c"># bilateral filtering of cameraman image using a flat kernel</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">bilat_ima</span> <span class="o">=</span> <span class="n">bilateral_mean</span><span class="p">(</span><span class="n">ima</span><span class="p">,</span> <span class="n">disk</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span> <span class="n">s0</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">s1</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
@@ -293,11 +291,10 @@ level inside the interval [g-s0, g+s1].</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
-<div><p>Image array (uint8 array or uint16). If image is uint16, as the
-algorithm uses max. 12bit histogram, an exception will be raised if
-image has a value &gt; 4095</p>
+<div><p>Image array (uint16). As the algorithm uses max. 12bit histogram,
+an exception will be raised if image has a value &gt; 4095</p>
 </div></blockquote>
 <p><strong>selem</strong> : ndarray</p>
 <blockquote>
@@ -324,7 +321,7 @@ structuring element).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint16 array (uint8 image are casted to uint16)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint16 array</p>
 <blockquote class="last">
 <div><p>the local number of pixels inside the bilateral neighborhood</p>
 </div></blockquote>
@@ -332,16 +329,20 @@ structuring element).</p>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>input image are 16-bit only</li>
+</ul>
 <p class="rubric">Examples</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Local mean</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.morphology</span> <span class="kn">import</span> <span class="n">square</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">skimage.filter.rank</span> <span class="kn">as</span> <span class="nn">rank</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ima8</span> <span class="o">=</span> <span class="mi">255</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ima16</span> <span class="o">=</span> <span class="mi">255</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
 <span class="gp">... </span>                       <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
 <span class="gp">... </span>                       <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
 <span class="gp">... </span>                       <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-<span class="gp">... </span>                       <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">rank</span><span class="o">.</span><span class="n">bilateral_pop</span><span class="p">(</span><span class="n">ima8</span><span class="p">,</span> <span class="n">square</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">s0</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">s1</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">... </span>                       <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint16</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rank</span><span class="o">.</span><span class="n">bilateral_pop</span><span class="p">(</span><span class="n">ima16</span><span class="p">,</span> <span class="n">square</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">s0</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">s1</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="go">array([[3, 4, 3, 4, 3],</span>
 <span class="go">       [4, 4, 6, 4, 4],</span>
 <span class="go">       [3, 6, 9, 6, 3],</span>
@@ -362,7 +363,7 @@ structuring element).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Image array (uint8 array or uint16). If image is uint16, the algorithm
 uses max. 12bit histogram, an exception will be raised if image has a
@@ -389,7 +390,7 @@ structuring element).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>local bottomhat</strong> : uint8 array or uint16 array depending on input image</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>local bottomhat</strong> : uint8 array or uint16 array depending on input image</p>
 <blockquote class="last">
 <div><p>The result of the local bottomhat.</p>
 </div></blockquote>
@@ -412,7 +413,7 @@ bits needed to encode local greylevel distribution.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Image array (uint8 array or uint16). If image is uint16, the algorithm
 uses max. 12bit histogram, an exception will be raised if image has a
@@ -439,7 +440,7 @@ structuring element).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
 <blockquote class="last">
 <div><p>entropy x10 (uint8 images) and entropy x1000 (uint16 images)</p>
 </div></blockquote>
@@ -481,7 +482,7 @@ structuring element).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Image array (uint8 array or uint16). If image is uint16, the algorithm
 uses max. 12bit histogram, an exception will be raised if image has a
@@ -508,7 +509,7 @@ structuring element).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
 <blockquote class="last">
 <div><p>The result of the local equalize.</p>
 </div></blockquote>
@@ -540,7 +541,7 @@ minimum).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Image array (uint8 array or uint16). If image is uint16, the algorithm
 uses max. 12bit histogram, an exception will be raised if image has a
@@ -567,7 +568,7 @@ structuring element).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
 <blockquote class="last">
 <div><p>The local gradient.</p>
 </div></blockquote>
@@ -588,7 +589,7 @@ structuring element).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Image array (uint8 array or uint16). If image is uint16, the algorithm
 uses max. 12bit histogram, an exception will be raised if image has a
@@ -615,7 +616,7 @@ structuring element).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
 <blockquote class="last">
 <div><p>The local maximum.</p>
 </div></blockquote>
@@ -640,7 +641,7 @@ structuring element).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Image array (uint8 array or uint16). If image is uint16, the algorithm
 uses max. 12bit histogram, an exception will be raised if image has a
@@ -667,7 +668,7 @@ structuring element).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
 <blockquote class="last">
 <div><p>The local mean.</p>
 </div></blockquote>
@@ -698,7 +699,7 @@ structuring element).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Image array (uint8 array or uint16). If image is uint16, the algorithm
 uses max. 12bit histogram, an exception will be raised if image has a
@@ -725,7 +726,7 @@ structuring element).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
 <blockquote class="last">
 <div><p>The result of the local meansubstraction.</p>
 </div></blockquote>
@@ -746,7 +747,7 @@ structuring element).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Image array (uint8 array or uint16). If image is uint16, the algorithm
 uses max. 12bit histogram, an exception will be raised if image has a
@@ -773,7 +774,7 @@ structuring element).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
 <blockquote class="last">
 <div><p>The local median.</p>
 </div></blockquote>
@@ -804,7 +805,7 @@ structuring element).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Image array (uint8 array or uint16). If image is uint16, the algorithm
 uses max. 12bit histogram, an exception will be raised if image has a
@@ -831,7 +832,7 @@ structuring element).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
 <blockquote class="last">
 <div><p>The local minimum.</p>
 </div></blockquote>
@@ -856,7 +857,7 @@ structuring element).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Image array (uint8 array or uint16). If image is uint16, the algorithm
 uses max. 12bit histogram, an exception will be raised if image has a
@@ -883,7 +884,7 @@ structuring element).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
 <blockquote class="last">
 <div><p>The local modal.</p>
 </div></blockquote>
@@ -906,7 +907,7 @@ otherwise.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Image array (uint8 array or uint16). If image is uint16, the algorithm
 uses max. 12bit histogram, an exception will be raised if image has a
@@ -933,7 +934,7 @@ structuring element).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
 <blockquote class="last">
 <div><p>The result of the local morph_contr_enh.</p>
 </div></blockquote>
@@ -964,7 +965,7 @@ structuring element).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Image array (uint8 array or uint16). If image is uint16, the algorithm
 uses max. 12bit histogram, an exception will be raised if image has a
@@ -991,9 +992,9 @@ structuring element).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
 <blockquote class="last">
-<div><p>The image noise .</p>
+<div><p>The image noise.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1003,13 +1004,10 @@ structuring element).</p>
 <table class="docutils citation" frame="void" id="hashimoto12" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[Hashimoto12]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id5">2</a>, <a class="fn-backref" href="#id6">3</a>)</em> <ol class="last upperalpha simple" start="14">
-<li>Hashimoto et al. Referenceless image quality evaluation</li>
-</ol>
-</td></tr>
+<tr><td class="label">[Hashimoto12]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id5">2</a>, <a class="fn-backref" href="#id6">3</a>)</em> N. Hashimoto et al. Referenceless image quality evaluation
+for whole slide imaging. J Pathol Inform 2012;3:9.</td></tr>
 </tbody>
 </table>
-<p>for whole slide imaging. J Pathol Inform 2012;3:9.</p>
 </dd></dl>
 
 </div>
@@ -1023,11 +1021,9 @@ structuring element).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
-<div><p>Image array (uint8 array or uint16). If image is uint16, the algorithm
-uses max. 12bit histogram, an exception will be raised if image has a
-value &gt; 4095.</p>
+<div><p>Image array (uint8 array).</p>
 </div></blockquote>
 <p><strong>selem</strong> : ndarray</p>
 <blockquote>
@@ -1050,7 +1046,7 @@ structuring element).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array</p>
 <blockquote class="last">
 <div><p>Otsu&#8217;s threshold values</p>
 </div></blockquote>
@@ -1058,6 +1054,10 @@ structuring element).</p>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>input image are 8-bit only</li>
+</ul>
 <p class="rubric">References</p>
 <table class="docutils citation" frame="void" id="id7" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
@@ -1070,7 +1070,7 @@ structuring element).</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.filter.rank</span> <span class="kn">import</span> <span class="n">otsu</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.morphology</span> <span class="kn">import</span> <span class="n">disk</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c"># defining a 8- and a 16-bit test images</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># defining a 8-bit test images</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a8</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">camera</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">loc_otsu</span> <span class="o">=</span> <span class="n">otsu</span><span class="p">(</span><span class="n">a8</span><span class="p">,</span> <span class="n">disk</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">thresh_image</span> <span class="o">=</span> <span class="n">a8</span> <span class="o">&gt;=</span> <span class="n">loc_otsu</span>
@@ -1091,7 +1091,7 @@ percentiles [p0, p1] are used.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Image array (uint8 array or uint16). If image is uint16, as the
 algorithm uses max. 12bit histogram, an exception will be raised if
@@ -1123,7 +1123,7 @@ the value.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>local percentile</strong> : uint8 array or uint16</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>local percentile</strong> : uint8 array or uint16</p>
 <blockquote class="last">
 <div><p>The result of the local percentile.</p>
 </div></blockquote>
@@ -1146,7 +1146,7 @@ percentiles [p0, p1] are used.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Image array (uint8 array or uint16). If image is uint16, as the
 algorithm uses max. 12bit histogram, an exception will be raised if
@@ -1178,7 +1178,7 @@ the value.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>local autolevel</strong> : uint8 array or uint16</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>local autolevel</strong> : uint8 array or uint16</p>
 <blockquote class="last">
 <div><p>The result of the local autolevel.</p>
 </div></blockquote>
@@ -1201,7 +1201,7 @@ levels between percentiles [p0, p1] are used.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Image array (uint8 array or uint16). If image is uint16, as the
 algorithm uses max. 12bit histogram, an exception will be raised if
@@ -1233,7 +1233,7 @@ the value.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>local percentile_gradient</strong> : uint8 array or uint16</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>local percentile_gradient</strong> : uint8 array or uint16</p>
 <blockquote class="last">
 <div><p>The result of the local percentile_gradient.</p>
 </div></blockquote>
@@ -1256,7 +1256,7 @@ percentiles [p0, p1] are used.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Image array (uint8 array or uint16). If image is uint16, as the
 algorithm uses max. 12bit histogram, an exception will be raised if
@@ -1288,7 +1288,7 @@ the value.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>local mean</strong> : uint8 array or uint16</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>local mean</strong> : uint8 array or uint16</p>
 <blockquote class="last">
 <div><p>The result of the local mean.</p>
 </div></blockquote>
@@ -1311,7 +1311,7 @@ between percentiles [p0, p1] are used.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Image array (uint8 array or uint16). If image is uint16, as the
 algorithm uses max. 12bit histogram, an exception will be raised if
@@ -1343,7 +1343,7 @@ the value.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>local mean_substraction</strong> : uint8 array or uint16</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>local mean_substraction</strong> : uint8 array or uint16</p>
 <blockquote class="last">
 <div><p>The result of the local mean_substraction.</p>
 </div></blockquote>
@@ -1366,7 +1366,7 @@ between percentiles [p0, p1] are used.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Image array (uint8 array or uint16). If image is uint16, as the
 algorithm uses max. 12bit histogram, an exception will be raised if
@@ -1398,7 +1398,7 @@ the value.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>local morph_contr_enh</strong> : uint8 array or uint16</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>local morph_contr_enh</strong> : uint8 array or uint16</p>
 <blockquote class="last">
 <div><p>The result of the local morph_contr_enh.</p>
 </div></blockquote>
@@ -1421,7 +1421,7 @@ percentiles [p0, p1] are used.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Image array (uint8 array or uint16). If image is uint16, as the
 algorithm uses max. 12bit histogram, an exception will be raised if
@@ -1453,7 +1453,7 @@ the value.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>local pop</strong> : uint8 array or uint16</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>local pop</strong> : uint8 array or uint16</p>
 <blockquote class="last">
 <div><p>The result of the local pop.</p>
 </div></blockquote>
@@ -1476,7 +1476,7 @@ percentiles [p0, p1] are used.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Image array (uint8 array or uint16). If image is uint16, as the
 algorithm uses max. 12bit histogram, an exception will be raised if
@@ -1508,7 +1508,7 @@ the value.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>local threshold</strong> : uint8 array or uint16</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>local threshold</strong> : uint8 array or uint16</p>
 <blockquote class="last">
 <div><p>The result of the local threshold.</p>
 </div></blockquote>
@@ -1530,7 +1530,7 @@ neighborhood.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Image array (uint8 array or uint16). If image is uint16, the algorithm
 uses max. 12bit histogram, an exception will be raised if image has a
@@ -1557,7 +1557,7 @@ structuring element).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
 <blockquote class="last">
 <div><p>The number of pixels belonging to the neighborhood.</p>
 </div></blockquote>
@@ -1595,7 +1595,7 @@ structuring element).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Image array (uint8 array or uint16). If image is uint16, the algorithm
 uses max. 12bit histogram, an exception will be raised if image has a
@@ -1622,7 +1622,7 @@ structuring element).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
 <blockquote class="last">
 <div><p>The result of the local threshold.</p>
 </div></blockquote>
@@ -1660,7 +1660,7 @@ structuring element).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
 <div><p>Image array (uint8 array or uint16). If image is uint16, the algorithm
 uses max. 12bit histogram, an exception will be raised if image has a
@@ -1687,7 +1687,7 @@ structuring element).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
 <blockquote class="last">
 <div><p>The image tophat.</p>
 </div></blockquote>

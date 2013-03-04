@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Module: io &mdash; skimage v0.8dev docs</title>
+        <title>Module: io &mdash; skimage v0.9dev docs</title>
     
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -18,7 +18,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.8dev',
+        VERSION:     '0.9dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -27,7 +27,7 @@
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
-        <link rel="top" title="skimage v0.8dev docs" href="../index.html" />
+        <link rel="top" title="skimage v0.9dev docs" href="../index.html" />
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <link rel="shortcut icon" href="../_static/favicon.ico">
 </head>
@@ -63,34 +63,40 @@
 <col width="86%" />
 </colgroup>
 <tbody valign="top">
-<tr><td>Plugin</td>
+<tr class="row-odd"><td>Plugin</td>
 <td>Description</td>
 </tr>
-<tr><td>tifffile</td>
-<td>Load and save TIFF and TIFF-based images using tifffile.py</td>
-</tr>
-<tr><td>pil</td>
-<td>Image reading via the Python Imaging Library</td>
-</tr>
-<tr><td>qt</td>
-<td>Fast image display using the Qt library</td>
-</tr>
-<tr><td>freeimage</td>
-<td>Load images using the FreeImage library</td>
-</tr>
-<tr><td>gtk</td>
-<td>Fast image display using the GTK library</td>
-</tr>
-<tr><td>matplotlib</td>
-<td>Display or save images using Matplotlib</td>
-</tr>
-<tr><td>fits</td>
-<td>FITS image reading via PyFITS</td>
-</tr>
-<tr><td>null</td>
+<tr class="row-even"><td>null</td>
 <td>Default plugin that does nothing</td>
 </tr>
-<tr><td>gdal</td>
+<tr class="row-odd"><td>pil</td>
+<td>Image reading via the Python Imaging Library</td>
+</tr>
+<tr class="row-even"><td>qt</td>
+<td>Fast image display using the Qt library</td>
+</tr>
+<tr class="row-odd"><td>freeimage</td>
+<td>Load images using the FreeImage library</td>
+</tr>
+<tr class="row-even"><td>gtk</td>
+<td>Fast image display using the GTK library</td>
+</tr>
+<tr class="row-odd"><td>matplotlib</td>
+<td>Display or save images using Matplotlib</td>
+</tr>
+<tr class="row-even"><td>simpleitk</td>
+<td>Image reading and writing via SimpleITK</td>
+</tr>
+<tr class="row-odd"><td>imread</td>
+<td>Image reading and writing via imread</td>
+</tr>
+<tr class="row-even"><td>fits</td>
+<td>FITS image reading via PyFITS</td>
+</tr>
+<tr class="row-odd"><td>tifffile</td>
+<td>Load and save TIFF and TIFF-based images using tifffile.py</td>
+</tr>
+<tr class="row-even"><td>gdal</td>
 <td>Image reading via the GDAL Library (www.gdal.org)</td>
 </tr>
 </tbody>
@@ -100,7 +106,7 @@
 <dl class="class">
 <dt id="skimage.io.Image">
 <em class="property">class </em><tt class="descclassname">skimage.io.</tt><tt class="descname">Image</tt><a class="headerlink" href="#skimage.io.Image" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.6)"><tt class="xref py py-class docutils literal"><span class="pre">numpy.ndarray</span></tt></a></p>
+<dd><p>Bases: <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.7)"><tt class="xref py py-class docutils literal"><span class="pre">numpy.ndarray</span></tt></a></p>
 <p>Class representing Image data.</p>
 <p>These objects have tags for image metadata and IPython display protocol
 methods for image display.</p>
@@ -109,6 +115,11 @@ methods for image display.</p>
 <tt class="descname">__init__</tt><big>(</big><big>)</big><a class="headerlink" href="#skimage.io.Image.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>x.__init__(...) initializes x; see help(type(x)) for signature</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="skimage.io.Image.tags">
+<tt class="descname">tags</tt><em class="property"> = {'info': {}, 'EXIF': {}, 'filename': ''}</em><a class="headerlink" href="#skimage.io.Image.tags" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
@@ -126,7 +137,7 @@ slicing returns a new ImageCollection, <em>not</em> a view into the data.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>load_pattern</strong> : str or list</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>load_pattern</strong> : str or list</p>
 <blockquote>
 <div><p>Pattern glob or filenames to load. The path can be absolute or
 relative.  Multiple patterns should be separated by a colon,
@@ -192,7 +203,7 @@ frame from a video file:</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr><td><a class="reference internal" href="#skimage.io.ImageCollection.files" title="skimage.io.ImageCollection.files"><tt class="xref py py-obj docutils literal"><span class="pre">files</span></tt></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.io.ImageCollection.files" title="skimage.io.ImageCollection.files"><tt class="xref py py-obj docutils literal"><span class="pre">files</span></tt></a></td>
 <td></td>
 </tr>
 </tbody>
@@ -211,13 +222,13 @@ frame from a video file:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>ar</strong> : np.ndarray</p>
+<tr class="field-odd field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>ar</strong> : np.ndarray</p>
 <blockquote>
 <div><p>An array having one more dimension than the images in <cite>self</cite>.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<tr class="field-even field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
 <div><p>If images in the <cite>ImageCollection</cite> don&#8217;t have identical shapes.</p>
 </div></blockquote>
@@ -249,7 +260,7 @@ frame from a video file:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>n</strong> : None or int</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>n</strong> : None or int</p>
 <blockquote class="last">
 <div><p>Clear the cache for this image only. By default, the
 entire cache is erased.</p>
@@ -274,7 +285,7 @@ entire cache is erased.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
 <blockquote>
 <div><p>The complete path to the image file.</p>
 </div></blockquote>
@@ -355,13 +366,13 @@ from file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>ar</strong> : np.ndarray</p>
+<tr class="field-odd field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>ar</strong> : np.ndarray</p>
 <blockquote>
 <div><p>An array having one more dimension than the images in <cite>self</cite>.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<tr class="field-even field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
 <div><p>If images in the <cite>MultiImage</cite> don&#8217;t have identical shapes.</p>
 </div></blockquote>
@@ -399,7 +410,7 @@ from file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>source</strong> : str</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>source</strong> : str</p>
 <blockquote>
 <div><p>Media location URI. Video file path or http address of IP camera.</p>
 </div></blockquote>
@@ -434,7 +445,7 @@ Useful for IP cameras and other real time video feeds.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : int</p>
+<tr class="field-odd field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : int</p>
 <blockquote class="last">
 <div><p>Time length [ms].</p>
 </div></blockquote>
@@ -452,7 +463,7 @@ Useful for IP cameras and other real time video feeds.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : int</p>
+<tr class="field-odd field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : int</p>
 <blockquote class="last">
 <div><p>Frame count.</p>
 </div></blockquote>
@@ -470,7 +481,7 @@ Useful for IP cameras and other real time video feeds.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : array (image)</p>
+<tr class="field-odd field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : array (image)</p>
 <blockquote class="last">
 <div><p>Retrieved image.</p>
 </div></blockquote>
@@ -488,13 +499,13 @@ Useful for IP cameras and other real time video feeds.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>time_range: range (int), optional</strong> :</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>time_range: range (int), optional</strong> :</p>
 <blockquote>
 <div><p>Time steps to extract, defaults to the entire length of video.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output: ImageCollection</strong> :</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output: ImageCollection</strong> :</p>
 <blockquote class="last">
 <div><p>Collection of images iterator.</p>
 </div></blockquote>
@@ -512,13 +523,13 @@ Useful for IP cameras and other real time video feeds.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>frame_number</strong> : int</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>frame_number</strong> : int</p>
 <blockquote>
 <div><p>Frame position</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : array (image)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : array (image)</p>
 <blockquote class="last">
 <div><p>Retrieved image.</p>
 </div></blockquote>
@@ -536,7 +547,7 @@ Useful for IP cameras and other real time video feeds.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>frame_number</strong> : int</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>frame_number</strong> : int</p>
 <blockquote class="last">
 <div><p>Frame position</p>
 </div></blockquote>
@@ -554,7 +565,7 @@ Useful for IP cameras and other real time video feeds.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>milliseconds</strong> : int</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>milliseconds</strong> : int</p>
 <blockquote class="last">
 <div><p>Time position</p>
 </div></blockquote>
@@ -572,49 +583,49 @@ Useful for IP cameras and other real time video feeds.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr><td><a class="reference internal" href="#skimage.io.concatenate_images" title="skimage.io.concatenate_images"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.concatenate_images</span></tt></a>(ic)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.io.concatenate_images" title="skimage.io.concatenate_images"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.concatenate_images</span></tt></a>(ic)</td>
 <td>Concatenate all images in the image collection into an array.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.io.imread" title="skimage.io.imread"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.imread</span></tt></a>(fname,&nbsp;**plugin_args[,&nbsp;...])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.io.imread" title="skimage.io.imread"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.imread</span></tt></a>(fname[,&nbsp;as_grey,&nbsp;plugin,&nbsp;...])</td>
 <td>Load an image from file.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.io.imread_collection" title="skimage.io.imread_collection"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.imread_collection</span></tt></a>(load_pattern,&nbsp;...)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.io.imread_collection" title="skimage.io.imread_collection"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.imread_collection</span></tt></a>(load_pattern[,&nbsp;...])</td>
 <td>Load a collection of images.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.io.imsave" title="skimage.io.imsave"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.imsave</span></tt></a>(fname,&nbsp;arr,&nbsp;**plugin_args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.io.imsave" title="skimage.io.imsave"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.imsave</span></tt></a>(fname,&nbsp;arr[,&nbsp;plugin])</td>
 <td>Save an image to file.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.io.imshow" title="skimage.io.imshow"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.imshow</span></tt></a>(arr,&nbsp;**plugin_args[,&nbsp;plugin])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.io.imshow" title="skimage.io.imshow"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.imshow</span></tt></a>(arr[,&nbsp;plugin])</td>
 <td>Display an image.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.io.load_sift" title="skimage.io.load_sift"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.load_sift</span></tt></a>(f)</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.io.load_sift" title="skimage.io.load_sift"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.load_sift</span></tt></a>(f)</td>
 <td>Read SIFT or SURF features from a file.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.io.load_surf" title="skimage.io.load_surf"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.load_surf</span></tt></a>(f)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.io.load_surf" title="skimage.io.load_surf"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.load_surf</span></tt></a>(f)</td>
 <td>Read SIFT or SURF features from a file.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.io.plugin_info" title="skimage.io.plugin_info"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.plugin_info</span></tt></a>(plugin)</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.io.plugin_info" title="skimage.io.plugin_info"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.plugin_info</span></tt></a>(plugin)</td>
 <td>Return plugin meta-data.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.io.plugin_order" title="skimage.io.plugin_order"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.plugin_order</span></tt></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.io.plugin_order" title="skimage.io.plugin_order"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.plugin_order</span></tt></a>()</td>
 <td>Return the currently preferred plugin order.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.io.plugins" title="skimage.io.plugins"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.plugins</span></tt></a>([loaded])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.io.plugins" title="skimage.io.plugins"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.plugins</span></tt></a>([loaded])</td>
 <td>List available plugins.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.io.pop" title="skimage.io.pop"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.pop</span></tt></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.io.pop" title="skimage.io.pop"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.pop</span></tt></a>()</td>
 <td>Pop an image from the shared image stack.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.io.push" title="skimage.io.push"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.push</span></tt></a>(img)</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.io.push" title="skimage.io.push"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.push</span></tt></a>(img)</td>
 <td>Push an image onto the shared image stack.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.io.reset_plugins" title="skimage.io.reset_plugins"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.reset_plugins</span></tt></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.io.reset_plugins" title="skimage.io.reset_plugins"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.reset_plugins</span></tt></a>()</td>
 <td></td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.io.show" title="skimage.io.show"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.show</span></tt></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.io.show" title="skimage.io.show"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.show</span></tt></a>()</td>
 <td>Display pending images.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.io.use_plugin" title="skimage.io.use_plugin"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.use_plugin</span></tt></a>(name[,&nbsp;kind])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.io.use_plugin" title="skimage.io.use_plugin"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.use_plugin</span></tt></a>(name[,&nbsp;kind])</td>
 <td>Set the default plugin for a specified operation.</td>
 </tr>
 </tbody>
@@ -630,19 +641,19 @@ Useful for IP cameras and other real time video feeds.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>ic: an iterable of images (including ImageCollection and MultiImage)</strong> :</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>ic: an iterable of images (including ImageCollection and MultiImage)</strong> :</p>
 <blockquote>
 <div><p>The images to be concatenated.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>ar</strong> : np.ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>ar</strong> : np.ndarray</p>
 <blockquote>
 <div><p>An array having one more dimension than the images in <cite>ic</cite>.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
 <div><p>If images in <cite>ic</cite> don&#8217;t have identical shapes.</p>
 </div></blockquote>
@@ -667,9 +678,9 @@ Useful for IP cameras and other real time video feeds.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>fname</strong> : string</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>fname</strong> : string</p>
 <blockquote>
-<div><p>Image file name, e.g. <tt class="docutils literal"><span class="pre">test.jpg</span></tt>.</p>
+<div><p>Image file name, e.g. <tt class="docutils literal"><span class="pre">test.jpg</span></tt> or URL.</p>
 </div></blockquote>
 <p><strong>as_grey</strong> : bool</p>
 <blockquote>
@@ -682,7 +693,7 @@ Images that are already in grey-scale format are not converted.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>img_array</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>img_array</strong> : ndarray</p>
 <blockquote class="last">
 <div><p>The different colour bands/channels are stored in the
 third dimension, such that a grey-image is MxN, an
@@ -705,7 +716,7 @@ RGB-image MxNx3 and an RGBA-image MxNx4.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>load_pattern</strong> : str or list</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>load_pattern</strong> : str or list</p>
 <blockquote>
 <div><p>List of objects to load. These are usually filenames, but may
 vary depending on the currently active plugin.  See the docstring
@@ -718,7 +729,7 @@ time.  Otherwise, images will be cached once they are loaded.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>ic</strong> : ImageCollection</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>ic</strong> : ImageCollection</p>
 <blockquote class="last">
 <div><p>Collection of images.</p>
 </div></blockquote>
@@ -739,7 +750,7 @@ time.  Otherwise, images will be cached once they are loaded.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>fname</strong> : str</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>fname</strong> : str</p>
 <blockquote>
 <div><p>Target filename.</p>
 </div></blockquote>
@@ -770,7 +781,7 @@ candidate is found.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>arr</strong> : ndarray or str</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>arr</strong> : ndarray or str</p>
 <blockquote>
 <div><p>Image data or name of image file.</p>
 </div></blockquote>
@@ -797,7 +808,7 @@ candidate is found.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>f</strong> : string or open file</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>f</strong> : string or open file</p>
 <blockquote>
 <div><p>Input file generated by the feature detectors from
 <a class="reference external" href="http://people.cs.ubc.ca/~lowe/keypoints/">http://people.cs.ubc.ca/~lowe/keypoints/</a> or
@@ -805,7 +816,7 @@ candidate is found.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>data</strong> : record array with fields</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>data</strong> : record array with fields</p>
 <blockquote class="last">
 <div><ul>
 <li><dl class="first docutils">
@@ -857,7 +868,7 @@ candidate is found.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>f</strong> : string or open file</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>f</strong> : string or open file</p>
 <blockquote>
 <div><p>Input file generated by the feature detectors from
 <a class="reference external" href="http://people.cs.ubc.ca/~lowe/keypoints/">http://people.cs.ubc.ca/~lowe/keypoints/</a> or
@@ -865,7 +876,7 @@ candidate is found.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>data</strong> : record array with fields</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>data</strong> : record array with fields</p>
 <blockquote class="last">
 <div><ul>
 <li><dl class="first docutils">
@@ -917,13 +928,13 @@ candidate is found.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>plugin</strong> : str</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>plugin</strong> : str</p>
 <blockquote>
 <div><p>Name of plugin.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>m</strong> : dict</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>m</strong> : dict</p>
 <blockquote class="last">
 <div><p>Meta data as specified in plugin <tt class="docutils literal"><span class="pre">.ini</span></tt>.</p>
 </div></blockquote>
@@ -944,7 +955,7 @@ candidate is found.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>p</strong> : dict</p>
+<tr class="field-odd field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>p</strong> : dict</p>
 <blockquote class="last">
 <div><p>Dictionary of preferred plugin order, with function name as key and
 plugins (in order of preference) as value.</p>
@@ -966,14 +977,14 @@ plugins (in order of preference) as value.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>loaded</strong> : bool</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>loaded</strong> : bool</p>
 <blockquote>
 <div><p>If True, show only those plugins currently loaded.  By default,
 all plugins are shown.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>p</strong> : dict</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>p</strong> : dict</p>
 <blockquote class="last">
 <div><p>Dictionary with plugin names as keys and exposed functions as
 values.</p>
@@ -995,7 +1006,7 @@ values.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>img</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>img</strong> : ndarray</p>
 <blockquote class="last">
 <div><p>Image popped from the stack.</p>
 </div></blockquote>
@@ -1016,7 +1027,7 @@ values.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>img</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>img</strong> : ndarray</p>
 <blockquote class="last">
 <div><p>Image to push.</p>
 </div></blockquote>
@@ -1069,7 +1080,7 @@ will be loaded if it hasn&#8217;t been already.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
 <blockquote>
 <div><p>Name of plugin.</p>
 </div></blockquote>

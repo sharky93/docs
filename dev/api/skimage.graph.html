@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Module: graph &mdash; skimage v0.8dev docs</title>
+        <title>Module: graph &mdash; skimage v0.9dev docs</title>
     
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -18,7 +18,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.8dev',
+        VERSION:     '0.9dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -27,7 +27,7 @@
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
-        <link rel="top" title="skimage v0.8dev docs" href="../index.html" />
+        <link rel="top" title="skimage v0.9dev docs" href="../index.html" />
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <link rel="shortcut icon" href="../_static/favicon.ico">
 </head>
@@ -79,7 +79,7 @@ will paths whose cumulative cost overflows to infinite.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>costs</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>costs</strong> : ndarray</p>
 <p><strong>offsets</strong> : iterable, optional</p>
 <blockquote>
 <div><p>A list of offset tuples: each offset specifies a valid move from a
@@ -106,7 +106,7 @@ permitted.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr><td><a class="reference internal" href="#skimage.graph.MCP.offsets" title="skimage.graph.MCP.offsets"><tt class="xref py py-obj docutils literal"><span class="pre">offsets</span></tt></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.graph.MCP.offsets" title="skimage.graph.MCP.offsets"><tt class="xref py py-obj docutils literal"><span class="pre">offsets</span></tt></a></td>
 <td></td>
 </tr>
 </tbody>
@@ -129,7 +129,7 @@ the costs array will be found.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>starts</strong> : iterable</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>starts</strong> : iterable</p>
 <blockquote>
 <div><p>A list of n-d starting indices (where n is the dimension of the
 <cite>costs</cite> array). The minimum cost path to the closest/cheapest
@@ -148,7 +148,7 @@ specified, then this parameter has no effect.)</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>cumulative_costs</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>cumulative_costs</strong> : ndarray</p>
 <blockquote>
 <div><p>Same shape as the <cite>costs</cite> array; this array records the minimum
 cost path from the nearest/cheapest starting index to each index
@@ -192,13 +192,13 @@ run.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>end</strong> : iterable</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>end</strong> : iterable</p>
 <blockquote>
 <div><p>An n-d index into the <cite>costs</cite> array.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>traceback</strong> : list of n-d tuples</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>traceback</strong> : list of n-d tuples</p>
 <blockquote class="last">
 <div><p>A list of indices into the <cite>costs</cite> array, starting with one of
 the start positions passed to find_costs(), and ending with the
@@ -252,10 +252,10 @@ greater than 1.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr><td><a class="reference internal" href="#skimage.graph.route_through_array" title="skimage.graph.route_through_array"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.graph.route_through_array</span></tt></a>(array,&nbsp;...)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.graph.route_through_array" title="skimage.graph.route_through_array"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.graph.route_through_array</span></tt></a>(array,&nbsp;...)</td>
 <td>Simple example of how to use the MCP and MCP_Geometric classes.</td>
 </tr>
-<tr><td><a class="reference internal" href="#skimage.graph.shortest_path" title="skimage.graph.shortest_path"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.graph.shortest_path</span></tt></a>(arr[,&nbsp;reach,&nbsp;...])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.graph.shortest_path" title="skimage.graph.shortest_path"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.graph.shortest_path</span></tt></a>(arr[,&nbsp;reach,&nbsp;...])</td>
 <td>Find the shortest path through an n-d array from one side to another.</td>
 </tr>
 </tbody>
@@ -273,7 +273,7 @@ path-finding algorithm.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>array</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>array</strong> : ndarray</p>
 <blockquote>
 <div><p>Array of costs.</p>
 </div></blockquote>
@@ -297,7 +297,7 @@ an explanation of the differences between MCP and MCP_Geometric.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>path</strong> : list</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>path</strong> : list</p>
 <blockquote>
 <div><p>List of n-d index tuples defining the path from <cite>start</cite> to <cite>end</cite>.</p>
 </div></blockquote>
@@ -370,7 +370,7 @@ MCP_Geometric class).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>arr</strong> : ndarray of float64</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>arr</strong> : ndarray of float64</p>
 <p><strong>reach</strong> : int, optional</p>
 <blockquote>
 <div><p>By default (<tt class="docutils literal"><span class="pre">reach</span> <span class="pre">=</span> <span class="pre">1</span></tt>), the shortest path can only move
@@ -389,7 +389,7 @@ dimension at each step.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>p</strong> : iterable of int</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>p</strong> : iterable of int</p>
 <blockquote>
 <div><p>For each step along <cite>axis</cite>, the coordinate of the shortest path.
 If <cite>output_indexlist</cite> is True, then the path is returned as a list of

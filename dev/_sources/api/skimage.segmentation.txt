@@ -10,9 +10,11 @@ Module: :mod:`segmentation`
    skimage.segmentation.clear_border
    skimage.segmentation.felzenszwalb
    skimage.segmentation.find_boundaries
+   skimage.segmentation.join_segmentations
    skimage.segmentation.mark_boundaries
    skimage.segmentation.quickshift
    skimage.segmentation.random_walker
+   skimage.segmentation.relabel_from_one
    skimage.segmentation.slic
    skimage.segmentation.visualize_boundaries
 
@@ -31,6 +33,11 @@ find_boundaries
 
 .. autofunction:: skimage.segmentation.find_boundaries
 
+join_segmentations
+------------------
+
+.. autofunction:: skimage.segmentation.join_segmentations
+
 mark_boundaries
 ---------------
 
@@ -45,6 +52,11 @@ random_walker
 -------------
 
 .. autofunction:: skimage.segmentation.random_walker
+
+relabel_from_one
+----------------
+
+.. autofunction:: skimage.segmentation.relabel_from_one
 
 slic
 ----

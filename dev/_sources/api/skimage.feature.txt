@@ -7,13 +7,60 @@ Module: :mod:`feature`
 .. currentmodule:: skimage.feature
 .. autosummary::
 
+   skimage.feature.corner_foerstner
+   skimage.feature.corner_harris
+   skimage.feature.corner_kitchen_rosenfeld
+   skimage.feature.corner_moravec
+   skimage.feature.corner_peaks
+   skimage.feature.corner_shi_tomasi
+   skimage.feature.corner_subpix
+   skimage.feature.daisy
    skimage.feature.greycomatrix
    skimage.feature.greycoprops
-   skimage.feature.harris
    skimage.feature.hog
    skimage.feature.local_binary_pattern
    skimage.feature.match_template
    skimage.feature.peak_local_max
+
+corner_foerstner
+----------------
+
+.. autofunction:: skimage.feature.corner_foerstner
+
+corner_harris
+-------------
+
+.. autofunction:: skimage.feature.corner_harris
+
+corner_kitchen_rosenfeld
+------------------------
+
+.. autofunction:: skimage.feature.corner_kitchen_rosenfeld
+
+corner_moravec
+--------------
+
+.. autofunction:: skimage.feature.corner_moravec
+
+corner_peaks
+------------
+
+.. autofunction:: skimage.feature.corner_peaks
+
+corner_shi_tomasi
+-----------------
+
+.. autofunction:: skimage.feature.corner_shi_tomasi
+
+corner_subpix
+-------------
+
+.. autofunction:: skimage.feature.corner_subpix
+
+daisy
+-----
+
+.. autofunction:: skimage.feature.daisy
 
 greycomatrix
 ------------
@@ -24,11 +71,6 @@ greycoprops
 -----------
 
 .. autofunction:: skimage.feature.greycoprops
-
-harris
-------
-
-.. autofunction:: skimage.feature.harris
 
 hog
 ---

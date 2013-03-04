@@ -9,6 +9,8 @@ Module: :mod:`exposure`
 
    skimage.exposure.cumulative_distribution
    skimage.exposure.equalize
+   skimage.exposure.equalize_adapthist
+   skimage.exposure.equalize_hist
    skimage.exposure.histogram
    skimage.exposure.rescale_intensity
 
@@ -21,6 +23,16 @@ equalize
 --------
 
 .. autofunction:: skimage.exposure.equalize
+
+equalize_adapthist
+------------------
+
+.. autofunction:: skimage.exposure.equalize_adapthist
+
+equalize_hist
+-------------
+
+.. autofunction:: skimage.exposure.equalize_hist
 
 histogram
 ---------

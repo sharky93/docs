@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Table of Contents &mdash; skimage v0.8dev docs</title>
+        <title>Table of Contents &mdash; skimage v0.9dev docs</title>
     
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -18,7 +18,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.8dev',
+        VERSION:     '0.9dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -27,7 +27,7 @@
         <script type="text/javascript" src="_static/jquery.js"></script>
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
-        <link rel="top" title="skimage v0.8dev docs" href="index.html" />
+        <link rel="top" title="skimage v0.9dev docs" href="index.html" />
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <link rel="shortcut icon" href="_static/favicon.ico">
 </head>
@@ -67,6 +67,7 @@
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.html#img-as-int">img_as_int</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.html#img-as-ubyte">img_as_ubyte</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.html#img-as-uint">img_as_uint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/skimage.html#test">test</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api/skimage.color.html">Module: <tt class="docutils literal"><span class="pre">color</span></tt></a><ul>
@@ -104,22 +105,34 @@
 <li class="toctree-l2"><a class="reference internal" href="api/skimage.draw.html">Module: <tt class="docutils literal"><span class="pre">draw</span></tt></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.draw.html#bresenham">bresenham</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.draw.html#circle">circle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/skimage.draw.html#circle-perimeter">circle_perimeter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.draw.html#ellipse">ellipse</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/skimage.draw.html#ellipse-perimeter">ellipse_perimeter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.draw.html#line">line</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.draw.html#polygon">polygon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/skimage.draw.html#set-color">set_color</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api/skimage.exposure.html">Module: <tt class="docutils literal"><span class="pre">exposure</span></tt></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.exposure.html#cumulative-distribution">cumulative_distribution</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.exposure.html#equalize">equalize</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/skimage.exposure.html#equalize-adapthist">equalize_adapthist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/skimage.exposure.html#equalize-hist">equalize_hist</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.exposure.html#histogram">histogram</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.exposure.html#rescale-intensity">rescale_intensity</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api/skimage.feature.html">Module: <tt class="docutils literal"><span class="pre">feature</span></tt></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/skimage.feature.html#corner-foerstner">corner_foerstner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/skimage.feature.html#corner-harris">corner_harris</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/skimage.feature.html#corner-kitchen-rosenfeld">corner_kitchen_rosenfeld</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/skimage.feature.html#corner-moravec">corner_moravec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/skimage.feature.html#corner-peaks">corner_peaks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/skimage.feature.html#corner-shi-tomasi">corner_shi_tomasi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/skimage.feature.html#corner-subpix">corner_subpix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/skimage.feature.html#daisy">daisy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.feature.html#greycomatrix">greycomatrix</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.feature.html#greycoprops">greycoprops</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/skimage.feature.html#harris">harris</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.feature.html#hog">hog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.feature.html#local-binary-pattern">local_binary_pattern</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.feature.html#match-template">match_template</a></li>
@@ -130,7 +143,8 @@
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.filter.html#lpifilter2d"><tt class="docutils literal"><span class="pre">LPIFilter2D</span></tt></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.filter.html#canny">canny</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.filter.html#denoise-bilateral">denoise_bilateral</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/skimage.filter.html#denoise-tv">denoise_tv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/skimage.filter.html#denoise-tv-bregman">denoise_tv_bregman</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/skimage.filter.html#denoise-tv-chambolle">denoise_tv_chambolle</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.filter.html#hprewitt">hprewitt</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.filter.html#hscharr">hscharr</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.filter.html#hsobel">hsobel</a></li>
@@ -254,6 +268,7 @@
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.morphology.html#opening">opening</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.morphology.html#reconstruction">reconstruction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.morphology.html#rectangle">rectangle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/skimage.morphology.html#remove-small-objects">remove_small_objects</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.morphology.html#skeletonize">skeletonize</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.morphology.html#square">square</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.morphology.html#watershed">watershed</a></li>
@@ -264,9 +279,11 @@
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.segmentation.html#clear-border">clear_border</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.segmentation.html#felzenszwalb">felzenszwalb</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.segmentation.html#find-boundaries">find_boundaries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/skimage.segmentation.html#join-segmentations">join_segmentations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.segmentation.html#mark-boundaries">mark_boundaries</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.segmentation.html#quickshift">quickshift</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.segmentation.html#random-walker">random_walker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/skimage.segmentation.html#relabel-from-one">relabel_from_one</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.segmentation.html#slic">slic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.segmentation.html#visualize-boundaries">visualize_boundaries</a></li>
 </ul>
@@ -279,8 +296,10 @@
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.transform.html#similaritytransform"><tt class="docutils literal"><span class="pre">SimilarityTransform</span></tt></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.transform.html#estimate-transform">estimate_transform</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.transform.html#frt2">frt2</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/skimage.transform.html#homography">homography</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.transform.html#hough">hough</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/skimage.transform.html#hough-circle">hough_circle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/skimage.transform.html#hough-line">hough_line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/skimage.transform.html#hough-peaks">hough_peaks</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.transform.html#ifrt2">ifrt2</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.transform.html#integral-image">integral_image</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/skimage.transform.html#integrate">integrate</a></li>
