@@ -70,12 +70,32 @@
 </dd></dl>
 
 </div>
+<div class="section" id="figurecanvas">
+<h2><a class="reference internal" href="#skimage.viewer.utils.FigureCanvas" title="skimage.viewer.utils.FigureCanvas"><tt class="xref py py-class docutils literal"><span class="pre">FigureCanvas</span></tt></a><a class="headerlink" href="#figurecanvas" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="skimage.viewer.utils.FigureCanvas">
+<em class="property">class </em><tt class="descclassname">skimage.viewer.utils.</tt><tt class="descname">FigureCanvas</tt><big>(</big><em>figure</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.viewer.utils.FigureCanvas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">matplotlib.backends.backend_qt4agg.FigureCanvasQTAgg</span></tt></p>
+<p>Canvas for displaying images.</p>
+<dl class="method">
+<dt id="skimage.viewer.utils.FigureCanvas.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>figure</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.viewer.utils.FigureCanvas.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="skimage.viewer.utils.FigureCanvas.resizeEvent">
+<tt class="descname">resizeEvent</tt><big>(</big><em>event</em><big>)</big><a class="headerlink" href="#skimage.viewer.utils.FigureCanvas.resizeEvent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
 <div class="section" id="linearcolormap">
 <h2><a class="reference internal" href="#skimage.viewer.utils.LinearColormap" title="skimage.viewer.utils.LinearColormap"><tt class="xref py py-class docutils literal"><span class="pre">LinearColormap</span></tt></a><a class="headerlink" href="#linearcolormap" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="skimage.viewer.utils.LinearColormap">
 <em class="property">class </em><tt class="descclassname">skimage.viewer.utils.</tt><tt class="descname">LinearColormap</tt><big>(</big><em>name</em>, <em>segmented_data</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.viewer.utils.LinearColormap" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">matplotlib.colors.LinearSegmentedColormap</span></tt></p>
 <p>LinearSegmentedColormap in which color varies smoothly.</p>
 <p>This class is a simplification of LinearSegmentedColormap, which doesn&#8217;t
 support jumps in color intensities.</p>
@@ -107,21 +127,6 @@ intensity.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="matplotlibcanvas">
-<h2><a class="reference internal" href="#skimage.viewer.utils.MatplotlibCanvas" title="skimage.viewer.utils.MatplotlibCanvas"><tt class="xref py py-class docutils literal"><span class="pre">MatplotlibCanvas</span></tt></a><a class="headerlink" href="#matplotlibcanvas" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="skimage.viewer.utils.MatplotlibCanvas">
-<em class="property">class </em><tt class="descclassname">skimage.viewer.utils.</tt><tt class="descname">MatplotlibCanvas</tt><big>(</big><em>parent</em>, <em>figure</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.viewer.utils.MatplotlibCanvas" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
-<p>Canvas for displaying images.</p>
-<dl class="method">
-<dt id="skimage.viewer.utils.MatplotlibCanvas.__init__">
-<tt class="descname">__init__</tt><big>(</big><em>parent</em>, <em>figure</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.viewer.utils.MatplotlibCanvas.__init__" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-</div>
 <div class="section" id="requiredattr">
 <h2><a class="reference internal" href="#skimage.viewer.utils.RequiredAttr" title="skimage.viewer.utils.RequiredAttr"><tt class="xref py py-class docutils literal"><span class="pre">RequiredAttr</span></tt></a><a class="headerlink" href="#requiredattr" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
@@ -148,7 +153,10 @@ intensity.</p>
 <tr class="row-even"><td><a class="reference internal" href="#skimage.viewer.utils.init_qtapp" title="skimage.viewer.utils.init_qtapp"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.viewer.utils.init_qtapp</span></tt></a>()</td>
 <td>Initialize QAppliction.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.viewer.utils.start_qtapp" title="skimage.viewer.utils.start_qtapp"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.viewer.utils.start_qtapp</span></tt></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.viewer.utils.new_plot" title="skimage.viewer.utils.new_plot"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.viewer.utils.new_plot</span></tt></a>([parent,&nbsp;...])</td>
+<td>Return new figure and axes.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.viewer.utils.start_qtapp" title="skimage.viewer.utils.start_qtapp"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.viewer.utils.start_qtapp</span></tt></a>()</td>
 <td>Start Qt mainloop</td>
 </tr>
 </tbody>
@@ -197,6 +205,36 @@ image.  Smaller values of <cite>scale</cite> will shrink the figure.</p>
 </dd></dl>
 
 </div>
+<div class="section" id="new-plot">
+<h2>new_plot<a class="headerlink" href="#new-plot" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.viewer.utils.new_plot">
+<tt class="descclassname">skimage.viewer.utils.</tt><tt class="descname">new_plot</tt><big>(</big><em>parent=None</em>, <em>subplot_kw=None</em>, <em>**fig_kw</em><big>)</big><a class="headerlink" href="#skimage.viewer.utils.new_plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return new figure and axes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>parent</strong> : QtWidget</p>
+<blockquote>
+<div><p>Qt widget that displays the plot objects. If None, you must manually
+call <tt class="docutils literal"><span class="pre">canvas.setParent</span></tt> and pass the parent widget.</p>
+</div></blockquote>
+<p><strong>subplot_kw</strong> : dict</p>
+<blockquote>
+<div><p>Keyword arguments passed <tt class="docutils literal"><span class="pre">matplotlib.figure.Figure.add_subplot</span></tt>.</p>
+</div></blockquote>
+<p><strong>fig_kw</strong> : dict</p>
+<blockquote class="last">
+<div><p>Keyword arguments passed <tt class="docutils literal"><span class="pre">matplotlib.figure.Figure</span></tt>.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
 <div class="section" id="start-qtapp">
 <h2>start_qtapp<a class="headerlink" href="#start-qtapp" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
@@ -221,11 +259,12 @@ image.  Smaller values of <cite>scale</cite> will shrink the figure.</p>
             <ul class="nav nav-list">
 <li><a class="reference internal" href="#">Module: <tt class="docutils literal"><span class="pre">viewer.utils</span></tt></a><ul class="nav nav-list">
 <li><a class="reference internal" href="#clearcolormap"><tt class="docutils literal"><span class="pre">ClearColormap</span></tt></a></li>
+<li><a class="reference internal" href="#figurecanvas"><tt class="docutils literal"><span class="pre">FigureCanvas</span></tt></a></li>
 <li><a class="reference internal" href="#linearcolormap"><tt class="docutils literal"><span class="pre">LinearColormap</span></tt></a></li>
-<li><a class="reference internal" href="#matplotlibcanvas"><tt class="docutils literal"><span class="pre">MatplotlibCanvas</span></tt></a></li>
 <li><a class="reference internal" href="#requiredattr"><tt class="docutils literal"><span class="pre">RequiredAttr</span></tt></a></li>
 <li><a class="reference internal" href="#figimage">figimage</a></li>
 <li><a class="reference internal" href="#init-qtapp">init_qtapp</a></li>
+<li><a class="reference internal" href="#new-plot">new_plot</a></li>
 <li><a class="reference internal" href="#start-qtapp">start_qtapp</a></li>
 </ul>
 </li>

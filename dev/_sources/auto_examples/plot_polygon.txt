@@ -8,12 +8,13 @@ Approximate and subdivide polygons
 This example shows how to approximate (Douglas-Peucker algorithm) and subdivide
 (B-Splines) polygonal chains.
 
+
 .. image:: images/plot_polygon_1.png
     :align: center
 
 
 .. literalinclude:: plot_polygon.py
-    :lines: 9-
+    :lines: 10-
 
 
 

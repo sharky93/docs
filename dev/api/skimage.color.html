@@ -61,11 +61,17 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.color.convert_colorspace" title="skimage.color.convert_colorspace"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.convert_colorspace</span></tt></a>(arr,&nbsp;...)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.color.combine_stains" title="skimage.color.combine_stains"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.combine_stains</span></tt></a>(stains,&nbsp;conv_matrix)</td>
+<td>Stain to RGB color space conversion.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.color.convert_colorspace" title="skimage.color.convert_colorspace"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.convert_colorspace</span></tt></a>(arr,&nbsp;...)</td>
 <td>Convert an image array to a new color space.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.color.gray2rgb" title="skimage.color.gray2rgb"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.gray2rgb</span></tt></a>(image)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.color.gray2rgb" title="skimage.color.gray2rgb"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.gray2rgb</span></tt></a>(image)</td>
 <td>Create an RGB representation of a gray-level image.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.color.hed2rgb" title="skimage.color.hed2rgb"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.hed2rgb</span></tt></a>(hed)</td>
+<td>Haematoxylin-Eosin-DAB (HED) to RGB color space conversion.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#skimage.color.hsv2rgb" title="skimage.color.hsv2rgb"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.hsv2rgb</span></tt></a>(hsv)</td>
 <td>HSV to RGB color space conversion.</td>
@@ -88,20 +94,26 @@
 <tr class="row-odd"><td><a class="reference internal" href="#skimage.color.rgb2grey" title="skimage.color.rgb2grey"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.rgb2grey</span></tt></a>(rgb)</td>
 <td>Compute luminance of an RGB image.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.color.rgb2hsv" title="skimage.color.rgb2hsv"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.rgb2hsv</span></tt></a>(rgb)</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.color.rgb2hed" title="skimage.color.rgb2hed"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.rgb2hed</span></tt></a>(rgb)</td>
+<td>RGB to Haematoxylin-Eosin-DAB (HED) color space conversion.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.color.rgb2hsv" title="skimage.color.rgb2hsv"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.rgb2hsv</span></tt></a>(rgb)</td>
 <td>RGB to HSV color space conversion.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.color.rgb2lab" title="skimage.color.rgb2lab"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.rgb2lab</span></tt></a>(rgb)</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.color.rgb2lab" title="skimage.color.rgb2lab"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.rgb2lab</span></tt></a>(rgb)</td>
 <td>RGB to lab color space conversion.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.color.rgb2rgbcie" title="skimage.color.rgb2rgbcie"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.rgb2rgbcie</span></tt></a>(rgb)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.color.rgb2rgbcie" title="skimage.color.rgb2rgbcie"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.rgb2rgbcie</span></tt></a>(rgb)</td>
 <td>RGB to RGB CIE color space conversion.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.color.rgb2xyz" title="skimage.color.rgb2xyz"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.rgb2xyz</span></tt></a>(rgb)</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.color.rgb2xyz" title="skimage.color.rgb2xyz"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.rgb2xyz</span></tt></a>(rgb)</td>
 <td>RGB to XYZ color space conversion.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.color.rgbcie2rgb" title="skimage.color.rgbcie2rgb"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.rgbcie2rgb</span></tt></a>(rgbcie)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.color.rgbcie2rgb" title="skimage.color.rgbcie2rgb"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.rgbcie2rgb</span></tt></a>(rgbcie)</td>
 <td>RGB CIE to RGB color space conversion.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.color.separate_stains" title="skimage.color.separate_stains"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.separate_stains</span></tt></a>(rgb,&nbsp;conv_matrix)</td>
+<td>RGB to stain color space conversion.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#skimage.color.xyz2lab" title="skimage.color.xyz2lab"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.xyz2lab</span></tt></a>(xyz)</td>
 <td>XYZ to CIE-LAB color space conversion.</td>
@@ -111,6 +123,75 @@
 </tr>
 </tbody>
 </table>
+<div class="section" id="combine-stains">
+<h2>combine_stains<a class="headerlink" href="#combine-stains" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.color.combine_stains">
+<tt class="descclassname">skimage.color.</tt><tt class="descname">combine_stains</tt><big>(</big><em>stains</em>, <em>conv_matrix</em><big>)</big><a class="headerlink" href="#skimage.color.combine_stains" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stain to RGB color space conversion.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>stains</strong> : array_like</p>
+<blockquote>
+<div><p>The image in stain color space, in a 3-D array of shape (.., .., 3).</p>
+</div></blockquote>
+<p><strong>conv_matrix: ndarray</strong> :</p>
+<blockquote>
+<div><p>The stain separation matrix as described by G. Landini <a class="reference internal" href="#r19">[R19]</a>.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
+<blockquote>
+<div><p>The image in RGB format, in a 3-D array of shape (.., .., 3).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<blockquote class="last">
+<div><p>If <cite>stains</cite> is not a 3-D array of shape (.., .., 3).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>Stain combination matrices available in the <tt class="docutils literal"><span class="pre">color</span></tt> module and their
+respective colorspace:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">rgb_from_hed</span></tt>: Hematoxylin + Eosin + DAB</li>
+<li><tt class="docutils literal"><span class="pre">rgb_from_hdx</span></tt>: Hematoxylin + DAB</li>
+<li><tt class="docutils literal"><span class="pre">rgb_from_fgx</span></tt>: Feulgen + Light Green</li>
+<li><tt class="docutils literal"><span class="pre">rgb_from_bex</span></tt>: Giemsa stain : Methyl Blue + Eosin</li>
+<li><tt class="docutils literal"><span class="pre">rgb_from_rbd</span></tt>: FastRed + FastBlue +  DAB</li>
+<li><tt class="docutils literal"><span class="pre">rgb_from_gdx</span></tt>: Methyl Green + DAB</li>
+<li><tt class="docutils literal"><span class="pre">rgb_from_hax</span></tt>: Hematoxylin + AEC</li>
+<li><tt class="docutils literal"><span class="pre">rgb_from_bro</span></tt>: Blue matrix Anilline Blue + Red matrix Azocarmine                        + Orange matrix Orange-G</li>
+<li><tt class="docutils literal"><span class="pre">rgb_from_bpx</span></tt>: Methyl Blue + Ponceau Fuchsin</li>
+<li><tt class="docutils literal"><span class="pre">rgb_from_ahx</span></tt>: Alcian Blue + Hematoxylin</li>
+<li><tt class="docutils literal"><span class="pre">rgb_from_hpx</span></tt>: Hematoxylin + PAS</li>
+</ul>
+<p class="rubric">References</p>
+<table class="docutils citation" frame="void" id="r19" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[R19]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>)</em> <a class="reference external" href="http://www.dentistry.bham.ac.uk/landinig/software/cdeconv/cdeconv.html">http://www.dentistry.bham.ac.uk/landinig/software/cdeconv/cdeconv.html</a></td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.color</span> <span class="kn">import</span> <span class="p">(</span><span class="n">separate_stains</span><span class="p">,</span> <span class="n">combine_stains</span><span class="p">,</span>
+<span class="gp">... </span>                           <span class="n">hdx_from_rgb</span><span class="p">,</span> <span class="n">rgb_from_hdx</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ihc</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">immunohistochemistry</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ihc_hdx</span> <span class="o">=</span> <span class="n">separate_stains</span><span class="p">(</span><span class="n">ihc</span><span class="p">,</span> <span class="n">hdx_from_rgb</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ihc_rgb</span> <span class="o">=</span> <span class="n">combine_stains</span><span class="p">(</span><span class="n">ihc_hdx</span><span class="p">,</span> <span class="n">rgb_from_hdx</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
 <div class="section" id="convert-colorspace">
 <h2>convert_colorspace<a class="headerlink" href="#convert-colorspace" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
@@ -192,6 +273,57 @@ from XYZ to HSV is implemented as XYZ -&gt; RGB -&gt; HSV instead of directly.</
 </dd></dl>
 
 </div>
+<div class="section" id="hed2rgb">
+<h2>hed2rgb<a class="headerlink" href="#hed2rgb" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.color.hed2rgb">
+<tt class="descclassname">skimage.color.</tt><tt class="descname">hed2rgb</tt><big>(</big><em>hed</em><big>)</big><a class="headerlink" href="#skimage.color.hed2rgb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Haematoxylin-Eosin-DAB (HED) to RGB color space conversion.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>hed</strong> : array_like</p>
+<blockquote>
+<div><p>The image in the HED color space, in a 3-D array of shape (.., .., 3).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
+<blockquote>
+<div><p>The image in RGB, in a 3-D array of shape (.., .., 3).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<blockquote class="last">
+<div><p>If <cite>hed</cite> is not a 3-D array of shape (.., .., 3).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">References</p>
+<table class="docutils citation" frame="void" id="r20" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[R20]</a></td><td>A. C. Ruifrok and D. A. Johnston, &#8220;Quantification of histochemical
+staining by color deconvolution.,&#8221; Analytical and quantitative
+cytology and histology / the International Academy of Cytology [and]
+American Society of Cytology, vol. 23, no. 4, pp. 291-9, Aug. 2001.</td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.color</span> <span class="kn">import</span> <span class="n">rgb2hed</span><span class="p">,</span> <span class="n">hed2rgb</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ihc</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">immunohistochemistry</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ihc_hed</span> <span class="o">=</span> <span class="n">rgb2hed</span><span class="p">(</span><span class="n">ihc</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ihc_rgb</span> <span class="o">=</span> <span class="n">hed2rgb</span><span class="p">(</span><span class="n">ihc_hed</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
 <div class="section" id="hsv2rgb">
 <h2>hsv2rgb<a class="headerlink" href="#hsv2rgb" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
@@ -226,12 +358,12 @@ from XYZ to HSV is implemented as XYZ -&gt; RGB -&gt; HSV instead of directly.</
 <p>The conversion assumes an input data range of [0, 1] for all
 color components.</p>
 <p>Conversion between RGB and HSV color spaces results in some loss of
-precision, due to integer arithmetic and rounding <a class="reference internal" href="#r15">[R15]</a>.</p>
+precision, due to integer arithmetic and rounding <a class="reference internal" href="#r21">[R21]</a>.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r15" rules="none">
+<table class="docutils citation" frame="void" id="r21" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R15]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>)</em> <a class="reference external" href="http://en.wikipedia.org/wiki/HSL_and_HSV">http://en.wikipedia.org/wiki/HSL_and_HSV</a></td></tr>
+<tr><td class="label">[R21]</td><td><em>(<a class="fn-backref" href="#id4">1</a>, <a class="fn-backref" href="#id5">2</a>)</em> <a class="reference external" href="http://en.wikipedia.org/wiki/HSL_and_HSV">http://en.wikipedia.org/wiki/HSL_and_HSV</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -355,16 +487,16 @@ precision, due to integer arithmetic and rounding <a class="reference internal" 
 <p>Observer= 2A, Illuminant= D65
 CIE XYZ tristimulus values x_ref = 95.047, y_ref = 100., z_ref = 108.883</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r16" rules="none">
+<table class="docutils citation" frame="void" id="r22" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[R16]</a></td><td><a class="reference external" href="http://www.easyrgb.com/index.php?X=MATH&amp;H=07#text7">http://www.easyrgb.com/index.php?X=MATH&amp;H=07#text7</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id6">[R22]</a></td><td><a class="reference external" href="http://www.easyrgb.com/index.php?X=MATH&amp;H=07#text7">http://www.easyrgb.com/index.php?X=MATH&amp;H=07#text7</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r17" rules="none">
+<table class="docutils citation" frame="void" id="r23" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[R17]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Lab_color_space">http://en.wikipedia.org/wiki/Lab_color_space</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id7">[R23]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Lab_color_space">http://en.wikipedia.org/wiki/Lab_color_space</a></td></tr>
 </tbody>
 </table>
 </dd></dl>
@@ -409,10 +541,10 @@ CRT phosphors:</p>
 </div>
 <p>If there is an alpha channel present, it is ignored.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r18" rules="none">
+<table class="docutils citation" frame="void" id="r24" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id5">[R18]</a></td><td><a class="reference external" href="http://www.poynton.com/PDFs/ColorFAQ.pdf">http://www.poynton.com/PDFs/ColorFAQ.pdf</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id8">[R24]</a></td><td><a class="reference external" href="http://www.poynton.com/PDFs/ColorFAQ.pdf">http://www.poynton.com/PDFs/ColorFAQ.pdf</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -464,10 +596,10 @@ CRT phosphors:</p>
 </div>
 <p>If there is an alpha channel present, it is ignored.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r19" rules="none">
+<table class="docutils citation" frame="void" id="r25" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id6">[R19]</a></td><td><a class="reference external" href="http://www.poynton.com/PDFs/ColorFAQ.pdf">http://www.poynton.com/PDFs/ColorFAQ.pdf</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id9">[R25]</a></td><td><a class="reference external" href="http://www.poynton.com/PDFs/ColorFAQ.pdf">http://www.poynton.com/PDFs/ColorFAQ.pdf</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -475,6 +607,56 @@ CRT phosphors:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lena</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">lena</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lena_gray</span> <span class="o">=</span> <span class="n">rgb2gray</span><span class="p">(</span><span class="n">lena</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="rgb2hed">
+<h2>rgb2hed<a class="headerlink" href="#rgb2hed" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.color.rgb2hed">
+<tt class="descclassname">skimage.color.</tt><tt class="descname">rgb2hed</tt><big>(</big><em>rgb</em><big>)</big><a class="headerlink" href="#skimage.color.rgb2hed" title="Permalink to this definition">¶</a></dt>
+<dd><p>RGB to Haematoxylin-Eosin-DAB (HED) color space conversion.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgb</strong> : array_like</p>
+<blockquote>
+<div><p>The image in RGB format, in a 3-D array of shape (.., .., 3).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
+<blockquote>
+<div><p>The image in HED format, in a 3-D array of shape (.., .., 3).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<blockquote class="last">
+<div><p>If <cite>rgb</cite> is not a 3-D array of shape (.., .., 3).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">References</p>
+<table class="docutils citation" frame="void" id="r26" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id10">[R26]</a></td><td>A. C. Ruifrok and D. A. Johnston, &#8220;Quantification of histochemical
+staining by color deconvolution.,&#8221; Analytical and quantitative
+cytology and histology / the International Academy of Cytology [and]
+American Society of Cytology, vol. 23, no. 4, pp. 291-9, Aug. 2001.</td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.color</span> <span class="kn">import</span> <span class="n">rgb2hed</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ihc</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">immunohistochemistry</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ihc_hed</span> <span class="o">=</span> <span class="n">rgb2hed</span><span class="p">(</span><span class="n">ihc</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -514,12 +696,12 @@ CRT phosphors:</p>
 <p>The conversion assumes an input data range of [0, 1] for all
 color components.</p>
 <p>Conversion between RGB and HSV color spaces results in some loss of
-precision, due to integer arithmetic and rounding <a class="reference internal" href="#r20">[R20]</a>.</p>
+precision, due to integer arithmetic and rounding <a class="reference internal" href="#r27">[R27]</a>.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r20" rules="none">
+<table class="docutils citation" frame="void" id="r27" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R20]</td><td><em>(<a class="fn-backref" href="#id7">1</a>, <a class="fn-backref" href="#id8">2</a>)</em> <a class="reference external" href="http://en.wikipedia.org/wiki/HSL_and_HSV">http://en.wikipedia.org/wiki/HSL_and_HSV</a></td></tr>
+<tr><td class="label">[R27]</td><td><em>(<a class="fn-backref" href="#id11">1</a>, <a class="fn-backref" href="#id12">2</a>)</em> <a class="reference external" href="http://en.wikipedia.org/wiki/HSL_and_HSV">http://en.wikipedia.org/wiki/HSL_and_HSV</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -598,10 +780,10 @@ precision, due to integer arithmetic and rounding <a class="reference internal" 
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r21" rules="none">
+<table class="docutils citation" frame="void" id="r28" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id9">[R21]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/CIE_1931_color_space">http://en.wikipedia.org/wiki/CIE_1931_color_space</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id13">[R28]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/CIE_1931_color_space">http://en.wikipedia.org/wiki/CIE_1931_color_space</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -648,10 +830,10 @@ precision, due to integer arithmetic and rounding <a class="reference internal" 
 <p>The CIE XYZ color space is derived from the CIE RGB color space. Note
 however that this function converts from sRGB.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r22" rules="none">
+<table class="docutils citation" frame="void" id="r29" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id10">[R22]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/CIE_1931_color_space">http://en.wikipedia.org/wiki/CIE_1931_color_space</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id14">[R29]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/CIE_1931_color_space">http://en.wikipedia.org/wiki/CIE_1931_color_space</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -694,10 +876,10 @@ however that this function converts from sRGB.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r23" rules="none">
+<table class="docutils citation" frame="void" id="r30" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id11">[R23]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/CIE_1931_color_space">http://en.wikipedia.org/wiki/CIE_1931_color_space</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id15">[R30]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/CIE_1931_color_space">http://en.wikipedia.org/wiki/CIE_1931_color_space</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -706,6 +888,73 @@ however that this function converts from sRGB.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lena</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">lena</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lena_rgbcie</span> <span class="o">=</span> <span class="n">rgb2rgbcie</span><span class="p">(</span><span class="n">lena</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lena_rgb</span> <span class="o">=</span> <span class="n">rgbcie2rgb</span><span class="p">(</span><span class="n">lena_rgbcie</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="separate-stains">
+<h2>separate_stains<a class="headerlink" href="#separate-stains" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.color.separate_stains">
+<tt class="descclassname">skimage.color.</tt><tt class="descname">separate_stains</tt><big>(</big><em>rgb</em>, <em>conv_matrix</em><big>)</big><a class="headerlink" href="#skimage.color.separate_stains" title="Permalink to this definition">¶</a></dt>
+<dd><p>RGB to stain color space conversion.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgb</strong> : array_like</p>
+<blockquote>
+<div><p>The image in RGB format, in a 3-D array of shape (.., .., 3).</p>
+</div></blockquote>
+<p><strong>conv_matrix: ndarray</strong> :</p>
+<blockquote>
+<div><p>The stain separation matrix as described by G. Landini <a class="reference internal" href="#r31">[R31]</a>.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
+<blockquote>
+<div><p>The image in stain color space, in a 3-D array of shape (.., .., 3).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<blockquote class="last">
+<div><p>If <cite>rgb</cite> is not a 3-D array of shape (.., .., 3).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>Stain separation matrices available in the <tt class="docutils literal"><span class="pre">color</span></tt> module and their
+respective colorspace:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">hed_from_rgb</span></tt>: Hematoxylin + Eosin + DAB</li>
+<li><tt class="docutils literal"><span class="pre">hdx_from_rgb</span></tt>: Hematoxylin + DAB</li>
+<li><tt class="docutils literal"><span class="pre">fgx_from_rgb</span></tt>: Feulgen + Light Green</li>
+<li><tt class="docutils literal"><span class="pre">bex_from_rgb</span></tt>: Giemsa stain : Methyl Blue + Eosin</li>
+<li><tt class="docutils literal"><span class="pre">rbd_from_rgb</span></tt>: FastRed + FastBlue +  DAB</li>
+<li><tt class="docutils literal"><span class="pre">gdx_from_rgb</span></tt>: Methyl Green + DAB</li>
+<li><tt class="docutils literal"><span class="pre">hax_from_rgb</span></tt>: Hematoxylin + AEC</li>
+<li><tt class="docutils literal"><span class="pre">bro_from_rgb</span></tt>: Blue matrix Anilline Blue + Red matrix Azocarmine                        + Orange matrix Orange-G</li>
+<li><tt class="docutils literal"><span class="pre">bpx_from_rgb</span></tt>: Methyl Blue + Ponceau Fuchsin</li>
+<li><tt class="docutils literal"><span class="pre">ahx_from_rgb</span></tt>: Alcian Blue + Hematoxylin</li>
+<li><tt class="docutils literal"><span class="pre">hpx_from_rgb</span></tt>: Hematoxylin + PAS</li>
+</ul>
+<p class="rubric">References</p>
+<table class="docutils citation" frame="void" id="r31" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[R31]</td><td><em>(<a class="fn-backref" href="#id16">1</a>, <a class="fn-backref" href="#id17">2</a>)</em> <a class="reference external" href="http://www.dentistry.bham.ac.uk/landinig/software/cdeconv/cdeconv.html">http://www.dentistry.bham.ac.uk/landinig/software/cdeconv/cdeconv.html</a></td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.color</span> <span class="kn">import</span> <span class="n">separate_stains</span><span class="p">,</span> <span class="n">hdx_from_rgb</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ihc</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">immunohistochemistry</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ihc_hdx</span> <span class="o">=</span> <span class="n">separate_stains</span><span class="p">(</span><span class="n">ihc</span><span class="p">,</span> <span class="n">hdx_from_rgb</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -745,16 +994,16 @@ however that this function converts from sRGB.</p>
 <p>Observer= 2A, Illuminant= D65
 CIE XYZ tristimulus values x_ref = 95.047, y_ref = 100., z_ref = 108.883</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r24" rules="none">
+<table class="docutils citation" frame="void" id="r32" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id12">[R24]</a></td><td><a class="reference external" href="http://www.easyrgb.com/index.php?X=MATH&amp;H=07#text7">http://www.easyrgb.com/index.php?X=MATH&amp;H=07#text7</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id18">[R32]</a></td><td><a class="reference external" href="http://www.easyrgb.com/index.php?X=MATH&amp;H=07#text7">http://www.easyrgb.com/index.php?X=MATH&amp;H=07#text7</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r25" rules="none">
+<table class="docutils citation" frame="void" id="r33" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id13">[R25]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Lab_color_space">http://en.wikipedia.org/wiki/Lab_color_space</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id19">[R33]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Lab_color_space">http://en.wikipedia.org/wiki/Lab_color_space</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -802,10 +1051,10 @@ CIE XYZ tristimulus values x_ref = 95.047, y_ref = 100., z_ref = 108.883</p>
 <p>The CIE XYZ color space is derived from the CIE RGB color space. Note
 however that this function converts to sRGB.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r26" rules="none">
+<table class="docutils citation" frame="void" id="r34" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id14">[R26]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/CIE_1931_color_space">http://en.wikipedia.org/wiki/CIE_1931_color_space</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id20">[R34]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/CIE_1931_color_space">http://en.wikipedia.org/wiki/CIE_1931_color_space</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -833,8 +1082,10 @@ however that this function converts to sRGB.</p>
         <div class="well sidebar-box toc">
             <ul class="nav nav-list">
 <li><a class="reference internal" href="#">Module: <tt class="docutils literal"><span class="pre">color</span></tt></a><ul class="nav nav-list">
+<li><a class="reference internal" href="#combine-stains">combine_stains</a></li>
 <li><a class="reference internal" href="#convert-colorspace">convert_colorspace</a></li>
 <li><a class="reference internal" href="#gray2rgb">gray2rgb</a></li>
+<li><a class="reference internal" href="#hed2rgb">hed2rgb</a></li>
 <li><a class="reference internal" href="#hsv2rgb">hsv2rgb</a></li>
 <li><a class="reference internal" href="#is-gray">is_gray</a></li>
 <li><a class="reference internal" href="#is-rgb">is_rgb</a></li>
@@ -842,11 +1093,13 @@ however that this function converts to sRGB.</p>
 <li><a class="reference internal" href="#lab2xyz">lab2xyz</a></li>
 <li><a class="reference internal" href="#rgb2gray">rgb2gray</a></li>
 <li><a class="reference internal" href="#rgb2grey">rgb2grey</a></li>
+<li><a class="reference internal" href="#rgb2hed">rgb2hed</a></li>
 <li><a class="reference internal" href="#rgb2hsv">rgb2hsv</a></li>
 <li><a class="reference internal" href="#rgb2lab">rgb2lab</a></li>
 <li><a class="reference internal" href="#rgb2rgbcie">rgb2rgbcie</a></li>
 <li><a class="reference internal" href="#rgb2xyz">rgb2xyz</a></li>
 <li><a class="reference internal" href="#rgbcie2rgb">rgbcie2rgb</a></li>
+<li><a class="reference internal" href="#separate-stains">separate_stains</a></li>
 <li><a class="reference internal" href="#xyz2lab">xyz2lab</a></li>
 <li><a class="reference internal" href="#xyz2rgb">xyz2rgb</a></li>
 </ul>

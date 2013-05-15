@@ -15,12 +15,13 @@ median value of that block. The results are displayed altogether, along
 with a spline interpolation of order 3 rescaling of the original `lena`
 image.
 
+
 .. image:: images/plot_view_as_blocks_1.png
     :align: center
 
 
 .. literalinclude:: plot_view_as_blocks.py
-    :lines: 16-
+    :lines: 17-
 
 
 

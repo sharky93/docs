@@ -22,6 +22,7 @@ API Reference
    skimage.transform
    skimage.util
    skimage.viewer
+   skimage.viewer.canvastools
    skimage.viewer.utils
    skimage.viewer.viewers
    skimage.viewer.widgets

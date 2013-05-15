@@ -9,8 +9,11 @@ Module: :mod:`data`
 
    skimage.data.camera
    skimage.data.checkerboard
+   skimage.data.chelsea
    skimage.data.clock
    skimage.data.coins
+   skimage.data.horse
+   skimage.data.immunohistochemistry
    skimage.data.imread
    skimage.data.lena
    skimage.data.load
@@ -28,6 +31,11 @@ checkerboard
 
 .. autofunction:: skimage.data.checkerboard
 
+chelsea
+-------
+
+.. autofunction:: skimage.data.chelsea
+
 clock
 -----
 
@@ -37,6 +45,16 @@ coins
 -----
 
 .. autofunction:: skimage.data.coins
+
+horse
+-----
+
+.. autofunction:: skimage.data.horse
+
+immunohistochemistry
+--------------------
+
+.. autofunction:: skimage.data.immunohistochemistry
 
 imread
 ------

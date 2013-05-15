@@ -67,23 +67,15 @@
 <span class="kn">from</span> <span class="nn">skimage.draw</span> <span class="kn">import</span> <span class="n">ellipse</span>
 <span class="kn">from</span> <span class="nn">skimage.morphology</span> <span class="kn">import</span> <span class="n">label</span>
 <span class="kn">from</span> <span class="nn">skimage.measure</span> <span class="kn">import</span> <span class="n">regionprops</span>
-<span class="kn">from</span> <span class="nn">scipy.ndimage</span> <span class="kn">import</span> <span class="n">geometric_transform</span>
+<span class="kn">from</span> <span class="nn">skimage.transform</span> <span class="kn">import</span> <span class="n">rotate</span>
 
 
-<span class="n">ANGLE</span> <span class="o">=</span> <span class="mf">0.2</span>
-
-<span class="k">def</span> <span class="nf">rotate</span><span class="p">(</span><span class="n">xy</span><span class="p">):</span>
-    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">xy</span>
-    <span class="n">out_x</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">ANGLE</span><span class="p">)</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ANGLE</span><span class="p">)</span> <span class="o">*</span> <span class="n">y</span>
-    <span class="n">out_y</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ANGLE</span><span class="p">)</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">ANGLE</span><span class="p">)</span> <span class="o">*</span> <span class="n">y</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">out_x</span><span class="p">,</span> <span class="n">out_y</span><span class="p">)</span>
-
-<span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">600</span><span class="p">,</span> <span class="mi">600</span><span class="p">),</span> <span class="s">&#39;int&#39;</span><span class="p">)</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">600</span><span class="p">,</span> <span class="mi">600</span><span class="p">))</span>
 
 <span class="n">rr</span><span class="p">,</span> <span class="n">cc</span> <span class="o">=</span> <span class="n">ellipse</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">220</span><span class="p">)</span>
 <span class="n">image</span><span class="p">[</span><span class="n">rr</span><span class="p">,</span><span class="n">cc</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 
-<span class="n">image</span> <span class="o">=</span> <span class="n">geometric_transform</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">rotate</span><span class="p">)</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">rotate</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">angle</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="n">label_img</span> <span class="o">=</span> <span class="n">label</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 <span class="n">props</span> <span class="o">=</span> <span class="n">regionprops</span><span class="p">(</span><span class="n">label_img</span><span class="p">,</span> <span class="p">[</span>

@@ -113,29 +113,58 @@ following subpackages:</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.get_log" title="skimage.get_log"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.get_log</span></tt></a>([name])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.dtype_limits" title="skimage.dtype_limits"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.dtype_limits</span></tt></a>(image[,&nbsp;clip_negative])</td>
+<td>Return intensity limits, i.e.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.get_log" title="skimage.get_log"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.get_log</span></tt></a>([name])</td>
 <td>Return a console logger.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.img_as_bool" title="skimage.img_as_bool"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.img_as_bool</span></tt></a>(image[,&nbsp;force_copy])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.img_as_bool" title="skimage.img_as_bool"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.img_as_bool</span></tt></a>(image[,&nbsp;force_copy])</td>
 <td>Convert an image to boolean format.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.img_as_float" title="skimage.img_as_float"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.img_as_float</span></tt></a>(image[,&nbsp;force_copy])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.img_as_float" title="skimage.img_as_float"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.img_as_float</span></tt></a>(image[,&nbsp;force_copy])</td>
 <td>Convert an image to double-precision floating point format.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.img_as_int" title="skimage.img_as_int"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.img_as_int</span></tt></a>(image[,&nbsp;force_copy])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.img_as_int" title="skimage.img_as_int"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.img_as_int</span></tt></a>(image[,&nbsp;force_copy])</td>
 <td>Convert an image to 16-bit signed integer format.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.img_as_ubyte" title="skimage.img_as_ubyte"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.img_as_ubyte</span></tt></a>(image[,&nbsp;force_copy])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.img_as_ubyte" title="skimage.img_as_ubyte"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.img_as_ubyte</span></tt></a>(image[,&nbsp;force_copy])</td>
 <td>Convert an image to 8-bit unsigned integer format.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.img_as_uint" title="skimage.img_as_uint"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.img_as_uint</span></tt></a>(image[,&nbsp;force_copy])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.img_as_uint" title="skimage.img_as_uint"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.img_as_uint</span></tt></a>(image[,&nbsp;force_copy])</td>
 <td>Convert an image to 16-bit unsigned integer format.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.test" title="skimage.test"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.test</span></tt></a>([verbose])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.test" title="skimage.test"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.test</span></tt></a>([verbose])</td>
 <td>Invoke the skimage test suite.</td>
 </tr>
 </tbody>
 </table>
+<div class="section" id="dtype-limits">
+<h2>dtype_limits<a class="headerlink" href="#dtype-limits" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.dtype_limits">
+<tt class="descclassname">skimage.</tt><tt class="descname">dtype_limits</tt><big>(</big><em>image</em>, <em>clip_negative=True</em><big>)</big><a class="headerlink" href="#skimage.dtype_limits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return intensity limits, i.e. (min, max) tuple, of the image&#8217;s dtype.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<blockquote>
+<div><p>Input image.</p>
+</div></blockquote>
+<p><strong>clip_negative</strong> : bool</p>
+<blockquote class="last">
+<div><p>If True, clip the negative range (i.e. return 0 for min intensity)
+even if the image dtype allows negative values.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
 <div class="section" id="get-log">
 <h2>get_log<a class="headerlink" href="#get-log" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
@@ -361,6 +390,7 @@ the output image will still only have positive values.</p>
 <li><a class="reference internal" href="#"><tt class="docutils literal"><span class="pre">skimage</span></tt></a><ul class="nav nav-list">
 <li><a class="reference internal" href="#subpackages">Subpackages</a></li>
 <li><a class="reference internal" href="#utility-functions">Utility Functions</a></li>
+<li><a class="reference internal" href="#dtype-limits">dtype_limits</a></li>
 <li><a class="reference internal" href="#get-log">get_log</a></li>
 <li><a class="reference internal" href="#img-as-bool">img_as_bool</a></li>
 <li><a class="reference internal" href="#img-as-float">img_as_float</a></li>

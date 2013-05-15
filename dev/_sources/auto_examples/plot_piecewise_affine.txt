@@ -7,12 +7,13 @@ Piecewise Affine Transformation
 
 This example shows how to use the Piecewise Affine Transformation.
 
+
 .. image:: images/plot_piecewise_affine_1.png
     :align: center
 
 
 .. literalinclude:: plot_piecewise_affine.py
-    :lines: 8-
+    :lines: 9-
 
 
 

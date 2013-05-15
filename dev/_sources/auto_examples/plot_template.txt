@@ -20,12 +20,13 @@ the template.
 .. [1] J. P. Lewis, "Fast Normalized Cross-Correlation", Industrial Light and
        Magic.
 
+
 .. image:: images/plot_template_1.png
     :align: center
 
 
 .. literalinclude:: plot_template.py
-    :lines: 21-
+    :lines: 22-
 
 
 

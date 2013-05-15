@@ -14,6 +14,7 @@ image.
 We start with an image containing both peaks and holes:
 
 
+
 .. code-block:: python
 
 	import matplotlib.pyplot as plt

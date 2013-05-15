@@ -60,6 +60,17 @@ Module: :mod:`viewer.widgets`
   :show-inheritance:
 
   .. automethod:: __init__
+
+:class:`Text`
+-------------
+
+
+.. autoclass:: Text
+  :members:
+  :undoc-members:
+  :show-inheritance:
+
+  .. automethod:: __init__
 .. autosummary::
 
 

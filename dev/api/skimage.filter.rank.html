@@ -74,7 +74,7 @@
 <td>Returns greyscale local bottomhat of an image.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.entropy" title="skimage.filter.rank.entropy"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.entropy</span></tt></a></td>
-<td>Returns the entropy <a class="reference internal" href="#wiki-entropy">[wiki_entropy]</a> computed locally.</td>
+<td>Returns the entropy [R109] computed locally. Entropy is computed</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.equalize" title="skimage.filter.rank.equalize"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.equalize</span></tt></a></td>
 <td>Equalize image using local histogram.</td>
@@ -406,7 +406,7 @@ structuring element).</p>
 <dl class="function">
 <dt id="skimage.filter.rank.entropy">
 <tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">entropy</tt><big>(</big><big>)</big><a class="headerlink" href="#skimage.filter.rank.entropy" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the entropy <a class="reference internal" href="#wiki-entropy">[wiki_entropy]</a> computed locally. Entropy is computed
+<dd><p>Returns the entropy <a class="reference internal" href="#r110">[R110]</a> computed locally. Entropy is computed
 using base 2 logarithm i.e. the filter returns the minimum number of
 bits needed to encode local greylevel distribution.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -449,10 +449,10 @@ structuring element).</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="wiki-entropy" rules="none">
+<table class="docutils citation" frame="void" id="r110" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[wiki_entropy]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id3">2</a>, <a class="fn-backref" href="#id4">3</a>)</em> <a class="reference external" href="http://en.wikipedia.org/wiki/Entropy_(information_theory">http://en.wikipedia.org/wiki/Entropy_(information_theory</a>)</td></tr>
+<tr><td class="label">[R110]</td><td><em>(<a class="fn-backref" href="#id3">1</a>, <a class="fn-backref" href="#id4">2</a>)</em> <a class="reference external" href="http://en.wikipedia.org/wiki/Entropy_(information_theory">http://en.wikipedia.org/wiki/Entropy_(information_theory</a>)</td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -1085,8 +1085,8 @@ structuring element).</p>
 <dt id="skimage.filter.rank.percentile">
 <tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">percentile</tt><big>(</big><big>)</big><a class="headerlink" href="#skimage.filter.rank.percentile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return greyscale local percentile of an image.</p>
-<p>percentile is computed on the given structuring element. Only levels between
-percentiles [p0, p1] are used.</p>
+<p>percentile is computed on the given structuring element. Returns the value
+of the p0 lower percentile of the neighborhood value distribution.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1116,10 +1116,9 @@ neighborhood. If None, the complete image is used (default).</p>
 to the structuring element sizes (center must be inside the given
 structuring element).</p>
 </div></blockquote>
-<p><strong>p0, p1</strong> : float in [0, ..., 1]</p>
+<p><strong>p0</strong> : float in [0, ..., 1]</p>
 <blockquote>
-<div><p>Define the [p0, p1] percentile interval to be considered for computing
-the value.</p>
+<div><p>Set the percentile value.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1470,8 +1469,10 @@ the value.</p>
 <dt id="skimage.filter.rank.percentile_threshold">
 <tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">percentile_threshold</tt><big>(</big><big>)</big><a class="headerlink" href="#skimage.filter.rank.percentile_threshold" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return greyscale local threshold of an image.</p>
-<p>threshold is computed on the given structuring element. Only levels between
-percentiles [p0, p1] are used.</p>
+<p>threshold is computed on the given structuring element. Returns
+thresholded image such that pixels having a higher value than the the p0
+percentile of the neighborhood value distribution are set to 2^nbit-1
+(e.g. 255 for 8bit image).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1501,10 +1502,9 @@ neighborhood. If None, the complete image is used (default).</p>
 to the structuring element sizes (center must be inside the given
 structuring element).</p>
 </div></blockquote>
-<p><strong>p0, p1</strong> : float in [0, ..., 1]</p>
+<p><strong>p0</strong> : float in [0, ..., 1]</p>
 <blockquote>
-<div><p>Define the [p0, p1] percentile interval to be considered for computing
-the value.</p>
+<div><p>Set the percentile value.</p>
 </div></blockquote>
 </td>
 </tr>

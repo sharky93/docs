@@ -5,8 +5,6 @@
 Gabors / Primary Visual Cortex "Simple Cells" from Lena
 =======================================================
 
-(under construction)
-
 How to build a (bio-plausible) "sparse" dictionary (or 'codebook', or
 'filterbank') for e.g. image classification without any fancy math and
 with just standard python scientific libraries?
@@ -44,7 +42,7 @@ is not rocket science.
 
 
 .. literalinclude:: plot_gabors_from_lena.py
-    :lines: 40-
+    :lines: 38-
 
 
 

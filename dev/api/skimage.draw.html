@@ -61,8 +61,8 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.draw.bresenham" title="skimage.draw.bresenham"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.draw.bresenham</span></tt></a></td>
-<td>Generate line pixel coordinates.</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.draw.bresenham" title="skimage.draw.bresenham"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.draw.bresenham</span></tt></a>(*args,&nbsp;**kwargs)</td>
+<td><strong>Deprecated function</strong>. Use <cite>skimage.draw.line</cite> instead.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#skimage.draw.circle" title="skimage.draw.circle"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.draw.circle</span></tt></a></td>
 <td>Generate coordinates of pixels within circle.</td>
@@ -91,19 +91,23 @@
 <h2>bresenham<a class="headerlink" href="#bresenham" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.draw.bresenham">
-<tt class="descclassname">skimage.draw.</tt><tt class="descname">bresenham</tt><big>(</big><big>)</big><a class="headerlink" href="#skimage.draw.bresenham" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate line pixel coordinates.</p>
+<tt class="descclassname">skimage.draw.</tt><tt class="descname">bresenham</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.draw.bresenham" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Deprecated function</strong>. Use <cite>skimage.draw.line</cite> instead.</p>
+<p>Generate line pixel coordinates.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>y, x</strong> : int</p>
 <blockquote>
+<div><blockquote>
 <div><p>Starting position (row, column).</p>
 </div></blockquote>
-<p><strong>y2, x2</strong> : int</p>
-<blockquote>
-<div><p>End position (row, column).</p>
+<dl class="docutils">
+<dt>y2, x2 <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">End position (row, column).</p>
+</dd>
+</dl>
 </div></blockquote>
 </td>
 </tr>
@@ -205,17 +209,17 @@ circles create a disc whereas Bresenham can make holes. There
 is also less distortions when Andres circles are rotated.
 Bresenham method is also known as midpoint circle algorithm.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r58" rules="none">
+<table class="docutils citation" frame="void" id="r38" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[R58]</a></td><td>J.E. Bresenham, &#8220;Algorithm for computer control of a digital
+<tr><td class="label"><a class="fn-backref" href="#id1">[R38]</a></td><td>J.E. Bresenham, &#8220;Algorithm for computer control of a digital
 plotter&#8221;, 4 (1965) 25-30.</td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r59" rules="none">
+<table class="docutils citation" frame="void" id="r39" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[R59]</a></td><td><ol class="first last upperalpha simple" start="5">
+<tr><td class="label"><a class="fn-backref" href="#id2">[R39]</a></td><td><ol class="first last upperalpha simple" start="5">
 <li>Andres, &#8220;Discrete circles, rings and spheres&#8221;, 18 (1994) 695-706.</li>
 </ol>
 </td></tr>
@@ -279,13 +283,13 @@ May be used to directly index into an array, e.g.
 </div></blockquote>
 <p><strong>yradius, xradius: int</strong> :</p>
 <blockquote>
-<div><p>Main radial values.</p>
+<div><p>Minor and major semi-axes. <tt class="docutils literal"><span class="pre">(x/xradius)**2</span> <span class="pre">+</span> <span class="pre">(y/yradius)**2</span> <span class="pre">=</span> <span class="pre">1</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>rr, cc</strong> : (N,) ndarray of int</p>
 <blockquote class="last">
-<div><p>Indices of pixels that belong to the circle perimeter.
+<div><p>Indices of pixels that belong to the ellipse perimeter.
 May be used to directly index into an array, e.g.
 <tt class="docutils literal"><span class="pre">img[rr,</span> <span class="pre">cc]</span> <span class="pre">=</span> <span class="pre">1</span></tt>.</p>
 </div></blockquote>
@@ -294,10 +298,10 @@ May be used to directly index into an array, e.g.
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r60" rules="none">
+<table class="docutils citation" frame="void" id="r40" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[R60]</a></td><td>J. Kennedy &#8220;A fast Bresenham type algorithm for
+<tr><td class="label"><a class="fn-backref" href="#id3">[R40]</a></td><td>J. Kennedy &#8220;A fast Bresenham type algorithm for
 drawing ellipses&#8221;.</td></tr>
 </tbody>
 </table>

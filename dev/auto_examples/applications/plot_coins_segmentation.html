@@ -57,7 +57,7 @@
             
   <div class="section" id="comparing-edge-based-segmentation-and-region-based-segmentation">
 <span id="example-applications-plot-coins-segmentation-py"></span><h1>Comparing edge-based segmentation and region-based segmentation<a class="headerlink" href="#comparing-edge-based-segmentation-and-region-based-segmentation" title="Permalink to this headline">¶</a></h1>
-<p>In this example, we will see how to segment objects from a background.  We use
+<p>In this example, we will see how to segment objects from a background. We use
 the <tt class="docutils literal"><span class="pre">coins</span></tt> image from <tt class="docutils literal"><span class="pre">skimage.data</span></tt>, which shows several coins outlined
 against a darker background.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
@@ -143,9 +143,8 @@ closed are not filled correctly, as is the case for one unfilled coin above.</p>
 </div>
 <div class="section" id="region-based-segmentation">
 <h2>Region-based segmentation<a class="headerlink" href="#region-based-segmentation" title="Permalink to this headline">¶</a></h2>
-<p>We therefore try a region-based method using the
-watershed transform. First, we find an elevation map using the Sobel gradient of the
-image.</p>
+<p>We therefore try a region-based method using the watershed transform. First, we
+find an elevation map using the Sobel gradient of the image.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">skimage.filter</span> <span class="kn">import</span> <span class="n">sobel</span>
 
 <span class="n">elevation_map</span> <span class="o">=</span> <span class="n">sobel</span><span class="p">(</span><span class="n">coins</span><span class="p">)</span>
@@ -170,7 +169,8 @@ of the histogram of grey values.</p>
 </pre></div>
 </div>
 <img alt="../../_images/plot_coins_segmentation_7.png" src="../../_images/plot_coins_segmentation_7.png" />
-<p>Finally, we use the watershed transform to fill regions of the elevation map starting from the markers determined above:</p>
+<p>Finally, we use the watershed transform to fill regions of the elevation map
+starting from the markers determined above:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">segmentation</span> <span class="o">=</span> <span class="n">morphology</span><span class="o">.</span><span class="n">watershed</span><span class="p">(</span><span class="n">elevation_map</span><span class="p">,</span> <span class="n">markers</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
@@ -180,8 +180,8 @@ of the histogram of grey values.</p>
 </pre></div>
 </div>
 <img alt="../../_images/plot_coins_segmentation_8.png" src="../../_images/plot_coins_segmentation_8.png" />
-<p>This last method works even better, and the coins can be segmented and
-labeled individually.</p>
+<p>This last method works even better, and the coins can be segmented and labeled
+individually.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">segmentation</span> <span class="o">=</span> <span class="n">ndimage</span><span class="o">.</span><span class="n">binary_fill_holes</span><span class="p">(</span><span class="n">segmentation</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">labeled_coins</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">ndimage</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="n">segmentation</span><span class="p">)</span>
 

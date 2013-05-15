@@ -22,6 +22,8 @@ Module: :mod:`filter`
    skimage.filter.denoise_bilateral
    skimage.filter.denoise_tv_bregman
    skimage.filter.denoise_tv_chambolle
+   skimage.filter.gabor_filter
+   skimage.filter.gabor_kernel
    skimage.filter.hprewitt
    skimage.filter.hscharr
    skimage.filter.hsobel
@@ -29,6 +31,9 @@ Module: :mod:`filter`
    skimage.filter.median_filter
    skimage.filter.prewitt
    skimage.filter.rank_order
+   skimage.filter.roberts
+   skimage.filter.roberts_negative_diagonal
+   skimage.filter.roberts_positive_diagonal
    skimage.filter.scharr
    skimage.filter.sobel
    skimage.filter.threshold_adaptive
@@ -58,6 +63,16 @@ denoise_tv_chambolle
 --------------------
 
 .. autofunction:: skimage.filter.denoise_tv_chambolle
+
+gabor_filter
+------------
+
+.. autofunction:: skimage.filter.gabor_filter
+
+gabor_kernel
+------------
+
+.. autofunction:: skimage.filter.gabor_kernel
 
 hprewitt
 --------
@@ -93,6 +108,21 @@ rank_order
 ----------
 
 .. autofunction:: skimage.filter.rank_order
+
+roberts
+-------
+
+.. autofunction:: skimage.filter.roberts
+
+roberts_negative_diagonal
+-------------------------
+
+.. autofunction:: skimage.filter.roberts_negative_diagonal
+
+roberts_positive_diagonal
+-------------------------
+
+.. autofunction:: skimage.filter.roberts_positive_diagonal
 
 scharr
 ------

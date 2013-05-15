@@ -80,12 +80,13 @@ References
        keypoints," International Journal of Computer Vision, 60, 2 (2004),
        pp. 91-110.
 
+
 .. image:: images/plot_hog_1.png
     :align: center
 
 
 .. literalinclude:: plot_hog.py
-    :lines: 81-
+    :lines: 82-
 
 
 

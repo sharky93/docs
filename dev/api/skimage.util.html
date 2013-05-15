@@ -61,29 +61,58 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.util.img_as_bool" title="skimage.util.img_as_bool"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.img_as_bool</span></tt></a>(image[,&nbsp;force_copy])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.util.dtype_limits" title="skimage.util.dtype_limits"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.dtype_limits</span></tt></a>(image[,&nbsp;clip_negative])</td>
+<td>Return intensity limits, i.e.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.util.img_as_bool" title="skimage.util.img_as_bool"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.img_as_bool</span></tt></a>(image[,&nbsp;force_copy])</td>
 <td>Convert an image to boolean format.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.util.img_as_float" title="skimage.util.img_as_float"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.img_as_float</span></tt></a>(image[,&nbsp;force_copy])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.util.img_as_float" title="skimage.util.img_as_float"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.img_as_float</span></tt></a>(image[,&nbsp;force_copy])</td>
 <td>Convert an image to double-precision floating point format.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.util.img_as_int" title="skimage.util.img_as_int"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.img_as_int</span></tt></a>(image[,&nbsp;force_copy])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.util.img_as_int" title="skimage.util.img_as_int"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.img_as_int</span></tt></a>(image[,&nbsp;force_copy])</td>
 <td>Convert an image to 16-bit signed integer format.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.util.img_as_ubyte" title="skimage.util.img_as_ubyte"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.img_as_ubyte</span></tt></a>(image[,&nbsp;force_copy])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.util.img_as_ubyte" title="skimage.util.img_as_ubyte"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.img_as_ubyte</span></tt></a>(image[,&nbsp;force_copy])</td>
 <td>Convert an image to 8-bit unsigned integer format.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.util.img_as_uint" title="skimage.util.img_as_uint"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.img_as_uint</span></tt></a>(image[,&nbsp;force_copy])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.util.img_as_uint" title="skimage.util.img_as_uint"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.img_as_uint</span></tt></a>(image[,&nbsp;force_copy])</td>
 <td>Convert an image to 16-bit unsigned integer format.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.util.view_as_blocks" title="skimage.util.view_as_blocks"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.view_as_blocks</span></tt></a>(arr_in,&nbsp;block_shape)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.util.view_as_blocks" title="skimage.util.view_as_blocks"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.view_as_blocks</span></tt></a>(arr_in,&nbsp;block_shape)</td>
 <td>Block view of the input n-dimensional array (using re-striding).</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.util.view_as_windows" title="skimage.util.view_as_windows"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.view_as_windows</span></tt></a>(arr_in,&nbsp;...)</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.util.view_as_windows" title="skimage.util.view_as_windows"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.util.view_as_windows</span></tt></a>(arr_in,&nbsp;...)</td>
 <td>Rolling window view of the input n-dimensional array.</td>
 </tr>
 </tbody>
 </table>
+<div class="section" id="dtype-limits">
+<h2>dtype_limits<a class="headerlink" href="#dtype-limits" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.util.dtype_limits">
+<tt class="descclassname">skimage.util.</tt><tt class="descname">dtype_limits</tt><big>(</big><em>image</em>, <em>clip_negative=True</em><big>)</big><a class="headerlink" href="#skimage.util.dtype_limits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return intensity limits, i.e. (min, max) tuple, of the image&#8217;s dtype.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<blockquote>
+<div><p>Input image.</p>
+</div></blockquote>
+<p><strong>clip_negative</strong> : bool</p>
+<blockquote class="last">
+<div><p>If True, clip the negative range (i.e. return 0 for min intensity)
+even if the image dtype allows negative values.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
 <div class="section" id="img-as-bool">
 <h2>img_as_bool<a class="headerlink" href="#img-as-bool" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
@@ -353,7 +382,7 @@ shifted by a single row or column (or an index of a higher dimension).</p>
 <p><strong>window_shape: tuple</strong> :</p>
 <blockquote>
 <div><p>Defines the shape of the elementary n-dimensional orthotope
-(better know as hyperrectangle <a class="reference internal" href="#r212">[R212]</a>) of the rolling window view.</p>
+(better know as hyperrectangle <a class="reference internal" href="#r168">[R168]</a>) of the rolling window view.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -379,10 +408,10 @@ the rolling view (if one was to reshape the view for example) would
 be 8*(100-3+1)**3*3**3 which is about 203 MB! The scaling becomes
 even worse as the dimension of the input array becomes larger.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r212" rules="none">
+<table class="docutils citation" frame="void" id="r168" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R212]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>)</em> <a class="reference external" href="http://en.wikipedia.org/wiki/Hyperrectangle">http://en.wikipedia.org/wiki/Hyperrectangle</a></td></tr>
+<tr><td class="label">[R168]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>)</em> <a class="reference external" href="http://en.wikipedia.org/wiki/Hyperrectangle">http://en.wikipedia.org/wiki/Hyperrectangle</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -469,6 +498,7 @@ even worse as the dimension of the input array becomes larger.</p>
         <div class="well sidebar-box toc">
             <ul class="nav nav-list">
 <li><a class="reference internal" href="#">Module: <tt class="docutils literal"><span class="pre">util</span></tt></a><ul class="nav nav-list">
+<li><a class="reference internal" href="#dtype-limits">dtype_limits</a></li>
 <li><a class="reference internal" href="#img-as-bool">img_as_bool</a></li>
 <li><a class="reference internal" href="#img-as-float">img_as_float</a></li>
 <li><a class="reference internal" href="#img-as-int">img_as_int</a></li>

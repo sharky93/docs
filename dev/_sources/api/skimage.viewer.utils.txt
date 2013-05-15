@@ -17,22 +17,22 @@ Module: :mod:`viewer.utils`
 
   .. automethod:: __init__
 
-:class:`LinearColormap`
------------------------
+:class:`FigureCanvas`
+---------------------
 
 
-.. autoclass:: LinearColormap
+.. autoclass:: FigureCanvas
   :members:
   :undoc-members:
   :show-inheritance:
 
   .. automethod:: __init__
 
-:class:`MatplotlibCanvas`
--------------------------
+:class:`LinearColormap`
+-----------------------
 
 
-.. autoclass:: MatplotlibCanvas
+.. autoclass:: LinearColormap
   :members:
   :undoc-members:
   :show-inheritance:
@@ -53,6 +53,7 @@ Module: :mod:`viewer.utils`
 
    skimage.viewer.utils.figimage
    skimage.viewer.utils.init_qtapp
+   skimage.viewer.utils.new_plot
    skimage.viewer.utils.start_qtapp
 
 figimage
@@ -64,6 +65,11 @@ init_qtapp
 ----------
 
 .. autofunction:: skimage.viewer.utils.init_qtapp
+
+new_plot
+--------
+
+.. autofunction:: skimage.viewer.utils.new_plot
 
 start_qtapp
 -----------

@@ -30,7 +30,7 @@
         <link rel="top" title="skimage v0.9dev docs" href="../index.html" />
         <link rel="up" title="General examples" href="index.html" />
         <link rel="next" title="Thresholding" href="plot_otsu.html" />
-        <link rel="prev" title="Markers for watershed transform" href="plot_marked_watershed.html" />
+        <link rel="prev" title="Robust matching using RANSAC" href="plot_matching.html" />
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <link rel="shortcut icon" href="../_static/favicon.ico">
 </head>
@@ -85,7 +85,7 @@ a skeleton by iterative morphological thinnings.</p>
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 
-<span class="sd">    l: int, optional </span>
+<span class="sd">    l: int, optional</span>
 <span class="sd">        linear size of the returned image</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -116,8 +116,7 @@ a skeleton by iterative morphological thinnings.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">],</span> <span class="n">colors</span><span class="o">=</span><span class="s">&#39;w&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s">&#39;off&#39;</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">hspace</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-                    <span class="n">right</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">hspace</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -136,7 +135,7 @@ a skeleton by iterative morphological thinnings.</p>
     <h4 class="sidebar-box-heading">Previous topic</h4>
     <div class="well sidebar-box">
         <ul class="nav nav-list">
-            <li><a href="plot_marked_watershed.html" title="previous chapter">Markers for watershed transform</a></li>
+            <li><a href="plot_matching.html" title="previous chapter">Robust matching using RANSAC</a></li>
         </ul>
     </div>
     <h4 class="sidebar-box-heading">Next topic</h4>

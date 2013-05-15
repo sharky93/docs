@@ -7,6 +7,7 @@ Module: :mod:`morphology`
 .. currentmodule:: skimage.morphology
 .. autosummary::
 
+   skimage.morphology.ball
    skimage.morphology.binary_closing
    skimage.morphology.binary_dilation
    skimage.morphology.binary_erosion
@@ -14,6 +15,7 @@ Module: :mod:`morphology`
    skimage.morphology.black_tophat
    skimage.morphology.closing
    skimage.morphology.convex_hull_image
+   skimage.morphology.cube
    skimage.morphology.diamond
    skimage.morphology.dilation
    skimage.morphology.disk
@@ -27,6 +29,7 @@ Module: :mod:`morphology`
    skimage.morphology.is_local_maximum
    skimage.morphology.label
    skimage.morphology.medial_axis
+   skimage.morphology.octahedron
    skimage.morphology.opening
    skimage.morphology.reconstruction
    skimage.morphology.rectangle
@@ -35,6 +38,11 @@ Module: :mod:`morphology`
    skimage.morphology.square
    skimage.morphology.watershed
    skimage.morphology.white_tophat
+
+ball
+----
+
+.. autofunction:: skimage.morphology.ball
 
 binary_closing
 --------------
@@ -70,6 +78,11 @@ convex_hull_image
 -----------------
 
 .. autofunction:: skimage.morphology.convex_hull_image
+
+cube
+----
+
+.. autofunction:: skimage.morphology.cube
 
 diamond
 -------
@@ -135,6 +148,11 @@ medial_axis
 -----------
 
 .. autofunction:: skimage.morphology.medial_axis
+
+octahedron
+----------
+
+.. autofunction:: skimage.morphology.octahedron
 
 opening
 -------

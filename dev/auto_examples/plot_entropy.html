@@ -30,7 +30,7 @@
         <link rel="top" title="skimage v0.9dev docs" href="../index.html" />
         <link rel="up" title="General examples" href="index.html" />
         <link rel="next" title="Histogram Equalization" href="plot_equalize.html" />
-        <link rel="prev" title="Denoising the picture of Lena" href="plot_denoise.html" />
+        <link rel="prev" title="Edge operators" href="plot_edge_filter.html" />
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <link rel="shortcut icon" href="../_static/favicon.ico">
 </head>
@@ -59,18 +59,20 @@
   <div class="section" id="entropy">
 <span id="example-plot-entropy-py"></span><h1>Entropy<a class="headerlink" href="#entropy" title="Permalink to this headline">¶</a></h1>
 <img alt="../_images/plot_entropy_1.png" class="align-center" src="../_images/plot_entropy_1.png" />
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
 <span class="kn">from</span> <span class="nn">skimage.filter.rank</span> <span class="kn">import</span> <span class="n">entropy</span>
 <span class="kn">from</span> <span class="nn">skimage.morphology</span> <span class="kn">import</span> <span class="n">disk</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+
 
 <span class="c"># defining a 8- and a 16-bit test images</span>
 <span class="n">a8</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">camera</span><span class="p">()</span>
-<span class="n">a16</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">camera</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint16</span><span class="p">)</span><span class="o">*</span><span class="mi">4</span>
+<span class="n">a16</span> <span class="o">=</span> <span class="n">a8</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint16</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span>
 
-<span class="n">ent8</span> <span class="o">=</span> <span class="n">entropy</span><span class="p">(</span><span class="n">a8</span><span class="p">,</span><span class="n">disk</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span> <span class="c"># pixel value contain 10x the local entropy</span>
-<span class="n">ent16</span> <span class="o">=</span> <span class="n">entropy</span><span class="p">(</span><span class="n">a16</span><span class="p">,</span><span class="n">disk</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span> <span class="c"># pixel value contain 1000x the local entropy</span>
+<span class="n">ent8</span> <span class="o">=</span> <span class="n">entropy</span><span class="p">(</span><span class="n">a8</span><span class="p">,</span> <span class="n">disk</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span> <span class="c"># pixel value contain 10x the local entropy</span>
+<span class="n">ent16</span> <span class="o">=</span> <span class="n">entropy</span><span class="p">(</span><span class="n">a16</span><span class="p">,</span> <span class="n">disk</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span> <span class="c"># pixel value contain 1000x the local entropy</span>
 
 <span class="c"># display results</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
@@ -112,7 +114,7 @@
     <h4 class="sidebar-box-heading">Previous topic</h4>
     <div class="well sidebar-box">
         <ul class="nav nav-list">
-            <li><a href="plot_denoise.html" title="previous chapter">Denoising the picture of Lena</a></li>
+            <li><a href="plot_edge_filter.html" title="previous chapter">Edge operators</a></li>
         </ul>
     </div>
     <h4 class="sidebar-box-heading">Next topic</h4>

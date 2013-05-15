@@ -7,6 +7,7 @@ Module: :mod:`util`
 .. currentmodule:: skimage.util
 .. autosummary::
 
+   skimage.util.dtype_limits
    skimage.util.img_as_bool
    skimage.util.img_as_float
    skimage.util.img_as_int
@@ -14,6 +15,11 @@ Module: :mod:`util`
    skimage.util.img_as_uint
    skimage.util.view_as_blocks
    skimage.util.view_as_windows
+
+dtype_limits
+------------
+
+.. autofunction:: skimage.util.dtype_limits
 
 img_as_bool
 -----------

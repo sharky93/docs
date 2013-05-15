@@ -86,6 +86,7 @@ Its size is extended by two times the larger radius.</p>
 <span class="kn">from</span> <span class="nn">skimage.feature</span> <span class="kn">import</span> <span class="n">peak_local_max</span>
 <span class="kn">from</span> <span class="nn">skimage.draw</span> <span class="kn">import</span> <span class="n">circle_perimeter</span>
 
+
 <span class="c"># Load picture and detect edges</span>
 <span class="n">image</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">coins</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">95</span><span class="p">,</span> <span class="mi">70</span><span class="p">:</span><span class="mi">370</span><span class="p">]</span>
 <span class="n">edges</span> <span class="o">=</span> <span class="nb">filter</span><span class="o">.</span><span class="n">canny</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">low_threshold</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">high_threshold</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
@@ -103,7 +104,7 @@ Its size is extended by two times the larger radius.</p>
 <span class="k">for</span> <span class="n">radius</span><span class="p">,</span> <span class="n">h</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">hough_radii</span><span class="p">,</span> <span class="n">hough_res</span><span class="p">):</span>
     <span class="c"># For each radius, extract two circles</span>
     <span class="n">peaks</span> <span class="o">=</span> <span class="n">peak_local_max</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">num_peaks</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">centers</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">peaks</span> <span class="o">-</span> <span class="n">hough_radii</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+    <span class="n">centers</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">peaks</span><span class="p">)</span>
     <span class="n">accums</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="n">peaks</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">peaks</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]])</span>
     <span class="n">radii</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">radius</span><span class="p">,</span> <span class="n">radius</span><span class="p">])</span>
 

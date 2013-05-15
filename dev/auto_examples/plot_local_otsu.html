@@ -58,9 +58,10 @@
             
   <div class="section" id="local-otsu-threshold">
 <span id="example-plot-local-otsu-py"></span><h1>Local Otsu Threshold<a class="headerlink" href="#local-otsu-threshold" title="Permalink to this headline">¶</a></h1>
-<p>This example shows how Otsu&#8217;s threshold <a class="footnote-reference" href="#id2" id="id1">[1]</a> method can be applied locally.
-For each pixel, an &#8220;optimal&#8221; threshold is determined by maximizing the variance between two classes of pixels
-of the local neighborhood defined by a structuring element.</p>
+<p>This example shows how Otsu&#8217;s threshold <a class="footnote-reference" href="#id2" id="id1">[1]</a> method can be applied locally. For
+each pixel, an &#8220;optimal&#8221; threshold is determined by maximizing the variance
+between two classes of pixels of the local neighborhood defined by a structuring
+element.</p>
 <p>The example compares the local threshold with the global threshold.</p>
 <table class="docutils footnote" frame="void" id="id2" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
@@ -98,10 +99,10 @@ of the local neighborhood defined by a structuring element.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">p8</span> <span class="o">&gt;=</span> <span class="n">loc_otsu</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gray</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;original&gt;=local Otsu&#39;</span> <span class="o">%</span> <span class="n">t_glob_otsu</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;original &gt;= local Otsu&#39;</span> <span class="o">%</span> <span class="n">t_glob_otsu</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">glob_otsu</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gray</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;global Otsu ($t=</span><span class="si">%d</span><span class="s">$)&#39;</span> <span class="o">%</span> <span class="n">t_glob_otsu</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;global Otsu ($t = </span><span class="si">%d</span><span class="s">$)&#39;</span> <span class="o">%</span> <span class="n">t_glob_otsu</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
