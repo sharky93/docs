@@ -1,7 +1,6 @@
 
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,7 +70,7 @@ e.g. border detection, isolated point detection</li>
 <li>post-processing
 e.g. small object removal, object grouping, contour smoothing</li>
 </ul>
-<p>Some well known filters are specific cases of rank filters <a href="#id9"><span class="problematic" id="id10"><span id="id1"></span>[1]_</span></a> e.g.
+<p>Some well known filters are specific cases of rank filters <a class="footnote-reference" href="#id2" id="id1">[1]</a> e.g.
 morphological dilation, morphological erosion, median filters.</p>
 <p>The different implementation availables in <cite>skimage</cite> are compared.</p>
 <p>In this example, we will see how to filter a greylevel image using some of the
@@ -80,7 +79,7 @@ image from <cite>skimage.data</cite>.</p>
 <table class="docutils footnote" frame="void" id="id2" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[1]</td><td>Pierre Soille, On morphological operators based on rank filters, Pattern
+<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id7">2</a>)</em> Pierre Soille, On morphological operators based on rank filters, Pattern
 Recognition 35 (2002) 527-535.</td></tr>
 </tbody>
 </table>
@@ -356,7 +355,7 @@ percentile <em>p0</em> and <em>p1</em> instead of the local minimum and maximum.
 </div>
 <div class="section" id="image-threshold">
 <h2>Image threshold<a class="headerlink" href="#image-threshold" title="Permalink to this headline">¶</a></h2>
-<p>The Otsu&#8217;s threshold <a href="#id11"><span class="problematic" id="id12"><span id="id7"></span>[1]_</span></a> method can be applied locally using the local
+<p>The Otsu&#8217;s threshold <a class="footnote-reference" href="#id2" id="id7">[1]</a> method can be applied locally using the local
 greylevel distribution. In the example below, for each pixel, an &#8220;optimal&#8221;
 threshold is determined by maximizing the variance between two classes of pixels
 of the local neighborhood defined by a structuring element.</p>
@@ -370,7 +369,7 @@ for global Otsu thresholding: <cite>skimage.filter.threshold_otsu</cite>.</p>
 <table class="docutils footnote" frame="void" id="id8" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[1]</td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Otsu's_method">http://en.wikipedia.org/wiki/Otsu&#8217;s_method</a></td></tr>
+<tr><td class="label">[4]</td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Otsu's_method">http://en.wikipedia.org/wiki/Otsu&#8217;s_method</a></td></tr>
 </tbody>
 </table>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">skimage.filter.rank</span> <span class="kn">import</span> <span class="n">otsu</span>

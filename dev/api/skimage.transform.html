@@ -1,7 +1,6 @@
 
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -536,7 +535,7 @@ smallest singular value normed by the coefficient c3.</p>
 <td>Compute the 2-dimensional finite radon transform (FRT) for an n x n</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.hough" title="skimage.transform.hough"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.hough</span></tt></a>(*args,&nbsp;**kwargs)</td>
-<td><strong>Deprecated function</strong>. Use <cite>hough_line</cite> instead.</td>
+<td><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">hough_line</span></tt> instead.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#skimage.transform.hough_circle" title="skimage.transform.hough_circle"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.hough_circle</span></tt></a></td>
 <td>Perform a circular Hough transform.</td>
@@ -548,7 +547,7 @@ smallest singular value normed by the coefficient c3.</p>
 <td>Return peaks in hough transform.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.hough_peaks" title="skimage.transform.hough_peaks"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.hough_peaks</span></tt></a>(*args,&nbsp;**kwargs)</td>
-<td><strong>Deprecated function</strong>. Use <cite>hough_line_peaks</cite> instead.</td>
+<td><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">hough_line_peaks</span></tt> instead.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#skimage.transform.ifrt2" title="skimage.transform.ifrt2"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.ifrt2</span></tt></a>(a)</td>
 <td>Compute the 2-dimensional inverse finite radon transform (iFRT) for</td>
@@ -563,7 +562,7 @@ smallest singular value normed by the coefficient c3.</p>
 <td>Inverse radon transform.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#skimage.transform.probabilistic_hough" title="skimage.transform.probabilistic_hough"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.probabilistic_hough</span></tt></a>(*args,&nbsp;...)</td>
-<td><strong>Deprecated function</strong>. Use <cite>probabilistic_hough_line</cite> instead.</td>
+<td><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">probabilistic_hough_line</span></tt> instead.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.probabilistic_hough_line" title="skimage.transform.probabilistic_hough_line"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.probabilistic_hough_line</span></tt></a></td>
 <td>Return lines from a progressive probabilistic line Hough transform.</td>
@@ -707,7 +706,7 @@ integer array.</p>
 </tr>
 </tbody>
 </table>
-<div class="admonition-see-also admonition seealso">
+<div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <dl class="last docutils">
 <dt><a class="reference internal" href="#skimage.transform.ifrt2" title="skimage.transform.ifrt2"><tt class="xref py py-obj docutils literal"><span class="pre">ifrt2</span></tt></a></dt>
@@ -745,7 +744,7 @@ Use a prime number for the array dimensions</p>
 <dl class="function">
 <dt id="skimage.transform.hough">
 <tt class="descclassname">skimage.transform.</tt><tt class="descname">hough</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.transform.hough" title="Permalink to this definition">¶</a></dt>
-<dd><p><strong>Deprecated function</strong>. Use <cite>hough_line</cite> instead.</p>
+<dd><p><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">hough_line</span></tt> instead.</p>
 </dd></dl>
 
 </div>
@@ -971,7 +970,7 @@ return <cite>num_peaks</cite> coordinates based on peak intensity.</p>
 <dl class="function">
 <dt id="skimage.transform.hough_peaks">
 <tt class="descclassname">skimage.transform.</tt><tt class="descname">hough_peaks</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.transform.hough_peaks" title="Permalink to this definition">¶</a></dt>
-<dd><p><strong>Deprecated function</strong>. Use <cite>hough_line_peaks</cite> instead.</p>
+<dd><p><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">hough_line_peaks</span></tt> instead.</p>
 </dd></dl>
 
 </div>
@@ -1000,7 +999,7 @@ an (n+1) x n integer array.</p>
 </tr>
 </tbody>
 </table>
-<div class="admonition-see-also admonition seealso">
+<div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <dl class="last docutils">
 <dt><a class="reference internal" href="#skimage.transform.frt2" title="skimage.transform.frt2"><tt class="xref py py-obj docutils literal"><span class="pre">frt2</span></tt></a></dt>
@@ -1009,7 +1008,7 @@ an (n+1) x n integer array.</p>
 </div>
 <p class="rubric">Notes</p>
 <p>The FRT has a unique inverse iff n is prime.
-See <a class="reference internal" href="#r159">[R159]</a> for an overview.
+See <a class="reference internal" href="#r159" id="id2">[R159]</a> for an overview.
 The idea for this algorithm is due to Vlad Negnevitski.</p>
 <p class="rubric">References</p>
 <table class="docutils citation" frame="void" id="r159" rules="none">
@@ -1173,7 +1172,7 @@ projection data. This algorithm is called filtered back projection.</p>
 <dl class="function">
 <dt id="skimage.transform.probabilistic_hough">
 <tt class="descclassname">skimage.transform.</tt><tt class="descname">probabilistic_hough</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.transform.probabilistic_hough" title="Permalink to this definition">¶</a></dt>
-<dd><p><strong>Deprecated function</strong>. Use <cite>probabilistic_hough_line</cite> instead.</p>
+<dd><p><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">probabilistic_hough_line</span></tt> instead.</p>
 </dd></dl>
 
 </div>

@@ -1,7 +1,6 @@
 
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -94,199 +93,23 @@ mapping for such a shift would be:</p>
 <p>Consider the coordinate <img class="math" src="../_images/math/adfd9ae8a3fac031d3b8b470a52a709a23d4d6d2.png" alt="(x, y)"/> in the output image.  The reverse
 mapping for the swirl transformation first computes, relative to a center
 <img class="math" src="../_images/math/d3ea5ae5f5092b7024a8775d282032dc76120c9d.png" alt="(x_0, y_0)"/>, its polar coordinates,</p>
-<div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">heta = rctan(y/x)</tt>)</p>
-latex exited with error:
-[stderr]
+<div class="math">
+<p><img src="../_images/math/4228f2acab4ff61af13ae45a7488613edd85f9b6.png" alt="\theta = \arctan(y/x)
 
-[stdout]
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012)
- restricted \write18 enabled.
-entering extended mode
-(./math.tex
-LaTeX2e &lt;2011/06/27&gt;
-Babel &lt;v3.8m&gt; and hyphenation patterns for english, dumylang, nohyphenation, ge
-rman-x-2012-05-30, ngerman-x-2012-05-30, afrikaans, ancientgreek, ibycus, arabi
-c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
-h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
-h, french, friulan, galician, german, ngerman, swissgerman, monogreek, greek, h
-ungarian, icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, ma
-rathi, oriya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, 
-kurmanji, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk,
- polish, portuguese, romanian, romansh, russian, sanskrit, serbian, serbianc, s
-lovak, slovenian, spanish, swedish, turkish, turkmen, ukrainian, uppersorbian, 
-welsh, loaded.
-(/usr/local/texlive/2012/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/local/texlive/2012/texmf-dist/tex/latex/base/size12.clo))
-(/usr/local/texlive/2012/texmf-dist/tex/latex/base/inputenc.sty
-(/usr/local/texlive/2012/texmf-dist/tex/latex/ucs/utf8x.def))
-(/usr/local/texlive/2012/texmf-dist/tex/latex/ucs/ucs.sty
-(/usr/local/texlive/2012/texmf-dist/tex/latex/ucs/data/uni-global.def))
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsmath.sty
-For additional information on amsmath, use the `?&#8217; option.
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amstext.sty
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsgen.sty))
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsbsy.sty)
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsopn.sty))
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amscls/amsthm.sty)
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/amssymb.sty
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
-(/usr/local/texlive/2012/texmf-dist/tex/latex/tools/bm.sty)
-No file math.aux.
-(/usr/local/texlive/2012/texmf-dist/tex/latex/ucs/ucsencs.def)
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/umsa.fd)
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/umsb.fd)
-
-! Package inputenc Error: Keyboard character used is undefined
-(inputenc)                in inputencoding `utf8x&#8217;.
-
-See the inputenc package documentation for explanation.
-Type  H &lt;return&gt;  for immediate help.
- ...                                              
-                                                  
-l.14 \end{gather}
-                 
-
-! Package inputenc Error: Keyboard character used is undefined
-(inputenc)                in inputencoding `utf8x&#8217;.
-
-See the inputenc package documentation for explanation.
-Type  H &lt;return&gt;  for immediate help.
- ...                                              
-                                                  
-l.14 \end{gather}
-                 
-[1] (./math.aux) )
-(see the transcript file for additional information)
-Output written on math.dvi (1 page, 300 bytes).
-Transcript written on math.log.
-</div>
-<p>ho = sqrt{(x - x_0)^2 + (y - y_0)^2},</p>
-<p>and then transforms them according to</p>
-<div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">r = \ln(2) \, \mathtt{radius} / 5
+\rho = \sqrt{(x - x_0)^2 + (y - y_0)^2},"/></p>
+</div><p>and then transforms them according to</p>
+<div class="math">
+<p><img src="../_images/math/e4dec0eace82131cb99e8a8087bffc34d5295b94.png" alt="r = \ln(2) \, \mathtt{radius} / 5
 
 \phi = \mathtt{rotation}
 
 s = \mathtt{strength}
 
-    heta' = \phi + s \, e^{-</tt>)</p>
-latex exited with error:
-[stderr]
-
-[stdout]
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012)
- restricted \write18 enabled.
-entering extended mode
-(./math.tex
-LaTeX2e &lt;2011/06/27&gt;
-Babel &lt;v3.8m&gt; and hyphenation patterns for english, dumylang, nohyphenation, ge
-rman-x-2012-05-30, ngerman-x-2012-05-30, afrikaans, ancientgreek, ibycus, arabi
-c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
-h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
-h, french, friulan, galician, german, ngerman, swissgerman, monogreek, greek, h
-ungarian, icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, ma
-rathi, oriya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, 
-kurmanji, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk,
- polish, portuguese, romanian, romansh, russian, sanskrit, serbian, serbianc, s
-lovak, slovenian, spanish, swedish, turkish, turkmen, ukrainian, uppersorbian, 
-welsh, loaded.
-(/usr/local/texlive/2012/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/local/texlive/2012/texmf-dist/tex/latex/base/size12.clo))
-(/usr/local/texlive/2012/texmf-dist/tex/latex/base/inputenc.sty
-(/usr/local/texlive/2012/texmf-dist/tex/latex/ucs/utf8x.def))
-(/usr/local/texlive/2012/texmf-dist/tex/latex/ucs/ucs.sty
-(/usr/local/texlive/2012/texmf-dist/tex/latex/ucs/data/uni-global.def))
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsmath.sty
-For additional information on amsmath, use the `?&#8217; option.
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amstext.sty
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsgen.sty))
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsbsy.sty)
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsopn.sty))
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amscls/amsthm.sty)
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/amssymb.sty
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
-(/usr/local/texlive/2012/texmf-dist/tex/latex/tools/bm.sty) (./math.aux)
-(/usr/local/texlive/2012/texmf-dist/tex/latex/ucs/ucsencs.def)
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/umsa.fd)
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/umsb.fd))
-Runaway argument?
-\notag \\\begin {split} heta&#8217; = \phi + s \, e^{-\end {split}\notag \end \ETC.
-! File ended while scanning use of \gather.
-&lt;inserted text&gt; 
-                \par 
-&lt;*&gt; math.tex
-            
-! Emergency stop.
-&lt;*&gt; math.tex
-            
-No pages of output.
-Transcript written on math.log.
-</div>
-<p>ho / r +        heta}</p>
-<p>where <tt class="docutils literal"><span class="pre">strength</span></tt> is a parameter for the amount of swirl, <tt class="docutils literal"><span class="pre">radius</span></tt> indicates
+\theta' = \phi + s \, e^{-\rho / r + \theta}"/></p>
+</div><p>where <tt class="docutils literal"><span class="pre">strength</span></tt> is a parameter for the amount of swirl, <tt class="docutils literal"><span class="pre">radius</span></tt> indicates
 the swirl extent in pixels, and <tt class="docutils literal"><span class="pre">rotation</span></tt> adds a rotation angle.  The
 transformation of <tt class="docutils literal"><span class="pre">radius</span></tt> into <img class="math" src="../_images/math/b55ca7a0aa88ab7d58f4fc035317fdac39b17861.png" alt="r"/> is to ensure that the
-transformation decays to <div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">pprox 1/1000^{\mathsf{th}}</tt>)</p>
-latex exited with error:
-[stderr]
-
-[stdout]
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012)
- restricted \write18 enabled.
-entering extended mode
-(./math.tex
-LaTeX2e &lt;2011/06/27&gt;
-Babel &lt;v3.8m&gt; and hyphenation patterns for english, dumylang, nohyphenation, ge
-rman-x-2012-05-30, ngerman-x-2012-05-30, afrikaans, ancientgreek, ibycus, arabi
-c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
-h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
-h, french, friulan, galician, german, ngerman, swissgerman, monogreek, greek, h
-ungarian, icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, ma
-rathi, oriya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, 
-kurmanji, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk,
- polish, portuguese, romanian, romansh, russian, sanskrit, serbian, serbianc, s
-lovak, slovenian, spanish, swedish, turkish, turkmen, ukrainian, uppersorbian, 
-welsh, loaded.
-(/usr/local/texlive/2012/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/local/texlive/2012/texmf-dist/tex/latex/base/size12.clo))
-(/usr/local/texlive/2012/texmf-dist/tex/latex/base/inputenc.sty
-(/usr/local/texlive/2012/texmf-dist/tex/latex/ucs/utf8x.def))
-(/usr/local/texlive/2012/texmf-dist/tex/latex/ucs/ucs.sty
-(/usr/local/texlive/2012/texmf-dist/tex/latex/ucs/data/uni-global.def))
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsmath.sty
-For additional information on amsmath, use the `?&#8217; option.
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amstext.sty
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsgen.sty))
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsbsy.sty)
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsopn.sty))
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amscls/amsthm.sty)
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/amssymb.sty
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
-(/usr/local/texlive/2012/texmf-dist/tex/latex/tools/bm.sty) (./math.aux)
-(/usr/local/texlive/2012/texmf-dist/tex/latex/ucs/ucsencs.def)
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/umsa.fd)
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/umsb.fd)
-
-! Package inputenc Error: Keyboard character used is undefined
-(inputenc)                in inputencoding `utf8x&#8217;.
-
-See the inputenc package documentation for explanation.
-Type  H &lt;return&gt;  for immediate help.
- ...                                              
-                                                  
-l.12 $^^G
-         pprox 1/1000^{\mathsf{th}}$
-[1] (./math.aux) )
-(see the transcript file for additional information)
-Output written on math.dvi (1 page, 312 bytes).
-Transcript written on math.log.
-</div>
- within the
+transformation decays to <img class="math" src="../_images/math/1542782bde3c79868cb1a7a0e622dc06b31a6b82.png" alt="\approx 1/1000^{\mathsf{th}}"/> within the
 specified radius.</p>
 <img alt="../_images/plot_swirl_1.png" class="align-center" src="../_images/plot_swirl_1.png" />
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>

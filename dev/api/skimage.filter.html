@@ -1,7 +1,6 @@
 
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -168,7 +167,7 @@ other words coordinates are (r[0],c[0]),(r[0],c[1]) etc.
 <td>Return threshold value based on Otsu&#8217;s method.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.tv_denoise" title="skimage.filter.tv_denoise"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.tv_denoise</span></tt></a>(*args,&nbsp;**kwargs)</td>
-<td><strong>Deprecated function</strong>. Use <cite>skimage.filter.denoise_tv_chambolle</cite> instead.</td>
+<td><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">skimage.filter.denoise_tv_chambolle</span></tt> instead.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#skimage.filter.vprewitt" title="skimage.filter.vprewitt"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.vprewitt</span></tt></a>(image[,&nbsp;mask])</td>
 <td>Find the vertical edges of an image using the Prewitt transform.</td>
@@ -226,7 +225,7 @@ other words coordinates are (r[0],c[0]),(r[0],c[1]) etc.
 </tr>
 </tbody>
 </table>
-<div class="admonition-see-also admonition seealso">
+<div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.sobel</span></tt></p>
 </div>
@@ -473,7 +472,7 @@ the integral of the norm of the image gradient. Total variation
 denoising tends to produce &#8220;cartoon-like&#8221; images, that is,
 piecewise-constant images.</p>
 <p>This code is an implementation of the algorithm of Rudin, Fatemi and Osher
-that was proposed by Chambolle in <a class="reference internal" href="#r99">[R99]</a>.</p>
+that was proposed by Chambolle in <a class="reference internal" href="#r99" id="id5">[R99]</a>.</p>
 <p class="rubric">References</p>
 <table class="docutils citation" frame="void" id="r99" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
@@ -1273,7 +1272,7 @@ integer arrays.</p>
 <dl class="function">
 <dt id="skimage.filter.tv_denoise">
 <tt class="descclassname">skimage.filter.</tt><tt class="descname">tv_denoise</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.filter.tv_denoise" title="Permalink to this definition">¶</a></dt>
-<dd><p><strong>Deprecated function</strong>. Use <cite>skimage.filter.denoise_tv_chambolle</cite> instead.</p>
+<dd><p><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">skimage.filter.denoise_tv_chambolle</span></tt> instead.</p>
 <p>Perform total-variation denoising on 2D and 3D images.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1281,32 +1280,32 @@ integer arrays.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>im</strong> : ndarray (2d or 3d) of ints, uints or floats</p>
 <blockquote>
-<div><blockquote>
 <div><p>Input data to be denoised. <cite>im</cite> can be of any numeric type,
 but it is cast into an ndarray of floats for the computation
 of the denoised image.</p>
 </div></blockquote>
-<dl class="docutils">
-<dt>weight <span class="classifier-delimiter">:</span> <span class="classifier">float, optional</span></dt>
-<dd><p class="first last">Denoising weight. The greater <cite>weight</cite>, the more denoising (at
+<p><strong>weight</strong> : float, optional</p>
+<blockquote>
+<div><p>Denoising weight. The greater <cite>weight</cite>, the more denoising (at
 the expense of fidelity to <cite>input</cite>).</p>
-</dd>
-<dt>eps <span class="classifier-delimiter">:</span> <span class="classifier">float, optional</span></dt>
-<dd><p class="first">Relative difference of the value of the cost function that
+</div></blockquote>
+<p><strong>eps</strong> : float, optional</p>
+<blockquote>
+<div><p>Relative difference of the value of the cost function that
 determines the stop criterion. The algorithm stops when:</p>
-<blockquote class="last">
+<blockquote>
 <div><p>(E_(n-1) - E_n) &lt; eps * E_0</p>
 </div></blockquote>
-</dd>
-<dt>n_iter_max <span class="classifier-delimiter">:</span> <span class="classifier">int, optional</span></dt>
-<dd><p class="first last">Maximal number of iterations used for the optimization.</p>
-</dd>
-<dt>multichannel <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional</span></dt>
-<dd><p class="first last">Apply total-variation denoising separately for each channel. This
+</div></blockquote>
+<p><strong>n_iter_max</strong> : int, optional</p>
+<blockquote>
+<div><p>Maximal number of iterations used for the optimization.</p>
+</div></blockquote>
+<p><strong>multichannel</strong> : bool, optional</p>
+<blockquote>
+<div><p>Apply total-variation denoising separately for each channel. This
 option should be true for color images, otherwise the denoising is
 also applied in the 3rd dimension.</p>
-</dd>
-</dl>
 </div></blockquote>
 </td>
 </tr>
@@ -1328,7 +1327,16 @@ the integral of the norm of the image gradient. Total variation
 denoising tends to produce &#8220;cartoon-like&#8221; images, that is,
 piecewise-constant images.</p>
 <p>This code is an implementation of the algorithm of Rudin, Fatemi and Osher
-that was proposed by Chambolle in [R107].</p>
+that was proposed by Chambolle in <a class="reference internal" href="#r107" id="id14">[R107]</a>.</p>
+<p class="rubric">References</p>
+<table class="docutils citation" frame="void" id="r107" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[R107]</td><td><em>(<a class="fn-backref" href="#id14">1</a>, <a class="fn-backref" href="#id15">2</a>)</em> A. Chambolle, An algorithm for total variation minimization and
+applications, Journal of Mathematical Imaging and Vision,
+Springer, 2004, 20, 89-97.</td></tr>
+</tbody>
+</table>
 <p class="rubric">Examples</p>
 <p>2D example on Lena image:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">color</span><span class="p">,</span> <span class="n">data</span>
@@ -1429,7 +1437,7 @@ result at each point:</p>
 <table class="docutils citation" frame="void" id="r108" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id15">[R108]</a></td><td>D. Kroon, 2009, Short Paper University Twente, Numerical Optimization
+<tr><td class="label"><a class="fn-backref" href="#id16">[R108]</a></td><td>D. Kroon, 2009, Short Paper University Twente, Numerical Optimization
 of Kernel Based Image Derivatives.</td></tr>
 </tbody>
 </table>

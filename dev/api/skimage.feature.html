@@ -1,7 +1,6 @@
 
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -551,16 +550,16 @@ weighting function for the auto-correlation matrix.</p>
 <p>DAISY is a feature descriptor similar to SIFT formulated in a way that
 allows for fast dense extraction. Typically, this is practical for
 bag-of-features image representations.</p>
-<p>The implementation follows Tola et al. <a class="reference internal" href="#r74">[R74]</a> but deviate on the following
+<p>The implementation follows Tola et al. <a class="reference internal" href="#r74" id="id9">[R74]</a> but deviate on the following
 points:</p>
 <blockquote>
 <div><ul class="simple">
 <li>Histogram bin contribution are smoothed with a circular Gaussian
 window over the tonal range (the angular range).</li>
 <li>The sigma values of the spatial Gaussian smoothing in this code do not
-match the sigma values in the original code by Tola et al. <a class="reference internal" href="#r75">[R75]</a>. In
+match the sigma values in the original code by Tola et al. <a class="reference internal" href="#r75" id="id10">[R75]</a>. In
 their code, spatial smoothing is applied to both the input image and
-the center histogram. However, this smoothing is not documented in <a class="reference internal" href="#r74">[R74]</a>
+the center histogram. However, this smoothing is not documented in <a class="reference internal" href="#r74" id="id11">[R74]</a>
 and, therefore, it is omitted.</li>
 </ul>
 </div></blockquote>
