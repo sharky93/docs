@@ -1,6 +1,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,16 +61,16 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.draw.bresenham" title="skimage.draw.bresenham"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.draw.bresenham</span></tt></a>(*args,&nbsp;**kwargs)</td>
-<td><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">skimage.draw.line</span></tt> instead.</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.draw.bezier_segment" title="skimage.draw.bezier_segment"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.draw.bezier_segment</span></tt></a></td>
+<td>Generate Bezier segment coordinates.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.draw.circle" title="skimage.draw.circle"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.draw.circle</span></tt></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.draw.circle" title="skimage.draw.circle"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.draw.circle</span></tt></a>(cy,&nbsp;cx,&nbsp;radius[,&nbsp;shape])</td>
 <td>Generate coordinates of pixels within circle.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#skimage.draw.circle_perimeter" title="skimage.draw.circle_perimeter"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.draw.circle_perimeter</span></tt></a></td>
 <td>Generate circle perimeter coordinates.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.draw.ellipse" title="skimage.draw.ellipse"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.draw.ellipse</span></tt></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.draw.ellipse" title="skimage.draw.ellipse"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.draw.ellipse</span></tt></a>(cy,&nbsp;cx,&nbsp;yradius,&nbsp;xradius)</td>
 <td>Generate coordinates of pixels within ellipse.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#skimage.draw.ellipse_perimeter" title="skimage.draw.ellipse_perimeter"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.draw.ellipse_perimeter</span></tt></a></td>
@@ -81,40 +82,58 @@
 <tr class="row-odd"><td><a class="reference internal" href="#skimage.draw.polygon" title="skimage.draw.polygon"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.draw.polygon</span></tt></a></td>
 <td>Generate coordinates of pixels within polygon.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.draw.set_color" title="skimage.draw.set_color"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.draw.set_color</span></tt></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.draw.set_color" title="skimage.draw.set_color"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.draw.set_color</span></tt></a>(img,&nbsp;coords,&nbsp;color)</td>
 <td>Set pixel color in the image at the given coordinates.</td>
 </tr>
 </tbody>
 </table>
-<div class="section" id="bresenham">
-<h2>bresenham<a class="headerlink" href="#bresenham" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="bezier-segment">
+<h2>bezier_segment<a class="headerlink" href="#bezier-segment" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="skimage.draw.bresenham">
-<tt class="descclassname">skimage.draw.</tt><tt class="descname">bresenham</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.draw.bresenham" title="Permalink to this definition">¶</a></dt>
-<dd><p><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">skimage.draw.line</span></tt> instead.</p>
-<p>Generate line pixel coordinates.</p>
+<dt id="skimage.draw.bezier_segment">
+<tt class="descclassname">skimage.draw.</tt><tt class="descname">bezier_segment</tt><big>(</big><big>)</big><a class="headerlink" href="#skimage.draw.bezier_segment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate Bezier segment coordinates.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>y, x</strong> : int</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>y0, x0</strong> : int</p>
 <blockquote>
-<div><p>Starting position (row, column).</p>
+<div><p>Coordinates of the first point</p>
+</div></blockquote>
+<p><strong>y1, x1</strong> : int</p>
+<blockquote>
+<div><p>Coordinates of the middle point</p>
 </div></blockquote>
 <p><strong>y2, x2</strong> : int</p>
 <blockquote>
-<div><p>End position (row, column).</p>
+<div><p>Coordinates of the last point</p>
+</div></blockquote>
+<p><strong>weight</strong> : double</p>
+<blockquote>
+<div><p>Middle point weight, it describes the line tension.</p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>rr, cc</strong> : (N,) ndarray of int</p>
 <blockquote class="last">
-<div><p>Indices of pixels that belong to the line.
+<div><p>Indices of pixels that belong to the Bezier curve.
 May be used to directly index into an array, e.g.
 <tt class="docutils literal"><span class="pre">img[rr,</span> <span class="pre">cc]</span> <span class="pre">=</span> <span class="pre">1</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>The algorithm is the rational quadratic algorithm presented in
+reference [1].</p>
+<p class="rubric">References</p>
+<table class="docutils citation" frame="void" id="r39" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[R39]</a></td><td>A Rasterizing Algorithm for Drawing Curves, A. Zingl, 2012
+<a class="reference external" href="http://members.chello.at/easyfilter/Bresenham.pdf">http://members.chello.at/easyfilter/Bresenham.pdf</a></td></tr>
 </tbody>
 </table>
 </dd></dl>
@@ -124,7 +143,7 @@ May be used to directly index into an array, e.g.
 <h2>circle<a class="headerlink" href="#circle" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.draw.circle">
-<tt class="descclassname">skimage.draw.</tt><tt class="descname">circle</tt><big>(</big><big>)</big><a class="headerlink" href="#skimage.draw.circle" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">skimage.draw.</tt><tt class="descname">circle</tt><big>(</big><em>cy</em>, <em>cx</em>, <em>radius</em>, <em>shape=None</em><big>)</big><a class="headerlink" href="#skimage.draw.circle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate coordinates of pixels within circle.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -140,7 +159,7 @@ May be used to directly index into an array, e.g.
 </div></blockquote>
 <p><strong>shape</strong> : tuple, optional</p>
 <blockquote>
-<div><p>image shape which is used to determine maximum extents of output pixel
+<div><p>Image shape which is used to determine maximum extents of output pixel
 coordinates. This is useful for circles which exceed the image size.
 By default the full extents of the circle are used.</p>
 </div></blockquote>
@@ -161,6 +180,24 @@ May be used to directly index into an array, e.g.
 </tr>
 </tbody>
 </table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.draw</span> <span class="kn">import</span> <span class="n">circle</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rr</span><span class="p">,</span> <span class="n">cc</span> <span class="o">=</span> <span class="n">circle</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img</span><span class="p">[</span><span class="n">rr</span><span class="p">,</span> <span class="n">cc</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img</span>
+<span class="go">array([[0, 0, 1, 1, 1, 1, 1, 0, 0, 0],</span>
+<span class="go">       [0, 1, 1, 1, 1, 1, 1, 1, 0, 0],</span>
+<span class="go">       [1, 1, 1, 1, 1, 1, 1, 1, 1, 0],</span>
+<span class="go">       [1, 1, 1, 1, 1, 1, 1, 1, 1, 0],</span>
+<span class="go">       [1, 1, 1, 1, 1, 1, 1, 1, 1, 0],</span>
+<span class="go">       [1, 1, 1, 1, 1, 1, 1, 1, 1, 0],</span>
+<span class="go">       [1, 1, 1, 1, 1, 1, 1, 1, 1, 0],</span>
+<span class="go">       [0, 1, 1, 1, 1, 1, 1, 1, 0, 0],</span>
+<span class="go">       [0, 0, 1, 1, 1, 1, 1, 0, 0, 0],</span>
+<span class="go">       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]], dtype=uint8)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>
@@ -184,7 +221,7 @@ May be used to directly index into an array, e.g.
 </div></blockquote>
 <p><strong>method</strong> : {&#8216;bresenham&#8217;, &#8216;andres&#8217;}, optional</p>
 <blockquote>
-<div><p>bresenham : Bresenham method
+<div><p>bresenham : Bresenham method (default)
 andres : Andres method</p>
 </div></blockquote>
 </td>
@@ -205,22 +242,38 @@ circles create a disc whereas Bresenham can make holes. There
 is also less distortions when Andres circles are rotated.
 Bresenham method is also known as midpoint circle algorithm.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r38" rules="none">
+<table class="docutils citation" frame="void" id="r40" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[R38]</a></td><td>J.E. Bresenham, &#8220;Algorithm for computer control of a digital
+<tr><td class="label"><a class="fn-backref" href="#id2">[R40]</a></td><td>J.E. Bresenham, &#8220;Algorithm for computer control of a digital
 plotter&#8221;, 4 (1965) 25-30.</td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r39" rules="none">
+<table class="docutils citation" frame="void" id="r41" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[R39]</a></td><td><ol class="first last upperalpha simple" start="5">
-<li>Andres, &#8220;Discrete circles, rings and spheres&#8221;, 18 (1994) 695-706.</li>
-</ol>
-</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id3">[R41]</a></td><td>E. Andres, &#8220;Discrete circles, rings and spheres&#8221;,
+18 (1994) 695-706.</td></tr>
 </tbody>
 </table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.draw</span> <span class="kn">import</span> <span class="n">circle_perimeter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rr</span><span class="p">,</span> <span class="n">cc</span> <span class="o">=</span> <span class="n">circle_perimeter</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img</span><span class="p">[</span><span class="n">rr</span><span class="p">,</span> <span class="n">cc</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img</span>
+<span class="go">array([[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],</span>
+<span class="go">       [0, 0, 0, 1, 1, 1, 0, 0, 0, 0],</span>
+<span class="go">       [0, 0, 1, 0, 0, 0, 1, 0, 0, 0],</span>
+<span class="go">       [0, 1, 0, 0, 0, 0, 0, 1, 0, 0],</span>
+<span class="go">       [0, 1, 0, 0, 0, 0, 0, 1, 0, 0],</span>
+<span class="go">       [0, 1, 0, 0, 0, 0, 0, 1, 0, 0],</span>
+<span class="go">       [0, 0, 1, 0, 0, 0, 1, 0, 0, 0],</span>
+<span class="go">       [0, 0, 0, 1, 1, 1, 0, 0, 0, 0],</span>
+<span class="go">       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],</span>
+<span class="go">       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]], dtype=uint8)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>
@@ -228,7 +281,7 @@ plotter&#8221;, 4 (1965) 25-30.</td></tr>
 <h2>ellipse<a class="headerlink" href="#ellipse" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.draw.ellipse">
-<tt class="descclassname">skimage.draw.</tt><tt class="descname">ellipse</tt><big>(</big><big>)</big><a class="headerlink" href="#skimage.draw.ellipse" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">skimage.draw.</tt><tt class="descname">ellipse</tt><big>(</big><em>cy</em>, <em>cx</em>, <em>yradius</em>, <em>xradius</em>, <em>shape=None</em><big>)</big><a class="headerlink" href="#skimage.draw.ellipse" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate coordinates of pixels within ellipse.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -244,7 +297,7 @@ plotter&#8221;, 4 (1965) 25-30.</td></tr>
 </div></blockquote>
 <p><strong>shape</strong> : tuple, optional</p>
 <blockquote>
-<div><p>image shape which is used to determine maximum extents of output pixel
+<div><p>Image shape which is used to determine maximum extents of output pixel
 coordinates. This is useful for ellipses which exceed the image size.
 By default the full extents of the ellipse are used.</p>
 </div></blockquote>
@@ -260,6 +313,24 @@ May be used to directly index into an array, e.g.
 </tr>
 </tbody>
 </table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.draw</span> <span class="kn">import</span> <span class="n">ellipse</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rr</span><span class="p">,</span> <span class="n">cc</span> <span class="o">=</span> <span class="n">ellipse</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img</span><span class="p">[</span><span class="n">rr</span><span class="p">,</span> <span class="n">cc</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img</span>
+<span class="go">array([[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],</span>
+<span class="go">       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],</span>
+<span class="go">       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],</span>
+<span class="go">       [0, 0, 0, 1, 1, 1, 1, 1, 0, 0],</span>
+<span class="go">       [0, 0, 1, 1, 1, 1, 1, 1, 1, 0],</span>
+<span class="go">       [0, 0, 1, 1, 1, 1, 1, 1, 1, 0],</span>
+<span class="go">       [0, 0, 1, 1, 1, 1, 1, 1, 1, 0],</span>
+<span class="go">       [0, 0, 0, 1, 1, 1, 1, 1, 0, 0],</span>
+<span class="go">       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],</span>
+<span class="go">       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]], dtype=uint8)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>
@@ -281,6 +352,10 @@ May be used to directly index into an array, e.g.
 <blockquote>
 <div><p>Minor and major semi-axes. <tt class="docutils literal"><span class="pre">(x/xradius)**2</span> <span class="pre">+</span> <span class="pre">(y/yradius)**2</span> <span class="pre">=</span> <span class="pre">1</span></tt>.</p>
 </div></blockquote>
+<p><strong>orientation: double, optional (default 0)</strong> :</p>
+<blockquote>
+<div><p>Major axis orientation in clockwise direction as radians.</p>
+</div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>rr, cc</strong> : (N,) ndarray of int</p>
@@ -294,13 +369,31 @@ May be used to directly index into an array, e.g.
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r40" rules="none">
+<table class="docutils citation" frame="void" id="r42" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[R40]</a></td><td>J. Kennedy &#8220;A fast Bresenham type algorithm for
-drawing ellipses&#8221;.</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id4">[R42]</a></td><td>A Rasterizing Algorithm for Drawing Curves, A. Zingl, 2012
+<a class="reference external" href="http://members.chello.at/easyfilter/Bresenham.pdf">http://members.chello.at/easyfilter/Bresenham.pdf</a></td></tr>
 </tbody>
 </table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.draw</span> <span class="kn">import</span> <span class="n">ellipse_perimeter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rr</span><span class="p">,</span> <span class="n">cc</span> <span class="o">=</span> <span class="n">ellipse_perimeter</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img</span><span class="p">[</span><span class="n">rr</span><span class="p">,</span> <span class="n">cc</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img</span>
+<span class="go">array([[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],</span>
+<span class="go">       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],</span>
+<span class="go">       [0, 0, 0, 1, 1, 1, 1, 1, 0, 0],</span>
+<span class="go">       [0, 0, 1, 0, 0, 0, 0, 0, 1, 0],</span>
+<span class="go">       [0, 1, 0, 0, 0, 0, 0, 0, 0, 1],</span>
+<span class="go">       [0, 1, 0, 0, 0, 0, 0, 0, 0, 1],</span>
+<span class="go">       [0, 1, 0, 0, 0, 0, 0, 0, 0, 1],</span>
+<span class="go">       [0, 0, 1, 0, 0, 0, 0, 0, 1, 0],</span>
+<span class="go">       [0, 0, 0, 1, 1, 1, 1, 1, 0, 0],</span>
+<span class="go">       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]], dtype=uint8)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>
@@ -334,6 +427,24 @@ May be used to directly index into an array, e.g.
 </tr>
 </tbody>
 </table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.draw</span> <span class="kn">import</span> <span class="n">line</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rr</span><span class="p">,</span> <span class="n">cc</span> <span class="o">=</span> <span class="n">line</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img</span><span class="p">[</span><span class="n">rr</span><span class="p">,</span> <span class="n">cc</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img</span>
+<span class="go">array([[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],</span>
+<span class="go">       [0, 1, 0, 0, 0, 0, 0, 0, 0, 0],</span>
+<span class="go">       [0, 0, 1, 0, 0, 0, 0, 0, 0, 0],</span>
+<span class="go">       [0, 0, 0, 1, 0, 0, 0, 0, 0, 0],</span>
+<span class="go">       [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],</span>
+<span class="go">       [0, 0, 0, 0, 0, 1, 0, 0, 0, 0],</span>
+<span class="go">       [0, 0, 0, 0, 0, 0, 1, 0, 0, 0],</span>
+<span class="go">       [0, 0, 0, 0, 0, 0, 0, 1, 0, 0],</span>
+<span class="go">       [0, 0, 0, 0, 0, 0, 0, 0, 1, 0],</span>
+<span class="go">       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]], dtype=uint8)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>
@@ -357,7 +468,7 @@ May be used to directly index into an array, e.g.
 </div></blockquote>
 <p><strong>shape</strong> : tuple, optional</p>
 <blockquote>
-<div><p>image shape which is used to determine maximum extents of output pixel
+<div><p>Image shape which is used to determine maximum extents of output pixel
 coordinates. This is useful for polygons which exceed the image size.
 By default the full extents of the polygon are used.</p>
 </div></blockquote>
@@ -373,6 +484,26 @@ May be used to directly index into an array, e.g.
 </tr>
 </tbody>
 </table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.draw</span> <span class="kn">import</span> <span class="n">polygon</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rr</span><span class="p">,</span> <span class="n">cc</span> <span class="o">=</span> <span class="n">polygon</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img</span><span class="p">[</span><span class="n">rr</span><span class="p">,</span> <span class="n">cc</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img</span>
+<span class="go">array([[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],</span>
+<span class="go">       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],</span>
+<span class="go">       [0, 0, 1, 1, 1, 1, 1, 0, 0, 0],</span>
+<span class="go">       [0, 0, 1, 1, 1, 1, 1, 0, 0, 0],</span>
+<span class="go">       [0, 0, 0, 1, 1, 1, 0, 0, 0, 0],</span>
+<span class="go">       [0, 0, 0, 1, 1, 1, 0, 0, 0, 0],</span>
+<span class="go">       [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],</span>
+<span class="go">       [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],</span>
+<span class="go">       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],</span>
+<span class="go">       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]], dtype=uint8)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>
@@ -380,7 +511,7 @@ May be used to directly index into an array, e.g.
 <h2>set_color<a class="headerlink" href="#set-color" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.draw.set_color">
-<tt class="descclassname">skimage.draw.</tt><tt class="descname">set_color</tt><big>(</big><big>)</big><a class="headerlink" href="#skimage.draw.set_color" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">skimage.draw.</tt><tt class="descname">set_color</tt><big>(</big><em>img</em>, <em>coords</em>, <em>color</em><big>)</big><a class="headerlink" href="#skimage.draw.set_color" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set pixel color in the image at the given coordinates.</p>
 <p>Coordinates that exceed the shape of the image will be ignored.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -409,6 +540,24 @@ May be used to directly index into an array, e.g.
 </tr>
 </tbody>
 </table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.draw</span> <span class="kn">import</span> <span class="n">line</span><span class="p">,</span> <span class="n">set_color</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rr</span><span class="p">,</span> <span class="n">cc</span> <span class="o">=</span> <span class="n">line</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">set_color</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="n">rr</span><span class="p">,</span> <span class="n">cc</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img</span>
+<span class="go">array([[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],</span>
+<span class="go">       [0, 1, 0, 0, 0, 0, 0, 0, 0, 0],</span>
+<span class="go">       [0, 0, 1, 0, 0, 0, 0, 0, 0, 0],</span>
+<span class="go">       [0, 0, 0, 1, 0, 0, 0, 0, 0, 0],</span>
+<span class="go">       [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],</span>
+<span class="go">       [0, 0, 0, 0, 0, 1, 0, 0, 0, 0],</span>
+<span class="go">       [0, 0, 0, 0, 0, 0, 1, 0, 0, 0],</span>
+<span class="go">       [0, 0, 0, 0, 0, 0, 0, 1, 0, 0],</span>
+<span class="go">       [0, 0, 0, 0, 0, 0, 0, 0, 1, 0],</span>
+<span class="go">       [0, 0, 0, 0, 0, 0, 0, 0, 0, 1]], dtype=uint8)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>
@@ -426,7 +575,7 @@ May be used to directly index into an array, e.g.
         <div class="well sidebar-box toc">
             <ul class="nav nav-list">
 <li><a class="reference internal" href="#">Module: <tt class="docutils literal"><span class="pre">draw</span></tt></a><ul class="nav nav-list">
-<li><a class="reference internal" href="#bresenham">bresenham</a></li>
+<li><a class="reference internal" href="#bezier-segment">bezier_segment</a></li>
 <li><a class="reference internal" href="#circle">circle</a></li>
 <li><a class="reference internal" href="#circle-perimeter">circle_perimeter</a></li>
 <li><a class="reference internal" href="#ellipse">ellipse</a></li>

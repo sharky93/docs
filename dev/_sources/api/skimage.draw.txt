@@ -7,7 +7,7 @@ Module: :mod:`draw`
 .. currentmodule:: skimage.draw
 .. autosummary::
 
-   skimage.draw.bresenham
+   skimage.draw.bezier_segment
    skimage.draw.circle
    skimage.draw.circle_perimeter
    skimage.draw.ellipse
@@ -16,10 +16,10 @@ Module: :mod:`draw`
    skimage.draw.polygon
    skimage.draw.set_color
 
-bresenham
----------
+bezier_segment
+--------------
 
-.. autofunction:: skimage.draw.bresenham
+.. autofunction:: skimage.draw.bezier_segment
 
 circle
 ------

@@ -13,6 +13,9 @@ Module: :mod:`util`
    skimage.util.img_as_int
    skimage.util.img_as_ubyte
    skimage.util.img_as_uint
+   skimage.util.pad
+   skimage.util.random_noise
+   skimage.util.regular_grid
    skimage.util.view_as_blocks
    skimage.util.view_as_windows
 
@@ -45,6 +48,21 @@ img_as_uint
 -----------
 
 .. autofunction:: skimage.util.img_as_uint
+
+pad
+---
+
+.. autofunction:: skimage.util.pad
+
+random_noise
+------------
+
+.. autofunction:: skimage.util.random_noise
+
+regular_grid
+------------
+
+.. autofunction:: skimage.util.regular_grid
 
 view_as_blocks
 --------------

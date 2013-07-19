@@ -1,6 +1,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,8 +61,11 @@
 <p>This example shows how to approximate (Douglas-Peucker algorithm) and subdivide
 (B-Splines) polygonal chains.</p>
 <img alt="../_images/plot_polygon_1.png" class="align-center" src="../_images/plot_polygon_1.png" />
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+
 <span class="kn">from</span> <span class="nn">skimage.draw</span> <span class="kn">import</span> <span class="n">ellipse</span>
 <span class="kn">from</span> <span class="nn">skimage.measure</span> <span class="kn">import</span> <span class="n">find_contours</span><span class="p">,</span> <span class="n">approximate_polygon</span><span class="p">,</span> \
     <span class="n">subdivide_polygon</span>
@@ -98,7 +102,7 @@
 <span class="c"># approximate subdivided polygon with Douglas-Peucker algorithm</span>
 <span class="n">appr_hand</span> <span class="o">=</span> <span class="n">approximate_polygon</span><span class="p">(</span><span class="n">new_hand</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mf">0.02</span><span class="p">)</span>
 
-<span class="k">print</span> <span class="s">&quot;Number of coordinates:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">hand</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">new_hand</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">appr_hand</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Number of coordinates:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">hand</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">new_hand</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">appr_hand</span><span class="p">))</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 
@@ -123,7 +127,7 @@
     <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">coords</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">coords</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="s">&#39;-r&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">coords2</span> <span class="o">=</span> <span class="n">approximate_polygon</span><span class="p">(</span><span class="n">contour</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mf">39.5</span><span class="p">)</span>
     <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">coords2</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">coords2</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="s">&#39;-g&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-    <span class="k">print</span> <span class="s">&quot;Number of coordinates:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">contour</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">coords</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">coords2</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;Number of coordinates:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">contour</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">coords</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">coords2</span><span class="p">))</span>
 
 <span class="n">ax2</span><span class="o">.</span><span class="n">axis</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">800</span><span class="p">))</span>
 

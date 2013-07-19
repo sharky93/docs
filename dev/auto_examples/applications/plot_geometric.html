@@ -1,6 +1,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,7 +57,9 @@
 <span id="example-applications-plot-geometric-py"></span><h1>Using geometric transformations<a class="headerlink" href="#using-geometric-transformations" title="Permalink to this headline">¶</a></h1>
 <p>In this example, we will see how to use geometric transformations in the context
 of image processing.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+
+<span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 
@@ -75,7 +78,7 @@ affine, projective and polynomial.</p>
 <p>First we create a transformation using explicit parameters:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">tform</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">SimilarityTransform</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
                                <span class="n">translation</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-<span class="k">print</span> <span class="n">tform</span><span class="o">.</span><span class="n">_matrix</span>
+<span class="k">print</span><span class="p">(</span><span class="n">tform</span><span class="o">.</span><span class="n">_matrix</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Alternatively you can define a transformation by the transformation matrix
@@ -89,8 +92,8 @@ itself:</p>
 coordinate transformations between the source and destination coordinate
 systems:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">coord</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-<span class="k">print</span> <span class="n">tform2</span><span class="p">(</span><span class="n">coord</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">tform2</span><span class="o">.</span><span class="n">inverse</span><span class="p">(</span><span class="n">tform</span><span class="p">(</span><span class="n">coord</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">tform2</span><span class="p">(</span><span class="n">coord</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">tform2</span><span class="o">.</span><span class="n">inverse</span><span class="p">(</span><span class="n">tform</span><span class="p">(</span><span class="n">coord</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>

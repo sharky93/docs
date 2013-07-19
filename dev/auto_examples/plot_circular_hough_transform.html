@@ -1,6 +1,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -84,10 +85,11 @@ Its size is extended by two times the larger radius.</p>
 <span class="kn">from</span> <span class="nn">skimage.transform</span> <span class="kn">import</span> <span class="n">hough_circle</span>
 <span class="kn">from</span> <span class="nn">skimage.feature</span> <span class="kn">import</span> <span class="n">peak_local_max</span>
 <span class="kn">from</span> <span class="nn">skimage.draw</span> <span class="kn">import</span> <span class="n">circle_perimeter</span>
+<span class="kn">from</span> <span class="nn">skimage.util</span> <span class="kn">import</span> <span class="n">img_as_ubyte</span>
 
 
 <span class="c"># Load picture and detect edges</span>
-<span class="n">image</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">coins</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">95</span><span class="p">,</span> <span class="mi">70</span><span class="p">:</span><span class="mi">370</span><span class="p">]</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">img_as_ubyte</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">coins</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">95</span><span class="p">,</span> <span class="mi">70</span><span class="p">:</span><span class="mi">370</span><span class="p">])</span>
 <span class="n">edges</span> <span class="o">=</span> <span class="nb">filter</span><span class="o">.</span><span class="n">canny</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">low_threshold</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">high_threshold</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>

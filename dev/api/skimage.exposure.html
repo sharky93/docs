@@ -1,6 +1,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,26 +61,184 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.exposure.cumulative_distribution" title="skimage.exposure.cumulative_distribution"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.exposure.cumulative_distribution</span></tt></a>(image)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.exposure.adjust_gamma" title="skimage.exposure.adjust_gamma"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.exposure.adjust_gamma</span></tt></a>(image[,&nbsp;...])</td>
+<td>Performs Gamma Correction on the input image.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.exposure.adjust_log" title="skimage.exposure.adjust_log"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.exposure.adjust_log</span></tt></a>(image[,&nbsp;gain,&nbsp;inv])</td>
+<td>Performs Logarithmic correction on the input image.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.exposure.adjust_sigmoid" title="skimage.exposure.adjust_sigmoid"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.exposure.adjust_sigmoid</span></tt></a>(image[,&nbsp;...])</td>
+<td>Performs Sigmoid Correction on the input image.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.exposure.cumulative_distribution" title="skimage.exposure.cumulative_distribution"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.exposure.cumulative_distribution</span></tt></a>(image)</td>
 <td>Return cumulative distribution function (cdf) for the given image.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.exposure.equalize" title="skimage.exposure.equalize"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.exposure.equalize</span></tt></a>(*args,&nbsp;**kwargs)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.exposure.equalize" title="skimage.exposure.equalize"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.exposure.equalize</span></tt></a>(*args,&nbsp;**kwargs)</td>
 <td><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">equalize_hist</span></tt> instead.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.exposure.equalize_adapthist" title="skimage.exposure.equalize_adapthist"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.exposure.equalize_adapthist</span></tt></a>(image[,&nbsp;...])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.exposure.equalize_adapthist" title="skimage.exposure.equalize_adapthist"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.exposure.equalize_adapthist</span></tt></a>(image[,&nbsp;...])</td>
 <td>Contrast Limited Adaptive Histogram Equalization.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.exposure.equalize_hist" title="skimage.exposure.equalize_hist"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.exposure.equalize_hist</span></tt></a>(image[,&nbsp;nbins])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.exposure.equalize_hist" title="skimage.exposure.equalize_hist"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.exposure.equalize_hist</span></tt></a>(image[,&nbsp;nbins])</td>
 <td>Return image after histogram equalization.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.exposure.histogram" title="skimage.exposure.histogram"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.exposure.histogram</span></tt></a>(image[,&nbsp;nbins])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.exposure.histogram" title="skimage.exposure.histogram"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.exposure.histogram</span></tt></a>(image[,&nbsp;nbins])</td>
 <td>Return histogram of image.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.exposure.rescale_intensity" title="skimage.exposure.rescale_intensity"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.exposure.rescale_intensity</span></tt></a>(image[,&nbsp;...])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.exposure.rescale_intensity" title="skimage.exposure.rescale_intensity"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.exposure.rescale_intensity</span></tt></a>(image[,&nbsp;...])</td>
 <td>Return image after stretching or shrinking its intensity levels.</td>
 </tr>
 </tbody>
 </table>
+<div class="section" id="adjust-gamma">
+<h2>adjust_gamma<a class="headerlink" href="#adjust-gamma" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.exposure.adjust_gamma">
+<tt class="descclassname">skimage.exposure.</tt><tt class="descname">adjust_gamma</tt><big>(</big><em>image</em>, <em>gamma=1</em>, <em>gain=1</em><big>)</big><a class="headerlink" href="#skimage.exposure.adjust_gamma" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs Gamma Correction on the input image.</p>
+<p>Also known as Power Law Transform.
+This function transforms the input image pixelwise according to the
+equation <tt class="docutils literal"><span class="pre">O</span> <span class="pre">=</span> <span class="pre">I**gamma</span></tt> after scaling each pixel to the range 0 to 1.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<blockquote>
+<div><p>Input image.</p>
+</div></blockquote>
+<p><strong>gamma</strong> : float</p>
+<blockquote>
+<div><p>Non negative real number. Default value is 1.</p>
+</div></blockquote>
+<p><strong>gain</strong> : float</p>
+<blockquote>
+<div><p>The constant multiplier. Default value is 1.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
+<blockquote class="last">
+<div><p>Gamma corrected output image.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>For gamma greater than 1, the histogram will shift towards left and
+the output image will be darker than the input image.</p>
+<p>For gamma less than 1, the histogram will shift towards right and
+the output image will be brighter than the input image.</p>
+<p class="rubric">References</p>
+<table class="docutils citation" frame="void" id="r51" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[R51]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Gamma_correction">http://en.wikipedia.org/wiki/Gamma_correction</a></td></tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="adjust-log">
+<h2>adjust_log<a class="headerlink" href="#adjust-log" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.exposure.adjust_log">
+<tt class="descclassname">skimage.exposure.</tt><tt class="descname">adjust_log</tt><big>(</big><em>image</em>, <em>gain=1</em>, <em>inv=False</em><big>)</big><a class="headerlink" href="#skimage.exposure.adjust_log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs Logarithmic correction on the input image.</p>
+<p>This function transforms the input image pixelwise according to the
+equation <tt class="docutils literal"><span class="pre">O</span> <span class="pre">=</span> <span class="pre">gain*log(1</span> <span class="pre">+</span> <span class="pre">I)</span></tt> after scaling each pixel to the range 0 to 1.
+For inverse logarithmic correction, the equation is <tt class="docutils literal"><span class="pre">O</span> <span class="pre">=</span> <span class="pre">gain*(2**I</span> <span class="pre">-</span> <span class="pre">1)</span></tt>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<blockquote>
+<div><p>Input image.</p>
+</div></blockquote>
+<p><strong>gain</strong> : float</p>
+<blockquote>
+<div><p>The constant multiplier. Default value is 1.</p>
+</div></blockquote>
+<p><strong>inv</strong> : float</p>
+<blockquote>
+<div><p>If True, it performs inverse logarithmic correction,
+else correction will be logarithmic. Defaults to False.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
+<blockquote class="last">
+<div><p>Logarithm corrected output image.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">References</p>
+<table class="docutils citation" frame="void" id="r52" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[R52]</a></td><td><a class="reference external" href="http://www.ece.ucsb.edu/Faculty/Manjunath/courses/ece178W03/EnhancePart1.pdf">http://www.ece.ucsb.edu/Faculty/Manjunath/courses/ece178W03/EnhancePart1.pdf</a></td></tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="adjust-sigmoid">
+<h2>adjust_sigmoid<a class="headerlink" href="#adjust-sigmoid" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.exposure.adjust_sigmoid">
+<tt class="descclassname">skimage.exposure.</tt><tt class="descname">adjust_sigmoid</tt><big>(</big><em>image</em>, <em>cutoff=0.5</em>, <em>gain=10</em>, <em>inv=False</em><big>)</big><a class="headerlink" href="#skimage.exposure.adjust_sigmoid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs Sigmoid Correction on the input image.</p>
+<p>Also known as Contrast Adjustment.
+This function transforms the input image pixelwise according to the
+equation <tt class="docutils literal"><span class="pre">O</span> <span class="pre">=</span> <span class="pre">1/(1</span> <span class="pre">+</span> <span class="pre">exp*(gain*(cutoff</span> <span class="pre">-</span> <span class="pre">I)))</span></tt> after scaling each pixel
+to the range 0 to 1.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<blockquote>
+<div><p>Input image.</p>
+</div></blockquote>
+<p><strong>cutoff</strong> : float</p>
+<blockquote>
+<div><p>Cutoff of the sigmoid function that shifts the characteristic curve
+in horizontal direction. Default value is 0.5.</p>
+</div></blockquote>
+<p><strong>gain</strong> : float</p>
+<blockquote>
+<div><p>The constant multiplier in exponential&#8217;s power of sigmoid function.
+Default value is 10.</p>
+</div></blockquote>
+<p><strong>inv</strong> : bool</p>
+<blockquote>
+<div><p>If True, returns the negative sigmoid correction. Defaults to False.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
+<blockquote class="last">
+<div><p>Sigmoid corrected output image.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">References</p>
+<table class="docutils citation" frame="void" id="r53" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[R53]</a></td><td>Gustav J. Braun, &#8220;Image Lightness Rescaling Using Sigmoidal Contrast</td></tr>
+</tbody>
+</table>
+<p>Enhancement Functions&#8221; <a class="reference external" href="http://www.cis.rit.edu/fairchild/PDFs/PAP07.pdf">http://www.cis.rit.edu/fairchild/PDFs/PAP07.pdf</a></p>
+</dd></dl>
+
+</div>
 <div class="section" id="cumulative-distribution">
 <h2>cumulative_distribution<a class="headerlink" href="#cumulative-distribution" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
@@ -113,10 +272,10 @@
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r46" rules="none">
+<table class="docutils citation" frame="void" id="r54" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[R46]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Cumulative_distribution_function">http://en.wikipedia.org/wiki/Cumulative_distribution_function</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id4">[R54]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Cumulative_distribution_function">http://en.wikipedia.org/wiki/Cumulative_distribution_function</a></td></tr>
 </tbody>
 </table>
 </dd></dl>
@@ -192,16 +351,16 @@ at their original values, thus  preserving the input image shape.</p>
 </li>
 </ul>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r47" rules="none">
+<table class="docutils citation" frame="void" id="r55" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[R47]</a></td><td><a class="reference external" href="http://tog.acm.org/resources/GraphicsGems/gems.html#gemsvi">http://tog.acm.org/resources/GraphicsGems/gems.html#gemsvi</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id5">[R55]</a></td><td><a class="reference external" href="http://tog.acm.org/resources/GraphicsGems/gems.html#gemsvi">http://tog.acm.org/resources/GraphicsGems/gems.html#gemsvi</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r48" rules="none">
+<table class="docutils citation" frame="void" id="r56" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[R48]</a></td><td><a class="reference external" href="https://en.wikipedia.org/wiki/CLAHE#CLAHE">https://en.wikipedia.org/wiki/CLAHE#CLAHE</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id6">[R56]</a></td><td><a class="reference external" href="https://en.wikipedia.org/wiki/CLAHE#CLAHE">https://en.wikipedia.org/wiki/CLAHE#CLAHE</a></td></tr>
 </tbody>
 </table>
 </dd></dl>
@@ -236,18 +395,18 @@ at their original values, thus  preserving the input image shape.</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>This function is adapted from <a class="reference internal" href="#r49" id="id4">[R49]</a> with the author&#8217;s permission.</p>
+<p>This function is adapted from <a class="reference internal" href="#r57">[R57]</a> with the author&#8217;s permission.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r49" rules="none">
+<table class="docutils citation" frame="void" id="r57" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R49]</td><td><em>(<a class="fn-backref" href="#id4">1</a>, <a class="fn-backref" href="#id5">2</a>)</em> <a class="reference external" href="http://www.janeriksolem.net/2009/06/histogram-equalization-with-python-and.html">http://www.janeriksolem.net/2009/06/histogram-equalization-with-python-and.html</a></td></tr>
+<tr><td class="label">[R57]</td><td><em>(<a class="fn-backref" href="#id7">1</a>, <a class="fn-backref" href="#id8">2</a>)</em> <a class="reference external" href="http://www.janeriksolem.net/2009/06/histogram-equalization-with-python-and.html">http://www.janeriksolem.net/2009/06/histogram-equalization-with-python-and.html</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r50" rules="none">
+<table class="docutils citation" frame="void" id="r58" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id6">[R50]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Histogram_equalization">http://en.wikipedia.org/wiki/Histogram_equalization</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id9">[R58]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Histogram_equalization">http://en.wikipedia.org/wiki/Histogram_equalization</a></td></tr>
 </tbody>
 </table>
 </dd></dl>
@@ -262,6 +421,9 @@ at their original values, thus  preserving the input image shape.</p>
 <p>Unlike <cite>numpy.histogram</cite>, this function returns the centers of bins and
 does not rebin integer arrays. For integer arrays, each integer value has
 its own bin, which improves speed and intensity-resolution.</p>
+<p>The histogram is computed on the flattened image: for color images, the
+function should be used separately on each channel to obtain a histogram
+for each color channel.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -392,6 +554,9 @@ just the positive range, use the <cite>out_range</cite> parameter:</p>
         <div class="well sidebar-box toc">
             <ul class="nav nav-list">
 <li><a class="reference internal" href="#">Module: <tt class="docutils literal"><span class="pre">exposure</span></tt></a><ul class="nav nav-list">
+<li><a class="reference internal" href="#adjust-gamma">adjust_gamma</a></li>
+<li><a class="reference internal" href="#adjust-log">adjust_log</a></li>
+<li><a class="reference internal" href="#adjust-sigmoid">adjust_sigmoid</a></li>
 <li><a class="reference internal" href="#cumulative-distribution">cumulative_distribution</a></li>
 <li><a class="reference internal" href="#equalize">equalize</a></li>
 <li><a class="reference internal" href="#equalize-adapthist">equalize_adapthist</a></li>

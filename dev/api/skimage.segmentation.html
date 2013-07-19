@@ -1,6 +1,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -84,7 +85,7 @@
 <tr class="row-even"><td><a class="reference internal" href="#skimage.segmentation.relabel_from_one" title="skimage.segmentation.relabel_from_one"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.relabel_from_one</span></tt></a>(...)</td>
 <td>Convert labels in an arbitrary label field to {1, ...</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.segmentation.slic" title="skimage.segmentation.slic"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.slic</span></tt></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.segmentation.slic" title="skimage.segmentation.slic"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.slic</span></tt></a>(image[,&nbsp;...])</td>
 <td>Segments image using k-means clustering in Color-(x,y) space.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#skimage.segmentation.visualize_boundaries" title="skimage.segmentation.visualize_boundaries"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.visualize_boundaries</span></tt></a>(...)</td>
@@ -194,10 +195,10 @@ intersection of the separate segmentations on the color channels.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r150" rules="none">
+<table class="docutils citation" frame="void" id="r160" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[R150]</a></td><td>Efficient graph-based image segmentation, Felzenszwalb, P.F. and
+<tr><td class="label"><a class="fn-backref" href="#id1">[R160]</a></td><td>Efficient graph-based image segmentation, Felzenszwalb, P.F. and
 Huttenlocher, D.P.  International Journal of Computer Vision, 2004</td></tr>
 </tbody>
 </table>
@@ -308,35 +309,35 @@ algorithm.</p>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
-<p><strong>ratio</strong> : float, between 0 and 1.</p>
+<p><strong>ratio</strong> : float, optional, between 0 and 1 (default 1).</p>
 <blockquote>
 <div><p>Balances color-space proximity and image-space proximity.
 Higher values give more weight to color-space.</p>
 </div></blockquote>
-<p><strong>kernel_size</strong> : float</p>
+<p><strong>kernel_size</strong> : float, optional (default 5)</p>
 <blockquote>
 <div><p>Width of Gaussian kernel used in smoothing the
 sample density. Higher means fewer clusters.</p>
 </div></blockquote>
-<p><strong>max_dist</strong> : float</p>
+<p><strong>max_dist</strong> : float, optional (default 10)</p>
 <blockquote>
 <div><p>Cut-off point for data distances.
 Higher means fewer clusters.</p>
 </div></blockquote>
-<p><strong>return_tree</strong> : bool</p>
+<p><strong>return_tree</strong> : bool, optional (default False)</p>
 <blockquote>
 <div><p>Whether to return the full segmentation hierarchy tree and distances.</p>
 </div></blockquote>
-<p><strong>sigma</strong> : float</p>
+<p><strong>sigma</strong> : float, optional (default 0)</p>
 <blockquote>
 <div><p>Width for Gaussian smoothing as preprocessing. Zero means no smoothing.</p>
 </div></blockquote>
-<p><strong>convert2lab</strong> : bool</p>
+<p><strong>convert2lab</strong> : bool, optional (default True)</p>
 <blockquote>
 <div><p>Whether the input should be converted to Lab colorspace prior to
 segmentation. For this purpose, the input is assumed to be RGB.</p>
 </div></blockquote>
-<p><strong>random_seed</strong> : None or int</p>
+<p><strong>random_seed</strong> : None (default) or int, optional</p>
 <blockquote>
 <div><p>Random seed used for breaking ties.</p>
 </div></blockquote>
@@ -355,10 +356,10 @@ segmentation. For this purpose, the input is assumed to be RGB.</p>
 segmentation, though this is not strictly necessary. For this to work, the
 image must be given in RGB format.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r151" rules="none">
+<table class="docutils citation" frame="void" id="r161" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[R151]</a></td><td>Quick shift and kernel methods for mode seeking,
+<tr><td class="label"><a class="fn-backref" href="#id2">[R161]</a></td><td>Quick shift and kernel methods for mode seeking,
 Vedaldi, A. and Soatto, S.
 European Conference on Computer Vision, 2008</td></tr>
 </tbody>
@@ -469,7 +470,7 @@ that label <cite>label_nb</cite> reaches the pixel <cite>(i, j)</cite> first.</l
 </tr>
 </tbody>
 </table>
-<div class="admonition seealso">
+<div class="admonition-see-also admonition seealso">
 <p class="first admonition-title">See also</p>
 <dl class="last docutils">
 <dt><a class="reference internal" href="skimage.morphology.html#skimage.morphology.watershed" title="skimage.morphology.watershed"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.watershed</span></tt></a></dt>
@@ -594,35 +595,43 @@ to the original ones).</p>
 <h2>slic<a class="headerlink" href="#slic" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.segmentation.slic">
-<tt class="descclassname">skimage.segmentation.</tt><tt class="descname">slic</tt><big>(</big><big>)</big><a class="headerlink" href="#skimage.segmentation.slic" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">skimage.segmentation.</tt><tt class="descname">slic</tt><big>(</big><em>image</em>, <em>n_segments=100</em>, <em>ratio=10.0</em>, <em>max_iter=10</em>, <em>sigma=1</em>, <em>multichannel=None</em>, <em>convert2lab=True</em><big>)</big><a class="headerlink" href="#skimage.segmentation.slic" title="Permalink to this definition">¶</a></dt>
 <dd><p>Segments image using k-means clustering in Color-(x,y) space.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : (width, height [, 3]) ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : (width, height [, depth] [, 3]) ndarray</p>
 <blockquote>
-<div><p>Input image.</p>
+<div><p>Input image, which can be 2D or 3D, and grayscale or multi-channel
+(see <cite>multichannel</cite> parameter).</p>
 </div></blockquote>
-<p><strong>n_segments</strong> : int</p>
+<p><strong>n_segments</strong> : int, optional (default: 100)</p>
 <blockquote>
 <div><p>The (approximate) number of labels in the segmented output image.</p>
 </div></blockquote>
-<p><strong>ratio: float</strong> :</p>
+<p><strong>ratio: float, optional (default: 10)</strong> :</p>
 <blockquote>
 <div><p>Balances color-space proximity and image-space proximity.
 Higher values give more weight to color-space.</p>
 </div></blockquote>
-<p><strong>max_iter</strong> : int</p>
+<p><strong>max_iter</strong> : int, optional (default: 10)</p>
 <blockquote>
 <div><p>Maximum number of iterations of k-means.</p>
 </div></blockquote>
-<p><strong>sigma</strong> : float</p>
+<p><strong>sigma</strong> : float, optional (default: 1)</p>
 <blockquote>
 <div><p>Width of Gaussian smoothing kernel for preprocessing. Zero means no
 smoothing.</p>
 </div></blockquote>
-<p><strong>convert2lab</strong> : bool</p>
+<p><strong>multichannel</strong> : bool, optional (default: None)</p>
+<blockquote>
+<div><p>Whether the last axis of the image is to be interpreted as multiple
+channels. Only 3 channels are supported. If <cite>None</cite>, the function will
+attempt to guess this, and raise a warning if ambiguous, when the
+array has shape (M, N, 3).</p>
+</div></blockquote>
+<p><strong>convert2lab</strong> : bool, optional (default: True)</p>
 <blockquote>
 <div><p>Whether the input should be converted to Lab colorspace prior to
 segmentation.  For this purpose, the input is assumed to be RGB. Highly
@@ -631,20 +640,40 @@ recommended.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>segment_mask</strong> : (width, height) ndarray</p>
-<blockquote class="last">
+<blockquote>
 <div><p>Integer mask indicating segment labels.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<blockquote class="last">
+<div><dl class="docutils">
+<dt>If:</dt>
+<dd><ul class="first simple">
+<li>the image dimension is not 2 or 3 and <cite>multichannel == False</cite>, OR</li>
+<li>the image dimension is not 3 or 4 and <cite>multichannel == True</cite>, OR</li>
+<li><cite>multichannel == True</cite> and the length of the last dimension of</li>
+</ul>
+<p class="last">the image is not 3, OR</p>
+</dd>
+</dl>
 </div></blockquote>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>The image is smoothed using a Gaussian kernel prior to segmentation.</p>
+<p>If <cite>sigma &gt; 0</cite> as is default, the image is smoothed using a Gaussian kernel
+prior to segmentation.</p>
+<p>The image is rescaled to be in [0, 1] prior to processing.</p>
+<p>Images of shape (M, N, 3) are interpreted as 2D RGB images by default. To
+interpret them as 3D with the last dimension having length 3, use
+<cite>multichannel=False</cite>.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r152" rules="none">
+<table class="docutils citation" frame="void" id="r162" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[R152]</a></td><td>Radhakrishna Achanta, Appu Shaji, Kevin Smith, Aurelien Lucchi,
+<tr><td class="label"><a class="fn-backref" href="#id3">[R162]</a></td><td>Radhakrishna Achanta, Appu Shaji, Kevin Smith, Aurelien Lucchi,
 Pascal Fua, and Sabine Süsstrunk, SLIC Superpixels Compared to
 State-of-the-art Superpixel Methods, TPAMI, May 2012.</td></tr>
 </tbody>

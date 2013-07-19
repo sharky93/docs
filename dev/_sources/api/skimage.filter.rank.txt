@@ -16,7 +16,7 @@ Module: :mod:`filter.rank`
    skimage.filter.rank.gradient
    skimage.filter.rank.maximum
    skimage.filter.rank.mean
-   skimage.filter.rank.meansubstraction
+   skimage.filter.rank.meansubtraction
    skimage.filter.rank.median
    skimage.filter.rank.minimum
    skimage.filter.rank.modal
@@ -27,7 +27,7 @@ Module: :mod:`filter.rank`
    skimage.filter.rank.percentile_autolevel
    skimage.filter.rank.percentile_gradient
    skimage.filter.rank.percentile_mean
-   skimage.filter.rank.percentile_mean_substraction
+   skimage.filter.rank.percentile_mean_subtraction
    skimage.filter.rank.percentile_morph_contr_enh
    skimage.filter.rank.percentile_pop
    skimage.filter.rank.percentile_threshold
@@ -80,10 +80,10 @@ mean
 
 .. autofunction:: skimage.filter.rank.mean
 
-meansubstraction
-----------------
+meansubtraction
+---------------
 
-.. autofunction:: skimage.filter.rank.meansubstraction
+.. autofunction:: skimage.filter.rank.meansubtraction
 
 median
 ------
@@ -135,10 +135,10 @@ percentile_mean
 
 .. autofunction:: skimage.filter.rank.percentile_mean
 
-percentile_mean_substraction
-----------------------------
+percentile_mean_subtraction
+---------------------------
 
-.. autofunction:: skimage.filter.rank.percentile_mean_substraction
+.. autofunction:: skimage.filter.rank.percentile_mean_subtraction
 
 percentile_morph_contr_enh
 --------------------------

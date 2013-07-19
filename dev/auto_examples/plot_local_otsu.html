@@ -1,6 +1,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,12 +73,12 @@ element.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 
 <span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
-<span class="kn">from</span> <span class="nn">skimage.morphology.selem</span> <span class="kn">import</span> <span class="n">disk</span>
-<span class="kn">import</span> <span class="nn">skimage.filter.rank</span> <span class="kn">as</span> <span class="nn">rank</span>
-<span class="kn">from</span> <span class="nn">skimage.filter</span> <span class="kn">import</span> <span class="n">threshold_otsu</span>
+<span class="kn">from</span> <span class="nn">skimage.morphology</span> <span class="kn">import</span> <span class="n">disk</span>
+<span class="kn">from</span> <span class="nn">skimage.filter</span> <span class="kn">import</span> <span class="n">threshold_otsu</span><span class="p">,</span> <span class="n">rank</span>
+<span class="kn">from</span> <span class="nn">skimage.util</span> <span class="kn">import</span> <span class="n">img_as_ubyte</span>
 
 
-<span class="n">p8</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">page</span><span class="p">()</span>
+<span class="n">p8</span> <span class="o">=</span> <span class="n">img_as_ubyte</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">page</span><span class="p">())</span>
 
 <span class="n">radius</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">selem</span> <span class="o">=</span> <span class="n">disk</span><span class="p">(</span><span class="n">radius</span><span class="p">)</span>

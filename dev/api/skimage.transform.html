@@ -1,6 +1,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -528,17 +529,23 @@ smallest singular value normed by the coefficient c3.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.estimate_transform" title="skimage.transform.estimate_transform"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.estimate_transform</span></tt></a>(ttype,&nbsp;...)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.downscale_local_means" title="skimage.transform.downscale_local_means"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.downscale_local_means</span></tt></a>(...)</td>
+<td>Downsamples the array in blocks of input integer factors after padding the original array with zeroes if the dimensions are not perfectly divisible by factors and replaces it with mean i.e.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.transform.estimate_transform" title="skimage.transform.estimate_transform"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.estimate_transform</span></tt></a>(ttype,&nbsp;...)</td>
 <td>Estimate 2D geometric transformation parameters.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.transform.frt2" title="skimage.transform.frt2"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.frt2</span></tt></a>(a)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.frt2" title="skimage.transform.frt2"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.frt2</span></tt></a>(a)</td>
 <td>Compute the 2-dimensional finite radon transform (FRT) for an n x n</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.hough" title="skimage.transform.hough"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.hough</span></tt></a>(*args,&nbsp;**kwargs)</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.transform.hough" title="skimage.transform.hough"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.hough</span></tt></a>(*args,&nbsp;**kwargs)</td>
 <td><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">hough_line</span></tt> instead.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.transform.hough_circle" title="skimage.transform.hough_circle"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.hough_circle</span></tt></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.hough_circle" title="skimage.transform.hough_circle"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.hough_circle</span></tt></a></td>
 <td>Perform a circular Hough transform.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.transform.hough_ellipse" title="skimage.transform.hough_ellipse"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.hough_ellipse</span></tt></a></td>
+<td>Perform an elliptical Hough transform.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.hough_line" title="skimage.transform.hough_line"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.hough_line</span></tt></a></td>
 <td>Perform a straight line Hough transform.</td>
@@ -561,47 +568,90 @@ smallest singular value normed by the coefficient c3.</p>
 <tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.iradon" title="skimage.transform.iradon"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.iradon</span></tt></a>(radon_image[,&nbsp;...])</td>
 <td>Inverse radon transform.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.transform.probabilistic_hough" title="skimage.transform.probabilistic_hough"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.probabilistic_hough</span></tt></a>(*args,&nbsp;...)</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.transform.iradon_sart" title="skimage.transform.iradon_sart"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.iradon_sart</span></tt></a>(radon_image[,&nbsp;...])</td>
+<td>Inverse radon transform</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.probabilistic_hough" title="skimage.transform.probabilistic_hough"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.probabilistic_hough</span></tt></a>(*args,&nbsp;...)</td>
 <td><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">probabilistic_hough_line</span></tt> instead.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.probabilistic_hough_line" title="skimage.transform.probabilistic_hough_line"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.probabilistic_hough_line</span></tt></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.transform.probabilistic_hough_line" title="skimage.transform.probabilistic_hough_line"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.probabilistic_hough_line</span></tt></a></td>
 <td>Return lines from a progressive probabilistic line Hough transform.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.transform.pyramid_expand" title="skimage.transform.pyramid_expand"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.pyramid_expand</span></tt></a>(image[,&nbsp;...])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.pyramid_expand" title="skimage.transform.pyramid_expand"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.pyramid_expand</span></tt></a>(image[,&nbsp;...])</td>
 <td>Upsample and then smooth image.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.pyramid_gaussian" title="skimage.transform.pyramid_gaussian"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.pyramid_gaussian</span></tt></a>(image[,&nbsp;...])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.transform.pyramid_gaussian" title="skimage.transform.pyramid_gaussian"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.pyramid_gaussian</span></tt></a>(image[,&nbsp;...])</td>
 <td>Yield images of the gaussian pyramid formed by the input image.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.transform.pyramid_laplacian" title="skimage.transform.pyramid_laplacian"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.pyramid_laplacian</span></tt></a>(image[,&nbsp;...])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.pyramid_laplacian" title="skimage.transform.pyramid_laplacian"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.pyramid_laplacian</span></tt></a>(image[,&nbsp;...])</td>
 <td>Yield images of the laplacian pyramid formed by the input image.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.pyramid_reduce" title="skimage.transform.pyramid_reduce"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.pyramid_reduce</span></tt></a>(image[,&nbsp;...])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.transform.pyramid_reduce" title="skimage.transform.pyramid_reduce"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.pyramid_reduce</span></tt></a>(image[,&nbsp;...])</td>
 <td>Smooth and then downsample image.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.transform.radon" title="skimage.transform.radon"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.radon</span></tt></a>(image[,&nbsp;theta])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.radon" title="skimage.transform.radon"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.radon</span></tt></a>(image[,&nbsp;theta,&nbsp;circle])</td>
 <td>Calculates the radon transform of an image given specified projection angles.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.rescale" title="skimage.transform.rescale"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.rescale</span></tt></a>(image,&nbsp;scale[,&nbsp;...])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.transform.rescale" title="skimage.transform.rescale"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.rescale</span></tt></a>(image,&nbsp;scale[,&nbsp;...])</td>
 <td>Scale image by a certain factor.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.transform.resize" title="skimage.transform.resize"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.resize</span></tt></a>(image,&nbsp;output_shape)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.resize" title="skimage.transform.resize"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.resize</span></tt></a>(image,&nbsp;output_shape)</td>
 <td>Resize image to match a certain size.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.rotate" title="skimage.transform.rotate"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.rotate</span></tt></a>(image,&nbsp;angle[,&nbsp;...])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.transform.rotate" title="skimage.transform.rotate"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.rotate</span></tt></a>(image,&nbsp;angle[,&nbsp;...])</td>
 <td>Rotate image by a certain angle around its center.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.transform.swirl" title="skimage.transform.swirl"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.swirl</span></tt></a>(image[,&nbsp;center,&nbsp;...])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.swirl" title="skimage.transform.swirl"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.swirl</span></tt></a>(image[,&nbsp;center,&nbsp;...])</td>
 <td>Perform a swirl transformation.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.warp" title="skimage.transform.warp"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.warp</span></tt></a>(image[,&nbsp;inverse_map,&nbsp;...])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.transform.warp" title="skimage.transform.warp"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.warp</span></tt></a>(image[,&nbsp;inverse_map,&nbsp;...])</td>
 <td>Warp an image according to a given coordinate transformation.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.transform.warp_coords" title="skimage.transform.warp_coords"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.warp_coords</span></tt></a>(coord_map,&nbsp;shape)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.transform.warp_coords" title="skimage.transform.warp_coords"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.transform.warp_coords</span></tt></a>(coord_map,&nbsp;shape)</td>
 <td>Build the source coordinates for the output pixels of an image warp.</td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="section" id="downscale-local-means">
+<h2>downscale_local_means<a class="headerlink" href="#downscale-local-means" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.transform.downscale_local_means">
+<tt class="descclassname">skimage.transform.</tt><tt class="descname">downscale_local_means</tt><big>(</big><em>array</em>, <em>factors</em><big>)</big><a class="headerlink" href="#skimage.transform.downscale_local_means" title="Permalink to this definition">¶</a></dt>
+<dd><p>Downsamples the array in blocks of input integer factors after padding
+the original array with zeroes if the dimensions are not perfectly
+divisible by factors and replaces it with mean i.e. average value.</p>
+<p>This function is different from resize and rescale in the sense that they
+use interpolation to upsample or downsample on a 2D array, while this
+function performs only dawnsampling but on any n-dimensional array and
+returns the arithmetic mean of elements in a block of size factors in the
+original array.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>array</strong> : ndarray</p>
+<blockquote>
+<div><p>Input n-dimensional array.</p>
+</div></blockquote>
+<p><strong>factors: tuple</strong> :</p>
+<blockquote>
+<div><p>Tuple containing integer values representing block length along each
+axis.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>array</strong> : ndarray</p>
+<blockquote class="last">
+<div><p>Downsampled array with same number of dimensions as that of input
+array.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </div>
 <div class="section" id="estimate-transform">
 <h2>estimate_transform<a class="headerlink" href="#estimate-transform" title="Permalink to this headline">¶</a></h2>
@@ -706,7 +756,7 @@ integer array.</p>
 </tr>
 </tbody>
 </table>
-<div class="admonition seealso">
+<div class="admonition-see-also admonition seealso">
 <p class="first admonition-title">See also</p>
 <dl class="last docutils">
 <dt><a class="reference internal" href="#skimage.transform.ifrt2" title="skimage.transform.ifrt2"><tt class="xref py py-obj docutils literal"><span class="pre">ifrt2</span></tt></a></dt>
@@ -766,12 +816,12 @@ Use a prime number for the array dimensions</p>
 <blockquote>
 <div><p>Radii at which to compute the Hough transform.</p>
 </div></blockquote>
-<p><strong>normalize</strong> : boolean, optional</p>
+<p><strong>normalize</strong> : boolean, optional (default True)</p>
 <blockquote>
 <div><p>Normalize the accumulator with the number
-of pixels used to draw the radius</p>
+of pixels used to draw the radius.</p>
 </div></blockquote>
-<p><strong>full_output</strong> : boolean, optional</p>
+<p><strong>full_output</strong> : boolean, optional (default False)</p>
 <blockquote>
 <div><p>Extend the output size by twice the largest
 radius in order to detect centers outside the
@@ -789,6 +839,73 @@ Otherwise, R = 0.</p>
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+</div>
+<div class="section" id="hough-ellipse">
+<h2>hough_ellipse<a class="headerlink" href="#hough-ellipse" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.transform.hough_ellipse">
+<tt class="descclassname">skimage.transform.</tt><tt class="descname">hough_ellipse</tt><big>(</big><big>)</big><a class="headerlink" href="#skimage.transform.hough_ellipse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform an elliptical Hough transform.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>img</strong> : (M, N) ndarray</p>
+<blockquote>
+<div><p>Input image with nonzero values representing edges.</p>
+</div></blockquote>
+<p><strong>threshold: int, optional (default 4)</strong> :</p>
+<blockquote>
+<div><p>Accumulator threshold value.</p>
+</div></blockquote>
+<p><strong>accuracy</strong> : double, optional (default 1)</p>
+<blockquote>
+<div><p>Bin size on the minor axis used in the accumulator.</p>
+</div></blockquote>
+<p><strong>min_size</strong> : int, optional (default 4)</p>
+<blockquote>
+<div><p>Minimal major axis length.</p>
+</div></blockquote>
+<p><strong>max_size</strong> : int, optional</p>
+<blockquote>
+<div><p>Maximal minor axis length. (default None)
+If None, the value is set to the half of the smaller
+image dimension.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>res</strong> : list of tuples [(x0, y0, a, b, angle, accumulator)]</p>
+<blockquote class="last">
+<div><p>Where (x0, y0) is the center, (a, b) major and minor axis.
+The angle value follows <cite>draw.ellipse_perimeter()</cite> convention.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>The accuracy must be chosen to produce a peak in the accumulator
+distribution. In other words, a flat accumulator distribution with low
+values may be caused by a too low bin size.</p>
+<p class="rubric">References</p>
+<table class="docutils citation" frame="void" id="r177" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[R177]</a></td><td>Xie, Yonghong, and Qiang Ji. &#8220;A new efficient ellipse detection
+method.&#8221; Pattern Recognition, 2002. Proceedings. 16th International
+Conference on. Vol. 2. IEEE, 2002</td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">25</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rr</span><span class="p">,</span> <span class="n">cc</span> <span class="o">=</span> <span class="n">draw</span><span class="o">.</span><span class="n">ellipse_perimeter</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img</span><span class="p">[</span><span class="n">rr</span><span class="p">,</span> <span class="n">cc</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">hough_ellipse</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<span class="go">[(10.0, 10.0, 8.0, 6.0474292058692187, 0.0, 8)]</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>
@@ -999,7 +1116,7 @@ an (n+1) x n integer array.</p>
 </tr>
 </tbody>
 </table>
-<div class="admonition seealso">
+<div class="admonition-see-also admonition seealso">
 <p class="first admonition-title">See also</p>
 <dl class="last docutils">
 <dt><a class="reference internal" href="#skimage.transform.frt2" title="skimage.transform.frt2"><tt class="xref py py-obj docutils literal"><span class="pre">frt2</span></tt></a></dt>
@@ -1008,13 +1125,13 @@ an (n+1) x n integer array.</p>
 </div>
 <p class="rubric">Notes</p>
 <p>The FRT has a unique inverse iff n is prime.
-See <a class="reference internal" href="#r161" id="id2">[R161]</a> for an overview.
+See <a class="reference internal" href="#r178">[R178]</a> for an overview.
 The idea for this algorithm is due to Vlad Negnevitski.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r161" rules="none">
+<table class="docutils citation" frame="void" id="r178" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R161]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id3">2</a>)</em> A. Kingston and I. Svalbe, &#8220;Projective transforms on periodic
+<tr><td class="label">[R178]</td><td><em>(<a class="fn-backref" href="#id3">1</a>, <a class="fn-backref" href="#id4">2</a>)</em> A. Kingston and I. Svalbe, &#8220;Projective transforms on periodic
 discrete image arrays,&#8221; in P. Hawkes (Ed), Advances in Imaging
 and Electron Physics, 139 (2006)</td></tr>
 </tbody>
@@ -1068,10 +1185,10 @@ left of it, i.e.:</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r162" rules="none">
+<table class="docutils citation" frame="void" id="r179" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[R162]</a></td><td>F.C. Crow, &#8220;Summed-area tables for texture mapping,&#8221;
+<tr><td class="label"><a class="fn-backref" href="#id5">[R179]</a></td><td>F.C. Crow, &#8220;Summed-area tables for texture mapping,&#8221;
 ACM SIGGRAPH Computer Graphics, vol. 18, 1984, pp. 207-212.</td></tr>
 </tbody>
 </table>
@@ -1117,7 +1234,7 @@ ACM SIGGRAPH Computer Graphics, vol. 18, 1984, pp. 207-212.</td></tr>
 <h2>iradon<a class="headerlink" href="#iradon" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.transform.iradon">
-<tt class="descclassname">skimage.transform.</tt><tt class="descname">iradon</tt><big>(</big><em>radon_image</em>, <em>theta=None</em>, <em>output_size=None</em>, <em>filter='ramp'</em>, <em>interpolation='linear'</em><big>)</big><a class="headerlink" href="#skimage.transform.iradon" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">skimage.transform.</tt><tt class="descname">iradon</tt><big>(</big><em>radon_image</em>, <em>theta=None</em>, <em>output_size=None</em>, <em>filter='ramp'</em>, <em>interpolation='linear'</em>, <em>circle=False</em><big>)</big><a class="headerlink" href="#skimage.transform.iradon" title="Permalink to this definition">¶</a></dt>
 <dd><p>Inverse radon transform.</p>
 <p>Reconstruct an image from the radon transform, using the filtered
 back projection algorithm.</p>
@@ -1142,13 +1259,19 @@ between 0 and 180 (if the shape of <cite>radon_image</cite> is (N, M)).</p>
 <p><strong>filter</strong> : str, optional (default ramp)</p>
 <blockquote>
 <div><p>Filter used in frequency domain filtering. Ramp filter used by default.
-Filters available: ramp, shepp-logan, cosine, hamming, hann
+Filters available: ramp, shepp-logan, cosine, hamming, hann.
 Assign None to use no filter.</p>
 </div></blockquote>
-<p><strong>interpolation</strong> : str, optional (default linear)</p>
+<p><strong>interpolation</strong> : str, optional (default &#8216;linear&#8217;)</p>
 <blockquote>
-<div><p>Interpolation method used in reconstruction.
-Methods available: nearest, linear.</p>
+<div><p>Interpolation method used in reconstruction. Methods available:
+&#8216;linear&#8217;, &#8216;nearest&#8217;, and &#8216;cubic&#8217; (&#8216;cubic&#8217; is slow).</p>
+</div></blockquote>
+<p><strong>circle</strong> : boolean, optional</p>
+<blockquote>
+<div><p>Assume the reconstructed image is zero outside the inscribed circle.
+Also changes the default output_size to match the behaviour of
+<tt class="docutils literal"><span class="pre">radon</span></tt> called with <tt class="docutils literal"><span class="pre">circle=True</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1161,9 +1284,118 @@ Methods available: nearest, linear.</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>It applies the fourier slice theorem to reconstruct an image by
+<p>It applies the Fourier slice theorem to reconstruct an image by
 multiplying the frequency domain of the filter with the FFT of the
 projection data. This algorithm is called filtered back projection.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="iradon-sart">
+<h2>iradon_sart<a class="headerlink" href="#iradon-sart" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.transform.iradon_sart">
+<tt class="descclassname">skimage.transform.</tt><tt class="descname">iradon_sart</tt><big>(</big><em>radon_image</em>, <em>theta=None</em>, <em>image=None</em>, <em>projection_shifts=None</em>, <em>clip=None</em>, <em>relaxation=0.15</em><big>)</big><a class="headerlink" href="#skimage.transform.iradon_sart" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inverse radon transform</p>
+<p>Reconstruct an image from the radon transform, using a single iteration of
+the Simultaneous Algebraic Reconstruction Technique (SART) algorithm.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>radon_image</strong> : 2D array, dtype=float</p>
+<blockquote>
+<div><p>Image containing radon transform (sinogram). Each column of
+the image corresponds to a projection along a different angle.</p>
+</div></blockquote>
+<p><strong>theta</strong> : 1D array, dtype=float, optional</p>
+<blockquote>
+<div><p>Reconstruction angles (in degrees). Default: m angles evenly spaced
+between 0 and 180 (if the shape of <cite>radon_image</cite> is (N, M)).</p>
+</div></blockquote>
+<p><strong>image</strong> : 2D array, dtype=float, optional</p>
+<blockquote>
+<div><p>Image containing an initial reconstruction estimate. Shape of this
+array should be <tt class="docutils literal"><span class="pre">(radon_image.shape[0],</span> <span class="pre">radon_image.shape[0])</span></tt>. The
+default is an array of zeros.</p>
+</div></blockquote>
+<p><strong>projection_shifts</strong> : 1D array, dtype=float</p>
+<blockquote>
+<div><p>Shift the projections contained in <tt class="docutils literal"><span class="pre">radon_image</span></tt> (the sinogram) by
+this many pixels before reconstructing the image. The i&#8217;th value
+defines the shift of the i&#8217;th column of <tt class="docutils literal"><span class="pre">radon_image</span></tt>.</p>
+</div></blockquote>
+<p><strong>clip</strong> : length-2 sequence of floats</p>
+<blockquote>
+<div><p>Force all values in the reconstructed tomogram to lie in the range
+<tt class="docutils literal"><span class="pre">[clip[0],</span> <span class="pre">clip[1]]</span></tt></p>
+</div></blockquote>
+<p><strong>relaxation</strong> : float</p>
+<blockquote>
+<div><p>Relaxation parameter for the update step. A higher value can
+improve the convergence rate, but one runs the risk of instabilities.
+Values close to or higher than 1 are not recommended.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : ndarray</p>
+<blockquote class="last">
+<div><p>Reconstructed image.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>Algebraic Reconstruction Techniques are based on formulating the tomography
+reconstruction problem as a set of linear equations. Along each ray,
+the projected value is the sum of all the values of the cross section along
+the ray. A typical feature of SART (and a few other variants of algebraic
+techniques) is that it samples the cross section at equidistant points
+along the ray, using linear interpolation between the pixel values of the
+cross section. The resulting set of linear equations are then solved using
+a slightly modified Kaczmarz method.</p>
+<p>When using SART, a single iteration is usually sufficient to obtain a good
+reconstruction. Further iterations will tend to enhance high-frequency
+information, but will also often increase the noise.</p>
+<p class="rubric">References</p>
+<table class="docutils citation" frame="void" id="r180" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id6">[R180]</a></td><td>AC Kak, M Slaney, &#8220;Principles of Computerized Tomographic
+Imaging&#8221;, IEEE Press 1988.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="r181" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id7">[R181]</a></td><td>AH Andersen, AC Kak, &#8220;Simultaneous algebraic reconstruction technique
+(SART): a superior implementation of the ART algorithm&#8221;, Ultrasonic
+Imaging 6 pp 81&#8211;94 (1984)</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="r182" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id8">[R182]</a></td><td>S Kaczmarz, &#8220;Angenäherte auflösung von systemen linearer
+gleichungen&#8221;, Bulletin International de l’Academie Polonaise des
+Sciences et des Lettres 35 pp 355&#8211;357 (1937)</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="r183" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id9">[R183]</a></td><td>Kohler, T. &#8220;A projection access scheme for iterative
+reconstruction based on the golden section.&#8221; Nuclear Science
+Symposium Conference Record, 2004 IEEE. Vol. 6. IEEE, 2004.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="r184" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id10">[R184]</a></td><td>Kaczmarz&#8217; method, Wikipedia,
+<a class="reference external" href="http://en.wikipedia.org/wiki/Kaczmarz_method">http://en.wikipedia.org/wiki/Kaczmarz_method</a></td></tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>
@@ -1212,18 +1444,18 @@ Increase the parameter to merge broken lines more aggresively.</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>lines</strong> : list</p>
 <blockquote class="last">
-<div><p>List of lines identified, lines in format ((x0, y0), (x1, y0)), indicating
-line start and end.</p>
+<div><p>List of lines identified, lines in format ((x0, y0), (x1, y0)),
+indicating line start and end.</p>
 </div></blockquote>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r163" rules="none">
+<table class="docutils citation" frame="void" id="r185" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id5">[R163]</a></td><td>C. Galamhos, J. Matas and J. Kittler, &#8220;Progressive probabilistic
+<tr><td class="label"><a class="fn-backref" href="#id11">[R185]</a></td><td>C. Galamhos, J. Matas and J. Kittler, &#8220;Progressive probabilistic
 Hough transform for line detection&#8221;, in IEEE Computer Society
 Conference on Computer Vision and Pattern Recognition, 1999.</td></tr>
 </tbody>
@@ -1280,10 +1512,10 @@ cval is the value when mode is equal to &#8216;constant&#8217;.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r164" rules="none">
+<table class="docutils citation" frame="void" id="r186" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id6">[R164]</a></td><td><a class="reference external" href="http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf">http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id12">[R186]</a></td><td><a class="reference external" href="http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf">http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf</a></td></tr>
 </tbody>
 </table>
 </dd></dl>
@@ -1349,10 +1581,10 @@ cval is the value when mode is equal to &#8216;constant&#8217;.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r165" rules="none">
+<table class="docutils citation" frame="void" id="r187" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id7">[R165]</a></td><td><a class="reference external" href="http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf">http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id13">[R187]</a></td><td><a class="reference external" href="http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf">http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf</a></td></tr>
 </tbody>
 </table>
 </dd></dl>
@@ -1422,16 +1654,16 @@ cval is the value when mode is equal to &#8216;constant&#8217;.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r166" rules="none">
+<table class="docutils citation" frame="void" id="r188" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id8">[R166]</a></td><td><a class="reference external" href="http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf">http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id14">[R188]</a></td><td><a class="reference external" href="http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf">http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r167" rules="none">
+<table class="docutils citation" frame="void" id="r189" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id9">[R167]</a></td><td><a class="reference external" href="http://sepwww.stanford.edu/~morgan/texturematch/paper_html/node3.html">http://sepwww.stanford.edu/~morgan/texturematch/paper_html/node3.html</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id15">[R189]</a></td><td><a class="reference external" href="http://sepwww.stanford.edu/~morgan/texturematch/paper_html/node3.html">http://sepwww.stanford.edu/~morgan/texturematch/paper_html/node3.html</a></td></tr>
 </tbody>
 </table>
 </dd></dl>
@@ -1486,10 +1718,10 @@ cval is the value when mode is equal to &#8216;constant&#8217;.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r168" rules="none">
+<table class="docutils citation" frame="void" id="r190" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id10">[R168]</a></td><td><a class="reference external" href="http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf">http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id16">[R190]</a></td><td><a class="reference external" href="http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf">http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf</a></td></tr>
 </tbody>
 </table>
 </dd></dl>
@@ -1499,7 +1731,7 @@ cval is the value when mode is equal to &#8216;constant&#8217;.</p>
 <h2>radon<a class="headerlink" href="#radon" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.transform.radon">
-<tt class="descclassname">skimage.transform.</tt><tt class="descname">radon</tt><big>(</big><em>image</em>, <em>theta=None</em><big>)</big><a class="headerlink" href="#skimage.transform.radon" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">skimage.transform.</tt><tt class="descname">radon</tt><big>(</big><em>image</em>, <em>theta=None</em>, <em>circle=False</em><big>)</big><a class="headerlink" href="#skimage.transform.radon" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates the radon transform of an image given specified
 projection angles.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1514,11 +1746,24 @@ projection angles.</p>
 <blockquote>
 <div><p>Projection angles (in degrees).</p>
 </div></blockquote>
+<p><strong>circle</strong> : boolean, optional</p>
+<blockquote>
+<div><p>Assume image is zero outside the inscribed circle, making the
+width of each projection (the first dimension of the sinogram)
+equal to <tt class="docutils literal"><span class="pre">min(image.shape)</span></tt>.</p>
+</div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : ndarray</p>
-<blockquote class="last">
+<blockquote>
 <div><p>Radon transform (sinogram).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<blockquote class="last">
+<div><p>If called with <tt class="docutils literal"><span class="pre">circle=True</span></tt> and <tt class="docutils literal"><span class="pre">image</span> <span class="pre">!=</span> <span class="pre">0</span></tt> outside the inscribed
+circle</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1533,6 +1778,10 @@ projection angles.</p>
 <dt id="skimage.transform.rescale">
 <tt class="descclassname">skimage.transform.</tt><tt class="descname">rescale</tt><big>(</big><em>image</em>, <em>scale</em>, <em>order=1</em>, <em>mode='constant'</em>, <em>cval=0.0</em><big>)</big><a class="headerlink" href="#skimage.transform.rescale" title="Permalink to this definition">¶</a></dt>
 <dd><p>Scale image by a certain factor.</p>
+<p>Rescale performs interpolation to upsample or downsample 2D arrays. For
+downsampling any n-dimensional array by performing arithmetic sum or
+arithmetic mean, see measure._sum_blocks.sum_blocks and
+transform._warps.downscale_local_means respectively.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1556,6 +1805,16 @@ projection angles.</p>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.transform</span> <span class="kn">import</span> <span class="n">rescale</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">image</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">camera</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rescale</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span>
+<span class="go">(51, 51)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rescale</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span>
+<span class="go">(256, 256)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>
@@ -1565,6 +1824,10 @@ projection angles.</p>
 <dt id="skimage.transform.resize">
 <tt class="descclassname">skimage.transform.</tt><tt class="descname">resize</tt><big>(</big><em>image</em>, <em>output_shape</em>, <em>order=1</em>, <em>mode='constant'</em>, <em>cval=0.0</em><big>)</big><a class="headerlink" href="#skimage.transform.resize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Resize image to match a certain size.</p>
+<p>Resize performs interpolation to upsample or downsample 2D arrays. For
+downsampling any n-dimensional array by performing arithmetic sum or
+arithmetic mean, see measure._sum_blocks.sum_blocks and
+transform._warps.downscale_local_means respectively.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1576,7 +1839,7 @@ projection angles.</p>
 <p><strong>output_shape</strong> : tuple or ndarray</p>
 <blockquote>
 <div><p>Size of the generated output image <cite>(rows, cols[, dim])</cite>. If <cite>dim</cite> is
-not provided, the number of channels are preserved. In case the number
+not provided, the number of channels is preserved. In case the number
 of input channels does not equal the number of output channels a
 3-dimensional interpolation is applied.</p>
 </div></blockquote>
@@ -1590,6 +1853,14 @@ of input channels does not equal the number of output channels a
 </tr>
 </tbody>
 </table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.transform</span> <span class="kn">import</span> <span class="n">resize</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">image</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">camera</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">resize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span><span class="o">.</span><span class="n">shape</span>
+<span class="go">(100, 100)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>
@@ -1627,6 +1898,18 @@ False.</p>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.transform</span> <span class="kn">import</span> <span class="n">rotate</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">image</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">camera</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rotate</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span>
+<span class="go">(512, 512)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rotate</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">resize</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span>
+<span class="go">(530, 530)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rotate</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="n">resize</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span>
+<span class="go">(512, 512)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>
@@ -1644,20 +1927,20 @@ False.</p>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
-<p><strong>center</strong> : (x,y) tuple or (2,) ndarray</p>
+<p><strong>center</strong> : (x,y) tuple or (2,) ndarray, optional</p>
 <blockquote>
 <div><p>Center coordinate of transformation.</p>
 </div></blockquote>
-<p><strong>strength</strong> : float</p>
+<p><strong>strength</strong> : float, optional</p>
 <blockquote>
 <div><p>The amount of swirling applied.</p>
 </div></blockquote>
-<p><strong>radius</strong> : float</p>
+<p><strong>radius</strong> : float, optional</p>
 <blockquote>
 <div><p>The extent of the swirl in pixels.  The effect dies out
 rapidly beyond <cite>radius</cite>.</p>
 </div></blockquote>
-<p><strong>rotation</strong> : float</p>
+<p><strong>rotation</strong> : float, optional</p>
 <blockquote>
 <div><p>Additional rotation applied to the image.</p>
 </div></blockquote>
@@ -1684,7 +1967,7 @@ rapidly beyond <cite>radius</cite>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : 2-D array</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : 2-D or 3-D array</p>
 <blockquote>
 <div><p>Input image.</p>
 </div></blockquote>
@@ -1699,21 +1982,22 @@ inverse).</p>
 <blockquote>
 <div><p>Keyword arguments passed to <cite>inverse_map</cite>.</p>
 </div></blockquote>
-<p><strong>output_shape</strong> : tuple (rows, cols)</p>
+<p><strong>output_shape</strong> : tuple (rows, cols), optional</p>
 <blockquote>
-<div><p>Shape of the output image generated.</p>
+<div><p>Shape of the output image generated. By default the shape of the input
+image is preserved.</p>
 </div></blockquote>
-<p><strong>order</strong> : int</p>
+<p><strong>order</strong> : int, optional</p>
 <blockquote>
-<div><p>Order of splines used in interpolation. See
-<cite>scipy.ndimage.map_coordinates</cite> for detail.</p>
+<div><p>The order of the spline interpolation, default is 3. The order has to
+be in the range 0-5.</p>
 </div></blockquote>
-<p><strong>mode</strong> : string</p>
+<p><strong>mode</strong> : string, optional</p>
 <blockquote>
-<div><p>How to handle values outside the image borders.  See
-<cite>scipy.ndimage.map_coordinates</cite> for detail.</p>
+<div><p>Points outside the boundaries of the input are filled according
+to the given mode (&#8216;constant&#8217;, &#8216;nearest&#8217;, &#8216;reflect&#8217; or &#8216;wrap&#8217;).</p>
 </div></blockquote>
-<p><strong>cval</strong> : float</p>
+<p><strong>cval</strong> : float, optional</p>
 <blockquote class="last">
 <div><p>Used in conjunction with mode &#8216;constant&#8217;, the value outside
 the image boundaries.</p>
@@ -1724,7 +2008,8 @@ the image boundaries.</p>
 </table>
 <p class="rubric">Examples</p>
 <p>Shift an image to the right:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.transform</span> <span class="kn">import</span> <span class="n">warp</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">image</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">camera</span><span class="p">()</span>
 <span class="go">&gt;&gt;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">shift_right</span><span class="p">(</span><span class="n">xy</span><span class="p">):</span>
@@ -1732,6 +2017,12 @@ the image boundaries.</p>
 <span class="gp">... </span>    <span class="k">return</span> <span class="n">xy</span>
 <span class="go">&gt;&gt;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">warp</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">shift_right</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Use a geometric transform to warp an image:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.transform</span> <span class="kn">import</span> <span class="n">SimilarityTransform</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tform</span> <span class="o">=</span> <span class="n">SimilarityTransform</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">warp</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">tform</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1816,10 +2107,12 @@ than <cite>warp</cite> performs after the call to <cite>ndimage.map_coordinates<
 <li><a class="reference internal" href="#polynomialtransform"><tt class="docutils literal"><span class="pre">PolynomialTransform</span></tt></a></li>
 <li><a class="reference internal" href="#projectivetransform"><tt class="docutils literal"><span class="pre">ProjectiveTransform</span></tt></a></li>
 <li><a class="reference internal" href="#similaritytransform"><tt class="docutils literal"><span class="pre">SimilarityTransform</span></tt></a></li>
+<li><a class="reference internal" href="#downscale-local-means">downscale_local_means</a></li>
 <li><a class="reference internal" href="#estimate-transform">estimate_transform</a></li>
 <li><a class="reference internal" href="#frt2">frt2</a></li>
 <li><a class="reference internal" href="#hough">hough</a></li>
 <li><a class="reference internal" href="#hough-circle">hough_circle</a></li>
+<li><a class="reference internal" href="#hough-ellipse">hough_ellipse</a></li>
 <li><a class="reference internal" href="#hough-line">hough_line</a></li>
 <li><a class="reference internal" href="#hough-line-peaks">hough_line_peaks</a></li>
 <li><a class="reference internal" href="#hough-peaks">hough_peaks</a></li>
@@ -1827,6 +2120,7 @@ than <cite>warp</cite> performs after the call to <cite>ndimage.map_coordinates<
 <li><a class="reference internal" href="#integral-image">integral_image</a></li>
 <li><a class="reference internal" href="#integrate">integrate</a></li>
 <li><a class="reference internal" href="#iradon">iradon</a></li>
+<li><a class="reference internal" href="#iradon-sart">iradon_sart</a></li>
 <li><a class="reference internal" href="#probabilistic-hough">probabilistic_hough</a></li>
 <li><a class="reference internal" href="#probabilistic-hough-line">probabilistic_hough_line</a></li>
 <li><a class="reference internal" href="#pyramid-expand">pyramid_expand</a></li>

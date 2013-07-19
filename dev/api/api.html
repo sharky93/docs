@@ -1,6 +1,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,12 +74,14 @@
 <li class="toctree-l2"><a class="reference internal" href="skimage.color.html#combine-stains">combine_stains</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.color.html#convert-colorspace">convert_colorspace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.color.html#gray2rgb">gray2rgb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.color.html#guess-spatial-dimensions">guess_spatial_dimensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.color.html#hed2rgb">hed2rgb</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.color.html#hsv2rgb">hsv2rgb</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.color.html#is-gray">is_gray</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.color.html#is-rgb">is_rgb</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.color.html#lab2rgb">lab2rgb</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.color.html#lab2xyz">lab2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.color.html#label2rgb">label2rgb</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.color.html#rgb2gray">rgb2gray</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.color.html#rgb2grey">rgb2grey</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.color.html#rgb2hed">rgb2hed</a></li>
@@ -109,7 +112,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="skimage.draw.html">Module: <tt class="docutils literal"><span class="pre">draw</span></tt></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="skimage.draw.html#bresenham">bresenham</a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.draw.html#bezier-segment">bezier_segment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.draw.html#circle">circle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.draw.html#circle-perimeter">circle_perimeter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.draw.html#ellipse">ellipse</a></li>
@@ -120,6 +123,9 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="skimage.exposure.html">Module: <tt class="docutils literal"><span class="pre">exposure</span></tt></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="skimage.exposure.html#adjust-gamma">adjust_gamma</a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.exposure.html#adjust-log">adjust_log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.exposure.html#adjust-sigmoid">adjust_sigmoid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.exposure.html#cumulative-distribution">cumulative_distribution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.exposure.html#equalize">equalize</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.exposure.html#equalize-adapthist">equalize_adapthist</a></li>
@@ -129,6 +135,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="skimage.feature.html">Module: <tt class="docutils literal"><span class="pre">feature</span></tt></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="skimage.feature.html#brief">brief</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.feature.html#corner-foerstner">corner_foerstner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.feature.html#corner-harris">corner_harris</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.feature.html#corner-kitchen-rosenfeld">corner_kitchen_rosenfeld</a></li>
@@ -141,7 +148,9 @@
 <li class="toctree-l2"><a class="reference internal" href="skimage.feature.html#greycoprops">greycoprops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.feature.html#hog">hog</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.feature.html#local-binary-pattern">local_binary_pattern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.feature.html#match-keypoints-brief">match_keypoints_brief</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.feature.html#match-template">match_template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.feature.html#pairwise-hamming-distance">pairwise_hamming_distance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.feature.html#peak-local-max">peak_local_max</a></li>
 </ul>
 </li>
@@ -184,7 +193,7 @@
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#gradient">gradient</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#maximum">maximum</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#mean">mean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#meansubstraction">meansubstraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#meansubtraction">meansubtraction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#median">median</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#minimum">minimum</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#modal">modal</a></li>
@@ -195,7 +204,7 @@
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#percentile-autolevel">percentile_autolevel</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#percentile-gradient">percentile_gradient</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#percentile-mean">percentile_mean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#percentile-mean-substraction">percentile_mean_substraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#percentile-mean-subtraction">percentile_mean_subtraction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#percentile-morph-contr-enh">percentile_morph_contr_enh</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#percentile-pop">percentile_pop</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#percentile-threshold">percentile_threshold</a></li>
@@ -257,6 +266,7 @@
 <li class="toctree-l2"><a class="reference internal" href="skimage.measure.html#regionprops">regionprops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.measure.html#structural-similarity">structural_similarity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.measure.html#subdivide-polygon">subdivide_polygon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.measure.html#sum-blocks">sum_blocks</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="skimage.morphology.html">Module: <tt class="docutils literal"><span class="pre">morphology</span></tt></a><ul>
@@ -268,6 +278,7 @@
 <li class="toctree-l2"><a class="reference internal" href="skimage.morphology.html#black-tophat">black_tophat</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.morphology.html#closing">closing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.morphology.html#convex-hull-image">convex_hull_image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.morphology.html#convex-hull-object">convex_hull_object</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.morphology.html#cube">cube</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.morphology.html#diamond">diamond</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.morphology.html#dilation">dilation</a></li>
@@ -312,10 +323,12 @@
 <li class="toctree-l2"><a class="reference internal" href="skimage.transform.html#polynomialtransform"><tt class="docutils literal"><span class="pre">PolynomialTransform</span></tt></a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.transform.html#projectivetransform"><tt class="docutils literal"><span class="pre">ProjectiveTransform</span></tt></a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.transform.html#similaritytransform"><tt class="docutils literal"><span class="pre">SimilarityTransform</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.transform.html#downscale-local-means">downscale_local_means</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.transform.html#estimate-transform">estimate_transform</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.transform.html#frt2">frt2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.transform.html#hough">hough</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.transform.html#hough-circle">hough_circle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.transform.html#hough-ellipse">hough_ellipse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.transform.html#hough-line">hough_line</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.transform.html#hough-line-peaks">hough_line_peaks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.transform.html#hough-peaks">hough_peaks</a></li>
@@ -323,6 +336,7 @@
 <li class="toctree-l2"><a class="reference internal" href="skimage.transform.html#integral-image">integral_image</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.transform.html#integrate">integrate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.transform.html#iradon">iradon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.transform.html#iradon-sart">iradon_sart</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.transform.html#probabilistic-hough">probabilistic_hough</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.transform.html#probabilistic-hough-line">probabilistic_hough_line</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.transform.html#pyramid-expand">pyramid_expand</a></li>
@@ -345,6 +359,9 @@
 <li class="toctree-l2"><a class="reference internal" href="skimage.util.html#img-as-int">img_as_int</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.util.html#img-as-ubyte">img_as_ubyte</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.util.html#img-as-uint">img_as_uint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.util.html#pad">pad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.util.html#random-noise">random_noise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.util.html#regular-grid">regular_grid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.util.html#view-as-blocks">view_as_blocks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.util.html#view-as-windows">view_as_windows</a></li>
 </ul>
@@ -380,6 +397,7 @@
 <li class="toctree-l2"><a class="reference internal" href="skimage.viewer.utils.html#init-qtapp">init_qtapp</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.viewer.utils.html#new-plot">new_plot</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.viewer.utils.html#start-qtapp">start_qtapp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.viewer.utils.html#update-axes-image">update_axes_image</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="skimage.viewer.viewers.html">Module: <tt class="docutils literal"><span class="pre">viewer.viewers</span></tt></a><ul>

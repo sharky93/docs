@@ -1,6 +1,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,7 +75,7 @@ the RANSAC algorithm.</p>
 <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">])</span>
 
 <span class="c"># add faulty data</span>
-<span class="n">faulty</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="mi">30</span> <span class="o">*</span> <span class="p">[(</span><span class="mi">180</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">)])</span>
+<span class="n">faulty</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="mi">30</span> <span class="o">*</span> <span class="p">[(</span><span class="mf">180.</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">)])</span>
 <span class="n">faulty</span> <span class="o">+=</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">faulty</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="n">data</span><span class="p">[:</span><span class="n">faulty</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">faulty</span>
 

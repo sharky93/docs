@@ -55,6 +55,7 @@ Module: :mod:`viewer.utils`
    skimage.viewer.utils.init_qtapp
    skimage.viewer.utils.new_plot
    skimage.viewer.utils.start_qtapp
+   skimage.viewer.utils.update_axes_image
 
 figimage
 --------
@@ -75,4 +76,9 @@ start_qtapp
 -----------
 
 .. autofunction:: skimage.viewer.utils.start_qtapp
+
+update_axes_image
+-----------------
+
+.. autofunction:: skimage.viewer.utils.update_axes_image
 

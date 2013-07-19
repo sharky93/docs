@@ -1,6 +1,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,10 +72,13 @@ faulty and simply estimating the parameter set with all coordinates is not
 sufficient. Therefore, the RANSAC algorithm is used on top of the normal model
 to robustly estimate the parameter set by detecting outliers.</p>
 <img alt="../_images/plot_matching_1.png" class="align-center" src="../_images/plot_matching_1.png" />
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 
 <span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
+<span class="kn">from</span> <span class="nn">skimage.util</span> <span class="kn">import</span> <span class="n">img_as_float</span>
 <span class="kn">from</span> <span class="nn">skimage.feature</span> <span class="kn">import</span> <span class="n">corner_harris</span><span class="p">,</span> <span class="n">corner_subpix</span><span class="p">,</span> <span class="n">corner_peaks</span>
 <span class="kn">from</span> <span class="nn">skimage.transform</span> <span class="kn">import</span> <span class="n">warp</span><span class="p">,</span> <span class="n">AffineTransform</span>
 <span class="kn">from</span> <span class="nn">skimage.exposure</span> <span class="kn">import</span> <span class="n">rescale_intensity</span>
@@ -83,10 +87,11 @@ to robustly estimate the parameter set by detecting outliers.</p>
 
 
 <span class="c"># generate synthetic checkerboard image and add gradient for the later matching</span>
-<span class="n">checkerboard</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">checkerboard</span><span class="p">()</span>
+<span class="n">checkerboard</span> <span class="o">=</span> <span class="n">img_as_float</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">checkerboard</span><span class="p">())</span>
 <span class="n">img_orig</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">checkerboard</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="mi">3</span><span class="p">])</span>
 <span class="n">img_orig</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">checkerboard</span>
-<span class="n">gradient_r</span><span class="p">,</span> <span class="n">gradient_c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mgrid</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">img_orig</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">:</span><span class="n">img_orig</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+<span class="n">gradient_r</span><span class="p">,</span> <span class="n">gradient_c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mgrid</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">img_orig</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                                  <span class="mi">0</span><span class="p">:</span><span class="n">img_orig</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">img_orig</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="n">img_orig</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">gradient_r</span>
 <span class="n">img_orig</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">gradient_c</span>
 <span class="n">img_orig</span> <span class="o">=</span> <span class="n">rescale_intensity</span><span class="p">(</span><span class="n">img_orig</span><span class="p">)</span>
@@ -104,9 +109,9 @@ to robustly estimate the parameter set by detecting outliers.</p>
                              <span class="n">threshold_rel</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">min_distance</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 
 <span class="c"># determine sub-pixel corner position</span>
-<span class="n">coords_orig_subpix</span> <span class="o">=</span> <span class="n">corner_subpix</span><span class="p">(</span><span class="n">img_orig_gray</span><span class="p">,</span> <span class="n">coords_orig</span><span class="p">,</span> <span class="n">window_size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">coords_orig_subpix</span> <span class="o">=</span> <span class="n">corner_subpix</span><span class="p">(</span><span class="n">img_orig_gray</span><span class="p">,</span> <span class="n">coords_orig</span><span class="p">,</span> <span class="n">window_size</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
 <span class="n">coords_warped_subpix</span> <span class="o">=</span> <span class="n">corner_subpix</span><span class="p">(</span><span class="n">img_warped_gray</span><span class="p">,</span> <span class="n">coords_warped</span><span class="p">,</span>
-                                     <span class="n">window_size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+                                     <span class="n">window_size</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">gaussian_weights</span><span class="p">(</span><span class="n">window_ext</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
@@ -160,9 +165,9 @@ to robustly estimate the parameter set by detecting outliers.</p>
 
 
 <span class="c"># compare &quot;true&quot; and estimated transform parameters</span>
-<span class="k">print</span> <span class="n">tform</span><span class="o">.</span><span class="n">scale</span><span class="p">,</span> <span class="n">tform</span><span class="o">.</span><span class="n">translation</span><span class="p">,</span> <span class="n">tform</span><span class="o">.</span><span class="n">rotation</span>
-<span class="k">print</span> <span class="n">model</span><span class="o">.</span><span class="n">scale</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">translation</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">rotation</span>
-<span class="k">print</span> <span class="n">model_robust</span><span class="o">.</span><span class="n">scale</span><span class="p">,</span> <span class="n">model_robust</span><span class="o">.</span><span class="n">translation</span><span class="p">,</span> <span class="n">model_robust</span><span class="o">.</span><span class="n">rotation</span>
+<span class="k">print</span><span class="p">(</span><span class="n">tform</span><span class="o">.</span><span class="n">scale</span><span class="p">,</span> <span class="n">tform</span><span class="o">.</span><span class="n">translation</span><span class="p">,</span> <span class="n">tform</span><span class="o">.</span><span class="n">rotation</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">scale</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">translation</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">rotation</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">model_robust</span><span class="o">.</span><span class="n">scale</span><span class="p">,</span> <span class="n">model_robust</span><span class="o">.</span><span class="n">translation</span><span class="p">,</span> <span class="n">model_robust</span><span class="o">.</span><span class="n">rotation</span><span class="p">)</span>
 
 
 <span class="c"># visualize correspondences</span>

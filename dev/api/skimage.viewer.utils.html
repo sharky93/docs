@@ -1,6 +1,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -130,12 +131,17 @@ intensity.</p>
 <h2><a class="reference internal" href="#skimage.viewer.utils.RequiredAttr" title="skimage.viewer.utils.RequiredAttr"><tt class="xref py py-class docutils literal"><span class="pre">RequiredAttr</span></tt></a><a class="headerlink" href="#requiredattr" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="skimage.viewer.utils.RequiredAttr">
-<em class="property">class </em><tt class="descclassname">skimage.viewer.utils.</tt><tt class="descname">RequiredAttr</tt><big>(</big><em>msg</em><big>)</big><a class="headerlink" href="#skimage.viewer.utils.RequiredAttr" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">skimage.viewer.utils.</tt><tt class="descname">RequiredAttr</tt><big>(</big><em>msg='Required attribute not set'</em>, <em>init_val=None</em><big>)</big><a class="headerlink" href="#skimage.viewer.utils.RequiredAttr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
 <p>A class attribute that must be set before use.</p>
 <dl class="method">
 <dt id="skimage.viewer.utils.RequiredAttr.__init__">
-<tt class="descname">__init__</tt><big>(</big><em>msg</em><big>)</big><a class="headerlink" href="#skimage.viewer.utils.RequiredAttr.__init__" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">__init__</tt><big>(</big><em>msg='Required attribute not set'</em>, <em>init_val=None</em><big>)</big><a class="headerlink" href="#skimage.viewer.utils.RequiredAttr.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="skimage.viewer.utils.RequiredAttr.instances">
+<tt class="descname">instances</tt><em class="property"> = {(&lt;skimage.viewer.utils.core.RequiredAttr object at 0xd5f3c2c&gt;, None): None, (&lt;skimage.viewer.utils.core.RequiredAttr object at 0xd5f368c&gt;, None): None}</em><a class="headerlink" href="#skimage.viewer.utils.RequiredAttr.instances" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -155,8 +161,11 @@ intensity.</p>
 <tr class="row-odd"><td><a class="reference internal" href="#skimage.viewer.utils.new_plot" title="skimage.viewer.utils.new_plot"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.viewer.utils.new_plot</span></tt></a>([parent,&nbsp;...])</td>
 <td>Return new figure and axes.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.viewer.utils.start_qtapp" title="skimage.viewer.utils.start_qtapp"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.viewer.utils.start_qtapp</span></tt></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.viewer.utils.start_qtapp" title="skimage.viewer.utils.start_qtapp"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.viewer.utils.start_qtapp</span></tt></a>([app])</td>
 <td>Start Qt mainloop</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.viewer.utils.update_axes_image" title="skimage.viewer.utils.update_axes_image"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.viewer.utils.update_axes_image</span></tt></a>(...)</td>
+<td>Update the image displayed by an image plot.</td>
 </tr>
 </tbody>
 </table>
@@ -238,8 +247,34 @@ call <tt class="docutils literal"><span class="pre">canvas.setParent</span></tt>
 <h2>start_qtapp<a class="headerlink" href="#start-qtapp" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.viewer.utils.start_qtapp">
-<tt class="descclassname">skimage.viewer.utils.</tt><tt class="descname">start_qtapp</tt><big>(</big><big>)</big><a class="headerlink" href="#skimage.viewer.utils.start_qtapp" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">skimage.viewer.utils.</tt><tt class="descname">start_qtapp</tt><big>(</big><em>app=None</em><big>)</big><a class="headerlink" href="#skimage.viewer.utils.start_qtapp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Start Qt mainloop</p>
+</dd></dl>
+
+</div>
+<div class="section" id="update-axes-image">
+<h2>update_axes_image<a class="headerlink" href="#update-axes-image" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.viewer.utils.update_axes_image">
+<tt class="descclassname">skimage.viewer.utils.</tt><tt class="descname">update_axes_image</tt><big>(</big><em>image_axes</em>, <em>image</em><big>)</big><a class="headerlink" href="#skimage.viewer.utils.update_axes_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the image displayed by an image plot.</p>
+<p>This sets the image plot&#8217;s array and updates its shape appropriately</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image_axes</strong> : <cite>matplotlib.image.AxesImage</cite></p>
+<blockquote>
+<div><p>Image axes to update.</p>
+</div></blockquote>
+<p><strong>image</strong> : array</p>
+<blockquote class="last">
+<div><p>Image array.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>
@@ -265,6 +300,7 @@ call <tt class="docutils literal"><span class="pre">canvas.setParent</span></tt>
 <li><a class="reference internal" href="#init-qtapp">init_qtapp</a></li>
 <li><a class="reference internal" href="#new-plot">new_plot</a></li>
 <li><a class="reference internal" href="#start-qtapp">start_qtapp</a></li>
+<li><a class="reference internal" href="#update-axes-image">update_axes_image</a></li>
 </ul>
 </li>
 </ul>

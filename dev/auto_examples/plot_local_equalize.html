@@ -1,6 +1,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,14 +80,14 @@ graylevel variations.</p>
 </tbody>
 </table>
 <img alt="../_images/plot_local_equalize_1.png" class="align-center" src="../_images/plot_local_equalize_1.png" />
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
-<span class="kn">from</span> <span class="nn">skimage.util.dtype</span> <span class="kn">import</span> <span class="n">dtype_range</span>
-<span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">exposure</span>
-<span class="kn">from</span> <span class="nn">skimage.morphology</span> <span class="kn">import</span> <span class="n">disk</span>
-
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
+<span class="kn">from</span> <span class="nn">skimage.util.dtype</span> <span class="kn">import</span> <span class="n">dtype_range</span>
+<span class="kn">from</span> <span class="nn">skimage.util</span> <span class="kn">import</span> <span class="n">img_as_ubyte</span>
+<span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">exposure</span>
+<span class="kn">from</span> <span class="nn">skimage.morphology</span> <span class="kn">import</span> <span class="n">disk</span>
 <span class="kn">from</span> <span class="nn">skimage.filter</span> <span class="kn">import</span> <span class="n">rank</span>
 
 
@@ -117,7 +118,7 @@ graylevel variations.</p>
 
 
 <span class="c"># Load an example image</span>
-<span class="n">img</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">moon</span><span class="p">()</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">img_as_ubyte</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">moon</span><span class="p">())</span>
 
 <span class="c"># Contrast stretching</span>
 <span class="n">p2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>

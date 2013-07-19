@@ -1,6 +1,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,13 +65,14 @@ is, for separating different objects in an image.</p>
 <img alt="../_images/plot_marked_watershed_1.png" class="align-center" src="../_images/plot_marked_watershed_1.png" />
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">ndimage</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+
 <span class="kn">from</span> <span class="nn">skimage.morphology</span> <span class="kn">import</span> <span class="n">watershed</span><span class="p">,</span> <span class="n">disk</span>
 <span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
-
-<span class="c"># original data</span>
 <span class="kn">from</span> <span class="nn">skimage.filter</span> <span class="kn">import</span> <span class="n">rank</span>
+<span class="kn">from</span> <span class="nn">skimage.util</span> <span class="kn">import</span> <span class="n">img_as_ubyte</span>
 
-<span class="n">image</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">camera</span><span class="p">()</span>
+
+<span class="n">image</span> <span class="o">=</span> <span class="n">img_as_ubyte</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">camera</span><span class="p">())</span>
 
 <span class="c"># denoise image</span>
 <span class="n">denoised</span> <span class="o">=</span> <span class="n">rank</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">disk</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>

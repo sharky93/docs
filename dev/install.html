@@ -1,6 +1,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +17,7 @@
     <script src="_static/js/bootstrap.min.js"></script>
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
+        URL_ROOT:    '',
         VERSION:     '0.9dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
@@ -59,7 +60,13 @@
 <p><a class="reference external" href="http://www.lfd.uci.edu/~gohlke/pythonlibs/#scikits.image">Windows binaries</a>
 are kindly provided by Christoph Gohlke.</p>
 <p>The latest stable release is also included as part of the <a class="reference external" href="http://enthought.com/products/epd.php">Enthought Python
-Distribution (EPD)</a> and <a class="reference external" href="http://code.google.com/p/pythonxy/wiki/Welcome">Python(x,y)</a>.</p>
+Distribution (EPD)</a>, <a class="reference external" href="http://code.google.com/p/pythonxy/wiki/Welcome">Python(x,y)</a> and
+<a class="reference external" href="https://store.continuum.io/cshop/anaconda/">Anaconda</a>.</p>
+<p>On Debian and Ubuntu, a Debian package <tt class="docutils literal"><span class="pre">python-skimage</span></tt> can be found in
+<a class="reference external" href="http://neuro.debian.net">the Neurodebian repository</a>. Follow <a class="reference external" href="http://neuro.debian.net/#how-to-use-this-repository">the
+instructions</a> to
+add Neurodebian to your system package manager, then look for
+<tt class="docutils literal"><span class="pre">python-skimage</span></tt> in the package manager.</p>
 <p>On systems that support setuptools, the package can be installed from the
 <a class="reference external" href="http://pypi.python.org/pypi/scikit-image">Python packaging index</a> using</p>
 <div class="highlight-python"><pre>easy_install -U scikit-image</pre>
@@ -71,21 +78,20 @@ Distribution (EPD)</a> and <a class="reference external" href="http://code.googl
 <div class="section" id="installation-from-source">
 <h1>Installation from source<a class="headerlink" href="#installation-from-source" title="Permalink to this headline">¶</a></h1>
 <p>Obtain the source from the git-repository at
-<a class="reference external" href="http://github.com/scikit-image/scikit-image">http://github.com/scikit-image/scikit-image</a>.</p>
-<p>by running</p>
+<a class="reference external" href="http://github.com/scikit-image/scikit-image">http://github.com/scikit-image/scikit-image</a> by running:</p>
 <div class="highlight-python"><pre>git clone http://github.com/scikit-image/scikit-image.git</pre>
 </div>
-<p>in a terminal (You will need to have git installed on your machine).</p>
+<p>in a terminal (you will need to have git installed on your machine).</p>
 <p>If you do not have git installed, you can also download a zipball from
 <a class="reference external" href="https://github.com/scikit-image/scikit-image/zipball/master">https://github.com/scikit-image/scikit-image/zipball/master</a>.</p>
-<p>The SciKit can be installed globally using</p>
+<p>The SciKit can be installed globally using:</p>
 <div class="highlight-python"><pre>python setup.py install</pre>
 </div>
-<p>or locally using</p>
+<p>or locally using:</p>
 <div class="highlight-python"><pre>python setup.py install --prefix=${HOME}</pre>
 </div>
 <p>If you prefer, you can use it without installing, by simply adding
-this path to your PYTHONPATH variable and compiling extensions
+this path to your <tt class="docutils literal"><span class="pre">PYTHONPATH</span></tt> variable and compiling extensions
 in-place:</p>
 <div class="highlight-python"><pre>python setup.py build_ext -i</pre>
 </div>
@@ -95,10 +101,13 @@ in-place:</p>
 <ul class="simple">
 <li><a class="reference external" href="http://python.org">Python &gt;= 2.5</a></li>
 <li><a class="reference external" href="http://numpy.scipy.org/">Numpy &gt;= 1.6</a></li>
-<li><a class="reference external" href="http://www.cython.org/">Cython &gt;= 0.15</a></li>
+<li><a class="reference external" href="http://www.cython.org/">Cython &gt;= 0.17</a></li>
 </ul>
 <p><a class="reference external" href="http://matplotlib.sf.net">Matplotlib &gt;= 1.0</a> is needed to generate the
 examples in the documentation.</p>
+<p>You can use pip to automatically install the base dependencies as follows:</p>
+<div class="highlight-python"><pre>$ pip install -r requirements.txt</pre>
+</div>
 </div>
 <div class="section" id="runtime-requirements">
 <h1>Runtime requirements<a class="headerlink" href="#runtime-requirements" title="Permalink to this headline">¶</a></h1>

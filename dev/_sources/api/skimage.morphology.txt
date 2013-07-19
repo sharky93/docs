@@ -15,6 +15,7 @@ Module: :mod:`morphology`
    skimage.morphology.black_tophat
    skimage.morphology.closing
    skimage.morphology.convex_hull_image
+   skimage.morphology.convex_hull_object
    skimage.morphology.cube
    skimage.morphology.diamond
    skimage.morphology.dilation
@@ -78,6 +79,11 @@ convex_hull_image
 -----------------
 
 .. autofunction:: skimage.morphology.convex_hull_image
+
+convex_hull_object
+------------------
+
+.. autofunction:: skimage.morphology.convex_hull_object
 
 cube
 ----

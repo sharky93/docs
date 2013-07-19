@@ -1,6 +1,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -188,36 +189,37 @@ other words coordinates are (r[0],c[0]),(r[0],c[1]) etc.
 <h2>canny<a class="headerlink" href="#canny" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.filter.canny">
-<tt class="descclassname">skimage.filter.</tt><tt class="descname">canny</tt><big>(</big><em>image</em>, <em>sigma=1.0</em>, <em>low_threshold=0.1</em>, <em>high_threshold=0.2</em>, <em>mask=None</em><big>)</big><a class="headerlink" href="#skimage.filter.canny" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">skimage.filter.</tt><tt class="descname">canny</tt><big>(</big><em>image</em>, <em>sigma=1.0</em>, <em>low_threshold=None</em>, <em>high_threshold=None</em>, <em>mask=None</em><big>)</big><a class="headerlink" href="#skimage.filter.canny" title="Permalink to this definition">¶</a></dt>
 <dd><p>Edge filter an image using the Canny algorithm.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : array_like, dtype=float</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : 2D array</p>
 <blockquote>
-<div><p>The greyscale input image to detect edges on; should be normalized to
-0.0 to 1.0.</p>
+<div><p>Greyscale input image to detect edges on; can be of any dtype.</p>
 </div></blockquote>
 <p><strong>sigma</strong> : float</p>
 <blockquote>
-<div><p>The standard deviation of the Gaussian filter</p>
+<div><p>Standard deviation of the Gaussian filter.</p>
 </div></blockquote>
 <p><strong>low_threshold</strong> : float</p>
 <blockquote>
-<div><p>The lower bound for hysterisis thresholding (linking edges)</p>
+<div><p>Lower bound for hysteresis thresholding (linking edges).
+If None, low_threshold is set to 10% of dtype&#8217;s max.</p>
 </div></blockquote>
 <p><strong>high_threshold</strong> : float</p>
 <blockquote>
-<div><p>The upper bound for hysterisis thresholding (linking edges)</p>
+<div><p>Upper bound for hysteresis thresholding (linking edges).
+If None, high_threshold is set to 20% of dtype&#8217;s max.</p>
 </div></blockquote>
 <p><strong>mask</strong> : array, dtype=bool, optional</p>
 <blockquote>
-<div><p>An optional mask to limit the application of Canny to a certain area.</p>
+<div><p>Mask to limit the application of Canny to a certain area.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : array (image)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>output</strong> : 2D array (image)</p>
 <blockquote class="last">
 <div><p>The binary edge map.</p>
 </div></blockquote>
@@ -225,7 +227,7 @@ other words coordinates are (r[0],c[0]),(r[0],c[1]) etc.
 </tr>
 </tbody>
 </table>
-<div class="admonition seealso">
+<div class="admonition-see-also admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.sobel</span></tt></p>
 </div>
@@ -250,14 +252,14 @@ low threshold that is 8-connected to a labeled point as an edge.</li>
 <p class="rubric">References</p>
 <p>Canny, J., A Computational Approach To Edge Detection, IEEE Trans.
 Pattern Analysis and Machine Intelligence, 8:679-714, 1986</p>
-<p>William Green&#8217; Canny tutorial
+<p>William Green&#8217;s Canny tutorial
 <a class="reference external" href="http://dasl.mem.drexel.edu/alumni/bGreen/www.pages.drexel.edu/_weg22/can_tut.html">http://dasl.mem.drexel.edu/alumni/bGreen/www.pages.drexel.edu/_weg22/can_tut.html</a></p>
 <p class="rubric">Examples</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="nb">filter</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c"># Generate noisy image of a square</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">im</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">256</span><span class="p">,</span> <span class="mi">256</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">im</span><span class="p">[</span><span class="mi">64</span><span class="p">:</span><span class="o">-</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">:</span><span class="o">-</span><span class="mi">64</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">im</span> <span class="o">+=</span> <span class="mf">0.2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">im</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">im</span> <span class="o">+=</span> <span class="mf">0.2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">im</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c"># First trial with the Canny filter, with the default smoothing</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">edges1</span> <span class="o">=</span> <span class="nb">filter</span><span class="o">.</span><span class="n">canny</span><span class="p">(</span><span class="n">im</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c"># Increase the smoothing for better results</span>
@@ -332,10 +334,10 @@ the image boundaries.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r96" rules="none">
+<table class="docutils citation" frame="void" id="r106" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[R96]</a></td><td><a class="reference external" href="http://users.soe.ucsc.edu/~manduchi/Papers/ICCV98.pdf">http://users.soe.ucsc.edu/~manduchi/Papers/ICCV98.pdf</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id1">[R106]</a></td><td><a class="reference external" href="http://users.soe.ucsc.edu/~manduchi/Papers/ICCV98.pdf">http://users.soe.ucsc.edu/~manduchi/Papers/ICCV98.pdf</a></td></tr>
 </tbody>
 </table>
 </dd></dl>
@@ -388,24 +390,24 @@ the stop criterion. The algorithm stops when:</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r97" rules="none">
+<table class="docutils citation" frame="void" id="r107" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[R97]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Total_variation_denoising">http://en.wikipedia.org/wiki/Total_variation_denoising</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id2">[R107]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Total_variation_denoising">http://en.wikipedia.org/wiki/Total_variation_denoising</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r98" rules="none">
+<table class="docutils citation" frame="void" id="r108" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[R98]</a></td><td>Tom Goldstein and Stanley Osher, &#8220;The Split Bregman Method For L1
+<tr><td class="label"><a class="fn-backref" href="#id3">[R108]</a></td><td>Tom Goldstein and Stanley Osher, &#8220;The Split Bregman Method For L1
 Regularized Problems&#8221;,
 <a class="reference external" href="ftp://ftp.math.ucla.edu/pub/camreport/cam08-29.pdf">ftp://ftp.math.ucla.edu/pub/camreport/cam08-29.pdf</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r99" rules="none">
+<table class="docutils citation" frame="void" id="r109" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[R99]</a></td><td>Pascal Getreuer, &#8220;Rudin–Osher–Fatemi Total Variation Denoising
+<tr><td class="label"><a class="fn-backref" href="#id4">[R109]</a></td><td>Pascal Getreuer, &#8220;Rudin–Osher–Fatemi Total Variation Denoising
 using Split Bregman&#8221; in Image Processing On Line on 2012–05–19,
 <a class="reference external" href="http://www.ipol.im/pub/art/2012/g-tvd/article_lr.pdf">http://www.ipol.im/pub/art/2012/g-tvd/article_lr.pdf</a></td></tr>
 </tbody>
@@ -472,12 +474,12 @@ the integral of the norm of the image gradient. Total variation
 denoising tends to produce &#8220;cartoon-like&#8221; images, that is,
 piecewise-constant images.</p>
 <p>This code is an implementation of the algorithm of Rudin, Fatemi and Osher
-that was proposed by Chambolle in <a class="reference internal" href="#r100" id="id5">[R100]</a>.</p>
+that was proposed by Chambolle in <a class="reference internal" href="#r110">[R110]</a>.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r100" rules="none">
+<table class="docutils citation" frame="void" id="r110" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R100]</td><td><em>(<a class="fn-backref" href="#id5">1</a>, <a class="fn-backref" href="#id6">2</a>)</em> A. Chambolle, An algorithm for total variation minimization and
+<tr><td class="label">[R110]</td><td><em>(<a class="fn-backref" href="#id5">1</a>, <a class="fn-backref" href="#id6">2</a>)</em> A. Chambolle, An algorithm for total variation minimization and
 applications, Journal of Mathematical Imaging and Vision,
 Springer, 2004, 20, 89-97.</td></tr>
 </tbody>
@@ -556,16 +558,16 @@ kernel.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r101" rules="none">
+<table class="docutils citation" frame="void" id="r111" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id7">[R101]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Gabor_filter">http://en.wikipedia.org/wiki/Gabor_filter</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id7">[R111]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Gabor_filter">http://en.wikipedia.org/wiki/Gabor_filter</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r102" rules="none">
+<table class="docutils citation" frame="void" id="r112" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id8">[R102]</a></td><td><a class="reference external" href="http://mplab.ucsd.edu/tutorials/gabor.pdf">http://mplab.ucsd.edu/tutorials/gabor.pdf</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id8">[R112]</a></td><td><a class="reference external" href="http://mplab.ucsd.edu/tutorials/gabor.pdf">http://mplab.ucsd.edu/tutorials/gabor.pdf</a></td></tr>
 </tbody>
 </table>
 </dd></dl>
@@ -619,16 +621,16 @@ rotated 90 degrees so that <cite>sigma_x</cite> controls the <em>vertical</em> d
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r103" rules="none">
+<table class="docutils citation" frame="void" id="r113" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id9">[R103]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Gabor_filter">http://en.wikipedia.org/wiki/Gabor_filter</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id9">[R113]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Gabor_filter">http://en.wikipedia.org/wiki/Gabor_filter</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r104" rules="none">
+<table class="docutils citation" frame="void" id="r114" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id10">[R104]</a></td><td><a class="reference external" href="http://mplab.ucsd.edu/tutorials/gabor.pdf">http://mplab.ucsd.edu/tutorials/gabor.pdf</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id10">[R114]</a></td><td><a class="reference external" href="http://mplab.ucsd.edu/tutorials/gabor.pdf">http://mplab.ucsd.edu/tutorials/gabor.pdf</a></td></tr>
 </tbody>
 </table>
 </dd></dl>
@@ -712,10 +714,10 @@ result at each point:</p>
 -3  -10  -3</pre>
 </div>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r105" rules="none">
+<table class="docutils citation" frame="void" id="r115" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id11">[R105]</a></td><td>D. Kroon, 2009, Short Paper University Twente, Numerical Optimization
+<tr><td class="label"><a class="fn-backref" href="#id11">[R115]</a></td><td>D. Kroon, 2009, Short Paper University Twente, Numerical Optimization
 of Kernel Based Image Derivatives.</td></tr>
 </tbody>
 </table>
@@ -1085,10 +1087,10 @@ prevent masked regions from affecting the result.</p>
 vertical Scharrs to get a magnitude that&#8217;s somewhat insensitive to
 direction.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r106" rules="none">
+<table class="docutils citation" frame="void" id="r116" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id12">[R106]</a></td><td>D. Kroon, 2009, Short Paper University Twente, Numerical Optimization
+<tr><td class="label"><a class="fn-backref" href="#id12">[R116]</a></td><td>D. Kroon, 2009, Short Paper University Twente, Numerical Optimization
 of Kernel Based Image Derivatives.</td></tr>
 </tbody>
 </table>
@@ -1140,10 +1142,10 @@ has to be further processed to perform edge detection.</p>
 <dt id="skimage.filter.threshold_adaptive">
 <tt class="descclassname">skimage.filter.</tt><tt class="descname">threshold_adaptive</tt><big>(</big><em>image</em>, <em>block_size</em>, <em>method='gaussian'</em>, <em>offset=0</em>, <em>mode='reflect'</em>, <em>param=None</em><big>)</big><a class="headerlink" href="#skimage.filter.threshold_adaptive" title="Permalink to this definition">¶</a></dt>
 <dd><p>Applies an adaptive threshold to an array.</p>
-<p>Also known as local or dynamic thresholding where the threshold value is the
-weighted mean for the local neighborhood of a pixel subtracted by a
-constant. Alternatively the threshold can be determined dynamically by a
-a given function using the &#8216;generic&#8217; method.</p>
+<p>Also known as local or dynamic thresholding where the threshold value is
+the weighted mean for the local neighborhood of a pixel subtracted by a
+constant. Alternatively the threshold can be determined dynamically by a a
+given function using the &#8216;generic&#8217; method.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1184,8 +1186,8 @@ Default is &#8216;reflect&#8217;.</p>
 <blockquote>
 <div><p>Either specify sigma for &#8216;gaussian&#8217; method or function object for
 &#8216;generic&#8217; method. This functions takes the flat array of local
-neighbourhood as a single argument and returns the calculated threshold
-for the centre pixel.</p>
+neighbourhood as a single argument and returns the calculated
+threshold for the centre pixel.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1198,10 +1200,10 @@ for the centre pixel.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r107" rules="none">
+<table class="docutils citation" frame="void" id="r117" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id13">[R107]</a></td><td><a class="reference external" href="http://docs.opencv.org/modules/imgproc/doc/">http://docs.opencv.org/modules/imgproc/doc/</a><a href="#id18"><span class="problematic" id="id19">miscellaneous_</span></a>           transformations.html?highlight=threshold#adaptivethreshold</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id13">[R117]</a></td><td><a class="reference external" href="http://docs.opencv.org/modules/imgproc/doc/miscellaneous_transformations.html?highlight=threshold#adaptivethreshold">http://docs.opencv.org/modules/imgproc/doc/miscellaneous_transformations.html?highlight=threshold#adaptivethreshold</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -1245,10 +1247,10 @@ integer arrays.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r108" rules="none">
+<table class="docutils citation" frame="void" id="r118" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id14">[R108]</a></td><td>Wikipedia, <a class="reference external" href="http://en.wikipedia.org/wiki/Otsu's_Method">http://en.wikipedia.org/wiki/Otsu&#8217;s_Method</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id14">[R118]</a></td><td>Wikipedia, <a class="reference external" href="http://en.wikipedia.org/wiki/Otsu's_Method">http://en.wikipedia.org/wiki/Otsu&#8217;s_Method</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -1321,12 +1323,12 @@ the integral of the norm of the image gradient. Total variation
 denoising tends to produce &#8220;cartoon-like&#8221; images, that is,
 piecewise-constant images.</p>
 <p>This code is an implementation of the algorithm of Rudin, Fatemi and Osher
-that was proposed by Chambolle in <a class="reference internal" href="#r109" id="id15">[R109]</a>.</p>
+that was proposed by Chambolle in <a class="reference internal" href="#r119">[R119]</a>.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r109" rules="none">
+<table class="docutils citation" frame="void" id="r119" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R109]</td><td><em>(<a class="fn-backref" href="#id15">1</a>, <a class="fn-backref" href="#id16">2</a>)</em> A. Chambolle, An algorithm for total variation minimization and
+<tr><td class="label">[R119]</td><td><em>(<a class="fn-backref" href="#id15">1</a>, <a class="fn-backref" href="#id16">2</a>)</em> A. Chambolle, An algorithm for total variation minimization and
 applications, Journal of Mathematical Imaging and Vision,
 Springer, 2004, 20, 89-97.</td></tr>
 </tbody>
@@ -1428,10 +1430,10 @@ result at each point:</p>
  3   0   -3</pre>
 </div>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r110" rules="none">
+<table class="docutils citation" frame="void" id="r120" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id17">[R110]</a></td><td>D. Kroon, 2009, Short Paper University Twente, Numerical Optimization
+<tr><td class="label"><a class="fn-backref" href="#id17">[R120]</a></td><td>D. Kroon, 2009, Short Paper University Twente, Numerical Optimization
 of Kernel Based Image Derivatives.</td></tr>
 </tbody>
 </table>

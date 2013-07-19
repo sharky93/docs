@@ -47,6 +47,7 @@ Module: :mod:`measure`
    skimage.measure.regionprops
    skimage.measure.structural_similarity
    skimage.measure.subdivide_polygon
+   skimage.measure.sum_blocks
 
 approximate_polygon
 -------------------
@@ -82,4 +83,9 @@ subdivide_polygon
 -----------------
 
 .. autofunction:: skimage.measure.subdivide_polygon
+
+sum_blocks
+----------
+
+.. autofunction:: skimage.measure.sum_blocks
 

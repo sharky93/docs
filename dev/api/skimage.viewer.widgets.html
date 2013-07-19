@@ -1,6 +1,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,11 +64,6 @@
 <dl class="method">
 <dt id="skimage.viewer.widgets.BaseWidget.__init__">
 <tt class="descname">__init__</tt><big>(</big><em>name</em>, <em>ptype=None</em>, <em>callback=None</em><big>)</big><a class="headerlink" href="#skimage.viewer.widgets.BaseWidget.__init__" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="skimage.viewer.widgets.BaseWidget.plugin">
-<tt class="descname">plugin</tt><em class="property"> = None</em><a class="headerlink" href="#skimage.viewer.widgets.BaseWidget.plugin" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -187,7 +183,7 @@ Cancel will just close the plugin.</p>
 <h2><a class="reference internal" href="#skimage.viewer.widgets.Slider" title="skimage.viewer.widgets.Slider"><tt class="xref py py-class docutils literal"><span class="pre">Slider</span></tt></a><a class="headerlink" href="#slider" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="skimage.viewer.widgets.Slider">
-<em class="property">class </em><tt class="descclassname">skimage.viewer.widgets.</tt><tt class="descname">Slider</tt><big>(</big><em>name</em>, <em>low=0.0</em>, <em>high=1.0</em>, <em>value=None</em>, <em>value_type='float'</em>, <em>ptype='kwarg'</em>, <em>callback=None</em>, <em>max_edit_width=60</em>, <em>orientation='horizontal'</em>, <em>update_on='move'</em><big>)</big><a class="headerlink" href="#skimage.viewer.widgets.Slider" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">skimage.viewer.widgets.</tt><tt class="descname">Slider</tt><big>(</big><em>name</em>, <em>low=0.0</em>, <em>high=1.0</em>, <em>value=None</em>, <em>value_type='float'</em>, <em>ptype='kwarg'</em>, <em>callback=None</em>, <em>max_edit_width=60</em>, <em>orientation='horizontal'</em>, <em>update_on='release'</em><big>)</big><a class="headerlink" href="#skimage.viewer.widgets.Slider" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">skimage.viewer.widgets.core.BaseWidget</span></tt></p>
 <p>Slider widget for adjusting numeric parameters.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -209,7 +205,7 @@ name of the slider.</p>
 <blockquote>
 <div><p>Default slider value. If None, use midpoint between <cite>low</cite> and <cite>high</cite>.</p>
 </div></blockquote>
-<p><strong>value</strong> : {&#8216;float&#8217; | &#8216;int&#8217;}</p>
+<p><strong>value_type</strong> : {&#8216;float&#8217; | &#8216;int&#8217;}</p>
 <blockquote>
 <div><p>Numeric type of slider value.</p>
 </div></blockquote>
@@ -226,7 +222,7 @@ is typically set when the widget is added to a plugin.</p>
 <blockquote>
 <div><p>Slider orientation.</p>
 </div></blockquote>
-<p><strong>update_on</strong> : {&#8216;move&#8217; | &#8216;release&#8217;}</p>
+<p><strong>update_on</strong> : {&#8216;release&#8217; | &#8216;move&#8217;}</p>
 <blockquote class="last">
 <div><p>Control when callback function is called: on slider move or release.</p>
 </div></blockquote>
@@ -236,7 +232,7 @@ is typically set when the widget is added to a plugin.</p>
 </table>
 <dl class="method">
 <dt id="skimage.viewer.widgets.Slider.__init__">
-<tt class="descname">__init__</tt><big>(</big><em>name</em>, <em>low=0.0</em>, <em>high=1.0</em>, <em>value=None</em>, <em>value_type='float'</em>, <em>ptype='kwarg'</em>, <em>callback=None</em>, <em>max_edit_width=60</em>, <em>orientation='horizontal'</em>, <em>update_on='move'</em><big>)</big><a class="headerlink" href="#skimage.viewer.widgets.Slider.__init__" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">__init__</tt><big>(</big><em>name</em>, <em>low=0.0</em>, <em>high=1.0</em>, <em>value=None</em>, <em>value_type='float'</em>, <em>ptype='kwarg'</em>, <em>callback=None</em>, <em>max_edit_width=60</em>, <em>orientation='horizontal'</em>, <em>update_on='release'</em><big>)</big><a class="headerlink" href="#skimage.viewer.widgets.Slider.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
