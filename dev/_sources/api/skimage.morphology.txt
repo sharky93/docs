@@ -27,9 +27,9 @@ Module: :mod:`morphology`
    skimage.morphology.greyscale_erode
    skimage.morphology.greyscale_open
    skimage.morphology.greyscale_white_top_hat
-   skimage.morphology.is_local_maximum
    skimage.morphology.label
    skimage.morphology.medial_axis
+   skimage.morphology.octagon
    skimage.morphology.octahedron
    skimage.morphology.opening
    skimage.morphology.reconstruction
@@ -37,6 +37,7 @@ Module: :mod:`morphology`
    skimage.morphology.remove_small_objects
    skimage.morphology.skeletonize
    skimage.morphology.square
+   skimage.morphology.star
    skimage.morphology.watershed
    skimage.morphology.white_tophat
 
@@ -140,11 +141,6 @@ greyscale_white_top_hat
 
 .. autofunction:: skimage.morphology.greyscale_white_top_hat
 
-is_local_maximum
-----------------
-
-.. autofunction:: skimage.morphology.is_local_maximum
-
 label
 -----
 
@@ -154,6 +150,11 @@ medial_axis
 -----------
 
 .. autofunction:: skimage.morphology.medial_axis
+
+octagon
+-------
+
+.. autofunction:: skimage.morphology.octagon
 
 octahedron
 ----------
@@ -189,6 +190,11 @@ square
 ------
 
 .. autofunction:: skimage.morphology.square
+
+star
+----
+
+.. autofunction:: skimage.morphology.star
 
 watershed
 ---------

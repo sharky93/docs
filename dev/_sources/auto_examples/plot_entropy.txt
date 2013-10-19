@@ -5,13 +5,16 @@
 Entropy
 =======
 
+Image entropy is a quantity which is used to describe the amount of information
+coded in an image.
+
 
 .. image:: images/plot_entropy_1.png
     :align: center
 
 
 .. literalinclude:: plot_entropy.py
-    :lines: 7-
+    :lines: 10-
 
 
 

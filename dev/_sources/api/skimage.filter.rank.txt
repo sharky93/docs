@@ -5,17 +5,34 @@ Module: :mod:`filter.rank`
 .. automodule:: skimage.filter.rank
 
 .. currentmodule:: skimage.filter.rank
+
+:class:`deprecated`
+-------------------
+
+
+.. autoclass:: deprecated
+  :members:
+  :undoc-members:
+  :show-inheritance:
+
+  .. automethod:: __init__
 .. autosummary::
 
    skimage.filter.rank.autolevel
+   skimage.filter.rank.autolevel_percentile
    skimage.filter.rank.bilateral_mean
    skimage.filter.rank.bilateral_pop
    skimage.filter.rank.bottomhat
+   skimage.filter.rank.enhance_contrast
+   skimage.filter.rank.enhance_contrast_percentile
    skimage.filter.rank.entropy
    skimage.filter.rank.equalize
    skimage.filter.rank.gradient
+   skimage.filter.rank.gradient_percentile
    skimage.filter.rank.maximum
    skimage.filter.rank.mean
+   skimage.filter.rank.mean_bilateral
+   skimage.filter.rank.mean_percentile
    skimage.filter.rank.meansubtraction
    skimage.filter.rank.median
    skimage.filter.rank.minimum
@@ -32,13 +49,23 @@ Module: :mod:`filter.rank`
    skimage.filter.rank.percentile_pop
    skimage.filter.rank.percentile_threshold
    skimage.filter.rank.pop
+   skimage.filter.rank.pop_bilateral
+   skimage.filter.rank.pop_percentile
+   skimage.filter.rank.subtract_mean
+   skimage.filter.rank.subtract_mean_percentile
    skimage.filter.rank.threshold
+   skimage.filter.rank.threshold_percentile
    skimage.filter.rank.tophat
 
 autolevel
 ---------
 
 .. autofunction:: skimage.filter.rank.autolevel
+
+autolevel_percentile
+--------------------
+
+.. autofunction:: skimage.filter.rank.autolevel_percentile
 
 bilateral_mean
 --------------
@@ -55,6 +82,16 @@ bottomhat
 
 .. autofunction:: skimage.filter.rank.bottomhat
 
+enhance_contrast
+----------------
+
+.. autofunction:: skimage.filter.rank.enhance_contrast
+
+enhance_contrast_percentile
+---------------------------
+
+.. autofunction:: skimage.filter.rank.enhance_contrast_percentile
+
 entropy
 -------
 
@@ -70,6 +107,11 @@ gradient
 
 .. autofunction:: skimage.filter.rank.gradient
 
+gradient_percentile
+-------------------
+
+.. autofunction:: skimage.filter.rank.gradient_percentile
+
 maximum
 -------
 
@@ -79,6 +121,16 @@ mean
 ----
 
 .. autofunction:: skimage.filter.rank.mean
+
+mean_bilateral
+--------------
+
+.. autofunction:: skimage.filter.rank.mean_bilateral
+
+mean_percentile
+---------------
+
+.. autofunction:: skimage.filter.rank.mean_percentile
 
 meansubtraction
 ---------------
@@ -160,10 +212,35 @@ pop
 
 .. autofunction:: skimage.filter.rank.pop
 
+pop_bilateral
+-------------
+
+.. autofunction:: skimage.filter.rank.pop_bilateral
+
+pop_percentile
+--------------
+
+.. autofunction:: skimage.filter.rank.pop_percentile
+
+subtract_mean
+-------------
+
+.. autofunction:: skimage.filter.rank.subtract_mean
+
+subtract_mean_percentile
+------------------------
+
+.. autofunction:: skimage.filter.rank.subtract_mean_percentile
+
 threshold
 ---------
 
 .. autofunction:: skimage.filter.rank.threshold
+
+threshold_percentile
+--------------------
+
+.. autofunction:: skimage.filter.rank.threshold_percentile
 
 tophat
 ------

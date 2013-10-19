@@ -8,9 +8,9 @@ Mean filters
 This example compares the following mean filters of the rank filter package:
 
  * **local mean**: all pixels belonging to the structuring element to compute
-   average gray level
+   average gray level.
  * **percentile mean**: only use values between percentiles p0 and p1
-   (here 10% and 90%)
+   (here 10% and 90%).
  * **bilateral mean**: only use pixels of the structuring element having a gray
    level situated inside g-s0 and g+s1 (here g-500 and g+500)
 

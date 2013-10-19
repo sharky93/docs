@@ -41,23 +41,64 @@ Module: :mod:`measure`
 .. autosummary::
 
    skimage.measure.approximate_polygon
+   skimage.measure.block_reduce
    skimage.measure.find_contours
+   skimage.measure.marching_cubes
+   skimage.measure.mesh_surface_area
+   skimage.measure.moments
+   skimage.measure.moments_central
+   skimage.measure.moments_hu
+   skimage.measure.moments_normalized
    skimage.measure.perimeter
    skimage.measure.ransac
    skimage.measure.regionprops
    skimage.measure.structural_similarity
    skimage.measure.subdivide_polygon
-   skimage.measure.sum_blocks
 
 approximate_polygon
 -------------------
 
 .. autofunction:: skimage.measure.approximate_polygon
 
+block_reduce
+------------
+
+.. autofunction:: skimage.measure.block_reduce
+
 find_contours
 -------------
 
 .. autofunction:: skimage.measure.find_contours
+
+marching_cubes
+--------------
+
+.. autofunction:: skimage.measure.marching_cubes
+
+mesh_surface_area
+-----------------
+
+.. autofunction:: skimage.measure.mesh_surface_area
+
+moments
+-------
+
+.. autofunction:: skimage.measure.moments
+
+moments_central
+---------------
+
+.. autofunction:: skimage.measure.moments_central
+
+moments_hu
+----------
+
+.. autofunction:: skimage.measure.moments_hu
+
+moments_normalized
+------------------
+
+.. autofunction:: skimage.measure.moments_normalized
 
 perimeter
 ---------
@@ -83,9 +124,4 @@ subdivide_polygon
 -----------------
 
 .. autofunction:: skimage.measure.subdivide_polygon
-
-sum_blocks
-----------
-
-.. autofunction:: skimage.measure.sum_blocks
 

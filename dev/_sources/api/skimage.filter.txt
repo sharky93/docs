@@ -24,6 +24,7 @@ Module: :mod:`filter`
    skimage.filter.denoise_tv_chambolle
    skimage.filter.gabor_filter
    skimage.filter.gabor_kernel
+   skimage.filter.gaussian_filter
    skimage.filter.hprewitt
    skimage.filter.hscharr
    skimage.filter.hsobel
@@ -38,7 +39,6 @@ Module: :mod:`filter`
    skimage.filter.sobel
    skimage.filter.threshold_adaptive
    skimage.filter.threshold_otsu
-   skimage.filter.tv_denoise
    skimage.filter.vprewitt
    skimage.filter.vscharr
    skimage.filter.vsobel
@@ -73,6 +73,11 @@ gabor_kernel
 ------------
 
 .. autofunction:: skimage.filter.gabor_kernel
+
+gaussian_filter
+---------------
+
+.. autofunction:: skimage.filter.gaussian_filter
 
 hprewitt
 --------
@@ -143,11 +148,6 @@ threshold_otsu
 --------------
 
 .. autofunction:: skimage.filter.threshold_otsu
-
-tv_denoise
-----------
-
-.. autofunction:: skimage.filter.tv_denoise
 
 vprewitt
 --------

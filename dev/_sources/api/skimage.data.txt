@@ -11,6 +11,7 @@ Module: :mod:`data`
    skimage.data.checkerboard
    skimage.data.chelsea
    skimage.data.clock
+   skimage.data.coffee
    skimage.data.coins
    skimage.data.horse
    skimage.data.immunohistochemistry
@@ -40,6 +41,11 @@ clock
 -----
 
 .. autofunction:: skimage.data.clock
+
+coffee
+------
+
+.. autofunction:: skimage.data.coffee
 
 coins
 -----

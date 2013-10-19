@@ -16,6 +16,7 @@ Module: :mod:`util`
    skimage.util.pad
    skimage.util.random_noise
    skimage.util.regular_grid
+   skimage.util.unique_rows
    skimage.util.view_as_blocks
    skimage.util.view_as_windows
 
@@ -63,6 +64,11 @@ regular_grid
 ------------
 
 .. autofunction:: skimage.util.regular_grid
+
+unique_rows
+-----------
+
+.. autofunction:: skimage.util.unique_rows
 
 view_as_blocks
 --------------

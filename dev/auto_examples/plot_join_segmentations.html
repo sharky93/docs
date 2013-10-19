@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Find the intersection of two segmentations &mdash; skimage v0.9dev docs</title>
+        <title>Find the intersection of two segmentations &mdash; skimage v0.10dev docs</title>
     
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -18,7 +18,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.9dev',
+        VERSION:     '0.10dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -27,7 +27,7 @@
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
-        <link rel="top" title="skimage v0.9dev docs" href="../index.html" />
+        <link rel="top" title="skimage v0.10dev docs" href="../index.html" />
         <link rel="up" title="General examples" href="index.html" />
         <link rel="next" title="Label image regions" href="plot_label.html" />
         <link rel="prev" title="Immunohistochemical staining colors separation" href="plot_ihc_color_separation.html" />
@@ -72,27 +72,23 @@ segmentations.</p>
 <span class="kn">from</span> <span class="nn">skimage.segmentation</span> <span class="kn">import</span> <span class="n">slic</span><span class="p">,</span> <span class="n">join_segmentations</span>
 <span class="kn">from</span> <span class="nn">skimage.morphology</span> <span class="kn">import</span> <span class="n">watershed</span>
 <span class="kn">from</span> <span class="nn">skimage.color</span> <span class="kn">import</span> <span class="n">label2rgb</span>
-<span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
+<span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span><span class="p">,</span> <span class="n">img_as_float</span>
 
-
-<span class="n">coins</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">coins</span><span class="p">()</span>
+<span class="n">coins</span> <span class="o">=</span> <span class="n">img_as_float</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">coins</span><span class="p">())</span>
 
 <span class="c"># make segmentation using edge-detection and watershed</span>
 <span class="n">edges</span> <span class="o">=</span> <span class="n">sobel</span><span class="p">(</span><span class="n">coins</span><span class="p">)</span>
 <span class="n">markers</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">coins</span><span class="p">)</span>
 <span class="n">foreground</span><span class="p">,</span> <span class="n">background</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span>
-<span class="n">markers</span><span class="p">[</span><span class="n">coins</span> <span class="o">&lt;</span> <span class="mi">30</span><span class="p">]</span> <span class="o">=</span> <span class="n">background</span>
-<span class="n">markers</span><span class="p">[</span><span class="n">coins</span> <span class="o">&gt;</span> <span class="mi">150</span><span class="p">]</span> <span class="o">=</span> <span class="n">foreground</span>
+<span class="n">markers</span><span class="p">[</span><span class="n">coins</span> <span class="o">&lt;</span> <span class="mf">30.0</span> <span class="o">/</span> <span class="mi">255</span><span class="p">]</span> <span class="o">=</span> <span class="n">background</span>
+<span class="n">markers</span><span class="p">[</span><span class="n">coins</span> <span class="o">&gt;</span> <span class="mf">150.0</span> <span class="o">/</span> <span class="mi">255</span><span class="p">]</span> <span class="o">=</span> <span class="n">foreground</span>
 
 <span class="n">ws</span> <span class="o">=</span> <span class="n">watershed</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="n">markers</span><span class="p">)</span>
 <span class="n">seg1</span> <span class="o">=</span> <span class="n">nd</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="n">ws</span> <span class="o">==</span> <span class="n">foreground</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="c"># make segmentation using SLIC superpixels</span>
-
-<span class="c"># make the RGB equivalent of `coins`</span>
-<span class="n">coins_colour</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">coins</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-<span class="n">seg2</span> <span class="o">=</span> <span class="n">slic</span><span class="p">(</span><span class="n">coins_colour</span><span class="p">,</span> <span class="n">n_segments</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">160</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span>
-            <span class="n">convert2lab</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">seg2</span> <span class="o">=</span> <span class="n">slic</span><span class="p">(</span><span class="n">coins</span><span class="p">,</span> <span class="n">n_segments</span><span class="o">=</span><span class="mi">117</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">160</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">compactness</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span>
+            <span class="n">multichannel</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 
 <span class="c"># combine the two</span>
 <span class="n">segj</span> <span class="o">=</span> <span class="n">join_segmentations</span><span class="p">(</span><span class="n">seg1</span><span class="p">,</span> <span class="n">seg2</span><span class="p">)</span>
@@ -121,7 +117,7 @@ segmentations.</p>
 </pre></div>
 </div>
 <p><strong>Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_join_segmentations.py"><tt class="xref download docutils literal"><span class="pre">download</span></tt></a>
-(generated using <tt class="docutils literal"><span class="pre">skimage</span></tt> 0.9dev)</p>
+(generated using <tt class="docutils literal"><span class="pre">skimage</span></tt> 0.10dev)</p>
 </div>
 
 

@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Module: io &mdash; skimage v0.9dev docs</title>
+        <title>Module: io &mdash; skimage v0.10dev docs</title>
     
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -18,7 +18,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.9dev',
+        VERSION:     '0.10dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -27,7 +27,7 @@
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
-        <link rel="top" title="skimage v0.9dev docs" href="../index.html" />
+        <link rel="top" title="skimage v0.10dev docs" href="../index.html" />
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <link rel="shortcut icon" href="../_static/favicon.ico">
 </head>
@@ -66,8 +66,8 @@
 <tr class="row-odd"><td>Plugin</td>
 <td>Description</td>
 </tr>
-<tr class="row-even"><td>null</td>
-<td>Default plugin that does nothing</td>
+<tr class="row-even"><td>tifffile</td>
+<td>Load and save TIFF and TIFF-based images using tifffile.py</td>
 </tr>
 <tr class="row-odd"><td>pil</td>
 <td>Image reading via the Python Imaging Library</td>
@@ -93,8 +93,8 @@
 <tr class="row-even"><td>fits</td>
 <td>FITS image reading via PyFITS</td>
 </tr>
-<tr class="row-odd"><td>tifffile</td>
-<td>Load and save TIFF and TIFF-based images using tifffile.py</td>
+<tr class="row-odd"><td>null</td>
+<td>Default plugin that does nothing</td>
 </tr>
 <tr class="row-even"><td>gdal</td>
 <td>Image reading via the GDAL Library (www.gdal.org)</td>
@@ -110,16 +110,41 @@
 <p>Class representing Image data.</p>
 <p>These objects have tags for image metadata and IPython display protocol
 methods for image display.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>arr</strong> : ndarray</p>
+<blockquote>
+<div><p>Image data.</p>
+</div></blockquote>
+<p><strong>kwargs</strong> : Image tags as keywords</p>
+<blockquote class="last">
+<div><p>Specified in the form <tt class="docutils literal"><span class="pre">tag0=value</span></tt>, <tt class="docutils literal"><span class="pre">tag1=value</span></tt>.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="22%" />
+<col width="56%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>tags</td>
+<td>dict</td>
+<td>Meta-data.</td>
+</tr>
+</tbody>
+</table>
 <dl class="method">
 <dt id="skimage.io.Image.__init__">
 <tt class="descname">__init__</tt><big>(</big><big>)</big><a class="headerlink" href="#skimage.io.Image.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>x.__init__(...) initializes x; see help(type(x)) for signature</p>
 </dd></dl>
-
-<dl class="attribute">
-<dt id="skimage.io.Image.tags">
-<tt class="descname">tags</tt><em class="property"> = {'info': {}, 'EXIF': {}, 'filename': ''}</em><a class="headerlink" href="#skimage.io.Image.tags" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 
 </dd></dl>
 

@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>General examples &mdash; skimage v0.9dev docs</title>
+        <title>General examples &mdash; skimage v0.10dev docs</title>
     
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -18,7 +18,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.9dev',
+        VERSION:     '0.10dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -27,7 +27,7 @@
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
-        <link rel="top" title="skimage v0.9dev docs" href="../index.html" />
+        <link rel="top" title="skimage v0.10dev docs" href="../index.html" />
         <link rel="next" title="Canny edge detector" href="plot_canny.html" />
         <link rel="prev" title="License" href="../license.html" />
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
@@ -65,8 +65,8 @@
 <p class="caption"><a class="reference internal" href="plot_canny.html#example-plot-canny-py"><em>Canny edge detector</em></a></p>
 </div>
 <div class="gallery figure">
-<a class="reference external image-reference" href="./plot_circular_hough_transform.html"><img alt="../_images/plot_circular_hough_transform.png" src="../_images/plot_circular_hough_transform.png" /></a>
-<p class="caption"><a class="reference internal" href="plot_circular_hough_transform.html#example-plot-circular-hough-transform-py"><em>Circular Hough Transform</em></a></p>
+<a class="reference external image-reference" href="./plot_circular_elliptical_hough_transform.html"><img alt="../_images/plot_circular_elliptical_hough_transform.png" src="../_images/plot_circular_elliptical_hough_transform.png" /></a>
+<p class="caption"><a class="reference internal" href="plot_circular_elliptical_hough_transform.html#example-plot-circular-elliptical-hough-transform-py"><em>Circular and Elliptical Hough Transforms</em></a></p>
 </div>
 <div class="gallery figure">
 <a class="reference external image-reference" href="./plot_contours.html"><img alt="../_images/plot_contours.png" src="../_images/plot_contours.png" /></a>
@@ -121,10 +121,6 @@
 <p class="caption"><a class="reference internal" href="plot_holes_and_peaks.html#example-plot-holes-and-peaks-py"><em>Filling holes and finding peaks</em></a></p>
 </div>
 <div class="gallery figure">
-<a class="reference external image-reference" href="./plot_hough_transform.html"><img alt="../_images/plot_hough_transform.png" src="../_images/plot_hough_transform.png" /></a>
-<p class="caption"><a class="reference internal" href="plot_hough_transform.html#example-plot-hough-transform-py"><em>Hough transform</em></a></p>
-</div>
-<div class="gallery figure">
 <a class="reference external image-reference" href="./plot_ihc_color_separation.html"><img alt="../_images/plot_ihc_color_separation.png" src="../_images/plot_ihc_color_separation.png" /></a>
 <p class="caption"><a class="reference internal" href="plot_ihc_color_separation.html#example-plot-ihc-color-separation-py"><em>Immunohistochemical staining colors separation</em></a></p>
 </div>
@@ -137,6 +133,10 @@
 <p class="caption"><a class="reference internal" href="plot_label.html#example-plot-label-py"><em>Label image regions</em></a></p>
 </div>
 <div class="gallery figure">
+<a class="reference external image-reference" href="./plot_line_hough_transform.html"><img alt="../_images/plot_line_hough_transform.png" src="../_images/plot_line_hough_transform.png" /></a>
+<p class="caption"><a class="reference internal" href="plot_line_hough_transform.html#example-plot-line-hough-transform-py"><em>Straight line Hough transform</em></a></p>
+</div>
+<div class="gallery figure">
 <a class="reference external image-reference" href="./plot_local_binary_pattern.html"><img alt="../_images/plot_local_binary_pattern.png" src="../_images/plot_local_binary_pattern.png" /></a>
 <p class="caption"><a class="reference internal" href="plot_local_binary_pattern.html#example-plot-local-binary-pattern-py"><em>Local Binary Pattern for texture classification</em></a></p>
 </div>
@@ -147,6 +147,10 @@
 <div class="gallery figure">
 <a class="reference external image-reference" href="./plot_local_otsu.html"><img alt="../_images/plot_local_otsu.png" src="../_images/plot_local_otsu.png" /></a>
 <p class="caption"><a class="reference internal" href="plot_local_otsu.html#example-plot-local-otsu-py"><em>Local Otsu Threshold</em></a></p>
+</div>
+<div class="gallery figure">
+<a class="reference external image-reference" href="./plot_marching_cubes.html"><img alt="../_images/plot_marching_cubes.png" src="../_images/plot_marching_cubes.png" /></a>
+<p class="caption"><a class="reference internal" href="plot_marching_cubes.html#example-plot-marching-cubes-py"><em>Marching Cubes</em></a></p>
 </div>
 <div class="gallery figure">
 <a class="reference external image-reference" href="./plot_marked_watershed.html"><img alt="../_images/plot_marked_watershed.png" src="../_images/plot_marked_watershed.png" /></a>
@@ -182,7 +186,7 @@
 </div>
 <div class="gallery figure">
 <a class="reference external image-reference" href="./plot_radon_transform.html"><img alt="../_images/plot_radon_transform.png" src="../_images/plot_radon_transform.png" /></a>
-<p class="caption"><em class="xref std std-ref">example_plot_radon_transform.py</em></p>
+<p class="caption"><a class="reference internal" href="plot_radon_transform.html#example-plot-radon-transform-py"><em>Radon transform</em></a></p>
 </div>
 <div class="gallery figure">
 <a class="reference external image-reference" href="./plot_random_walker_segmentation.html"><img alt="../_images/plot_random_walker_segmentation.png" src="../_images/plot_random_walker_segmentation.png" /></a>
@@ -210,7 +214,7 @@
 </div>
 <div class="gallery figure">
 <a class="reference external image-reference" href="./plot_shapes.html"><img alt="../_images/plot_shapes.png" src="../_images/plot_shapes.png" /></a>
-<p class="caption"><a class="reference internal" href="plot_shapes.html#example-plot-shapes-py"><em>Fill shapes</em></a></p>
+<p class="caption"><a class="reference internal" href="plot_shapes.html#example-plot-shapes-py"><em>Shapes</em></a></p>
 </div>
 <div class="gallery figure">
 <a class="reference external image-reference" href="./plot_skeleton.html"><img alt="../_images/plot_skeleton.png" src="../_images/plot_skeleton.png" /></a>

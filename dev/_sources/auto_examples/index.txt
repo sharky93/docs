@@ -14,7 +14,7 @@ General-purpose and introductory examples for the scikit.
    :hidden:
 
    plot_canny
-   plot_circular_hough_transform
+   plot_circular_elliptical_hough_transform
    plot_contours
    plot_convex_hull
    plot_corner
@@ -28,13 +28,14 @@ General-purpose and introductory examples for the scikit.
    plot_glcm
    plot_hog
    plot_holes_and_peaks
-   plot_hough_transform
    plot_ihc_color_separation
    plot_join_segmentations
    plot_label
+   plot_line_hough_transform
    plot_local_binary_pattern
    plot_local_equalize
    plot_local_otsu
+   plot_marching_cubes
    plot_marked_watershed
    plot_matching
    plot_medial_transform
@@ -67,11 +68,11 @@ General-purpose and introductory examples for the scikit.
    :ref:`example_plot_canny.py`
 
 
-.. figure:: images/thumb/plot_circular_hough_transform.png
+.. figure:: images/thumb/plot_circular_elliptical_hough_transform.png
    :figclass: gallery
-   :target: ./plot_circular_hough_transform.html
+   :target: ./plot_circular_elliptical_hough_transform.html
 
-   :ref:`example_plot_circular_hough_transform.py`
+   :ref:`example_plot_circular_elliptical_hough_transform.py`
 
 
 .. figure:: images/thumb/plot_contours.png
@@ -165,13 +166,6 @@ General-purpose and introductory examples for the scikit.
    :ref:`example_plot_holes_and_peaks.py`
 
 
-.. figure:: images/thumb/plot_hough_transform.png
-   :figclass: gallery
-   :target: ./plot_hough_transform.html
-
-   :ref:`example_plot_hough_transform.py`
-
-
 .. figure:: images/thumb/plot_ihc_color_separation.png
    :figclass: gallery
    :target: ./plot_ihc_color_separation.html
@@ -193,6 +187,13 @@ General-purpose and introductory examples for the scikit.
    :ref:`example_plot_label.py`
 
 
+.. figure:: images/thumb/plot_line_hough_transform.png
+   :figclass: gallery
+   :target: ./plot_line_hough_transform.html
+
+   :ref:`example_plot_line_hough_transform.py`
+
+
 .. figure:: images/thumb/plot_local_binary_pattern.png
    :figclass: gallery
    :target: ./plot_local_binary_pattern.html
@@ -212,6 +213,13 @@ General-purpose and introductory examples for the scikit.
    :target: ./plot_local_otsu.html
 
    :ref:`example_plot_local_otsu.py`
+
+
+.. figure:: images/thumb/plot_marching_cubes.png
+   :figclass: gallery
+   :target: ./plot_marching_cubes.html
+
+   :ref:`example_plot_marching_cubes.py`
 
 
 .. figure:: images/thumb/plot_marked_watershed.png

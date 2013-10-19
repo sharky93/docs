@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Module: segmentation &mdash; skimage v0.9dev docs</title>
+        <title>Module: segmentation &mdash; skimage v0.10dev docs</title>
     
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -18,7 +18,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.9dev',
+        VERSION:     '0.10dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -27,7 +27,7 @@
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
-        <link rel="top" title="skimage v0.9dev docs" href="../index.html" />
+        <link rel="top" title="skimage v0.10dev docs" href="../index.html" />
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <link rel="shortcut icon" href="../_static/favicon.ico">
 </head>
@@ -82,13 +82,16 @@
 <tr class="row-odd"><td><a class="reference internal" href="#skimage.segmentation.random_walker" title="skimage.segmentation.random_walker"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.random_walker</span></tt></a>(data,&nbsp;labels)</td>
 <td>Random walker algorithm for segmentation from markers.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.segmentation.relabel_from_one" title="skimage.segmentation.relabel_from_one"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.relabel_from_one</span></tt></a>(...)</td>
-<td>Convert labels in an arbitrary label field to {1, ...</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.segmentation.relabel_from_one" title="skimage.segmentation.relabel_from_one"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.relabel_from_one</span></tt></a>(*args,&nbsp;...)</td>
+<td><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">relabel_sequential</span></tt> instead.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.segmentation.slic" title="skimage.segmentation.slic"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.slic</span></tt></a>(image[,&nbsp;...])</td>
-<td>Segments image using k-means clustering in Color-(x,y) space.</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.segmentation.relabel_sequential" title="skimage.segmentation.relabel_sequential"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.relabel_sequential</span></tt></a>(...)</td>
+<td>Relabel arbitrary labels to {<cite>offset</cite>, ...</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.segmentation.visualize_boundaries" title="skimage.segmentation.visualize_boundaries"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.visualize_boundaries</span></tt></a>(...)</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.segmentation.slic" title="skimage.segmentation.slic"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.slic</span></tt></a>(image[,&nbsp;...])</td>
+<td>Segments image using k-means clustering in Color-(x,y,z) space.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.segmentation.visualize_boundaries" title="skimage.segmentation.visualize_boundaries"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.segmentation.visualize_boundaries</span></tt></a>(...)</td>
 <td><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">mark_boundaries</span></tt> instead.</td>
 </tr>
 </tbody>
@@ -195,10 +198,10 @@ intersection of the separate segmentations on the color channels.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r160" rules="none">
+<table class="docutils citation" frame="void" id="r220" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[R160]</a></td><td>Efficient graph-based image segmentation, Felzenszwalb, P.F. and
+<tr><td class="label"><a class="fn-backref" href="#id1">[R220]</a></td><td>Efficient graph-based image segmentation, Felzenszwalb, P.F. and
 Huttenlocher, D.P.  International Journal of Computer Vision, 2004</td></tr>
 </tbody>
 </table>
@@ -220,9 +223,9 @@ Huttenlocher, D.P.  International Journal of Computer Vision, 2004</td></tr>
 <dt id="skimage.segmentation.join_segmentations">
 <tt class="descclassname">skimage.segmentation.</tt><tt class="descname">join_segmentations</tt><big>(</big><em>s1</em>, <em>s2</em><big>)</big><a class="headerlink" href="#skimage.segmentation.join_segmentations" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the join of the two input segmentations.</p>
-<p>The join J of S1 and S2 is defined as the segmentation in which two voxels
-are in the same segment in J if and only if they are in the same segment
-in <em>both</em> S1 and S2.</p>
+<p>The join J of S1 and S2 is defined as the segmentation in which two
+voxels are in the same segment if and only if they are in the same
+segment in <em>both</em> S1 and S2.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -242,8 +245,7 @@ in <em>both</em> S1 and S2.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.segmentation</span> <span class="kn">import</span> <span class="n">join_segmentations</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.segmentation</span> <span class="kn">import</span> <span class="n">join_segmentations</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
 <span class="gp">... </span>               <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
 <span class="gp">... </span>               <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
@@ -356,10 +358,10 @@ segmentation. For this purpose, the input is assumed to be RGB.</p>
 segmentation, though this is not strictly necessary. For this to work, the
 image must be given in RGB format.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r161" rules="none">
+<table class="docutils citation" frame="void" id="r221" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[R161]</a></td><td>Quick shift and kernel methods for mode seeking,
+<tr><td class="label"><a class="fn-backref" href="#id2">[R221]</a></td><td>Quick shift and kernel methods for mode seeking,
 Vedaldi, A. and Soatto, S.
 European Conference on Computer Vision, 2008</td></tr>
 </tbody>
@@ -371,7 +373,7 @@ European Conference on Computer Vision, 2008</td></tr>
 <h2>random_walker<a class="headerlink" href="#random-walker" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.segmentation.random_walker">
-<tt class="descclassname">skimage.segmentation.</tt><tt class="descname">random_walker</tt><big>(</big><em>data</em>, <em>labels</em>, <em>beta=130</em>, <em>mode='bf'</em>, <em>tol=0.001</em>, <em>copy=True</em>, <em>multichannel=False</em>, <em>return_full_prob=False</em>, <em>depth=1.0</em><big>)</big><a class="headerlink" href="#skimage.segmentation.random_walker" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">skimage.segmentation.</tt><tt class="descname">random_walker</tt><big>(</big><em>data</em>, <em>labels</em>, <em>beta=130</em>, <em>mode='bf'</em>, <em>tol=0.001</em>, <em>copy=True</em>, <em>multichannel=False</em>, <em>return_full_prob=False</em>, <em>depth=1.0</em>, <em>spacing=None</em><big>)</big><a class="headerlink" href="#skimage.segmentation.random_walker" title="Permalink to this definition">¶</a></dt>
 <dd><p>Random walker algorithm for segmentation from markers.</p>
 <p>Random walker algorithm is implemented for gray-level or multichannel
 images.</p>
@@ -419,7 +421,7 @@ but it is quite slow.</li>
 <li>&#8216;cg_mg&#8217; (conjugate gradient with multigrid preconditioner): a
 preconditioner is computed using a multigrid solver, then the
 solution is computed with the Conjugate Gradient method.  This mode
-requires that the pyamg module (<a class="reference external" href="http://code.google.com/p/pyamg/">http://code.google.com/p/pyamg/</a>) is
+requires that the pyamg module (<a class="reference external" href="http://pyamg.org/">http://pyamg.org/</a>) is
 installed. For images of size &gt; 512x512, this is the recommended
 (fastest) mode.</li>
 </ul>
@@ -445,13 +447,19 @@ for proper input format in this case)</p>
 <div><p>If True, the probability that a pixel belongs to each of the labels
 will be returned, instead of only the most likely label.</p>
 </div></blockquote>
-<p><strong>depth</strong> : float, default 1.</p>
+<p><strong>depth</strong> : float, default 1. [DEPRECATED]</p>
 <blockquote>
 <div><p>Correction for non-isotropic voxel depths in 3D volumes.
 Default (1.) implies isotropy.  This factor is derived as follows:
 depth = (out-of-plane voxel spacing) / (in-plane voxel spacing), where
 in-plane voxel spacing represents the first two spatial dimensions and
-out-of-plane voxel spacing represents the third spatial dimension.</p>
+out-of-plane voxel spacing represents the third spatial dimension.
+<cite>depth</cite> is deprecated as of 0.9, in favor of <cite>spacing</cite>.</p>
+</div></blockquote>
+<p><strong>spacing</strong> : iterable of floats</p>
+<blockquote>
+<div><p>Spacing between voxels in each spatial dimension. If <cite>None</cite>, then
+the spacing between pixels/voxels in each dimension is assumed 1.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -480,12 +488,9 @@ that label <cite>label_nb</cite> reaches the pixel <cite>(i, j)</cite> first.</l
 <p class="rubric">Notes</p>
 <p>Multichannel inputs are scaled with all channel data combined. Ensure all
 channels are separately normalized prior to running this algorithm.</p>
-<p>The <cite>depth</cite> argument is specifically for certain types of 3-dimensional
-volumes which, due to how they were acquired, have different spacing
-along in-plane and out-of-plane dimensions. This is commonly encountered
-in medical imaging. The <cite>depth</cite> argument corrects gradients calculated
-along the third spatial dimension for the otherwise inherent assumption
-that all points are equally spaced.</p>
+<p>The <cite>spacing</cite> argument is specifically for anisotropic datasets, where
+data points are spaced differently in one or more spatial dimensions.
+Anisotropic data is commonly encountered in medical imaging.</p>
 <p>The algorithm was first proposed in <em>Random walks for image
 segmentation</em>, Leo Grady, IEEE Trans Pattern Anal Mach Intell.
 2006 Nov;28(11):1768-83.</p>
@@ -545,8 +550,19 @@ small images, and an iterative method for larger images.</p>
 <h2>relabel_from_one<a class="headerlink" href="#relabel-from-one" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.segmentation.relabel_from_one">
-<tt class="descclassname">skimage.segmentation.</tt><tt class="descname">relabel_from_one</tt><big>(</big><em>label_field</em><big>)</big><a class="headerlink" href="#skimage.segmentation.relabel_from_one" title="Permalink to this definition">¶</a></dt>
-<dd><p>Convert labels in an arbitrary label field to {1, ... number_of_labels}.</p>
+<tt class="descclassname">skimage.segmentation.</tt><tt class="descname">relabel_from_one</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.segmentation.relabel_from_one" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">relabel_sequential</span></tt> instead.</p>
+<p>Convert labels in an arbitrary label field to {1, ... number_of_labels}.</p>
+<p>This function is deprecated, see <tt class="docutils literal"><span class="pre">relabel_sequential</span></tt> for more.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="relabel-sequential">
+<h2>relabel_sequential<a class="headerlink" href="#relabel-sequential" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.segmentation.relabel_sequential">
+<tt class="descclassname">skimage.segmentation.</tt><tt class="descname">relabel_sequential</tt><big>(</big><em>label_field</em>, <em>offset=1</em><big>)</big><a class="headerlink" href="#skimage.segmentation.relabel_sequential" title="Permalink to this definition">¶</a></dt>
+<dd><p>Relabel arbitrary labels to {<cite>offset</cite>, ... <cite>offset</cite> + number_of_labels}.</p>
 <p>This function also returns the forward map (mapping the original labels to
 the reduced labels) and the inverse map (mapping the reduced labels back
 to the original ones).</p>
@@ -554,24 +570,49 @@ to the original ones).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>label_field</strong> : numpy ndarray (integer type)</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>label_field</strong> : numpy array of int, arbitrary shape</p>
+<blockquote>
+<div><p>An array of labels.</p>
+</div></blockquote>
+<p><strong>offset</strong> : int, optional</p>
+<blockquote>
+<div><p>The return labels will start at <cite>offset</cite>, which should be
+strictly positive.</p>
+</div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>relabeled</strong> : numpy array of same shape as ar</p>
-<p><strong>forward_map</strong> : 1d numpy array of length np.unique(ar) + 1</p>
-<p><strong>inverse_map</strong> : 1d numpy array of length len(np.unique(ar))</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>relabeled</strong> : numpy array of int, same shape as <cite>label_field</cite></p>
+<blockquote>
+<div><p>The input label field with labels mapped to
+{1, ..., number_of_labels}.</p>
+</div></blockquote>
+<p><strong>forward_map</strong> : numpy array of int, shape <tt class="docutils literal"><span class="pre">(label_field.max()</span> <span class="pre">+</span> <span class="pre">1,)</span></tt></p>
+<blockquote>
+<div><p>The map from the original label space to the returned label
+space. Can be used to re-apply the same mapping. See examples
+for usage.</p>
+</div></blockquote>
+<p><strong>inverse_map</strong> : 1D numpy array of int, of length offset + number of labels</p>
 <blockquote class="last">
-<div><p>The length is len(np.unique(ar)) + 1 if 0 is not in np.unique(ar)</p>
+<div><p>The map from the new label space to the original space. This
+can be used to reconstruct the original label field from the
+relabeled one.</p>
 </div></blockquote>
 </td>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Notes</p>
+<p>The label 0 is assumed to denote the background and is never remapped.</p>
+<p>The forward map can be extremely big for some inputs, since its
+length is given by the maximum of the label field. However, in most
+situations, <tt class="docutils literal"><span class="pre">label_field.max()</span></tt> is much smaller than
+<tt class="docutils literal"><span class="pre">label_field.size</span></tt>, and in these cases the forward map is
+guaranteed to be smaller than either the input or output images.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.segmentation</span> <span class="kn">import</span> <span class="n">relabel_from_one</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">label_field</span> <span class="o">=</span> <span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">42</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">relab</span><span class="p">,</span> <span class="n">fw</span><span class="p">,</span> <span class="n">inv</span> <span class="o">=</span> <span class="n">relabel_from_one</span><span class="p">(</span><span class="n">label_field</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.segmentation</span> <span class="kn">import</span> <span class="n">relabel_sequential</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">label_field</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">42</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">relab</span><span class="p">,</span> <span class="n">fw</span><span class="p">,</span> <span class="n">inv</span> <span class="o">=</span> <span class="n">relabel_sequential</span><span class="p">(</span><span class="n">label_field</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">relab</span>
 <span class="go">array([1, 1, 2, 2, 3, 5, 4])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fw</span>
@@ -586,6 +627,9 @@ to the original ones).</p>
 <span class="go">True</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">inv</span><span class="p">[</span><span class="n">relab</span><span class="p">]</span> <span class="o">==</span> <span class="n">label_field</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
 <span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">relab</span><span class="p">,</span> <span class="n">fw</span><span class="p">,</span> <span class="n">inv</span> <span class="o">=</span> <span class="n">relabel_sequential</span><span class="p">(</span><span class="n">label_field</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">relab</span>
+<span class="go">array([5, 5, 6, 6, 7, 9, 8])</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -595,51 +639,64 @@ to the original ones).</p>
 <h2>slic<a class="headerlink" href="#slic" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.segmentation.slic">
-<tt class="descclassname">skimage.segmentation.</tt><tt class="descname">slic</tt><big>(</big><em>image</em>, <em>n_segments=100</em>, <em>ratio=10.0</em>, <em>max_iter=10</em>, <em>sigma=1</em>, <em>multichannel=None</em>, <em>convert2lab=True</em><big>)</big><a class="headerlink" href="#skimage.segmentation.slic" title="Permalink to this definition">¶</a></dt>
-<dd><p>Segments image using k-means clustering in Color-(x,y) space.</p>
+<tt class="descclassname">skimage.segmentation.</tt><tt class="descname">slic</tt><big>(</big><em>image</em>, <em>n_segments=100</em>, <em>compactness=10.0</em>, <em>max_iter=10</em>, <em>sigma=None</em>, <em>spacing=None</em>, <em>multichannel=True</em>, <em>convert2lab=True</em>, <em>ratio=None</em><big>)</big><a class="headerlink" href="#skimage.segmentation.slic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Segments image using k-means clustering in Color-(x,y,z) space.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : (width, height [, depth] [, 3]) ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : 2D, 3D or 4D ndarray</p>
 <blockquote>
-<div><p>Input image, which can be 2D or 3D, and grayscale or multi-channel
+<div><p>Input image, which can be 2D or 3D, and grayscale or multichannel
 (see <cite>multichannel</cite> parameter).</p>
 </div></blockquote>
-<p><strong>n_segments</strong> : int, optional (default: 100)</p>
+<p><strong>n_segments</strong> : int, optional</p>
 <blockquote>
 <div><p>The (approximate) number of labels in the segmented output image.</p>
 </div></blockquote>
-<p><strong>ratio: float, optional (default: 10)</strong> :</p>
+<p><strong>compactness</strong> : float, optional</p>
 <blockquote>
-<div><p>Balances color-space proximity and image-space proximity.
-Higher values give more weight to color-space.</p>
+<div><p>Balances color-space proximity and image-space proximity. Higher
+values give more weight to image-space. As <cite>compactness</cite> tends to
+infinity, superpixel shapes become square/cubic.</p>
 </div></blockquote>
-<p><strong>max_iter</strong> : int, optional (default: 10)</p>
+<p><strong>max_iter</strong> : int, optional</p>
 <blockquote>
 <div><p>Maximum number of iterations of k-means.</p>
 </div></blockquote>
-<p><strong>sigma</strong> : float, optional (default: 1)</p>
+<p><strong>sigma</strong> : float or (3,) array-like of floats, optional</p>
 <blockquote>
-<div><p>Width of Gaussian smoothing kernel for preprocessing. Zero means no
-smoothing.</p>
+<div><p>Width of Gaussian smoothing kernel for pre-processing for each
+dimension of the image. The same sigma is applied to each dimension in
+case of a scalar value. Zero means no smoothing.
+Note, that <cite>sigma</cite> is automatically scaled if it is scalar and a
+manual voxel spacing is provided (see Notes section).</p>
 </div></blockquote>
-<p><strong>multichannel</strong> : bool, optional (default: None)</p>
+<p><strong>spacing</strong> : (3,) array-like of floats, optional</p>
+<blockquote>
+<div><p>The voxel spacing along each image dimension. By default, <cite>slic</cite>
+assumes uniform spacing (same voxel resolution along z, y and x).
+This parameter controls the weights of the distances along z, y,
+and x during k-means clustering.</p>
+</div></blockquote>
+<p><strong>multichannel</strong> : bool, optional</p>
 <blockquote>
 <div><p>Whether the last axis of the image is to be interpreted as multiple
-channels. Only 3 channels are supported. If <cite>None</cite>, the function will
-attempt to guess this, and raise a warning if ambiguous, when the
-array has shape (M, N, 3).</p>
+channels or another spatial dimension.</p>
 </div></blockquote>
-<p><strong>convert2lab</strong> : bool, optional (default: True)</p>
+<p><strong>convert2lab</strong> : bool, optional</p>
 <blockquote>
 <div><p>Whether the input should be converted to Lab colorspace prior to
-segmentation.  For this purpose, the input is assumed to be RGB. Highly
+segmentation. For this purpose, the input is assumed to be RGB. Highly
 recommended.</p>
+</div></blockquote>
+<p><strong>ratio</strong> : float, optional</p>
+<blockquote>
+<div><p>Synonym for <cite>compactness</cite>. This keyword is deprecated.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>segment_mask</strong> : (width, height) ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>labels</strong> : 2D or 3D array</p>
 <blockquote>
 <div><p>Integer mask indicating segment labels.</p>
 </div></blockquote>
@@ -649,12 +706,10 @@ recommended.</p>
 <blockquote class="last">
 <div><dl class="docutils">
 <dt>If:</dt>
-<dd><ul class="first simple">
+<dd><ul class="first last simple">
 <li>the image dimension is not 2 or 3 and <cite>multichannel == False</cite>, OR</li>
-<li>the image dimension is not 3 or 4 and <cite>multichannel == True</cite>, OR</li>
-<li><cite>multichannel == True</cite> and the length of the last dimension of</li>
+<li>the image dimension is not 3 or 4 and <cite>multichannel == True</cite></li>
 </ul>
-<p class="last">the image is not 3, OR</p>
 </dd>
 </dl>
 </div></blockquote>
@@ -663,17 +718,23 @@ recommended.</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>If <cite>sigma &gt; 0</cite> as is default, the image is smoothed using a Gaussian kernel
-prior to segmentation.</p>
-<p>The image is rescaled to be in [0, 1] prior to processing.</p>
-<p>Images of shape (M, N, 3) are interpreted as 2D RGB images by default. To
+<ul class="simple">
+<li>If <cite>sigma &gt; 0</cite>, the image is smoothed using a Gaussian kernel prior to
+segmentation.</li>
+<li>If <cite>sigma</cite> is scalar and <cite>spacing</cite> is provided, the kernel width is
+divided along each dimension by the spacing. For example, if <tt class="docutils literal"><span class="pre">sigma=1</span></tt>
+and <tt class="docutils literal"><span class="pre">spacing=[5,</span> <span class="pre">1,</span> <span class="pre">1]</span></tt>, the effective <cite>sigma</cite> is <tt class="docutils literal"><span class="pre">[0.2,</span> <span class="pre">1,</span> <span class="pre">1]</span></tt>. This
+ensures sensible smoothing for anisotropic images.</li>
+<li>The image is rescaled to be in [0, 1] prior to processing.</li>
+<li>Images of shape (M, N, 3) are interpreted as 2D RGB images by default. To
 interpret them as 3D with the last dimension having length 3, use
-<cite>multichannel=False</cite>.</p>
+<cite>multichannel=False</cite>.</li>
+</ul>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r162" rules="none">
+<table class="docutils citation" frame="void" id="r222" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[R162]</a></td><td>Radhakrishna Achanta, Appu Shaji, Kevin Smith, Aurelien Lucchi,
+<tr><td class="label"><a class="fn-backref" href="#id3">[R222]</a></td><td>Radhakrishna Achanta, Appu Shaji, Kevin Smith, Aurelien Lucchi,
 Pascal Fua, and Sabine Süsstrunk, SLIC Superpixels Compared to
 State-of-the-art Superpixel Methods, TPAMI, May 2012.</td></tr>
 </tbody>
@@ -682,9 +743,9 @@ State-of-the-art Superpixel Methods, TPAMI, May 2012.</td></tr>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.segmentation</span> <span class="kn">import</span> <span class="n">slic</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.data</span> <span class="kn">import</span> <span class="n">lena</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">img</span> <span class="o">=</span> <span class="n">lena</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">segments</span> <span class="o">=</span> <span class="n">slic</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">n_segments</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c"># Increasing the ratio parameter yields more square regions</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">segments</span> <span class="o">=</span> <span class="n">slic</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">n_segments</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">segments</span> <span class="o">=</span> <span class="n">slic</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">n_segments</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">compactness</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># Increasing the compactness parameter yields more square regions</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">segments</span> <span class="o">=</span> <span class="n">slic</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">n_segments</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">compactness</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -721,6 +782,7 @@ State-of-the-art Superpixel Methods, TPAMI, May 2012.</td></tr>
 <li><a class="reference internal" href="#quickshift">quickshift</a></li>
 <li><a class="reference internal" href="#random-walker">random_walker</a></li>
 <li><a class="reference internal" href="#relabel-from-one">relabel_from_one</a></li>
+<li><a class="reference internal" href="#relabel-sequential">relabel_sequential</a></li>
 <li><a class="reference internal" href="#slic">slic</a></li>
 <li><a class="reference internal" href="#visualize-boundaries">visualize_boundaries</a></li>
 </ul>

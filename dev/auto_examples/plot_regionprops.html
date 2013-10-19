@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Measure region properties &mdash; skimage v0.9dev docs</title>
+        <title>Measure region properties &mdash; skimage v0.10dev docs</title>
     
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -18,7 +18,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.9dev',
+        VERSION:     '0.10dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -27,7 +27,7 @@
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
-        <link rel="top" title="skimage v0.9dev docs" href="../index.html" />
+        <link rel="top" title="skimage v0.10dev docs" href="../index.html" />
         <link rel="up" title="General examples" href="index.html" />
         <link rel="next" title="Comparison of segmentation and superpixel algorithms" href="plot_segmentations.html" />
         <link rel="prev" title="Filtering regional maxima" href="plot_regional_maxima.html" />
@@ -78,29 +78,23 @@
 <span class="n">image</span> <span class="o">=</span> <span class="n">rotate</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">angle</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="n">label_img</span> <span class="o">=</span> <span class="n">label</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
-<span class="n">props</span> <span class="o">=</span> <span class="n">regionprops</span><span class="p">(</span><span class="n">label_img</span><span class="p">,</span> <span class="p">[</span>
-    <span class="s">&#39;BoundingBox&#39;</span><span class="p">,</span>
-    <span class="s">&#39;Centroid&#39;</span><span class="p">,</span>
-    <span class="s">&#39;Orientation&#39;</span><span class="p">,</span>
-    <span class="s">&#39;MajorAxisLength&#39;</span><span class="p">,</span>
-    <span class="s">&#39;MinorAxisLength&#39;</span>
-<span class="p">])</span>
+<span class="n">regions</span> <span class="o">=</span> <span class="n">regionprops</span><span class="p">(</span><span class="n">label_img</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">props</span><span class="p">:</span>
-    <span class="n">x0</span> <span class="o">=</span> <span class="n">prop</span><span class="p">[</span><span class="s">&#39;Centroid&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">y0</span> <span class="o">=</span> <span class="n">prop</span><span class="p">[</span><span class="s">&#39;Centroid&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">x1</span> <span class="o">=</span> <span class="n">x0</span> <span class="o">+</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">prop</span><span class="p">[</span><span class="s">&#39;Orientation&#39;</span><span class="p">])</span> <span class="o">*</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">prop</span><span class="p">[</span><span class="s">&#39;MajorAxisLength&#39;</span><span class="p">]</span>
-    <span class="n">y1</span> <span class="o">=</span> <span class="n">y0</span> <span class="o">-</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">prop</span><span class="p">[</span><span class="s">&#39;Orientation&#39;</span><span class="p">])</span> <span class="o">*</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">prop</span><span class="p">[</span><span class="s">&#39;MajorAxisLength&#39;</span><span class="p">]</span>
-    <span class="n">x2</span> <span class="o">=</span> <span class="n">x0</span> <span class="o">-</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">prop</span><span class="p">[</span><span class="s">&#39;Orientation&#39;</span><span class="p">])</span> <span class="o">*</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">prop</span><span class="p">[</span><span class="s">&#39;MinorAxisLength&#39;</span><span class="p">]</span>
-    <span class="n">y2</span> <span class="o">=</span> <span class="n">y0</span> <span class="o">-</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">prop</span><span class="p">[</span><span class="s">&#39;Orientation&#39;</span><span class="p">])</span> <span class="o">*</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">prop</span><span class="p">[</span><span class="s">&#39;MinorAxisLength&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">props</span> <span class="ow">in</span> <span class="n">regions</span><span class="p">:</span>
+    <span class="n">y0</span><span class="p">,</span> <span class="n">x0</span> <span class="o">=</span> <span class="n">props</span><span class="o">.</span><span class="n">centroid</span>
+    <span class="n">orientation</span> <span class="o">=</span> <span class="n">props</span><span class="o">.</span><span class="n">orientation</span>
+    <span class="n">x1</span> <span class="o">=</span> <span class="n">x0</span> <span class="o">+</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">orientation</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">props</span><span class="o">.</span><span class="n">major_axis_length</span>
+    <span class="n">y1</span> <span class="o">=</span> <span class="n">y0</span> <span class="o">-</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">orientation</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">props</span><span class="o">.</span><span class="n">major_axis_length</span>
+    <span class="n">x2</span> <span class="o">=</span> <span class="n">x0</span> <span class="o">-</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">orientation</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">props</span><span class="o">.</span><span class="n">minor_axis_length</span>
+    <span class="n">y2</span> <span class="o">=</span> <span class="n">y0</span> <span class="o">-</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">orientation</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">props</span><span class="o">.</span><span class="n">minor_axis_length</span>
 
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="n">x0</span><span class="p">,</span> <span class="n">x1</span><span class="p">),</span> <span class="p">(</span><span class="n">y0</span><span class="p">,</span> <span class="n">y1</span><span class="p">),</span> <span class="s">&#39;-r&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.5</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="n">x0</span><span class="p">,</span> <span class="n">x2</span><span class="p">),</span> <span class="p">(</span><span class="n">y0</span><span class="p">,</span> <span class="n">y2</span><span class="p">),</span> <span class="s">&#39;-r&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.5</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="s">&#39;.g&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
 
-    <span class="n">minr</span><span class="p">,</span> <span class="n">minc</span><span class="p">,</span> <span class="n">maxr</span><span class="p">,</span> <span class="n">maxc</span> <span class="o">=</span> <span class="n">prop</span><span class="p">[</span><span class="s">&#39;BoundingBox&#39;</span><span class="p">]</span>
+    <span class="n">minr</span><span class="p">,</span> <span class="n">minc</span><span class="p">,</span> <span class="n">maxr</span><span class="p">,</span> <span class="n">maxc</span> <span class="o">=</span> <span class="n">props</span><span class="o">.</span><span class="n">bbox</span>
     <span class="n">bx</span> <span class="o">=</span> <span class="p">(</span><span class="n">minc</span><span class="p">,</span> <span class="n">maxc</span><span class="p">,</span> <span class="n">maxc</span><span class="p">,</span> <span class="n">minc</span><span class="p">,</span> <span class="n">minc</span><span class="p">)</span>
     <span class="n">by</span> <span class="o">=</span> <span class="p">(</span><span class="n">minr</span><span class="p">,</span> <span class="n">minr</span><span class="p">,</span> <span class="n">maxr</span><span class="p">,</span> <span class="n">maxr</span><span class="p">,</span> <span class="n">minr</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bx</span><span class="p">,</span> <span class="n">by</span><span class="p">,</span> <span class="s">&#39;-b&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.5</span><span class="p">)</span>
@@ -111,7 +105,7 @@
 </pre></div>
 </div>
 <p><strong>Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_regionprops.py"><tt class="xref download docutils literal"><span class="pre">download</span></tt></a>
-(generated using <tt class="docutils literal"><span class="pre">skimage</span></tt> 0.9dev)</p>
+(generated using <tt class="docutils literal"><span class="pre">skimage</span></tt> 0.10dev)</p>
 </div>
 
 

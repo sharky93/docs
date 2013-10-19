@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Module: morphology &mdash; skimage v0.9dev docs</title>
+        <title>Module: morphology &mdash; skimage v0.10dev docs</title>
     
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -18,7 +18,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.9dev',
+        VERSION:     '0.10dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -27,7 +27,7 @@
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
-        <link rel="top" title="skimage v0.9dev docs" href="../index.html" />
+        <link rel="top" title="skimage v0.10dev docs" href="../index.html" />
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <link rel="shortcut icon" href="../_static/favicon.ico">
 </head>
@@ -121,14 +121,14 @@
 <tr class="row-even"><td><a class="reference internal" href="#skimage.morphology.greyscale_white_top_hat" title="skimage.morphology.greyscale_white_top_hat"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.greyscale_white_top_hat</span></tt></a>(...)</td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.morphology.is_local_maximum" title="skimage.morphology.is_local_maximum"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.is_local_maximum</span></tt></a>(*args,&nbsp;...)</td>
-<td><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">feature.peak_local_max</span></tt> instead.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.morphology.label" title="skimage.morphology.label"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.label</span></tt></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.morphology.label" title="skimage.morphology.label"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.label</span></tt></a></td>
 <td>Label connected regions of an integer array.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.morphology.medial_axis" title="skimage.morphology.medial_axis"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.medial_axis</span></tt></a>(image[,&nbsp;...])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.morphology.medial_axis" title="skimage.morphology.medial_axis"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.medial_axis</span></tt></a>(image[,&nbsp;...])</td>
 <td>Compute the medial axis transform of a binary image</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.morphology.octagon" title="skimage.morphology.octagon"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.octagon</span></tt></a>(m,&nbsp;n[,&nbsp;dtype])</td>
+<td>Generates an octagon shaped structuring element with a given size of horizontal and vertical sides and a given height or width of slanted sides.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#skimage.morphology.octahedron" title="skimage.morphology.octahedron"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.octahedron</span></tt></a>(radius[,&nbsp;dtype])</td>
 <td>Generates a octahedron-shaped structuring element of a given radius</td>
@@ -151,10 +151,13 @@
 <tr class="row-even"><td><a class="reference internal" href="#skimage.morphology.square" title="skimage.morphology.square"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.square</span></tt></a>(width[,&nbsp;dtype])</td>
 <td>Generates a flat, square-shaped structuring element.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.morphology.watershed" title="skimage.morphology.watershed"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.watershed</span></tt></a>(image,&nbsp;markers)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.morphology.star" title="skimage.morphology.star"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.star</span></tt></a>(a[,&nbsp;dtype])</td>
+<td>Generates a star shaped structuring element that has 8 vertices and is an overlap of square of size <cite>2*a + 1</cite> with its 45 degree rotated version.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.morphology.watershed" title="skimage.morphology.watershed"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.watershed</span></tt></a>(image,&nbsp;markers)</td>
 <td>Return a matrix labeled using the watershed segmentation algorithm</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.morphology.white_tophat" title="skimage.morphology.white_tophat"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.white_tophat</span></tt></a>(image,&nbsp;selem)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.morphology.white_tophat" title="skimage.morphology.white_tophat"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.white_tophat</span></tt></a>(image,&nbsp;selem)</td>
 <td>Return white top hat of an image.</td>
 </tr>
 </tbody>
@@ -175,10 +178,6 @@ radius.</p>
 <tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>radius</strong> : int</p>
 <blockquote>
 <div><p>The radius of the ball-shaped structuring element.</p>
-</div></blockquote>
-<p><strong>dtype</strong> : data-type</p>
-<blockquote>
-<div><p>The data type of the structuring element.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -212,20 +211,20 @@ features.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
-<div><p>Image array.</p>
+<div><p>Binary input image.</p>
 </div></blockquote>
 <p><strong>selem</strong> : ndarray</p>
 <blockquote>
 <div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
 </div></blockquote>
-<p><strong>out</strong> : ndarray</p>
+<p><strong>out</strong> : ndarray of bool</p>
 <blockquote>
 <div><p>The array to store the result of the morphology. If None,
 is passed, a new array will be allocated.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>closing</strong> : bool array</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>closing</strong> : ndarray of bool</p>
 <blockquote class="last">
 <div><p>The result of the morphological closing.</p>
 </div></blockquote>
@@ -244,31 +243,31 @@ is passed, a new array will be allocated.</p>
 <dd><p>Return fast binary morphological dilation of an image.</p>
 <p>This function returns the same result as greyscale dilation but performs
 faster for binary images.</p>
-<p>Morphological dilation sets a pixel at (i,j) to the maximum over all pixels
-in the neighborhood centered at (i,j). Dilation enlarges bright regions
-and shrinks dark regions.</p>
+<p>Morphological dilation sets a pixel at <tt class="docutils literal"><span class="pre">(i,j)</span></tt> to the maximum over all
+pixels in the neighborhood centered at <tt class="docutils literal"><span class="pre">(i,j)</span></tt>. Dilation enlarges bright
+regions and shrinks dark regions.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
-<div><p>Image array.</p>
+<div><p>Binary input image.</p>
 </div></blockquote>
 <p><strong>selem</strong> : ndarray</p>
 <blockquote>
 <div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
 </div></blockquote>
-<p><strong>out</strong> : ndarray</p>
+<p><strong>out</strong> : ndarray of bool</p>
 <blockquote>
 <div><p>The array to store the result of the morphology. If None, is
 passed, a new array will be allocated.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>dilated</strong> : bool array</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>dilated</strong> : ndarray of bool or uint</p>
 <blockquote class="last">
-<div><p>The result of the morphological dilation.</p>
+<div><p>The result of the morphological dilation with values in <tt class="docutils literal"><span class="pre">[0,</span> <span class="pre">1]</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -285,31 +284,31 @@ passed, a new array will be allocated.</p>
 <dd><p>Return fast binary morphological erosion of an image.</p>
 <p>This function returns the same result as greyscale erosion but performs
 faster for binary images.</p>
-<p>Morphological erosion sets a pixel at (i,j) to the minimum over all pixels
-in the neighborhood centered at (i,j). Erosion shrinks bright regions and
-enlarges dark regions.</p>
+<p>Morphological erosion sets a pixel at <tt class="docutils literal"><span class="pre">(i,j)</span></tt> to the minimum over all
+pixels in the neighborhood centered at <tt class="docutils literal"><span class="pre">(i,j)</span></tt>. Erosion shrinks bright
+regions and enlarges dark regions.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
-<div><p>Image array.</p>
+<div><p>Binary input image.</p>
 </div></blockquote>
 <p><strong>selem</strong> : ndarray</p>
 <blockquote>
 <div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
 </div></blockquote>
-<p><strong>out</strong> : ndarray</p>
+<p><strong>out</strong> : ndarray of bool</p>
 <blockquote>
 <div><p>The array to store the result of the morphology. If None is
 passed, a new array will be allocated.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>eroded</strong> : bool array</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>eroded</strong> : ndarray of bool or uint</p>
 <blockquote class="last">
-<div><p>The result of the morphological erosion.</p>
+<div><p>The result of the morphological erosion with values in <tt class="docutils literal"><span class="pre">[0,</span> <span class="pre">1]</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -336,20 +335,20 @@ features.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
 <blockquote>
-<div><p>Image array.</p>
+<div><p>Binary input image.</p>
 </div></blockquote>
 <p><strong>selem</strong> : ndarray</p>
 <blockquote>
 <div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
 </div></blockquote>
-<p><strong>out</strong> : ndarray</p>
+<p><strong>out</strong> : ndarray of bool</p>
 <blockquote>
 <div><p>The array to store the result of the morphology. If None
 is passed, a new array will be allocated.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>opening</strong> : bool array</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>opening</strong> : ndarray of bool</p>
 <blockquote class="last">
 <div><p>The result of the morphological opening.</p>
 </div></blockquote>
@@ -501,10 +500,10 @@ polygon that surround all white pixels in the input image.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r150" rules="none">
+<table class="docutils citation" frame="void" id="r210" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[R150]</a></td><td><a class="reference external" href="http://blogs.mathworks.com/steve/2011/10/04/binary-image-convex-hull-algorithm-notes/">http://blogs.mathworks.com/steve/2011/10/04/binary-image-convex-hull-algorithm-notes/</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id1">[R210]</a></td><td><a class="reference external" href="http://blogs.mathworks.com/steve/2011/10/04/binary-image-convex-hull-algorithm-notes/">http://blogs.mathworks.com/steve/2011/10/04/binary-image-convex-hull-algorithm-notes/</a></td></tr>
 </tbody>
 </table>
 </dd></dl>
@@ -589,10 +588,6 @@ neighborhood is no greater than radius.</p>
 <tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>radius</strong> : int</p>
 <blockquote>
 <div><p>The radius of the diamond-shaped structuring element.</p>
-</div></blockquote>
-<p><strong>dtype</strong> : data-type</p>
-<blockquote>
-<div><p>The data type of the structuring element.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -684,10 +679,6 @@ it and the origin is no greater than radius.</p>
 <tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>radius</strong> : int</p>
 <blockquote>
 <div><p>The radius of the disk-shaped structuring element.</p>
-</div></blockquote>
-<p><strong>dtype</strong> : data-type</p>
-<blockquote>
-<div><p>The data type of the structuring element.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -810,88 +801,6 @@ eccentric structuring elements (i.e. selem with even numbered sides).</p>
 <dt id="skimage.morphology.greyscale_white_top_hat">
 <tt class="descclassname">skimage.morphology.</tt><tt class="descname">greyscale_white_top_hat</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.morphology.greyscale_white_top_hat" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-</div>
-<div class="section" id="is-local-maximum">
-<h2>is_local_maximum<a class="headerlink" href="#is-local-maximum" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="skimage.morphology.is_local_maximum">
-<tt class="descclassname">skimage.morphology.</tt><tt class="descname">is_local_maximum</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.morphology.is_local_maximum" title="Permalink to this definition">¶</a></dt>
-<dd><p><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">feature.peak_local_max</span></tt> instead.</p>
-<p>Return a boolean array of points that are local maxima</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image: ndarray (2-D, 3-D, ...)</strong> :</p>
-<blockquote>
-<div><p>intensity image</p>
-</div></blockquote>
-<p><strong>labels: ndarray, optional</strong> :</p>
-<blockquote>
-<div><p>find maxima only within labels. Zero is reserved for background.</p>
-</div></blockquote>
-<p><strong>footprint: ndarray of bools, optional</strong> :</p>
-<blockquote>
-<div><p>binary mask indicating the neighborhood to be examined
-<cite>footprint</cite> must be a matrix with odd dimensions, the center is taken
-to be the point in question.</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>result: ndarray of bools</strong> :</p>
-<blockquote class="last">
-<div><p>mask that is True for pixels that are local maxima of <cite>image</cite></p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition-see-also admonition seealso">
-<p class="first admonition-title">See also</p>
-<dl class="last docutils">
-<dt><a class="reference internal" href="skimage.feature.html#skimage.feature.peak_local_max" title="skimage.feature.peak_local_max"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.peak_local_max</span></tt></a></dt>
-<dd>Unified peak finding backend. The more capable backend for finding local maxima.</dd>
-</dl>
-</div>
-<p class="rubric">Notes</p>
-<p>This function is now a wrapper for skimage.feature.peak_local_max() and is
-retained only for convenience and backward compatibility.</p>
-<p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">image</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">image</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">image</span>
-<span class="go">array([[ 0.,  0.,  0.,  0.],</span>
-<span class="go">       [ 0.,  0.,  2.,  0.],</span>
-<span class="go">       [ 0.,  0.,  0.,  0.],</span>
-<span class="go">       [ 0.,  0.,  0.,  1.]])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">is_local_maximum</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
-<span class="go">array([[ True, False, False, False],</span>
-<span class="go">       [ True, False,  True, False],</span>
-<span class="go">       [ True, False, False, False],</span>
-<span class="go">       [ True,  True, False,  True]], dtype=bool)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">labels</span>
-<span class="go">array([[1, 1, 2, 2],</span>
-<span class="go">       [1, 1, 2, 2],</span>
-<span class="go">       [3, 3, 4, 4],</span>
-<span class="go">       [3, 3, 4, 4]])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">image</span>
-<span class="go">array([[ 0,  1,  2,  3],</span>
-<span class="go">       [ 4,  5,  6,  7],</span>
-<span class="go">       [ 8,  9, 10, 11],</span>
-<span class="go">       [12, 13, 14, 15]])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">is_local_maximum</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">)</span>
-<span class="go">array([[False, False, False, False],</span>
-<span class="go">       [False,  True, False,  True],</span>
-<span class="go">       [False, False, False, False],</span>
-<span class="go">       [False,  True, False,  True]], dtype=bool)</span>
-</pre></div>
-</div>
-</dd></dl>
 
 </div>
 <div class="section" id="label">
@@ -1039,7 +948,8 @@ pass.</li>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">square</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">morphology</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">square</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">square</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">square</span>
 <span class="go">array([[0, 0, 0, 0, 0, 0, 0],</span>
@@ -1062,6 +972,41 @@ pass.</li>
 </dd></dl>
 
 </div>
+<div class="section" id="octagon">
+<h2>octagon<a class="headerlink" href="#octagon" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.morphology.octagon">
+<tt class="descclassname">skimage.morphology.</tt><tt class="descname">octagon</tt><big>(</big><em>m</em>, <em>n</em>, <em>dtype=&lt;type 'numpy.uint8'&gt;</em><big>)</big><a class="headerlink" href="#skimage.morphology.octagon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates an octagon shaped structuring element with a given size of
+horizontal and vertical sides and a given height or width of slanted
+sides. The slanted sides are 45 or 135 degrees to the horizontal axis
+and hence the widths and heights are equal.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>m</strong> : int</p>
+<blockquote>
+<div><p>The size of the horizontal and vertical sides.</p>
+</div></blockquote>
+<p><strong>n</strong> : int</p>
+<blockquote>
+<div><p>The height or width of the slanted sides.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>selem</strong> : ndarray</p>
+<blockquote class="last">
+<div><p>The structuring element where elements of the neighborhood
+are 1 and 0 otherwise.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
 <div class="section" id="octahedron">
 <h2>octahedron<a class="headerlink" href="#octahedron" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
@@ -1079,10 +1024,6 @@ radius.</p>
 <tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>radius</strong> : int</p>
 <blockquote>
 <div><p>The radius of the octahedron-shaped structuring element.</p>
-</div></blockquote>
-<p><strong>dtype</strong> : data-type</p>
-<blockquote>
-<div><p>The data type of the structuring element.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1212,28 +1153,28 @@ to the corresponding mask value; for erosion, the reverse is true.</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>The algorithm is taken from <a class="reference internal" href="#r151">[R151]</a>. Applications for greyscale reconstruction
-are discussed in <a class="reference internal" href="#r152">[R152]</a> and <a class="reference internal" href="#r153">[R153]</a>.</p>
+<p>The algorithm is taken from <a class="reference internal" href="#r211">[R211]</a>. Applications for greyscale reconstruction
+are discussed in <a class="reference internal" href="#r212">[R212]</a> and <a class="reference internal" href="#r213">[R213]</a>.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r151" rules="none">
+<table class="docutils citation" frame="void" id="r211" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R151]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id5">2</a>)</em> Robinson, &#8220;Efficient morphological reconstruction: a downhill
+<tr><td class="label">[R211]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id5">2</a>)</em> Robinson, &#8220;Efficient morphological reconstruction: a downhill
 filter&#8221;, Pattern Recognition Letters 25 (2004) 1759-1767.</td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r152" rules="none">
+<table class="docutils citation" frame="void" id="r212" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R152]</td><td><em>(<a class="fn-backref" href="#id3">1</a>, <a class="fn-backref" href="#id6">2</a>)</em> Vincent, L., &#8220;Morphological Grayscale Reconstruction in Image
+<tr><td class="label">[R212]</td><td><em>(<a class="fn-backref" href="#id3">1</a>, <a class="fn-backref" href="#id6">2</a>)</em> Vincent, L., &#8220;Morphological Grayscale Reconstruction in Image
 Analysis: Applications and Efficient Algorithms&#8221;, IEEE Transactions
 on Image Processing (1993)</td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r153" rules="none">
+<table class="docutils citation" frame="void" id="r213" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R153]</td><td><em>(<a class="fn-backref" href="#id4">1</a>, <a class="fn-backref" href="#id7">2</a>)</em> Soille, P., &#8220;Morphological Image Analysis: Principles and
+<tr><td class="label">[R213]</td><td><em>(<a class="fn-backref" href="#id4">1</a>, <a class="fn-backref" href="#id7">2</a>)</em> Soille, P., &#8220;Morphological Image Analysis: Principles and
 Applications&#8221;, Chapter 6, 2nd edition (2003), ISBN 3540429883.</td></tr>
 </tbody>
 </table>
@@ -1435,10 +1376,10 @@ the iterations.</p>
 medial axis transform, which is also often referred to as
 &#8220;skeletonization&#8221;.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r154" rules="none">
+<table class="docutils citation" frame="void" id="r214" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id8">[R154]</a></td><td>A fast parallel algorithm for thinning digital patterns,
+<tr><td class="label"><a class="fn-backref" href="#id8">[R214]</a></td><td>A fast parallel algorithm for thinning digital patterns,
 T. Y. ZHANG and C. Y. SUEN, Communications of the ACM,
 March 1984, Volume 27, Number 3</td></tr>
 </tbody>
@@ -1502,6 +1443,37 @@ pixel belongs to the neighborhood.</p>
 </dd></dl>
 
 </div>
+<div class="section" id="star">
+<h2>star<a class="headerlink" href="#star" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.morphology.star">
+<tt class="descclassname">skimage.morphology.</tt><tt class="descname">star</tt><big>(</big><em>a</em>, <em>dtype=&lt;type 'numpy.uint8'&gt;</em><big>)</big><a class="headerlink" href="#skimage.morphology.star" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a star shaped structuring element that has 8 vertices and is an
+overlap of square of size <cite>2*a + 1</cite> with its 45 degree rotated version.
+The slanted sides are 45 or 135 degrees to the horizontal axis.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>a</strong> : int</p>
+<blockquote>
+<div><p>Parameter deciding the size of the star structural element. The side
+of the square array returned is <cite>2*a + 1 + 2*floor(a / 2)</cite>.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>selem</strong> : ndarray</p>
+<blockquote class="last">
+<div><p>The structuring element where elements of the neighborhood
+are 1 and 0 otherwise.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
 <div class="section" id="watershed">
 <h2>watershed<a class="headerlink" href="#watershed" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
@@ -1556,7 +1528,7 @@ will be labeled.</p>
 </dl>
 </div>
 <p class="rubric">Notes</p>
-<p>This function implements a watershed algorithm [R155]_that apportions pixels
+<p>This function implements a watershed algorithm [R215]_that apportions pixels
 into marked basins. The algorithm uses a priority queue to hold the pixels
 with the metric for the priority queue being pixel value, then the time of
 entry into the queue - this settles ties in favor of the closest marker.</p>
@@ -1574,16 +1546,16 @@ the local minima of the gradient of the image, or the local maxima of the
 distance function to the background for separating overlapping objects
 (see example).</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r155" rules="none">
+<table class="docutils citation" frame="void" id="r215" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id9">[R155]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Watershed_%28image_processing%29">http://en.wikipedia.org/wiki/Watershed_%28image_processing%29</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id9">[R215]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Watershed_%28image_processing%29">http://en.wikipedia.org/wiki/Watershed_%28image_processing%29</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r156" rules="none">
+<table class="docutils citation" frame="void" id="r216" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id10">[R156]</a></td><td><a class="reference external" href="http://cmm.ensmp.fr/~beucher/wtshed.html">http://cmm.ensmp.fr/~beucher/wtshed.html</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id10">[R216]</a></td><td><a class="reference external" href="http://cmm.ensmp.fr/~beucher/wtshed.html">http://cmm.ensmp.fr/~beucher/wtshed.html</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -1600,7 +1572,9 @@ distance function to the background for separating overlapping objects
 <span class="gp">&gt;&gt;&gt; </span><span class="c"># to the background</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">ndimage</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">distance</span> <span class="o">=</span> <span class="n">ndimage</span><span class="o">.</span><span class="n">distance_transform_edt</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">local_maxi</span> <span class="o">=</span> <span class="n">is_local_maximum</span><span class="p">(</span><span class="n">distance</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.feature</span> <span class="kn">import</span> <span class="n">peak_local_max</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">local_maxi</span> <span class="o">=</span> <span class="n">peak_local_max</span><span class="p">(</span><span class="n">distance</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">image</span><span class="p">,</span>
+<span class="gp">... </span>                            <span class="n">footprint</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">markers</span> <span class="o">=</span> <span class="n">ndimage</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="n">local_maxi</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">labels</span> <span class="o">=</span> <span class="n">watershed</span><span class="p">(</span><span class="o">-</span><span class="n">distance</span><span class="p">,</span> <span class="n">markers</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">image</span><span class="p">)</span>
 </pre></div>
@@ -1700,9 +1674,9 @@ is passed, a new array will be allocated.</p>
 <li><a class="reference internal" href="#greyscale-erode">greyscale_erode</a></li>
 <li><a class="reference internal" href="#greyscale-open">greyscale_open</a></li>
 <li><a class="reference internal" href="#greyscale-white-top-hat">greyscale_white_top_hat</a></li>
-<li><a class="reference internal" href="#is-local-maximum">is_local_maximum</a></li>
 <li><a class="reference internal" href="#label">label</a></li>
 <li><a class="reference internal" href="#medial-axis">medial_axis</a></li>
+<li><a class="reference internal" href="#octagon">octagon</a></li>
 <li><a class="reference internal" href="#octahedron">octahedron</a></li>
 <li><a class="reference internal" href="#opening">opening</a></li>
 <li><a class="reference internal" href="#reconstruction">reconstruction</a></li>
@@ -1710,6 +1684,7 @@ is passed, a new array will be allocated.</p>
 <li><a class="reference internal" href="#remove-small-objects">remove_small_objects</a></li>
 <li><a class="reference internal" href="#skeletonize">skeletonize</a></li>
 <li><a class="reference internal" href="#square">square</a></li>
+<li><a class="reference internal" href="#star">star</a></li>
 <li><a class="reference internal" href="#watershed">watershed</a></li>
 <li><a class="reference internal" href="#white-tophat">white_tophat</a></li>
 </ul>

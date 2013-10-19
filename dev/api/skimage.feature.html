@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Module: feature &mdash; skimage v0.9dev docs</title>
+        <title>Module: feature &mdash; skimage v0.10dev docs</title>
     
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -18,7 +18,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.9dev',
+        VERSION:     '0.10dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -27,7 +27,7 @@
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
-        <link rel="top" title="skimage v0.9dev docs" href="../index.html" />
+        <link rel="top" title="skimage v0.10dev docs" href="../index.html" />
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <link rel="shortcut icon" href="../_static/favicon.ico">
 </head>
@@ -61,206 +61,50 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.feature.brief" title="skimage.feature.brief"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.brief</span></tt></a>(image,&nbsp;keypoints[,&nbsp;...])</td>
-<td>Extract BRIEF Descriptor about given keypoints for a given image.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.feature.corner_foerstner" title="skimage.feature.corner_foerstner"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.corner_foerstner</span></tt></a>(image[,&nbsp;sigma])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.feature.corner_foerstner" title="skimage.feature.corner_foerstner"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.corner_foerstner</span></tt></a>(image[,&nbsp;sigma])</td>
 <td>Compute Foerstner corner measure response image.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.feature.corner_harris" title="skimage.feature.corner_harris"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.corner_harris</span></tt></a>(image[,&nbsp;...])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.feature.corner_harris" title="skimage.feature.corner_harris"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.corner_harris</span></tt></a>(image[,&nbsp;...])</td>
 <td>Compute Harris corner measure response image.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.feature.corner_kitchen_rosenfeld" title="skimage.feature.corner_kitchen_rosenfeld"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.corner_kitchen_rosenfeld</span></tt></a>(image)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.feature.corner_kitchen_rosenfeld" title="skimage.feature.corner_kitchen_rosenfeld"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.corner_kitchen_rosenfeld</span></tt></a>(image)</td>
 <td>Compute Kitchen and Rosenfeld corner measure response image.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.feature.corner_moravec" title="skimage.feature.corner_moravec"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.corner_moravec</span></tt></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.feature.corner_moravec" title="skimage.feature.corner_moravec"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.corner_moravec</span></tt></a></td>
 <td>Compute Moravec corner measure response image.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.feature.corner_peaks" title="skimage.feature.corner_peaks"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.corner_peaks</span></tt></a>(image[,&nbsp;...])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.feature.corner_peaks" title="skimage.feature.corner_peaks"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.corner_peaks</span></tt></a>(image[,&nbsp;...])</td>
 <td>Find corners in corner measure response image.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.feature.corner_shi_tomasi" title="skimage.feature.corner_shi_tomasi"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.corner_shi_tomasi</span></tt></a>(image[,&nbsp;sigma])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.feature.corner_shi_tomasi" title="skimage.feature.corner_shi_tomasi"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.corner_shi_tomasi</span></tt></a>(image[,&nbsp;sigma])</td>
 <td>Compute Shi-Tomasi (Kanade-Tomasi) corner measure response image.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.feature.corner_subpix" title="skimage.feature.corner_subpix"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.corner_subpix</span></tt></a>(image,&nbsp;corners)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.feature.corner_subpix" title="skimage.feature.corner_subpix"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.corner_subpix</span></tt></a>(image,&nbsp;corners)</td>
 <td>Determine subpixel position of corners.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.feature.daisy" title="skimage.feature.daisy"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.daisy</span></tt></a>(img[,&nbsp;step,&nbsp;radius,&nbsp;...])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.feature.daisy" title="skimage.feature.daisy"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.daisy</span></tt></a>(img[,&nbsp;step,&nbsp;radius,&nbsp;...])</td>
 <td>Extract DAISY feature descriptors densely for the given image.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.feature.greycomatrix" title="skimage.feature.greycomatrix"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.greycomatrix</span></tt></a>(image,&nbsp;...[,&nbsp;...])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.feature.greycomatrix" title="skimage.feature.greycomatrix"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.greycomatrix</span></tt></a>(image,&nbsp;...[,&nbsp;...])</td>
 <td>Calculate the grey-level co-occurrence matrix.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.feature.greycoprops" title="skimage.feature.greycoprops"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.greycoprops</span></tt></a>(P[,&nbsp;prop])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.feature.greycoprops" title="skimage.feature.greycoprops"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.greycoprops</span></tt></a>(P[,&nbsp;prop])</td>
 <td>Calculate texture properties of a GLCM.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.feature.hog" title="skimage.feature.hog"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.hog</span></tt></a>(image[,&nbsp;orientations,&nbsp;...])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.feature.hog" title="skimage.feature.hog"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.hog</span></tt></a>(image[,&nbsp;orientations,&nbsp;...])</td>
 <td>Extract Histogram of Oriented Gradients (HOG) for a given image.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.feature.local_binary_pattern" title="skimage.feature.local_binary_pattern"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.local_binary_pattern</span></tt></a>(image,&nbsp;P,&nbsp;R)</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.feature.local_binary_pattern" title="skimage.feature.local_binary_pattern"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.local_binary_pattern</span></tt></a>(image,&nbsp;P,&nbsp;R)</td>
 <td>Gray scale and rotation invariant LBP (Local Binary Patterns).</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.feature.match_keypoints_brief" title="skimage.feature.match_keypoints_brief"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.match_keypoints_brief</span></tt></a>(...[,&nbsp;...])</td>
-<td>Match keypoints described using BRIEF descriptors in one image to</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#skimage.feature.match_template" title="skimage.feature.match_template"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.match_template</span></tt></a>(image,&nbsp;template)</td>
 <td>Match a template to an image using normalized correlation.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.feature.pairwise_hamming_distance" title="skimage.feature.pairwise_hamming_distance"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.pairwise_hamming_distance</span></tt></a>(...)</td>
-<td>Calculate hamming dissimilarity measure between two sets of vectors.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.feature.peak_local_max" title="skimage.feature.peak_local_max"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.peak_local_max</span></tt></a>(image[,&nbsp;...])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.feature.peak_local_max" title="skimage.feature.peak_local_max"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.feature.peak_local_max</span></tt></a>(image[,&nbsp;...])</td>
 <td>Find peaks in an image, and return them as coordinates or a boolean array.</td>
 </tr>
 </tbody>
 </table>
-<div class="section" id="brief">
-<h2>brief<a class="headerlink" href="#brief" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="skimage.feature.brief">
-<tt class="descclassname">skimage.feature.</tt><tt class="descname">brief</tt><big>(</big><em>image</em>, <em>keypoints</em>, <em>descriptor_size=256</em>, <em>mode='normal'</em>, <em>patch_size=49</em>, <em>sample_seed=1</em>, <em>variance=2</em><big>)</big><a class="headerlink" href="#skimage.feature.brief" title="Permalink to this definition">¶</a></dt>
-<dd><p>Extract BRIEF Descriptor about given keypoints for a given image.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : 2D ndarray</p>
-<blockquote>
-<div><p>Input image.</p>
-</div></blockquote>
-<p><strong>keypoints</strong> : (P, 2) ndarray</p>
-<blockquote>
-<div><p>Array of keypoint locations.</p>
-</div></blockquote>
-<p><strong>descriptor_size</strong> : int</p>
-<blockquote>
-<div><p>Size of BRIEF descriptor about each keypoint. Sizes 128, 256 and 512
-preferred by the authors. Default is 256.</p>
-</div></blockquote>
-<p><strong>mode</strong> : string</p>
-<blockquote>
-<div><p>Probability distribution for sampling location of decision pixel-pairs
-around keypoints. Default is &#8216;normal&#8217; otherwise uniform.</p>
-</div></blockquote>
-<p><strong>patch_size</strong> : int</p>
-<blockquote>
-<div><p>Length of the two dimensional square patch sampling region around
-the keypoints. Default is 49.</p>
-</div></blockquote>
-<p><strong>sample_seed</strong> : int</p>
-<blockquote>
-<div><p>Seed for sampling the decision pixel-pairs. From a square window with
-length patch_size, pixel pairs are sampled using the <cite>mode</cite> parameter
-to build the descriptors using intensity comparison. The value of
-<cite>sample_seed</cite> should be the same for the images to be matched while
-building the descriptors. Default is 1.</p>
-</div></blockquote>
-<p><strong>variance</strong> : float</p>
-<blockquote>
-<div><p>Variance of the Gaussian Low Pass filter applied on the image to
-alleviate noise sensitivity. Default is 2.</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>descriptors</strong> : (Q, <cite>descriptor_size</cite>) ndarray of dtype bool</p>
-<blockquote>
-<div><p>2D ndarray of binary descriptors of size <cite>descriptor_size</cite> about Q
-keypoints after filtering out border keypoints with value at an index
-(i, j) either being True or False representing the outcome
-of Intensity comparison about ith keypoint on jth decision pixel-pair.</p>
-</div></blockquote>
-<p><strong>keypoints</strong> : (Q, 2) ndarray</p>
-<blockquote class="last">
-<div><p>Keypoints after removing out those that are near border.
-Returned only if return_keypoints is True.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r75" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[R75]</a></td><td>Michael Calonder, Vincent Lepetit, Christoph Strecha and Pascal Fua
-&#8220;BRIEF : Binary robust independent elementary features&#8221;,
-<a class="reference external" href="http://cvlabwww.epfl.ch/~lepetit/papers/calonder_eccv10.pdf">http://cvlabwww.epfl.ch/~lepetit/papers/calonder_eccv10.pdf</a></td></tr>
-</tbody>
-</table>
-<p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.feature.corner</span> <span class="kn">import</span> <span class="n">corner_peaks</span><span class="p">,</span> <span class="n">corner_harris</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.feature</span> <span class="kn">import</span> <span class="n">pairwise_hamming_distance</span><span class="p">,</span> <span class="n">brief</span><span class="p">,</span> <span class="n">match_keypoints_brief</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">square1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">square1</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">square1</span>
-<span class="go">array([[0, 0, 0, 0, 0, 0, 0, 0],</span>
-<span class="go">       [0, 0, 0, 0, 0, 0, 0, 0],</span>
-<span class="go">       [0, 0, 1, 1, 1, 1, 0, 0],</span>
-<span class="go">       [0, 0, 1, 1, 1, 1, 0, 0],</span>
-<span class="go">       [0, 0, 1, 1, 1, 1, 0, 0],</span>
-<span class="go">       [0, 0, 1, 1, 1, 1, 0, 0],</span>
-<span class="go">       [0, 0, 0, 0, 0, 0, 0, 0],</span>
-<span class="go">       [0, 0, 0, 0, 0, 0, 0, 0]], dtype=int32)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">keypoints1</span> <span class="o">=</span> <span class="n">corner_peaks</span><span class="p">(</span><span class="n">corner_harris</span><span class="p">(</span><span class="n">square1</span><span class="p">),</span> <span class="n">min_distance</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">keypoints1</span>
-<span class="go">array([[2, 2],</span>
-<span class="go">       [2, 5],</span>
-<span class="go">       [5, 2],</span>
-<span class="go">       [5, 5]])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">descriptors1</span><span class="p">,</span> <span class="n">keypoints1</span> <span class="o">=</span> <span class="n">brief</span><span class="p">(</span><span class="n">square1</span><span class="p">,</span> <span class="n">keypoints1</span><span class="p">,</span> <span class="n">patch_size</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">keypoints1</span>
-<span class="go">array([[2, 2],</span>
-<span class="go">       [2, 5],</span>
-<span class="go">       [5, 2],</span>
-<span class="go">       [5, 5]])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">square2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">square2</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">square2</span>
-<span class="go">array([[0, 0, 0, 0, 0, 0, 0, 0, 0],</span>
-<span class="go">       [0, 0, 0, 0, 0, 0, 0, 0, 0],</span>
-<span class="go">       [0, 0, 1, 1, 1, 1, 1, 0, 0],</span>
-<span class="go">       [0, 0, 1, 1, 1, 1, 1, 0, 0],</span>
-<span class="go">       [0, 0, 1, 1, 1, 1, 1, 0, 0],</span>
-<span class="go">       [0, 0, 1, 1, 1, 1, 1, 0, 0],</span>
-<span class="go">       [0, 0, 1, 1, 1, 1, 1, 0, 0],</span>
-<span class="go">       [0, 0, 0, 0, 0, 0, 0, 0, 0],</span>
-<span class="go">       [0, 0, 0, 0, 0, 0, 0, 0, 0]], dtype=int32)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">keypoints2</span> <span class="o">=</span> <span class="n">corner_peaks</span><span class="p">(</span><span class="n">corner_harris</span><span class="p">(</span><span class="n">square2</span><span class="p">),</span> <span class="n">min_distance</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">keypoints2</span>
-<span class="go">array([[2, 2],</span>
-<span class="go">       [2, 6],</span>
-<span class="go">       [6, 2],</span>
-<span class="go">       [6, 6]])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">descriptors2</span><span class="p">,</span> <span class="n">keypoints2</span> <span class="o">=</span> <span class="n">brief</span><span class="p">(</span><span class="n">square2</span><span class="p">,</span> <span class="n">keypoints2</span><span class="p">,</span> <span class="n">patch_size</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">keypoints2</span>
-<span class="go">array([[2, 2],</span>
-<span class="go">       [2, 6],</span>
-<span class="go">       [6, 2],</span>
-<span class="go">       [6, 6]])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">pairwise_hamming_distance</span><span class="p">(</span><span class="n">descriptors1</span><span class="p">,</span> <span class="n">descriptors2</span><span class="p">)</span>
-<span class="go">array([[ 0.03125  ,  0.3203125,  0.3671875,  0.6171875],</span>
-<span class="go">       [ 0.3203125,  0.03125  ,  0.640625 ,  0.375    ],</span>
-<span class="go">       [ 0.375    ,  0.6328125,  0.0390625,  0.328125 ],</span>
-<span class="go">       [ 0.625    ,  0.3671875,  0.34375  ,  0.0234375]])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">match_keypoints_brief</span><span class="p">(</span><span class="n">keypoints1</span><span class="p">,</span> <span class="n">descriptors1</span><span class="p">,</span> <span class="n">keypoints2</span><span class="p">,</span> <span class="n">descriptors2</span><span class="p">)</span>
-<span class="go">array([[[ 2,  2],</span>
-<span class="go">        [ 2,  2]],</span>
-</pre></div>
-</div>
-<blockquote>
-<div><dl class="docutils">
-<dt>[[ 2,  5],</dt>
-<dd>[ 2,  6]],</dd>
-<dt>[[ 5,  2],</dt>
-<dd>[ 6,  2]],</dd>
-<dt>[[ 5,  5],</dt>
-<dd>[ 6,  6]]])</dd>
-</dl>
-</div></blockquote>
-</dd></dl>
-
-</div>
 <div class="section" id="corner-foerstner">
 <h2>corner_foerstner<a class="headerlink" href="#corner-foerstner" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
@@ -304,16 +148,16 @@ weighting function for the auto-correlation matrix.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r76" rules="none">
+<table class="docutils citation" frame="void" id="r99" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[R76]</a></td><td><a class="reference external" href="http://www.ipb.uni-bonn.de/uploads/tx_ikgpublication/">http://www.ipb.uni-bonn.de/uploads/tx_ikgpublication/</a>           foerstner87.fast.pdf</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id1">[R99]</a></td><td><a class="reference external" href="http://www.ipb.uni-bonn.de/uploads/tx_ikgpublication/foerstner87.fast.pdf">http://www.ipb.uni-bonn.de/uploads/tx_ikgpublication/foerstner87.fast.pdf</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r77" rules="none">
+<table class="docutils citation" frame="void" id="r100" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[R77]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Corner_detection">http://en.wikipedia.org/wiki/Corner_detection</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id2">[R100]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Corner_detection">http://en.wikipedia.org/wiki/Corner_detection</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -401,16 +245,16 @@ weighting function for the auto-correlation matrix.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r78" rules="none">
+<table class="docutils citation" frame="void" id="r101" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[R78]</a></td><td><a class="reference external" href="http://kiwi.cs.dal.ca/~dparks/CornerDetection/harris.htm">http://kiwi.cs.dal.ca/~dparks/CornerDetection/harris.htm</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id3">[R101]</a></td><td><a class="reference external" href="http://kiwi.cs.dal.ca/~dparks/CornerDetection/harris.htm">http://kiwi.cs.dal.ca/~dparks/CornerDetection/harris.htm</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r79" rules="none">
+<table class="docutils citation" frame="void" id="r102" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id5">[R79]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Corner_detection">http://en.wikipedia.org/wiki/Corner_detection</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id4">[R102]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Corner_detection">http://en.wikipedia.org/wiki/Corner_detection</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -609,16 +453,16 @@ weighting function for the auto-correlation matrix.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r80" rules="none">
+<table class="docutils citation" frame="void" id="r103" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id6">[R80]</a></td><td><a class="reference external" href="http://kiwi.cs.dal.ca/~dparks/CornerDetection/harris.htm">http://kiwi.cs.dal.ca/~dparks/CornerDetection/harris.htm</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id5">[R103]</a></td><td><a class="reference external" href="http://kiwi.cs.dal.ca/~dparks/CornerDetection/harris.htm">http://kiwi.cs.dal.ca/~dparks/CornerDetection/harris.htm</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r81" rules="none">
+<table class="docutils citation" frame="void" id="r104" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id7">[R81]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Corner_detection">http://en.wikipedia.org/wiki/Corner_detection</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id6">[R104]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Corner_detection">http://en.wikipedia.org/wiki/Corner_detection</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -683,16 +527,16 @@ weighting function for the auto-correlation matrix.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r82" rules="none">
+<table class="docutils citation" frame="void" id="r105" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id8">[R82]</a></td><td><a class="reference external" href="http://www.ipb.uni-bonn.de/uploads/tx_ikgpublication/">http://www.ipb.uni-bonn.de/uploads/tx_ikgpublication/</a>           foerstner87.fast.pdf</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id7">[R105]</a></td><td><a class="reference external" href="http://www.ipb.uni-bonn.de/uploads/tx_ikgpublication/">http://www.ipb.uni-bonn.de/uploads/tx_ikgpublication/</a>           foerstner87.fast.pdf</td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r83" rules="none">
+<table class="docutils citation" frame="void" id="r106" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id9">[R83]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Corner_detection">http://en.wikipedia.org/wiki/Corner_detection</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id8">[R106]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Corner_detection">http://en.wikipedia.org/wiki/Corner_detection</a></td></tr>
 </tbody>
 </table>
 </dd></dl>
@@ -707,16 +551,16 @@ weighting function for the auto-correlation matrix.</p>
 <p>DAISY is a feature descriptor similar to SIFT formulated in a way that
 allows for fast dense extraction. Typically, this is practical for
 bag-of-features image representations.</p>
-<p>The implementation follows Tola et al. <a class="reference internal" href="#r84">[R84]</a> but deviate on the following
+<p>The implementation follows Tola et al. <a class="reference internal" href="#r107">[R107]</a> but deviate on the following
 points:</p>
 <blockquote>
 <div><ul class="simple">
 <li>Histogram bin contribution are smoothed with a circular Gaussian
 window over the tonal range (the angular range).</li>
 <li>The sigma values of the spatial Gaussian smoothing in this code do not
-match the sigma values in the original code by Tola et al. <a class="reference internal" href="#r85">[R85]</a>. In
+match the sigma values in the original code by Tola et al. <a class="reference internal" href="#r108">[R108]</a>. In
 their code, spatial smoothing is applied to both the input image and
-the center histogram. However, this smoothing is not documented in <a class="reference internal" href="#r84">[R84]</a>
+the center histogram. However, this smoothing is not documented in <a class="reference internal" href="#r107">[R107]</a>
 and, therefore, it is omitted.</li>
 </ul>
 </div></blockquote>
@@ -812,18 +656,18 @@ dimensionality  (P, Q, R) where</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r84" rules="none">
+<table class="docutils citation" frame="void" id="r107" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R84]</td><td><em>(<a class="fn-backref" href="#id10">1</a>, <a class="fn-backref" href="#id12">2</a>, <a class="fn-backref" href="#id13">3</a>)</em> Tola et al. &#8220;Daisy: An efficient dense descriptor applied to wide-
+<tr><td class="label">[R107]</td><td><em>(<a class="fn-backref" href="#id9">1</a>, <a class="fn-backref" href="#id11">2</a>, <a class="fn-backref" href="#id12">3</a>)</em> Tola et al. &#8220;Daisy: An efficient dense descriptor applied to wide-
 baseline stereo.&#8221; Pattern Analysis and Machine Intelligence, IEEE
 Transactions on 32.5 (2010): 815-830.</td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r85" rules="none">
+<table class="docutils citation" frame="void" id="r108" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R85]</td><td><em>(<a class="fn-backref" href="#id11">1</a>, <a class="fn-backref" href="#id14">2</a>)</em> <a class="reference external" href="http://cvlab.epfl.ch/alumni/tola/daisy.html">http://cvlab.epfl.ch/alumni/tola/daisy.html</a></td></tr>
+<tr><td class="label">[R108]</td><td><em>(<a class="fn-backref" href="#id10">1</a>, <a class="fn-backref" href="#id13">2</a>)</em> <a class="reference external" href="http://cvlab.epfl.ch/alumni/tola/daisy.html">http://cvlab.epfl.ch/alumni/tola/daisy.html</a></td></tr>
 </tbody>
 </table>
 </dd></dl>
@@ -890,24 +734,24 @@ type uint32, otherwise it is float64.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r86" rules="none">
+<table class="docutils citation" frame="void" id="r109" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id15">[R86]</a></td><td>The GLCM Tutorial Home Page,
+<tr><td class="label"><a class="fn-backref" href="#id14">[R109]</a></td><td>The GLCM Tutorial Home Page,
 <a class="reference external" href="http://www.fp.ucalgary.ca/mhallbey/tutorial.htm">http://www.fp.ucalgary.ca/mhallbey/tutorial.htm</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r87" rules="none">
+<table class="docutils citation" frame="void" id="r110" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id16">[R87]</a></td><td>Pattern Recognition Engineering, Morton Nadler &amp; Eric P.
+<tr><td class="label"><a class="fn-backref" href="#id15">[R110]</a></td><td>Pattern Recognition Engineering, Morton Nadler &amp; Eric P.
 Smith</td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r88" rules="none">
+<table class="docutils citation" frame="void" id="r111" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id17">[R88]</a></td><td>Wikipedia, <a class="reference external" href="http://en.wikipedia.org/wiki/Co-occurrence_matrix">http://en.wikipedia.org/wiki/Co-occurrence_matrix</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id16">[R111]</a></td><td>Wikipedia, <a class="reference external" href="http://en.wikipedia.org/wiki/Co-occurrence_matrix">http://en.wikipedia.org/wiki/Co-occurrence_matrix</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -990,10 +834,10 @@ the d&#8217;th distance and the a&#8217;th angle.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r89" rules="none">
+<table class="docutils citation" frame="void" id="r112" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id18">[R89]</a></td><td>The GLCM Tutorial Home Page,
+<tr><td class="label"><a class="fn-backref" href="#id17">[R112]</a></td><td>The GLCM Tutorial Home Page,
 <a class="reference external" href="http://www.fp.ucalgary.ca/mhallbey/tutorial.htm">http://www.fp.ucalgary.ca/mhallbey/tutorial.htm</a></td></tr>
 </tbody>
 </table>
@@ -1132,6 +976,12 @@ rotation invariant.</p>
 </dl>
 </li>
 <li><dl class="first docutils">
+<dt>&#8216;nri_uniform&#8217;: non rotation-invariant uniform patterns variant</dt>
+<dd><p class="first last">which is only gray scale invariant [2].</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
 <dt>&#8216;var&#8217;: rotation invariant variance measures of the contrast of local</dt>
 <dd><p class="first last">image texture which is rotation but not gray scale invariant.</p>
 </dd>
@@ -1150,58 +1000,22 @@ rotation invariant.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r90" rules="none">
+<table class="docutils citation" frame="void" id="r113" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id19">[R90]</a></td><td>Multiresolution Gray-Scale and Rotation Invariant Texture
+<tr><td class="label"><a class="fn-backref" href="#id18">[R113]</a></td><td>Multiresolution Gray-Scale and Rotation Invariant Texture
 Classification with Local Binary Patterns.
 Timo Ojala, Matti Pietikainen, Topi Maenpaa.
 <a class="reference external" href="http://www.rafbis.it/biplab15/images/stories/docenti/Danielriccio/">http://www.rafbis.it/biplab15/images/stories/docenti/Danielriccio/</a>           Articoliriferimento/LBP.pdf, 2002.</td></tr>
 </tbody>
 </table>
-</dd></dl>
-
-</div>
-<div class="section" id="match-keypoints-brief">
-<h2>match_keypoints_brief<a class="headerlink" href="#match-keypoints-brief" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="skimage.feature.match_keypoints_brief">
-<tt class="descclassname">skimage.feature.</tt><tt class="descname">match_keypoints_brief</tt><big>(</big><em>keypoints1</em>, <em>descriptors1</em>, <em>keypoints2</em>, <em>descriptors2</em>, <em>threshold=0.15</em><big>)</big><a class="headerlink" href="#skimage.feature.match_keypoints_brief" title="Permalink to this definition">¶</a></dt>
-<dd><p>Match keypoints described using BRIEF descriptors in one image to
-those in second image.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<table class="docutils citation" frame="void" id="r114" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>keypoints1</strong> : (M, 2) ndarray</p>
-<blockquote>
-<div><p>M Keypoints from the first image described using skimage.feature.brief</p>
-</div></blockquote>
-<p><strong>descriptors1</strong> : (M, P) ndarray</p>
-<blockquote>
-<div><p>BRIEF descriptors of size P about M keypoints in the first image.</p>
-</div></blockquote>
-<p><strong>keypoints2</strong> : (N, 2) ndarray</p>
-<blockquote>
-<div><p>N Keypoints from the second image described using skimage.feature.brief</p>
-</div></blockquote>
-<p><strong>descriptors2</strong> : (N, P) ndarray</p>
-<blockquote>
-<div><p>BRIEF descriptors of size P about N keypoints in the second image.</p>
-</div></blockquote>
-<p><strong>threshold</strong> : float in range [0, 1]</p>
-<blockquote>
-<div><p>Maximum allowable hamming distance between descriptors of two keypoints
-in separate images to be regarded as a match. Default is 0.15.</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>match_keypoints_brief</strong> : (Q, 2, 2) ndarray</p>
-<blockquote class="last">
-<div><p>Location of Q matched keypoint pairs from two images.</p>
-</div></blockquote>
-</td>
-</tr>
+<tr><td class="label"><a class="fn-backref" href="#id19">[R114]</a></td><td>Face recognition with local binary patterns.
+Timo Ahonen, Abdenour Hadid, Matti Pietikainen,
+<a class="reference external" href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.214.6851">http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.214.6851</a>,
+2004.</td></tr>
 </tbody>
 </table>
 </dd></dl>
@@ -1280,40 +1094,6 @@ to origin (top-left corner) of the template.</p>
 <span class="go"> [ 0.     0.     0.     0.125  0.125  0.125]]</span>
 </pre></div>
 </div>
-</dd></dl>
-
-</div>
-<div class="section" id="pairwise-hamming-distance">
-<h2>pairwise_hamming_distance<a class="headerlink" href="#pairwise-hamming-distance" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="skimage.feature.pairwise_hamming_distance">
-<tt class="descclassname">skimage.feature.</tt><tt class="descname">pairwise_hamming_distance</tt><big>(</big><em>array1</em>, <em>array2</em><big>)</big><a class="headerlink" href="#skimage.feature.pairwise_hamming_distance" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate hamming dissimilarity measure between two sets of
-vectors.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>array1</strong> : (P1, D) array</p>
-<blockquote>
-<div><p>P1 vectors of size D.</p>
-</div></blockquote>
-<p><strong>array2</strong> : (P2, D) array</p>
-<blockquote>
-<div><p>P2 vectors of size D.</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>distance</strong> : (P1, P2) array of dtype float</p>
-<blockquote class="last">
-<div><p>2D ndarray with value at an index (i, j) representing the hamming
-distance in the range [0, 1] between ith vector in array1 and jth
-vector in array2.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
 </dd></dl>
 
 </div>
@@ -1438,7 +1218,6 @@ coordinates of peaks where dilated image = original.</p>
         <div class="well sidebar-box toc">
             <ul class="nav nav-list">
 <li><a class="reference internal" href="#">Module: <tt class="docutils literal"><span class="pre">feature</span></tt></a><ul class="nav nav-list">
-<li><a class="reference internal" href="#brief">brief</a></li>
 <li><a class="reference internal" href="#corner-foerstner">corner_foerstner</a></li>
 <li><a class="reference internal" href="#corner-harris">corner_harris</a></li>
 <li><a class="reference internal" href="#corner-kitchen-rosenfeld">corner_kitchen_rosenfeld</a></li>
@@ -1451,9 +1230,7 @@ coordinates of peaks where dilated image = original.</p>
 <li><a class="reference internal" href="#greycoprops">greycoprops</a></li>
 <li><a class="reference internal" href="#hog">hog</a></li>
 <li><a class="reference internal" href="#local-binary-pattern">local_binary_pattern</a></li>
-<li><a class="reference internal" href="#match-keypoints-brief">match_keypoints_brief</a></li>
 <li><a class="reference internal" href="#match-template">match_template</a></li>
-<li><a class="reference internal" href="#pairwise-hamming-distance">pairwise_hamming_distance</a></li>
 <li><a class="reference internal" href="#peak-local-max">peak_local_max</a></li>
 </ul>
 </li>

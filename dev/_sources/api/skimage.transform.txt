@@ -62,21 +62,18 @@ Module: :mod:`transform`
   .. automethod:: __init__
 .. autosummary::
 
-   skimage.transform.downscale_local_means
+   skimage.transform.downscale_local_mean
    skimage.transform.estimate_transform
    skimage.transform.frt2
-   skimage.transform.hough
    skimage.transform.hough_circle
    skimage.transform.hough_ellipse
    skimage.transform.hough_line
    skimage.transform.hough_line_peaks
-   skimage.transform.hough_peaks
    skimage.transform.ifrt2
    skimage.transform.integral_image
    skimage.transform.integrate
    skimage.transform.iradon
    skimage.transform.iradon_sart
-   skimage.transform.probabilistic_hough
    skimage.transform.probabilistic_hough_line
    skimage.transform.pyramid_expand
    skimage.transform.pyramid_gaussian
@@ -90,10 +87,10 @@ Module: :mod:`transform`
    skimage.transform.warp
    skimage.transform.warp_coords
 
-downscale_local_means
----------------------
+downscale_local_mean
+--------------------
 
-.. autofunction:: skimage.transform.downscale_local_means
+.. autofunction:: skimage.transform.downscale_local_mean
 
 estimate_transform
 ------------------
@@ -104,11 +101,6 @@ frt2
 ----
 
 .. autofunction:: skimage.transform.frt2
-
-hough
------
-
-.. autofunction:: skimage.transform.hough
 
 hough_circle
 ------------
@@ -129,11 +121,6 @@ hough_line_peaks
 ----------------
 
 .. autofunction:: skimage.transform.hough_line_peaks
-
-hough_peaks
------------
-
-.. autofunction:: skimage.transform.hough_peaks
 
 ifrt2
 -----
@@ -159,11 +146,6 @@ iradon_sart
 -----------
 
 .. autofunction:: skimage.transform.iradon_sart
-
-probabilistic_hough
--------------------
-
-.. autofunction:: skimage.transform.probabilistic_hough
 
 probabilistic_hough_line
 ------------------------

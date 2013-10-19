@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Module: filter.rank &mdash; skimage v0.9dev docs</title>
+        <title>Module: filter.rank &mdash; skimage v0.10dev docs</title>
     
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -18,7 +18,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.9dev',
+        VERSION:     '0.10dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -27,7 +27,7 @@
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
-        <link rel="top" title="skimage v0.9dev docs" href="../index.html" />
+        <link rel="top" title="skimage v0.10dev docs" href="../index.html" />
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <link rel="shortcut icon" href="../_static/favicon.ico">
 </head>
@@ -55,6 +55,38 @@
             
   <div class="section" id="module-skimage.filter.rank">
 <span id="module-filter-rank"></span><h1>Module: <tt class="xref py py-mod docutils literal"><span class="pre">filter.rank</span></tt><a class="headerlink" href="#module-skimage.filter.rank" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="deprecated">
+<h2><a class="reference internal" href="#skimage.filter.rank.deprecated" title="skimage.filter.rank.deprecated"><tt class="xref py py-class docutils literal"><span class="pre">deprecated</span></tt></a><a class="headerlink" href="#deprecated" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="skimage.filter.rank.deprecated">
+<em class="property">class </em><tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">deprecated</tt><big>(</big><em>alt_func=None</em>, <em>behavior='warn'</em><big>)</big><a class="headerlink" href="#skimage.filter.rank.deprecated" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Decorator to mark deprecated functions with warning.</p>
+<p>Adapted from &lt;<a class="reference external" href="http://wiki.python.org/moin/PythonDecoratorLibrary">http://wiki.python.org/moin/PythonDecoratorLibrary</a>&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>alt_func</strong> : str</p>
+<blockquote>
+<div><p>If given, tell user what function to use instead.</p>
+</div></blockquote>
+<p><strong>behavior</strong> : {&#8216;warn&#8217;, &#8216;raise&#8217;}</p>
+<blockquote class="last">
+<div><p>Behavior during call to deprecated function: &#8216;warn&#8217; = warn user that
+function is deprecated; &#8216;raise&#8217; = raise error.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="skimage.filter.rank.deprecated.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>alt_func=None</em>, <em>behavior='warn'</em><big>)</big><a class="headerlink" href="#skimage.filter.rank.deprecated.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -64,23 +96,35 @@
 <tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.autolevel" title="skimage.filter.rank.autolevel"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.autolevel</span></tt></a>(image,&nbsp;selem)</td>
 <td>Autolevel image using local histogram.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.bilateral_mean" title="skimage.filter.rank.bilateral_mean"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.bilateral_mean</span></tt></a></td>
-<td>Apply a flat kernel bilateral filter.</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.autolevel_percentile" title="skimage.filter.rank.autolevel_percentile"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.autolevel_percentile</span></tt></a>(...)</td>
+<td>Return greyscale local autolevel of an image.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.bilateral_pop" title="skimage.filter.rank.bilateral_pop"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.bilateral_pop</span></tt></a></td>
-<td>Return the number (population) of pixels actually inside the bilateral neighborhood, i.e.</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.bilateral_mean" title="skimage.filter.rank.bilateral_mean"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.bilateral_mean</span></tt></a>(*args,&nbsp;...)</td>
+<td><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">mean_bilateral</span></tt> instead.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.bottomhat" title="skimage.filter.rank.bottomhat"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.bottomhat</span></tt></a>(image,&nbsp;selem)</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.bilateral_pop" title="skimage.filter.rank.bilateral_pop"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.bilateral_pop</span></tt></a>(*args,&nbsp;...)</td>
+<td><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">pop_bilateral</span></tt> instead.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.bottomhat" title="skimage.filter.rank.bottomhat"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.bottomhat</span></tt></a>(image,&nbsp;selem)</td>
 <td>Returns greyscale local bottomhat of an image.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.entropy" title="skimage.filter.rank.entropy"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.entropy</span></tt></a>(image,&nbsp;selem[,&nbsp;...])</td>
-<td>Returns the entropy [R121] computed locally. Entropy is computed</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.enhance_contrast" title="skimage.filter.rank.enhance_contrast"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.enhance_contrast</span></tt></a>(image,&nbsp;...)</td>
+<td>Enhance an image replacing each pixel by the local maximum if pixel</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.equalize" title="skimage.filter.rank.equalize"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.equalize</span></tt></a>(image,&nbsp;selem[,&nbsp;...])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.enhance_contrast_percentile" title="skimage.filter.rank.enhance_contrast_percentile"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.enhance_contrast_percentile</span></tt></a>(...)</td>
+<td>Return greyscale local enhance_contrast of an image.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.entropy" title="skimage.filter.rank.entropy"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.entropy</span></tt></a>(image,&nbsp;selem[,&nbsp;...])</td>
+<td>Returns the entropy [R145] computed locally. Entropy is computed</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.equalize" title="skimage.filter.rank.equalize"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.equalize</span></tt></a>(image,&nbsp;selem[,&nbsp;...])</td>
 <td>Equalize image using local histogram.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.gradient" title="skimage.filter.rank.gradient"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.gradient</span></tt></a>(image,&nbsp;selem[,&nbsp;...])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.gradient" title="skimage.filter.rank.gradient"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.gradient</span></tt></a>(image,&nbsp;selem[,&nbsp;...])</td>
 <td>Return greyscale local gradient of an image (i.e.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.gradient_percentile" title="skimage.filter.rank.gradient_percentile"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.gradient_percentile</span></tt></a>(...)</td>
+<td>Return greyscale local gradient of an image.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.maximum" title="skimage.filter.rank.maximum"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.maximum</span></tt></a>(image,&nbsp;selem[,&nbsp;...])</td>
 <td>Return greyscale local maximum of an image.</td>
@@ -88,8 +132,14 @@
 <tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.mean" title="skimage.filter.rank.mean"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.mean</span></tt></a>(image,&nbsp;selem[,&nbsp;...])</td>
 <td>Return greyscale local mean of an image.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.meansubtraction" title="skimage.filter.rank.meansubtraction"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.meansubtraction</span></tt></a>(image,&nbsp;selem)</td>
-<td>Return image subtracted from its local mean.</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.mean_bilateral" title="skimage.filter.rank.mean_bilateral"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.mean_bilateral</span></tt></a>(image,&nbsp;selem)</td>
+<td>Apply a flat kernel bilateral filter.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.mean_percentile" title="skimage.filter.rank.mean_percentile"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.mean_percentile</span></tt></a>(image,&nbsp;selem)</td>
+<td>Return greyscale local mean of an image.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.meansubtraction" title="skimage.filter.rank.meansubtraction"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.meansubtraction</span></tt></a>(*args,&nbsp;...)</td>
+<td><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">subtract_mean</span></tt> instead.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.median" title="skimage.filter.rank.median"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.median</span></tt></a>(image,&nbsp;selem[,&nbsp;...])</td>
 <td>Return greyscale local median of an image.</td>
@@ -100,8 +150,8 @@
 <tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.modal" title="skimage.filter.rank.modal"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.modal</span></tt></a>(image,&nbsp;selem[,&nbsp;...])</td>
 <td>Return greyscale local mode of an image.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.morph_contr_enh" title="skimage.filter.rank.morph_contr_enh"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.morph_contr_enh</span></tt></a>(image,&nbsp;selem)</td>
-<td>Enhance an image replacing each pixel by the local maximum if pixel</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.morph_contr_enh" title="skimage.filter.rank.morph_contr_enh"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.morph_contr_enh</span></tt></a>(*args,&nbsp;...)</td>
+<td><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">enhance_contrast</span></tt> instead.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.noise_filter" title="skimage.filter.rank.noise_filter"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.noise_filter</span></tt></a>(image,&nbsp;selem)</td>
 <td>Returns the noise feature as described in <a class="reference internal" href="#hashimoto12">[Hashimoto12]</a></td>
@@ -109,41 +159,57 @@
 <tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.otsu" title="skimage.filter.rank.otsu"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.otsu</span></tt></a>(image,&nbsp;selem[,&nbsp;...])</td>
 <td>Returns the Otsu&#8217;s threshold value for each pixel.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.percentile" title="skimage.filter.rank.percentile"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.percentile</span></tt></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.percentile" title="skimage.filter.rank.percentile"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.percentile</span></tt></a>(image,&nbsp;selem)</td>
 <td>Return greyscale local percentile of an image.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.percentile_autolevel" title="skimage.filter.rank.percentile_autolevel"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.percentile_autolevel</span></tt></a></td>
-<td>Return greyscale local autolevel of an image.</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.percentile_autolevel" title="skimage.filter.rank.percentile_autolevel"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.percentile_autolevel</span></tt></a>(...)</td>
+<td><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">autolevel_percentile</span></tt> instead.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.percentile_gradient" title="skimage.filter.rank.percentile_gradient"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.percentile_gradient</span></tt></a></td>
-<td>Return greyscale local percentile_gradient of an image.</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.percentile_gradient" title="skimage.filter.rank.percentile_gradient"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.percentile_gradient</span></tt></a>(...)</td>
+<td><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">gradient_percentile</span></tt> instead.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.percentile_mean" title="skimage.filter.rank.percentile_mean"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.percentile_mean</span></tt></a></td>
-<td>Return greyscale local mean of an image.</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.percentile_mean" title="skimage.filter.rank.percentile_mean"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.percentile_mean</span></tt></a>(*args,&nbsp;...)</td>
+<td><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">mean_percentile</span></tt> instead.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.percentile_mean_subtraction" title="skimage.filter.rank.percentile_mean_subtraction"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.percentile_mean_subtraction</span></tt></a></td>
-<td>Return greyscale local mean_subtraction of an image.</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.percentile_mean_subtraction" title="skimage.filter.rank.percentile_mean_subtraction"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.percentile_mean_subtraction</span></tt></a>(...)</td>
+<td><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">subtract_mean_percentile</span></tt> instead.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.percentile_morph_contr_enh" title="skimage.filter.rank.percentile_morph_contr_enh"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.percentile_morph_contr_enh</span></tt></a></td>
-<td>Return greyscale local morph_contr_enh of an image.</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.percentile_morph_contr_enh" title="skimage.filter.rank.percentile_morph_contr_enh"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.percentile_morph_contr_enh</span></tt></a>(...)</td>
+<td><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">enhance_contrast_percentile</span></tt> instead.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.percentile_pop" title="skimage.filter.rank.percentile_pop"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.percentile_pop</span></tt></a></td>
-<td>Return greyscale local pop of an image.</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.percentile_pop" title="skimage.filter.rank.percentile_pop"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.percentile_pop</span></tt></a>(*args,&nbsp;...)</td>
+<td><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">pop_percentile</span></tt> instead.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.percentile_threshold" title="skimage.filter.rank.percentile_threshold"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.percentile_threshold</span></tt></a></td>
-<td>Return greyscale local threshold of an image.</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.percentile_threshold" title="skimage.filter.rank.percentile_threshold"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.percentile_threshold</span></tt></a>(...)</td>
+<td><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">threshold_percentile</span></tt> instead.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.pop" title="skimage.filter.rank.pop"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.pop</span></tt></a>(image,&nbsp;selem[,&nbsp;out,&nbsp;...])</td>
 <td>Return the number (population) of pixels actually inside the neighborhood.</td>
 </tr>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.pop_bilateral" title="skimage.filter.rank.pop_bilateral"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.pop_bilateral</span></tt></a>(image,&nbsp;selem)</td>
+<td>Return the number (population) of pixels actually inside the bilateral neighborhood, i.e.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.pop_percentile" title="skimage.filter.rank.pop_percentile"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.pop_percentile</span></tt></a>(image,&nbsp;selem)</td>
+<td>Return greyscale local pop of an image.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.subtract_mean" title="skimage.filter.rank.subtract_mean"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.subtract_mean</span></tt></a>(image,&nbsp;selem)</td>
+<td>Return image subtracted from its local mean.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.subtract_mean_percentile" title="skimage.filter.rank.subtract_mean_percentile"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.subtract_mean_percentile</span></tt></a>(...)</td>
+<td>Return greyscale local subtract_mean of an image.</td>
+</tr>
 <tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.threshold" title="skimage.filter.rank.threshold"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.threshold</span></tt></a>(image,&nbsp;selem)</td>
 <td>Return greyscale local threshold of an image.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.tophat" title="skimage.filter.rank.tophat"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.tophat</span></tt></a>(image,&nbsp;selem[,&nbsp;...])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.rank.threshold_percentile" title="skimage.filter.rank.threshold_percentile"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.threshold_percentile</span></tt></a>(...)</td>
+<td>Return greyscale local threshold of an image.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.rank.tophat" title="skimage.filter.rank.tophat"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.rank.tophat</span></tt></a>(image,&nbsp;selem[,&nbsp;...])</td>
 <td>Return greyscale local tophat of an image.</td>
 </tr>
 </tbody>
 </table>
+</div>
 <div class="section" id="autolevel">
 <h2>autolevel<a class="headerlink" href="#autolevel" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
@@ -154,21 +220,19 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray (uint8, uint16)</p>
 <blockquote>
-<div><p>Image array (uint8 array or uint16). If image is uint16, the algorithm
-uses max. 12bit histogram, an exception will be raised if image has a
-value &gt; 4095.</p>
+<div><p>Image array.</p>
 </div></blockquote>
 <p><strong>selem</strong> : ndarray</p>
 <blockquote>
 <div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
 </div></blockquote>
-<p><strong>out</strong> : ndarray</p>
+<p><strong>out</strong> : ndarray (same dtype as input)</p>
 <blockquote>
 <div><p>If None, a new array will be allocated.</p>
 </div></blockquote>
-<p><strong>mask</strong> : ndarray (uint8)</p>
+<p><strong>mask</strong> : ndarray</p>
 <blockquote>
 <div><p>Mask array that defines (&gt;0) area of the image included in the local
 neighborhood. If None, the complete image is used (default).</p>
@@ -181,9 +245,9 @@ structuring element).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray (same dtype as input image)</p>
 <blockquote class="last">
-<div><p>The result of the local autolevel.</p>
+<div><p>Output image.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -202,17 +266,71 @@ structuring element).</p>
 </dd></dl>
 
 </div>
+<div class="section" id="autolevel-percentile">
+<h2>autolevel_percentile<a class="headerlink" href="#autolevel-percentile" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.filter.rank.autolevel_percentile">
+<tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">autolevel_percentile</tt><big>(</big><em>image</em>, <em>selem</em>, <em>out=None</em>, <em>mask=None</em>, <em>shift_x=False</em>, <em>shift_y=False</em>, <em>p0=0</em>, <em>p1=1</em><big>)</big><a class="headerlink" href="#skimage.filter.rank.autolevel_percentile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return greyscale local autolevel of an image.</p>
+<p>Autolevel is computed on the given structuring element. Only levels between
+percentiles [p0, p1] are used.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray (uint8, uint16)</p>
+<blockquote>
+<div><p>Image array.</p>
+</div></blockquote>
+<p><strong>selem</strong> : ndarray</p>
+<blockquote>
+<div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
+</div></blockquote>
+<p><strong>out</strong> : ndarray (same dtype as input)</p>
+<blockquote>
+<div><p>If None, a new array will be allocated.</p>
+</div></blockquote>
+<p><strong>mask</strong> : ndarray</p>
+<blockquote>
+<div><p>Mask array that defines (&gt;0) area of the image included in the local
+neighborhood. If None, the complete image is used (default).</p>
+</div></blockquote>
+<p><strong>shift_x, shift_y</strong> : int</p>
+<blockquote>
+<div><p>Offset added to the structuring element center point. Shift is bounded
+to the structuring element sizes (center must be inside the given
+structuring element).</p>
+</div></blockquote>
+<p><strong>p0, p1</strong> : float in [0, ..., 1]</p>
+<blockquote>
+<div><p>Define the [p0, p1] percentile interval to be considered for computing
+the value.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray (same dtype as input image)</p>
+<blockquote class="last">
+<div><p>Output image.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
 <div class="section" id="bilateral-mean">
 <h2>bilateral_mean<a class="headerlink" href="#bilateral-mean" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.filter.rank.bilateral_mean">
-<tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">bilateral_mean</tt><big>(</big><big>)</big><a class="headerlink" href="#skimage.filter.rank.bilateral_mean" title="Permalink to this definition">¶</a></dt>
-<dd><p>Apply a flat kernel bilateral filter.</p>
+<tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">bilateral_mean</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.filter.rank.bilateral_mean" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">mean_bilateral</span></tt> instead.</p>
+<p>Apply a flat kernel bilateral filter.</p>
 <p>This is an edge-preserving and noise reducing denoising filter. It averages
 pixels based on their spatial closeness and radiometric similarity.</p>
 <p>Spatial closeness is measured by considering only the local pixel
 neighborhood given by a structuring element (selem).</p>
-<p>Radiometric similarity is defined by the greylevel interval [g-s0,g+s1]
+<p>Radiometric similarity is defined by the greylevel interval [g-s0, g+s1]
 where g is the current pixel greylevel. Only pixels belonging to the
 structuring element AND having a greylevel inside this interval are
 averaged. Return greyscale local bilateral_mean of an image.</p>
@@ -220,25 +338,24 @@ averaged. Return greyscale local bilateral_mean of an image.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray (uint8, uint16)</p>
 <blockquote>
-<div><p>Image array (uint16). As the algorithm uses max. 12bit histogram,
-an exception will be raised if image has a value &gt; 4095</p>
+<div><p>Image array.</p>
 </div></blockquote>
 <p><strong>selem</strong> : ndarray</p>
 <blockquote>
 <div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
 </div></blockquote>
-<p><strong>out</strong> : ndarray</p>
+<p><strong>out</strong> : ndarray (same dtype as input)</p>
 <blockquote>
 <div><p>If None, a new array will be allocated.</p>
 </div></blockquote>
-<p><strong>mask</strong> : ndarray (uint8)</p>
+<p><strong>mask</strong> : ndarray</p>
 <blockquote>
 <div><p>Mask array that defines (&gt;0) area of the image included in the local
 neighborhood. If None, the complete image is used (default).</p>
 </div></blockquote>
-<p><strong>shift_x, shift_y</strong> : (int)</p>
+<p><strong>shift_x, shift_y</strong> : int</p>
 <blockquote>
 <div><p>Offset added to the structuring element center point. Shift is bounded
 to the structuring element sizes (center must be inside the given
@@ -246,13 +363,14 @@ structuring element).</p>
 </div></blockquote>
 <p><strong>s0, s1</strong> : int</p>
 <blockquote>
-<div><p>define the [s0, s1] interval to be considered for computing the value.</p>
+<div><p>Define the [s0, s1] interval around the greyvalue of the center pixel
+to be considered for computing the value.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint16 array</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray (same dtype as input image)</p>
 <blockquote class="last">
-<div><p>The result of the local bilateral mean.</p>
+<div><p>Output image.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -262,10 +380,6 @@ structuring element).</p>
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="skimage.filter.html#skimage.filter.denoise_bilateral" title="skimage.filter.denoise_bilateral"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.denoise_bilateral</span></tt></a></p>
 </div>
-<p class="rubric">Notes</p>
-<ul class="simple">
-<li>input image are 16-bit only</li>
-</ul>
 <p class="rubric">Examples</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.morphology</span> <span class="kn">import</span> <span class="n">disk</span>
@@ -283,33 +397,33 @@ structuring element).</p>
 <h2>bilateral_pop<a class="headerlink" href="#bilateral-pop" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.filter.rank.bilateral_pop">
-<tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">bilateral_pop</tt><big>(</big><big>)</big><a class="headerlink" href="#skimage.filter.rank.bilateral_pop" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the number (population) of pixels actually inside the bilateral
+<tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">bilateral_pop</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.filter.rank.bilateral_pop" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">pop_bilateral</span></tt> instead.</p>
+<p>Return the number (population) of pixels actually inside the bilateral
 neighborhood, i.e. being inside the structuring element AND having a gray
 level inside the interval [g-s0, g+s1].</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray (uint8, uint16)</p>
 <blockquote>
-<div><p>Image array (uint16). As the algorithm uses max. 12bit histogram,
-an exception will be raised if image has a value &gt; 4095</p>
+<div><p>Image array.</p>
 </div></blockquote>
 <p><strong>selem</strong> : ndarray</p>
 <blockquote>
 <div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
 </div></blockquote>
-<p><strong>out</strong> : ndarray</p>
+<p><strong>out</strong> : ndarray (same dtype as input)</p>
 <blockquote>
 <div><p>If None, a new array will be allocated.</p>
 </div></blockquote>
-<p><strong>mask</strong> : ndarray (uint8)</p>
+<p><strong>mask</strong> : ndarray</p>
 <blockquote>
 <div><p>Mask array that defines (&gt;0) area of the image included in the local
 neighborhood. If None, the complete image is used (default).</p>
 </div></blockquote>
-<p><strong>shift_x, shift_y</strong> : (int)</p>
+<p><strong>shift_x, shift_y</strong> : int</p>
 <blockquote>
 <div><p>Offset added to the structuring element center point. Shift is bounded
 to the structuring element sizes (center must be inside the given
@@ -317,31 +431,28 @@ structuring element).</p>
 </div></blockquote>
 <p><strong>s0, s1</strong> : int</p>
 <blockquote>
-<div><p>define the [s0, s1] interval to be considered for computing the value.</p>
+<div><p>Define the [s0, s1] interval around the greyvalue of the center pixel
+to be considered for computing the value.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint16 array</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray (same dtype as input image)</p>
 <blockquote class="last">
-<div><p>the local number of pixels inside the bilateral neighborhood</p>
+<div><p>Output image.</p>
 </div></blockquote>
 </td>
 </tr>
 </tbody>
 </table>
-<p class="rubric">Notes</p>
-<ul class="simple">
-<li>input image are 16-bit only</li>
-</ul>
 <p class="rubric">Examples</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Local mean</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.morphology</span> <span class="kn">import</span> <span class="n">square</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">skimage.filter.rank</span> <span class="kn">as</span> <span class="nn">rank</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ima16</span> <span class="o">=</span> <span class="mi">255</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-<span class="gp">... </span>                       <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-<span class="gp">... </span>                       <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-<span class="gp">... </span>                       <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-<span class="gp">... </span>                       <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint16</span><span class="p">)</span>
+<span class="gp">... </span>                        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+<span class="gp">... </span>                        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+<span class="gp">... </span>                        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+<span class="gp">... </span>                        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint16</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rank</span><span class="o">.</span><span class="n">bilateral_pop</span><span class="p">(</span><span class="n">ima16</span><span class="p">,</span> <span class="n">square</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">s0</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">s1</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="go">array([[3, 4, 3, 4, 3],</span>
 <span class="go">       [4, 4, 6, 4, 4],</span>
@@ -363,21 +474,19 @@ structuring element).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray (uint8, uint16)</p>
 <blockquote>
-<div><p>Image array (uint8 array or uint16). If image is uint16, the algorithm
-uses max. 12bit histogram, an exception will be raised if image has a
-value &gt; 4095.</p>
+<div><p>Image array.</p>
 </div></blockquote>
 <p><strong>selem</strong> : ndarray</p>
 <blockquote>
 <div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
 </div></blockquote>
-<p><strong>out</strong> : ndarray</p>
+<p><strong>out</strong> : ndarray (same dtype as input)</p>
 <blockquote>
 <div><p>If None, a new array will be allocated.</p>
 </div></blockquote>
-<p><strong>mask</strong> : ndarray (uint8)</p>
+<p><strong>mask</strong> : ndarray</p>
 <blockquote>
 <div><p>Mask array that defines (&gt;0) area of the image included in the local
 neighborhood. If None, the complete image is used (default).</p>
@@ -390,9 +499,122 @@ structuring element).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>local bottomhat</strong> : uint8 array or uint16 array depending on input image</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>bottomhat</strong> : ndarray (same dtype as input image)</p>
 <blockquote class="last">
 <div><p>The result of the local bottomhat.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="enhance-contrast">
+<h2>enhance_contrast<a class="headerlink" href="#enhance-contrast" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.filter.rank.enhance_contrast">
+<tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">enhance_contrast</tt><big>(</big><em>image</em>, <em>selem</em>, <em>out=None</em>, <em>mask=None</em>, <em>shift_x=False</em>, <em>shift_y=False</em><big>)</big><a class="headerlink" href="#skimage.filter.rank.enhance_contrast" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enhance an image replacing each pixel by the local maximum if pixel
+greylevel is closest to maximimum than local minimum OR local minimum
+otherwise.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray (uint8, uint16)</p>
+<blockquote>
+<div><p>Image array.</p>
+</div></blockquote>
+<p><strong>selem</strong> : ndarray</p>
+<blockquote>
+<div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
+</div></blockquote>
+<p><strong>out</strong> : ndarray (same dtype as input)</p>
+<blockquote>
+<div><p>If None, a new array will be allocated.</p>
+</div></blockquote>
+<p><strong>mask</strong> : ndarray</p>
+<blockquote>
+<div><p>Mask array that defines (&gt;0) area of the image included in the local
+neighborhood. If None, the complete image is used (default).</p>
+</div></blockquote>
+<p><strong>shift_x, shift_y</strong> : int</p>
+<blockquote>
+<div><p>Offset added to the structuring element center point. Shift is bounded
+to the structuring element sizes (center must be inside the given
+structuring element).</p>
+</div></blockquote>
+<p><strong>Returns</strong> :</p>
+<blockquote>
+<div><p>Output image.</p>
+</div></blockquote>
+<p><strong>out</strong> : ndarray (same dtype as input image)</p>
+<blockquote class="last">
+<div><p>The result of the local enhance_contrast.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.morphology</span> <span class="kn">import</span> <span class="n">disk</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.filter.rank</span> <span class="kn">import</span> <span class="n">enhance_contrast</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># Load test image</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ima</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">camera</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># Local mean</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">avg</span> <span class="o">=</span> <span class="n">enhance_contrast</span><span class="p">(</span><span class="n">ima</span><span class="p">,</span> <span class="n">disk</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="enhance-contrast-percentile">
+<h2>enhance_contrast_percentile<a class="headerlink" href="#enhance-contrast-percentile" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.filter.rank.enhance_contrast_percentile">
+<tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">enhance_contrast_percentile</tt><big>(</big><em>image</em>, <em>selem</em>, <em>out=None</em>, <em>mask=None</em>, <em>shift_x=False</em>, <em>shift_y=False</em>, <em>p0=0</em>, <em>p1=1</em><big>)</big><a class="headerlink" href="#skimage.filter.rank.enhance_contrast_percentile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return greyscale local enhance_contrast of an image.</p>
+<p>enhance_contrast is computed on the given structuring element. Only levels
+between percentiles [p0, p1] are used.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray (uint8, uint16)</p>
+<blockquote>
+<div><p>Image array.</p>
+</div></blockquote>
+<p><strong>selem</strong> : ndarray</p>
+<blockquote>
+<div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
+</div></blockquote>
+<p><strong>out</strong> : ndarray (same dtype as input)</p>
+<blockquote>
+<div><p>If None, a new array will be allocated.</p>
+</div></blockquote>
+<p><strong>mask</strong> : ndarray</p>
+<blockquote>
+<div><p>Mask array that defines (&gt;0) area of the image included in the local
+neighborhood. If None, the complete image is used (default).</p>
+</div></blockquote>
+<p><strong>shift_x, shift_y</strong> : int</p>
+<blockquote>
+<div><p>Offset added to the structuring element center point. Shift is bounded
+to the structuring element sizes (center must be inside the given
+structuring element).</p>
+</div></blockquote>
+<p><strong>p0, p1</strong> : float in [0, ..., 1]</p>
+<blockquote>
+<div><p>Define the [p0, p1] percentile interval to be considered for computing
+the value.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray (same dtype as input image)</p>
+<blockquote class="last">
+<div><p>Output image.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -406,28 +628,26 @@ structuring element).</p>
 <dl class="function">
 <dt id="skimage.filter.rank.entropy">
 <tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">entropy</tt><big>(</big><em>image</em>, <em>selem</em>, <em>out=None</em>, <em>mask=None</em>, <em>shift_x=False</em>, <em>shift_y=False</em><big>)</big><a class="headerlink" href="#skimage.filter.rank.entropy" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the entropy <a class="reference internal" href="#r122">[R122]</a> computed locally. Entropy is computed
+<dd><p>Returns the entropy <a class="reference internal" href="#r146">[R146]</a> computed locally. Entropy is computed
 using base 2 logarithm i.e. the filter returns the minimum number of
 bits needed to encode local greylevel distribution.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray (uint8, uint16)</p>
 <blockquote>
-<div><p>Image array (uint8 array or uint16). If image is uint16, the algorithm
-uses max. 12bit histogram, an exception will be raised if image has a
-value &gt; 4095.</p>
+<div><p>Image array.</p>
 </div></blockquote>
 <p><strong>selem</strong> : ndarray</p>
 <blockquote>
 <div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
 </div></blockquote>
-<p><strong>out</strong> : ndarray</p>
+<p><strong>out</strong> : ndarray (same dtype as input)</p>
 <blockquote>
 <div><p>If None, a new array will be allocated.</p>
 </div></blockquote>
-<p><strong>mask</strong> : ndarray (uint8)</p>
+<p><strong>mask</strong> : ndarray</p>
 <blockquote>
 <div><p>Mask array that defines (&gt;0) area of the image included in the local
 neighborhood. If None, the complete image is used (default).</p>
@@ -440,19 +660,19 @@ structuring element).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray (double)</p>
 <blockquote class="last">
-<div><p>entropy x10 (uint8 images) and entropy x1000 (uint16 images)</p>
+<div><p>Output image.</p>
 </div></blockquote>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r122" rules="none">
+<table class="docutils citation" frame="void" id="r146" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R122]</td><td><em>(<a class="fn-backref" href="#id3">1</a>, <a class="fn-backref" href="#id4">2</a>)</em> <a class="reference external" href="http://en.wikipedia.org/wiki/Entropy_(information_theory">http://en.wikipedia.org/wiki/Entropy_(information_theory</a>)</td></tr>
+<tr><td class="label">[R146]</td><td><em>(<a class="fn-backref" href="#id3">1</a>, <a class="fn-backref" href="#id4">2</a>)</em> <a class="reference external" href="http://en.wikipedia.org/wiki/Entropy_(information_theory)">http://en.wikipedia.org/wiki/Entropy_(information_theory)</a>&gt;</td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -460,13 +680,8 @@ structuring element).</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.filter.rank</span> <span class="kn">import</span> <span class="n">entropy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.morphology</span> <span class="kn">import</span> <span class="n">disk</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c"># defining a 8- and a 16-bit test images</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a8</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">camera</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a16</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">camera</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint16</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c"># pixel values contain 10x the local entropy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ent8</span> <span class="o">=</span> <span class="n">entropy</span><span class="p">(</span><span class="n">a8</span><span class="p">,</span> <span class="n">disk</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c"># pixel values contain 1000x the local entropy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ent16</span> <span class="o">=</span> <span class="n">entropy</span><span class="p">(</span><span class="n">a16</span><span class="p">,</span> <span class="n">disk</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -482,21 +697,19 @@ structuring element).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray (uint8, uint16)</p>
 <blockquote>
-<div><p>Image array (uint8 array or uint16). If image is uint16, the algorithm
-uses max. 12bit histogram, an exception will be raised if image has a
-value &gt; 4095.</p>
+<div><p>Image array.</p>
 </div></blockquote>
 <p><strong>selem</strong> : ndarray</p>
 <blockquote>
 <div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
 </div></blockquote>
-<p><strong>out</strong> : ndarray</p>
+<p><strong>out</strong> : ndarray (same dtype as input)</p>
 <blockquote>
 <div><p>If None, a new array will be allocated.</p>
 </div></blockquote>
-<p><strong>mask</strong> : ndarray (uint8)</p>
+<p><strong>mask</strong> : ndarray</p>
 <blockquote>
 <div><p>Mask array that defines (&gt;0) area of the image included in the local
 neighborhood. If None, the complete image is used (default).</p>
@@ -509,9 +722,9 @@ structuring element).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray (same dtype as input image)</p>
 <blockquote class="last">
-<div><p>The result of the local equalize.</p>
+<div><p>Output image.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -541,21 +754,19 @@ minimum).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray (uint8, uint16)</p>
 <blockquote>
-<div><p>Image array (uint8 array or uint16). If image is uint16, the algorithm
-uses max. 12bit histogram, an exception will be raised if image has a
-value &gt; 4095.</p>
+<div><p>Image array.</p>
 </div></blockquote>
 <p><strong>selem</strong> : ndarray</p>
 <blockquote>
 <div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
 </div></blockquote>
-<p><strong>out</strong> : ndarray</p>
+<p><strong>out</strong> : ndarray (same dtype as input)</p>
 <blockquote>
 <div><p>If None, a new array will be allocated.</p>
 </div></blockquote>
-<p><strong>mask</strong> : ndarray (uint8)</p>
+<p><strong>mask</strong> : ndarray</p>
 <blockquote>
 <div><p>Mask array that defines (&gt;0) area of the image included in the local
 neighborhood. If None, the complete image is used (default).</p>
@@ -568,9 +779,62 @@ structuring element).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray (same dtype as input image)</p>
 <blockquote class="last">
-<div><p>The local gradient.</p>
+<div><p>Output image.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="gradient-percentile">
+<h2>gradient_percentile<a class="headerlink" href="#gradient-percentile" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.filter.rank.gradient_percentile">
+<tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">gradient_percentile</tt><big>(</big><em>image</em>, <em>selem</em>, <em>out=None</em>, <em>mask=None</em>, <em>shift_x=False</em>, <em>shift_y=False</em>, <em>p0=0</em>, <em>p1=1</em><big>)</big><a class="headerlink" href="#skimage.filter.rank.gradient_percentile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return greyscale local gradient of an image.</p>
+<p>gradient is computed on the given structuring element. Only
+levels between percentiles [p0, p1] are used.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray (uint8, uint16)</p>
+<blockquote>
+<div><p>Image array.</p>
+</div></blockquote>
+<p><strong>selem</strong> : ndarray</p>
+<blockquote>
+<div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
+</div></blockquote>
+<p><strong>out</strong> : ndarray (same dtype as input)</p>
+<blockquote>
+<div><p>If None, a new array will be allocated.</p>
+</div></blockquote>
+<p><strong>mask</strong> : ndarray</p>
+<blockquote>
+<div><p>Mask array that defines (&gt;0) area of the image included in the local
+neighborhood. If None, the complete image is used (default).</p>
+</div></blockquote>
+<p><strong>shift_x, shift_y</strong> : int</p>
+<blockquote>
+<div><p>Offset added to the structuring element center point. Shift is bounded
+to the structuring element sizes (center must be inside the given
+structuring element).</p>
+</div></blockquote>
+<p><strong>p0, p1</strong> : float in [0, ..., 1]</p>
+<blockquote>
+<div><p>Define the [p0, p1] percentile interval to be considered for computing
+the value.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray (same dtype as input image)</p>
+<blockquote class="last">
+<div><p>Output image.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -589,21 +853,19 @@ structuring element).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray (uint8, uint16)</p>
 <blockquote>
-<div><p>Image array (uint8 array or uint16). If image is uint16, the algorithm
-uses max. 12bit histogram, an exception will be raised if image has a
-value &gt; 4095.</p>
+<div><p>Image array.</p>
 </div></blockquote>
 <p><strong>selem</strong> : ndarray</p>
 <blockquote>
 <div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
 </div></blockquote>
-<p><strong>out</strong> : ndarray</p>
+<p><strong>out</strong> : ndarray (same dtype as input)</p>
 <blockquote>
 <div><p>If None, a new array will be allocated.</p>
 </div></blockquote>
-<p><strong>mask</strong> : ndarray (uint8)</p>
+<p><strong>mask</strong> : ndarray</p>
 <blockquote>
 <div><p>Mask array that defines (&gt;0) area of the image included in the local
 neighborhood. If None, the complete image is used (default).</p>
@@ -616,9 +878,9 @@ structuring element).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray (same dtype as input image)</p>
 <blockquote class="last">
-<div><p>The local maximum.</p>
+<div><p>Output image.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -641,21 +903,19 @@ structuring element).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray (uint8, uint16)</p>
 <blockquote>
-<div><p>Image array (uint8 array or uint16). If image is uint16, the algorithm
-uses max. 12bit histogram, an exception will be raised if image has a
-value &gt; 4095.</p>
+<div><p>Image array.</p>
 </div></blockquote>
 <p><strong>selem</strong> : ndarray</p>
 <blockquote>
 <div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
 </div></blockquote>
-<p><strong>out</strong> : ndarray</p>
+<p><strong>out</strong> : ndarray (same dtype as input)</p>
 <blockquote>
 <div><p>If None, a new array will be allocated.</p>
 </div></blockquote>
-<p><strong>mask</strong> : ndarray (uint8)</p>
+<p><strong>mask</strong> : ndarray</p>
 <blockquote>
 <div><p>Mask array that defines (&gt;0) area of the image included in the local
 neighborhood. If None, the complete image is used (default).</p>
@@ -668,9 +928,9 @@ structuring element).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray (same dtype as input image)</p>
 <blockquote class="last">
-<div><p>The local mean.</p>
+<div><p>Output image.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -689,31 +949,156 @@ structuring element).</p>
 </dd></dl>
 
 </div>
-<div class="section" id="meansubtraction">
-<h2>meansubtraction<a class="headerlink" href="#meansubtraction" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="mean-bilateral">
+<h2>mean_bilateral<a class="headerlink" href="#mean-bilateral" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="skimage.filter.rank.meansubtraction">
-<tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">meansubtraction</tt><big>(</big><em>image</em>, <em>selem</em>, <em>out=None</em>, <em>mask=None</em>, <em>shift_x=False</em>, <em>shift_y=False</em><big>)</big><a class="headerlink" href="#skimage.filter.rank.meansubtraction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return image subtracted from its local mean.</p>
+<dt id="skimage.filter.rank.mean_bilateral">
+<tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">mean_bilateral</tt><big>(</big><em>image</em>, <em>selem</em>, <em>out=None</em>, <em>mask=None</em>, <em>shift_x=False</em>, <em>shift_y=False</em>, <em>s0=10</em>, <em>s1=10</em><big>)</big><a class="headerlink" href="#skimage.filter.rank.mean_bilateral" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply a flat kernel bilateral filter.</p>
+<p>This is an edge-preserving and noise reducing denoising filter. It averages
+pixels based on their spatial closeness and radiometric similarity.</p>
+<p>Spatial closeness is measured by considering only the local pixel
+neighborhood given by a structuring element (selem).</p>
+<p>Radiometric similarity is defined by the greylevel interval [g-s0, g+s1]
+where g is the current pixel greylevel. Only pixels belonging to the
+structuring element AND having a greylevel inside this interval are
+averaged. Return greyscale local bilateral_mean of an image.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray (uint8, uint16)</p>
 <blockquote>
-<div><p>Image array (uint8 array or uint16). If image is uint16, the algorithm
-uses max. 12bit histogram, an exception will be raised if image has a
-value &gt; 4095.</p>
+<div><p>Image array.</p>
 </div></blockquote>
 <p><strong>selem</strong> : ndarray</p>
 <blockquote>
 <div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
 </div></blockquote>
-<p><strong>out</strong> : ndarray</p>
+<p><strong>out</strong> : ndarray (same dtype as input)</p>
 <blockquote>
 <div><p>If None, a new array will be allocated.</p>
 </div></blockquote>
-<p><strong>mask</strong> : ndarray (uint8)</p>
+<p><strong>mask</strong> : ndarray</p>
+<blockquote>
+<div><p>Mask array that defines (&gt;0) area of the image included in the local
+neighborhood. If None, the complete image is used (default).</p>
+</div></blockquote>
+<p><strong>shift_x, shift_y</strong> : int</p>
+<blockquote>
+<div><p>Offset added to the structuring element center point. Shift is bounded
+to the structuring element sizes (center must be inside the given
+structuring element).</p>
+</div></blockquote>
+<p><strong>s0, s1</strong> : int</p>
+<blockquote>
+<div><p>Define the [s0, s1] interval around the greyvalue of the center pixel
+to be considered for computing the value.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray (same dtype as input image)</p>
+<blockquote class="last">
+<div><p>Output image.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="skimage.filter.html#skimage.filter.denoise_bilateral" title="skimage.filter.denoise_bilateral"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.denoise_bilateral</span></tt></a></p>
+</div>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.morphology</span> <span class="kn">import</span> <span class="n">disk</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.filter.rank</span> <span class="kn">import</span> <span class="n">bilateral_mean</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># Load test image / cast to uint16</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ima</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">camera</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint16</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># bilateral filtering of cameraman image using a flat kernel</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bilat_ima</span> <span class="o">=</span> <span class="n">bilateral_mean</span><span class="p">(</span><span class="n">ima</span><span class="p">,</span> <span class="n">disk</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span> <span class="n">s0</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">s1</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="mean-percentile">
+<h2>mean_percentile<a class="headerlink" href="#mean-percentile" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.filter.rank.mean_percentile">
+<tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">mean_percentile</tt><big>(</big><em>image</em>, <em>selem</em>, <em>out=None</em>, <em>mask=None</em>, <em>shift_x=False</em>, <em>shift_y=False</em>, <em>p0=0</em>, <em>p1=1</em><big>)</big><a class="headerlink" href="#skimage.filter.rank.mean_percentile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return greyscale local mean of an image.</p>
+<p>Mean is computed on the given structuring element. Only levels between
+percentiles [p0, p1] are used.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray (uint8, uint16)</p>
+<blockquote>
+<div><p>Image array.</p>
+</div></blockquote>
+<p><strong>selem</strong> : ndarray</p>
+<blockquote>
+<div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
+</div></blockquote>
+<p><strong>out</strong> : ndarray (same dtype as input)</p>
+<blockquote>
+<div><p>If None, a new array will be allocated.</p>
+</div></blockquote>
+<p><strong>mask</strong> : ndarray</p>
+<blockquote>
+<div><p>Mask array that defines (&gt;0) area of the image included in the local
+neighborhood. If None, the complete image is used (default).</p>
+</div></blockquote>
+<p><strong>shift_x, shift_y</strong> : int</p>
+<blockquote>
+<div><p>Offset added to the structuring element center point. Shift is bounded
+to the structuring element sizes (center must be inside the given
+structuring element).</p>
+</div></blockquote>
+<p><strong>p0, p1</strong> : float in [0, ..., 1]</p>
+<blockquote>
+<div><p>Define the [p0, p1] percentile interval to be considered for computing
+the value.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray (same dtype as input image)</p>
+<blockquote class="last">
+<div><p>Output image.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="meansubtraction">
+<h2>meansubtraction<a class="headerlink" href="#meansubtraction" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.filter.rank.meansubtraction">
+<tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">meansubtraction</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.filter.rank.meansubtraction" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">subtract_mean</span></tt> instead.</p>
+<p>Return image subtracted from its local mean.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray (uint8, uint16)</p>
+<blockquote>
+<div><p>Image array.</p>
+</div></blockquote>
+<p><strong>selem</strong> : ndarray</p>
+<blockquote>
+<div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
+</div></blockquote>
+<p><strong>out</strong> : ndarray (same dtype as input)</p>
+<blockquote>
+<div><p>If None, a new array will be allocated.</p>
+</div></blockquote>
+<p><strong>mask</strong> : ndarray</p>
 <blockquote>
 <div><p>Mask array that defines (&gt;0) area of the image included in the local
 neighborhood. If None, the complete image is used (default).</p>
@@ -726,9 +1111,9 @@ structuring element).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray (same dtype as input image)</p>
 <blockquote class="last">
-<div><p>The result of the local meansubtraction.</p>
+<div><p>Output image.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -747,21 +1132,19 @@ structuring element).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray (uint8, uint16)</p>
 <blockquote>
-<div><p>Image array (uint8 array or uint16). If image is uint16, the algorithm
-uses max. 12bit histogram, an exception will be raised if image has a
-value &gt; 4095.</p>
+<div><p>Image array.</p>
 </div></blockquote>
 <p><strong>selem</strong> : ndarray</p>
 <blockquote>
 <div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
 </div></blockquote>
-<p><strong>out</strong> : ndarray</p>
+<p><strong>out</strong> : ndarray (same dtype as input)</p>
 <blockquote>
 <div><p>If None, a new array will be allocated.</p>
 </div></blockquote>
-<p><strong>mask</strong> : ndarray (uint8)</p>
+<p><strong>mask</strong> : ndarray</p>
 <blockquote>
 <div><p>Mask array that defines (&gt;0) area of the image included in the local
 neighborhood. If None, the complete image is used (default).</p>
@@ -774,9 +1157,9 @@ structuring element).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray (same dtype as input image)</p>
 <blockquote class="last">
-<div><p>The local median.</p>
+<div><p>Output image.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -805,21 +1188,19 @@ structuring element).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray (uint8, uint16)</p>
 <blockquote>
-<div><p>Image array (uint8 array or uint16). If image is uint16, the algorithm
-uses max. 12bit histogram, an exception will be raised if image has a
-value &gt; 4095.</p>
+<div><p>Image array.</p>
 </div></blockquote>
 <p><strong>selem</strong> : ndarray</p>
 <blockquote>
 <div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
 </div></blockquote>
-<p><strong>out</strong> : ndarray</p>
+<p><strong>out</strong> : ndarray (same dtype as input)</p>
 <blockquote>
 <div><p>If None, a new array will be allocated.</p>
 </div></blockquote>
-<p><strong>mask</strong> : ndarray (uint8)</p>
+<p><strong>mask</strong> : ndarray</p>
 <blockquote>
 <div><p>Mask array that defines (&gt;0) area of the image included in the local
 neighborhood. If None, the complete image is used (default).</p>
@@ -832,9 +1213,9 @@ structuring element).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray (same dtype as input image)</p>
 <blockquote class="last">
-<div><p>The local minimum.</p>
+<div><p>Output image.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -857,21 +1238,19 @@ structuring element).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray (uint8, uint16)</p>
 <blockquote>
-<div><p>Image array (uint8 array or uint16). If image is uint16, the algorithm
-uses max. 12bit histogram, an exception will be raised if image has a
-value &gt; 4095.</p>
+<div><p>Image array.</p>
 </div></blockquote>
 <p><strong>selem</strong> : ndarray</p>
 <blockquote>
 <div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
 </div></blockquote>
-<p><strong>out</strong> : ndarray</p>
+<p><strong>out</strong> : ndarray (same dtype as input)</p>
 <blockquote>
 <div><p>If None, a new array will be allocated.</p>
 </div></blockquote>
-<p><strong>mask</strong> : ndarray (uint8)</p>
+<p><strong>mask</strong> : ndarray</p>
 <blockquote>
 <div><p>Mask array that defines (&gt;0) area of the image included in the local
 neighborhood. If None, the complete image is used (default).</p>
@@ -884,9 +1263,9 @@ structuring element).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray (same dtype as input image)</p>
 <blockquote class="last">
-<div><p>The local modal.</p>
+<div><p>Output image.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -899,29 +1278,28 @@ structuring element).</p>
 <h2>morph_contr_enh<a class="headerlink" href="#morph-contr-enh" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.filter.rank.morph_contr_enh">
-<tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">morph_contr_enh</tt><big>(</big><em>image</em>, <em>selem</em>, <em>out=None</em>, <em>mask=None</em>, <em>shift_x=False</em>, <em>shift_y=False</em><big>)</big><a class="headerlink" href="#skimage.filter.rank.morph_contr_enh" title="Permalink to this definition">¶</a></dt>
-<dd><p>Enhance an image replacing each pixel by the local maximum if pixel
+<tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">morph_contr_enh</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.filter.rank.morph_contr_enh" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">enhance_contrast</span></tt> instead.</p>
+<p>Enhance an image replacing each pixel by the local maximum if pixel
 greylevel is closest to maximimum than local minimum OR local minimum
 otherwise.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray (uint8, uint16)</p>
 <blockquote>
-<div><p>Image array (uint8 array or uint16). If image is uint16, the algorithm
-uses max. 12bit histogram, an exception will be raised if image has a
-value &gt; 4095.</p>
+<div><p>Image array.</p>
 </div></blockquote>
 <p><strong>selem</strong> : ndarray</p>
 <blockquote>
 <div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
 </div></blockquote>
-<p><strong>out</strong> : ndarray</p>
+<p><strong>out</strong> : ndarray (same dtype as input)</p>
 <blockquote>
 <div><p>If None, a new array will be allocated.</p>
 </div></blockquote>
-<p><strong>mask</strong> : ndarray (uint8)</p>
+<p><strong>mask</strong> : ndarray</p>
 <blockquote>
 <div><p>Mask array that defines (&gt;0) area of the image included in the local
 neighborhood. If None, the complete image is used (default).</p>
@@ -932,11 +1310,13 @@ neighborhood. If None, the complete image is used (default).</p>
 to the structuring element sizes (center must be inside the given
 structuring element).</p>
 </div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
+<p><strong>Returns</strong> :</p>
+<blockquote>
+<div><p>Output image.</p>
+</div></blockquote>
+<p><strong>out</strong> : ndarray (same dtype as input image)</p>
 <blockquote class="last">
-<div><p>The result of the local morph_contr_enh.</p>
+<div><p>The result of the local enhance_contrast.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -945,11 +1325,11 @@ structuring element).</p>
 <p class="rubric">Examples</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.morphology</span> <span class="kn">import</span> <span class="n">disk</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.filter.rank</span> <span class="kn">import</span> <span class="n">morph_contr_enh</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.filter.rank</span> <span class="kn">import</span> <span class="n">enhance_contrast</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c"># Load test image</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ima</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">camera</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c"># Local mean</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">avg</span> <span class="o">=</span> <span class="n">morph_contr_enh</span><span class="p">(</span><span class="n">ima</span><span class="p">,</span> <span class="n">disk</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">avg</span> <span class="o">=</span> <span class="n">enhance_contrast</span><span class="p">(</span><span class="n">ima</span><span class="p">,</span> <span class="n">disk</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -965,21 +1345,19 @@ structuring element).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray (uint8, uint16)</p>
 <blockquote>
-<div><p>Image array (uint8 array or uint16). If image is uint16, the algorithm
-uses max. 12bit histogram, an exception will be raised if image has a
-value &gt; 4095.</p>
+<div><p>Image array.</p>
 </div></blockquote>
 <p><strong>selem</strong> : ndarray</p>
 <blockquote>
 <div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
 </div></blockquote>
-<p><strong>out</strong> : ndarray</p>
+<p><strong>out</strong> : ndarray (same dtype as input)</p>
 <blockquote>
 <div><p>If None, a new array will be allocated.</p>
 </div></blockquote>
-<p><strong>mask</strong> : ndarray (uint8)</p>
+<p><strong>mask</strong> : ndarray</p>
 <blockquote>
 <div><p>Mask array that defines (&gt;0) area of the image included in the local
 neighborhood. If None, the complete image is used (default).</p>
@@ -992,9 +1370,9 @@ structuring element).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray (same dtype as input image)</p>
 <blockquote class="last">
-<div><p>The image noise.</p>
+<div><p>Output image.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1033,7 +1411,7 @@ for whole slide imaging. J Pathol Inform 2012;3:9.</td></tr>
 <blockquote>
 <div><p>If None, a new array will be allocated.</p>
 </div></blockquote>
-<p><strong>mask</strong> : ndarray (uint8)</p>
+<p><strong>mask</strong> : ndarray</p>
 <blockquote>
 <div><p>Mask array that defines (&gt;0) area of the image included in the local
 neighborhood. If None, the complete image is used (default).</p>
@@ -1046,18 +1424,14 @@ structuring element).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray (same dtype as input image)</p>
 <blockquote class="last">
-<div><p>Otsu&#8217;s threshold values</p>
+<div><p>Output image.</p>
 </div></blockquote>
 </td>
 </tr>
 </tbody>
 </table>
-<p class="rubric">Notes</p>
-<ul class="simple">
-<li>input image are 8-bit only</li>
-</ul>
 <p class="rubric">References</p>
 <table class="docutils citation" frame="void" id="id7" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
@@ -1083,7 +1457,7 @@ structuring element).</p>
 <h2>percentile<a class="headerlink" href="#percentile" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.filter.rank.percentile">
-<tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">percentile</tt><big>(</big><big>)</big><a class="headerlink" href="#skimage.filter.rank.percentile" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">percentile</tt><big>(</big><em>image</em>, <em>selem</em>, <em>out=None</em>, <em>mask=None</em>, <em>shift_x=False</em>, <em>shift_y=False</em>, <em>p0=0</em><big>)</big><a class="headerlink" href="#skimage.filter.rank.percentile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return greyscale local percentile of an image.</p>
 <p>percentile is computed on the given structuring element. Returns the value
 of the p0 lower percentile of the neighborhood value distribution.</p>
@@ -1091,21 +1465,19 @@ of the p0 lower percentile of the neighborhood value distribution.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray (uint8, uint16)</p>
 <blockquote>
-<div><p>Image array (uint8 array or uint16). If image is uint16, as the
-algorithm uses max. 12bit histogram, an exception will be raised if
-image has a value &gt; 4095.</p>
+<div><p>Image array.</p>
 </div></blockquote>
 <p><strong>selem</strong> : ndarray</p>
 <blockquote>
 <div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
 </div></blockquote>
-<p><strong>out</strong> : ndarray</p>
+<p><strong>out</strong> : ndarray (same dtype as input)</p>
 <blockquote>
 <div><p>If None, a new array will be allocated.</p>
 </div></blockquote>
-<p><strong>mask</strong> : ndarray (uint8)</p>
+<p><strong>mask</strong> : ndarray</p>
 <blockquote>
 <div><p>Mask array that defines (&gt;0) area of the image included in the local
 neighborhood. If None, the complete image is used (default).</p>
@@ -1122,9 +1494,9 @@ structuring element).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>local percentile</strong> : uint8 array or uint16</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray (same dtype as input image)</p>
 <blockquote class="last">
-<div><p>The result of the local percentile.</p>
+<div><p>Output image.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1137,29 +1509,28 @@ structuring element).</p>
 <h2>percentile_autolevel<a class="headerlink" href="#percentile-autolevel" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.filter.rank.percentile_autolevel">
-<tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">percentile_autolevel</tt><big>(</big><big>)</big><a class="headerlink" href="#skimage.filter.rank.percentile_autolevel" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return greyscale local autolevel of an image.</p>
+<tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">percentile_autolevel</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.filter.rank.percentile_autolevel" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">autolevel_percentile</span></tt> instead.</p>
+<p>Return greyscale local autolevel of an image.</p>
 <p>Autolevel is computed on the given structuring element. Only levels between
 percentiles [p0, p1] are used.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray (uint8, uint16)</p>
 <blockquote>
-<div><p>Image array (uint8 array or uint16). If image is uint16, as the
-algorithm uses max. 12bit histogram, an exception will be raised if
-image has a value &gt; 4095.</p>
+<div><p>Image array.</p>
 </div></blockquote>
 <p><strong>selem</strong> : ndarray</p>
 <blockquote>
 <div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
 </div></blockquote>
-<p><strong>out</strong> : ndarray</p>
+<p><strong>out</strong> : ndarray (same dtype as input)</p>
 <blockquote>
 <div><p>If None, a new array will be allocated.</p>
 </div></blockquote>
-<p><strong>mask</strong> : ndarray (uint8)</p>
+<p><strong>mask</strong> : ndarray</p>
 <blockquote>
 <div><p>Mask array that defines (&gt;0) area of the image included in the local
 neighborhood. If None, the complete image is used (default).</p>
@@ -1177,9 +1548,9 @@ the value.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>local autolevel</strong> : uint8 array or uint16</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray (same dtype as input image)</p>
 <blockquote class="last">
-<div><p>The result of the local autolevel.</p>
+<div><p>Output image.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1192,29 +1563,28 @@ the value.</p>
 <h2>percentile_gradient<a class="headerlink" href="#percentile-gradient" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.filter.rank.percentile_gradient">
-<tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">percentile_gradient</tt><big>(</big><big>)</big><a class="headerlink" href="#skimage.filter.rank.percentile_gradient" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return greyscale local percentile_gradient of an image.</p>
-<p>percentile_gradient is computed on the given structuring element. Only
+<tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">percentile_gradient</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.filter.rank.percentile_gradient" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">gradient_percentile</span></tt> instead.</p>
+<p>Return greyscale local gradient of an image.</p>
+<p>gradient is computed on the given structuring element. Only
 levels between percentiles [p0, p1] are used.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray (uint8, uint16)</p>
 <blockquote>
-<div><p>Image array (uint8 array or uint16). If image is uint16, as the
-algorithm uses max. 12bit histogram, an exception will be raised if
-image has a value &gt; 4095.</p>
+<div><p>Image array.</p>
 </div></blockquote>
 <p><strong>selem</strong> : ndarray</p>
 <blockquote>
 <div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
 </div></blockquote>
-<p><strong>out</strong> : ndarray</p>
+<p><strong>out</strong> : ndarray (same dtype as input)</p>
 <blockquote>
 <div><p>If None, a new array will be allocated.</p>
 </div></blockquote>
-<p><strong>mask</strong> : ndarray (uint8)</p>
+<p><strong>mask</strong> : ndarray</p>
 <blockquote>
 <div><p>Mask array that defines (&gt;0) area of the image included in the local
 neighborhood. If None, the complete image is used (default).</p>
@@ -1232,9 +1602,9 @@ the value.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>local percentile_gradient</strong> : uint8 array or uint16</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray (same dtype as input image)</p>
 <blockquote class="last">
-<div><p>The result of the local percentile_gradient.</p>
+<div><p>Output image.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1247,29 +1617,28 @@ the value.</p>
 <h2>percentile_mean<a class="headerlink" href="#percentile-mean" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.filter.rank.percentile_mean">
-<tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">percentile_mean</tt><big>(</big><big>)</big><a class="headerlink" href="#skimage.filter.rank.percentile_mean" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return greyscale local mean of an image.</p>
+<tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">percentile_mean</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.filter.rank.percentile_mean" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">mean_percentile</span></tt> instead.</p>
+<p>Return greyscale local mean of an image.</p>
 <p>Mean is computed on the given structuring element. Only levels between
 percentiles [p0, p1] are used.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray (uint8, uint16)</p>
 <blockquote>
-<div><p>Image array (uint8 array or uint16). If image is uint16, as the
-algorithm uses max. 12bit histogram, an exception will be raised if
-image has a value &gt; 4095.</p>
+<div><p>Image array.</p>
 </div></blockquote>
 <p><strong>selem</strong> : ndarray</p>
 <blockquote>
 <div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
 </div></blockquote>
-<p><strong>out</strong> : ndarray</p>
+<p><strong>out</strong> : ndarray (same dtype as input)</p>
 <blockquote>
 <div><p>If None, a new array will be allocated.</p>
 </div></blockquote>
-<p><strong>mask</strong> : ndarray (uint8)</p>
+<p><strong>mask</strong> : ndarray</p>
 <blockquote>
 <div><p>Mask array that defines (&gt;0) area of the image included in the local
 neighborhood. If None, the complete image is used (default).</p>
@@ -1287,9 +1656,9 @@ the value.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>local mean</strong> : uint8 array or uint16</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray (same dtype as input image)</p>
 <blockquote class="last">
-<div><p>The result of the local mean.</p>
+<div><p>Output image.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1302,29 +1671,28 @@ the value.</p>
 <h2>percentile_mean_subtraction<a class="headerlink" href="#percentile-mean-subtraction" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.filter.rank.percentile_mean_subtraction">
-<tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">percentile_mean_subtraction</tt><big>(</big><big>)</big><a class="headerlink" href="#skimage.filter.rank.percentile_mean_subtraction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return greyscale local mean_subtraction of an image.</p>
-<p>mean_subtraction is computed on the given structuring element. Only levels
+<tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">percentile_mean_subtraction</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.filter.rank.percentile_mean_subtraction" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">subtract_mean_percentile</span></tt> instead.</p>
+<p>Return greyscale local subtract_mean of an image.</p>
+<p>subtract_mean is computed on the given structuring element. Only levels
 between percentiles [p0, p1] are used.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray (uint8, uint16)</p>
 <blockquote>
-<div><p>Image array (uint8 array or uint16). If image is uint16, as the
-algorithm uses max. 12bit histogram, an exception will be raised if
-image has a value &gt; 4095.</p>
+<div><p>Image array.</p>
 </div></blockquote>
 <p><strong>selem</strong> : ndarray</p>
 <blockquote>
 <div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
 </div></blockquote>
-<p><strong>out</strong> : ndarray</p>
+<p><strong>out</strong> : ndarray (same dtype as input)</p>
 <blockquote>
 <div><p>If None, a new array will be allocated.</p>
 </div></blockquote>
-<p><strong>mask</strong> : ndarray (uint8)</p>
+<p><strong>mask</strong> : ndarray</p>
 <blockquote>
 <div><p>Mask array that defines (&gt;0) area of the image included in the local
 neighborhood. If None, the complete image is used (default).</p>
@@ -1342,9 +1710,9 @@ the value.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>local mean_subtraction</strong> : uint8 array or uint16</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray (same dtype as input image)</p>
 <blockquote class="last">
-<div><p>The result of the local mean_subtraction.</p>
+<div><p>Output image.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1357,29 +1725,28 @@ the value.</p>
 <h2>percentile_morph_contr_enh<a class="headerlink" href="#percentile-morph-contr-enh" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.filter.rank.percentile_morph_contr_enh">
-<tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">percentile_morph_contr_enh</tt><big>(</big><big>)</big><a class="headerlink" href="#skimage.filter.rank.percentile_morph_contr_enh" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return greyscale local morph_contr_enh of an image.</p>
-<p>morph_contr_enh is computed on the given structuring element. Only levels
+<tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">percentile_morph_contr_enh</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.filter.rank.percentile_morph_contr_enh" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">enhance_contrast_percentile</span></tt> instead.</p>
+<p>Return greyscale local enhance_contrast of an image.</p>
+<p>enhance_contrast is computed on the given structuring element. Only levels
 between percentiles [p0, p1] are used.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray (uint8, uint16)</p>
 <blockquote>
-<div><p>Image array (uint8 array or uint16). If image is uint16, as the
-algorithm uses max. 12bit histogram, an exception will be raised if
-image has a value &gt; 4095.</p>
+<div><p>Image array.</p>
 </div></blockquote>
 <p><strong>selem</strong> : ndarray</p>
 <blockquote>
 <div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
 </div></blockquote>
-<p><strong>out</strong> : ndarray</p>
+<p><strong>out</strong> : ndarray (same dtype as input)</p>
 <blockquote>
 <div><p>If None, a new array will be allocated.</p>
 </div></blockquote>
-<p><strong>mask</strong> : ndarray (uint8)</p>
+<p><strong>mask</strong> : ndarray</p>
 <blockquote>
 <div><p>Mask array that defines (&gt;0) area of the image included in the local
 neighborhood. If None, the complete image is used (default).</p>
@@ -1397,9 +1764,9 @@ the value.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>local morph_contr_enh</strong> : uint8 array or uint16</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray (same dtype as input image)</p>
 <blockquote class="last">
-<div><p>The result of the local morph_contr_enh.</p>
+<div><p>Output image.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1412,29 +1779,28 @@ the value.</p>
 <h2>percentile_pop<a class="headerlink" href="#percentile-pop" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.filter.rank.percentile_pop">
-<tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">percentile_pop</tt><big>(</big><big>)</big><a class="headerlink" href="#skimage.filter.rank.percentile_pop" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return greyscale local pop of an image.</p>
+<tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">percentile_pop</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.filter.rank.percentile_pop" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">pop_percentile</span></tt> instead.</p>
+<p>Return greyscale local pop of an image.</p>
 <p>pop is computed on the given structuring element. Only levels between
 percentiles [p0, p1] are used.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray (uint8, uint16)</p>
 <blockquote>
-<div><p>Image array (uint8 array or uint16). If image is uint16, as the
-algorithm uses max. 12bit histogram, an exception will be raised if
-image has a value &gt; 4095.</p>
+<div><p>Image array.</p>
 </div></blockquote>
 <p><strong>selem</strong> : ndarray</p>
 <blockquote>
 <div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
 </div></blockquote>
-<p><strong>out</strong> : ndarray</p>
+<p><strong>out</strong> : ndarray (same dtype as input)</p>
 <blockquote>
 <div><p>If None, a new array will be allocated.</p>
 </div></blockquote>
-<p><strong>mask</strong> : ndarray (uint8)</p>
+<p><strong>mask</strong> : ndarray</p>
 <blockquote>
 <div><p>Mask array that defines (&gt;0) area of the image included in the local
 neighborhood. If None, the complete image is used (default).</p>
@@ -1452,9 +1818,9 @@ the value.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>local pop</strong> : uint8 array or uint16</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray (same dtype as input image)</p>
 <blockquote class="last">
-<div><p>The result of the local pop.</p>
+<div><p>Output image.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1467,8 +1833,9 @@ the value.</p>
 <h2>percentile_threshold<a class="headerlink" href="#percentile-threshold" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.filter.rank.percentile_threshold">
-<tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">percentile_threshold</tt><big>(</big><big>)</big><a class="headerlink" href="#skimage.filter.rank.percentile_threshold" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return greyscale local threshold of an image.</p>
+<tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">percentile_threshold</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.filter.rank.percentile_threshold" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Deprecated function</strong>. Use <tt class="docutils literal"><span class="pre">threshold_percentile</span></tt> instead.</p>
+<p>Return greyscale local threshold of an image.</p>
 <p>threshold is computed on the given structuring element. Returns
 thresholded image such that pixels having a higher value than the the p0
 percentile of the neighborhood value distribution are set to 2^nbit-1
@@ -1477,21 +1844,19 @@ percentile of the neighborhood value distribution are set to 2^nbit-1
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray (uint8, uint16)</p>
 <blockquote>
-<div><p>Image array (uint8 array or uint16). If image is uint16, as the
-algorithm uses max. 12bit histogram, an exception will be raised if
-image has a value &gt; 4095.</p>
+<div><p>Image array.</p>
 </div></blockquote>
 <p><strong>selem</strong> : ndarray</p>
 <blockquote>
 <div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
 </div></blockquote>
-<p><strong>out</strong> : ndarray</p>
+<p><strong>out</strong> : ndarray (same dtype as input)</p>
 <blockquote>
 <div><p>If None, a new array will be allocated.</p>
 </div></blockquote>
-<p><strong>mask</strong> : ndarray (uint8)</p>
+<p><strong>mask</strong> : ndarray</p>
 <blockquote>
 <div><p>Mask array that defines (&gt;0) area of the image included in the local
 neighborhood. If None, the complete image is used (default).</p>
@@ -1505,10 +1870,10 @@ structuring element).</p>
 <p><strong>p0</strong> : float in [0, ..., 1]</p>
 <blockquote>
 <div><p>Set the percentile value.</p>
+<p>out : ndarray (same dtype as input image)
+Output image.</p>
 </div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>local threshold</strong> : uint8 array or uint16</p>
+<p><strong>local threshold</strong> : ndarray (same dtype as input)</p>
 <blockquote class="last">
 <div><p>The result of the local threshold.</p>
 </div></blockquote>
@@ -1530,21 +1895,19 @@ neighborhood.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray (uint8, uint16)</p>
 <blockquote>
-<div><p>Image array (uint8 array or uint16). If image is uint16, the algorithm
-uses max. 12bit histogram, an exception will be raised if image has a
-value &gt; 4095.</p>
+<div><p>Image array.</p>
 </div></blockquote>
 <p><strong>selem</strong> : ndarray</p>
 <blockquote>
 <div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
 </div></blockquote>
-<p><strong>out</strong> : ndarray</p>
+<p><strong>out</strong> : ndarray (same dtype as input)</p>
 <blockquote>
 <div><p>If None, a new array will be allocated.</p>
 </div></blockquote>
-<p><strong>mask</strong> : ndarray (uint8)</p>
+<p><strong>mask</strong> : ndarray</p>
 <blockquote>
 <div><p>Mask array that defines (&gt;0) area of the image included in the local
 neighborhood. If None, the complete image is used (default).</p>
@@ -1557,9 +1920,9 @@ structuring element).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray (same dtype as input image)</p>
 <blockquote class="last">
-<div><p>The number of pixels belonging to the neighborhood.</p>
+<div><p>Output image.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1585,31 +1948,152 @@ structuring element).</p>
 </dd></dl>
 
 </div>
-<div class="section" id="threshold">
-<h2>threshold<a class="headerlink" href="#threshold" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="pop-bilateral">
+<h2>pop_bilateral<a class="headerlink" href="#pop-bilateral" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="skimage.filter.rank.threshold">
-<tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">threshold</tt><big>(</big><em>image</em>, <em>selem</em>, <em>out=None</em>, <em>mask=None</em>, <em>shift_x=False</em>, <em>shift_y=False</em><big>)</big><a class="headerlink" href="#skimage.filter.rank.threshold" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return greyscale local threshold of an image.</p>
+<dt id="skimage.filter.rank.pop_bilateral">
+<tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">pop_bilateral</tt><big>(</big><em>image</em>, <em>selem</em>, <em>out=None</em>, <em>mask=None</em>, <em>shift_x=False</em>, <em>shift_y=False</em>, <em>s0=10</em>, <em>s1=10</em><big>)</big><a class="headerlink" href="#skimage.filter.rank.pop_bilateral" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the number (population) of pixels actually inside the bilateral
+neighborhood, i.e. being inside the structuring element AND having a gray
+level inside the interval [g-s0, g+s1].</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray (uint8, uint16)</p>
 <blockquote>
-<div><p>Image array (uint8 array or uint16). If image is uint16, the algorithm
-uses max. 12bit histogram, an exception will be raised if image has a
-value &gt; 4095.</p>
+<div><p>Image array.</p>
 </div></blockquote>
 <p><strong>selem</strong> : ndarray</p>
 <blockquote>
 <div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
 </div></blockquote>
-<p><strong>out</strong> : ndarray</p>
+<p><strong>out</strong> : ndarray (same dtype as input)</p>
 <blockquote>
 <div><p>If None, a new array will be allocated.</p>
 </div></blockquote>
-<p><strong>mask</strong> : ndarray (uint8)</p>
+<p><strong>mask</strong> : ndarray</p>
+<blockquote>
+<div><p>Mask array that defines (&gt;0) area of the image included in the local
+neighborhood. If None, the complete image is used (default).</p>
+</div></blockquote>
+<p><strong>shift_x, shift_y</strong> : int</p>
+<blockquote>
+<div><p>Offset added to the structuring element center point. Shift is bounded
+to the structuring element sizes (center must be inside the given
+structuring element).</p>
+</div></blockquote>
+<p><strong>s0, s1</strong> : int</p>
+<blockquote>
+<div><p>Define the [s0, s1] interval around the greyvalue of the center pixel
+to be considered for computing the value.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray (same dtype as input image)</p>
+<blockquote class="last">
+<div><p>Output image.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Local mean</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.morphology</span> <span class="kn">import</span> <span class="n">square</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">skimage.filter.rank</span> <span class="kn">as</span> <span class="nn">rank</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ima16</span> <span class="o">=</span> <span class="mi">255</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+<span class="gp">... </span>                        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+<span class="gp">... </span>                        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+<span class="gp">... </span>                        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+<span class="gp">... </span>                        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint16</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rank</span><span class="o">.</span><span class="n">bilateral_pop</span><span class="p">(</span><span class="n">ima16</span><span class="p">,</span> <span class="n">square</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">s0</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">s1</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="go">array([[3, 4, 3, 4, 3],</span>
+<span class="go">       [4, 4, 6, 4, 4],</span>
+<span class="go">       [3, 6, 9, 6, 3],</span>
+<span class="go">       [4, 4, 6, 4, 4],</span>
+<span class="go">       [3, 4, 3, 4, 3]], dtype=uint16)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="pop-percentile">
+<h2>pop_percentile<a class="headerlink" href="#pop-percentile" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.filter.rank.pop_percentile">
+<tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">pop_percentile</tt><big>(</big><em>image</em>, <em>selem</em>, <em>out=None</em>, <em>mask=None</em>, <em>shift_x=False</em>, <em>shift_y=False</em>, <em>p0=0</em>, <em>p1=1</em><big>)</big><a class="headerlink" href="#skimage.filter.rank.pop_percentile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return greyscale local pop of an image.</p>
+<p>pop is computed on the given structuring element. Only levels between
+percentiles [p0, p1] are used.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray (uint8, uint16)</p>
+<blockquote>
+<div><p>Image array.</p>
+</div></blockquote>
+<p><strong>selem</strong> : ndarray</p>
+<blockquote>
+<div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
+</div></blockquote>
+<p><strong>out</strong> : ndarray (same dtype as input)</p>
+<blockquote>
+<div><p>If None, a new array will be allocated.</p>
+</div></blockquote>
+<p><strong>mask</strong> : ndarray</p>
+<blockquote>
+<div><p>Mask array that defines (&gt;0) area of the image included in the local
+neighborhood. If None, the complete image is used (default).</p>
+</div></blockquote>
+<p><strong>shift_x, shift_y</strong> : int</p>
+<blockquote>
+<div><p>Offset added to the structuring element center point. Shift is bounded
+to the structuring element sizes (center must be inside the given
+structuring element).</p>
+</div></blockquote>
+<p><strong>p0, p1</strong> : float in [0, ..., 1]</p>
+<blockquote>
+<div><p>Define the [p0, p1] percentile interval to be considered for computing
+the value.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray (same dtype as input image)</p>
+<blockquote class="last">
+<div><p>Output image.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="subtract-mean">
+<h2>subtract_mean<a class="headerlink" href="#subtract-mean" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.filter.rank.subtract_mean">
+<tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">subtract_mean</tt><big>(</big><em>image</em>, <em>selem</em>, <em>out=None</em>, <em>mask=None</em>, <em>shift_x=False</em>, <em>shift_y=False</em><big>)</big><a class="headerlink" href="#skimage.filter.rank.subtract_mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return image subtracted from its local mean.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray (uint8, uint16)</p>
+<blockquote>
+<div><p>Image array.</p>
+</div></blockquote>
+<p><strong>selem</strong> : ndarray</p>
+<blockquote>
+<div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
+</div></blockquote>
+<p><strong>out</strong> : ndarray (same dtype as input)</p>
+<blockquote>
+<div><p>If None, a new array will be allocated.</p>
+</div></blockquote>
+<p><strong>mask</strong> : ndarray</p>
 <blockquote>
 <div><p>Mask array that defines (&gt;0) area of the image included in the local
 neighborhood. If None, the complete image is used (default).</p>
@@ -1622,9 +2106,108 @@ structuring element).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray (same dtype as input image)</p>
 <blockquote class="last">
-<div><p>The result of the local threshold.</p>
+<div><p>Output image.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="subtract-mean-percentile">
+<h2>subtract_mean_percentile<a class="headerlink" href="#subtract-mean-percentile" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.filter.rank.subtract_mean_percentile">
+<tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">subtract_mean_percentile</tt><big>(</big><em>image</em>, <em>selem</em>, <em>out=None</em>, <em>mask=None</em>, <em>shift_x=False</em>, <em>shift_y=False</em>, <em>p0=0</em>, <em>p1=1</em><big>)</big><a class="headerlink" href="#skimage.filter.rank.subtract_mean_percentile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return greyscale local subtract_mean of an image.</p>
+<p>subtract_mean is computed on the given structuring element. Only levels
+between percentiles [p0, p1] are used.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray (uint8, uint16)</p>
+<blockquote>
+<div><p>Image array.</p>
+</div></blockquote>
+<p><strong>selem</strong> : ndarray</p>
+<blockquote>
+<div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
+</div></blockquote>
+<p><strong>out</strong> : ndarray (same dtype as input)</p>
+<blockquote>
+<div><p>If None, a new array will be allocated.</p>
+</div></blockquote>
+<p><strong>mask</strong> : ndarray</p>
+<blockquote>
+<div><p>Mask array that defines (&gt;0) area of the image included in the local
+neighborhood. If None, the complete image is used (default).</p>
+</div></blockquote>
+<p><strong>shift_x, shift_y</strong> : int</p>
+<blockquote>
+<div><p>Offset added to the structuring element center point. Shift is bounded
+to the structuring element sizes (center must be inside the given
+structuring element).</p>
+</div></blockquote>
+<p><strong>p0, p1</strong> : float in [0, ..., 1]</p>
+<blockquote>
+<div><p>Define the [p0, p1] percentile interval to be considered for computing
+the value.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray (same dtype as input image)</p>
+<blockquote class="last">
+<div><p>Output image.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="threshold">
+<h2>threshold<a class="headerlink" href="#threshold" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.filter.rank.threshold">
+<tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">threshold</tt><big>(</big><em>image</em>, <em>selem</em>, <em>out=None</em>, <em>mask=None</em>, <em>shift_x=False</em>, <em>shift_y=False</em><big>)</big><a class="headerlink" href="#skimage.filter.rank.threshold" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return greyscale local threshold of an image.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray (uint8, uint16)</p>
+<blockquote>
+<div><p>Image array.</p>
+</div></blockquote>
+<p><strong>selem</strong> : ndarray</p>
+<blockquote>
+<div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
+</div></blockquote>
+<p><strong>out</strong> : ndarray (same dtype as input)</p>
+<blockquote>
+<div><p>If None, a new array will be allocated.</p>
+</div></blockquote>
+<p><strong>mask</strong> : ndarray</p>
+<blockquote>
+<div><p>Mask array that defines (&gt;0) area of the image included in the local
+neighborhood. If None, the complete image is used (default).</p>
+</div></blockquote>
+<p><strong>shift_x, shift_y</strong> : int</p>
+<blockquote>
+<div><p>Offset added to the structuring element center point. Shift is bounded
+to the structuring element sizes (center must be inside the given
+structuring element).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray (same dtype as input image)</p>
+<blockquote class="last">
+<div><p>Output image.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1650,6 +2233,60 @@ structuring element).</p>
 </dd></dl>
 
 </div>
+<div class="section" id="threshold-percentile">
+<h2>threshold_percentile<a class="headerlink" href="#threshold-percentile" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.filter.rank.threshold_percentile">
+<tt class="descclassname">skimage.filter.rank.</tt><tt class="descname">threshold_percentile</tt><big>(</big><em>image</em>, <em>selem</em>, <em>out=None</em>, <em>mask=None</em>, <em>shift_x=False</em>, <em>shift_y=False</em>, <em>p0=0</em><big>)</big><a class="headerlink" href="#skimage.filter.rank.threshold_percentile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return greyscale local threshold of an image.</p>
+<p>threshold is computed on the given structuring element. Returns
+thresholded image such that pixels having a higher value than the the p0
+percentile of the neighborhood value distribution are set to 2^nbit-1
+(e.g. 255 for 8bit image).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray (uint8, uint16)</p>
+<blockquote>
+<div><p>Image array.</p>
+</div></blockquote>
+<p><strong>selem</strong> : ndarray</p>
+<blockquote>
+<div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
+</div></blockquote>
+<p><strong>out</strong> : ndarray (same dtype as input)</p>
+<blockquote>
+<div><p>If None, a new array will be allocated.</p>
+</div></blockquote>
+<p><strong>mask</strong> : ndarray</p>
+<blockquote>
+<div><p>Mask array that defines (&gt;0) area of the image included in the local
+neighborhood. If None, the complete image is used (default).</p>
+</div></blockquote>
+<p><strong>shift_x, shift_y</strong> : int</p>
+<blockquote>
+<div><p>Offset added to the structuring element center point. Shift is bounded
+to the structuring element sizes (center must be inside the given
+structuring element).</p>
+</div></blockquote>
+<p><strong>p0</strong> : float in [0, ..., 1]</p>
+<blockquote>
+<div><p>Set the percentile value.</p>
+<p>out : ndarray (same dtype as input image)
+Output image.</p>
+</div></blockquote>
+<p><strong>local threshold</strong> : ndarray (same dtype as input)</p>
+<blockquote class="last">
+<div><p>The result of the local threshold.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
 <div class="section" id="tophat">
 <h2>tophat<a class="headerlink" href="#tophat" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
@@ -1660,21 +2297,19 @@ structuring element).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray (uint8, uint16)</p>
 <blockquote>
-<div><p>Image array (uint8 array or uint16). If image is uint16, the algorithm
-uses max. 12bit histogram, an exception will be raised if image has a
-value &gt; 4095.</p>
+<div><p>Image array.</p>
 </div></blockquote>
 <p><strong>selem</strong> : ndarray</p>
 <blockquote>
 <div><p>The neighborhood expressed as a 2-D array of 1&#8217;s and 0&#8217;s.</p>
 </div></blockquote>
-<p><strong>out</strong> : ndarray</p>
+<p><strong>out</strong> : ndarray (same dtype as input)</p>
 <blockquote>
 <div><p>If None, a new array will be allocated.</p>
 </div></blockquote>
-<p><strong>mask</strong> : ndarray (uint8)</p>
+<p><strong>mask</strong> : ndarray</p>
 <blockquote>
 <div><p>Mask array that defines (&gt;0) area of the image included in the local
 neighborhood. If None, the complete image is used (default).</p>
@@ -1687,9 +2322,9 @@ structuring element).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : uint8 array or uint16 array (same as input image)</p>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray (same dtype as input image)</p>
 <blockquote class="last">
-<div><p>The image tophat.</p>
+<div><p>Output image.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1712,15 +2347,22 @@ structuring element).</p>
         <div class="well sidebar-box toc">
             <ul class="nav nav-list">
 <li><a class="reference internal" href="#">Module: <tt class="docutils literal"><span class="pre">filter.rank</span></tt></a><ul class="nav nav-list">
+<li><a class="reference internal" href="#deprecated"><tt class="docutils literal"><span class="pre">deprecated</span></tt></a></li>
 <li><a class="reference internal" href="#autolevel">autolevel</a></li>
+<li><a class="reference internal" href="#autolevel-percentile">autolevel_percentile</a></li>
 <li><a class="reference internal" href="#bilateral-mean">bilateral_mean</a></li>
 <li><a class="reference internal" href="#bilateral-pop">bilateral_pop</a></li>
 <li><a class="reference internal" href="#bottomhat">bottomhat</a></li>
+<li><a class="reference internal" href="#enhance-contrast">enhance_contrast</a></li>
+<li><a class="reference internal" href="#enhance-contrast-percentile">enhance_contrast_percentile</a></li>
 <li><a class="reference internal" href="#entropy">entropy</a></li>
 <li><a class="reference internal" href="#equalize">equalize</a></li>
 <li><a class="reference internal" href="#gradient">gradient</a></li>
+<li><a class="reference internal" href="#gradient-percentile">gradient_percentile</a></li>
 <li><a class="reference internal" href="#maximum">maximum</a></li>
 <li><a class="reference internal" href="#mean">mean</a></li>
+<li><a class="reference internal" href="#mean-bilateral">mean_bilateral</a></li>
+<li><a class="reference internal" href="#mean-percentile">mean_percentile</a></li>
 <li><a class="reference internal" href="#meansubtraction">meansubtraction</a></li>
 <li><a class="reference internal" href="#median">median</a></li>
 <li><a class="reference internal" href="#minimum">minimum</a></li>
@@ -1737,7 +2379,12 @@ structuring element).</p>
 <li><a class="reference internal" href="#percentile-pop">percentile_pop</a></li>
 <li><a class="reference internal" href="#percentile-threshold">percentile_threshold</a></li>
 <li><a class="reference internal" href="#pop">pop</a></li>
+<li><a class="reference internal" href="#pop-bilateral">pop_bilateral</a></li>
+<li><a class="reference internal" href="#pop-percentile">pop_percentile</a></li>
+<li><a class="reference internal" href="#subtract-mean">subtract_mean</a></li>
+<li><a class="reference internal" href="#subtract-mean-percentile">subtract_mean_percentile</a></li>
 <li><a class="reference internal" href="#threshold">threshold</a></li>
+<li><a class="reference internal" href="#threshold-percentile">threshold_percentile</a></li>
 <li><a class="reference internal" href="#tophat">tophat</a></li>
 </ul>
 </li>

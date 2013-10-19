@@ -7,7 +7,6 @@ Module: :mod:`feature`
 .. currentmodule:: skimage.feature
 .. autosummary::
 
-   skimage.feature.brief
    skimage.feature.corner_foerstner
    skimage.feature.corner_harris
    skimage.feature.corner_kitchen_rosenfeld
@@ -20,15 +19,8 @@ Module: :mod:`feature`
    skimage.feature.greycoprops
    skimage.feature.hog
    skimage.feature.local_binary_pattern
-   skimage.feature.match_keypoints_brief
    skimage.feature.match_template
-   skimage.feature.pairwise_hamming_distance
    skimage.feature.peak_local_max
-
-brief
------
-
-.. autofunction:: skimage.feature.brief
 
 corner_foerstner
 ----------------
@@ -90,20 +82,10 @@ local_binary_pattern
 
 .. autofunction:: skimage.feature.local_binary_pattern
 
-match_keypoints_brief
----------------------
-
-.. autofunction:: skimage.feature.match_keypoints_brief
-
 match_template
 --------------
 
 .. autofunction:: skimage.feature.match_template
-
-pairwise_hamming_distance
--------------------------
-
-.. autofunction:: skimage.feature.pairwise_hamming_distance
 
 peak_local_max
 --------------

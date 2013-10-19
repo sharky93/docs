@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Pre-built installation &mdash; skimage v0.9dev docs</title>
+        <title>Pre-built installation &mdash; skimage v0.10dev docs</title>
     
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -18,7 +18,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.9dev',
+        VERSION:     '0.10dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -27,9 +27,9 @@
         <script type="text/javascript" src="_static/jquery.js"></script>
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
-        <link rel="top" title="skimage v0.9dev docs" href="index.html" />
+        <link rel="top" title="skimage v0.10dev docs" href="index.html" />
         <link rel="next" title="User Guide" href="user_guide.html" />
-        <link rel="prev" title="Version 0.3" href="api_changes.html" />
+        <link rel="prev" title="Version 0.9" href="api_changes.html" />
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <link rel="shortcut icon" href="_static/favicon.ico">
 </head>
@@ -96,6 +96,21 @@ in-place:</p>
 <div class="highlight-python"><pre>python setup.py build_ext -i</pre>
 </div>
 </div>
+<div class="section" id="building-with-bento">
+<h1>Building with bento<a class="headerlink" href="#building-with-bento" title="Permalink to this headline">¶</a></h1>
+<p><tt class="docutils literal"><span class="pre">scikit-image</span></tt> can also be built using <a class="reference external" href="http://cournape.github.io/Bento/">bento</a>.  Bento depends on <a class="reference external" href="https://code.google.com/p/waf/">WAF</a> for compilation.</p>
+<p>Follow the <a class="reference external" href="http://cournape.github.io/Bento/html/install.html">Bento installation instructions</a> and <a class="reference external" href="http://code.google.com/p/waf/downloads/list">download the WAF
+source</a>.</p>
+<p>Tell Bento where to find WAF by setting the <tt class="docutils literal"><span class="pre">WAFDIR</span></tt> environment variable:</p>
+<div class="highlight-python"><pre>export WAFDIR=&lt;path/to/waf&gt;</pre>
+</div>
+<p>From the <tt class="docutils literal"><span class="pre">scikit-image</span></tt> source directory:</p>
+<div class="highlight-python"><pre>bentomaker configure
+bentomaker build -j     # (add -i for in-place build)
+bentomaker install      # (when not builing in-place)</pre>
+</div>
+<p>Depending on file permissions, the install commands may need to be run as sudo.</p>
+</div>
 <div class="section" id="build-requirements">
 <h1>Build Requirements<a class="headerlink" href="#build-requirements" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
@@ -136,13 +151,45 @@ example at <tt class="docutils literal"><span class="pre">C:\Python26\Lib\distut
 <h1>Optional Requirements<a class="headerlink" href="#optional-requirements" title="Permalink to this headline">¶</a></h1>
 <p>You can use this scikit with the basic requirements listed above, but some
 functionality is only available with the following installed:</p>
-<dl class="docutils">
+<ul>
+<li><dl class="first docutils">
 <dt><a class="reference external" href="http://wiki.python.org/moin/PyQt">PyQt4</a></dt>
-<dd>The <tt class="docutils literal"><span class="pre">qt</span></tt> plugin that provides <tt class="docutils literal"><span class="pre">imshow(x,</span> <span class="pre">fancy=True)</span></tt> and <cite>skivi</cite>.</dd>
-<dt><a class="reference external" href="http://freeimage.sf.net">FreeImage</a></dt>
-<dd>The <tt class="docutils literal"><span class="pre">freeimage</span></tt> plugin provides support for reading various types of
-image file formats, including multi-page TIFFs.</dd>
+<dd><p class="first last">The <tt class="docutils literal"><span class="pre">qt</span></tt> plugin that provides <tt class="docutils literal"><span class="pre">imshow(x,</span> <span class="pre">fancy=True)</span></tt> and <cite>skivi</cite>.</p>
+</dd>
 </dl>
+</li>
+<li><dl class="first docutils">
+<dt><a class="reference external" href="http://freeimage.sf.net">FreeImage</a></dt>
+<dd><p class="first last">The <tt class="docutils literal"><span class="pre">freeimage</span></tt> plugin provides support for reading various types of
+image file formats, including multi-page TIFFs.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><a class="reference external" href="http://pyamg.org/">PyAMG</a></dt>
+<dd><p class="first last">The <tt class="docutils literal"><span class="pre">pyamg</span></tt> module is used for the fast <cite>cg_mg</cite> mode of random
+walker segmentation.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="testing-requirements">
+<h1>Testing requirements<a class="headerlink" href="#testing-requirements" title="Permalink to this headline">¶</a></h1>
+<ul>
+<li><dl class="first docutils">
+<dt><a class="reference external" href="https://nose.readthedocs.org/en/latest/">Nose</a></dt>
+<dd><p class="first last">A Python Unit Testing Framework</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><a class="reference external" href="http://nedbatchelder.com/code/coverage/">Coverage.py</a></dt>
+<dd><p class="first last">A tool that generates a unit test code coverage report</p>
+</dd>
+</dl>
+</li>
+</ul>
 </div>
 
 
@@ -156,7 +203,7 @@ image file formats, including multi-page TIFFs.</dd>
     <h4 class="sidebar-box-heading">Previous topic</h4>
     <div class="well sidebar-box">
         <ul class="nav nav-list">
-            <li><a href="api_changes.html" title="previous chapter">Version 0.3</a></li>
+            <li><a href="api_changes.html" title="previous chapter">Version 0.9</a></li>
         </ul>
     </div>
     <h4 class="sidebar-box-heading">Next topic</h4>
@@ -170,11 +217,13 @@ image file formats, including multi-page TIFFs.</dd>
             <ul class="nav nav-list">
 <li><a class="reference internal" href="#">Pre-built installation</a></li>
 <li><a class="reference internal" href="#installation-from-source">Installation from source</a></li>
+<li><a class="reference internal" href="#building-with-bento">Building with bento</a></li>
 <li><a class="reference internal" href="#build-requirements">Build Requirements</a></li>
 <li><a class="reference internal" href="#runtime-requirements">Runtime requirements</a></li>
 <li><a class="reference internal" href="#known-build-errors">Known build errors</a></li>
 <li><a class="reference internal" href="#usage-requirements">Usage Requirements</a></li>
 <li><a class="reference internal" href="#optional-requirements">Optional Requirements</a></li>
+<li><a class="reference internal" href="#testing-requirements">Testing requirements</a></li>
 </ul>
 
         </div>
