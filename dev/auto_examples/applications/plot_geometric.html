@@ -78,12 +78,12 @@ affine, projective and polynomial.</p>
 <p>First we create a transformation using explicit parameters:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">tform</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">SimilarityTransform</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
                                <span class="n">translation</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">tform</span><span class="o">.</span><span class="n">_matrix</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">tform</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Alternatively you can define a transformation by the transformation matrix
 itself:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">matrix</span> <span class="o">=</span> <span class="n">tform</span><span class="o">.</span><span class="n">_matrix</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">matrix</span> <span class="o">=</span> <span class="n">tform</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="n">matrix</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">tform2</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">SimilarityTransform</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
 </pre></div>

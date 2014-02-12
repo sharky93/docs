@@ -81,6 +81,7 @@ graylevel variations.</p>
 </table>
 <img alt="../_images/plot_local_equalize_1.png" class="align-center" src="../_images/plot_local_equalize_1.png" />
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 
 <span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
@@ -89,6 +90,9 @@ graylevel variations.</p>
 <span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">exposure</span>
 <span class="kn">from</span> <span class="nn">skimage.morphology</span> <span class="kn">import</span> <span class="n">disk</span>
 <span class="kn">from</span> <span class="nn">skimage.filter</span> <span class="kn">import</span> <span class="n">rank</span>
+
+
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">9</span>
 
 
 <span class="k">def</span> <span class="nf">plot_img_and_hist</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">axes</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">256</span><span class="p">):</span>
@@ -131,7 +135,7 @@ graylevel variations.</p>
 
 
 <span class="c"># Display results</span>
-<span class="n">f</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 
 <span class="n">ax_img</span><span class="p">,</span> <span class="n">ax_hist</span><span class="p">,</span> <span class="n">ax_cdf</span> <span class="o">=</span> <span class="n">plot_img_and_hist</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">axes</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
 <span class="n">ax_img</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;Low contrast image&#39;</span><span class="p">)</span>

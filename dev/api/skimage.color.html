@@ -112,6 +112,12 @@
 <tr class="row-odd"><td><a class="reference internal" href="#skimage.color.lch2lab" title="skimage.color.lch2lab"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.lch2lab</span></tt></a>(lch)</td>
 <td>CIE-LCH to CIE-LAB color space conversion.</td>
 </tr>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.color.luv2rgb" title="skimage.color.luv2rgb"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.luv2rgb</span></tt></a>(luv)</td>
+<td>Luv to RGB color space conversion.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.color.luv2xyz" title="skimage.color.luv2xyz"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.luv2xyz</span></tt></a>(luv)</td>
+<td>CIE-Luv to XYZ color space conversion.</td>
+</tr>
 <tr class="row-even"><td><a class="reference internal" href="#skimage.color.rgb2gray" title="skimage.color.rgb2gray"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.rgb2gray</span></tt></a>(rgb)</td>
 <td>Compute luminance of an RGB image.</td>
 </tr>
@@ -127,20 +133,26 @@
 <tr class="row-even"><td><a class="reference internal" href="#skimage.color.rgb2lab" title="skimage.color.rgb2lab"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.rgb2lab</span></tt></a>(rgb)</td>
 <td>RGB to lab color space conversion.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.color.rgb2rgbcie" title="skimage.color.rgb2rgbcie"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.rgb2rgbcie</span></tt></a>(rgb)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.color.rgb2luv" title="skimage.color.rgb2luv"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.rgb2luv</span></tt></a>(rgb)</td>
+<td>RGB to CIE-Luv color space conversion.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.color.rgb2rgbcie" title="skimage.color.rgb2rgbcie"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.rgb2rgbcie</span></tt></a>(rgb)</td>
 <td>RGB to RGB CIE color space conversion.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.color.rgb2xyz" title="skimage.color.rgb2xyz"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.rgb2xyz</span></tt></a>(rgb)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.color.rgb2xyz" title="skimage.color.rgb2xyz"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.rgb2xyz</span></tt></a>(rgb)</td>
 <td>RGB to XYZ color space conversion.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.color.rgbcie2rgb" title="skimage.color.rgbcie2rgb"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.rgbcie2rgb</span></tt></a>(rgbcie)</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.color.rgbcie2rgb" title="skimage.color.rgbcie2rgb"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.rgbcie2rgb</span></tt></a>(rgbcie)</td>
 <td>RGB CIE to RGB color space conversion.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.color.separate_stains" title="skimage.color.separate_stains"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.separate_stains</span></tt></a>(rgb,&nbsp;conv_matrix)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.color.separate_stains" title="skimage.color.separate_stains"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.separate_stains</span></tt></a>(rgb,&nbsp;conv_matrix)</td>
 <td>RGB to stain color space conversion.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.color.xyz2lab" title="skimage.color.xyz2lab"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.xyz2lab</span></tt></a>(xyz)</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.color.xyz2lab" title="skimage.color.xyz2lab"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.xyz2lab</span></tt></a>(xyz)</td>
 <td>XYZ to CIE-LAB color space conversion.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.color.xyz2luv" title="skimage.color.xyz2luv"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.xyz2luv</span></tt></a>(xyz)</td>
+<td>XYZ to CIE-Luv color space conversion.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#skimage.color.xyz2rgb" title="skimage.color.xyz2rgb"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.xyz2rgb</span></tt></a>(xyz)</td>
 <td>XYZ to RGB color space conversion.</td>
@@ -159,23 +171,23 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>stains</strong> : array_like</p>
 <blockquote>
-<div><p>The image in stain color space, in a 3-D array of shape (.., .., 3).</p>
+<div><p>The image in stain color space, in a 3-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 <p><strong>conv_matrix: ndarray</strong> :</p>
 <blockquote>
-<div><p>The stain separation matrix as described by G. Landini <a class="reference internal" href="#r29">[R29]</a>.</p>
+<div><p>The stain separation matrix as described by G. Landini <a class="reference internal" href="#r33">[R33]</a>.</p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
 <blockquote>
-<div><p>The image in RGB format, in a 3-D array of shape (.., .., 3).</p>
+<div><p>The image in RGB format, in a 3-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
-<div><p>If <cite>stains</cite> is not a 3-D array of shape (.., .., 3).</p>
+<div><p>If <cite>stains</cite> is not a 3-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -198,10 +210,10 @@ respective colorspace:</p>
 <li><tt class="docutils literal"><span class="pre">rgb_from_hpx</span></tt>: Hematoxylin + PAS</li>
 </ul>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r29" rules="none">
+<table class="docutils citation" frame="void" id="r33" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R29]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>)</em> <a class="reference external" href="http://www.dentistry.bham.ac.uk/landinig/software/cdeconv/cdeconv.html">http://www.dentistry.bham.ac.uk/landinig/software/cdeconv/cdeconv.html</a></td></tr>
+<tr><td class="label">[R33]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>)</em> <a class="reference external" href="http://www.dentistry.bham.ac.uk/landinig/software/cdeconv/cdeconv.html">http://www.dentistry.bham.ac.uk/landinig/software/cdeconv/cdeconv.html</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -233,14 +245,14 @@ respective colorspace:</p>
 <p><strong>fromspace</strong> : str</p>
 <blockquote>
 <div><p>The color space to convert from. Valid color space strings are
-[&#8216;RGB&#8217;, &#8216;HSV&#8217;, &#8216;RGB CIE&#8217;, &#8216;XYZ&#8217;]. Value may also be specified as lower
-case.</p>
+<tt class="docutils literal"><span class="pre">['RGB',</span> <span class="pre">'HSV',</span> <span class="pre">'RGB</span> <span class="pre">CIE',</span> <span class="pre">'XYZ']</span></tt>. Value may also be specified as
+lower case.</p>
 </div></blockquote>
 <p><strong>tospace</strong> : str</p>
 <blockquote>
 <div><p>The color space to convert to. Valid color space strings are
-[&#8216;RGB&#8217;, &#8216;HSV&#8217;, &#8216;RGB CIE&#8217;, &#8216;XYZ&#8217;]. Value may also be specified as lower
-case.</p>
+<tt class="docutils literal"><span class="pre">['RGB',</span> <span class="pre">'HSV',</span> <span class="pre">'RGB</span> <span class="pre">CIE',</span> <span class="pre">'XYZ']</span></tt>. Value may also be specified as
+lower case.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -254,7 +266,7 @@ case.</p>
 </table>
 <p class="rubric">Notes</p>
 <p>Conversion occurs through the &#8220;central&#8221; RGB color space, i.e. conversion
-from XYZ to HSV is implemented as XYZ -&gt; RGB -&gt; HSV instead of directly.</p>
+from XYZ to HSV is implemented as <tt class="docutils literal"><span class="pre">XYZ</span> <span class="pre">-&gt;</span> <span class="pre">RGB</span> <span class="pre">-&gt;</span> <span class="pre">HSV</span></tt> instead of directly.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lena</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">lena</span><span class="p">()</span>
@@ -293,16 +305,16 @@ from XYZ to HSV is implemented as XYZ -&gt; RGB -&gt; HSV instead of directly.</
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r30" rules="none">
+<table class="docutils citation" frame="void" id="r34" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[R30]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Color_difference">http://en.wikipedia.org/wiki/Color_difference</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id3">[R34]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Color_difference">http://en.wikipedia.org/wiki/Color_difference</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r31" rules="none">
+<table class="docutils citation" frame="void" id="r35" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[R31]</a></td><td>A. R. Robertson, &#8220;The CIE 1976 color-difference formulae,&#8221;
+<tr><td class="label"><a class="fn-backref" href="#id4">[R35]</a></td><td>A. R. Robertson, &#8220;The CIE 1976 color-difference formulae,&#8221;
 Color Res. Appl. 2, 7-11 (1977).</td></tr>
 </tbody>
 </table>
@@ -356,23 +368,23 @@ see deltaE_cmc</p>
 <p>CIEDE 2000 assumes parametric weighting factors for the lightness, chroma,
 and hue (<cite>kL</cite>, <cite>kC</cite>, <cite>kH</cite> respectively).  These default to 1.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r32" rules="none">
+<table class="docutils citation" frame="void" id="r36" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id5">[R32]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Color_difference">http://en.wikipedia.org/wiki/Color_difference</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id5">[R36]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Color_difference">http://en.wikipedia.org/wiki/Color_difference</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r33" rules="none">
+<table class="docutils citation" frame="void" id="r37" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id6">[R33]</a></td><td><a class="reference external" href="http://www.ece.rochester.edu/~gsharma/ciede2000/ciede2000noteCRNA.pdf">http://www.ece.rochester.edu/~gsharma/ciede2000/ciede2000noteCRNA.pdf</a>
+<tr><td class="label"><a class="fn-backref" href="#id6">[R37]</a></td><td><a class="reference external" href="http://www.ece.rochester.edu/~gsharma/ciede2000/ciede2000noteCRNA.pdf">http://www.ece.rochester.edu/~gsharma/ciede2000/ciede2000noteCRNA.pdf</a>
 (doi:10.1364/AO.33.008069)</td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r34" rules="none">
+<table class="docutils citation" frame="void" id="r38" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id7">[R34]</a></td><td>M. Melgosa, J. Quesada, and E. Hita, &#8220;Uniformity of some recent
+<tr><td class="label"><a class="fn-backref" href="#id7">[R38]</a></td><td>M. Melgosa, J. Quesada, and E. Hita, &#8220;Uniformity of some recent
 color metrics tested with an accurate color-difference tolerance
 dataset,&#8221; Appl. Opt. 33, 8069-8077 (1994).</td></tr>
 </tbody>
@@ -465,16 +477,16 @@ suggested for graphic arts</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r35" rules="none">
+<table class="docutils citation" frame="void" id="r39" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id8">[R35]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Color_difference">http://en.wikipedia.org/wiki/Color_difference</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id8">[R39]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Color_difference">http://en.wikipedia.org/wiki/Color_difference</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r36" rules="none">
+<table class="docutils citation" frame="void" id="r40" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id9">[R36]</a></td><td><a class="reference external" href="http://www.brucelindbloom.com/index.html?Eqn_DeltaE_CIE94.html">http://www.brucelindbloom.com/index.html?Eqn_DeltaE_CIE94.html</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id9">[R40]</a></td><td><a class="reference external" href="http://www.brucelindbloom.com/index.html?Eqn_DeltaE_CIE94.html">http://www.brucelindbloom.com/index.html?Eqn_DeltaE_CIE94.html</a></td></tr>
 </tbody>
 </table>
 </dd></dl>
@@ -521,22 +533,22 @@ scale factors.</p>
 in terms of the first color.  Consequently
 <tt class="docutils literal"><span class="pre">deltaE_cmc(lab1,</span> <span class="pre">lab2)</span> <span class="pre">!=</span> <span class="pre">deltaE_cmc(lab2,</span> <span class="pre">lab1)</span></tt></p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r37" rules="none">
+<table class="docutils citation" frame="void" id="r41" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id10">[R37]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Color_difference">http://en.wikipedia.org/wiki/Color_difference</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id10">[R41]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Color_difference">http://en.wikipedia.org/wiki/Color_difference</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r38" rules="none">
+<table class="docutils citation" frame="void" id="r42" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id11">[R38]</a></td><td><a class="reference external" href="http://www.brucelindbloom.com/index.html?Eqn_DeltaE_CIE94.html">http://www.brucelindbloom.com/index.html?Eqn_DeltaE_CIE94.html</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id11">[R42]</a></td><td><a class="reference external" href="http://www.brucelindbloom.com/index.html?Eqn_DeltaE_CIE94.html">http://www.brucelindbloom.com/index.html?Eqn_DeltaE_CIE94.html</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r39" rules="none">
+<table class="docutils citation" frame="void" id="r43" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id12">[R39]</a></td><td>F. J. J. Clarke, R. McDonald, and B. Rigg, &#8220;Modification to the
+<tr><td class="label"><a class="fn-backref" href="#id12">[R43]</a></td><td>F. J. J. Clarke, R. McDonald, and B. Rigg, &#8220;Modification to the
 JPC79 colour-difference formula,&#8221; J. Soc. Dyers Colour. 100, 128-132
 (1984).</td></tr>
 </tbody>
@@ -596,7 +608,7 @@ JPC79 colour-difference formula,&#8221; J. Soc. Dyers Colour. 100, 128-132
 <tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>spatial_dims</strong> : int or None</p>
 <blockquote>
 <div><p>The number of spatial dimensions of <cite>image</cite>. If ambiguous, the value
-is <cite>None</cite>.</p>
+is <tt class="docutils literal"><span class="pre">None</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -623,29 +635,29 @@ is <cite>None</cite>.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>hed</strong> : array_like</p>
 <blockquote>
-<div><p>The image in the HED color space, in a 3-D array of shape (.., .., 3).</p>
+<div><p>The image in the HED color space, in a 3-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
 <blockquote>
-<div><p>The image in RGB, in a 3-D array of shape (.., .., 3).</p>
+<div><p>The image in RGB, in a 3-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
-<div><p>If <cite>hed</cite> is not a 3-D array of shape (.., .., 3).</p>
+<div><p>If <cite>hed</cite> is not a 3-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r40" rules="none">
+<table class="docutils citation" frame="void" id="r44" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id13">[R40]</a></td><td>A. C. Ruifrok and D. A. Johnston, &#8220;Quantification of histochemical
+<tr><td class="label"><a class="fn-backref" href="#id13">[R44]</a></td><td>A. C. Ruifrok and D. A. Johnston, &#8220;Quantification of histochemical
 staining by color deconvolution.,&#8221; Analytical and quantitative
 cytology and histology / the International Academy of Cytology [and]
 American Society of Cytology, vol. 23, no. 4, pp. 291-9, Aug. 2001.</td></tr>
@@ -674,34 +686,34 @@ American Society of Cytology, vol. 23, no. 4, pp. 291-9, Aug. 2001.</td></tr>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>hsv</strong> : array_like</p>
 <blockquote>
-<div><p>The image in HSV format, in a 3-D array of shape (.., .., 3).</p>
+<div><p>The image in HSV format, in a 3-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
 <blockquote>
-<div><p>The image in RGB format, in a 3-D array of shape (.., .., 3).</p>
+<div><p>The image in RGB format, in a 3-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
-<div><p>If <cite>hsv</cite> is not a 3-D array of shape (.., .., 3).</p>
+<div><p>If <cite>hsv</cite> is not a 3-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>The conversion assumes an input data range of [0, 1] for all
+<p>The conversion assumes an input data range of <tt class="docutils literal"><span class="pre">[0,</span> <span class="pre">1]</span></tt> for all
 color components.</p>
 <p>Conversion between RGB and HSV color spaces results in some loss of
-precision, due to integer arithmetic and rounding <a class="reference internal" href="#r41">[R41]</a>.</p>
+precision, due to integer arithmetic and rounding <a class="reference internal" href="#r45">[R45]</a>.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r41" rules="none">
+<table class="docutils citation" frame="void" id="r45" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R41]</td><td><em>(<a class="fn-backref" href="#id14">1</a>, <a class="fn-backref" href="#id15">2</a>)</em> <a class="reference external" href="http://en.wikipedia.org/wiki/HSL_and_HSV">http://en.wikipedia.org/wiki/HSL_and_HSV</a></td></tr>
+<tr><td class="label">[R45]</td><td><em>(<a class="fn-backref" href="#id14">1</a>, <a class="fn-backref" href="#id15">2</a>)</em> <a class="reference external" href="http://en.wikipedia.org/wiki/HSL_and_HSV">http://en.wikipedia.org/wiki/HSL_and_HSV</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -771,9 +783,9 @@ precision, due to integer arithmetic and rounding <a class="reference internal" 
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>lab</strong> : array_like</p>
 <blockquote>
-<div><p>The N-D image in CIE-LAB format. The last (<cite>N+1`th) dimension must have
-at least 3 elements, corresponding to the ``L`</cite>, <tt class="docutils literal"><span class="pre">a</span></tt>, and <tt class="docutils literal"><span class="pre">b</span></tt> color
-channels.  Subsequent elements are copied.</p>
+<div><p>The N-D image in CIE-LAB format. The last (<tt class="docutils literal"><span class="pre">N+1</span></tt>-th) dimension must
+have at least 3 elements, corresponding to the <tt class="docutils literal"><span class="pre">L</span></tt>, <tt class="docutils literal"><span class="pre">a</span></tt>, and <tt class="docutils literal"><span class="pre">b</span></tt>
+color channels.  Subsequent elements are copied.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -792,7 +804,7 @@ channels.  Subsequent elements are copied.</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>The Hue is expressed as an angle between (0, 2*pi)</p>
+<p>The Hue is expressed as an angle between <tt class="docutils literal"><span class="pre">(0,</span> <span class="pre">2*pi)</span></tt></p>
 <p class="rubric">Examples</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.color</span> <span class="kn">import</span> <span class="n">rgb2lab</span><span class="p">,</span> <span class="n">lab2lch</span>
@@ -816,19 +828,19 @@ channels.  Subsequent elements are copied.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgb</strong> : array_like</p>
 <blockquote>
-<div><p>The image in Lab format, in a 3-D array of shape (.., .., 3).</p>
+<div><p>The image in Lab format, in a 3-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
 <blockquote>
-<div><p>The image in RGB format, in a 3-D array of shape (.., .., 3).</p>
+<div><p>The image in RGB format, in a 3-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
-<div><p>If <cite>lab</cite> is not a 3-D array of shape (.., .., 3).</p>
+<div><p>If <cite>lab</cite> is not a 3-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -851,38 +863,38 @@ channels.  Subsequent elements are copied.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>lab</strong> : array_like</p>
 <blockquote>
-<div><p>The image in lab format, in a 3-D array of shape (.., .., 3).</p>
+<div><p>The image in lab format, in a 3-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
 <blockquote>
-<div><p>The image in XYZ format, in a 3-D array of shape (.., .., 3).</p>
+<div><p>The image in XYZ format, in a 3-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
-<div><p>If <cite>lab</cite> is not a 3-D array of shape (.., .., 3).</p>
+<div><p>If <cite>lab</cite> is not a 3-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>Observer= 2A, Illuminant= D65
+<p>Observer = 2A, Illuminant = D65
 CIE XYZ tristimulus values x_ref = 95.047, y_ref = 100., z_ref = 108.883</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r42" rules="none">
+<table class="docutils citation" frame="void" id="r46" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id16">[R42]</a></td><td><a class="reference external" href="http://www.easyrgb.com/index.php?X=MATH&amp;H=07#text7">http://www.easyrgb.com/index.php?X=MATH&amp;H=07#text7</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id16">[R46]</a></td><td><a class="reference external" href="http://www.easyrgb.com/index.php?X=MATH&amp;H=07#text7">http://www.easyrgb.com/index.php?X=MATH&amp;H=07#text7</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r43" rules="none">
+<table class="docutils citation" frame="void" id="r47" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id17">[R43]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Lab_color_space">http://en.wikipedia.org/wiki/Lab_color_space</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id17">[R47]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Lab_color_space">http://en.wikipedia.org/wiki/Lab_color_space</a></td></tr>
 </tbody>
 </table>
 </dd></dl>
@@ -949,9 +961,9 @@ between [0, 1].</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>lch</strong> : array_like</p>
 <blockquote>
-<div><p>The N-D image in CIE-LCH format. The last (<cite>N+1`th) dimension must have
-at least 3 elements, corresponding to the ``L`</cite>, <tt class="docutils literal"><span class="pre">a</span></tt>, and <tt class="docutils literal"><span class="pre">b</span></tt> color
-channels.  Subsequent elements are copied.</p>
+<div><p>The N-D image in CIE-LCH format. The last (<tt class="docutils literal"><span class="pre">N+1</span></tt>-th) dimension must
+have at least 3 elements, corresponding to the <tt class="docutils literal"><span class="pre">L</span></tt>, <tt class="docutils literal"><span class="pre">a</span></tt>, and <tt class="docutils literal"><span class="pre">b</span></tt>
+color channels.  Subsequent elements are copied.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -981,6 +993,92 @@ channels.  Subsequent elements are copied.</p>
 </dd></dl>
 
 </div>
+<div class="section" id="luv2rgb">
+<h2>luv2rgb<a class="headerlink" href="#luv2rgb" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.color.luv2rgb">
+<tt class="descclassname">skimage.color.</tt><tt class="descname">luv2rgb</tt><big>(</big><em>luv</em><big>)</big><a class="headerlink" href="#skimage.color.luv2rgb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Luv to RGB color space conversion.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>luv</strong> : (M, N, [P,] 3) array_like</p>
+<blockquote>
+<div><p>The 3 or 4 dimensional image in CIE Luv format. Final dimension denotes
+channels.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : (M, N, [P,] 3) ndarray</p>
+<blockquote>
+<div><p>The image in RGB format. Same dimensions as input.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<blockquote class="last">
+<div><p>If <cite>luv</cite> is not a 3-D or 4-D array of shape <tt class="docutils literal"><span class="pre">(M,</span> <span class="pre">N,</span> <span class="pre">[P,]</span> <span class="pre">3)</span></tt>.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>This function uses luv2xyz and xyz2rgb.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="luv2xyz">
+<h2>luv2xyz<a class="headerlink" href="#luv2xyz" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.color.luv2xyz">
+<tt class="descclassname">skimage.color.</tt><tt class="descname">luv2xyz</tt><big>(</big><em>luv</em><big>)</big><a class="headerlink" href="#skimage.color.luv2xyz" title="Permalink to this definition">¶</a></dt>
+<dd><p>CIE-Luv to XYZ color space conversion.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>luv</strong> : (M, N, [P,] 3) array_like</p>
+<blockquote>
+<div><p>The 3 or 4 dimensional image in CIE-Luv format. Final dimension denotes
+channels.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : (M, N, [P,] 3) ndarray</p>
+<blockquote>
+<div><p>The image in XYZ format. Same dimensions as input.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<blockquote class="last">
+<div><p>If <cite>luv</cite> is not a 3-D or 4-D array of shape <tt class="docutils literal"><span class="pre">(M,</span> <span class="pre">N,</span> <span class="pre">[P,]</span> <span class="pre">3)</span></tt>.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>XYZ conversion weights use Observer = 2A. Reference whitepoint for D65
+Illuminant, with XYZ tristimulus values of <tt class="docutils literal"><span class="pre">(95.047,</span> <span class="pre">100.,</span> <span class="pre">108.883)</span></tt>.</p>
+<p class="rubric">References</p>
+<table class="docutils citation" frame="void" id="r48" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id18">[R48]</a></td><td><a class="reference external" href="http://www.easyrgb.com/index.php?X=MATH&amp;H=16#text16">http://www.easyrgb.com/index.php?X=MATH&amp;H=16#text16</a></td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="r49" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id19">[R49]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/CIELUV">http://en.wikipedia.org/wiki/CIELUV</a></td></tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
 <div class="section" id="rgb2gray">
 <h2>rgb2gray<a class="headerlink" href="#rgb2gray" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
@@ -993,8 +1091,8 @@ channels.  Subsequent elements are copied.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgb</strong> : array_like</p>
 <blockquote>
-<div><p>The image in RGB format, in a 3-D array of shape (.., .., 3),
-or in RGBA format with shape (.., .., 4).</p>
+<div><p>The image in RGB format, in a 3-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">3)</span></tt>,
+or in RGBA format with shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">4)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1006,8 +1104,8 @@ or in RGBA format with shape (.., .., 4).</p>
 </tr>
 <tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
-<div><p>If <cite>rgb2gray</cite> is not a 3-D array of shape (.., .., 3) or
-(.., .., 4).</p>
+<div><p>If <cite>rgb2gray</cite> is not a 3-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">3)</span></tt> or
+<tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">4)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1020,10 +1118,10 @@ CRT phosphors:</p>
 </div>
 <p>If there is an alpha channel present, it is ignored.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r44" rules="none">
+<table class="docutils citation" frame="void" id="r50" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id18">[R44]</a></td><td><a class="reference external" href="http://www.poynton.com/PDFs/ColorFAQ.pdf">http://www.poynton.com/PDFs/ColorFAQ.pdf</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id20">[R50]</a></td><td><a class="reference external" href="http://www.poynton.com/PDFs/ColorFAQ.pdf">http://www.poynton.com/PDFs/ColorFAQ.pdf</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -1048,8 +1146,8 @@ CRT phosphors:</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgb</strong> : array_like</p>
 <blockquote>
-<div><p>The image in RGB format, in a 3-D array of shape (.., .., 3),
-or in RGBA format with shape (.., .., 4).</p>
+<div><p>The image in RGB format, in a 3-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">3)</span></tt>,
+or in RGBA format with shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">4)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1061,8 +1159,8 @@ or in RGBA format with shape (.., .., 4).</p>
 </tr>
 <tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
-<div><p>If <cite>rgb2gray</cite> is not a 3-D array of shape (.., .., 3) or
-(.., .., 4).</p>
+<div><p>If <cite>rgb2gray</cite> is not a 3-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">3)</span></tt> or
+<tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">4)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1075,10 +1173,10 @@ CRT phosphors:</p>
 </div>
 <p>If there is an alpha channel present, it is ignored.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r45" rules="none">
+<table class="docutils citation" frame="void" id="r51" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id19">[R45]</a></td><td><a class="reference external" href="http://www.poynton.com/PDFs/ColorFAQ.pdf">http://www.poynton.com/PDFs/ColorFAQ.pdf</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id21">[R51]</a></td><td><a class="reference external" href="http://www.poynton.com/PDFs/ColorFAQ.pdf">http://www.poynton.com/PDFs/ColorFAQ.pdf</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -1103,29 +1201,29 @@ CRT phosphors:</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgb</strong> : array_like</p>
 <blockquote>
-<div><p>The image in RGB format, in a 3-D array of shape (.., .., 3).</p>
+<div><p>The image in RGB format, in a 3-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
 <blockquote>
-<div><p>The image in HED format, in a 3-D array of shape (.., .., 3).</p>
+<div><p>The image in HED format, in a 3-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
-<div><p>If <cite>rgb</cite> is not a 3-D array of shape (.., .., 3).</p>
+<div><p>If <cite>rgb</cite> is not a 3-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r46" rules="none">
+<table class="docutils citation" frame="void" id="r52" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id20">[R46]</a></td><td>A. C. Ruifrok and D. A. Johnston, &#8220;Quantification of histochemical
+<tr><td class="label"><a class="fn-backref" href="#id22">[R52]</a></td><td>A. C. Ruifrok and D. A. Johnston, &#8220;Quantification of histochemical
 staining by color deconvolution.,&#8221; Analytical and quantitative
 cytology and histology / the International Academy of Cytology [and]
 American Society of Cytology, vol. 23, no. 4, pp. 291-9, Aug. 2001.</td></tr>
@@ -1153,19 +1251,19 @@ American Society of Cytology, vol. 23, no. 4, pp. 291-9, Aug. 2001.</td></tr>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgb</strong> : array_like</p>
 <blockquote>
-<div><p>The image in RGB format, in a 3-D array of shape (.., .., 3).</p>
+<div><p>The image in RGB format, in a 3-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
 <blockquote>
-<div><p>The image in HSV format, in a 3-D array of shape (.., .., 3).</p>
+<div><p>The image in HSV format, in a 3-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
-<div><p>If <cite>rgb</cite> is not a 3-D array of shape (.., .., 3).</p>
+<div><p>If <cite>rgb</cite> is not a 3-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1175,12 +1273,12 @@ American Society of Cytology, vol. 23, no. 4, pp. 291-9, Aug. 2001.</td></tr>
 <p>The conversion assumes an input data range of [0, 1] for all
 color components.</p>
 <p>Conversion between RGB and HSV color spaces results in some loss of
-precision, due to integer arithmetic and rounding <a class="reference internal" href="#r47">[R47]</a>.</p>
+precision, due to integer arithmetic and rounding <a class="reference internal" href="#r53">[R53]</a>.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r47" rules="none">
+<table class="docutils citation" frame="void" id="r53" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R47]</td><td><em>(<a class="fn-backref" href="#id21">1</a>, <a class="fn-backref" href="#id22">2</a>)</em> <a class="reference external" href="http://en.wikipedia.org/wiki/HSL_and_HSV">http://en.wikipedia.org/wiki/HSL_and_HSV</a></td></tr>
+<tr><td class="label">[R53]</td><td><em>(<a class="fn-backref" href="#id23">1</a>, <a class="fn-backref" href="#id24">2</a>)</em> <a class="reference external" href="http://en.wikipedia.org/wiki/HSL_and_HSV">http://en.wikipedia.org/wiki/HSL_and_HSV</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -1206,20 +1304,20 @@ precision, due to integer arithmetic and rounding <a class="reference internal" 
 <tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgb</strong> : array_like</p>
 <blockquote>
 <div><p>The image in RGB format, in a 3- or 4-D array of shape
-(.., ..,[ ..,] 3).</p>
+<tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,[</span> <span class="pre">..,]</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
 <blockquote>
 <div><p>The image in Lab format, in a 3- or 4-D array of shape
-(.., ..,[ ..,] 3).</p>
+<tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,[</span> <span class="pre">..,]</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
-<div><p>If <cite>rgb</cite> is not a 3- or 4-D array of shape (.., ..,[ ..,] 3).</p>
+<div><p>If <cite>rgb</cite> is not a 3- or 4-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,[</span> <span class="pre">..,]</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1227,6 +1325,42 @@ precision, due to integer arithmetic and rounding <a class="reference internal" 
 </table>
 <p class="rubric">Notes</p>
 <p>This function uses rgb2xyz and xyz2lab.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="rgb2luv">
+<h2>rgb2luv<a class="headerlink" href="#rgb2luv" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.color.rgb2luv">
+<tt class="descclassname">skimage.color.</tt><tt class="descname">rgb2luv</tt><big>(</big><em>rgb</em><big>)</big><a class="headerlink" href="#skimage.color.rgb2luv" title="Permalink to this definition">¶</a></dt>
+<dd><p>RGB to CIE-Luv color space conversion.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgb</strong> : (M, N, [P,] 3) array_like</p>
+<blockquote>
+<div><p>The 3 or 4 dimensional image in RGB format. Final dimension denotes
+channels.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : (M, N, [P,] 3) ndarray</p>
+<blockquote>
+<div><p>The image in CIE Luv format. Same dimensions as input.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<blockquote class="last">
+<div><p>If <cite>rgb</cite> is not a 3-D or 4-D array of shape <tt class="docutils literal"><span class="pre">(M,</span> <span class="pre">N,</span> <span class="pre">[P,]</span> <span class="pre">3)</span></tt>.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>This function uses rgb2xyz and xyz2luv.</p>
 </dd></dl>
 
 </div>
@@ -1242,29 +1376,29 @@ precision, due to integer arithmetic and rounding <a class="reference internal" 
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgb</strong> : array_like</p>
 <blockquote>
-<div><p>The image in RGB format, in a 3-D array of shape (.., .., 3).</p>
+<div><p>The image in RGB format, in a 3-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
 <blockquote>
-<div><p>The image in RGB CIE format, in a 3-D array of shape (.., .., 3).</p>
+<div><p>The image in RGB CIE format, in a 3-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
-<div><p>If <cite>rgb</cite> is not a 3-D array of shape (.., .., 3).</p>
+<div><p>If <cite>rgb</cite> is not a 3-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r48" rules="none">
+<table class="docutils citation" frame="void" id="r54" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id23">[R48]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/CIE_1931_color_space">http://en.wikipedia.org/wiki/CIE_1931_color_space</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id25">[R54]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/CIE_1931_color_space">http://en.wikipedia.org/wiki/CIE_1931_color_space</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -1290,20 +1424,20 @@ precision, due to integer arithmetic and rounding <a class="reference internal" 
 <tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgb</strong> : array_like</p>
 <blockquote>
 <div><p>The image in RGB format, in a 3- or 4-D array of shape
-(.., ..,[ ..,] 3).</p>
+<tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,[</span> <span class="pre">..,]</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
 <blockquote>
 <div><p>The image in XYZ format, in a 3- or 4-D array of shape
-(.., ..,[ ..,] 3).</p>
+<tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,[</span> <span class="pre">..,]</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
-<div><p>If <cite>rgb</cite> is not a 3- or 4-D array of shape (.., ..,[ ..,] 3).</p>
+<div><p>If <cite>rgb</cite> is not a 3- or 4-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,[</span> <span class="pre">..,]</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1313,10 +1447,10 @@ precision, due to integer arithmetic and rounding <a class="reference internal" 
 <p>The CIE XYZ color space is derived from the CIE RGB color space. Note
 however that this function converts from sRGB.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r49" rules="none">
+<table class="docutils citation" frame="void" id="r55" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id24">[R49]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/CIE_1931_color_space">http://en.wikipedia.org/wiki/CIE_1931_color_space</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id26">[R55]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/CIE_1931_color_space">http://en.wikipedia.org/wiki/CIE_1931_color_space</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -1340,29 +1474,29 @@ however that this function converts from sRGB.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgbcie</strong> : array_like</p>
 <blockquote>
-<div><p>The image in RGB CIE format, in a 3-D array of shape (.., .., 3).</p>
+<div><p>The image in RGB CIE format, in a 3-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
 <blockquote>
-<div><p>The image in RGB format, in a 3-D array of shape (.., .., 3).</p>
+<div><p>The image in RGB format, in a 3-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
-<div><p>If <cite>rgbcie</cite> is not a 3-D array of shape (.., .., 3).</p>
+<div><p>If <cite>rgbcie</cite> is not a 3-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r50" rules="none">
+<table class="docutils citation" frame="void" id="r56" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id25">[R50]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/CIE_1931_color_space">http://en.wikipedia.org/wiki/CIE_1931_color_space</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id27">[R56]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/CIE_1931_color_space">http://en.wikipedia.org/wiki/CIE_1931_color_space</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -1388,23 +1522,23 @@ however that this function converts from sRGB.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>rgb</strong> : array_like</p>
 <blockquote>
-<div><p>The image in RGB format, in a 3-D array of shape (.., .., 3).</p>
+<div><p>The image in RGB format, in a 3-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 <p><strong>conv_matrix: ndarray</strong> :</p>
 <blockquote>
-<div><p>The stain separation matrix as described by G. Landini <a class="reference internal" href="#r51">[R51]</a>.</p>
+<div><p>The stain separation matrix as described by G. Landini <a class="reference internal" href="#r57">[R57]</a>.</p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
 <blockquote>
-<div><p>The image in stain color space, in a 3-D array of shape (.., .., 3).</p>
+<div><p>The image in stain color space, in a 3-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
-<div><p>If <cite>rgb</cite> is not a 3-D array of shape (.., .., 3).</p>
+<div><p>If <cite>rgb</cite> is not a 3-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1427,10 +1561,10 @@ respective colorspace:</p>
 <li><tt class="docutils literal"><span class="pre">hpx_from_rgb</span></tt>: Hematoxylin + PAS</li>
 </ul>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r51" rules="none">
+<table class="docutils citation" frame="void" id="r57" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R51]</td><td><em>(<a class="fn-backref" href="#id26">1</a>, <a class="fn-backref" href="#id27">2</a>)</em> <a class="reference external" href="http://www.dentistry.bham.ac.uk/landinig/software/cdeconv/cdeconv.html">http://www.dentistry.bham.ac.uk/landinig/software/cdeconv/cdeconv.html</a></td></tr>
+<tr><td class="label">[R57]</td><td><em>(<a class="fn-backref" href="#id28">1</a>, <a class="fn-backref" href="#id29">2</a>)</em> <a class="reference external" href="http://www.dentistry.bham.ac.uk/landinig/software/cdeconv/cdeconv.html">http://www.dentistry.bham.ac.uk/landinig/software/cdeconv/cdeconv.html</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -1456,20 +1590,20 @@ respective colorspace:</p>
 <tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>xyz</strong> : array_like</p>
 <blockquote>
 <div><p>The image in XYZ format, in a 3- or 4-D array of shape
-(.., ..,[ ..,] 3).</p>
+<tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,[</span> <span class="pre">..,]</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
 <blockquote>
 <div><p>The image in CIE-LAB format, in a 3- or 4-D array of shape
-(.., ..,[ ..,] 3).</p>
+<tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,[</span> <span class="pre">..,]</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
-<div><p>If <cite>xyz</cite> is not a 3-D array of shape (.., ..,[ ..,] 3).</p>
+<div><p>If <cite>xyz</cite> is not a 3-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,[</span> <span class="pre">..,]</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1479,16 +1613,16 @@ respective colorspace:</p>
 <p>Observer= 2A, Illuminant= D65
 CIE XYZ tristimulus values x_ref = 95.047, y_ref = 100., z_ref = 108.883</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r52" rules="none">
+<table class="docutils citation" frame="void" id="r58" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id28">[R52]</a></td><td><a class="reference external" href="http://www.easyrgb.com/index.php?X=MATH&amp;H=07#text7">http://www.easyrgb.com/index.php?X=MATH&amp;H=07#text7</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id30">[R58]</a></td><td><a class="reference external" href="http://www.easyrgb.com/index.php?X=MATH&amp;H=07#text7">http://www.easyrgb.com/index.php?X=MATH&amp;H=07#text7</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r53" rules="none">
+<table class="docutils citation" frame="void" id="r59" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id29">[R53]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Lab_color_space">http://en.wikipedia.org/wiki/Lab_color_space</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id31">[R59]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Lab_color_space">http://en.wikipedia.org/wiki/Lab_color_space</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -1497,6 +1631,64 @@ CIE XYZ tristimulus values x_ref = 95.047, y_ref = 100., z_ref = 108.883</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lena</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">lena</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lena_xyz</span> <span class="o">=</span> <span class="n">rgb2xyz</span><span class="p">(</span><span class="n">lena</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lena_lab</span> <span class="o">=</span> <span class="n">xyz2lab</span><span class="p">(</span><span class="n">lena_xyz</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="xyz2luv">
+<h2>xyz2luv<a class="headerlink" href="#xyz2luv" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.color.xyz2luv">
+<tt class="descclassname">skimage.color.</tt><tt class="descname">xyz2luv</tt><big>(</big><em>xyz</em><big>)</big><a class="headerlink" href="#skimage.color.xyz2luv" title="Permalink to this definition">¶</a></dt>
+<dd><p>XYZ to CIE-Luv color space conversion.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>xyz</strong> : (M, N, [P,] 3) array_like</p>
+<blockquote>
+<div><p>The 3 or 4 dimensional image in XYZ format. Final dimension denotes
+channels.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : (M, N, [P,] 3) ndarray</p>
+<blockquote>
+<div><p>The image in CIE-Luv format. Same dimensions as input.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
+<blockquote class="last">
+<div><p>If <cite>xyz</cite> is not a 3-D or 4-D array of shape <tt class="docutils literal"><span class="pre">(M,</span> <span class="pre">N,</span> <span class="pre">[P,]</span> <span class="pre">3)</span></tt>.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>XYZ conversion weights use Observer = 2A. Reference whitepoint for D65
+Illuminant, with XYZ tristimulus values of <tt class="docutils literal"><span class="pre">(95.047,</span> <span class="pre">100.,</span> <span class="pre">108.883)</span></tt>.</p>
+<p class="rubric">References</p>
+<table class="docutils citation" frame="void" id="r60" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id32">[R60]</a></td><td><a class="reference external" href="http://www.easyrgb.com/index.php?X=MATH&amp;H=16#text16">http://www.easyrgb.com/index.php?X=MATH&amp;H=16#text16</a></td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="r61" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id33">[R61]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/CIELUV">http://en.wikipedia.org/wiki/CIELUV</a></td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.color</span> <span class="kn">import</span> <span class="n">rgb2xyz</span><span class="p">,</span> <span class="n">xyz2luv</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lena</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">lena</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lena_xyz</span> <span class="o">=</span> <span class="n">rgb2xyz</span><span class="p">(</span><span class="n">lena</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lena_luv</span> <span class="o">=</span> <span class="n">xyz2luv</span><span class="p">(</span><span class="n">lena_xyz</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1514,19 +1706,19 @@ CIE XYZ tristimulus values x_ref = 95.047, y_ref = 100., z_ref = 108.883</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>xyz</strong> : array_like</p>
 <blockquote>
-<div><p>The image in XYZ format, in a 3-D array of shape (.., .., 3).</p>
+<div><p>The image in XYZ format, in a 3-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
 <blockquote>
-<div><p>The image in RGB format, in a 3-D array of shape (.., .., 3).</p>
+<div><p>The image in RGB format, in a 3-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first"><strong>ValueError</strong> :</p>
 <blockquote class="last">
-<div><p>If <cite>xyz</cite> is not a 3-D array of shape (.., .., 3).</p>
+<div><p>If <cite>xyz</cite> is not a 3-D array of shape <tt class="docutils literal"><span class="pre">(..,</span> <span class="pre">..,</span> <span class="pre">3)</span></tt>.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1536,10 +1728,10 @@ CIE XYZ tristimulus values x_ref = 95.047, y_ref = 100., z_ref = 108.883</p>
 <p>The CIE XYZ color space is derived from the CIE RGB color space. Note
 however that this function converts to sRGB.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r54" rules="none">
+<table class="docutils citation" frame="void" id="r62" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id30">[R54]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/CIE_1931_color_space">http://en.wikipedia.org/wiki/CIE_1931_color_space</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id34">[R62]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/CIE_1931_color_space">http://en.wikipedia.org/wiki/CIE_1931_color_space</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -1584,16 +1776,20 @@ however that this function converts to sRGB.</p>
 <li><a class="reference internal" href="#lab2xyz">lab2xyz</a></li>
 <li><a class="reference internal" href="#label2rgb">label2rgb</a></li>
 <li><a class="reference internal" href="#lch2lab">lch2lab</a></li>
+<li><a class="reference internal" href="#luv2rgb">luv2rgb</a></li>
+<li><a class="reference internal" href="#luv2xyz">luv2xyz</a></li>
 <li><a class="reference internal" href="#rgb2gray">rgb2gray</a></li>
 <li><a class="reference internal" href="#rgb2grey">rgb2grey</a></li>
 <li><a class="reference internal" href="#rgb2hed">rgb2hed</a></li>
 <li><a class="reference internal" href="#rgb2hsv">rgb2hsv</a></li>
 <li><a class="reference internal" href="#rgb2lab">rgb2lab</a></li>
+<li><a class="reference internal" href="#rgb2luv">rgb2luv</a></li>
 <li><a class="reference internal" href="#rgb2rgbcie">rgb2rgbcie</a></li>
 <li><a class="reference internal" href="#rgb2xyz">rgb2xyz</a></li>
 <li><a class="reference internal" href="#rgbcie2rgb">rgbcie2rgb</a></li>
 <li><a class="reference internal" href="#separate-stains">separate_stains</a></li>
 <li><a class="reference internal" href="#xyz2lab">xyz2lab</a></li>
+<li><a class="reference internal" href="#xyz2luv">xyz2luv</a></li>
 <li><a class="reference internal" href="#xyz2rgb">xyz2rgb</a></li>
 </ul>
 </li>

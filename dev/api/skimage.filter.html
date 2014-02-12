@@ -91,16 +91,11 @@ other words coordinates are (r[0],c[0]),(r[0],c[1]) etc.
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<dl class="docutils">
-<dt>Gaussian filter:</dt>
-<dd>Use a 1-D gaussian in each direction without normalization
-coefficients.</dd>
-</dl>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">filt_func</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
-<span class="gp">... </span>    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">hypot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span><span class="o">/</span><span class="n">sigma</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">filter</span> <span class="o">=</span> <span class="n">LPIFilter2D</span><span class="p">(</span><span class="n">filt_func</span><span class="p">)</span>
-</pre></div>
-</div>
+<p>Gaussian filter: Use a 1-D gaussian in each direction without
+normalization coefficients.
+&gt;&gt;&gt; def filt_func(r, c, sigma = 1):
+...     return np.exp(-np.hypot(r, c)/sigma)
+&gt;&gt;&gt; filter = LPIFilter2D(filt_func)</p>
 </dd></dl>
 
 </dd></dl>
@@ -171,8 +166,14 @@ coefficients.</dd>
 <tr class="row-even"><td><a class="reference internal" href="#skimage.filter.threshold_adaptive" title="skimage.filter.threshold_adaptive"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.threshold_adaptive</span></tt></a>(image,&nbsp;...)</td>
 <td>Applies an adaptive threshold to an array.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.threshold_otsu" title="skimage.filter.threshold_otsu"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.threshold_otsu</span></tt></a>(image[,&nbsp;nbins])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.threshold_isodata" title="skimage.filter.threshold_isodata"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.threshold_isodata</span></tt></a>(image[,&nbsp;nbins])</td>
+<td>Return threshold value based on ISODATA method.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.filter.threshold_otsu" title="skimage.filter.threshold_otsu"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.threshold_otsu</span></tt></a>(image[,&nbsp;nbins])</td>
 <td>Return threshold value based on Otsu&#8217;s method.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.filter.threshold_yen" title="skimage.filter.threshold_yen"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.threshold_yen</span></tt></a>(image[,&nbsp;nbins])</td>
+<td>Return threshold value based on Yen&#8217;s method.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#skimage.filter.vprewitt" title="skimage.filter.vprewitt"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.filter.vprewitt</span></tt></a>(image[,&nbsp;mask])</td>
 <td>Find the vertical edges of an image using the Prewitt transform.</td>
@@ -338,10 +339,10 @@ the image boundaries.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r130" rules="none">
+<table class="docutils citation" frame="void" id="r168" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[R130]</a></td><td><a class="reference external" href="http://users.soe.ucsc.edu/~manduchi/Papers/ICCV98.pdf">http://users.soe.ucsc.edu/~manduchi/Papers/ICCV98.pdf</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id1">[R168]</a></td><td><a class="reference external" href="http://users.soe.ucsc.edu/~manduchi/Papers/ICCV98.pdf">http://users.soe.ucsc.edu/~manduchi/Papers/ICCV98.pdf</a></td></tr>
 </tbody>
 </table>
 </dd></dl>
@@ -398,32 +399,32 @@ the stop criterion. The algorithm stops when:</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r131" rules="none">
+<table class="docutils citation" frame="void" id="r169" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[R131]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Total_variation_denoising">http://en.wikipedia.org/wiki/Total_variation_denoising</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id2">[R169]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Total_variation_denoising">http://en.wikipedia.org/wiki/Total_variation_denoising</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r132" rules="none">
+<table class="docutils citation" frame="void" id="r170" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[R132]</a></td><td>Tom Goldstein and Stanley Osher, &#8220;The Split Bregman Method For L1
+<tr><td class="label"><a class="fn-backref" href="#id3">[R170]</a></td><td>Tom Goldstein and Stanley Osher, &#8220;The Split Bregman Method For L1
 Regularized Problems&#8221;,
 <a class="reference external" href="ftp://ftp.math.ucla.edu/pub/camreport/cam08-29.pdf">ftp://ftp.math.ucla.edu/pub/camreport/cam08-29.pdf</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r133" rules="none">
+<table class="docutils citation" frame="void" id="r171" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[R133]</a></td><td>Pascal Getreuer, &#8220;Rudin–Osher–Fatemi Total Variation Denoising
+<tr><td class="label"><a class="fn-backref" href="#id4">[R171]</a></td><td>Pascal Getreuer, &#8220;Rudin–Osher–Fatemi Total Variation Denoising
 using Split Bregman&#8221; in Image Processing On Line on 2012–05–19,
 <a class="reference external" href="http://www.ipol.im/pub/art/2012/g-tvd/article_lr.pdf">http://www.ipol.im/pub/art/2012/g-tvd/article_lr.pdf</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r134" rules="none">
+<table class="docutils citation" frame="void" id="r172" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id5">[R134]</a></td><td><a class="reference external" href="http://www.math.ucsb.edu/~cgarcia/UGProjects/BregmanAlgorithms_JacquelineBush.pdf">http://www.math.ucsb.edu/~cgarcia/UGProjects/BregmanAlgorithms_JacquelineBush.pdf</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id5">[R172]</a></td><td><a class="reference external" href="http://www.math.ucsb.edu/~cgarcia/UGProjects/BregmanAlgorithms_JacquelineBush.pdf">http://www.math.ucsb.edu/~cgarcia/UGProjects/BregmanAlgorithms_JacquelineBush.pdf</a></td></tr>
 </tbody>
 </table>
 </dd></dl>
@@ -488,12 +489,12 @@ the integral of the norm of the image gradient. Total variation
 denoising tends to produce &#8220;cartoon-like&#8221; images, that is,
 piecewise-constant images.</p>
 <p>This code is an implementation of the algorithm of Rudin, Fatemi and Osher
-that was proposed by Chambolle in <a class="reference internal" href="#r135">[R135]</a>.</p>
+that was proposed by Chambolle in <a class="reference internal" href="#r173">[R173]</a>.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r135" rules="none">
+<table class="docutils citation" frame="void" id="r173" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R135]</td><td><em>(<a class="fn-backref" href="#id6">1</a>, <a class="fn-backref" href="#id7">2</a>)</em> A. Chambolle, An algorithm for total variation minimization and
+<tr><td class="label">[R173]</td><td><em>(<a class="fn-backref" href="#id6">1</a>, <a class="fn-backref" href="#id7">2</a>)</em> A. Chambolle, An algorithm for total variation minimization and
 applications, Journal of Mathematical Imaging and Vision,
 Springer, 2004, 20, 89-97.</td></tr>
 </tbody>
@@ -501,13 +502,13 @@ Springer, 2004, 20, 89-97.</td></tr>
 <p class="rubric">Examples</p>
 <p>2D example on Lena image:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">color</span><span class="p">,</span> <span class="n">data</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">lena</span> <span class="o">=</span> <span class="n">color</span><span class="o">.</span><span class="n">rgb2gray</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">lena</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lena</span> <span class="o">=</span> <span class="n">color</span><span class="o">.</span><span class="n">rgb2gray</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">lena</span><span class="p">())[:</span><span class="mi">50</span><span class="p">,</span> <span class="p">:</span><span class="mi">50</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lena</span> <span class="o">+=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">lena</span><span class="o">.</span><span class="n">std</span><span class="p">()</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="o">*</span><span class="n">lena</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">denoised_lena</span> <span class="o">=</span> <span class="n">denoise_tv_chambolle</span><span class="p">(</span><span class="n">lena</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>3D example on synthetic data:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ogrid</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">40</span><span class="p">]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ogrid</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">20</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">22</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="mi">20</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">z</span> <span class="o">-</span> <span class="mi">17</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="o">**</span><span class="mi">2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mask</span> <span class="o">=</span> <span class="n">mask</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mask</span> <span class="o">+=</span> <span class="mf">0.2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="o">*</span><span class="n">mask</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
@@ -572,16 +573,16 @@ kernel.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r136" rules="none">
+<table class="docutils citation" frame="void" id="r174" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id8">[R136]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Gabor_filter">http://en.wikipedia.org/wiki/Gabor_filter</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id8">[R174]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Gabor_filter">http://en.wikipedia.org/wiki/Gabor_filter</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r137" rules="none">
+<table class="docutils citation" frame="void" id="r175" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id9">[R137]</a></td><td><a class="reference external" href="http://mplab.ucsd.edu/tutorials/gabor.pdf">http://mplab.ucsd.edu/tutorials/gabor.pdf</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id9">[R175]</a></td><td><a class="reference external" href="http://mplab.ucsd.edu/tutorials/gabor.pdf">http://mplab.ucsd.edu/tutorials/gabor.pdf</a></td></tr>
 </tbody>
 </table>
 </dd></dl>
@@ -635,16 +636,16 @@ rotated 90 degrees so that <cite>sigma_x</cite> controls the <em>vertical</em> d
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r138" rules="none">
+<table class="docutils citation" frame="void" id="r176" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id10">[R138]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Gabor_filter">http://en.wikipedia.org/wiki/Gabor_filter</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id10">[R176]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Gabor_filter">http://en.wikipedia.org/wiki/Gabor_filter</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r139" rules="none">
+<table class="docutils citation" frame="void" id="r177" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id11">[R139]</a></td><td><a class="reference external" href="http://mplab.ucsd.edu/tutorials/gabor.pdf">http://mplab.ucsd.edu/tutorials/gabor.pdf</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id11">[R177]</a></td><td><a class="reference external" href="http://mplab.ucsd.edu/tutorials/gabor.pdf">http://mplab.ucsd.edu/tutorials/gabor.pdf</a></td></tr>
 </tbody>
 </table>
 </dd></dl>
@@ -821,10 +822,10 @@ result at each point:</p>
 -3  -10  -3</pre>
 </div>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r140" rules="none">
+<table class="docutils citation" frame="void" id="r178" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id12">[R140]</a></td><td>D. Kroon, 2009, Short Paper University Twente, Numerical Optimization
+<tr><td class="label"><a class="fn-backref" href="#id12">[R178]</a></td><td>D. Kroon, 2009, Short Paper University Twente, Numerical Optimization
 of Kernel Based Image Derivatives.</td></tr>
 </tbody>
 </table>
@@ -1033,12 +1034,12 @@ n - 1, where n is the number of distinct unique values in
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
 <span class="go">array([[1, 4, 5],</span>
-<span class="go">    [4, 4, 1],</span>
-<span class="go">    [5, 1, 1]])</span>
+<span class="go">       [4, 4, 1],</span>
+<span class="go">       [5, 1, 1]])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rank_order</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 <span class="go">(array([[0, 1, 2],</span>
-<span class="go">    [1, 1, 0],</span>
-<span class="go">    [2, 0, 0]], dtype=uint32), array([1, 4, 5]))</span>
+<span class="go">       [1, 1, 0],</span>
+<span class="go">       [2, 0, 0]], dtype=uint32), array([1, 4, 5]))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">3.1</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rank_order</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 <span class="go">(array([0, 1, 2, 1], dtype=uint32), array([-1. ,  2.5,  3.1]))</span>
@@ -1197,10 +1198,10 @@ prevent masked regions from affecting the result.</p>
 vertical Scharrs to get a magnitude that&#8217;s somewhat insensitive to
 direction.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r141" rules="none">
+<table class="docutils citation" frame="void" id="r179" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id13">[R141]</a></td><td>D. Kroon, 2009, Short Paper University Twente, Numerical Optimization
+<tr><td class="label"><a class="fn-backref" href="#id13">[R179]</a></td><td>D. Kroon, 2009, Short Paper University Twente, Numerical Optimization
 of Kernel Based Image Derivatives.</td></tr>
 </tbody>
 </table>
@@ -1310,18 +1311,90 @@ threshold for the centre pixel.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r142" rules="none">
+<table class="docutils citation" frame="void" id="r180" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id14">[R142]</a></td><td><a class="reference external" href="http://docs.opencv.org/modules/imgproc/doc/miscellaneous_transformations.html?highlight=threshold#adaptivethreshold">http://docs.opencv.org/modules/imgproc/doc/miscellaneous_transformations.html?highlight=threshold#adaptivethreshold</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id14">[R180]</a></td><td><a class="reference external" href="http://docs.opencv.org/modules/imgproc/doc/miscellaneous_transformations.html?highlight=threshold#adaptivethreshold">http://docs.opencv.org/modules/imgproc/doc/miscellaneous_transformations.html?highlight=threshold#adaptivethreshold</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.data</span> <span class="kn">import</span> <span class="n">camera</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">image</span> <span class="o">=</span> <span class="n">camera</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">image</span> <span class="o">=</span> <span class="n">camera</span><span class="p">()[:</span><span class="mi">50</span><span class="p">,</span> <span class="p">:</span><span class="mi">50</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">binary_image1</span> <span class="o">=</span> <span class="n">threshold_adaptive</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="s">&#39;mean&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">arr</span><span class="p">:</span> <span class="n">arr</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">binary_image2</span> <span class="o">=</span> <span class="n">threshold_adaptive</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="s">&#39;generic&#39;</span><span class="p">,</span> <span class="n">param</span><span class="o">=</span><span class="n">func</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="threshold-isodata">
+<h2>threshold_isodata<a class="headerlink" href="#threshold-isodata" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.filter.threshold_isodata">
+<tt class="descclassname">skimage.filter.</tt><tt class="descname">threshold_isodata</tt><big>(</big><em>image</em>, <em>nbins=256</em><big>)</big><a class="headerlink" href="#skimage.filter.threshold_isodata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return threshold value based on ISODATA method.</p>
+<p>Histogram-based threshold, known as Ridler-Calvard method or intermeans.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : array</p>
+<blockquote>
+<div><p>Input image.</p>
+</div></blockquote>
+<p><strong>nbins</strong> : int, optional</p>
+<blockquote>
+<div><p>Number of bins used to calculate histogram. This value is ignored for
+integer arrays.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>threshold</strong> : float or int, corresponding input array dtype.</p>
+<blockquote class="last">
+<div><p>Upper threshold value. All pixels intensities that less or equal of
+this value assumed as background.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">References</p>
+<table class="docutils citation" frame="void" id="r181" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id15">[R181]</a></td><td>Ridler, TW &amp; Calvard, S (1978), &#8220;Picture thresholding using an
+iterative selection method&#8221;</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="r182" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id16">[R182]</a></td><td>IEEE Transactions on Systems, Man and Cybernetics 8: 630-632,
+<a class="reference external" href="http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=4310039">http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=4310039</a></td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="r183" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id17">[R183]</a></td><td>Sezgin M. and Sankur B. (2004) &#8220;Survey over Image Thresholding
+Techniques and Quantitative Performance Evaluation&#8221; Journal of
+Electronic Imaging, 13(1): 146-165,
+<a class="reference external" href="http://www.busim.ee.boun.edu.tr/~sankur/SankurFolder/Threshold_survey.pdf">http://www.busim.ee.boun.edu.tr/~sankur/SankurFolder/Threshold_survey.pdf</a></td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="r184" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id18">[R184]</a></td><td>ImageJ AutoThresholder code,
+<a class="reference external" href="http://fiji.sc/wiki/index.php/Auto_Threshold">http://fiji.sc/wiki/index.php/Auto_Threshold</a></td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.data</span> <span class="kn">import</span> <span class="n">coins</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">image</span> <span class="o">=</span> <span class="n">coins</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">thresh</span> <span class="o">=</span> <span class="n">threshold_isodata</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">binary</span> <span class="o">=</span> <span class="n">image</span> <span class="o">&gt;</span> <span class="n">thresh</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1358,16 +1431,80 @@ this value assumed as foreground.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r143" rules="none">
+<table class="docutils citation" frame="void" id="r185" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id15">[R143]</a></td><td>Wikipedia, <a class="reference external" href="http://en.wikipedia.org/wiki/Otsu's_Method">http://en.wikipedia.org/wiki/Otsu&#8217;s_Method</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id19">[R185]</a></td><td>Wikipedia, <a class="reference external" href="http://en.wikipedia.org/wiki/Otsu's_Method">http://en.wikipedia.org/wiki/Otsu&#8217;s_Method</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.data</span> <span class="kn">import</span> <span class="n">camera</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">image</span> <span class="o">=</span> <span class="n">camera</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">thresh</span> <span class="o">=</span> <span class="n">threshold_otsu</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">binary</span> <span class="o">=</span> <span class="n">image</span> <span class="o">&lt;=</span> <span class="n">thresh</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="threshold-yen">
+<h2>threshold_yen<a class="headerlink" href="#threshold-yen" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.filter.threshold_yen">
+<tt class="descclassname">skimage.filter.</tt><tt class="descname">threshold_yen</tt><big>(</big><em>image</em>, <em>nbins=256</em><big>)</big><a class="headerlink" href="#skimage.filter.threshold_yen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return threshold value based on Yen&#8217;s method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : array</p>
+<blockquote>
+<div><p>Input image.</p>
+</div></blockquote>
+<p><strong>nbins</strong> : int, optional</p>
+<blockquote>
+<div><p>Number of bins used to calculate histogram. This value is ignored for
+integer arrays.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>threshold</strong> : float</p>
+<blockquote class="last">
+<div><p>Upper threshold value. All pixels intensities that less or equal of
+this value assumed as foreground.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">References</p>
+<table class="docutils citation" frame="void" id="r186" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id20">[R186]</a></td><td>Yen J.C., Chang F.J., and Chang S. (1995) &#8220;A New Criterion
+for Automatic Multilevel Thresholding&#8221; IEEE Trans. on Image
+Processing, 4(3): 370-378</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="r187" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id21">[R187]</a></td><td>Sezgin M. and Sankur B. (2004) &#8220;Survey over Image Thresholding
+Techniques and Quantitative Performance Evaluation&#8221; Journal of
+Electronic Imaging, 13(1): 146-165,
+<a class="reference external" href="http://www.busim.ee.boun.edu.tr/~sankur/SankurFolder/Threshold_survey.pdf">http://www.busim.ee.boun.edu.tr/~sankur/SankurFolder/Threshold_survey.pdf</a></td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="r188" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id22">[R188]</a></td><td>ImageJ AutoThresholder code, <a class="reference external" href="http://fiji.sc/wiki/index.php/Auto_Threshold">http://fiji.sc/wiki/index.php/Auto_Threshold</a></td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.data</span> <span class="kn">import</span> <span class="n">camera</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">image</span> <span class="o">=</span> <span class="n">camera</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">thresh</span> <span class="o">=</span> <span class="n">threshold_yen</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">binary</span> <span class="o">=</span> <span class="n">image</span> <span class="o">&lt;=</span> <span class="n">thresh</span>
 </pre></div>
 </div>
@@ -1452,10 +1589,10 @@ result at each point:</p>
  3   0   -3</pre>
 </div>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r144" rules="none">
+<table class="docutils citation" frame="void" id="r189" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id16">[R144]</a></td><td>D. Kroon, 2009, Short Paper University Twente, Numerical Optimization
+<tr><td class="label"><a class="fn-backref" href="#id23">[R189]</a></td><td>D. Kroon, 2009, Short Paper University Twente, Numerical Optimization
 of Kernel Based Image Derivatives.</td></tr>
 </tbody>
 </table>
@@ -1571,7 +1708,9 @@ image.</p>
 <li><a class="reference internal" href="#scharr">scharr</a></li>
 <li><a class="reference internal" href="#sobel">sobel</a></li>
 <li><a class="reference internal" href="#threshold-adaptive">threshold_adaptive</a></li>
+<li><a class="reference internal" href="#threshold-isodata">threshold_isodata</a></li>
 <li><a class="reference internal" href="#threshold-otsu">threshold_otsu</a></li>
+<li><a class="reference internal" href="#threshold-yen">threshold_yen</a></li>
 <li><a class="reference internal" href="#vprewitt">vprewitt</a></li>
 <li><a class="reference internal" href="#vscharr">vscharr</a></li>
 <li><a class="reference internal" href="#vsobel">vsobel</a></li>

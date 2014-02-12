@@ -16,6 +16,7 @@ Module: :mod:`exposure`
    skimage.exposure.equalize_hist
    skimage.exposure.histogram
    skimage.exposure.rescale_intensity
+   skimage.exposure.unwrap_phase
 
 adjust_gamma
 ------------
@@ -61,4 +62,9 @@ rescale_intensity
 -----------------
 
 .. autofunction:: skimage.exposure.rescale_intensity
+
+unwrap_phase
+------------
+
+.. autofunction:: skimage.exposure.unwrap_phase
 

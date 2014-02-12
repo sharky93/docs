@@ -59,7 +59,7 @@
 <h2><a class="reference internal" href="#skimage.graph.MCP" title="skimage.graph.MCP"><tt class="xref py py-class docutils literal"><span class="pre">MCP</span></tt></a><a class="headerlink" href="#mcp" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="skimage.graph.MCP">
-<em class="property">class </em><tt class="descclassname">skimage.graph.</tt><tt class="descname">MCP</tt><big>(</big><em>costs</em>, <em>offsets=None</em>, <em>fully_connected=True</em><big>)</big><a class="headerlink" href="#skimage.graph.MCP" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">skimage.graph.</tt><tt class="descname">MCP</tt><big>(</big><em>costs</em>, <em>offsets=None</em>, <em>fully_connected=True</em>, <em>sampling=None</em><big>)</big><a class="headerlink" href="#skimage.graph.MCP" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
 <p>A class for finding the minimum cost path through a given n-d costs array.</p>
 <p>Given an n-d costs array, this class can be used to find the minimum-cost
@@ -89,31 +89,25 @@ n-d neighborhood will be constructed with make_offsets(), using the
 <cite>fully_connected</cite> parameter value.</p>
 </div></blockquote>
 <p><strong>fully_connected</strong> : bool, optional</p>
-<blockquote class="last">
+<blockquote>
 <div><p>If no <cite>offsets</cite> are provided, this determines the connectivity of the
 generated neighborhood. If true, the path may go along diagonals
 between elements of the <cite>costs</cite> array; otherwise only axial moves are
 permitted.</p>
+</div></blockquote>
+<p><strong>sampling</strong> : tuple, optional</p>
+<blockquote class="last">
+<div><p>For each dimension, specifies the distance between two cells/voxels. 
+If not given or None, the distance is assumed unit.</p>
 </div></blockquote>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.graph.MCP.offsets" title="skimage.graph.MCP.offsets"><tt class="xref py py-obj docutils literal"><span class="pre">offsets</span></tt></a></td>
-<td></td>
-</tr>
-</tbody>
-</table>
 <dl class="method">
 <dt id="skimage.graph.MCP.__init__">
-<tt class="descname">__init__</tt><big>(</big><em>costs</em>, <em>offsets=None</em>, <em>fully_connected=True</em><big>)</big><a class="headerlink" href="#skimage.graph.MCP.__init__" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">__init__</tt><big>(</big><em>costs</em>, <em>offsets=None</em>, <em>fully_connected=True</em>, <em>sampling=None</em><big>)</big><a class="headerlink" href="#skimage.graph.MCP.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>See class documentation.</p>
 </dd></dl>
 
@@ -174,10 +168,20 @@ offset_index is -1, then the given index was not considered.</p>
 </table>
 </dd></dl>
 
-<dl class="attribute">
-<dt id="skimage.graph.MCP.offsets">
-<tt class="descname">offsets</tt><a class="headerlink" href="#skimage.graph.MCP.offsets" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dl class="method">
+<dt id="skimage.graph.MCP.goal_reached">
+<tt class="descname">goal_reached</tt><big>(</big><big>)</big><a class="headerlink" href="#skimage.graph.MCP.goal_reached" title="Permalink to this definition">¶</a></dt>
+<dd><p>int goal_reached(int index, float cumcost)
+This method is called each iteration after popping an index
+from the heap, before examining the neighbours.</p>
+<p>This method can be overloaded to modify the behavior of the MCP
+algorithm. An example might be to stop the algorithm when a
+certain cumulative cost is reached, or when the front is a
+certain distance away from the seed point.</p>
+<p>This method should return 1 if the algorithm should not check
+the current point&#8217;s neighbours and 2 if the algorithm is now
+done.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="skimage.graph.MCP.traceback">
@@ -216,6 +220,123 @@ returned by find_costs().)</p>
 </dd></dl>
 
 </div>
+<div class="section" id="mcp-connect">
+<h2><a class="reference internal" href="#skimage.graph.MCP_Connect" title="skimage.graph.MCP_Connect"><tt class="xref py py-class docutils literal"><span class="pre">MCP_Connect</span></tt></a><a class="headerlink" href="#mcp-connect" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="skimage.graph.MCP_Connect">
+<em class="property">class </em><tt class="descclassname">skimage.graph.</tt><tt class="descname">MCP_Connect</tt><a class="headerlink" href="#skimage.graph.MCP_Connect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">skimage.graph._mcp.MCP</span></tt></p>
+<p>Connect source points using the distance-weighted minimum cost function.</p>
+<p>A front is grown from each seed point simultaneously, while the
+origin of the front is tracked as well. When two fronts meet,
+create_connection() is called. This method must be overloaded to
+deal with the found edges in a way that is appropriate for the
+application.</p>
+<dl class="method">
+<dt id="skimage.graph.MCP_Connect.__init__">
+<tt class="descname">__init__</tt><big>(</big><big>)</big><a class="headerlink" href="#skimage.graph.MCP_Connect.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>x.__init__(...) initializes x; see help(type(x)) for signature</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="skimage.graph.MCP_Connect.create_connection">
+<tt class="descname">create_connection</tt><big>(</big><big>)</big><a class="headerlink" href="#skimage.graph.MCP_Connect.create_connection" title="Permalink to this definition">¶</a></dt>
+<dd><p>create_connection id1, id2, pos1, pos2, cost1, cost2)</p>
+<p>Overload this method to keep track of the connections that are
+found during MCP processing. Note that a connection with the
+same ids can be found multiple times (but with different
+positions and costs).</p>
+<p>At the time that this method is called, both points are &#8220;frozen&#8221;
+and will not be visited again by the MCP algorithm.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>id1</strong> : int</p>
+<blockquote>
+<div><p>The seed point id where the first neighbor originated from.</p>
+</div></blockquote>
+<p><strong>id2</strong> : int</p>
+<blockquote>
+<div><p>The seed point id where the second neighbor originated from.</p>
+</div></blockquote>
+<p><strong>pos1</strong> : tuple</p>
+<blockquote>
+<div><p>The index of of the first neighbour in the connection.</p>
+</div></blockquote>
+<p><strong>pos2</strong> : tuple</p>
+<blockquote>
+<div><p>The index of of the second neighbour in the connection.</p>
+</div></blockquote>
+<p><strong>cost1</strong> : float</p>
+<blockquote>
+<div><p>The cumulative cost at <cite>pos1</cite>.</p>
+</div></blockquote>
+<p><strong>cost2</strong> : float</p>
+<blockquote class="last">
+<div><p>The cumulative costs at <cite>pos2</cite>.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="mcp-flexible">
+<h2><a class="reference internal" href="#skimage.graph.MCP_Flexible" title="skimage.graph.MCP_Flexible"><tt class="xref py py-class docutils literal"><span class="pre">MCP_Flexible</span></tt></a><a class="headerlink" href="#mcp-flexible" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="skimage.graph.MCP_Flexible">
+<em class="property">class </em><tt class="descclassname">skimage.graph.</tt><tt class="descname">MCP_Flexible</tt><big>(</big><em>costs</em>, <em>offsets=None</em>, <em>fully_connected=True</em><big>)</big><a class="headerlink" href="#skimage.graph.MCP_Flexible" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">skimage.graph._mcp.MCP</span></tt></p>
+<p>Find minimum cost paths through an N-d costs array.</p>
+<p>See the documentation for MCP for full details. This class differs from
+MCP in that several methods can be overloaded (from pure Python) to
+modify the behavior of the algorithm and/or create custom algorithms
+based on MCP. Note that goal_reached can also be overloaded in the
+MCP class.</p>
+<dl class="method">
+<dt id="skimage.graph.MCP_Flexible.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>costs</em>, <em>offsets=None</em>, <em>fully_connected=True</em>, <em>sampling=None</em><big>)</big><a class="headerlink" href="#skimage.graph.MCP_Flexible.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>See class documentation.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="skimage.graph.MCP_Flexible.examine_neighbor">
+<tt class="descname">examine_neighbor</tt><big>(</big><em>index</em>, <em>new_index</em>, <em>offset_length</em><big>)</big><a class="headerlink" href="#skimage.graph.MCP_Flexible.examine_neighbor" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method is called once for every pair of neighboring nodes,
+as soon as both nodes are frozen.</p>
+<p>This method can be overloaded to obtain information about
+neightboring nodes, and/or to modify the behavior of the MCP
+algorithm. One example is the MCP_Connect class, which checks
+for meeting fronts using this hook.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="skimage.graph.MCP_Flexible.travel_cost">
+<tt class="descname">travel_cost</tt><big>(</big><em>old_cost</em>, <em>new_cost</em>, <em>offset_length</em><big>)</big><a class="headerlink" href="#skimage.graph.MCP_Flexible.travel_cost" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method calculates the travel cost for going from the
+current node to the next. The default implementation returns
+new_cost. Overload this method to adapt the behaviour of the
+algorithm.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="skimage.graph.MCP_Flexible.update_node">
+<tt class="descname">update_node</tt><big>(</big><em>index</em>, <em>new_index</em>, <em>offset_length</em><big>)</big><a class="headerlink" href="#skimage.graph.MCP_Flexible.update_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method is called when a node is updated, right after
+new_index is pushed onto the heap and the traceback map is
+updated.</p>
+<p>This method can be overloaded to keep track of other arrays
+that are used by a specific implementation of the algorithm.
+For instance the MCP_Connect class uses it to update an id map.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 <div class="section" id="mcp-geometric">
 <h2><a class="reference internal" href="#skimage.graph.MCP_Geometric" title="skimage.graph.MCP_Geometric"><tt class="xref py py-class docutils literal"><span class="pre">MCP_Geometric</span></tt></a><a class="headerlink" href="#mcp-geometric" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
@@ -237,10 +358,11 @@ is sqrt(2) in length. Half of this move is within the pixel (1, 1) and the
 other half in (2, 2), so the cost of this move is calculated as
 <cite>(sqrt(2)/2)*costs[1,1] + (sqrt(2)/2)*costs[2,2]</cite>.</p>
 <p>These calculations don&#8217;t make a lot of sense with offsets of magnitude
-greater than 1.</p>
+greater than 1. Use the <cite>sampling</cite> argument in order to deal with
+anisotropic data.</p>
 <dl class="method">
 <dt id="skimage.graph.MCP_Geometric.__init__">
-<tt class="descname">__init__</tt><big>(</big><em>costs</em>, <em>offsets=None</em>, <em>fully_connected=True</em><big>)</big><a class="headerlink" href="#skimage.graph.MCP_Geometric.__init__" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">__init__</tt><big>(</big><em>costs</em>, <em>offsets=None</em>, <em>fully_connected=True</em>, <em>sampling=None</em><big>)</big><a class="headerlink" href="#skimage.graph.MCP_Geometric.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>See class documentation.</p>
 </dd></dl>
 
@@ -426,9 +548,9 @@ differences along the path.</p>
         <div class="well sidebar-box toc">
             <ul class="nav nav-list">
 <li><a class="reference internal" href="#">Module: <tt class="docutils literal"><span class="pre">graph</span></tt></a><ul class="nav nav-list">
-<li><a class="reference internal" href="#mcp"><tt class="docutils literal"><span class="pre">MCP</span></tt></a><ul class="nav nav-list">
-</ul>
-</li>
+<li><a class="reference internal" href="#mcp"><tt class="docutils literal"><span class="pre">MCP</span></tt></a></li>
+<li><a class="reference internal" href="#mcp-connect"><tt class="docutils literal"><span class="pre">MCP_Connect</span></tt></a></li>
+<li><a class="reference internal" href="#mcp-flexible"><tt class="docutils literal"><span class="pre">MCP_Flexible</span></tt></a></li>
 <li><a class="reference internal" href="#mcp-geometric"><tt class="docutils literal"><span class="pre">MCP_Geometric</span></tt></a></li>
 <li><a class="reference internal" href="#route-through-array">route_through_array</a></li>
 <li><a class="reference internal" href="#shortest-path">shortest_path</a></li>

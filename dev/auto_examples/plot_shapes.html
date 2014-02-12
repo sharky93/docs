@@ -58,12 +58,23 @@
             
   <div class="section" id="shapes">
 <span id="example-plot-shapes-py"></span><h1>Shapes<a class="headerlink" href="#shapes" title="Permalink to this headline">¶</a></h1>
-<p>This example shows how to draw several different shapes:
-* line
-* Bezier curve
-* polygon
-* circle
-* ellipse</p>
+<p>This example shows how to draw several different shapes:</p>
+<blockquote>
+<div><ul class="simple">
+<li>line</li>
+<li>Bezier curve</li>
+<li>polygon</li>
+<li>circle</li>
+<li>ellipse</li>
+</ul>
+</div></blockquote>
+<p>Anti-aliased drawing for:</p>
+<blockquote>
+<div><ul class="simple">
+<li>line</li>
+<li>circle</li>
+</ul>
+</div></blockquote>
 <img alt="../_images/plot_shapes_1.png" class="align-center" src="../_images/plot_shapes_1.png" />
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
@@ -123,13 +134,6 @@
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;No anti-aliasing&#39;</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s">&#39;off&#39;</span><span class="p">)</span>
 
-<span class="sd">&quot;&quot;&quot;</span>
-
-<span class="sd">Anti-aliased drawing for:</span>
-<span class="sd">* line</span>
-<span class="sd">* circle</span>
-
-<span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">from</span> <span class="nn">skimage.draw</span> <span class="kn">import</span> <span class="n">line_aa</span><span class="p">,</span> <span class="n">circle_perimeter_aa</span>
 

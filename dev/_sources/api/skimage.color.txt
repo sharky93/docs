@@ -24,16 +24,20 @@ Module: :mod:`color`
    skimage.color.lab2xyz
    skimage.color.label2rgb
    skimage.color.lch2lab
+   skimage.color.luv2rgb
+   skimage.color.luv2xyz
    skimage.color.rgb2gray
    skimage.color.rgb2grey
    skimage.color.rgb2hed
    skimage.color.rgb2hsv
    skimage.color.rgb2lab
+   skimage.color.rgb2luv
    skimage.color.rgb2rgbcie
    skimage.color.rgb2xyz
    skimage.color.rgbcie2rgb
    skimage.color.separate_stains
    skimage.color.xyz2lab
+   skimage.color.xyz2luv
    skimage.color.xyz2rgb
 
 combine_stains
@@ -121,6 +125,16 @@ lch2lab
 
 .. autofunction:: skimage.color.lch2lab
 
+luv2rgb
+-------
+
+.. autofunction:: skimage.color.luv2rgb
+
+luv2xyz
+-------
+
+.. autofunction:: skimage.color.luv2xyz
+
 rgb2gray
 --------
 
@@ -146,6 +160,11 @@ rgb2lab
 
 .. autofunction:: skimage.color.rgb2lab
 
+rgb2luv
+-------
+
+.. autofunction:: skimage.color.rgb2luv
+
 rgb2rgbcie
 ----------
 
@@ -170,6 +189,11 @@ xyz2lab
 -------
 
 .. autofunction:: skimage.color.xyz2lab
+
+xyz2luv
+-------
+
+.. autofunction:: skimage.color.xyz2luv
 
 xyz2rgb
 -------

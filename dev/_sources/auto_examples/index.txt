@@ -13,7 +13,9 @@ General-purpose and introductory examples for the scikit.
 .. toctree::
    :hidden:
 
+   plot_brief
    plot_canny
+   plot_censure
    plot_circular_elliptical_hough_transform
    plot_contours
    plot_convex_hull
@@ -39,8 +41,10 @@ General-purpose and introductory examples for the scikit.
    plot_marked_watershed
    plot_matching
    plot_medial_transform
+   plot_orb
    plot_otsu
    plot_peak_local_max
+   plot_phase_unwrap
    plot_piecewise_affine
    plot_polygon
    plot_pyramid
@@ -50,6 +54,7 @@ General-purpose and introductory examples for the scikit.
    plot_ransac
    plot_regional_maxima
    plot_regionprops
+   plot_restoration
    plot_segmentations
    plot_shapes
    plot_skeleton
@@ -61,11 +66,25 @@ General-purpose and introductory examples for the scikit.
    plot_watershed
 
 
+.. figure:: images/thumb/plot_brief.png
+   :figclass: gallery
+   :target: ./plot_brief.html
+
+   :ref:`example_plot_brief.py`
+
+
 .. figure:: images/thumb/plot_canny.png
    :figclass: gallery
    :target: ./plot_canny.html
 
    :ref:`example_plot_canny.py`
+
+
+.. figure:: images/thumb/plot_censure.png
+   :figclass: gallery
+   :target: ./plot_censure.html
+
+   :ref:`example_plot_censure.py`
 
 
 .. figure:: images/thumb/plot_circular_elliptical_hough_transform.png
@@ -243,6 +262,13 @@ General-purpose and introductory examples for the scikit.
    :ref:`example_plot_medial_transform.py`
 
 
+.. figure:: images/thumb/plot_orb.png
+   :figclass: gallery
+   :target: ./plot_orb.html
+
+   :ref:`example_plot_orb.py`
+
+
 .. figure:: images/thumb/plot_otsu.png
    :figclass: gallery
    :target: ./plot_otsu.html
@@ -255,6 +281,13 @@ General-purpose and introductory examples for the scikit.
    :target: ./plot_peak_local_max.html
 
    :ref:`example_plot_peak_local_max.py`
+
+
+.. figure:: images/thumb/plot_phase_unwrap.png
+   :figclass: gallery
+   :target: ./plot_phase_unwrap.html
+
+   :ref:`example_plot_phase_unwrap.py`
 
 
 .. figure:: images/thumb/plot_piecewise_affine.png
@@ -318,6 +351,13 @@ General-purpose and introductory examples for the scikit.
    :target: ./plot_regionprops.html
 
    :ref:`example_plot_regionprops.py`
+
+
+.. figure:: images/thumb/plot_restoration.png
+   :figclass: gallery
+   :target: ./plot_restoration.html
+
+   :ref:`example_plot_restoration.py`
 
 
 .. figure:: images/thumb/plot_segmentations.png

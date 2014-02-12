@@ -53,6 +53,9 @@ Module: :mod:`filter.rank`
    skimage.filter.rank.pop_percentile
    skimage.filter.rank.subtract_mean
    skimage.filter.rank.subtract_mean_percentile
+   skimage.filter.rank.sum
+   skimage.filter.rank.sum_bilateral
+   skimage.filter.rank.sum_percentile
    skimage.filter.rank.threshold
    skimage.filter.rank.threshold_percentile
    skimage.filter.rank.tophat
@@ -231,6 +234,21 @@ subtract_mean_percentile
 ------------------------
 
 .. autofunction:: skimage.filter.rank.subtract_mean_percentile
+
+sum
+---
+
+.. autofunction:: skimage.filter.rank.sum
+
+sum_bilateral
+-------------
+
+.. autofunction:: skimage.filter.rank.sum_bilateral
+
+sum_percentile
+--------------
+
+.. autofunction:: skimage.filter.rank.sum_percentile
 
 threshold
 ---------

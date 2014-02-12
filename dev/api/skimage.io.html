@@ -57,56 +57,12 @@
 <span id="module-io"></span><h1>Module: <a class="reference external" href="http://docs.python.org/2.7/library/io.html#io" title="(in Python v2.7)"><tt class="xref py py-mod docutils literal"><span class="pre">io</span></tt></a><a class="headerlink" href="#module-skimage.io" title="Permalink to this headline">¶</a></h1>
 <p>Utilities to read and write images in various formats.</p>
 <p>The following plug-ins are available:</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="14%" />
-<col width="86%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>Plugin</td>
-<td>Description</td>
-</tr>
-<tr class="row-even"><td>tifffile</td>
-<td>Load and save TIFF and TIFF-based images using tifffile.py</td>
-</tr>
-<tr class="row-odd"><td>pil</td>
-<td>Image reading via the Python Imaging Library</td>
-</tr>
-<tr class="row-even"><td>qt</td>
-<td>Fast image display using the Qt library</td>
-</tr>
-<tr class="row-odd"><td>freeimage</td>
-<td>Load images using the FreeImage library</td>
-</tr>
-<tr class="row-even"><td>gtk</td>
-<td>Fast image display using the GTK library</td>
-</tr>
-<tr class="row-odd"><td>matplotlib</td>
-<td>Display or save images using Matplotlib</td>
-</tr>
-<tr class="row-even"><td>simpleitk</td>
-<td>Image reading and writing via SimpleITK</td>
-</tr>
-<tr class="row-odd"><td>imread</td>
-<td>Image reading and writing via imread</td>
-</tr>
-<tr class="row-even"><td>fits</td>
-<td>FITS image reading via PyFITS</td>
-</tr>
-<tr class="row-odd"><td>null</td>
-<td>Default plugin that does nothing</td>
-</tr>
-<tr class="row-even"><td>gdal</td>
-<td>Image reading via the GDAL Library (www.gdal.org)</td>
-</tr>
-</tbody>
-</table>
 <div class="section" id="image">
 <h2><a class="reference internal" href="#skimage.io.Image" title="skimage.io.Image"><tt class="xref py py-class docutils literal"><span class="pre">Image</span></tt></a><a class="headerlink" href="#image" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="skimage.io.Image">
 <em class="property">class </em><tt class="descclassname">skimage.io.</tt><tt class="descname">Image</tt><a class="headerlink" href="#skimage.io.Image" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.7)"><tt class="xref py py-class docutils literal"><span class="pre">numpy.ndarray</span></tt></a></p>
+<dd><p>Bases: <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.8)"><tt class="xref py py-class docutils literal"><span class="pre">numpy.ndarray</span></tt></a></p>
 <p>Class representing Image data.</p>
 <p>These objects have tags for image metadata and IPython display protocol
 methods for image display.</p>
@@ -334,48 +290,14 @@ from file.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data_dir</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">img</span> <span class="o">=</span> <span class="n">MultiImage</span><span class="p">(</span><span class="n">data_dir</span> <span class="o">+</span> <span class="s">&#39;/multipage.tif&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">img</span> <span class="o">=</span> <span class="n">MultiImage</span><span class="p">(</span><span class="n">data_dir</span> <span class="o">+</span> <span class="s">&#39;/multipage.tif&#39;</span><span class="p">)</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">img</span><span class="p">)</span> 
 <span class="go">2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">frame</span> <span class="ow">in</span> <span class="n">img</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="n">frame</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">frame</span> <span class="ow">in</span> <span class="n">img</span><span class="p">:</span> 
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="n">frame</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> 
 <span class="go">(15, 10)</span>
 <span class="go">(15, 10)</span>
 </pre></div>
-</div>
-<p>The two frames in this image can be shown with matplotlib:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">os</span>
-
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">mpl_toolkits.axes_grid</span> <span class="kn">import</span> <span class="n">AxesGrid</span>
-
-<span class="kn">from</span> <span class="nn">skimage.io</span> <span class="kn">import</span> <span class="n">MultiImage</span>
-<span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data_dir</span>
-
-<span class="c"># Load the multi-layer image</span>
-<span class="n">fname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="s">&#39;multipage.tif&#39;</span><span class="p">)</span>
-<span class="n">img</span> <span class="o">=</span> <span class="n">MultiImage</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
-
-<span class="c"># Create an image grid</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">grid</span> <span class="o">=</span> <span class="n">AxesGrid</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span>
-                <span class="n">rect</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-                <span class="n">nrows_ncols</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
-                <span class="n">axes_pad</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
-
-<span class="c"># Plot the layers on the image grid</span>
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">frame</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
-    <span class="n">grid</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gray</span><span class="p">)</span>
-    <span class="n">grid</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">&#39;Frame </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span>
-    <span class="n">grid</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([])</span>
-    <span class="n">grid</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>(<a class="reference external" href="../plots/show_collection.py">Source code</a>, <a class="reference external" href="../plots/show_collection.png">png</a>, <a class="reference external" href="../plots/show_collection.pdf">pdf</a>)</p>
-<div class="figure">
-<img alt="../_images/show_collection.png" src="../_images/show_collection.png" />
 </div>
 <dl class="method">
 <dt id="skimage.io.MultiImage.__init__">
@@ -608,8 +530,14 @@ Useful for IP cameras and other real time video feeds.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.io.concatenate_images" title="skimage.io.concatenate_images"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.concatenate_images</span></tt></a>(ic)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.io.call_plugin" title="skimage.io.call_plugin"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.call_plugin</span></tt></a>(kind,&nbsp;*args,&nbsp;**kwargs)</td>
+<td>Find the appropriate plugin of &#8216;kind&#8217; and execute it.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.io.concatenate_images" title="skimage.io.concatenate_images"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.concatenate_images</span></tt></a>(ic)</td>
 <td>Concatenate all images in the image collection into an array.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.io.find_available_plugins" title="skimage.io.find_available_plugins"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.find_available_plugins</span></tt></a>([loaded])</td>
+<td>List available plugins.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#skimage.io.imread" title="skimage.io.imread"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.imread</span></tt></a>(fname[,&nbsp;as_grey,&nbsp;plugin,&nbsp;...])</td>
 <td>Load an image from file.</td>
@@ -617,26 +545,26 @@ Useful for IP cameras and other real time video feeds.</p>
 <tr class="row-odd"><td><a class="reference internal" href="#skimage.io.imread_collection" title="skimage.io.imread_collection"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.imread_collection</span></tt></a>(load_pattern[,&nbsp;...])</td>
 <td>Load a collection of images.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.io.imsave" title="skimage.io.imsave"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.imsave</span></tt></a>(fname,&nbsp;arr[,&nbsp;plugin])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.io.imread_collection_wrapper" title="skimage.io.imread_collection_wrapper"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.imread_collection_wrapper</span></tt></a>(imread)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.io.imsave" title="skimage.io.imsave"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.imsave</span></tt></a>(fname,&nbsp;arr[,&nbsp;plugin])</td>
 <td>Save an image to file.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.io.imshow" title="skimage.io.imshow"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.imshow</span></tt></a>(arr[,&nbsp;plugin])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.io.imshow" title="skimage.io.imshow"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.imshow</span></tt></a>(arr[,&nbsp;plugin])</td>
 <td>Display an image.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.io.load_sift" title="skimage.io.load_sift"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.load_sift</span></tt></a>(f)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.io.load_sift" title="skimage.io.load_sift"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.load_sift</span></tt></a>(f)</td>
 <td>Read SIFT or SURF features from a file.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.io.load_surf" title="skimage.io.load_surf"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.load_surf</span></tt></a>(f)</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.io.load_surf" title="skimage.io.load_surf"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.load_surf</span></tt></a>(f)</td>
 <td>Read SIFT or SURF features from a file.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.io.plugin_info" title="skimage.io.plugin_info"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.plugin_info</span></tt></a>(plugin)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.io.plugin_info" title="skimage.io.plugin_info"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.plugin_info</span></tt></a>(plugin)</td>
 <td>Return plugin meta-data.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.io.plugin_order" title="skimage.io.plugin_order"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.plugin_order</span></tt></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.io.plugin_order" title="skimage.io.plugin_order"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.plugin_order</span></tt></a>()</td>
 <td>Return the currently preferred plugin order.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.io.plugins" title="skimage.io.plugins"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.plugins</span></tt></a>([loaded])</td>
-<td>List available plugins.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#skimage.io.pop" title="skimage.io.pop"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.io.pop</span></tt></a>()</td>
 <td>Pop an image from the shared image stack.</td>
@@ -655,6 +583,36 @@ Useful for IP cameras and other real time video feeds.</p>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="section" id="call-plugin">
+<h2>call_plugin<a class="headerlink" href="#call-plugin" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.io.call_plugin">
+<tt class="descclassname">skimage.io.</tt><tt class="descname">call_plugin</tt><big>(</big><em>kind</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.io.call_plugin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the appropriate plugin of &#8216;kind&#8217; and execute it.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>kind</strong> : {&#8216;imshow&#8217;, &#8216;imsave&#8217;, &#8216;imread&#8217;, &#8216;imread_collection&#8217;}</p>
+<blockquote>
+<div><p>Function to look up.</p>
+</div></blockquote>
+<p><strong>plugin</strong> : str, optional</p>
+<blockquote>
+<div><p>Plugin to load.  Defaults to None, in which case the first
+matching plugin is used.</p>
+</div></blockquote>
+<p><strong>*args, **kwargs</strong> : arguments and keyword arguments</p>
+<blockquote class="last">
+<div><p>Passed to the plugin function.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </div>
 <div class="section" id="concatenate-images">
 <h2>concatenate_images<a class="headerlink" href="#concatenate-images" title="Permalink to this headline">¶</a></h2>
@@ -690,6 +648,35 @@ Useful for IP cameras and other real time video feeds.</p>
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="#skimage.io.ImageCollection.concatenate" title="skimage.io.ImageCollection.concatenate"><tt class="xref py py-obj docutils literal"><span class="pre">ImageCollection.concatenate</span></tt></a>, <a class="reference internal" href="#skimage.io.MultiImage.concatenate" title="skimage.io.MultiImage.concatenate"><tt class="xref py py-obj docutils literal"><span class="pre">MultiImage.concatenate</span></tt></a></p>
 </div>
+</dd></dl>
+
+</div>
+<div class="section" id="find-available-plugins">
+<h2>find_available_plugins<a class="headerlink" href="#find-available-plugins" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.io.find_available_plugins">
+<tt class="descclassname">skimage.io.</tt><tt class="descname">find_available_plugins</tt><big>(</big><em>loaded=False</em><big>)</big><a class="headerlink" href="#skimage.io.find_available_plugins" title="Permalink to this definition">¶</a></dt>
+<dd><p>List available plugins.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>loaded</strong> : bool</p>
+<blockquote>
+<div><p>If True, show only those plugins currently loaded.  By default,
+all plugins are shown.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>p</strong> : dict</p>
+<blockquote class="last">
+<div><p>Dictionary with plugin names as keys and exposed functions as
+values.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>
@@ -763,6 +750,14 @@ time.  Otherwise, images will be cached once they are loaded.</p>
 </tbody>
 </table>
 </dd></dl>
+
+</div>
+<div class="section" id="imread-collection-wrapper">
+<h2>imread_collection_wrapper<a class="headerlink" href="#imread-collection-wrapper" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.io.imread_collection_wrapper">
+<tt class="descclassname">skimage.io.</tt><tt class="descname">imread_collection_wrapper</tt><big>(</big><em>imread</em><big>)</big><a class="headerlink" href="#skimage.io.imread_collection_wrapper" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </div>
 <div class="section" id="imsave">
@@ -992,35 +987,6 @@ plugins (in order of preference) as value.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="plugins">
-<h2>plugins<a class="headerlink" href="#plugins" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="skimage.io.plugins">
-<tt class="descclassname">skimage.io.</tt><tt class="descname">plugins</tt><big>(</big><em>loaded=False</em><big>)</big><a class="headerlink" href="#skimage.io.plugins" title="Permalink to this definition">¶</a></dt>
-<dd><p>List available plugins.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>loaded</strong> : bool</p>
-<blockquote>
-<div><p>If True, show only those plugins currently loaded.  By default,
-all plugins are shown.</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>p</strong> : dict</p>
-<blockquote class="last">
-<div><p>Dictionary with plugin names as keys and exposed functions as
-values.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-</div>
 <div class="section" id="pop">
 <h2>pop<a class="headerlink" href="#pop" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
@@ -1088,7 +1054,7 @@ have been closed.</p>
 </div>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">io</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">)))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">io</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">io</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> 
 </pre></div>
 </div>
 </dd></dl>
@@ -1121,16 +1087,19 @@ the plugin is set for all functions.</p>
 <div class="admonition-see-also admonition seealso">
 <p class="first admonition-title">See also</p>
 <dl class="last docutils">
-<dt><a class="reference internal" href="#skimage.io.plugins" title="skimage.io.plugins"><tt class="xref py py-obj docutils literal"><span class="pre">plugins</span></tt></a></dt>
+<dt><tt class="xref py py-obj docutils literal"><span class="pre">available_plugins</span></tt></dt>
 <dd>List of available plugins</dd>
 </dl>
 </div>
 <p class="rubric">Examples</p>
-<p>Use the Python Imaging Library to read images:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.io</span> <span class="kn">import</span> <span class="n">use_plugin</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">use_plugin</span><span class="p">(</span><span class="s">&#39;pil&#39;</span><span class="p">,</span> <span class="s">&#39;imread&#39;</span><span class="p">)</span>
+<p>To use Matplotlib as the default image reader, you would write:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">io</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">io</span><span class="o">.</span><span class="n">use_plugin</span><span class="p">(</span><span class="s">&#39;matplotlib&#39;</span><span class="p">,</span> <span class="s">&#39;imread&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>To see a list of available plugins run <tt class="docutils literal"><span class="pre">io.available_plugins</span></tt>. Note that
+this lists plugins that are defined, but the full list may not be usable
+if your system does not have the required libraries installed.</p>
 </dd></dl>
 
 </div>
@@ -1154,16 +1123,18 @@ the plugin is set for all functions.</p>
 </li>
 <li><a class="reference internal" href="#multiimage"><tt class="docutils literal"><span class="pre">MultiImage</span></tt></a></li>
 <li><a class="reference internal" href="#video"><tt class="docutils literal"><span class="pre">Video</span></tt></a></li>
+<li><a class="reference internal" href="#call-plugin">call_plugin</a></li>
 <li><a class="reference internal" href="#concatenate-images">concatenate_images</a></li>
+<li><a class="reference internal" href="#find-available-plugins">find_available_plugins</a></li>
 <li><a class="reference internal" href="#imread">imread</a></li>
 <li><a class="reference internal" href="#imread-collection">imread_collection</a></li>
+<li><a class="reference internal" href="#imread-collection-wrapper">imread_collection_wrapper</a></li>
 <li><a class="reference internal" href="#imsave">imsave</a></li>
 <li><a class="reference internal" href="#imshow">imshow</a></li>
 <li><a class="reference internal" href="#load-sift">load_sift</a></li>
 <li><a class="reference internal" href="#load-surf">load_surf</a></li>
 <li><a class="reference internal" href="#plugin-info">plugin_info</a></li>
 <li><a class="reference internal" href="#plugin-order">plugin_order</a></li>
-<li><a class="reference internal" href="#plugins">plugins</a></li>
 <li><a class="reference internal" href="#pop">pop</a></li>
 <li><a class="reference internal" href="#push">push</a></li>
 <li><a class="reference internal" href="#reset-plugins">reset_plugins</a></li>

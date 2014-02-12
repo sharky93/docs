@@ -38,7 +38,9 @@ Module: :mod:`filter`
    skimage.filter.scharr
    skimage.filter.sobel
    skimage.filter.threshold_adaptive
+   skimage.filter.threshold_isodata
    skimage.filter.threshold_otsu
+   skimage.filter.threshold_yen
    skimage.filter.vprewitt
    skimage.filter.vscharr
    skimage.filter.vsobel
@@ -144,10 +146,20 @@ threshold_adaptive
 
 .. autofunction:: skimage.filter.threshold_adaptive
 
+threshold_isodata
+-----------------
+
+.. autofunction:: skimage.filter.threshold_isodata
+
 threshold_otsu
 --------------
 
 .. autofunction:: skimage.filter.threshold_otsu
+
+threshold_yen
+-------------
+
+.. autofunction:: skimage.filter.threshold_yen
 
 vprewitt
 --------

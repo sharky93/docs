@@ -74,6 +74,7 @@ Module: :mod:`transform`
    skimage.transform.integrate
    skimage.transform.iradon
    skimage.transform.iradon_sart
+   skimage.transform.matrix_transform
    skimage.transform.probabilistic_hough_line
    skimage.transform.pyramid_expand
    skimage.transform.pyramid_gaussian
@@ -146,6 +147,11 @@ iradon_sart
 -----------
 
 .. autofunction:: skimage.transform.iradon_sart
+
+matrix_transform
+----------------
+
+.. autofunction:: skimage.transform.matrix_transform
 
 probabilistic_hough_line
 ------------------------

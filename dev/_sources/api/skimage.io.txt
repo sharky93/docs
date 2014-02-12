@@ -51,26 +51,38 @@ Module: :mod:`io`
   .. automethod:: __init__
 .. autosummary::
 
+   skimage.io.call_plugin
    skimage.io.concatenate_images
+   skimage.io.find_available_plugins
    skimage.io.imread
    skimage.io.imread_collection
+   skimage.io.imread_collection_wrapper
    skimage.io.imsave
    skimage.io.imshow
    skimage.io.load_sift
    skimage.io.load_surf
    skimage.io.plugin_info
    skimage.io.plugin_order
-   skimage.io.plugins
    skimage.io.pop
    skimage.io.push
    skimage.io.reset_plugins
    skimage.io.show
    skimage.io.use_plugin
 
+call_plugin
+-----------
+
+.. autofunction:: skimage.io.call_plugin
+
 concatenate_images
 ------------------
 
 .. autofunction:: skimage.io.concatenate_images
+
+find_available_plugins
+----------------------
+
+.. autofunction:: skimage.io.find_available_plugins
 
 imread
 ------
@@ -81,6 +93,11 @@ imread_collection
 -----------------
 
 .. autofunction:: skimage.io.imread_collection
+
+imread_collection_wrapper
+-------------------------
+
+.. autofunction:: skimage.io.imread_collection_wrapper
 
 imsave
 ------
@@ -111,11 +128,6 @@ plugin_order
 ------------
 
 .. autofunction:: skimage.io.plugin_order
-
-plugins
--------
-
-.. autofunction:: skimage.io.plugins
 
 pop
 ---

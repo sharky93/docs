@@ -5,22 +5,68 @@ Module: :mod:`feature`
 .. automodule:: skimage.feature
 
 .. currentmodule:: skimage.feature
+
+:class:`BRIEF`
+--------------
+
+
+.. autoclass:: BRIEF
+  :members:
+  :undoc-members:
+  :show-inheritance:
+
+  .. automethod:: __init__
+
+:class:`CENSURE`
+----------------
+
+
+.. autoclass:: CENSURE
+  :members:
+  :undoc-members:
+  :show-inheritance:
+
+  .. automethod:: __init__
+
+:class:`ORB`
+------------
+
+
+.. autoclass:: ORB
+  :members:
+  :undoc-members:
+  :show-inheritance:
+
+  .. automethod:: __init__
 .. autosummary::
 
+   skimage.feature.corner_fast
    skimage.feature.corner_foerstner
    skimage.feature.corner_harris
    skimage.feature.corner_kitchen_rosenfeld
    skimage.feature.corner_moravec
+   skimage.feature.corner_orientations
    skimage.feature.corner_peaks
    skimage.feature.corner_shi_tomasi
    skimage.feature.corner_subpix
    skimage.feature.daisy
    skimage.feature.greycomatrix
    skimage.feature.greycoprops
+   skimage.feature.hessian_matrix
+   skimage.feature.hessian_matrix_eigvals
    skimage.feature.hog
    skimage.feature.local_binary_pattern
+   skimage.feature.match_descriptors
    skimage.feature.match_template
    skimage.feature.peak_local_max
+   skimage.feature.plot_matches
+   skimage.feature.structure_tensor
+   skimage.feature.structure_tensor_eigvals
+
+corner_fast
+-----------
+
+.. autofunction:: skimage.feature.corner_fast
 
 corner_foerstner
 ----------------
@@ -41,6 +87,11 @@ corner_moravec
 --------------
 
 .. autofunction:: skimage.feature.corner_moravec
+
+corner_orientations
+-------------------
+
+.. autofunction:: skimage.feature.corner_orientations
 
 corner_peaks
 ------------
@@ -72,6 +123,16 @@ greycoprops
 
 .. autofunction:: skimage.feature.greycoprops
 
+hessian_matrix
+--------------
+
+.. autofunction:: skimage.feature.hessian_matrix
+
+hessian_matrix_eigvals
+----------------------
+
+.. autofunction:: skimage.feature.hessian_matrix_eigvals
+
 hog
 ---
 
@@ -82,6 +143,11 @@ local_binary_pattern
 
 .. autofunction:: skimage.feature.local_binary_pattern
 
+match_descriptors
+-----------------
+
+.. autofunction:: skimage.feature.match_descriptors
+
 match_template
 --------------
 
@@ -91,4 +157,19 @@ peak_local_max
 --------------
 
 .. autofunction:: skimage.feature.peak_local_max
+
+plot_matches
+------------
+
+.. autofunction:: skimage.feature.plot_matches
+
+structure_tensor
+----------------
+
+.. autofunction:: skimage.feature.structure_tensor
+
+structure_tensor_eigvals
+------------------------
+
+.. autofunction:: skimage.feature.structure_tensor_eigvals
 

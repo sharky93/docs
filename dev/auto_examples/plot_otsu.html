@@ -30,7 +30,7 @@
         <link rel="top" title="skimage v0.10dev docs" href="../index.html" />
         <link rel="up" title="General examples" href="index.html" />
         <link rel="next" title="Finding local maxima" href="plot_peak_local_max.html" />
-        <link rel="prev" title="Medial axis skeletonization" href="plot_medial_transform.html" />
+        <link rel="prev" title="ORB feature detector and binary descriptor" href="plot_orb.html" />
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <link rel="shortcut icon" href="../_static/favicon.ico">
 </head>
@@ -71,10 +71,14 @@ the intra-class variance.</p>
 </tbody>
 </table>
 <img alt="../_images/plot_otsu_1.png" class="align-center" src="../_images/plot_otsu_1.png" />
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 
 <span class="kn">from</span> <span class="nn">skimage.data</span> <span class="kn">import</span> <span class="n">camera</span>
 <span class="kn">from</span> <span class="nn">skimage.filter</span> <span class="kn">import</span> <span class="n">threshold_otsu</span>
+
+
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">9</span>
 
 
 <span class="n">image</span> <span class="o">=</span> <span class="n">camera</span><span class="p">()</span>
@@ -115,7 +119,7 @@ the intra-class variance.</p>
     <h4 class="sidebar-box-heading">Previous topic</h4>
     <div class="well sidebar-box">
         <ul class="nav nav-list">
-            <li><a href="plot_medial_transform.html" title="previous chapter">Medial axis skeletonization</a></li>
+            <li><a href="plot_orb.html" title="previous chapter">ORB feature detector and binary descriptor</a></li>
         </ul>
     </div>
     <h4 class="sidebar-box-heading">Next topic</h4>

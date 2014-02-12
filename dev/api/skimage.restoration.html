@@ -1,0 +1,424 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Module: restoration &mdash; skimage v0.10dev docs</title>
+    
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link href="../_static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../_static/css/custom.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+    
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="../_static/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.10dev',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <link rel="top" title="skimage v0.10dev docs" href="../index.html" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <link rel="shortcut icon" href="../_static/favicon.ico">
+</head>
+<body class="container">
+    <a href="http://scikit-image.org" class="logo"><img src="../_static/img/logo.png" alt=""></a>
+    <div class="clearfix"></div>
+    <div class="navbar">
+        <div class="navbar-inner">
+            <ul class="nav">
+                <li><a href="/">Home</a></li>
+<li><a href="/download.html">Download</a></li>
+<li><a href="/docs/dev/auto_examples">Gallery</a></li>
+<li><a href="/docs/dev">Documentation</a></li>
+<li><a href="https://github.com/scikit-image/scikit-image">Source</a></li>
+            </ul>
+            <form class="navbar-form pull-right" action="../search.html" method="get">
+                <input type="text" class="search span3" name="q" placeholder="Search documentation ...">
+                <input type="hidden" name="check_keywords" value="yes" >
+                <input type="hidden" name="area" value="default" >
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span9">
+            
+  <div class="section" id="module-skimage.restoration">
+<span id="module-restoration"></span><h1>Module: <tt class="xref py py-mod docutils literal"><span class="pre">restoration</span></tt><a class="headerlink" href="#module-skimage.restoration" title="Permalink to this headline">¶</a></h1>
+<p>Image restoration module.</p>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<table class="docutils citation" frame="void" id="r262" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[R262]</td><td><p class="first">François Orieux, Jean-François Giovannelli, and Thomas
+Rodet, &#8220;Bayesian estimation of regularization and point
+spread function parameters for Wiener-Hunt deconvolution&#8221;,
+J. Opt. Soc. Am. A 27, 1593-1607 (2010)</p>
+<p class="last"><a class="reference external" href="http://www.opticsinfobase.org/josaa/abstract.cfm?URI=josaa-27-7-1593">http://www.opticsinfobase.org/josaa/abstract.cfm?URI=josaa-27-7-1593</a></p>
+</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="r263" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[R263]</td><td>Richardson, William Hadley, &#8220;Bayesian-Based Iterative Method of
+Image Restoration&#8221;. JOSA 62 (1): 55–59. doi:10.1364/JOSA.62.000055, 1972</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="r264" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[R264]</td><td>B. R. Hunt &#8220;A matrix theory proof of the discrete
+convolution theorem&#8221;, IEEE Trans. on Audio and
+Electroacoustics, vol. au-19, no. 4, pp. 285-288, dec. 1971</td></tr>
+</tbody>
+</table>
+</div>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.restoration.richardson_lucy" title="skimage.restoration.richardson_lucy"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.restoration.richardson_lucy</span></tt></a>(image,&nbsp;psf)</td>
+<td>Richardson-Lucy deconvolution.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.restoration.unsupervised_wiener" title="skimage.restoration.unsupervised_wiener"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.restoration.unsupervised_wiener</span></tt></a>(...)</td>
+<td>Unsupervised Wiener-Hunt deconvolution</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.restoration.wiener" title="skimage.restoration.wiener"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.restoration.wiener</span></tt></a>(image,&nbsp;psf,&nbsp;balance)</td>
+<td>Wiener-Hunt deconvolution</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="richardson-lucy">
+<h2>richardson_lucy<a class="headerlink" href="#richardson-lucy" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.restoration.richardson_lucy">
+<tt class="descclassname">skimage.restoration.</tt><tt class="descname">richardson_lucy</tt><big>(</big><em>image</em>, <em>psf</em>, <em>iterations=50</em>, <em>clip=True</em><big>)</big><a class="headerlink" href="#skimage.restoration.richardson_lucy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Richardson-Lucy deconvolution.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
+<blockquote>
+<div><p>Input degraded image</p>
+</div></blockquote>
+<p><strong>psf</strong> : ndarray</p>
+<blockquote>
+<div><p>The point spread function</p>
+</div></blockquote>
+<p><strong>iterations</strong> : int</p>
+<blockquote>
+<div><p>Number of iterations. This parameter play to role of
+regularisation.</p>
+</div></blockquote>
+<p><strong>clip</strong> : boolean, optional</p>
+<blockquote>
+<div><p>True by default. If true, pixel value of the result above 1 or
+under -1 are thresholded for skimage pipeline
+compatibility.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>im_deconv</strong> : ndarray</p>
+<blockquote class="last">
+<div><p>The deconvolved image</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">References</p>
+<table class="docutils citation" frame="void" id="r270" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[R270]</td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Richardson%E2%80%93Lucy_deconvolution">http://en.wikipedia.org/wiki/Richardson%E2%80%93Lucy_deconvolution</a></td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">color</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">restoration</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">camera</span> <span class="o">=</span> <span class="n">color</span><span class="o">.</span><span class="n">rgb2gray</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">camera</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">convolve2d</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">psf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span> <span class="o">/</span> <span class="mi">25</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">camera</span> <span class="o">=</span> <span class="n">convolve2d</span><span class="p">(</span><span class="n">camera</span><span class="p">,</span> <span class="n">psf</span><span class="p">,</span> <span class="s">&#39;same&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">camera</span> <span class="o">+=</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">camera</span><span class="o">.</span><span class="n">std</span><span class="p">()</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">standard_normal</span><span class="p">(</span><span class="n">camera</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">deconvolved</span> <span class="o">=</span> <span class="n">restoration</span><span class="o">.</span><span class="n">richardson_lucy</span><span class="p">(</span><span class="n">camera</span><span class="p">,</span> <span class="n">psf</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="unsupervised-wiener">
+<h2>unsupervised_wiener<a class="headerlink" href="#unsupervised-wiener" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.restoration.unsupervised_wiener">
+<tt class="descclassname">skimage.restoration.</tt><tt class="descname">unsupervised_wiener</tt><big>(</big><em>image</em>, <em>psf</em>, <em>reg=None</em>, <em>user_params=None</em>, <em>is_real=True</em>, <em>clip=True</em><big>)</big><a class="headerlink" href="#skimage.restoration.unsupervised_wiener" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unsupervised Wiener-Hunt deconvolution</p>
+<p>Return the deconvolution with a Wiener-Hunt approach, where the
+hyperparameters are automatically estimated. The algorithm is a
+stochastic iterative process (Gibbs sampler) described in the
+reference below. See also <tt class="docutils literal"><span class="pre">wiener</span></tt> function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : (M, N) ndarray</p>
+<blockquote>
+<div><p>The input degraded image</p>
+</div></blockquote>
+<p><strong>psf</strong> : ndarray</p>
+<blockquote>
+<div><p>The impulse response (input image&#8217;s space) or the transfer
+function (Fourier space). Both are accepted. The transfer
+function is recognize as being complex
+(<tt class="docutils literal"><span class="pre">np.iscomplexobj(psf)</span></tt>).</p>
+</div></blockquote>
+<p><strong>reg</strong> : ndarray, optional</p>
+<blockquote>
+<div><p>The regularisation operator. The Laplacian by default. It can
+be an impulse response or a transfer function, as for the psf.</p>
+</div></blockquote>
+<p><strong>user_params</strong> : dict</p>
+<blockquote>
+<div><p>dictionary of gibbs parameters. See below.</p>
+</div></blockquote>
+<p><strong>clip</strong> : boolean, optional</p>
+<blockquote>
+<div><p>True by default. If true, pixel value of the result above 1 or
+under -1 are thresholded for skimage pipeline
+compatibility.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>x_postmean</strong> : (M, N) ndarray</p>
+<blockquote>
+<div><p>The deconvolved image (the posterior mean).</p>
+</div></blockquote>
+<p><strong>chains</strong> : dict</p>
+<blockquote class="last">
+<div><p>The keys <tt class="docutils literal"><span class="pre">noise</span></tt> and <tt class="docutils literal"><span class="pre">prior</span></tt> contain the chain list of
+noise and prior precision respectively.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>The estimated image is design as the posterior mean of a
+probability law (from a Bayesian analysis). The mean is defined as
+a sum over all the possible images weighted by their respective
+probability. Given the size of the problem, the exact sum is not
+tractable. This algorithm use of MCMC to draw image under the
+posterior law. The practical idea is to only draw high probable
+image since they have the biggest contribution to the mean. At the
+opposite, the lowest probable image are draw less often since
+their contribution are low. Finally the empirical mean of these
+samples give us an estimation of the mean, and an exact
+computation with an infinite sample set.</p>
+<p class="rubric">References</p>
+<table class="docutils citation" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[R270]</td><td><p class="first">François Orieux, Jean-François Giovannelli, and Thomas
+Rodet, &#8220;Bayesian estimation of regularization and point
+spread function parameters for Wiener-Hunt deconvolution&#8221;,
+J. Opt. Soc. Am. A 27, 1593-1607 (2010)</p>
+<p><a class="reference external" href="http://www.opticsinfobase.org/josaa/abstract.cfm?URI=josaa-27-7-1593">http://www.opticsinfobase.org/josaa/abstract.cfm?URI=josaa-27-7-1593</a></p>
+<p class="last"><a class="reference external" href="http://research.orieux.fr/files/papers/OGR-JOSA10.pdf">http://research.orieux.fr/files/papers/OGR-JOSA10.pdf</a></p>
+</td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">color</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">restoration</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lena</span> <span class="o">=</span> <span class="n">color</span><span class="o">.</span><span class="n">rgb2gray</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">lena</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">convolve2d</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">psf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span> <span class="o">/</span> <span class="mi">25</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lena</span> <span class="o">=</span> <span class="n">convolve2d</span><span class="p">(</span><span class="n">lena</span><span class="p">,</span> <span class="n">psf</span><span class="p">,</span> <span class="s">&#39;same&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lena</span> <span class="o">+=</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">lena</span><span class="o">.</span><span class="n">std</span><span class="p">()</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">standard_normal</span><span class="p">(</span><span class="n">lena</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">deconvolved_lena</span> <span class="o">=</span> <span class="n">restoration</span><span class="o">.</span><span class="n">unsupervised_wiener</span><span class="p">(</span><span class="n">lena</span><span class="p">,</span> <span class="n">psf</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="wiener">
+<h2>wiener<a class="headerlink" href="#wiener" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="skimage.restoration.wiener">
+<tt class="descclassname">skimage.restoration.</tt><tt class="descname">wiener</tt><big>(</big><em>image</em>, <em>psf</em>, <em>balance</em>, <em>reg=None</em>, <em>is_real=True</em>, <em>clip=True</em><big>)</big><a class="headerlink" href="#skimage.restoration.wiener" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wiener-Hunt deconvolution</p>
+<p>Return the deconvolution with a Wiener-Hunt approach (i.e. with
+Fourier diagonalisation).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : (M, N) ndarray</p>
+<blockquote>
+<div><p>Input degraded image</p>
+</div></blockquote>
+<p><strong>psf</strong> : ndarray</p>
+<blockquote>
+<div><p>Point Spread Function. This is assumed to be the impulse
+response (input image space) if the data-type is real, or the
+transfer function (Fourier space) if the data-type is
+complex. There is no constraints on the shape of the impulse
+response. The transfer function must be of shape <cite>(M, N)</cite> if
+<cite>is_real is True</cite>, <cite>(M, N // 2 + 1)</cite> otherwise (see
+<cite>np.fft.rfftn</cite>).</p>
+</div></blockquote>
+<p><strong>balance</strong> : float</p>
+<blockquote>
+<div><p>The regularisation parameter value that tunes the balance
+between the data adequacy that improve frequency restoration
+and the prior adequacy that reduce frequency restoration (to
+avoid noise artifact).</p>
+</div></blockquote>
+<p><strong>reg</strong> : ndarray, optional</p>
+<blockquote>
+<div><p>The regularisation operator. The Laplacian by default. It can
+be an impulse response or a transfer function, as for the
+psf. Shape constraint is the same than for the <cite>psf</cite> parameter.</p>
+</div></blockquote>
+<p><strong>is_real</strong> : boolean, optional</p>
+<blockquote>
+<div><p>True by default. Specify if <tt class="docutils literal"><span class="pre">psf</span></tt> and <tt class="docutils literal"><span class="pre">reg</span></tt> are provided
+with hermitian hypothesis, that is only half of the frequency
+plane is provided (due to the redundancy of Fourier transform
+of real signal). It&#8217;s apply only if <tt class="docutils literal"><span class="pre">psf</span></tt> and/or <tt class="docutils literal"><span class="pre">reg</span></tt> are
+provided as transfer function.  For the hermitian property see
+<tt class="docutils literal"><span class="pre">uft</span></tt> module or <tt class="docutils literal"><span class="pre">np.fft.rfftn</span></tt>.</p>
+</div></blockquote>
+<p><strong>clip</strong> : boolean, optional</p>
+<blockquote>
+<div><p>True by default. If true, pixel value of the result above 1 or
+under -1 are thresholded for skimage pipeline
+compatibility.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>im_deconv</strong> : (M, N) ndarray</p>
+<blockquote class="last">
+<div><p>The deconvolved image</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>This function applies the Wiener filter to a noisy and degraded
+image by an impulse response (or PSF). If the data model is</p>
+<div class="math">
+<p><img src="../_images/math/01967d0955277d8303eaea20a76d28d7cc3220a9.png" alt="y = Hx + n"/></p>
+</div><p>where <img class="math" src="../_images/math/174fadd07fd54c9afe288e96558c92e0c1da733a.png" alt="n"/> is noise, <img class="math" src="../_images/math/b1902d279ba37d60bdce4e0e987b7cd19d48974e.png" alt="H"/> the PSF and <img class="math" src="../_images/math/26eeb5258ca5099acf8fe96b2a1049c48c89a5e6.png" alt="x"/> the
+unknown original image, the Wiener filter is</p>
+<div class="math">
+<p><img src="../_images/math/4b8404d75791d33ee997b9a52c495249938e2708.png" alt="\hat x = F^\dag (|\Lambda_H|^2 + \lambda |\Lambda_D|^2)
+\Lambda_H^\dag F y"/></p>
+</div><p>where <img class="math" src="../_images/math/a055f405829e64a3b70253ab67cb45ed6ed5bb29.png" alt="F"/> and <img class="math" src="../_images/math/4b95dc80bcafc22eb046b84923b7df8e85c90938.png" alt="F^\dag"/> are the Fourier and inverse
+Fourier transfroms respectively, <img class="math" src="../_images/math/5542f1b1e9fdef30ba7a15b725e88adc192803cd.png" alt="\Lambda_H"/> the transfer
+function (or the Fourier transfrom of the PSF, see [Hunt] below)
+and <img class="math" src="../_images/math/0dc8330fee1d4cd80499bc9fd5a0bed6be98acd6.png" alt="\Lambda_D"/> the filter to penalize the restored image
+frequencies (Laplacian by default, that is penalization of high
+frequency). The parameter <img class="math" src="../_images/math/ce4588fd900d02afcbd260bc07f54cce49a7dc4a.png" alt="\lambda"/> tunes the balance
+between the data (that tends to increase high frequency, even
+those coming from noise), and the regularization.</p>
+<p>These methods are then specific to a prior model. Consequently,
+the application or the true image nature must corresponds to the
+prior model. By default, the prior model (Laplacian) introduce
+image smoothness or pixel correlation. It can also be interpreted
+as high-frequency penalization to compensate the instability of
+the solution wrt. data (sometimes called noise amplification or
+&#8220;explosive&#8221; solution).</p>
+<p>Finally, the use of Fourier space implies a circulant property of
+<img class="math" src="../_images/math/b1902d279ba37d60bdce4e0e987b7cd19d48974e.png" alt="H"/>, see [Hunt].</p>
+<p class="rubric">References</p>
+<table class="docutils citation" frame="void" id="r271" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[R271]</a></td><td><p class="first">François Orieux, Jean-François Giovannelli, and Thomas
+Rodet, &#8220;Bayesian estimation of regularization and point
+spread function parameters for Wiener-Hunt deconvolution&#8221;,
+J. Opt. Soc. Am. A 27, 1593-1607 (2010)</p>
+<p><a class="reference external" href="http://www.opticsinfobase.org/josaa/abstract.cfm?URI=josaa-27-7-1593">http://www.opticsinfobase.org/josaa/abstract.cfm?URI=josaa-27-7-1593</a></p>
+<p class="last"><a class="reference external" href="http://research.orieux.fr/files/papers/OGR-JOSA10.pdf">http://research.orieux.fr/files/papers/OGR-JOSA10.pdf</a></p>
+</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="r272" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[R272]</a></td><td>B. R. Hunt &#8220;A matrix theory proof of the discrete
+convolution theorem&#8221;, IEEE Trans. on Audio and
+Electroacoustics, vol. au-19, no. 4, pp. 285-288, dec. 1971</td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">color</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">restoration</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lena</span> <span class="o">=</span> <span class="n">color</span><span class="o">.</span><span class="n">rgb2gray</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">lena</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">convolve2d</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">psf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span> <span class="o">/</span> <span class="mi">25</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lena</span> <span class="o">=</span> <span class="n">convolve2d</span><span class="p">(</span><span class="n">lena</span><span class="p">,</span> <span class="n">psf</span><span class="p">,</span> <span class="s">&#39;same&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lena</span> <span class="o">+=</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">lena</span><span class="o">.</span><span class="n">std</span><span class="p">()</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">standard_normal</span><span class="p">(</span><span class="n">lena</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">deconvolved_lena</span> <span class="o">=</span> <span class="n">restoration</span><span class="o">.</span><span class="n">wiener</span><span class="p">(</span><span class="n">lena</span><span class="p">,</span> <span class="n">psf</span><span class="p">,</span> <span class="mi">1100</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+        </div>
+        <div class="span3"><h4 class="sidebar-box-heading">Navigation</h4>
+<div class="well sidebar-box">
+    <ul class="nav nav-list">
+        <li><a href="../index.html">Documentation Home</a></li>
+    </ul>
+</div>
+        <h4 class="sidebar-box-heading">Contents</h4>
+        <div class="well sidebar-box toc">
+            <ul class="nav nav-list">
+<li><a class="reference internal" href="#">Module: <tt class="docutils literal"><span class="pre">restoration</span></tt></a><ul class="nav nav-list">
+<li><a class="reference internal" href="#references">References</a></li>
+<li><a class="reference internal" href="#richardson-lucy">richardson_lucy</a></li>
+<li><a class="reference internal" href="#unsupervised-wiener">unsupervised_wiener</a></li>
+<li><a class="reference internal" href="#wiener">wiener</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+
+<h4 class="sidebar-box-heading">Versions</h4>
+<div class="well sidebar-box">
+    <ul class="nav nav-list">
+        <script src="../_static/docversions.js"></script>
+        <script type="text/javascript">
+            insert_version_links();
+        </script>
+    </ul>
+</div>
+        </div>
+    </div>
+    <div class="well footer">
+        <small>
+            &copy; Copyright the scikit-image development team.
+            Created using <a href="http://twitter.github.com/bootstrap/">Bootstrap</a> and <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+        </small>
+    </div>
+</body>
+</html>

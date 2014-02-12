@@ -198,10 +198,10 @@ intersection of the separate segmentations on the color channels.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r220" rules="none">
+<table class="docutils citation" frame="void" id="r276" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[R220]</a></td><td>Efficient graph-based image segmentation, Felzenszwalb, P.F. and
+<tr><td class="label"><a class="fn-backref" href="#id1">[R276]</a></td><td>Efficient graph-based image segmentation, Felzenszwalb, P.F. and
 Huttenlocher, D.P.  International Journal of Computer Vision, 2004</td></tr>
 </tbody>
 </table>
@@ -358,10 +358,10 @@ segmentation. For this purpose, the input is assumed to be RGB.</p>
 segmentation, though this is not strictly necessary. For this to work, the
 image must be given in RGB format.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r221" rules="none">
+<table class="docutils citation" frame="void" id="r277" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[R221]</a></td><td>Quick shift and kernel methods for mode seeking,
+<tr><td class="label"><a class="fn-backref" href="#id2">[R277]</a></td><td>Quick shift and kernel methods for mode seeking,
 Vedaldi, A. and Soatto, S.
 European Conference on Computer Vision, 2008</td></tr>
 </tbody>
@@ -639,7 +639,7 @@ guaranteed to be smaller than either the input or output images.</p>
 <h2>slic<a class="headerlink" href="#slic" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="skimage.segmentation.slic">
-<tt class="descclassname">skimage.segmentation.</tt><tt class="descname">slic</tt><big>(</big><em>image</em>, <em>n_segments=100</em>, <em>compactness=10.0</em>, <em>max_iter=10</em>, <em>sigma=None</em>, <em>spacing=None</em>, <em>multichannel=True</em>, <em>convert2lab=True</em>, <em>ratio=None</em><big>)</big><a class="headerlink" href="#skimage.segmentation.slic" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">skimage.segmentation.</tt><tt class="descname">slic</tt><big>(</big><em>image</em>, <em>n_segments=100</em>, <em>compactness=10.0</em>, <em>max_iter=10</em>, <em>sigma=None</em>, <em>spacing=None</em>, <em>multichannel=True</em>, <em>convert2lab=True</em>, <em>ratio=None</em>, <em>enforce_connectivity=False</em>, <em>min_size_factor=0.5</em>, <em>max_size_factor=3</em>, <em>slic_zero=False</em><big>)</big><a class="headerlink" href="#skimage.segmentation.slic" title="Permalink to this definition">¶</a></dt>
 <dd><p>Segments image using k-means clustering in Color-(x,y,z) space.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -658,7 +658,8 @@ guaranteed to be smaller than either the input or output images.</p>
 <blockquote>
 <div><p>Balances color-space proximity and image-space proximity. Higher
 values give more weight to image-space. As <cite>compactness</cite> tends to
-infinity, superpixel shapes become square/cubic.</p>
+infinity, superpixel shapes become square/cubic. In SLICO mode, this
+is the initial compactness.</p>
 </div></blockquote>
 <p><strong>max_iter</strong> : int, optional</p>
 <blockquote>
@@ -693,6 +694,24 @@ recommended.</p>
 <p><strong>ratio</strong> : float, optional</p>
 <blockquote>
 <div><p>Synonym for <cite>compactness</cite>. This keyword is deprecated.</p>
+</div></blockquote>
+<p><strong>enforce_connectivity: bool, optional (default False)</strong> :</p>
+<blockquote>
+<div><p>Whether the generated segments are connected or not</p>
+</div></blockquote>
+<p><strong>min_size_factor: float, optional</strong> :</p>
+<blockquote>
+<div><p>Proportion of the minimum segment size to be removed with respect
+to the supposed segment size <tt class="docutils literal"><span class="pre">`depth*width*height/n_segments`</span></tt></p>
+</div></blockquote>
+<p><strong>max_size_factor: float, optional</strong> :</p>
+<blockquote>
+<div><p>Proportion of the maximum connected segment size. A value of 3 works
+in most of the cases.</p>
+</div></blockquote>
+<p><strong>slic_zero: bool, optional</strong> :</p>
+<blockquote>
+<div><p>Run SLIC-zero, the zero-parameter mode of SLIC</p>
 </div></blockquote>
 </td>
 </tr>
@@ -731,10 +750,10 @@ interpret them as 3D with the last dimension having length 3, use
 <cite>multichannel=False</cite>.</li>
 </ul>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r222" rules="none">
+<table class="docutils citation" frame="void" id="r278" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[R222]</a></td><td>Radhakrishna Achanta, Appu Shaji, Kevin Smith, Aurelien Lucchi,
+<tr><td class="label"><a class="fn-backref" href="#id3">[R278]</a></td><td>Radhakrishna Achanta, Appu Shaji, Kevin Smith, Aurelien Lucchi,
 Pascal Fua, and Sabine Süsstrunk, SLIC Superpixels Compared to
 State-of-the-art Superpixel Methods, TPAMI, May 2012.</td></tr>
 </tbody>
@@ -743,9 +762,11 @@ State-of-the-art Superpixel Methods, TPAMI, May 2012.</td></tr>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.segmentation</span> <span class="kn">import</span> <span class="n">slic</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.data</span> <span class="kn">import</span> <span class="n">lena</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">img</span> <span class="o">=</span> <span class="n">lena</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">segments</span> <span class="o">=</span> <span class="n">slic</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">n_segments</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">compactness</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c"># Increasing the compactness parameter yields more square regions</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">segments</span> <span class="o">=</span> <span class="n">slic</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">n_segments</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">compactness</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">segments</span> <span class="o">=</span> <span class="n">slic</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">n_segments</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">compactness</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Increasing the compactness parameter yields more square regions:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">segments</span> <span class="o">=</span> <span class="n">slic</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">n_segments</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">compactness</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>

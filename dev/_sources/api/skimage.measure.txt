@@ -50,6 +50,7 @@ Module: :mod:`measure`
    skimage.measure.moments_hu
    skimage.measure.moments_normalized
    skimage.measure.perimeter
+   skimage.measure.profile_line
    skimage.measure.ransac
    skimage.measure.regionprops
    skimage.measure.structural_similarity
@@ -104,6 +105,11 @@ perimeter
 ---------
 
 .. autofunction:: skimage.measure.perimeter
+
+profile_line
+------------
+
+.. autofunction:: skimage.measure.profile_line
 
 ransac
 ------

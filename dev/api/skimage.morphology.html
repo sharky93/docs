@@ -500,10 +500,10 @@ polygon that surround all white pixels in the input image.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r210" rules="none">
+<table class="docutils citation" frame="void" id="r255" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[R210]</a></td><td><a class="reference external" href="http://blogs.mathworks.com/steve/2011/10/04/binary-image-convex-hull-algorithm-notes/">http://blogs.mathworks.com/steve/2011/10/04/binary-image-convex-hull-algorithm-notes/</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id1">[R255]</a></td><td><a class="reference external" href="http://blogs.mathworks.com/steve/2011/10/04/binary-image-convex-hull-algorithm-notes/">http://blogs.mathworks.com/steve/2011/10/04/binary-image-convex-hull-algorithm-notes/</a></td></tr>
 </tbody>
 </table>
 </dd></dl>
@@ -539,6 +539,12 @@ polygon that surround all white pixels in the input image.</p>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Notes</p>
+<p>This function uses skimage.morphology.label to define unique objects,
+finds the convex hull of each using convex_hull_image, and combines
+these regions with logical OR. Be aware the convex hulls of unconnected
+objects may overlap in the result. If this is suspected, consider using
+convex_hull_image separately on each object.</p>
 </dd></dl>
 
 </div>
@@ -948,8 +954,7 @@ pass.</li>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">morphology</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">square</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">square</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">square</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">square</span>
 <span class="go">array([[0, 0, 0, 0, 0, 0, 0],</span>
@@ -959,7 +964,7 @@ pass.</li>
 <span class="go">       [0, 0, 1, 1, 1, 0, 0],</span>
 <span class="go">       [0, 0, 1, 1, 1, 0, 0],</span>
 <span class="go">       [0, 0, 0, 0, 0, 0, 0]], dtype=uint8)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">morphology</span><span class="o">.</span><span class="n">medial_axis</span><span class="p">(</span><span class="n">square</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">medial_axis</span><span class="p">(</span><span class="n">square</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
 <span class="go">array([[0, 0, 0, 0, 0, 0, 0],</span>
 <span class="go">       [0, 0, 1, 0, 1, 0, 0],</span>
 <span class="go">       [0, 0, 0, 1, 0, 0, 0],</span>
@@ -1153,28 +1158,28 @@ to the corresponding mask value; for erosion, the reverse is true.</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>The algorithm is taken from <a class="reference internal" href="#r211">[R211]</a>. Applications for greyscale reconstruction
-are discussed in <a class="reference internal" href="#r212">[R212]</a> and <a class="reference internal" href="#r213">[R213]</a>.</p>
+<p>The algorithm is taken from <a class="reference internal" href="#r256">[R256]</a>. Applications for greyscale reconstruction
+are discussed in <a class="reference internal" href="#r257">[R257]</a> and <a class="reference internal" href="#r258">[R258]</a>.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r211" rules="none">
+<table class="docutils citation" frame="void" id="r256" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R211]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id5">2</a>)</em> Robinson, &#8220;Efficient morphological reconstruction: a downhill
+<tr><td class="label">[R256]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id5">2</a>)</em> Robinson, &#8220;Efficient morphological reconstruction: a downhill
 filter&#8221;, Pattern Recognition Letters 25 (2004) 1759-1767.</td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r212" rules="none">
+<table class="docutils citation" frame="void" id="r257" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R212]</td><td><em>(<a class="fn-backref" href="#id3">1</a>, <a class="fn-backref" href="#id6">2</a>)</em> Vincent, L., &#8220;Morphological Grayscale Reconstruction in Image
+<tr><td class="label">[R257]</td><td><em>(<a class="fn-backref" href="#id3">1</a>, <a class="fn-backref" href="#id6">2</a>)</em> Vincent, L., &#8220;Morphological Grayscale Reconstruction in Image
 Analysis: Applications and Efficient Algorithms&#8221;, IEEE Transactions
 on Image Processing (1993)</td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r213" rules="none">
+<table class="docutils citation" frame="void" id="r258" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R213]</td><td><em>(<a class="fn-backref" href="#id4">1</a>, <a class="fn-backref" href="#id7">2</a>)</em> Soille, P., &#8220;Morphological Image Analysis: Principles and
+<tr><td class="label">[R258]</td><td><em>(<a class="fn-backref" href="#id4">1</a>, <a class="fn-backref" href="#id7">2</a>)</em> Soille, P., &#8220;Morphological Image Analysis: Principles and
 Applications&#8221;, Chapter 6, 2nd edition (2003), ISBN 3540429883.</td></tr>
 </tbody>
 </table>
@@ -1313,17 +1318,17 @@ Otherwise, make a copy.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="nb">bool</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">morphology</span><span class="o">.</span><span class="n">remove_small_connected_components</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">morphology</span><span class="o">.</span><span class="n">remove_small_objects</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">b</span>
 <span class="go">array([[False, False, False, False, False],</span>
 <span class="go">       [ True,  True,  True, False, False],</span>
 <span class="go">       [ True,  True,  True, False, False]], dtype=bool)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">morphology</span><span class="o">.</span><span class="n">remove_small_connected_components</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="n">connectivity</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">morphology</span><span class="o">.</span><span class="n">remove_small_objects</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="n">connectivity</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span>
 <span class="go">array([[False, False, False,  True, False],</span>
 <span class="go">       [ True,  True,  True, False, False],</span>
 <span class="go">       [ True,  True,  True, False, False]], dtype=bool)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">morphology</span><span class="o">.</span><span class="n">remove_small_connected_components</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="n">in_place</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">morphology</span><span class="o">.</span><span class="n">remove_small_objects</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="n">in_place</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="ow">is</span> <span class="n">a</span>
 <span class="go">True</span>
 </pre></div>
@@ -1376,10 +1381,10 @@ the iterations.</p>
 medial axis transform, which is also often referred to as
 &#8220;skeletonization&#8221;.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r214" rules="none">
+<table class="docutils citation" frame="void" id="r259" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id8">[R214]</a></td><td>A fast parallel algorithm for thinning digital patterns,
+<tr><td class="label"><a class="fn-backref" href="#id8">[R259]</a></td><td>A fast parallel algorithm for thinning digital patterns,
 T. Y. ZHANG and C. Y. SUEN, Communications of the ACM,
 March 1984, Volume 27, Number 3</td></tr>
 </tbody>
@@ -1398,7 +1403,7 @@ March 1984, Volume 27, Number 3</td></tr>
 <span class="go">       [0, 0, 1, 1, 1, 1, 1, 0, 0],</span>
 <span class="go">       [0, 0, 0, 1, 1, 1, 0, 0, 0]], dtype=uint8)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">skel</span> <span class="o">=</span> <span class="n">skeletonize</span><span class="p">(</span><span class="n">ellipse</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">skel</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">skel</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
 <span class="go">array([[0, 0, 0, 0, 0, 0, 0, 0, 0],</span>
 <span class="go">       [0, 0, 0, 0, 0, 0, 0, 0, 0],</span>
 <span class="go">       [0, 0, 0, 0, 0, 0, 0, 0, 0],</span>
@@ -1528,7 +1533,7 @@ will be labeled.</p>
 </dl>
 </div>
 <p class="rubric">Notes</p>
-<p>This function implements a watershed algorithm [R215]_that apportions pixels
+<p>This function implements a watershed algorithm [R260]_that apportions pixels
 into marked basins. The algorithm uses a priority queue to hold the pixels
 with the metric for the priority queue being pixel value, then the time of
 entry into the queue - this settles ties in favor of the closest marker.</p>
@@ -1546,16 +1551,16 @@ the local minima of the gradient of the image, or the local maxima of the
 distance function to the background for separating overlapping objects
 (see example).</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r215" rules="none">
+<table class="docutils citation" frame="void" id="r260" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id9">[R215]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Watershed_%28image_processing%29">http://en.wikipedia.org/wiki/Watershed_%28image_processing%29</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id9">[R260]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Watershed_%28image_processing%29">http://en.wikipedia.org/wiki/Watershed_%28image_processing%29</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r216" rules="none">
+<table class="docutils citation" frame="void" id="r261" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id10">[R216]</a></td><td><a class="reference external" href="http://cmm.ensmp.fr/~beucher/wtshed.html">http://cmm.ensmp.fr/~beucher/wtshed.html</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id10">[R261]</a></td><td><a class="reference external" href="http://cmm.ensmp.fr/~beucher/wtshed.html">http://cmm.ensmp.fr/~beucher/wtshed.html</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -1574,7 +1579,8 @@ distance function to the background for separating overlapping objects
 <span class="gp">&gt;&gt;&gt; </span><span class="n">distance</span> <span class="o">=</span> <span class="n">ndimage</span><span class="o">.</span><span class="n">distance_transform_edt</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.feature</span> <span class="kn">import</span> <span class="n">peak_local_max</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">local_maxi</span> <span class="o">=</span> <span class="n">peak_local_max</span><span class="p">(</span><span class="n">distance</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">image</span><span class="p">,</span>
-<span class="gp">... </span>                            <span class="n">footprint</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>
+<span class="gp">... </span>                            <span class="n">footprint</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span>
+<span class="gp">... </span>                            <span class="n">indices</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">markers</span> <span class="o">=</span> <span class="n">ndimage</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="n">local_maxi</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">labels</span> <span class="o">=</span> <span class="n">watershed</span><span class="p">(</span><span class="o">-</span><span class="n">distance</span><span class="p">,</span> <span class="n">markers</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">image</span><span class="p">)</span>
 </pre></div>

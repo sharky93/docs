@@ -15,9 +15,10 @@ API Reference
    skimage.filter.rank
    skimage.graph
    skimage.io
-   skimage.io._plugins
    skimage.measure
    skimage.morphology
+   skimage.novice
+   skimage.restoration
    skimage.segmentation
    skimage.transform
    skimage.util

@@ -1,0 +1,28 @@
+.. AUTO-GENERATED FILE -- DO NOT EDIT!
+
+Module: :mod:`restoration`
+==========================
+.. automodule:: skimage.restoration
+
+.. currentmodule:: skimage.restoration
+.. autosummary::
+
+   skimage.restoration.richardson_lucy
+   skimage.restoration.unsupervised_wiener
+   skimage.restoration.wiener
+
+richardson_lucy
+---------------
+
+.. autofunction:: skimage.restoration.richardson_lucy
+
+unsupervised_wiener
+-------------------
+
+.. autofunction:: skimage.restoration.unsupervised_wiener
+
+wiener
+------
+
+.. autofunction:: skimage.restoration.wiener
+
