@@ -70,10 +70,10 @@ Now we can easily manipulate the hematoxylin and DAB "channels":
 	d = rescale_intensity(ihc_hed[:, :, 2], out_range=(0, 1))
 	zdh = np.dstack((np.zeros_like(h), d, h))
 	
-	plt.figure()
-	plt.imshow(zdh)
-	plt.title("Stain separated image (rescaled)")
-	plt.axis('off')
+	fig, ax = plt.subplots()
+	ax.imshow(zdh)
+	ax.set_title("Stain separated image (rescaled)")
+	ax.axis('off')
 	plt.show()
 	
 	
@@ -83,5 +83,10 @@ Now we can easily manipulate the hematoxylin and DAB "channels":
 
 
 **Python source code:** :download:`download <plot_ihc_color_separation.py>`
+(generated using ``skimage`` |version|)
+
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_ihc_color_separation.ipynb>`
 (generated using ``skimage`` |version|)
 

@@ -8,7 +8,6 @@
 .. autosummary::
 
    skimage.dtype_limits
-   skimage.get_log
    skimage.img_as_bool
    skimage.img_as_float
    skimage.img_as_int
@@ -20,11 +19,6 @@ dtype_limits
 ------------
 
 .. autofunction:: skimage.dtype_limits
-
-get_log
--------
-
-.. autofunction:: skimage.get_log
 
 img_as_bool
 -----------

@@ -103,24 +103,6 @@
 <tr class="row-even"><td><a class="reference internal" href="#skimage.morphology.erosion" title="skimage.morphology.erosion"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.erosion</span></tt></a>(image,&nbsp;selem[,&nbsp;...])</td>
 <td>Return greyscale morphological erosion of an image.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.morphology.greyscale_black_top_hat" title="skimage.morphology.greyscale_black_top_hat"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.greyscale_black_top_hat</span></tt></a>(...)</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.morphology.greyscale_close" title="skimage.morphology.greyscale_close"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.greyscale_close</span></tt></a>(*args,&nbsp;...)</td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.morphology.greyscale_dilate" title="skimage.morphology.greyscale_dilate"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.greyscale_dilate</span></tt></a>(*args,&nbsp;...)</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.morphology.greyscale_erode" title="skimage.morphology.greyscale_erode"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.greyscale_erode</span></tt></a>(*args,&nbsp;...)</td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.morphology.greyscale_open" title="skimage.morphology.greyscale_open"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.greyscale_open</span></tt></a>(*args,&nbsp;...)</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.morphology.greyscale_white_top_hat" title="skimage.morphology.greyscale_white_top_hat"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.greyscale_white_top_hat</span></tt></a>(...)</td>
-<td></td>
-</tr>
 <tr class="row-odd"><td><a class="reference internal" href="#skimage.morphology.label" title="skimage.morphology.label"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.morphology.label</span></tt></a></td>
 <td>Label connected regions of an integer array.</td>
 </tr>
@@ -182,9 +164,16 @@ radius.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>selem</strong> : ndarray</p>
-<blockquote class="last">
+<blockquote>
 <div><p>The structuring element where elements of the neighborhood
 are 1 and 0 otherwise.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first"><strong>dtype</strong> : data-type</p>
+<blockquote class="last">
+<div><p>The data type of the structuring element.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -500,10 +489,10 @@ polygon that surround all white pixels in the input image.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r255" rules="none">
+<table class="docutils citation" frame="void" id="r259" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[R255]</a></td><td><a class="reference external" href="http://blogs.mathworks.com/steve/2011/10/04/binary-image-convex-hull-algorithm-notes/">http://blogs.mathworks.com/steve/2011/10/04/binary-image-convex-hull-algorithm-notes/</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id1">[R259]</a></td><td><a class="reference external" href="http://blogs.mathworks.com/steve/2011/10/04/binary-image-convex-hull-algorithm-notes/">http://blogs.mathworks.com/steve/2011/10/04/binary-image-convex-hull-algorithm-notes/</a></td></tr>
 </tbody>
 </table>
 </dd></dl>
@@ -567,9 +556,16 @@ no greater than radius (radius=floor(width/2)) pixels.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>selem</strong> : ndarray</p>
-<blockquote class="last">
+<blockquote>
 <div><p>A structuring element consisting only of ones, i.e. every
 pixel belongs to the neighborhood.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first"><strong>dtype</strong> : data-type</p>
+<blockquote class="last">
+<div><p>The data type of the structuring element.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -598,9 +594,16 @@ neighborhood is no greater than radius.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>selem</strong> : ndarray</p>
-<blockquote class="last">
+<blockquote>
 <div><p>The structuring element where elements of the neighborhood
 are 1 and 0 otherwise.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first"><strong>dtype</strong> : data-type</p>
+<blockquote class="last">
+<div><p>The data type of the structuring element.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -689,9 +692,16 @@ it and the origin is no greater than radius.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>selem</strong> : ndarray</p>
-<blockquote class="last">
+<blockquote>
 <div><p>The structuring element where elements of the neighborhood
 are 1 and 0 otherwise.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first"><strong>dtype</strong> : data-type</p>
+<blockquote class="last">
+<div><p>The data type of the structuring element.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -759,54 +769,6 @@ eccentric structuring elements (i.e. selem with even numbered sides).</p>
 </pre></div>
 </div>
 </dd></dl>
-
-</div>
-<div class="section" id="greyscale-black-top-hat">
-<h2>greyscale_black_top_hat<a class="headerlink" href="#greyscale-black-top-hat" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="skimage.morphology.greyscale_black_top_hat">
-<tt class="descclassname">skimage.morphology.</tt><tt class="descname">greyscale_black_top_hat</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.morphology.greyscale_black_top_hat" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</div>
-<div class="section" id="greyscale-close">
-<h2>greyscale_close<a class="headerlink" href="#greyscale-close" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="skimage.morphology.greyscale_close">
-<tt class="descclassname">skimage.morphology.</tt><tt class="descname">greyscale_close</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.morphology.greyscale_close" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</div>
-<div class="section" id="greyscale-dilate">
-<h2>greyscale_dilate<a class="headerlink" href="#greyscale-dilate" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="skimage.morphology.greyscale_dilate">
-<tt class="descclassname">skimage.morphology.</tt><tt class="descname">greyscale_dilate</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.morphology.greyscale_dilate" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</div>
-<div class="section" id="greyscale-erode">
-<h2>greyscale_erode<a class="headerlink" href="#greyscale-erode" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="skimage.morphology.greyscale_erode">
-<tt class="descclassname">skimage.morphology.</tt><tt class="descname">greyscale_erode</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.morphology.greyscale_erode" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</div>
-<div class="section" id="greyscale-open">
-<h2>greyscale_open<a class="headerlink" href="#greyscale-open" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="skimage.morphology.greyscale_open">
-<tt class="descclassname">skimage.morphology.</tt><tt class="descname">greyscale_open</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.morphology.greyscale_open" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</div>
-<div class="section" id="greyscale-white-top-hat">
-<h2>greyscale_white_top_hat<a class="headerlink" href="#greyscale-white-top-hat" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="skimage.morphology.greyscale_white_top_hat">
-<tt class="descclassname">skimage.morphology.</tt><tt class="descname">greyscale_white_top_hat</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.morphology.greyscale_white_top_hat" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 
 </div>
 <div class="section" id="label">
@@ -1001,9 +963,16 @@ and hence the widths and heights are equal.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>selem</strong> : ndarray</p>
-<blockquote class="last">
+<blockquote>
 <div><p>The structuring element where elements of the neighborhood
 are 1 and 0 otherwise.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first"><strong>dtype</strong> : data-type</p>
+<blockquote class="last">
+<div><p>The data type of the structuring element.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1033,9 +1002,16 @@ radius.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>selem</strong> : ndarray</p>
-<blockquote class="last">
+<blockquote>
 <div><p>The structuring element where elements of the neighborhood
 are 1 and 0 otherwise.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first"><strong>dtype</strong> : data-type</p>
+<blockquote class="last">
+<div><p>The data type of the structuring element.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1158,28 +1134,28 @@ to the corresponding mask value; for erosion, the reverse is true.</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>The algorithm is taken from <a class="reference internal" href="#r256">[R256]</a>. Applications for greyscale reconstruction
-are discussed in <a class="reference internal" href="#r257">[R257]</a> and <a class="reference internal" href="#r258">[R258]</a>.</p>
+<p>The algorithm is taken from <a class="reference internal" href="#r260">[R260]</a>. Applications for greyscale reconstruction
+are discussed in <a class="reference internal" href="#r261">[R261]</a> and <a class="reference internal" href="#r262">[R262]</a>.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r256" rules="none">
+<table class="docutils citation" frame="void" id="r260" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R256]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id5">2</a>)</em> Robinson, &#8220;Efficient morphological reconstruction: a downhill
+<tr><td class="label">[R260]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id5">2</a>)</em> Robinson, &#8220;Efficient morphological reconstruction: a downhill
 filter&#8221;, Pattern Recognition Letters 25 (2004) 1759-1767.</td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r257" rules="none">
+<table class="docutils citation" frame="void" id="r261" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R257]</td><td><em>(<a class="fn-backref" href="#id3">1</a>, <a class="fn-backref" href="#id6">2</a>)</em> Vincent, L., &#8220;Morphological Grayscale Reconstruction in Image
+<tr><td class="label">[R261]</td><td><em>(<a class="fn-backref" href="#id3">1</a>, <a class="fn-backref" href="#id6">2</a>)</em> Vincent, L., &#8220;Morphological Grayscale Reconstruction in Image
 Analysis: Applications and Efficient Algorithms&#8221;, IEEE Transactions
 on Image Processing (1993)</td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r258" rules="none">
+<table class="docutils citation" frame="void" id="r262" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R258]</td><td><em>(<a class="fn-backref" href="#id4">1</a>, <a class="fn-backref" href="#id7">2</a>)</em> Soille, P., &#8220;Morphological Image Analysis: Principles and
+<tr><td class="label">[R262]</td><td><em>(<a class="fn-backref" href="#id4">1</a>, <a class="fn-backref" href="#id7">2</a>)</em> Soille, P., &#8220;Morphological Image Analysis: Principles and
 Applications&#8221;, Chapter 6, 2nd edition (2003), ISBN 3540429883.</td></tr>
 </tbody>
 </table>
@@ -1253,9 +1229,16 @@ to the neighboorhood.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>selem</strong> : ndarray</p>
-<blockquote class="last">
+<blockquote>
 <div><p>A structuring element consisting only of ones, i.e. every
 pixel belongs to the neighborhood.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first"><strong>dtype</strong> : data-type</p>
+<blockquote class="last">
+<div><p>The data type of the structuring element.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1381,10 +1364,10 @@ the iterations.</p>
 medial axis transform, which is also often referred to as
 &#8220;skeletonization&#8221;.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r259" rules="none">
+<table class="docutils citation" frame="void" id="r263" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id8">[R259]</a></td><td>A fast parallel algorithm for thinning digital patterns,
+<tr><td class="label"><a class="fn-backref" href="#id8">[R263]</a></td><td>A fast parallel algorithm for thinning digital patterns,
 T. Y. ZHANG and C. Y. SUEN, Communications of the ACM,
 March 1984, Volume 27, Number 3</td></tr>
 </tbody>
@@ -1437,9 +1420,16 @@ along the perimeter has a chessboard distance no greater than radius
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>selem</strong> : ndarray</p>
-<blockquote class="last">
+<blockquote>
 <div><p>A structuring element consisting only of ones, i.e. every
 pixel belongs to the neighborhood.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first"><strong>dtype</strong> : data-type</p>
+<blockquote class="last">
+<div><p>The data type of the structuring element.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1468,9 +1458,16 @@ of the square array returned is <cite>2*a + 1 + 2*floor(a / 2)</cite>.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>selem</strong> : ndarray</p>
-<blockquote class="last">
+<blockquote>
 <div><p>The structuring element where elements of the neighborhood
 are 1 and 0 otherwise.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first"><strong>dtype</strong> : data-type</p>
+<blockquote class="last">
+<div><p>The data type of the structuring element.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1533,7 +1530,7 @@ will be labeled.</p>
 </dl>
 </div>
 <p class="rubric">Notes</p>
-<p>This function implements a watershed algorithm [R260]_that apportions pixels
+<p>This function implements a watershed algorithm [R264]_that apportions pixels
 into marked basins. The algorithm uses a priority queue to hold the pixels
 with the metric for the priority queue being pixel value, then the time of
 entry into the queue - this settles ties in favor of the closest marker.</p>
@@ -1551,16 +1548,16 @@ the local minima of the gradient of the image, or the local maxima of the
 distance function to the background for separating overlapping objects
 (see example).</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r260" rules="none">
+<table class="docutils citation" frame="void" id="r264" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id9">[R260]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Watershed_%28image_processing%29">http://en.wikipedia.org/wiki/Watershed_%28image_processing%29</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id9">[R264]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Watershed_%28image_processing%29">http://en.wikipedia.org/wiki/Watershed_%28image_processing%29</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r261" rules="none">
+<table class="docutils citation" frame="void" id="r265" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id10">[R261]</a></td><td><a class="reference external" href="http://cmm.ensmp.fr/~beucher/wtshed.html">http://cmm.ensmp.fr/~beucher/wtshed.html</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id10">[R265]</a></td><td><a class="reference external" href="http://cmm.ensmp.fr/~beucher/wtshed.html">http://cmm.ensmp.fr/~beucher/wtshed.html</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -1674,12 +1671,6 @@ is passed, a new array will be allocated.</p>
 <li><a class="reference internal" href="#dilation">dilation</a></li>
 <li><a class="reference internal" href="#disk">disk</a></li>
 <li><a class="reference internal" href="#erosion">erosion</a></li>
-<li><a class="reference internal" href="#greyscale-black-top-hat">greyscale_black_top_hat</a></li>
-<li><a class="reference internal" href="#greyscale-close">greyscale_close</a></li>
-<li><a class="reference internal" href="#greyscale-dilate">greyscale_dilate</a></li>
-<li><a class="reference internal" href="#greyscale-erode">greyscale_erode</a></li>
-<li><a class="reference internal" href="#greyscale-open">greyscale_open</a></li>
-<li><a class="reference internal" href="#greyscale-white-top-hat">greyscale_white_top_hat</a></li>
 <li><a class="reference internal" href="#label">label</a></li>
 <li><a class="reference internal" href="#medial-axis">medial_axis</a></li>
 <li><a class="reference internal" href="#octagon">octagon</a></li>

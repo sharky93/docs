@@ -59,7 +59,7 @@ black background, as shown below.
 	ax3.set_title('image - dilated')
 	ax3.axis('off')
 	
-	plt.tight_layout()
+	fig.tight_layout()
 	
 	
 
@@ -115,7 +115,7 @@ line).
 	ax3.set_title('image - dilated')
 	ax3.axis('off')
 	
-	plt.tight_layout()
+	fig.tight_layout()
 	plt.show()
 	
 	
@@ -133,5 +133,10 @@ illuminated.
 
 
 **Python source code:** :download:`download <plot_regional_maxima.py>`
+(generated using ``skimage`` |version|)
+
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_regional_maxima.ipynb>`
 (generated using ``skimage`` |version|)
 

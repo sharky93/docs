@@ -124,7 +124,7 @@ to robustly estimate the parameter set by detecting outliers.</p>
 
 
 <span class="k">def</span> <span class="nf">match_corner</span><span class="p">(</span><span class="n">coord</span><span class="p">,</span> <span class="n">window_ext</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
-    <span class="n">r</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">coord</span><span class="p">)</span>
+    <span class="n">r</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">coord</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">intp</span><span class="p">)</span>
     <span class="n">window_orig</span> <span class="o">=</span> <span class="n">img_orig</span><span class="p">[</span><span class="n">r</span><span class="o">-</span><span class="n">window_ext</span><span class="p">:</span><span class="n">r</span><span class="o">+</span><span class="n">window_ext</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span>
                            <span class="n">c</span><span class="o">-</span><span class="n">window_ext</span><span class="p">:</span><span class="n">c</span><span class="o">+</span><span class="n">window_ext</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
 
@@ -191,6 +191,8 @@ to robustly estimate the parameter set by detecting outliers.</p>
 </pre></div>
 </div>
 <p><strong>Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_matching.py"><tt class="xref download docutils literal"><span class="pre">download</span></tt></a>
+(generated using <tt class="docutils literal"><span class="pre">skimage</span></tt> 0.10dev)</p>
+<p><strong>IPython Notebook:</strong> <a class="reference download internal" href="../_downloads/plot_matching.ipynb"><tt class="xref download docutils literal"><span class="pre">download</span></tt></a>
 (generated using <tt class="docutils literal"><span class="pre">skimage</span></tt> 0.10dev)</p>
 </div>
 

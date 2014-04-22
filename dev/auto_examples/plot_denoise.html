@@ -79,7 +79,7 @@ pixels based on their spatial closeness and radiometric similarity.</p>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 
 <span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span><span class="p">,</span> <span class="n">img_as_float</span>
-<span class="kn">from</span> <span class="nn">skimage.filter</span> <span class="kn">import</span> <span class="n">denoise_tv_chambolle</span><span class="p">,</span> <span class="n">denoise_bilateral</span>
+<span class="kn">from</span> <span class="nn">skimage.restoration</span> <span class="kn">import</span> <span class="n">denoise_tv_chambolle</span><span class="p">,</span> <span class="n">denoise_bilateral</span>
 
 
 <span class="n">lena</span> <span class="o">=</span> <span class="n">img_as_float</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">lena</span><span class="p">())</span>
@@ -119,6 +119,8 @@ pixels based on their spatial closeness and radiometric similarity.</p>
 </pre></div>
 </div>
 <p><strong>Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_denoise.py"><tt class="xref download docutils literal"><span class="pre">download</span></tt></a>
+(generated using <tt class="docutils literal"><span class="pre">skimage</span></tt> 0.10dev)</p>
+<p><strong>IPython Notebook:</strong> <a class="reference download internal" href="../_downloads/plot_denoise.ipynb"><tt class="xref download docutils literal"><span class="pre">download</span></tt></a>
 (generated using <tt class="docutils literal"><span class="pre">skimage</span></tt> 0.10dev)</p>
 </div>
 </div>

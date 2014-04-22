@@ -93,3 +93,8 @@ References
 **Python source code:** :download:`download <plot_hog.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_hog.ipynb>`
+(generated using ``skimage`` |version|)
+

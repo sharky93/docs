@@ -7,9 +7,28 @@ Module: :mod:`restoration`
 .. currentmodule:: skimage.restoration
 .. autosummary::
 
+   skimage.restoration.denoise_bilateral
+   skimage.restoration.denoise_tv_bregman
+   skimage.restoration.denoise_tv_chambolle
    skimage.restoration.richardson_lucy
    skimage.restoration.unsupervised_wiener
+   skimage.restoration.unwrap_phase
    skimage.restoration.wiener
+
+denoise_bilateral
+-----------------
+
+.. autofunction:: skimage.restoration.denoise_bilateral
+
+denoise_tv_bregman
+------------------
+
+.. autofunction:: skimage.restoration.denoise_tv_bregman
+
+denoise_tv_chambolle
+--------------------
+
+.. autofunction:: skimage.restoration.denoise_tv_chambolle
 
 richardson_lucy
 ---------------
@@ -20,6 +39,11 @@ unsupervised_wiener
 -------------------
 
 .. autofunction:: skimage.restoration.unsupervised_wiener
+
+unwrap_phase
+------------
+
+.. autofunction:: skimage.restoration.unwrap_phase
 
 wiener
 ------

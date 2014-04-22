@@ -62,6 +62,7 @@ General-purpose and introductory examples for the scikit.
    plot_swirl
    plot_template
    plot_threshold_adaptive
+   plot_tinting_grayscale_images
    plot_view_as_blocks
    plot_watershed
 
@@ -206,13 +207,6 @@ General-purpose and introductory examples for the scikit.
    :ref:`example_plot_label.py`
 
 
-.. figure:: images/thumb/plot_line_hough_transform.png
-   :figclass: gallery
-   :target: ./plot_line_hough_transform.html
-
-   :ref:`example_plot_line_hough_transform.py`
-
-
 .. figure:: images/thumb/plot_local_binary_pattern.png
    :figclass: gallery
    :target: ./plot_local_binary_pattern.html
@@ -311,13 +305,6 @@ General-purpose and introductory examples for the scikit.
    :ref:`example_plot_pyramid.py`
 
 
-.. figure:: images/thumb/plot_radon_transform.png
-   :figclass: gallery
-   :target: ./plot_radon_transform.html
-
-   :ref:`example_plot_radon_transform.py`
-
-
 .. figure:: images/thumb/plot_random_walker_segmentation.png
    :figclass: gallery
    :target: ./plot_random_walker_segmentation.html
@@ -388,13 +375,6 @@ General-purpose and introductory examples for the scikit.
    :ref:`example_plot_ssim.py`
 
 
-.. figure:: images/thumb/plot_swirl.png
-   :figclass: gallery
-   :target: ./plot_swirl.html
-
-   :ref:`example_plot_swirl.py`
-
-
 .. figure:: images/thumb/plot_template.png
    :figclass: gallery
    :target: ./plot_template.html
@@ -407,6 +387,13 @@ General-purpose and introductory examples for the scikit.
    :target: ./plot_threshold_adaptive.html
 
    :ref:`example_plot_threshold_adaptive.py`
+
+
+.. figure:: images/thumb/plot_tinting_grayscale_images.png
+   :figclass: gallery
+   :target: ./plot_tinting_grayscale_images.html
+
+   :ref:`example_plot_tinting_grayscale_images.py`
 
 
 .. figure:: images/thumb/plot_view_as_blocks.png

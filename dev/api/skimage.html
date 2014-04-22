@@ -69,29 +69,34 @@ following subpackages:</p>
 <dt>data</dt>
 <dd>Test images and example data.</dd>
 <dt>draw</dt>
-<dd>Image drawing primitives (lines, text, etc.).</dd>
+<dd>Drawing primitives (lines, text, etc.) that operate on NumPy arrays.</dd>
 <dt>exposure</dt>
-<dd>Image intensity adjustment (e.g., histogram equalization).</dd>
+<dd>Image intensity adjustment, e.g., histogram equalization, etc.</dd>
 <dt>feature</dt>
-<dd>Feature detection (e.g. texture analysis, corners, etc.).</dd>
+<dd>Feature detection and extraction, e.g., texture analysis corners, etc.</dd>
 <dt>filter</dt>
-<dd>Sharpening, edge finding, denoising, etc.</dd>
+<dd>Sharpening, edge finding, rank filters, thresholding, etc.</dd>
 <dt>graph</dt>
-<dd>Graph-theoretic operations, e.g. dynamic programming (shortest paths).</dd>
+<dd>Graph-theoretic operations, e.g., shortest paths.</dd>
 <dt>io</dt>
 <dd>Reading, saving, and displaying images and video.</dd>
 <dt>measure</dt>
 <dd>Measurement of image properties, e.g., similarity and contours.</dd>
 <dt>morphology</dt>
-<dd>Morphological operations, e.g. opening or skeletonization.</dd>
+<dd>Morphological operations, e.g., opening or skeletonization.</dd>
+<dt>novice</dt>
+<dd>Simplified interface for teaching purposes.</dd>
 <dt>restoration</dt>
-<dd>Deconvolution algorithms.</dd>
+<dd>Restoration algorithms, e.g., deconvolution algorithms, denoising, etc.</dd>
 <dt>segmentation</dt>
-<dd>Splitting an image into self-similar regions.</dd>
+<dd>Partitioning an image into multiple regions.</dd>
 <dt>transform</dt>
-<dd>Geometric and other transforms, e.g. rotation or the Radon transform.</dd>
+<dd>Geometric and other transforms, e.g., rotation or the Radon transform.</dd>
 <dt>util</dt>
 <dd>Generic utilities.</dd>
+<dt>viewer</dt>
+<dd>A simple graphical user interface for visualizing results and exploring
+parameters.</dd>
 </dl>
 </div>
 <div class="section" id="utility-functions">
@@ -116,25 +121,22 @@ following subpackages:</p>
 <tr class="row-odd"><td><a class="reference internal" href="#skimage.dtype_limits" title="skimage.dtype_limits"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.dtype_limits</span></tt></a>(image[,&nbsp;clip_negative])</td>
 <td>Return intensity limits, i.e.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.get_log" title="skimage.get_log"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.get_log</span></tt></a>(*args,&nbsp;**kwargs)</td>
-<td><strong>Deprecated function</strong>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.img_as_bool" title="skimage.img_as_bool"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.img_as_bool</span></tt></a>(image[,&nbsp;force_copy])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.img_as_bool" title="skimage.img_as_bool"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.img_as_bool</span></tt></a>(image[,&nbsp;force_copy])</td>
 <td>Convert an image to boolean format.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.img_as_float" title="skimage.img_as_float"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.img_as_float</span></tt></a>(image[,&nbsp;force_copy])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.img_as_float" title="skimage.img_as_float"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.img_as_float</span></tt></a>(image[,&nbsp;force_copy])</td>
 <td>Convert an image to double-precision floating point format.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.img_as_int" title="skimage.img_as_int"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.img_as_int</span></tt></a>(image[,&nbsp;force_copy])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.img_as_int" title="skimage.img_as_int"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.img_as_int</span></tt></a>(image[,&nbsp;force_copy])</td>
 <td>Convert an image to 16-bit signed integer format.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.img_as_ubyte" title="skimage.img_as_ubyte"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.img_as_ubyte</span></tt></a>(image[,&nbsp;force_copy])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.img_as_ubyte" title="skimage.img_as_ubyte"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.img_as_ubyte</span></tt></a>(image[,&nbsp;force_copy])</td>
 <td>Convert an image to 8-bit unsigned integer format.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.img_as_uint" title="skimage.img_as_uint"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.img_as_uint</span></tt></a>(image[,&nbsp;force_copy])</td>
+<tr class="row-even"><td><a class="reference internal" href="#skimage.img_as_uint" title="skimage.img_as_uint"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.img_as_uint</span></tt></a>(image[,&nbsp;force_copy])</td>
 <td>Convert an image to 16-bit unsigned integer format.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.test" title="skimage.test"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.test</span></tt></a>([doctest,&nbsp;verbose])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#skimage.test" title="skimage.test"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.test</span></tt></a>([doctest,&nbsp;verbose])</td>
 <td>Run all unit tests.</td>
 </tr>
 </tbody>
@@ -160,38 +162,6 @@ even if the image dtype allows negative values.</p>
 </div></blockquote>
 </td>
 </tr>
-</tbody>
-</table>
-</dd></dl>
-
-</div>
-<div class="section" id="get-log">
-<h2>get_log<a class="headerlink" href="#get-log" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="skimage.get_log">
-<tt class="descclassname">skimage.</tt><tt class="descname">get_log</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.get_log" title="Permalink to this definition">¶</a></dt>
-<dd><p><strong>Deprecated function</strong>.</p>
-<p>Return a console logger.</p>
-<p>Output may be sent to the logger using the <cite>debug</cite>, <cite>info</cite>, <cite>warning</cite>,
-<cite>error</cite> and <cite>critical</cite> methods.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote class="last">
-<div><p>Name of the log.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r2" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[R2]</a></td><td>Logging facility for Python,
-<a class="reference external" href="http://docs.python.org/library/logging.html">http://docs.python.org/library/logging.html</a></td></tr>
 </tbody>
 </table>
 </dd></dl>
@@ -392,7 +362,6 @@ the output image will still only have positive values.</p>
 <li><a class="reference internal" href="#subpackages">Subpackages</a></li>
 <li><a class="reference internal" href="#utility-functions">Utility Functions</a></li>
 <li><a class="reference internal" href="#dtype-limits">dtype_limits</a></li>
-<li><a class="reference internal" href="#get-log">get_log</a></li>
 <li><a class="reference internal" href="#img-as-bool">img_as_bool</a></li>
 <li><a class="reference internal" href="#img-as-float">img_as_float</a></li>
 <li><a class="reference internal" href="#img-as-int">img_as_int</a></li>

@@ -11,12 +11,10 @@ Module: :mod:`exposure`
    skimage.exposure.adjust_log
    skimage.exposure.adjust_sigmoid
    skimage.exposure.cumulative_distribution
-   skimage.exposure.equalize
    skimage.exposure.equalize_adapthist
    skimage.exposure.equalize_hist
    skimage.exposure.histogram
    skimage.exposure.rescale_intensity
-   skimage.exposure.unwrap_phase
 
 adjust_gamma
 ------------
@@ -38,11 +36,6 @@ cumulative_distribution
 
 .. autofunction:: skimage.exposure.cumulative_distribution
 
-equalize
---------
-
-.. autofunction:: skimage.exposure.equalize
-
 equalize_adapthist
 ------------------
 
@@ -62,9 +55,4 @@ rescale_intensity
 -----------------
 
 .. autofunction:: skimage.exposure.rescale_intensity
-
-unwrap_phase
-------------
-
-.. autofunction:: skimage.exposure.unwrap_phase
 

@@ -34,3 +34,8 @@ voxel spacing is not equal for every spatial dimension, through use of the
 **Python source code:** :download:`download <plot_marching_cubes.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_marching_cubes.ipynb>`
+(generated using ``skimage`` |version|)
+

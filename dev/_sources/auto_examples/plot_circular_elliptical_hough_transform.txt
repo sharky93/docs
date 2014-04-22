@@ -168,3 +168,8 @@ References
 **Python source code:** :download:`download <plot_circular_elliptical_hough_transform.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_circular_elliptical_hough_transform.ipynb>`
+(generated using ``skimage`` |version|)
+

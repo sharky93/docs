@@ -29,3 +29,8 @@ the foreground is 1's.
 **Python source code:** :download:`download <plot_skeleton.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_skeleton.ipynb>`
+(generated using ``skimage`` |version|)
+

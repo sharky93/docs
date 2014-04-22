@@ -20,3 +20,8 @@ This example shows how to measure properties of labelled image regions.
 **Python source code:** :download:`download <plot_regionprops.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_regionprops.ipynb>`
+(generated using ``skimage`` |version|)
+

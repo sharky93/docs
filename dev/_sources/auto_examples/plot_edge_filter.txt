@@ -22,3 +22,8 @@ gradient of the image intensity function.
 **Python source code:** :download:`download <plot_edge_filter.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_edge_filter.ipynb>`
+(generated using ``skimage`` |version|)
+

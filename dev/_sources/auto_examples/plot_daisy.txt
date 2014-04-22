@@ -25,3 +25,8 @@ scale for illustrative purposes.
 **Python source code:** :download:`download <plot_daisy.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_daisy.ipynb>`
+(generated using ``skimage`` |version|)
+

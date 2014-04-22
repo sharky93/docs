@@ -34,3 +34,8 @@ values, and use the random walker for the segmentation.
 **Python source code:** :download:`download <plot_random_walker_segmentation.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_random_walker_segmentation.ipynb>`
+(generated using ``skimage`` |version|)
+

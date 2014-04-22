@@ -17,8 +17,6 @@ Module: :mod:`color`
    skimage.color.guess_spatial_dimensions
    skimage.color.hed2rgb
    skimage.color.hsv2rgb
-   skimage.color.is_gray
-   skimage.color.is_rgb
    skimage.color.lab2lch
    skimage.color.lab2rgb
    skimage.color.lab2xyz
@@ -89,16 +87,6 @@ hsv2rgb
 -------
 
 .. autofunction:: skimage.color.hsv2rgb
-
-is_gray
--------
-
-.. autofunction:: skimage.color.is_gray
-
-is_rgb
-------
-
-.. autofunction:: skimage.color.is_rgb
 
 lab2lch
 -------

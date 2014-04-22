@@ -31,3 +31,8 @@ Anti-aliased drawing for:
 **Python source code:** :download:`download <plot_shapes.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_shapes.ipynb>`
+(generated using ``skimage`` |version|)
+

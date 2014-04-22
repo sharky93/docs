@@ -28,3 +28,8 @@ the intra-class variance.
 **Python source code:** :download:`download <plot_otsu.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_otsu.ipynb>`
+(generated using ``skimage`` |version|)
+

@@ -247,3 +247,8 @@ Kullback-Leibler-Divergence.
 **Python source code:** :download:`download <plot_local_binary_pattern.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_local_binary_pattern.ipynb>`
+(generated using ``skimage`` |version|)
+

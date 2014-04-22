@@ -28,3 +28,8 @@ image.
 **Python source code:** :download:`download <plot_view_as_blocks.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_view_as_blocks.ipynb>`
+(generated using ``skimage`` |version|)
+

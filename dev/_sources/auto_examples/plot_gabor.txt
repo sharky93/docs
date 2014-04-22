@@ -26,3 +26,8 @@ for classification, which is based on the least squared error for simplicity.
 **Python source code:** :download:`download <plot_gabor.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_gabor.ipynb>`
+(generated using ``skimage`` |version|)
+

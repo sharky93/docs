@@ -20,3 +20,8 @@ This example shows how to use the Piecewise Affine Transformation.
 **Python source code:** :download:`download <plot_piecewise_affine.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_piecewise_affine.ipynb>`
+(generated using ``skimage`` |version|)
+

@@ -38,17 +38,6 @@ Module: :mod:`io`
   :show-inheritance:
 
   .. automethod:: __init__
-
-:class:`Video`
---------------
-
-
-.. autoclass:: Video
-  :members:
-  :undoc-members:
-  :show-inheritance:
-
-  .. automethod:: __init__
 .. autosummary::
 
    skimage.io.call_plugin

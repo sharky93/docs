@@ -42,3 +42,8 @@ the noise power and the image frequency power.
 **Python source code:** :download:`download <plot_restoration.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_restoration.ipynb>`
+(generated using ``skimage`` |version|)
+

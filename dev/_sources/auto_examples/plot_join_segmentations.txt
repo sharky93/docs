@@ -24,3 +24,8 @@ segmentations.
 **Python source code:** :download:`download <plot_join_segmentations.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_join_segmentations.ipynb>`
+(generated using ``skimage`` |version|)
+

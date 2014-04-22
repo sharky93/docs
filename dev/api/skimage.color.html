@@ -91,12 +91,6 @@
 <tr class="row-even"><td><a class="reference internal" href="#skimage.color.hsv2rgb" title="skimage.color.hsv2rgb"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.hsv2rgb</span></tt></a>(hsv)</td>
 <td>HSV to RGB color space conversion.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#skimage.color.is_gray" title="skimage.color.is_gray"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.is_gray</span></tt></a>(*args,&nbsp;**kwargs)</td>
-<td><strong>Deprecated function</strong>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#skimage.color.is_rgb" title="skimage.color.is_rgb"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.is_rgb</span></tt></a>(*args,&nbsp;**kwargs)</td>
-<td><strong>Deprecated function</strong>.</td>
-</tr>
 <tr class="row-odd"><td><a class="reference internal" href="#skimage.color.lab2lch" title="skimage.color.lab2lch"><tt class="xref py py-obj docutils literal"><span class="pre">skimage.color.lab2lch</span></tt></a>(lab)</td>
 <td>CIE-LAB to CIE-LCH color space conversion.</td>
 </tr>
@@ -175,7 +169,7 @@
 </div></blockquote>
 <p><strong>conv_matrix: ndarray</strong> :</p>
 <blockquote>
-<div><p>The stain separation matrix as described by G. Landini <a class="reference internal" href="#r33">[R33]</a>.</p>
+<div><p>The stain separation matrix as described by G. Landini <a class="reference internal" href="#r31">[R31]</a>.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -210,10 +204,10 @@ respective colorspace:</p>
 <li><tt class="docutils literal"><span class="pre">rgb_from_hpx</span></tt>: Hematoxylin + PAS</li>
 </ul>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r33" rules="none">
+<table class="docutils citation" frame="void" id="r31" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R33]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>)</em> <a class="reference external" href="http://www.dentistry.bham.ac.uk/landinig/software/cdeconv/cdeconv.html">http://www.dentistry.bham.ac.uk/landinig/software/cdeconv/cdeconv.html</a></td></tr>
+<tr><td class="label">[R31]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>)</em> <a class="reference external" href="http://www.dentistry.bham.ac.uk/landinig/software/cdeconv/cdeconv.html">http://www.dentistry.bham.ac.uk/landinig/software/cdeconv/cdeconv.html</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -305,16 +299,16 @@ from XYZ to HSV is implemented as <tt class="docutils literal"><span class="pre"
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r34" rules="none">
+<table class="docutils citation" frame="void" id="r32" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[R34]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Color_difference">http://en.wikipedia.org/wiki/Color_difference</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id3">[R32]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Color_difference">http://en.wikipedia.org/wiki/Color_difference</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r35" rules="none">
+<table class="docutils citation" frame="void" id="r33" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[R35]</a></td><td>A. R. Robertson, &#8220;The CIE 1976 color-difference formulae,&#8221;
+<tr><td class="label"><a class="fn-backref" href="#id4">[R33]</a></td><td>A. R. Robertson, &#8220;The CIE 1976 color-difference formulae,&#8221;
 Color Res. Appl. 2, 7-11 (1977).</td></tr>
 </tbody>
 </table>
@@ -368,23 +362,23 @@ see deltaE_cmc</p>
 <p>CIEDE 2000 assumes parametric weighting factors for the lightness, chroma,
 and hue (<cite>kL</cite>, <cite>kC</cite>, <cite>kH</cite> respectively).  These default to 1.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r36" rules="none">
+<table class="docutils citation" frame="void" id="r34" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id5">[R36]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Color_difference">http://en.wikipedia.org/wiki/Color_difference</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id5">[R34]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Color_difference">http://en.wikipedia.org/wiki/Color_difference</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r37" rules="none">
+<table class="docutils citation" frame="void" id="r35" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id6">[R37]</a></td><td><a class="reference external" href="http://www.ece.rochester.edu/~gsharma/ciede2000/ciede2000noteCRNA.pdf">http://www.ece.rochester.edu/~gsharma/ciede2000/ciede2000noteCRNA.pdf</a>
+<tr><td class="label"><a class="fn-backref" href="#id6">[R35]</a></td><td><a class="reference external" href="http://www.ece.rochester.edu/~gsharma/ciede2000/ciede2000noteCRNA.pdf">http://www.ece.rochester.edu/~gsharma/ciede2000/ciede2000noteCRNA.pdf</a>
 (doi:10.1364/AO.33.008069)</td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r38" rules="none">
+<table class="docutils citation" frame="void" id="r36" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id7">[R38]</a></td><td>M. Melgosa, J. Quesada, and E. Hita, &#8220;Uniformity of some recent
+<tr><td class="label"><a class="fn-backref" href="#id7">[R36]</a></td><td>M. Melgosa, J. Quesada, and E. Hita, &#8220;Uniformity of some recent
 color metrics tested with an accurate color-difference tolerance
 dataset,&#8221; Appl. Opt. 33, 8069-8077 (1994).</td></tr>
 </tbody>
@@ -477,16 +471,16 @@ suggested for graphic arts</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r39" rules="none">
+<table class="docutils citation" frame="void" id="r37" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id8">[R39]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Color_difference">http://en.wikipedia.org/wiki/Color_difference</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id8">[R37]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Color_difference">http://en.wikipedia.org/wiki/Color_difference</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r40" rules="none">
+<table class="docutils citation" frame="void" id="r38" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id9">[R40]</a></td><td><a class="reference external" href="http://www.brucelindbloom.com/index.html?Eqn_DeltaE_CIE94.html">http://www.brucelindbloom.com/index.html?Eqn_DeltaE_CIE94.html</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id9">[R38]</a></td><td><a class="reference external" href="http://www.brucelindbloom.com/index.html?Eqn_DeltaE_CIE94.html">http://www.brucelindbloom.com/index.html?Eqn_DeltaE_CIE94.html</a></td></tr>
 </tbody>
 </table>
 </dd></dl>
@@ -533,22 +527,22 @@ scale factors.</p>
 in terms of the first color.  Consequently
 <tt class="docutils literal"><span class="pre">deltaE_cmc(lab1,</span> <span class="pre">lab2)</span> <span class="pre">!=</span> <span class="pre">deltaE_cmc(lab2,</span> <span class="pre">lab1)</span></tt></p>
 <p class="rubric">References</p>
+<table class="docutils citation" frame="void" id="r39" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id10">[R39]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Color_difference">http://en.wikipedia.org/wiki/Color_difference</a></td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="r40" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id11">[R40]</a></td><td><a class="reference external" href="http://www.brucelindbloom.com/index.html?Eqn_DeltaE_CIE94.html">http://www.brucelindbloom.com/index.html?Eqn_DeltaE_CIE94.html</a></td></tr>
+</tbody>
+</table>
 <table class="docutils citation" frame="void" id="r41" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id10">[R41]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Color_difference">http://en.wikipedia.org/wiki/Color_difference</a></td></tr>
-</tbody>
-</table>
-<table class="docutils citation" frame="void" id="r42" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id11">[R42]</a></td><td><a class="reference external" href="http://www.brucelindbloom.com/index.html?Eqn_DeltaE_CIE94.html">http://www.brucelindbloom.com/index.html?Eqn_DeltaE_CIE94.html</a></td></tr>
-</tbody>
-</table>
-<table class="docutils citation" frame="void" id="r43" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id12">[R43]</a></td><td>F. J. J. Clarke, R. McDonald, and B. Rigg, &#8220;Modification to the
+<tr><td class="label"><a class="fn-backref" href="#id12">[R41]</a></td><td>F. J. J. Clarke, R. McDonald, and B. Rigg, &#8220;Modification to the
 JPC79 colour-difference formula,&#8221; J. Soc. Dyers Colour. 100, 128-132
 (1984).</td></tr>
 </tbody>
@@ -654,10 +648,10 @@ is <tt class="docutils literal"><span class="pre">None</span></tt>.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r44" rules="none">
+<table class="docutils citation" frame="void" id="r42" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id13">[R44]</a></td><td>A. C. Ruifrok and D. A. Johnston, &#8220;Quantification of histochemical
+<tr><td class="label"><a class="fn-backref" href="#id13">[R42]</a></td><td>A. C. Ruifrok and D. A. Johnston, &#8220;Quantification of histochemical
 staining by color deconvolution.,&#8221; Analytical and quantitative
 cytology and histology / the International Academy of Cytology [and]
 American Society of Cytology, vol. 23, no. 4, pp. 291-9, Aug. 2001.</td></tr>
@@ -708,12 +702,12 @@ American Society of Cytology, vol. 23, no. 4, pp. 291-9, Aug. 2001.</td></tr>
 <p>The conversion assumes an input data range of <tt class="docutils literal"><span class="pre">[0,</span> <span class="pre">1]</span></tt> for all
 color components.</p>
 <p>Conversion between RGB and HSV color spaces results in some loss of
-precision, due to integer arithmetic and rounding <a class="reference internal" href="#r45">[R45]</a>.</p>
+precision, due to integer arithmetic and rounding <a class="reference internal" href="#r43">[R43]</a>.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r45" rules="none">
+<table class="docutils citation" frame="void" id="r43" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R45]</td><td><em>(<a class="fn-backref" href="#id14">1</a>, <a class="fn-backref" href="#id15">2</a>)</em> <a class="reference external" href="http://en.wikipedia.org/wiki/HSL_and_HSV">http://en.wikipedia.org/wiki/HSL_and_HSV</a></td></tr>
+<tr><td class="label">[R43]</td><td><em>(<a class="fn-backref" href="#id14">1</a>, <a class="fn-backref" href="#id15">2</a>)</em> <a class="reference external" href="http://en.wikipedia.org/wiki/HSL_and_HSV">http://en.wikipedia.org/wiki/HSL_and_HSV</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -723,50 +717,6 @@ precision, due to integer arithmetic and rounding <a class="reference internal" 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lena_rgb</span> <span class="o">=</span> <span class="n">hsv2rgb</span><span class="p">(</span><span class="n">lena_hsv</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd></dl>
-
-</div>
-<div class="section" id="is-gray">
-<h2>is_gray<a class="headerlink" href="#is-gray" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="skimage.color.is_gray">
-<tt class="descclassname">skimage.color.</tt><tt class="descname">is_gray</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.color.is_gray" title="Permalink to this definition">¶</a></dt>
-<dd><p><strong>Deprecated function</strong>.</p>
-<p>Test whether the image is gray (i.e. has only one color band).</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
-<blockquote class="last">
-<div><p>Input image.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-</div>
-<div class="section" id="is-rgb">
-<h2>is_rgb<a class="headerlink" href="#is-rgb" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="skimage.color.is_rgb">
-<tt class="descclassname">skimage.color.</tt><tt class="descname">is_rgb</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#skimage.color.is_rgb" title="Permalink to this definition">¶</a></dt>
-<dd><p><strong>Deprecated function</strong>.</p>
-<p>Test whether the image is RGB or RGBA.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : ndarray</p>
-<blockquote class="last">
-<div><p>Input image.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
 </dd></dl>
 
 </div>
@@ -885,16 +835,16 @@ color channels.  Subsequent elements are copied.</p>
 <p>Observer = 2A, Illuminant = D65
 CIE XYZ tristimulus values x_ref = 95.047, y_ref = 100., z_ref = 108.883</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r46" rules="none">
+<table class="docutils citation" frame="void" id="r44" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id16">[R46]</a></td><td><a class="reference external" href="http://www.easyrgb.com/index.php?X=MATH&amp;H=07#text7">http://www.easyrgb.com/index.php?X=MATH&amp;H=07#text7</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id16">[R44]</a></td><td><a class="reference external" href="http://www.easyrgb.com/index.php?X=MATH&amp;H=07#text7">http://www.easyrgb.com/index.php?X=MATH&amp;H=07#text7</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r47" rules="none">
+<table class="docutils citation" frame="void" id="r45" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id17">[R47]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Lab_color_space">http://en.wikipedia.org/wiki/Lab_color_space</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id17">[R45]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Lab_color_space">http://en.wikipedia.org/wiki/Lab_color_space</a></td></tr>
 </tbody>
 </table>
 </dd></dl>
@@ -1064,16 +1014,16 @@ channels.</p>
 <p>XYZ conversion weights use Observer = 2A. Reference whitepoint for D65
 Illuminant, with XYZ tristimulus values of <tt class="docutils literal"><span class="pre">(95.047,</span> <span class="pre">100.,</span> <span class="pre">108.883)</span></tt>.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r48" rules="none">
+<table class="docutils citation" frame="void" id="r46" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id18">[R48]</a></td><td><a class="reference external" href="http://www.easyrgb.com/index.php?X=MATH&amp;H=16#text16">http://www.easyrgb.com/index.php?X=MATH&amp;H=16#text16</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id18">[R46]</a></td><td><a class="reference external" href="http://www.easyrgb.com/index.php?X=MATH&amp;H=16#text16">http://www.easyrgb.com/index.php?X=MATH&amp;H=16#text16</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r49" rules="none">
+<table class="docutils citation" frame="void" id="r47" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id19">[R49]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/CIELUV">http://en.wikipedia.org/wiki/CIELUV</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id19">[R47]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/CIELUV">http://en.wikipedia.org/wiki/CIELUV</a></td></tr>
 </tbody>
 </table>
 </dd></dl>
@@ -1118,10 +1068,10 @@ CRT phosphors:</p>
 </div>
 <p>If there is an alpha channel present, it is ignored.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r50" rules="none">
+<table class="docutils citation" frame="void" id="r48" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id20">[R50]</a></td><td><a class="reference external" href="http://www.poynton.com/PDFs/ColorFAQ.pdf">http://www.poynton.com/PDFs/ColorFAQ.pdf</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id20">[R48]</a></td><td><a class="reference external" href="http://www.poynton.com/PDFs/ColorFAQ.pdf">http://www.poynton.com/PDFs/ColorFAQ.pdf</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -1173,10 +1123,10 @@ CRT phosphors:</p>
 </div>
 <p>If there is an alpha channel present, it is ignored.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r51" rules="none">
+<table class="docutils citation" frame="void" id="r49" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id21">[R51]</a></td><td><a class="reference external" href="http://www.poynton.com/PDFs/ColorFAQ.pdf">http://www.poynton.com/PDFs/ColorFAQ.pdf</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id21">[R49]</a></td><td><a class="reference external" href="http://www.poynton.com/PDFs/ColorFAQ.pdf">http://www.poynton.com/PDFs/ColorFAQ.pdf</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -1220,10 +1170,10 @@ CRT phosphors:</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r52" rules="none">
+<table class="docutils citation" frame="void" id="r50" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id22">[R52]</a></td><td>A. C. Ruifrok and D. A. Johnston, &#8220;Quantification of histochemical
+<tr><td class="label"><a class="fn-backref" href="#id22">[R50]</a></td><td>A. C. Ruifrok and D. A. Johnston, &#8220;Quantification of histochemical
 staining by color deconvolution.,&#8221; Analytical and quantitative
 cytology and histology / the International Academy of Cytology [and]
 American Society of Cytology, vol. 23, no. 4, pp. 291-9, Aug. 2001.</td></tr>
@@ -1273,12 +1223,12 @@ American Society of Cytology, vol. 23, no. 4, pp. 291-9, Aug. 2001.</td></tr>
 <p>The conversion assumes an input data range of [0, 1] for all
 color components.</p>
 <p>Conversion between RGB and HSV color spaces results in some loss of
-precision, due to integer arithmetic and rounding <a class="reference internal" href="#r53">[R53]</a>.</p>
+precision, due to integer arithmetic and rounding <a class="reference internal" href="#r51">[R51]</a>.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r53" rules="none">
+<table class="docutils citation" frame="void" id="r51" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R53]</td><td><em>(<a class="fn-backref" href="#id23">1</a>, <a class="fn-backref" href="#id24">2</a>)</em> <a class="reference external" href="http://en.wikipedia.org/wiki/HSL_and_HSV">http://en.wikipedia.org/wiki/HSL_and_HSV</a></td></tr>
+<tr><td class="label">[R51]</td><td><em>(<a class="fn-backref" href="#id23">1</a>, <a class="fn-backref" href="#id24">2</a>)</em> <a class="reference external" href="http://en.wikipedia.org/wiki/HSL_and_HSV">http://en.wikipedia.org/wiki/HSL_and_HSV</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -1395,10 +1345,10 @@ channels.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r54" rules="none">
+<table class="docutils citation" frame="void" id="r52" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id25">[R54]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/CIE_1931_color_space">http://en.wikipedia.org/wiki/CIE_1931_color_space</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id25">[R52]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/CIE_1931_color_space">http://en.wikipedia.org/wiki/CIE_1931_color_space</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -1447,10 +1397,10 @@ channels.</p>
 <p>The CIE XYZ color space is derived from the CIE RGB color space. Note
 however that this function converts from sRGB.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r55" rules="none">
+<table class="docutils citation" frame="void" id="r53" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id26">[R55]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/CIE_1931_color_space">http://en.wikipedia.org/wiki/CIE_1931_color_space</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id26">[R53]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/CIE_1931_color_space">http://en.wikipedia.org/wiki/CIE_1931_color_space</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -1493,10 +1443,10 @@ however that this function converts from sRGB.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r56" rules="none">
+<table class="docutils citation" frame="void" id="r54" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id27">[R56]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/CIE_1931_color_space">http://en.wikipedia.org/wiki/CIE_1931_color_space</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id27">[R54]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/CIE_1931_color_space">http://en.wikipedia.org/wiki/CIE_1931_color_space</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -1526,7 +1476,7 @@ however that this function converts from sRGB.</p>
 </div></blockquote>
 <p><strong>conv_matrix: ndarray</strong> :</p>
 <blockquote>
-<div><p>The stain separation matrix as described by G. Landini <a class="reference internal" href="#r57">[R57]</a>.</p>
+<div><p>The stain separation matrix as described by G. Landini <a class="reference internal" href="#r55">[R55]</a>.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1561,10 +1511,10 @@ respective colorspace:</p>
 <li><tt class="docutils literal"><span class="pre">hpx_from_rgb</span></tt>: Hematoxylin + PAS</li>
 </ul>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r57" rules="none">
+<table class="docutils citation" frame="void" id="r55" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R57]</td><td><em>(<a class="fn-backref" href="#id28">1</a>, <a class="fn-backref" href="#id29">2</a>)</em> <a class="reference external" href="http://www.dentistry.bham.ac.uk/landinig/software/cdeconv/cdeconv.html">http://www.dentistry.bham.ac.uk/landinig/software/cdeconv/cdeconv.html</a></td></tr>
+<tr><td class="label">[R55]</td><td><em>(<a class="fn-backref" href="#id28">1</a>, <a class="fn-backref" href="#id29">2</a>)</em> <a class="reference external" href="http://www.dentistry.bham.ac.uk/landinig/software/cdeconv/cdeconv.html">http://www.dentistry.bham.ac.uk/landinig/software/cdeconv/cdeconv.html</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -1613,16 +1563,16 @@ respective colorspace:</p>
 <p>Observer= 2A, Illuminant= D65
 CIE XYZ tristimulus values x_ref = 95.047, y_ref = 100., z_ref = 108.883</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r58" rules="none">
+<table class="docutils citation" frame="void" id="r56" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id30">[R58]</a></td><td><a class="reference external" href="http://www.easyrgb.com/index.php?X=MATH&amp;H=07#text7">http://www.easyrgb.com/index.php?X=MATH&amp;H=07#text7</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id30">[R56]</a></td><td><a class="reference external" href="http://www.easyrgb.com/index.php?X=MATH&amp;H=07#text7">http://www.easyrgb.com/index.php?X=MATH&amp;H=07#text7</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r59" rules="none">
+<table class="docutils citation" frame="void" id="r57" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id31">[R59]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Lab_color_space">http://en.wikipedia.org/wiki/Lab_color_space</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id31">[R57]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Lab_color_space">http://en.wikipedia.org/wiki/Lab_color_space</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -1671,16 +1621,16 @@ channels.</p>
 <p>XYZ conversion weights use Observer = 2A. Reference whitepoint for D65
 Illuminant, with XYZ tristimulus values of <tt class="docutils literal"><span class="pre">(95.047,</span> <span class="pre">100.,</span> <span class="pre">108.883)</span></tt>.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r60" rules="none">
+<table class="docutils citation" frame="void" id="r58" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id32">[R60]</a></td><td><a class="reference external" href="http://www.easyrgb.com/index.php?X=MATH&amp;H=16#text16">http://www.easyrgb.com/index.php?X=MATH&amp;H=16#text16</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id32">[R58]</a></td><td><a class="reference external" href="http://www.easyrgb.com/index.php?X=MATH&amp;H=16#text16">http://www.easyrgb.com/index.php?X=MATH&amp;H=16#text16</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r61" rules="none">
+<table class="docutils citation" frame="void" id="r59" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id33">[R61]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/CIELUV">http://en.wikipedia.org/wiki/CIELUV</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id33">[R59]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/CIELUV">http://en.wikipedia.org/wiki/CIELUV</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -1728,10 +1678,10 @@ Illuminant, with XYZ tristimulus values of <tt class="docutils literal"><span cl
 <p>The CIE XYZ color space is derived from the CIE RGB color space. Note
 however that this function converts to sRGB.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r62" rules="none">
+<table class="docutils citation" frame="void" id="r60" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id34">[R62]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/CIE_1931_color_space">http://en.wikipedia.org/wiki/CIE_1931_color_space</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id34">[R60]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/CIE_1931_color_space">http://en.wikipedia.org/wiki/CIE_1931_color_space</a></td></tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
@@ -1769,8 +1719,6 @@ however that this function converts to sRGB.</p>
 <li><a class="reference internal" href="#guess-spatial-dimensions">guess_spatial_dimensions</a></li>
 <li><a class="reference internal" href="#hed2rgb">hed2rgb</a></li>
 <li><a class="reference internal" href="#hsv2rgb">hsv2rgb</a></li>
-<li><a class="reference internal" href="#is-gray">is_gray</a></li>
-<li><a class="reference internal" href="#is-rgb">is_rgb</a></li>
 <li><a class="reference internal" href="#lab2lch">lab2lch</a></li>
 <li><a class="reference internal" href="#lab2rgb">lab2rgb</a></li>
 <li><a class="reference internal" href="#lab2xyz">lab2xyz</a></li>

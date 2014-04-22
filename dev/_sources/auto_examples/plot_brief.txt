@@ -28,3 +28,8 @@ detecting and extracting features at different scales.
 **Python source code:** :download:`download <plot_brief.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_brief.ipynb>`
+(generated using ``skimage`` |version|)
+

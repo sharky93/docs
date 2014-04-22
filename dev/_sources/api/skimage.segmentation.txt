@@ -17,7 +17,6 @@ Module: :mod:`segmentation`
    skimage.segmentation.relabel_from_one
    skimage.segmentation.relabel_sequential
    skimage.segmentation.slic
-   skimage.segmentation.visualize_boundaries
 
 clear_border
 ------------
@@ -68,9 +67,4 @@ slic
 ----
 
 .. autofunction:: skimage.segmentation.slic
-
-visualize_boundaries
---------------------
-
-.. autofunction:: skimage.segmentation.visualize_boundaries
 

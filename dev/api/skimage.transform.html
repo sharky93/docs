@@ -465,11 +465,11 @@ x.T = [a0 a1 a2 b0 b1 b2 c3]</pre>
 <em class="property">class </em><tt class="descclassname">skimage.transform.</tt><tt class="descname">SimilarityTransform</tt><big>(</big><em>matrix=None</em>, <em>scale=None</em>, <em>rotation=None</em>, <em>translation=None</em><big>)</big><a class="headerlink" href="#skimage.transform.SimilarityTransform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">skimage.transform._geometric.ProjectiveTransform</span></tt></p>
 <p>2D similarity transformation of the form:</p>
-<div class="highlight-python"><pre>X = a0*x - b0*y + a1 =
-  = m*x*cos(rotation) + m*y*sin(rotation) + a1
+<div class="highlight-python"><pre>X = a0 * x - b0 * y + a1 =
+  = m * x * cos(rotation) - m * y * sin(rotation) + a1
 
-Y = b0*x + a0*y + b1 =
-  = m*x*sin(rotation) + m*y*cos(rotation) + b1</pre>
+Y = b0 * x + a0 * y + b1 =
+  = m * x * sin(rotation) + m * y * cos(rotation) + b1</pre>
 </div>
 <p>where <tt class="docutils literal"><span class="pre">m</span></tt> is a zoom factor and the homogeneous transformation matrix is:</p>
 <div class="highlight-python"><pre>[[a0  b0  a1]
@@ -527,13 +527,13 @@ Y = b0*x + a0*y + b1 =
 with the total least-squares method.</p>
 <p>Number of source and destination coordinates must match.</p>
 <p>The transformation is defined as:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">X</span> <span class="o">=</span> <span class="n">a0</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="n">b0</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="n">a1</span>
-<span class="n">Y</span> <span class="o">=</span> <span class="n">b0</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">a0</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="n">b1</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">X</span> <span class="o">=</span> <span class="n">a0</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="n">b0</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="n">a1</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">b0</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">a0</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="n">b1</span>
 </pre></div>
 </div>
 <p>These equations can be transformed to the following form:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="mi">0</span> <span class="o">=</span> <span class="n">a0</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="n">b0</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="n">a1</span> <span class="o">-</span> <span class="n">X</span>
-<span class="mi">0</span> <span class="o">=</span> <span class="n">b0</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">a0</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="n">b1</span> <span class="o">-</span> <span class="n">Y</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="mi">0</span> <span class="o">=</span> <span class="n">a0</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="n">b0</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="n">a1</span> <span class="o">-</span> <span class="n">X</span>
+<span class="mi">0</span> <span class="o">=</span> <span class="n">b0</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">a0</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="n">b1</span> <span class="o">-</span> <span class="n">Y</span>
 </pre></div>
 </div>
 <p>which exist for each set of corresponding points, so we have a set of
@@ -952,10 +952,10 @@ axes, respectively. The <cite>orientation</cite> value follows
 distribution. In other words, a flat accumulator distribution with low
 values may be caused by a too low bin size.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r293" rules="none">
+<table class="docutils citation" frame="void" id="r313" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[R293]</a></td><td>Xie, Yonghong, and Qiang Ji. &#8220;A new efficient ellipse detection
+<tr><td class="label"><a class="fn-backref" href="#id2">[R313]</a></td><td>Xie, Yonghong, and Qiang Ji. &#8220;A new efficient ellipse detection
 method.&#8221; Pattern Recognition, 2002. Proceedings. 16th International
 Conference on. Vol. 2. IEEE, 2002</td></tr>
 </tbody>
@@ -1175,13 +1175,13 @@ an (n+1) x n integer array.</p>
 </div>
 <p class="rubric">Notes</p>
 <p>The FRT has a unique inverse iff n is prime.
-See <a class="reference internal" href="#r294">[R294]</a> for an overview.
+See <a class="reference internal" href="#r314">[R314]</a> for an overview.
 The idea for this algorithm is due to Vlad Negnevitski.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r294" rules="none">
+<table class="docutils citation" frame="void" id="r314" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R294]</td><td><em>(<a class="fn-backref" href="#id3">1</a>, <a class="fn-backref" href="#id4">2</a>)</em> A. Kingston and I. Svalbe, &#8220;Projective transforms on periodic
+<tr><td class="label">[R314]</td><td><em>(<a class="fn-backref" href="#id3">1</a>, <a class="fn-backref" href="#id4">2</a>)</em> A. Kingston and I. Svalbe, &#8220;Projective transforms on periodic
 discrete image arrays,&#8221; in P. Hawkes (Ed), Advances in Imaging
 and Electron Physics, 139 (2006)</td></tr>
 </tbody>
@@ -1235,10 +1235,10 @@ left of it, i.e.:</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r295" rules="none">
+<table class="docutils citation" frame="void" id="r315" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id5">[R295]</a></td><td>F.C. Crow, &#8220;Summed-area tables for texture mapping,&#8221;
+<tr><td class="label"><a class="fn-backref" href="#id5">[R315]</a></td><td>F.C. Crow, &#8220;Summed-area tables for texture mapping,&#8221;
 ACM SIGGRAPH Computer Graphics, vol. 18, 1984, pp. 207-212.</td></tr>
 </tbody>
 </table>
@@ -1418,41 +1418,41 @@ a slightly modified Kaczmarz method.</p>
 reconstruction. Further iterations will tend to enhance high-frequency
 information, but will also often increase the noise.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r296" rules="none">
+<table class="docutils citation" frame="void" id="r316" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id6">[R296]</a></td><td>AC Kak, M Slaney, &#8220;Principles of Computerized Tomographic
+<tr><td class="label"><a class="fn-backref" href="#id6">[R316]</a></td><td>AC Kak, M Slaney, &#8220;Principles of Computerized Tomographic
 Imaging&#8221;, IEEE Press 1988.</td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r297" rules="none">
+<table class="docutils citation" frame="void" id="r317" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id7">[R297]</a></td><td>AH Andersen, AC Kak, &#8220;Simultaneous algebraic reconstruction
+<tr><td class="label"><a class="fn-backref" href="#id7">[R317]</a></td><td>AH Andersen, AC Kak, &#8220;Simultaneous algebraic reconstruction
 technique (SART): a superior implementation of the ART algorithm&#8221;,
 Ultrasonic Imaging 6 pp 81&#8211;94 (1984)</td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r298" rules="none">
+<table class="docutils citation" frame="void" id="r318" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id8">[R298]</a></td><td>S Kaczmarz, &#8220;Angenäherte auflösung von systemen linearer
+<tr><td class="label"><a class="fn-backref" href="#id8">[R318]</a></td><td>S Kaczmarz, &#8220;Angenäherte auflösung von systemen linearer
 gleichungen&#8221;, Bulletin International de l’Academie Polonaise des
 Sciences et des Lettres 35 pp 355&#8211;357 (1937)</td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r299" rules="none">
+<table class="docutils citation" frame="void" id="r319" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id9">[R299]</a></td><td>Kohler, T. &#8220;A projection access scheme for iterative
+<tr><td class="label"><a class="fn-backref" href="#id9">[R319]</a></td><td>Kohler, T. &#8220;A projection access scheme for iterative
 reconstruction based on the golden section.&#8221; Nuclear Science
 Symposium Conference Record, 2004 IEEE. Vol. 6. IEEE, 2004.</td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r300" rules="none">
+<table class="docutils citation" frame="void" id="r320" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id10">[R300]</a></td><td>Kaczmarz&#8217; method, Wikipedia,
+<tr><td class="label"><a class="fn-backref" href="#id10">[R320]</a></td><td>Kaczmarz&#8217; method, Wikipedia,
 <a class="reference external" href="http://en.wikipedia.org/wiki/Kaczmarz_method">http://en.wikipedia.org/wiki/Kaczmarz_method</a></td></tr>
 </tbody>
 </table>
@@ -1534,10 +1534,10 @@ indicating line start and end.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r301" rules="none">
+<table class="docutils citation" frame="void" id="r321" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id11">[R301]</a></td><td>C. Galamhos, J. Matas and J. Kittler, &#8220;Progressive probabilistic
+<tr><td class="label"><a class="fn-backref" href="#id11">[R321]</a></td><td>C. Galamhos, J. Matas and J. Kittler, &#8220;Progressive probabilistic
 Hough transform for line detection&#8221;, in IEEE Computer Society
 Conference on Computer Vision and Pattern Recognition, 1999.</td></tr>
 </tbody>
@@ -1594,10 +1594,10 @@ cval is the value when mode is equal to &#8216;constant&#8217;.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r302" rules="none">
+<table class="docutils citation" frame="void" id="r322" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id12">[R302]</a></td><td><a class="reference external" href="http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf">http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id12">[R322]</a></td><td><a class="reference external" href="http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf">http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf</a></td></tr>
 </tbody>
 </table>
 </dd></dl>
@@ -1663,10 +1663,10 @@ cval is the value when mode is equal to &#8216;constant&#8217;.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r303" rules="none">
+<table class="docutils citation" frame="void" id="r323" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id13">[R303]</a></td><td><a class="reference external" href="http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf">http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id13">[R323]</a></td><td><a class="reference external" href="http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf">http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf</a></td></tr>
 </tbody>
 </table>
 </dd></dl>
@@ -1736,16 +1736,16 @@ cval is the value when mode is equal to &#8216;constant&#8217;.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r304" rules="none">
+<table class="docutils citation" frame="void" id="r324" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id14">[R304]</a></td><td><a class="reference external" href="http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf">http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id14">[R324]</a></td><td><a class="reference external" href="http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf">http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r305" rules="none">
+<table class="docutils citation" frame="void" id="r325" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id15">[R305]</a></td><td><a class="reference external" href="http://sepwww.stanford.edu/~morgan/texturematch/paper_html/node3.html">http://sepwww.stanford.edu/~morgan/texturematch/paper_html/node3.html</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id15">[R325]</a></td><td><a class="reference external" href="http://sepwww.stanford.edu/~morgan/texturematch/paper_html/node3.html">http://sepwww.stanford.edu/~morgan/texturematch/paper_html/node3.html</a></td></tr>
 </tbody>
 </table>
 </dd></dl>
@@ -1800,10 +1800,10 @@ cval is the value when mode is equal to &#8216;constant&#8217;.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r306" rules="none">
+<table class="docutils citation" frame="void" id="r326" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id16">[R306]</a></td><td><a class="reference external" href="http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf">http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id16">[R326]</a></td><td><a class="reference external" href="http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf">http://web.mit.edu/persci/people/adelson/pub_pdfs/pyramid83.pdf</a></td></tr>
 </tbody>
 </table>
 </dd></dl>
@@ -1883,8 +1883,26 @@ mean, see <cite>skimage.measure.local_sum</cite> and
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>scaled</strong> : ndarray</p>
-<blockquote class="last">
+<blockquote>
 <div><p>Scaled version of the input.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first"><strong>order</strong> : int, optional</p>
+<blockquote>
+<div><p>The order of the spline interpolation, default is 1. The order has to
+be in the range 0-5. See <cite>skimage.transform.warp</cite> for detail.</p>
+</div></blockquote>
+<p><strong>mode</strong> : string, optional</p>
+<blockquote>
+<div><p>Points outside the boundaries of the input are filled according
+to the given mode (&#8216;constant&#8217;, &#8216;nearest&#8217;, &#8216;reflect&#8217; or &#8216;wrap&#8217;).</p>
+</div></blockquote>
+<p><strong>cval</strong> : float, optional</p>
+<blockquote class="last">
+<div><p>Used in conjunction with mode &#8216;constant&#8217;, the value outside
+the image boundaries.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1931,8 +1949,26 @@ of input channels does not equal the number of output channels a
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>resized</strong> : ndarray</p>
-<blockquote class="last">
+<blockquote>
 <div><p>Resized version of the input.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first"><strong>order</strong> : int, optional</p>
+<blockquote>
+<div><p>The order of the spline interpolation, default is 1. The order has to
+be in the range 0-5. See <cite>skimage.transform.warp</cite> for detail.</p>
+</div></blockquote>
+<p><strong>mode</strong> : string, optional</p>
+<blockquote>
+<div><p>Points outside the boundaries of the input are filled according
+to the given mode (&#8216;constant&#8217;, &#8216;nearest&#8217;, &#8216;reflect&#8217; or &#8216;wrap&#8217;).</p>
+</div></blockquote>
+<p><strong>cval</strong> : float, optional</p>
+<blockquote class="last">
+<div><p>Used in conjunction with mode &#8216;constant&#8217;, the value outside
+the image boundaries.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1976,8 +2012,26 @@ False.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>rotated</strong> : ndarray</p>
-<blockquote class="last">
+<blockquote>
 <div><p>Rotated version of the input.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first"><strong>order</strong> : int, optional</p>
+<blockquote>
+<div><p>The order of the spline interpolation, default is 1. The order has to
+be in the range 0-5. See <cite>skimage.transform.warp</cite> for detail.</p>
+</div></blockquote>
+<p><strong>mode</strong> : string, optional</p>
+<blockquote>
+<div><p>Points outside the boundaries of the input are filled according
+to the given mode (&#8216;constant&#8217;, &#8216;nearest&#8217;, &#8216;reflect&#8217; or &#8216;wrap&#8217;).</p>
+</div></blockquote>
+<p><strong>cval</strong> : float, optional</p>
+<blockquote class="last">
+<div><p>Used in conjunction with mode &#8216;constant&#8217;, the value outside
+the image boundaries.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -2032,8 +2086,31 @@ rapidly beyond <cite>radius</cite>.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>swirled</strong> : ndarray</p>
-<blockquote class="last">
+<blockquote>
 <div><p>Swirled version of the input.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first"><strong>output_shape</strong> : tuple (rows, cols), optional</p>
+<blockquote>
+<div><p>Shape of the output image generated. By default the shape of the input
+image is preserved.</p>
+</div></blockquote>
+<p><strong>order</strong> : int, optional</p>
+<blockquote>
+<div><p>The order of the spline interpolation, default is 1. The order has to
+be in the range 0-5. See <cite>skimage.transform.warp</cite> for detail.</p>
+</div></blockquote>
+<p><strong>mode</strong> : string, optional</p>
+<blockquote>
+<div><p>Points outside the boundaries of the input are filled according
+to the given mode (&#8216;constant&#8217;, &#8216;nearest&#8217;, &#8216;reflect&#8217; or &#8216;wrap&#8217;).</p>
+</div></blockquote>
+<p><strong>cval</strong> : float, optional</p>
+<blockquote class="last">
+<div><p>Used in conjunction with mode &#8216;constant&#8217;, the value outside
+the image boundaries.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -2108,29 +2185,29 @@ routine.</p>
 </pre></div>
 </div>
 <p>The following image warps are all equal but differ substantially in
-execution time.</p>
+execution time. The image is shifted to the bottom.</p>
 <p>Use a geometric transform to warp an image (fast):</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.transform</span> <span class="kn">import</span> <span class="n">SimilarityTransform</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tform</span> <span class="o">=</span> <span class="n">SimilarityTransform</span><span class="p">(</span><span class="n">translation</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">warp</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">tform</span><span class="p">)</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">warped</span> <span class="o">=</span> <span class="n">warp</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">tform</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Shift an image to the right with a callable (slow):</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">shift</span><span class="p">(</span><span class="n">xy</span><span class="p">):</span>
+<p>Use a callable (slow):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">shift_down</span><span class="p">(</span><span class="n">xy</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">xy</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">10</span>
 <span class="gp">... </span>    <span class="k">return</span> <span class="n">xy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">warp</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">shift_right</span><span class="p">)</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">warped</span> <span class="o">=</span> <span class="n">warp</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">shift_down</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Use a transformation matrix to warp an image (fast):</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">warp</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">matrix</span><span class="p">)</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">warped</span> <span class="o">=</span> <span class="n">warp</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">matrix</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">skimage.transform</span> <span class="kn">import</span> <span class="n">ProjectiveTransform</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">warp</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">ProjectiveTransform</span><span class="p">(</span><span class="n">matrix</span><span class="o">=</span><span class="n">matrix</span><span class="p">))</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">warped</span> <span class="o">=</span> <span class="n">warp</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">ProjectiveTransform</span><span class="p">(</span><span class="n">matrix</span><span class="o">=</span><span class="n">matrix</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>You can also use the inverse of a geometric transformation (fast):</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">warp</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">tform</span><span class="o">.</span><span class="n">inverse</span><span class="p">)</span> 
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">warped</span> <span class="o">=</span> <span class="n">warp</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">tform</span><span class="o">.</span><span class="n">inverse</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>

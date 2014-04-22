@@ -34,3 +34,8 @@ to robustly estimate the parameter set by detecting outliers.
 **Python source code:** :download:`download <plot_matching.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_matching.ipynb>`
+(generated using ``skimage`` |version|)
+

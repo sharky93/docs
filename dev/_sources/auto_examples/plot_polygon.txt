@@ -21,3 +21,8 @@ This example shows how to approximate (Douglas-Peucker algorithm) and subdivide
 **Python source code:** :download:`download <plot_polygon.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_polygon.ipynb>`
+(generated using ``skimage`` |version|)
+

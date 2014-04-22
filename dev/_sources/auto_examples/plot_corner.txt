@@ -24,3 +24,8 @@ position of corners.
 **Python source code:** :download:`download <plot_corner.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_corner.ipynb>`
+(generated using ``skimage`` |version|)
+

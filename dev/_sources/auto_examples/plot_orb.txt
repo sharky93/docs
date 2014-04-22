@@ -26,3 +26,8 @@ is preferred for real-time applications.
 **Python source code:** :download:`download <plot_orb.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_orb.ipynb>`
+(generated using ``skimage`` |version|)
+

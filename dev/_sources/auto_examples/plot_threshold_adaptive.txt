@@ -29,3 +29,8 @@ local neighborhood minus an offset value.
 **Python source code:** :download:`download <plot_threshold_adaptive.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_threshold_adaptive.ipynb>`
+(generated using ``skimage`` |version|)
+

@@ -29,3 +29,8 @@ The example compares the local threshold with the global threshold.
 **Python source code:** :download:`download <plot_local_otsu.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_local_otsu.ipynb>`
+(generated using ``skimage`` |version|)
+

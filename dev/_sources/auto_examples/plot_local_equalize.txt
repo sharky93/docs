@@ -33,3 +33,8 @@ References
 **Python source code:** :download:`download <plot_local_equalize.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_local_equalize.ipynb>`
+(generated using ``skimage`` |version|)
+

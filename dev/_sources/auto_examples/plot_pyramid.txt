@@ -23,3 +23,8 @@ detection.
 **Python source code:** :download:`download <plot_pyramid.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_pyramid.ipynb>`
+(generated using ``skimage`` |version|)
+

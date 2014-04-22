@@ -33,3 +33,8 @@ the template.
 **Python source code:** :download:`download <plot_template.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_template.ipynb>`
+(generated using ``skimage`` |version|)
+

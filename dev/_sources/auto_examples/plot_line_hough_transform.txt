@@ -73,3 +73,8 @@ References
 **Python source code:** :download:`download <plot_line_hough_transform.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_line_hough_transform.ipynb>`
+(generated using ``skimage`` |version|)
+

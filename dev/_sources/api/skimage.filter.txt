@@ -16,6 +16,17 @@ Module: :mod:`filter`
   :show-inheritance:
 
   .. automethod:: __init__
+
+:class:`deprecated`
+-------------------
+
+
+.. autoclass:: deprecated
+  :members:
+  :undoc-members:
+  :show-inheritance:
+
+  .. automethod:: __init__
 .. autosummary::
 
    skimage.filter.canny
@@ -29,7 +40,6 @@ Module: :mod:`filter`
    skimage.filter.hscharr
    skimage.filter.hsobel
    skimage.filter.inverse
-   skimage.filter.median_filter
    skimage.filter.prewitt
    skimage.filter.rank_order
    skimage.filter.roberts
@@ -100,11 +110,6 @@ inverse
 -------
 
 .. autofunction:: skimage.filter.inverse
-
-median_filter
--------------
-
-.. autofunction:: skimage.filter.median_filter
 
 prewitt
 -------

@@ -49,3 +49,8 @@ is not rocket science.
 **Python source code:** :download:`download <plot_gabors_from_lena.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_gabors_from_lena.ipynb>`
+(generated using ``skimage`` |version|)
+

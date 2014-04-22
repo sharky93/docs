@@ -35,3 +35,8 @@ but with very different mean structural similarity indices.
 **Python source code:** :download:`download <plot_ssim.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_ssim.ipynb>`
+(generated using ``skimage`` |version|)
+

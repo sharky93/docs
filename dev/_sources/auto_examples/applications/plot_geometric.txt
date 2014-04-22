@@ -166,3 +166,8 @@ the image so that the distortion is removed and then apply a matching algorithm:
 **Python source code:** :download:`download <plot_geometric.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_geometric.ipynb>`
+(generated using ``skimage`` |version|)
+

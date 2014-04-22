@@ -27,3 +27,8 @@ See Wikipedia_ for more details on the algorithm.
 **Python source code:** :download:`download <plot_marked_watershed.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_marked_watershed.ipynb>`
+(generated using ``skimage`` |version|)
+

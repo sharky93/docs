@@ -24,3 +24,8 @@ dilated image are returned as local maxima.
 **Python source code:** :download:`download <plot_peak_local_max.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_peak_local_max.ipynb>`
+(generated using ``skimage`` |version|)
+

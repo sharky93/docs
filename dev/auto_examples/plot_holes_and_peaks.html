@@ -74,13 +74,13 @@ image.</p>
 <span class="n">image</span> <span class="o">=</span> <span class="n">rescale_intensity</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">in_range</span><span class="o">=</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span>
 
 <span class="c"># convenience function for plotting images</span>
-<span class="k">def</span> <span class="nf">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s">&#39;off&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s">&#39;off&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
 
-<span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&#39;original image&#39;</span><span class="p">)</span>
+<span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="s">&#39;Original image&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <img alt="../_images/plot_holes_and_peaks_1.png" src="../_images/plot_holes_and_peaks_1.png" />
@@ -99,8 +99,7 @@ of the original image.</p>
 
 <span class="n">filled</span> <span class="o">=</span> <span class="n">reconstruction</span><span class="p">(</span><span class="n">seed</span><span class="p">,</span> <span class="n">mask</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&#39;erosion&#39;</span><span class="p">)</span>
 
-<span class="n">imshow</span><span class="p">(</span><span class="n">filled</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">image</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">vmax</span><span class="o">=</span><span class="n">image</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&#39;after filling holes&#39;</span><span class="p">)</span>
+<span class="n">imshow</span><span class="p">(</span><span class="n">filled</span><span class="p">,</span> <span class="s">&#39;after filling holes&#39;</span><span class="p">,</span><span class="n">vmin</span><span class="o">=</span><span class="n">image</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">vmax</span><span class="o">=</span><span class="n">image</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
 </pre></div>
 </div>
 <img alt="../_images/plot_holes_and_peaks_2.png" src="../_images/plot_holes_and_peaks_2.png" />
@@ -108,8 +107,8 @@ of the original image.</p>
 definition) holes are surrounded by pixels of brighter value. Finally, we can
 isolate the dark regions by subtracting the reconstructed image from the
 original image.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">imshow</span><span class="p">(</span><span class="n">image</span> <span class="o">-</span> <span class="n">filled</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&#39;holes&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">imshow</span><span class="p">(</span><span class="n">image</span> <span class="o">-</span> <span class="n">filled</span><span class="p">,</span> <span class="s">&#39;holes&#39;</span><span class="p">)</span>
+<span class="c"># plt.title(&#39;holes&#39;)</span>
 </pre></div>
 </div>
 <img alt="../_images/plot_holes_and_peaks_3.png" src="../_images/plot_holes_and_peaks_3.png" />
@@ -121,13 +120,14 @@ intensity instead of the maximum. The remainder of the process is the same.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">seed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 <span class="n">seed</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
 <span class="n">rec</span> <span class="o">=</span> <span class="n">reconstruction</span><span class="p">(</span><span class="n">seed</span><span class="p">,</span> <span class="n">mask</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&#39;dilation&#39;</span><span class="p">)</span>
-<span class="n">imshow</span><span class="p">(</span><span class="n">image</span> <span class="o">-</span> <span class="n">rec</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&#39;peaks&#39;</span><span class="p">)</span>
+<span class="n">imshow</span><span class="p">(</span><span class="n">image</span> <span class="o">-</span> <span class="n">rec</span><span class="p">,</span> <span class="s">&#39;peaks&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 <img alt="../_images/plot_holes_and_peaks_4.png" src="../_images/plot_holes_and_peaks_4.png" />
 <p><strong>Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_holes_and_peaks.py"><tt class="xref download docutils literal"><span class="pre">download</span></tt></a>
+(generated using <tt class="docutils literal"><span class="pre">skimage</span></tt> 0.10dev)</p>
+<p><strong>IPython Notebook:</strong> <a class="reference download internal" href="../_downloads/plot_holes_and_peaks.ipynb"><tt class="xref download docutils literal"><span class="pre">download</span></tt></a>
 (generated using <tt class="docutils literal"><span class="pre">skimage</span></tt> 0.10dev)</p>
 </div>
 

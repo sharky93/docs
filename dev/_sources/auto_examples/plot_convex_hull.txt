@@ -27,3 +27,8 @@ A good overview of the algorithm is given on `Steve Eddin's blog
 **Python source code:** :download:`download <plot_convex_hull.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_convex_hull.ipynb>`
+(generated using ``skimage`` |version|)
+

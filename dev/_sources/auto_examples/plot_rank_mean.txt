@@ -32,3 +32,8 @@ frequencies remain untouched.
 **Python source code:** :download:`download <plot_rank_mean.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_rank_mean.ipynb>`
+(generated using ``skimage`` |version|)
+

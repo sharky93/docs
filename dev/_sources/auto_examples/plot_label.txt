@@ -26,3 +26,8 @@ steps are applied:
 **Python source code:** :download:`download <plot_label.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_label.ipynb>`
+(generated using ``skimage`` |version|)
+

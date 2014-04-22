@@ -40,6 +40,9 @@ Module: :mod:`feature`
   .. automethod:: __init__
 .. autosummary::
 
+   skimage.feature.blob_dog
+   skimage.feature.blob_doh
+   skimage.feature.blob_log
    skimage.feature.corner_fast
    skimage.feature.corner_foerstner
    skimage.feature.corner_harris
@@ -53,6 +56,7 @@ Module: :mod:`feature`
    skimage.feature.greycomatrix
    skimage.feature.greycoprops
    skimage.feature.hessian_matrix
+   skimage.feature.hessian_matrix_det
    skimage.feature.hessian_matrix_eigvals
    skimage.feature.hog
    skimage.feature.local_binary_pattern
@@ -62,6 +66,21 @@ Module: :mod:`feature`
    skimage.feature.plot_matches
    skimage.feature.structure_tensor
    skimage.feature.structure_tensor_eigvals
+
+blob_dog
+--------
+
+.. autofunction:: skimage.feature.blob_dog
+
+blob_doh
+--------
+
+.. autofunction:: skimage.feature.blob_doh
+
+blob_log
+--------
+
+.. autofunction:: skimage.feature.blob_log
 
 corner_fast
 -----------
@@ -127,6 +146,11 @@ hessian_matrix
 --------------
 
 .. autofunction:: skimage.feature.hessian_matrix
+
+hessian_matrix_det
+------------------
+
+.. autofunction:: skimage.feature.hessian_matrix_det
 
 hessian_matrix_eigvals
 ----------------------

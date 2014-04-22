@@ -79,3 +79,8 @@ specified radius.
 **Python source code:** :download:`download <plot_swirl.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_swirl.ipynb>`
+(generated using ``skimage`` |version|)
+

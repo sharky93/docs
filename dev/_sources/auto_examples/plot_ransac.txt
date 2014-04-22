@@ -21,3 +21,8 @@ the RANSAC algorithm.
 **Python source code:** :download:`download <plot_ransac.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_ransac.ipynb>`
+(generated using ``skimage`` |version|)
+

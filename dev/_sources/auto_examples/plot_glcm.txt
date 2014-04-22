@@ -33,3 +33,8 @@ regression, to label image patches from new images.
 **Python source code:** :download:`download <plot_glcm.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_glcm.ipynb>`
+(generated using ``skimage`` |version|)
+

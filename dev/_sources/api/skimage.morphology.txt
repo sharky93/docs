@@ -21,12 +21,6 @@ Module: :mod:`morphology`
    skimage.morphology.dilation
    skimage.morphology.disk
    skimage.morphology.erosion
-   skimage.morphology.greyscale_black_top_hat
-   skimage.morphology.greyscale_close
-   skimage.morphology.greyscale_dilate
-   skimage.morphology.greyscale_erode
-   skimage.morphology.greyscale_open
-   skimage.morphology.greyscale_white_top_hat
    skimage.morphology.label
    skimage.morphology.medial_axis
    skimage.morphology.octagon
@@ -110,36 +104,6 @@ erosion
 -------
 
 .. autofunction:: skimage.morphology.erosion
-
-greyscale_black_top_hat
------------------------
-
-.. autofunction:: skimage.morphology.greyscale_black_top_hat
-
-greyscale_close
----------------
-
-.. autofunction:: skimage.morphology.greyscale_close
-
-greyscale_dilate
-----------------
-
-.. autofunction:: skimage.morphology.greyscale_dilate
-
-greyscale_erode
----------------
-
-.. autofunction:: skimage.morphology.greyscale_erode
-
-greyscale_open
---------------
-
-.. autofunction:: skimage.morphology.greyscale_open
-
-greyscale_white_top_hat
------------------------
-
-.. autofunction:: skimage.morphology.greyscale_white_top_hat
 
 label
 -----

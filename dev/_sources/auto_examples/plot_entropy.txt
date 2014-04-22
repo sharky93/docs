@@ -21,3 +21,8 @@ coded in an image.
 **Python source code:** :download:`download <plot_entropy.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_entropy.ipynb>`
+(generated using ``skimage`` |version|)
+

@@ -22,3 +22,8 @@ implementation.
 **Python source code:** :download:`download <plot_censure.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_censure.ipynb>`
+(generated using ``skimage`` |version|)
+

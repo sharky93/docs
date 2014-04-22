@@ -39,3 +39,8 @@ pixels based on their spatial closeness and radiometric similarity.
 **Python source code:** :download:`download <plot_denoise.py>`
 (generated using ``skimage`` |version|)
 
+
+
+**IPython Notebook:** :download:`download <./notebook/plot_denoise.ipynb>`
+(generated using ``skimage`` |version|)
+

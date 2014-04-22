@@ -61,7 +61,6 @@
 <li class="toctree-l2"><a class="reference internal" href="skimage.html#subpackages">Subpackages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.html#utility-functions">Utility Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.html#dtype-limits">dtype_limits</a></li>
-<li class="toctree-l2"><a class="reference internal" href="skimage.html#get-log">get_log</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.html#img-as-bool">img_as_bool</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.html#img-as-float">img_as_float</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.html#img-as-int">img_as_int</a></li>
@@ -81,8 +80,6 @@
 <li class="toctree-l2"><a class="reference internal" href="skimage.color.html#guess-spatial-dimensions">guess_spatial_dimensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.color.html#hed2rgb">hed2rgb</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.color.html#hsv2rgb">hsv2rgb</a></li>
-<li class="toctree-l2"><a class="reference internal" href="skimage.color.html#is-gray">is_gray</a></li>
-<li class="toctree-l2"><a class="reference internal" href="skimage.color.html#is-rgb">is_rgb</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.color.html#lab2lch">lab2lch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.color.html#lab2rgb">lab2rgb</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.color.html#lab2xyz">lab2xyz</a></li>
@@ -142,18 +139,19 @@
 <li class="toctree-l2"><a class="reference internal" href="skimage.exposure.html#adjust-log">adjust_log</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.exposure.html#adjust-sigmoid">adjust_sigmoid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.exposure.html#cumulative-distribution">cumulative_distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="skimage.exposure.html#equalize">equalize</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.exposure.html#equalize-adapthist">equalize_adapthist</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.exposure.html#equalize-hist">equalize_hist</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.exposure.html#histogram">histogram</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.exposure.html#rescale-intensity">rescale_intensity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="skimage.exposure.html#unwrap-phase">unwrap_phase</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="skimage.feature.html">Module: <tt class="docutils literal"><span class="pre">feature</span></tt></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="skimage.feature.html#brief"><tt class="docutils literal"><span class="pre">BRIEF</span></tt></a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.feature.html#censure"><tt class="docutils literal"><span class="pre">CENSURE</span></tt></a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.feature.html#orb"><tt class="docutils literal"><span class="pre">ORB</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.feature.html#blob-dog">blob_dog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.feature.html#blob-doh">blob_doh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.feature.html#blob-log">blob_log</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.feature.html#corner-fast">corner_fast</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.feature.html#corner-foerstner">corner_foerstner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.feature.html#corner-harris">corner_harris</a></li>
@@ -167,6 +165,7 @@
 <li class="toctree-l2"><a class="reference internal" href="skimage.feature.html#greycomatrix">greycomatrix</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.feature.html#greycoprops">greycoprops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.feature.html#hessian-matrix">hessian_matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.feature.html#hessian-matrix-det">hessian_matrix_det</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.feature.html#hessian-matrix-eigvals">hessian_matrix_eigvals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.feature.html#hog">hog</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.feature.html#local-binary-pattern">local_binary_pattern</a></li>
@@ -180,6 +179,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="skimage.filter.html">Module: <tt class="docutils literal"><span class="pre">filter</span></tt></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.html#lpifilter2d"><tt class="docutils literal"><span class="pre">LPIFilter2D</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.filter.html#deprecated"><tt class="docutils literal"><span class="pre">deprecated</span></tt></a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.html#canny">canny</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.html#denoise-bilateral">denoise_bilateral</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.html#denoise-tv-bregman">denoise_tv_bregman</a></li>
@@ -191,7 +191,6 @@
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.html#hscharr">hscharr</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.html#hsobel">hsobel</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.html#inverse">inverse</a></li>
-<li class="toctree-l2"><a class="reference internal" href="skimage.filter.html#median-filter">median_filter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.html#prewitt">prewitt</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.html#rank-order">rank_order</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.html#roberts">roberts</a></li>
@@ -210,11 +209,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="skimage.filter.rank.html">Module: <tt class="docutils literal"><span class="pre">filter.rank</span></tt></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#deprecated"><tt class="docutils literal"><span class="pre">deprecated</span></tt></a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#autolevel">autolevel</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#autolevel-percentile">autolevel_percentile</a></li>
-<li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#bilateral-mean">bilateral_mean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#bilateral-pop">bilateral_pop</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#bottomhat">bottomhat</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#enhance-contrast">enhance_contrast</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#enhance-contrast-percentile">enhance_contrast_percentile</a></li>
@@ -226,21 +222,12 @@
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#mean">mean</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#mean-bilateral">mean_bilateral</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#mean-percentile">mean_percentile</a></li>
-<li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#meansubtraction">meansubtraction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#median">median</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#minimum">minimum</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#modal">modal</a></li>
-<li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#morph-contr-enh">morph_contr_enh</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#noise-filter">noise_filter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#otsu">otsu</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#percentile">percentile</a></li>
-<li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#percentile-autolevel">percentile_autolevel</a></li>
-<li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#percentile-gradient">percentile_gradient</a></li>
-<li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#percentile-mean">percentile_mean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#percentile-mean-subtraction">percentile_mean_subtraction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#percentile-morph-contr-enh">percentile_morph_contr_enh</a></li>
-<li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#percentile-pop">percentile_pop</a></li>
-<li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#percentile-threshold">percentile_threshold</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#pop">pop</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#pop-bilateral">pop_bilateral</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.filter.rank.html#pop-percentile">pop_percentile</a></li>
@@ -269,7 +256,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.io.html#multiimage"><tt class="docutils literal"><span class="pre">MultiImage</span></tt></a></li>
-<li class="toctree-l2"><a class="reference internal" href="skimage.io.html#video"><tt class="docutils literal"><span class="pre">Video</span></tt></a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.io.html#call-plugin">call_plugin</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.io.html#concatenate-images">concatenate_images</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.io.html#find-available-plugins">find_available_plugins</a></li>
@@ -295,6 +281,7 @@
 <li class="toctree-l2"><a class="reference internal" href="skimage.measure.html#linemodel"><tt class="docutils literal"><span class="pre">LineModel</span></tt></a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.measure.html#approximate-polygon">approximate_polygon</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.measure.html#block-reduce">block_reduce</a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.measure.html#correct-mesh-orientation">correct_mesh_orientation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.measure.html#find-contours">find_contours</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.measure.html#marching-cubes">marching_cubes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.measure.html#mesh-surface-area">mesh_surface_area</a></li>
@@ -325,12 +312,6 @@
 <li class="toctree-l2"><a class="reference internal" href="skimage.morphology.html#dilation">dilation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.morphology.html#disk">disk</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.morphology.html#erosion">erosion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="skimage.morphology.html#greyscale-black-top-hat">greyscale_black_top_hat</a></li>
-<li class="toctree-l2"><a class="reference internal" href="skimage.morphology.html#greyscale-close">greyscale_close</a></li>
-<li class="toctree-l2"><a class="reference internal" href="skimage.morphology.html#greyscale-dilate">greyscale_dilate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="skimage.morphology.html#greyscale-erode">greyscale_erode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="skimage.morphology.html#greyscale-open">greyscale_open</a></li>
-<li class="toctree-l2"><a class="reference internal" href="skimage.morphology.html#greyscale-white-top-hat">greyscale_white_top_hat</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.morphology.html#label">label</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.morphology.html#medial-axis">medial_axis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.morphology.html#octagon">octagon</a></li>
@@ -360,8 +341,12 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="skimage.restoration.html">Module: <tt class="docutils literal"><span class="pre">restoration</span></tt></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="skimage.restoration.html#references">References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.restoration.html#denoise-bilateral">denoise_bilateral</a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.restoration.html#denoise-tv-bregman">denoise_tv_bregman</a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.restoration.html#denoise-tv-chambolle">denoise_tv_chambolle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.restoration.html#richardson-lucy">richardson_lucy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.restoration.html#unsupervised-wiener">unsupervised_wiener</a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.restoration.html#unwrap-phase">unwrap_phase</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.restoration.html#wiener">wiener</a></li>
 </ul>
 </li>
@@ -376,7 +361,6 @@
 <li class="toctree-l2"><a class="reference internal" href="skimage.segmentation.html#relabel-from-one">relabel_from_one</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.segmentation.html#relabel-sequential">relabel_sequential</a></li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.segmentation.html#slic">slic</a></li>
-<li class="toctree-l2"><a class="reference internal" href="skimage.segmentation.html#visualize-boundaries">visualize_boundaries</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="skimage.transform.html">Module: <tt class="docutils literal"><span class="pre">transform</span></tt></a><ul>
@@ -445,6 +429,22 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="skimage.viewer.canvastools.html#thicklinetool"><tt class="docutils literal"><span class="pre">ThickLineTool</span></tt></a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="skimage.viewer.plugins.html">Module: <tt class="docutils literal"><span class="pre">viewer.plugins</span></tt></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="skimage.viewer.plugins.html#cannyplugin"><tt class="docutils literal"><span class="pre">CannyPlugin</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.viewer.plugins.html#colorhistogram"><tt class="docutils literal"><span class="pre">ColorHistogram</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.viewer.plugins.html#crop"><tt class="docutils literal"><span class="pre">Crop</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.viewer.plugins.html#labelpainter"><tt class="docutils literal"><span class="pre">LabelPainter</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.viewer.plugins.html#lineprofile"><tt class="docutils literal"><span class="pre">LineProfile</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.viewer.plugins.html#measure"><tt class="docutils literal"><span class="pre">Measure</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.viewer.plugins.html#overlayplugin"><tt class="docutils literal"><span class="pre">OverlayPlugin</span></tt></a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.viewer.plugins.html#plotplugin"><tt class="docutils literal"><span class="pre">PlotPlugin</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="skimage.viewer.plugins.html#plugin"><tt class="docutils literal"><span class="pre">Plugin</span></tt></a><ul class="simple">
 </ul>
 </li>
 </ul>

@@ -216,7 +216,12 @@ dtype range:</p>
 </div>
 <p>Here, the <tt class="docutils literal"><span class="pre">in_range</span></tt> argument is set to the maximum range for a 10-bit image.
 By default, <tt class="docutils literal"><span class="pre">rescale_intensity</span></tt> stretches the values of <tt class="docutils literal"><span class="pre">in_range</span></tt> to match
-the range of the dtype.</p>
+the range of the dtype. <tt class="docutils literal"><span class="pre">rescale_intensity</span></tt> also accepts strings as inputs
+to <tt class="docutils literal"><span class="pre">in_range</span></tt> and <tt class="docutils literal"><span class="pre">out_range</span></tt>, so the example above could also be written
+as:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">image</span> <span class="o">=</span> <span class="n">exposure</span><span class="o">.</span><span class="n">rescale_intensity</span><span class="p">(</span><span class="n">img10bit</span><span class="p">,</span> <span class="n">in_range</span><span class="o">=</span><span class="s">&#39;uint10&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="note-about-negative-values">
 <h2>Note about negative values<a class="headerlink" href="#note-about-negative-values" title="Permalink to this headline">¶</a></h2>

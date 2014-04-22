@@ -125,6 +125,8 @@ False</p>
 &gt;&gt;&gt; from skimage import novice
 &gt;&gt;&gt; from skimage import data
 &gt;&gt;&gt; picture = novice.open(data.data_dir + &#8216;/chelsea.png&#8217;)</p>
+<p>Load an image from a URL. URL must start with http(s):// or ftp(s)://
+&gt;&gt;&gt; picture = novice.open(&#8216;<a class="reference external" href="http://scikit-image.org/_static/img/logo.png">http://scikit-image.org/_static/img/logo.png</a>&#8216;)</p>
 <p>Create a blank 100 pixel wide, 200 pixel tall white image
 &gt;&gt;&gt; pic = Picture.from_size((100, 200), color=(255, 255, 255))</p>
 <p>Use numpy to make an RGB byte array (shape is height x width x 3)
@@ -134,7 +136,7 @@ False</p>
 &gt;&gt;&gt; pic = Picture(array=data)</p>
 <p>Get the bottom-left pixel
 &gt;&gt;&gt; pic[0, 0]
-Pixel(red=255, green=0, blue=0)</p>
+Pixel(red=255, green=0, blue=0, alpha=255)</p>
 <p>Get the top row of the picture
 &gt;&gt;&gt; pic[:, pic.height-1]
 Picture(100 x 1)</p>
@@ -164,6 +166,12 @@ Picture(100 x 1)</p>
 <dt id="skimage.novice.Picture.__init__">
 <tt class="descname">__init__</tt><big>(</big><em>path=None</em>, <em>array=None</em>, <em>xy_array=None</em><big>)</big><a class="headerlink" href="#skimage.novice.Picture.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="attribute">
+<dt id="skimage.novice.Picture.alpha">
+<tt class="descname">alpha</tt><a class="headerlink" href="#skimage.novice.Picture.alpha" title="Permalink to this definition">¶</a></dt>
+<dd><p>The transparency component of the pixel (0-255).</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="skimage.novice.Picture.array">
@@ -197,8 +205,8 @@ Picture(100 x 1)</p>
 </div></blockquote>
 <p><strong>color</strong> : tuple or str</p>
 <blockquote class="last">
-<div><p>RGB tuple with the fill color for the picture [0-255] or a valid
-key in <cite>color_dict</cite>.</p>
+<div><p>RGB or RGBA tuple with the fill color for the picture [0-255] or
+a valid key in <cite>color_dict</cite>.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -240,6 +248,12 @@ key in <cite>color_dict</cite>.</p>
 <dt id="skimage.novice.Picture.rgb">
 <tt class="descname">rgb</tt><a class="headerlink" href="#skimage.novice.Picture.rgb" title="Permalink to this definition">¶</a></dt>
 <dd><p>The RGB color components of the pixel (3 values 0-255).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="skimage.novice.Picture.rgba">
+<tt class="descname">rgba</tt><a class="headerlink" href="#skimage.novice.Picture.rgba" title="Permalink to this definition">¶</a></dt>
+<dd><p>The RGBA color components of the pixel (4 values 0-255).</p>
 </dd></dl>
 
 <dl class="method">
