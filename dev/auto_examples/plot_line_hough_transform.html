@@ -1,7 +1,6 @@
 
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,18 +63,18 @@ then use the Hough transform to explore a parameter space for straight lines
 that may run through the image.</p>
 <div class="section" id="algorithm-overview">
 <h2>Algorithm overview<a class="headerlink" href="#algorithm-overview" title="Permalink to this headline">¶</a></h2>
-<p>Usually, lines are parameterised as <img class="math" src="../_images/math/c730c668a5b794ff433e133334c5770dcb90a767.png" alt="y = mx + c"/>, with a gradient
-<img class="math" src="../_images/math/f5047d1e0cbb50ec208923a22cd517c55100fa7b.png" alt="m"/> and y-intercept <cite>c</cite>. However, this would mean that <img class="math" src="../_images/math/f5047d1e0cbb50ec208923a22cd517c55100fa7b.png" alt="m"/> goes to
+<p>Usually, lines are parameterised as <span class="math">y = mx + c</span>, with a gradient
+<span class="math">m</span> and y-intercept <cite>c</cite>. However, this would mean that <span class="math">m</span> goes to
 infinity for vertical lines. Instead, we therefore construct a segment
 perpendicular to the line, leading to the origin. The line is represented by the
-length of that segment, <img class="math" src="../_images/math/b55ca7a0aa88ab7d58f4fc035317fdac39b17861.png" alt="r"/>, and the angle it makes with the x-axis,
-<img class="math" src="../_images/math/52e8ed7a3ba22130ad3984eb2cd413406475a689.png" alt="\theta"/>.</p>
+length of that segment, <span class="math">r</span>, and the angle it makes with the x-axis,
+<span class="math">\theta</span>.</p>
 <p>The Hough transform constructs a histogram array representing the parameter
-space (i.e., an <img class="math" src="../_images/math/c974ce563a0da50b16b3b28b389de6ccd4aceb8a.png" alt="M \times N"/> matrix, for <img class="math" src="../_images/math/5d1e4485dc90c450e8c76826516c1b2ccb8fce16.png" alt="M"/> different values of the
-radius and <img class="math" src="../_images/math/fc97ef67268cd4e91bacdf12b8901d7036c9a056.png" alt="N"/> different values of <img class="math" src="../_images/math/52e8ed7a3ba22130ad3984eb2cd413406475a689.png" alt="\theta"/>).  For each parameter
-combination, <img class="math" src="../_images/math/b55ca7a0aa88ab7d58f4fc035317fdac39b17861.png" alt="r"/> and <img class="math" src="../_images/math/52e8ed7a3ba22130ad3984eb2cd413406475a689.png" alt="\theta"/>, we then find the number of non-zero
+space (i.e., an <span class="math">M \times N</span> matrix, for <span class="math">M</span> different values of the
+radius and <span class="math">N</span> different values of <span class="math">\theta</span>).  For each parameter
+combination, <span class="math">r</span> and <span class="math">\theta</span>, we then find the number of non-zero
 pixels in the input image that would fall close to the corresponding line, and
-increment the array at position <img class="math" src="../_images/math/e31f416f2b44eebe61679d8344cf8bf35feb1f73.png" alt="(r, \theta)"/> appropriately.</p>
+increment the array at position <span class="math">(r, \theta)</span> appropriately.</p>
 <p>We can think of each non-zero pixel &#8220;voting&#8221; for potential line candidates. The
 local maxima in the resulting histogram indicates the parameters of the most
 probably lines. In our example, the maxima occur at 45 and 135 degrees,
