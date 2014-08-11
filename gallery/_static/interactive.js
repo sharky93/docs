@@ -120,7 +120,8 @@ $(document).ready(function () {
                         $('.section > img:first')
                             .clone()
                             .attr('src', image)
-                            .attr('title', timestamp)
+                            // image creation timstamp
+                            // .attr('title', timestamp)
                             .addClass('output_image')
                             .insertAfter('#run_btn');
                             i = i + 1;
@@ -128,7 +129,7 @@ $(document).ready(function () {
                         $('.section > img.output_image:last')
                             .clone()
                             .attr('src', image)
-                            .attr('title', timestamp)
+                            // .attr('title', timestamp)
                             .addClass('output_image')
                             .insertAfter('.section > img.output_image:last');
                     }
@@ -210,7 +211,7 @@ $(document).ready(function () {
                     if (e.result.hasOwnProperty('busy')) {
                         $('#success-message').html("Server Busy, try again later!").show();
                     } else {
-                        $('#success-message').html("Success: Received " + num_images + " image(s)").show();
+                        $('#success-message').html("Success: Received " + num_images + " image(s) at " + e.timestamp + " UTC -5").show();
                     }
                     code_running = false;
                 },
@@ -242,8 +243,6 @@ $(document).ready(function () {
         $('#runcode').hide();
         $('#loading').hide();
         $('#editcode').show();
-        $('#error-message').hide();
-        $('#success-message').hide();
         $('.all-output').hide();
     }
 
