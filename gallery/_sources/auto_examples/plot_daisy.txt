@@ -69,3 +69,7 @@ scale for illustrative purposes.
 **IPython Notebook:** :download:`download <./notebook/plot_daisy.ipynb>`
 (generated using ``skimage`` |version|)
 
+
+.. raw:: html
+
+    <div class="tobehidden">ZnJvbSBza2ltYWdlLmZlYXR1cmUgaW1wb3J0IGRhaXN5CmZyb20gc2tpbWFnZSBpbXBvcnQgZGF0YQppbXBvcnQgbWF0cGxvdGxpYi5weXBsb3QgYXMgcGx0CgoKaW1nID0gZGF0YS5jYW1lcmEoKQpkZXNjcywgZGVzY3NfaW1nID0gZGFpc3koaW1nLCBzdGVwPTE4MCwgcmFkaXVzPTU4LCByaW5ncz0yLCBoaXN0b2dyYW1zPTYsCiAgICAgICAgICAgICAgICAgICAgICAgICBvcmllbnRhdGlvbnM9OCwgdmlzdWFsaXplPVRydWUpCgpmaWcsIGF4ID0gcGx0LnN1YnBsb3RzKCkKYXguYXhpcygnb2ZmJykKYXguaW1zaG93KGRlc2NzX2ltZykKZGVzY3NfbnVtID0gZGVzY3Muc2hhcGVbMF0gKiBkZXNjcy5zaGFwZVsxXQpheC5zZXRfdGl0bGUoJyVpIERBSVNZIGRlc2NyaXB0b3JzIGV4dHJhY3RlZDonICUgZGVzY3NfbnVtKQpwbHQuc2hvdygp</div>
