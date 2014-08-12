@@ -280,11 +280,20 @@ $(document).ready(function () {
 
     // edit button fetches code from the URL
     $('#editcode').bind('click', function () {
+        // if one editor is already active, do nothing
+        if ($('#editor').length > 0) {
+            return;
+        }
         // fetch code url
         var code_url = $('a.download.internal:first').attr('href');
 
         $.get(code_url, function (data, status) {
             if (status === "success") {
+                
+                // replace div with editor
+                backup = $('div.highlight-python');
+                $('div.highlight-python').replaceWith('<div id="editor"></div>');
+
                 editcode(data);
             }
         });
@@ -303,7 +312,6 @@ $(document).ready(function () {
         snippet = encodedcode.eq(snippet_index).html();
 
         $(this).replaceWith('<div id="editor"></div>');
-        console.log(snippet_index);
 
         snippet = Base64.decode(snippet);
         editcode(snippet);
