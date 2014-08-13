@@ -50,6 +50,15 @@ provided by the projections), and we follow that rule here. Below is the
 original image and its Radon transform, often known as its _sinogram_:
 
 
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
+
 .. code-block:: python
 
 	
@@ -99,6 +108,15 @@ high frequency noise in the reconstruction. ``skimage`` provides a few
 different options for the filter.
 
 
+
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
 
 .. code-block:: python
 
@@ -154,6 +172,15 @@ form of a lower and upper threshold on the reconstructed values to be supplied
 to the reconstruction.
 
 
+
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
 
 .. code-block:: python
 

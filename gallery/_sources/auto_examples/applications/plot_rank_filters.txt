@@ -37,6 +37,15 @@ from `skimage.data` for all comparisons.
 
 
 
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
+
 .. code-block:: python
 
 	
@@ -67,6 +76,15 @@ Some noise is added to the image, 1% of pixels are randomly set to 255, 1% are
 randomly set to 0. The **median** filter is applied to remove the noise.
 
 
+
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
 
 .. code-block:: python
 
@@ -117,6 +135,15 @@ image.
 
 
 
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
+
 .. code-block:: python
 
 	
@@ -150,6 +177,15 @@ the central one.
     `skimage.filter.denoise_bilateral`.
 
 
+
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
 
 .. code-block:: python
 
@@ -199,6 +235,15 @@ equalization emphasizes every local gray-level variations.
 .. [3] http://en.wikipedia.org/wiki/Adaptive_histogram_equalization
 
 
+
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
 
 .. code-block:: python
 
@@ -252,6 +297,15 @@ picture.
 
 
 
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
+
 .. code-block:: python
 
 	
@@ -285,6 +339,15 @@ below illustrates how the percentile parameters influence the local auto-level
 result.
 
 
+
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
 
 .. code-block:: python
 
@@ -328,6 +391,15 @@ otherwise by the minimum local.
 
 
 
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
+
 .. code-block:: python
 
 	
@@ -363,6 +435,15 @@ The percentile version of the local morphological contrast enhancement uses
 percentile *p0* and *p1* instead of the local minimum and maximum.
 
 
+
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
 
 .. code-block:: python
 
@@ -415,6 +496,15 @@ The example compares the local threshold with the global threshold
 
 
 
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
+
 .. code-block:: python
 
 	
@@ -463,6 +553,15 @@ shift applied to a synthetic image.
 
 
 
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
+
 .. code-block:: python
 
 	
@@ -504,6 +603,15 @@ Here is an example of the classical morphological gray-level filters: opening,
 closing and morphological gradient.
 
 
+
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
 
 .. code-block:: python
 
@@ -560,6 +668,15 @@ images.
 
 
 
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
+
 .. code-block:: python
 
 	
@@ -598,6 +715,15 @@ In the following we compare the performance of different implementations
 available in `skimage`.
 
 
+
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
 
 .. code-block:: python
 
@@ -651,6 +777,15 @@ on increasing structuring element size:
 
 
 
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
+
 .. code-block:: python
 
 	
@@ -681,6 +816,15 @@ on increasing structuring element size:
 and increasing image size:
 
 
+
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
 
 .. code-block:: python
 
@@ -720,6 +864,15 @@ on increasing structuring element size:
 
 
 
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
+
 .. code-block:: python
 
 	
@@ -750,6 +903,15 @@ Comparison of outcome of the three methods:
 
 
 
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
+
 .. code-block:: python
 
 	
@@ -765,6 +927,15 @@ Comparison of outcome of the three methods:
 and increasing image size:
 
 
+
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
 
 .. code-block:: python
 
@@ -794,6 +965,15 @@ and increasing image size:
 .. image:: images/plot_rank_filters_18.png
 
 
+
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
 
 .. code-block:: python
 

@@ -19,6 +19,15 @@ produces a bright red image. Similarly, zeroing-out the blue channel leaves
 only the red and green channels, which combine to form yellow.
 
 
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
+
 .. code-block:: python
 
 	
@@ -56,6 +65,15 @@ Below, we plot a linear gradient in the hue, with the saturation and value
 turned all the way up:
 
 
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
+
 .. code-block:: python
 
 	import numpy as np
@@ -87,6 +105,15 @@ Now, let's create a little utility function to take an RGB image and:
 
 
 
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
+
 .. code-block:: python
 
 	
@@ -108,6 +135,15 @@ grayscale, so we need to a non-zero value to actually see the color we've set.
 Using the function above, we plot six images with a linear gradient in the hue
 and a non-zero saturation:
 
+
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
 
 .. code-block:: python
 
@@ -133,6 +169,15 @@ rectangles using slicing and scale the RGB values of some pixels found by
 thresholding. In practice, you might want to define a region for tinting based
 on segmentation results or blob detection methods.
 
+
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
 
 .. code-block:: python
 

@@ -20,6 +20,15 @@ Diaminobenzidine (DAB) which gives a brown color.
 
 
 
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
+
 .. code-block:: python
 
 	import matplotlib.pyplot as plt
@@ -58,6 +67,15 @@ Diaminobenzidine (DAB) which gives a brown color.
 
 Now we can easily manipulate the hematoxylin and DAB "channels":
 
+
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
 
 .. code-block:: python
 

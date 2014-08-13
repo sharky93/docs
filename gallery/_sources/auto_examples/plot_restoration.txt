@@ -37,7 +37,7 @@ the noise power and the image frequency power.
 .. raw:: html
     
     <p id="controls">
-        <button type="button" class="btn btn-default btn-small" id="editcode">
+        <button type="button" class="btn btn-default btn-small editcode">
             <i class="icon-edit"></i>
         </button>
     </p>

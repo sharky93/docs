@@ -16,6 +16,15 @@ get dilated in order to reconstruct the background image.
 
 
 
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
+
 .. code-block:: python
 
 	import numpy as np
@@ -41,6 +50,15 @@ get dilated in order to reconstruct the background image.
 Subtracting the dilated image leaves an image with just the coins and a flat,
 black background, as shown below.
 
+
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
 
 .. code-block:: python
 
@@ -75,6 +93,15 @@ the features of the image itself to seed the reconstruction process. Here, the
 seed image is the original image minus a fixed value, ``h``.
 
 
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
+
 .. code-block:: python
 
 	
@@ -89,6 +116,15 @@ To get a feel for the reconstruction process, we plot the intensity of the
 mask, seed, and dilated images along a slice of the image (indicated by red
 line).
 
+
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
 
 .. code-block:: python
 

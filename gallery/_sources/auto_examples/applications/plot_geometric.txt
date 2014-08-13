@@ -9,6 +9,15 @@ In this example, we will see how to use geometric transformations in the context
 of image processing.
 
 
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
+
 .. code-block:: python
 
 	
@@ -37,6 +46,15 @@ Geometric transformations can either be created using the explicit parameters
 First we create a transformation using explicit parameters:
 
 
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
+
 .. code-block:: python
 
 	
@@ -49,6 +67,15 @@ First we create a transformation using explicit parameters:
 Alternatively you can define a transformation by the transformation matrix
 itself:
 
+
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
 
 .. code-block:: python
 
@@ -64,6 +91,15 @@ coordinate transformations between the source and destination coordinate
 systems:
 
 
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
+
 .. code-block:: python
 
 	
@@ -78,6 +114,15 @@ Image warping
 
 Geometric transformations can also be used to warp images:
 
+
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
 
 .. code-block:: python
 
@@ -121,6 +166,15 @@ not be able to match such symbols. One solution to this problem would be to warp
 the image so that the distortion is removed and then apply a matching algorithm:
 
 
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
+
 .. code-block:: python
 
 	
@@ -156,6 +210,15 @@ the image so that the distortion is removed and then apply a matching algorithm:
 
 .. image:: images/plot_geometric_2.png
 
+
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
 
 .. code-block:: python
 

@@ -14,6 +14,15 @@ Before trying out LBP on an image, it helps to look at a schematic of LBPs.
 The below code is just used to plot the schematic.
 
 
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
+
 .. code-block:: python
 
 	from __future__ import print_function
@@ -91,6 +100,15 @@ image patch and look at the distribution of these LBPs. Lets apply LBP to
 a brick texture.
 
 
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
+
 .. code-block:: python
 
 	
@@ -163,6 +181,15 @@ The histogram of the LBP result is a good measure to classify textures. Here,
 we test the histogram distributions against each other using the
 Kullback-Leibler-Divergence.
 
+
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
 
 .. code-block:: python
 
@@ -237,6 +264,15 @@ Kullback-Leibler-Divergence.
 
 .. image:: images/plot_local_binary_pattern_3.png
 
+
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
 
 .. code-block:: python
 

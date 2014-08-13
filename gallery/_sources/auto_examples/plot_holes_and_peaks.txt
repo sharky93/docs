@@ -15,6 +15,15 @@ We start with an image containing both peaks and holes:
 
 
 
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
+
 .. code-block:: python
 
 	import matplotlib.pyplot as plt
@@ -47,6 +56,15 @@ erosion process. We then limit the erosion by setting the mask to the values
 of the original image.
 
 
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
+
 .. code-block:: python
 
 	
@@ -71,6 +89,15 @@ isolate the dark regions by subtracting the reconstructed image from the
 original image.
 
 
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
+
 .. code-block:: python
 
 	
@@ -87,6 +114,15 @@ reconstruction by dilation. Dilation is the inverse of erosion and expands the
 is an inverse operation, we initialize the seed image to the minimum image
 intensity instead of the maximum. The remainder of the process is the same.
 
+
+
+.. raw:: html
+    
+    <p id="controls">
+        <button type="button" class="btn btn-default btn-small editcode">
+            <i class="icon-edit"></i>
+        </button>
+    </p>
 
 .. code-block:: python
 
