@@ -46,6 +46,16 @@ We start with an image containing both peaks and holes:
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 .. image:: images/plot_holes_and_peaks_1.png
 
 Now we need to create the seed image, where the minima represent the starting
@@ -81,6 +91,16 @@ of the original image.
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 .. image:: images/plot_holes_and_peaks_2.png
 
 As shown above, eroding inward from the edges removes holes, since (by
@@ -105,6 +125,16 @@ original image.
 	# plt.title('holes')
 	
 	
+
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
 
 .. image:: images/plot_holes_and_peaks_3.png
 
@@ -135,19 +165,25 @@ intensity instead of the maximum. The remainder of the process is the same.
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 .. image:: images/plot_holes_and_peaks_4.png
 
 
 .. raw:: html
 
-    <p id="run_btn">
-        <button type="button" class="btn btn-default btn-lg" id="runcode">
-            <i class="icon-play"></i> Run
-        </button>
+    <p id="revert_btn">
         <button type="button" class="btn btn-default btn-lg" id="reload">
             <i class="icon-refresh"></i>
         </button>
-        <img id="loading" src="../_static/ajax-loader.gif"/>
     </p>
 
 .. raw:: html

@@ -66,6 +66,16 @@ from `skimage.data` for all comparisons.
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 
 .. image:: images/plot_rank_filters_1.png
 
@@ -118,6 +128,16 @@ randomly set to 0. The **median** filter is applied to remove the noise.
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 
 .. image:: images/plot_rank_filters_2.png
 
@@ -162,6 +182,16 @@ image.
 	ax2.axis('off')
 	
 	
+
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
 
 
 .. image:: images/plot_rank_filters_3.png
@@ -214,6 +244,16 @@ the central one.
 	ax4.axis('off')
 	
 	
+
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
 
 
 .. image:: images/plot_rank_filters_4.png
@@ -285,6 +325,16 @@ equalization emphasizes every local gray-level variations.
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 
 .. image:: images/plot_rank_filters_5.png
 
@@ -326,6 +376,16 @@ picture.
 	ax2.axis('off')
 	
 	
+
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
 
 
 .. image:: images/plot_rank_filters_6.png
@@ -382,6 +442,16 @@ result.
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 
 .. image:: images/plot_rank_filters_7.png
 
@@ -428,6 +498,16 @@ otherwise by the minimum local.
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 
 .. image:: images/plot_rank_filters_8.png
 
@@ -472,6 +552,16 @@ percentile *p0* and *p1* instead of the local minimum and maximum.
 	ax4.axis('off')
 	
 	
+
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
 
 
 .. image:: images/plot_rank_filters_9.png
@@ -545,6 +635,16 @@ The example compares the local threshold with the global threshold
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 
 .. image:: images/plot_rank_filters_10.png
 
@@ -584,6 +684,16 @@ shift applied to a synthetic image.
 	ax2.axis('off')
 	
 	
+
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
 
 
 .. image:: images/plot_rank_filters_11.png
@@ -646,6 +756,16 @@ closing and morphological gradient.
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 
 .. image:: images/plot_rank_filters_12.png
 
@@ -699,6 +819,16 @@ images.
 	ax2.axis('off')
 	
 	
+
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
 
 
 .. image:: images/plot_rank_filters_13.png
@@ -767,6 +897,16 @@ available in `skimage`.
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 
 Comparison between
 
@@ -810,6 +950,16 @@ on increasing structuring element size:
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 
 .. image:: images/plot_rank_filters_14.png
 
@@ -851,6 +1001,16 @@ and increasing image size:
 	
 	
 	
+
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
 
 
 .. image:: images/plot_rank_filters_15.png
@@ -897,6 +1057,16 @@ on increasing structuring element size:
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 .. image:: images/plot_rank_filters_16.png
 
 Comparison of outcome of the three methods:
@@ -921,6 +1091,16 @@ Comparison of outcome of the three methods:
 	ax.axis('off')
 	
 	
+
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
 
 .. image:: images/plot_rank_filters_17.png
 
@@ -962,6 +1142,16 @@ and increasing image size:
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 .. image:: images/plot_rank_filters_18.png
 
 
@@ -980,16 +1170,22 @@ and increasing image size:
 	
 	plt.show()
 	
+
 .. raw:: html
 
-    <p id="run_btn">
-        <button type="button" class="btn btn-default btn-lg" id="runcode">
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
             <i class="icon-play"></i> Run
         </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+.. raw:: html
+
+    <p id="revert_btn">
         <button type="button" class="btn btn-default btn-lg" id="reload">
             <i class="icon-refresh"></i>
         </button>
-        <img id="loading" src="../_static/ajax-loader.gif"/>
     </p>
 
 .. raw:: html

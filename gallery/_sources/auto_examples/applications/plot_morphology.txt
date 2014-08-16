@@ -50,6 +50,16 @@ functions only work on gray-scale or binary images, so we set ``as_grey=True``.
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 .. image:: images/plot_morphology_1.png
 
 Let's also define a convenience function for plotting comparisons:
@@ -78,6 +88,16 @@ Let's also define a convenience function for plotting comparisons:
 	    ax2.axis('off')
 	
 	
+
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
 
 Erosion
 =======
@@ -110,6 +130,16 @@ which we use for most of the following examples.
 	plot_comparison(phantom, eroded, 'erosion')
 	
 	
+
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
 
 .. image:: images/plot_morphology_2.png
 
@@ -144,6 +174,16 @@ regions and shrinks dark regions.
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 .. image:: images/plot_morphology_3.png
 
 Notice how the white boundary of the image thickens, or gets dilated, as we
@@ -176,6 +216,16 @@ small dark cracks.
 	plot_comparison(phantom, opened, 'opening')
 	
 	
+
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
 
 .. image:: images/plot_morphology_4.png
 
@@ -219,6 +269,16 @@ To illustrate this more clearly, let's add a small crack to the white border:
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 .. image:: images/plot_morphology_5.png
 
 Since ``closing`` an image starts with an dilation operation, dark regions
@@ -260,6 +320,16 @@ To make things interesting, we'll add bright and dark spots to the image:
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 .. image:: images/plot_morphology_6.png
 
 As you can see, the 10-pixel wide white square is highlighted since it is
@@ -292,6 +362,16 @@ image that are smaller than the structuring element*.
 	plot_comparison(phantom, b_tophat, 'black tophat')
 	
 	
+
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
 
 .. image:: images/plot_morphology_7.png
 
@@ -339,6 +419,16 @@ on binary images only.
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 .. image:: images/plot_morphology_8.png
 
 As the name suggests, this technique is used to thin the image to 1-pixel wide
@@ -371,6 +461,16 @@ that this is also performed on binary images.
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 .. image:: images/plot_morphology_9.png
 
 As the figure illustrates, ``convex_hull_image`` gives the smallest polygon
@@ -402,6 +502,16 @@ enclose that grain:
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 .. image:: images/plot_morphology_10.png
 
 
@@ -430,16 +540,22 @@ Additional Resources
 	
 	plt.show()
 	
+
 .. raw:: html
 
-    <p id="run_btn">
-        <button type="button" class="btn btn-default btn-lg" id="runcode">
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
             <i class="icon-play"></i> Run
         </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+.. raw:: html
+
+    <p id="revert_btn">
         <button type="button" class="btn btn-default btn-lg" id="reload">
             <i class="icon-refresh"></i>
         </button>
-        <img id="loading" src="../_static/ajax-loader.gif"/>
     </p>
 
 .. raw:: html

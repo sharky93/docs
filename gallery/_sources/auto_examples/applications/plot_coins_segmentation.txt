@@ -38,6 +38,16 @@ against a darker background.
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 .. image:: images/plot_coins_segmentation_1.png
 
 Thresholding
@@ -74,6 +84,16 @@ background with the coins:
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 .. image:: images/plot_coins_segmentation_2.png
 
 
@@ -107,6 +127,16 @@ edge-detector.
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 .. image:: images/plot_coins_segmentation_3.png
 
 These contours are then filled using mathematical morphology.
@@ -135,6 +165,16 @@ These contours are then filled using mathematical morphology.
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 .. image:: images/plot_coins_segmentation_4.png
 
 Small spurious objects are easily removed by setting a minimum size for valid
@@ -161,6 +201,16 @@ objects.
 	ax.set_title('Removing small objects')
 	
 	
+
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
 
 .. image:: images/plot_coins_segmentation_5.png
 
@@ -199,6 +249,16 @@ find an elevation map using the Sobel gradient of the image.
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 .. image:: images/plot_coins_segmentation_6.png
 
 Next we find markers of the background and the coins based on the extreme parts
@@ -228,6 +288,16 @@ of the histogram of grey values.
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 .. image:: images/plot_coins_segmentation_7.png
 
 Finally, we use the watershed transform to fill regions of the elevation map
@@ -254,6 +324,16 @@ starting from the markers determined above:
 	ax.set_title('segmentation')
 	
 	
+
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
 
 .. image:: images/plot_coins_segmentation_8.png
 
@@ -291,6 +371,16 @@ individually.
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 .. image:: images/plot_coins_segmentation_9.png
 
 
@@ -309,16 +399,22 @@ individually.
 	
 	plt.show()
 	
+
 .. raw:: html
 
-    <p id="run_btn">
-        <button type="button" class="btn btn-default btn-lg" id="runcode">
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
             <i class="icon-play"></i> Run
         </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+.. raw:: html
+
+    <p id="revert_btn">
         <button type="button" class="btn btn-default btn-lg" id="reload">
             <i class="icon-refresh"></i>
         </button>
-        <img id="loading" src="../_static/ajax-loader.gif"/>
     </p>
 
 .. raw:: html

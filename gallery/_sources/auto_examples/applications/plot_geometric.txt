@@ -34,6 +34,16 @@ of image processing.
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 Basics
 ======
 
@@ -64,6 +74,16 @@ First we create a transformation using explicit parameters:
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 Alternatively you can define a transformation by the transformation matrix
 itself:
 
@@ -85,6 +105,16 @@ itself:
 	tform2 = tf.SimilarityTransform(matrix)
 	
 	
+
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
 
 These transformation objects can then be used to apply forward and inverse
 coordinate transformations between the source and destination coordinate
@@ -108,6 +138,16 @@ systems:
 	print(tform2.inverse(tform(coord)))
 	
 	
+
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
 
 Image warping
 =============
@@ -146,6 +186,16 @@ Geometric transformations can also be used to warp images:
 	ax3.axis('off')
 	
 	
+
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
 
 .. image:: images/plot_geometric_1.png
 
@@ -208,6 +258,16 @@ the image so that the distortion is removed and then apply a matching algorithm:
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 .. image:: images/plot_geometric_2.png
 
 
@@ -225,16 +285,22 @@ the image so that the distortion is removed and then apply a matching algorithm:
 	
 	plt.show()
 	
+
 .. raw:: html
 
-    <p id="run_btn">
-        <button type="button" class="btn btn-default btn-lg" id="runcode">
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
             <i class="icon-play"></i> Run
         </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+.. raw:: html
+
+    <p id="revert_btn">
         <button type="button" class="btn btn-default btn-lg" id="reload">
             <i class="icon-refresh"></i>
         </button>
-        <img id="loading" src="../_static/ajax-loader.gif"/>
     </p>
 
 .. raw:: html

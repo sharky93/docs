@@ -57,6 +57,16 @@ skimage. Here we will demonstrate phase unwrapping in the two dimensional case.
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 .. image:: images/plot_phase_unwrap_1.png
 
 The unwrapping procedure accepts masked arrays, and can also optionally
@@ -112,6 +122,16 @@ a row of the image.
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 .. image:: images/plot_phase_unwrap_2.png
 
 In the figures above, the masked row can be seen as a white line across
@@ -135,14 +155,10 @@ References
 
 .. raw:: html
 
-    <p id="run_btn">
-        <button type="button" class="btn btn-default btn-lg" id="runcode">
-            <i class="icon-play"></i> Run
-        </button>
+    <p id="revert_btn">
         <button type="button" class="btn btn-default btn-lg" id="reload">
             <i class="icon-refresh"></i>
         </button>
-        <img id="loading" src="../_static/ajax-loader.gif"/>
     </p>
 
 .. raw:: html

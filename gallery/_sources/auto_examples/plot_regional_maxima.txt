@@ -47,6 +47,16 @@ get dilated in order to reconstruct the background image.
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 Subtracting the dilated image leaves an image with just the coins and a flat,
 black background, as shown below.
 
@@ -81,6 +91,16 @@ black background, as shown below.
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 
 .. image:: images/plot_regional_maxima_1.png
 
@@ -111,6 +131,16 @@ seed image is the original image minus a fixed value, ``h``.
 	hdome = image - dilated
 	
 	
+
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
 
 To get a feel for the reconstruction process, we plot the intensity of the
 mask, seed, and dilated images along a slice of the image (indicated by red
@@ -156,6 +186,16 @@ line).
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 .. image:: images/plot_regional_maxima_2.png
 
 As you can see in the image slice, each coin is given a different baseline
@@ -169,14 +209,10 @@ illuminated.
 
 .. raw:: html
 
-    <p id="run_btn">
-        <button type="button" class="btn btn-default btn-lg" id="runcode">
-            <i class="icon-play"></i> Run
-        </button>
+    <p id="revert_btn">
         <button type="button" class="btn btn-default btn-lg" id="reload">
             <i class="icon-refresh"></i>
         </button>
-        <img id="loading" src="../_static/ajax-loader.gif"/>
     </p>
 
 .. raw:: html

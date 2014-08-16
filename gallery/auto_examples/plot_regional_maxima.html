@@ -90,7 +90,12 @@ get dilated in order to reconstruct the background image.</p>
 <span class="n">dilated</span> <span class="o">=</span> <span class="n">reconstruction</span><span class="p">(</span><span class="n">seed</span><span class="p">,</span> <span class="n">mask</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&#39;dilation&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Subtracting the dilated image leaves an image with just the coins and a flat,
+<p class="run_btn">
+    <button type="button" class="btn btn-default btn-lg runcode">
+        <i class="icon-play"></i> Run
+    </button>
+    <img class="loading" src="../_static/ajax-loader.gif"/>
+</p><p>Subtracting the dilated image leaves an image with just the coins and a flat,
 black background, as shown below.</p>
 <p id="controls">
     <button type="button" class="btn btn-default btn-small editcode">
@@ -113,7 +118,12 @@ black background, as shown below.</p>
 <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/plot_regional_maxima_1.png" src="../_images/plot_regional_maxima_1.png" />
+<p class="run_btn">
+    <button type="button" class="btn btn-default btn-lg runcode">
+        <i class="icon-play"></i> Run
+    </button>
+    <img class="loading" src="../_static/ajax-loader.gif"/>
+</p><img alt="../_images/plot_regional_maxima_1.png" src="../_images/plot_regional_maxima_1.png" />
 <p>Although the features (i.e. the coins) are clearly isolated, the coins
 surrounded by a bright background in the original image are dimmer in the
 subtracted image. We can attempt to correct this using a different seed image.</p>
@@ -130,7 +140,12 @@ seed image is the original image minus a fixed value, <tt class="docutils litera
 <span class="n">hdome</span> <span class="o">=</span> <span class="n">image</span> <span class="o">-</span> <span class="n">dilated</span>
 </pre></div>
 </div>
-<p>To get a feel for the reconstruction process, we plot the intensity of the
+<p class="run_btn">
+    <button type="button" class="btn btn-default btn-lg runcode">
+        <i class="icon-play"></i> Run
+    </button>
+    <img class="loading" src="../_static/ajax-loader.gif"/>
+</p><p>To get a feel for the reconstruction process, we plot the intensity of the
 mask, seed, and dilated images along a slice of the image (indicated by red
 line).</p>
 <p id="controls">
@@ -163,7 +178,12 @@ line).</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/plot_regional_maxima_2.png" src="../_images/plot_regional_maxima_2.png" />
+<p class="run_btn">
+    <button type="button" class="btn btn-default btn-lg runcode">
+        <i class="icon-play"></i> Run
+    </button>
+    <img class="loading" src="../_static/ajax-loader.gif"/>
+</p><img alt="../_images/plot_regional_maxima_2.png" src="../_images/plot_regional_maxima_2.png" />
 <p>As you can see in the image slice, each coin is given a different baseline
 intensity in the reconstructed image; this is because we used the local
 intensity (shifted by <tt class="docutils literal"><span class="pre">h</span></tt>) as a seed value. As a result, the coins in the
@@ -171,14 +191,10 @@ subtracted image have similar pixel intensities. The final result is known as
 the h-dome of an image since this tends to isolate regional maxima of height
 <tt class="docutils literal"><span class="pre">h</span></tt>. This operation is particularly useful when your images are unevenly
 illuminated.</p>
-<p id="run_btn">
-    <button type="button" class="btn btn-default btn-lg" id="runcode">
-        <i class="icon-play"></i> Run
-    </button>
+<p id="revert_btn">
     <button type="button" class="btn btn-default btn-lg" id="reload">
         <i class="icon-refresh"></i>
     </button>
-    <img id="loading" src="../_static/ajax-loader.gif"/>
 </p><p>
     <div class="alert alert-success" id="success-message"></div>
     <div class="alert alert-error" id="error-message"></div>

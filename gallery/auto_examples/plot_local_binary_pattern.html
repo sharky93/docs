@@ -129,7 +129,12 @@ The below code is just used to plot the schematic.</p>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../_images/plot_local_binary_pattern_1.png" src="../_images/plot_local_binary_pattern_1.png" />
+<p class="run_btn">
+    <button type="button" class="btn btn-default btn-lg runcode">
+        <i class="icon-play"></i> Run
+    </button>
+    <img class="loading" src="../_static/ajax-loader.gif"/>
+</p><img alt="../_images/plot_local_binary_pattern_1.png" src="../_images/plot_local_binary_pattern_1.png" />
 <p>The figure above shows example results with black (or white) representing
 pixels that are less (or more) intense than the central pixel. When surrounding
 pixels are all black or all white, then that image region is flat (i.e.
@@ -202,7 +207,12 @@ a brick texture.</p>
     <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s">&#39;off&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../_images/plot_local_binary_pattern_2.png" src="../_images/plot_local_binary_pattern_2.png" />
+<p class="run_btn">
+    <button type="button" class="btn btn-default btn-lg runcode">
+        <i class="icon-play"></i> Run
+    </button>
+    <img class="loading" src="../_static/ajax-loader.gif"/>
+</p><img alt="../_images/plot_local_binary_pattern_2.png" src="../_images/plot_local_binary_pattern_2.png" />
 <p>The above plot highlights flat, edge-like, and corner-like regions of the
 image.</p>
 <p>The histogram of the LBP result is a good measure to classify textures. Here,
@@ -279,7 +289,12 @@ Kullback-Leibler-Divergence.</p>
 <span class="n">hist</span><span class="p">(</span><span class="n">ax6</span><span class="p">,</span> <span class="n">refs</span><span class="p">[</span><span class="s">&#39;wall&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
-<img alt="../_images/plot_local_binary_pattern_3.png" src="../_images/plot_local_binary_pattern_3.png" />
+<p class="run_btn">
+    <button type="button" class="btn btn-default btn-lg runcode">
+        <i class="icon-play"></i> Run
+    </button>
+    <img class="loading" src="../_static/ajax-loader.gif"/>
+</p><img alt="../_images/plot_local_binary_pattern_3.png" src="../_images/plot_local_binary_pattern_3.png" />
 <p id="controls">
     <button type="button" class="btn btn-default btn-small editcode">
         <i class="icon-edit"></i>
@@ -287,14 +302,15 @@ Kullback-Leibler-Divergence.</p>
 </p><div class="highlight-python"><div class="highlight"><pre><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<p id="run_btn">
-    <button type="button" class="btn btn-default btn-lg" id="runcode">
+<p class="run_btn">
+    <button type="button" class="btn btn-default btn-lg runcode">
         <i class="icon-play"></i> Run
     </button>
+    <img class="loading" src="../_static/ajax-loader.gif"/>
+</p><p id="revert_btn">
     <button type="button" class="btn btn-default btn-lg" id="reload">
         <i class="icon-refresh"></i>
     </button>
-    <img id="loading" src="../_static/ajax-loader.gif"/>
 </p><p>
     <div class="alert alert-success" id="success-message"></div>
     <div class="alert alert-error" id="error-message"></div>

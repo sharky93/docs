@@ -89,7 +89,12 @@ functions only work on gray-scale or binary images, so we set <tt class="docutil
 <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">phantom</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gray</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../../_images/plot_morphology_1.png" src="../../_images/plot_morphology_1.png" />
+<p class="run_btn">
+    <button type="button" class="btn btn-default btn-lg runcode">
+        <i class="icon-play"></i> Run
+    </button>
+    <img class="loading" src="../_static/ajax-loader.gif"/>
+</p><img alt="../../_images/plot_morphology_1.png" src="../../_images/plot_morphology_1.png" />
 <p>Let&#8217;s also define a convenience function for plotting comparisons:</p>
 <p id="controls">
     <button type="button" class="btn btn-default btn-small editcode">
@@ -106,7 +111,12 @@ functions only work on gray-scale or binary images, so we set <tt class="docutil
     <span class="n">ax2</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s">&#39;off&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="section" id="erosion">
+<p class="run_btn">
+    <button type="button" class="btn btn-default btn-lg runcode">
+        <i class="icon-play"></i> Run
+    </button>
+    <img class="loading" src="../_static/ajax-loader.gif"/>
+</p><div class="section" id="erosion">
 <h2>Erosion<a class="headerlink" href="#erosion" title="Permalink to this headline">¶</a></h2>
 <p>Morphological <tt class="docutils literal"><span class="pre">erosion</span></tt> sets a pixel at (i, j) to the <em>minimum over all
 pixels in the neighborhood centered at (i, j)</em>. The structuring element,
@@ -126,7 +136,12 @@ which we use for most of the following examples.</p>
 <span class="n">plot_comparison</span><span class="p">(</span><span class="n">phantom</span><span class="p">,</span> <span class="n">eroded</span><span class="p">,</span> <span class="s">&#39;erosion&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../../_images/plot_morphology_2.png" src="../../_images/plot_morphology_2.png" />
+<p class="run_btn">
+    <button type="button" class="btn btn-default btn-lg runcode">
+        <i class="icon-play"></i> Run
+    </button>
+    <img class="loading" src="../_static/ajax-loader.gif"/>
+</p><img alt="../../_images/plot_morphology_2.png" src="../../_images/plot_morphology_2.png" />
 <p>Notice how the white boundary of the image disappears or gets eroded as we
 increase the size of the disk. Also notice the increase in size of the two
 black ellipses in the center and the disappearance of the 3 light grey
@@ -145,7 +160,12 @@ regions and shrinks dark regions.</p>
 <span class="n">plot_comparison</span><span class="p">(</span><span class="n">phantom</span><span class="p">,</span> <span class="n">dilated</span><span class="p">,</span> <span class="s">&#39;dilation&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../../_images/plot_morphology_3.png" src="../../_images/plot_morphology_3.png" />
+<p class="run_btn">
+    <button type="button" class="btn btn-default btn-lg runcode">
+        <i class="icon-play"></i> Run
+    </button>
+    <img class="loading" src="../_static/ajax-loader.gif"/>
+</p><img alt="../../_images/plot_morphology_3.png" src="../../_images/plot_morphology_3.png" />
 <p>Notice how the white boundary of the image thickens, or gets dilated, as we
 increase the size of the disk. Also notice the decrease in size of the two
 black ellipses in the centre, and the thickening of the light grey circle in
@@ -164,7 +184,12 @@ small dark cracks.</p>
 <span class="n">plot_comparison</span><span class="p">(</span><span class="n">phantom</span><span class="p">,</span> <span class="n">opened</span><span class="p">,</span> <span class="s">&#39;opening&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../../_images/plot_morphology_4.png" src="../../_images/plot_morphology_4.png" />
+<p class="run_btn">
+    <button type="button" class="btn btn-default btn-lg runcode">
+        <i class="icon-play"></i> Run
+    </button>
+    <img class="loading" src="../_static/ajax-loader.gif"/>
+</p><img alt="../../_images/plot_morphology_4.png" src="../../_images/plot_morphology_4.png" />
 <p>Since <tt class="docutils literal"><span class="pre">opening</span></tt> an image starts with an erosion operation, light regions that
 are <em>smaller</em> than the structuring element are removed. The dilation operation
 that follows ensures that light regions that are <em>larger</em> than the structuring
@@ -191,7 +216,12 @@ small bright cracks.</p>
 <span class="n">plot_comparison</span><span class="p">(</span><span class="n">phantom</span><span class="p">,</span> <span class="n">closed</span><span class="p">,</span> <span class="s">&#39;closing&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../../_images/plot_morphology_5.png" src="../../_images/plot_morphology_5.png" />
+<p class="run_btn">
+    <button type="button" class="btn btn-default btn-lg runcode">
+        <i class="icon-play"></i> Run
+    </button>
+    <img class="loading" src="../_static/ajax-loader.gif"/>
+</p><img alt="../../_images/plot_morphology_5.png" src="../../_images/plot_morphology_5.png" />
 <p>Since <tt class="docutils literal"><span class="pre">closing</span></tt> an image starts with an dilation operation, dark regions
 that are <em>smaller</em> than the structuring element are removed. The dilation
 operation that follows ensures that dark regions that are <em>larger</em> than the
@@ -217,7 +247,12 @@ that are smaller than the structuring element.</p>
 <span class="n">plot_comparison</span><span class="p">(</span><span class="n">phantom</span><span class="p">,</span> <span class="n">w_tophat</span><span class="p">,</span> <span class="s">&#39;white tophat&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../../_images/plot_morphology_6.png" src="../../_images/plot_morphology_6.png" />
+<p class="run_btn">
+    <button type="button" class="btn btn-default btn-lg runcode">
+        <i class="icon-play"></i> Run
+    </button>
+    <img class="loading" src="../_static/ajax-loader.gif"/>
+</p><img alt="../../_images/plot_morphology_6.png" src="../../_images/plot_morphology_6.png" />
 <p>As you can see, the 10-pixel wide white square is highlighted since it is
 smaller than the structuring element. Also, the thin, white edges around most
 of the ellipse are retained because they&#8217;re smaller than the structuring
@@ -236,7 +271,12 @@ image that are smaller than the structuring element</em>.</p>
 <span class="n">plot_comparison</span><span class="p">(</span><span class="n">phantom</span><span class="p">,</span> <span class="n">b_tophat</span><span class="p">,</span> <span class="s">&#39;black tophat&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../../_images/plot_morphology_7.png" src="../../_images/plot_morphology_7.png" />
+<p class="run_btn">
+    <button type="button" class="btn btn-default btn-lg runcode">
+        <i class="icon-play"></i> Run
+    </button>
+    <img class="loading" src="../_static/ajax-loader.gif"/>
+</p><img alt="../../_images/plot_morphology_7.png" src="../../_images/plot_morphology_7.png" />
 <p>As you can see, the 10-pixel wide black square is highlighted since it is
 smaller than the structuring element.</p>
 <div class="section" id="duality">
@@ -266,7 +306,12 @@ on binary images only.</p>
 <span class="n">plot_comparison</span><span class="p">(</span><span class="n">horse</span><span class="p">,</span> <span class="n">sk</span><span class="p">,</span> <span class="s">&#39;skeletonize&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../../_images/plot_morphology_8.png" src="../../_images/plot_morphology_8.png" />
+<p class="run_btn">
+    <button type="button" class="btn btn-default btn-lg runcode">
+        <i class="icon-play"></i> Run
+    </button>
+    <img class="loading" src="../_static/ajax-loader.gif"/>
+</p><img alt="../../_images/plot_morphology_8.png" src="../../_images/plot_morphology_8.png" />
 <p>As the name suggests, this technique is used to thin the image to 1-pixel wide
 skeleton by applying thinning successively.</p>
 </div>
@@ -283,7 +328,12 @@ that this is also performed on binary images.</p>
 <span class="n">plot_comparison</span><span class="p">(</span><span class="n">horse</span><span class="p">,</span> <span class="n">hull1</span><span class="p">,</span> <span class="s">&#39;convex hull&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../../_images/plot_morphology_9.png" src="../../_images/plot_morphology_9.png" />
+<p class="run_btn">
+    <button type="button" class="btn btn-default btn-lg runcode">
+        <i class="icon-play"></i> Run
+    </button>
+    <img class="loading" src="../_static/ajax-loader.gif"/>
+</p><img alt="../../_images/plot_morphology_9.png" src="../../_images/plot_morphology_9.png" />
 <p>As the figure illustrates, <tt class="docutils literal"><span class="pre">convex_hull_image</span></tt> gives the smallest polygon
 which covers the white or True completely in the image.</p>
 <p>If we add a small grain to the image, we can see how the convex hull adapts to
@@ -301,7 +351,12 @@ enclose that grain:</p>
 <span class="n">plot_comparison</span><span class="p">(</span><span class="n">horse2</span><span class="p">,</span> <span class="n">hull2</span><span class="p">,</span> <span class="s">&#39;convex hull&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../../_images/plot_morphology_10.png" src="../../_images/plot_morphology_10.png" />
+<p class="run_btn">
+    <button type="button" class="btn btn-default btn-lg runcode">
+        <i class="icon-play"></i> Run
+    </button>
+    <img class="loading" src="../_static/ajax-loader.gif"/>
+</p><img alt="../../_images/plot_morphology_10.png" src="../../_images/plot_morphology_10.png" />
 </div>
 <div class="section" id="additional-resources">
 <h2>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">¶</a></h2>
@@ -315,14 +370,15 @@ enclose that grain:</p>
 </p><div class="highlight-python"><div class="highlight"><pre><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<p id="run_btn">
-    <button type="button" class="btn btn-default btn-lg" id="runcode">
+<p class="run_btn">
+    <button type="button" class="btn btn-default btn-lg runcode">
         <i class="icon-play"></i> Run
     </button>
+    <img class="loading" src="../_static/ajax-loader.gif"/>
+</p><p id="revert_btn">
     <button type="button" class="btn btn-default btn-lg" id="reload">
         <i class="icon-refresh"></i>
     </button>
-    <img id="loading" src="../_static/ajax-loader.gif"/>
 </p><p>
     <div class="alert alert-success" id="success-message"></div>
     <div class="alert alert-error" id="error-message"></div>

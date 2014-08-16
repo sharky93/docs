@@ -85,6 +85,16 @@ The below code is just used to plot the schematic.
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 .. image:: images/plot_local_binary_pattern_1.png
 
 The figure above shows example results with black (or white) representing
@@ -171,6 +181,16 @@ a brick texture.
 	
 	
 	
+
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
 
 .. image:: images/plot_local_binary_pattern_2.png
 
@@ -262,6 +282,16 @@ Kullback-Leibler-Divergence.
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 .. image:: images/plot_local_binary_pattern_3.png
 
 
@@ -279,16 +309,22 @@ Kullback-Leibler-Divergence.
 	
 	plt.show()
 	
+
 .. raw:: html
 
-    <p id="run_btn">
-        <button type="button" class="btn btn-default btn-lg" id="runcode">
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
             <i class="icon-play"></i> Run
         </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+.. raw:: html
+
+    <p id="revert_btn">
         <button type="button" class="btn btn-default btn-lg" id="reload">
             <i class="icon-refresh"></i>
         </button>
-        <img id="loading" src="../_static/ajax-loader.gif"/>
     </p>
 
 .. raw:: html

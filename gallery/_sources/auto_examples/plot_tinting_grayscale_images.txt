@@ -48,6 +48,16 @@ only the red and green channels, which combine to form yellow.
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 .. image:: images/plot_tinting_grayscale_images_1.png
 
 In many cases, dealing with RGB values may not be ideal. Because of that, there
@@ -91,6 +101,16 @@ turned all the way up:
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 .. image:: images/plot_tinting_grayscale_images_2.png
 
 Notice how the colors at the far left and far right are the same. That reflects
@@ -129,6 +149,16 @@ Now, let's create a little utility function to take an RGB image and:
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 Notice that we need to bump up the saturation; images with zero saturation are
 grayscale, so we need to a non-zero value to actually see the color we've set.
 
@@ -160,6 +190,16 @@ and a non-zero saturation:
 	fig.tight_layout()
 	
 	
+
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
 
 .. image:: images/plot_tinting_grayscale_images_3.png
 
@@ -209,6 +249,16 @@ on segmentation results or blob detection methods.
 	
 	
 
+.. raw:: html
+
+    <p class="run_btn">
+        <button type="button" class="btn btn-default btn-lg runcode">
+            <i class="icon-play"></i> Run
+        </button>
+        <img class="loading" src="../_static/ajax-loader.gif"/>
+    </p>
+
+
 .. image:: images/plot_tinting_grayscale_images_4.png
 
 For coloring multiple regions, you may also be interested in
@@ -221,14 +271,10 @@ For coloring multiple regions, you may also be interested in
 
 .. raw:: html
 
-    <p id="run_btn">
-        <button type="button" class="btn btn-default btn-lg" id="runcode">
-            <i class="icon-play"></i> Run
-        </button>
+    <p id="revert_btn">
         <button type="button" class="btn btn-default btn-lg" id="reload">
             <i class="icon-refresh"></i>
         </button>
-        <img id="loading" src="../_static/ajax-loader.gif"/>
     </p>
 
 .. raw:: html
