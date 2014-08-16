@@ -154,7 +154,8 @@ $(document).ready(function () {
                             .addClass('output_image')
                             //.insertAfter('#run_btn');
                             // insert just after the snippet which ran the code
-                            .insertAfter($('.run_btn').eq(snippet_index));
+                            .insertAfter($('.run_btn').eq(snippet_index))
+                            .data('index', snippet_index);
                             i = i + 1;
                     } else {
                         $('.section > img.output_image:last')
@@ -162,6 +163,7 @@ $(document).ready(function () {
                             .attr('src', image)
                             // .attr('title', timestamp)
                             .addClass('output_image')
+                            .data('index', snippet_index)
                             .insertAfter('.section > img.output_image:last');
                     }
                 }
@@ -213,8 +215,16 @@ $(document).ready(function () {
             $('#error-message').hide();
             $('#success-message').hide();
             $('.all-output').hide();
-            // get rid of output images from previous run
-            $('img.output_image').remove();
+
+            // get rid of output images from previous run for this snippet
+            $('img.output_image').filter(function () {
+                if ($(this).data('index') == snippet_index) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }).remove();
+
             $('#reload').hide();
 
             $('.runcode').eq(snippet_index).hide();
@@ -259,9 +269,14 @@ $(document).ready(function () {
                         num_images = Object.keys(e.result).length/2;
                     }
                     if (e.result.hasOwnProperty('busy')) {
-                        $('#success-message').html("Server Busy, try again later!").show();
-                    } else {
-                        $('#success-message').html("Success: Received " + num_images + " image(s) at " + e.timestamp + " UTC -5").show();
+                        var success_message = $('#success-message').detach();
+                        $(success-message).html("Server Busy, try again later!");
+                        $(success-message).appendTo('.run_btn').eq(snippet_index).show();
+                    }
+                    else {
+                        var success_message = $('#success-message').detach();
+                        $(success_message).html("Success: Received " + num_images + " image(s) at " + e.timestamp + " UTC -5");
+                        $(success_message).appendTo('.run_btn').eq(snippet_index).show();
                     }
                     code_running = false;
                 },
@@ -277,8 +292,9 @@ $(document).ready(function () {
 
                     error_code = jqxhr.status;
                     error_text = jqxhr.statusText;
-                    $('#error-message').html(error_text + ' ' + error_code);
-                    $('#error-message').show();
+                    $('#error-message').html(error_text + ' ' + error_code)
+                    .detach().appendTo('.run_btn').eq(snippet_index)
+                    .show();
                     code_running = false;
                 }
             });
@@ -353,7 +369,6 @@ $(document).ready(function () {
 
     $('.runcode').bind('click', function () {
         var run_btn_index = $(this).data('index');
-        console.log(run_btn_index);
         runcode(run_btn_index);
     });
 
